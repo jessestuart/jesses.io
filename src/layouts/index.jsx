@@ -14,17 +14,16 @@ class Template extends React.Component {
     const containerStyle = {
       maxWidth: rhythm(24),
       padding: `${rhythm(1.5)} ${rhythm(3 / 4)}`,
-      gridColumn: '3/10',
+      gridColumn: '3/9',
     }
 
     return (
       <div
         style={{
           display: 'grid',
-          gridGap: '1rem',
-          gridTemplateColumns:
-            '8.3vw 8.3vw 8.3vw 8.3vw 8.3vw 8.3vw 8.3vw 8.3vw 8.3vw 8.3vw 8.3vw 8.3vw',
-          gridTemplateRows: '10rem',
+          gridGap: '1vw',
+          gridTemplateColumns: '9vw 9vw 9vw 9vw 9vw 9vw 9vw 9vw 9vw 9vw',
+          // gridTemplateRows: '10rem',
         }}
       >
         <div style={containerStyle}>
