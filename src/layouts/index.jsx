@@ -1,6 +1,7 @@
 import React from 'react'
 import { rhythm } from '../utils/typography'
 import SiteHeader from '../components/site-header'
+import _ from 'lodash'
 
 import 'prismjs/themes/prism.css'
 
@@ -11,25 +12,25 @@ class Template extends React.Component {
     const rootPath = '/'
     const isRoot = location.pathname === rootPath
 
-    const containerStyle = {
-      maxWidth: rhythm(24),
-      padding: `${rhythm(1.5)} ${rhythm(3 / 4)}`,
+    const baseContainerStyle = {
+      display: 'grid',
+      gridTemplateColumns: _.times(10, () => '9vw').join(' '),
+      gridGap: '1vw',
+    }
+    const headerContainerStyle = {
+      gridColumn: '1/11',
+    }
+
+    const bodyContainerStyle = {
       gridColumn: '3/9',
     }
 
     return (
-      <div
-        style={{
-          display: 'grid',
-          gridGap: '1vw',
-          gridTemplateColumns: '9vw 9vw 9vw 9vw 9vw 9vw 9vw 9vw 9vw 9vw',
-          // gridTemplateRows: '10rem',
-        }}
-      >
-        <div style={containerStyle}>
+      <div style={baseContainerStyle}>
+        <div style={headerContainerStyle}>
           <SiteHeader size={isRoot ? 'large' : 'small'} />
-          {children()}
         </div>
+        <div style={bodyContainerStyle}>{children()}</div>
       </div>
     )
   }
