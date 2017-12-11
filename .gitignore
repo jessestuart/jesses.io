@@ -1,0 +1,10 @@
+*.log
+.DS_Store
+.cache/
+.env
+.gatsby-context.js
+.intermediate-representation/
+node_modules/
+public/
+tags
+yarn.lock
