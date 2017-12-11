@@ -1,5 +1,4 @@
 import React from 'react'
-import { Container } from 'react-responsive-grid'
 import { rhythm } from '../utils/typography'
 import SiteHeader from '../components/site-header'
 
@@ -15,13 +14,24 @@ class Template extends React.Component {
     const containerStyle = {
       maxWidth: rhythm(24),
       padding: `${rhythm(1.5)} ${rhythm(3 / 4)}`,
+      gridColumn: '3/10',
     }
 
     return (
-      <Container style={containerStyle}>
-        <SiteHeader size={isRoot ? 'large' : 'small'} />
-        {children()}
-      </Container>
+      <div
+        style={{
+          display: 'grid',
+          gridGap: '1rem',
+          gridTemplateColumns:
+            '8.3vw 8.3vw 8.3vw 8.3vw 8.3vw 8.3vw 8.3vw 8.3vw 8.3vw 8.3vw 8.3vw 8.3vw',
+          gridTemplateRows: '10rem',
+        }}
+      >
+        <div style={containerStyle}>
+          <SiteHeader size={isRoot ? 'large' : 'small'} />
+          {children()}
+        </div>
+      </div>
     )
   }
 }

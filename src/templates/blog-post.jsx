@@ -19,7 +19,6 @@ const renderTag = (tag, index) => (
 
 class BlogPostTemplate extends Component {
   render() {
-    const foo = 'bar'
     const post = this.props.data.markdownRemark
     const { pathname } = this.props.location
     const siteTitle = get(this.props, 'data.site.siteMetadata.title')
@@ -48,7 +47,13 @@ class BlogPostTemplate extends Component {
             property="article:published_time"
             content={new Date(date).toISOString()}
           />
-          {tags.map(tag => <meta property="article:tag" content={tag} />)}
+          {tags.map(tag =>
+            <meta
+              content={tag}
+              key={tag}
+              property="article:tag"
+            />
+          )}
         </Helmet>
 
         <h1>{title}</h1>

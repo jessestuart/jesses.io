@@ -1,7 +1,7 @@
-import React from 'react'
+import React, { Component } from 'react'
 
 let stylesStr
-if (process.env.NODE_ENV === `production`) {
+if (process.env.NODE_ENV === 'production') {
   try {
     stylesStr = require(`!raw-loader!../public/styles.css`)
   } catch (e) {
@@ -9,10 +9,10 @@ if (process.env.NODE_ENV === `production`) {
   }
 }
 
-module.exports = class HTML extends React.Component {
+class HTML extends Component {
   render() {
     let css
-    if (process.env.NODE_ENV === `production`) {
+    if (process.env.NODE_ENV === 'production') {
       css = (
         <style
           id="gatsby-inlined-css"
@@ -21,7 +21,8 @@ module.exports = class HTML extends React.Component {
       )
     }
 
-    const description = 'Cameron Pittman talks software and aerospace engineering, and lots more'
+    const description =
+      'Cameron Pittman talks software and aerospace engineering, and lots more'
 
     return (
       <html {...this.props.htmlAttributes}>
@@ -43,7 +44,7 @@ module.exports = class HTML extends React.Component {
           <meta property="og:site_name" content="Hurtling through Space" />
           <meta property="og:type" content="article" />
 
-          <meta itemprop="description" content={description } />
+          <meta itemProp="description" content={description} />
 
           {this.props.headComponents}
           {css}
@@ -51,7 +52,7 @@ module.exports = class HTML extends React.Component {
         <body {...this.props.bodyAttributes}>
           {this.props.preBodyComponents}
           <div
-            key={`body`}
+            key={'body'}
             id="___gatsby"
             dangerouslySetInnerHTML={{ __html: this.props.body }}
           />
@@ -61,3 +62,5 @@ module.exports = class HTML extends React.Component {
     )
   }
 }
+
+module.exports = HTML

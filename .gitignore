@@ -1,9 +1,10 @@
 *.log
-.DS_Store
 .cache/
+.DS_Store
 .env
 .gatsby-context.js
 .intermediate-representation/
+.tern-port
 node_modules/
 public/
 tags
