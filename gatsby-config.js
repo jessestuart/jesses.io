@@ -1,9 +1,9 @@
 module.exports = {
   siteMetadata: {
-    title: 'Hurtling through Space',
-    author: 'Cameron Pittman',
+    title: 'Jesse Stuart',
+    author: 'Jesse Stuart',
     description: '42',
-    siteUrl: 'https://hurtlingthrough.space',
+    siteUrl: 'https://jessestuart.com',
   },
   plugins: [
     {

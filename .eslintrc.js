@@ -23,7 +23,7 @@ module.exports = {
     },
   },
   rules: {
-    'react/prop-types': 'warning',
-    'react/no-unescaped-entities': 'ignore',
+    'react/prop-types': 'warn',
+    'react/no-unescaped-entities': 'off',
   },
 }

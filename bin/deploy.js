@@ -4,51 +4,47 @@ if (process.env.CIRCLECI !== 'true') {
   require('dotenv').config()
 }
 
-const AWS = require('aws-sdk');
-const s3 = require('s3');
-const fs = require('fs');
-const _ = require('lodash');
+const _ = require('lodash')
+const AWS = require('aws-sdk')
+const s3 = require('s3')
 
 AWS.config.apiVersions = {
   s3: '2006-03-01',
-  cloudfront:'2017-03-25'
-};
-AWS.config.update({region: process.env.AWS_REGION});
+  cloudfront: '2017-03-25',
+}
+AWS.config.update({ region: process.env.AWS_REGION })
 
-function uploadFiles() {
-  return new Promise((resolve, reject) => {
-    const awsS3Client = new AWS.S3();
-    const config = {
-      s3Client: awsS3Client
-    };
-    const client = s3.createClient(config);
+const uploadFiles = () =>
+  new Promise((resolve, reject) => {
+    const s3Client = new AWS.S3()
+    const client = s3.createClient({ s3Client })
 
     const uploader = client.uploadDir({
       localDir: 'public',
-      deleteRemoved: false, // don't remove old files in case they're still being used by a cache
+      // Don't remove old files in case they're still being used by a cache.
+      deleteRemoved: false,
       s3Params: {
-        Bucket: process.env.BUCKET
+        Bucket: process.env.BUCKET,
       },
       getS3Params: (localFile, stat, callback) => {
-        // cache HTML files (and rss.xml) for an hour, everything else 14 days
+        // Cache HTML files (and rss.xml) for an hour, everything else 14 days.
         const isHTML = _.endsWith(localFile, '.html')
         const isXML = _.endsWith(localFile, '.xml')
         const params = {
           ACL: 'public-read',
-          CacheControl: `max-age=${(isHTML || isXML ? '3600' : '1209600')}`
+          CacheControl: `max-age=${isHTML || isXML ? '3600' : '1209600'}`,
         }
-        callback(null, params);
-      }
-    });
-    uploader.on('error', reject);
-    uploader.on('end', () => resolve());
+        callback(null, params)
+      },
+    })
+    uploader.on('error', reject)
+    uploader.on('end', () => resolve())
   })
-}
 
-function invalidateCache() {
-  return new Promise((resolve, reject) => {
-    const cloudfront = new AWS.CloudFront();
-    const reference = Date.now();
+const invalidateCache = () =>
+  new Promise((resolve, reject) => {
+    const cloudfront = new AWS.CloudFront()
+    const reference = Date.now()
 
     const invalidation = {
       DistributionId: process.env.CLOUDFRONT_DISTRIBUTION_ID,
@@ -56,22 +52,21 @@ function invalidateCache() {
         CallerReference: reference.toString(),
         Paths: {
           Quantity: 1,
-          Items: ['/*'] // just assume everything has been invalidated
-        }
-      }
-    };
+          Items: ['/*'], // just assume everything has been invalidated
+        },
+      },
+    }
     cloudfront.createInvalidation(invalidation, (err, data) => {
       if (err) {
-        reject(err);
+        reject(err)
       } else {
-        console.log(data);
-        resolve();
+        console.log(data)
+        resolve()
       }
-    });
+    })
   })
-}
 
 uploadFiles()
   .then(invalidateCache)
-  .catch(e => console.error)
-  .then(() => process.exit(0));
+  .catch(e => console.error(e) && process.exit(1))
+  .then(() => process.exit(0))
