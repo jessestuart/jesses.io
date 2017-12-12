@@ -1,0 +1,23 @@
+@import '../../layouts/base.scss';
+
+.header-section {
+  align-items: center;
+  border-bottom: 5px solid $pink;
+  border-top: 2px solid $gray-600;
+  display: flex;
+  flex-direction: column;
+  padding: 20px 0 0;
+  width: 100%;
+}
+
+.chevron-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 3rem;
+
+  svg {
+    width: 2rem;
+  }
+}

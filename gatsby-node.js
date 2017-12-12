@@ -1,5 +1,4 @@
 const _ = require('lodash')
-const Promise = require('bluebird')
 const path = require('path')
 const { createFilePath } = require('gatsby-source-filesystem')
 
@@ -24,7 +23,7 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
   const tagPage = path.resolve('./src/templates/tag-page.jsx')
   let tags = []
 
-  createPosts = edges => {
+  const createPosts = edges => {
     edges.forEach(edge => {
       createPage({
         path: edge.node.fields.slug,
@@ -38,22 +37,23 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
     })
   }
 
-  createTagPages = () => {
+  const createTagPages = () => {
     tags.sort().forEach(tag => {
       createPage({
         path: `tags/${tag}`,
         component: tagPage,
         context: {
-          tag
-        }
+          tag,
+        },
       })
     })
   }
 
   return graphql(mdQuery)
     .then(result => {
-      if (result.errors) {
-        reject(result.errors)
+      const { errors } = result
+      if (errors) {
+        Promise.reject(errors)
       }
 
       return result.data.allMarkdownRemark.edges
@@ -66,7 +66,7 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
 exports.onCreateNode = ({ node, boundActionCreators, getNode }) => {
   const { createNodeField } = boundActionCreators
 
-  if (node.internal.type === `MarkdownRemark`) {
+  if (node.internal.type === 'MarkdownRemark') {
     const value = createFilePath({ node, getNode })
     createNodeField({
       name: `slug`,
@@ -76,7 +76,7 @@ exports.onCreateNode = ({ node, boundActionCreators, getNode }) => {
   }
 }
 
-exports.modifyWebpackConfig = function ({config}, stage) {
-  config._config.devtool = 'cheap-module-source-map'
+exports.modifyWebpackConfig = function({ config }, stage) {
+  config._config.devtool = 'eval'
   return config
 }

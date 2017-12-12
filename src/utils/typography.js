@@ -2,12 +2,6 @@ import _ from 'lodash'
 import Typography from 'typography'
 import Wordpress2016 from 'typography-theme-wordpress-2016'
 
-Wordpress2016.overrideThemeStyles = () => ({
-  'a.gatsby-resp-image-link': {
-    boxShadow: 'none',
-  },
-})
-
 const fontWeights = _.map(_.range(300, 700, 200), String)
 
 const typography = new Typography(
@@ -34,10 +28,17 @@ const typography = new Typography(
       // },
     ],
     overrideThemeStyles: ({ rhythm }, options, styles) => ({
+      'a.gatsby-resp-image-link': {
+        boxShadow: 'none',
+      },
       blockquote: {
         fontStyle: 'inherit',
         textAlign: 'justify',
         textIndent: '2em',
+      },
+      body: {
+        // background: '#343a40',
+        // color: '#cccccc',
       },
       code: {
         fontFamily: ['Fira Mono', 'monospace'].join(','),

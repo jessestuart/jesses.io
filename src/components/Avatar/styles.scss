@@ -1,0 +1,25 @@
+@import '../../layouts/base.scss';
+
+.js-avatar-wrapper {
+  align-items: center;
+  display: flex;
+  height: 100%;
+  justify-content: center;
+  margin: 0 auto;
+  padding-bottom: 20px;
+}
+
+img.js-avatar {
+  border-radius: 50%;
+  box-shadow: 0 0 5px 5px #333;
+  display: flex;
+  justify-content: center;
+  max-width: 100%;
+  padding: 0;
+}
+
+@media (max-width: map-get($container-max-widths, 'xl') - 1) {
+  img.js-avatar {
+    max-width: 50%;
+  }
+}

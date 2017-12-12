@@ -1,5 +1,4 @@
 import React from 'react'
-import { rhythm } from '../utils/typography'
 import SiteHeader from '../components/site-header'
 import _ from 'lodash'
 
@@ -20,7 +19,6 @@ class Template extends React.Component {
     const headerContainerStyle = {
       gridColumn: '1/11',
     }
-
     const bodyContainerStyle = {
       gridColumn: '3/9',
     }

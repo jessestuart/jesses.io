@@ -1,3 +1,21 @@
+@import '../utils/colors.scss';
+
+body {
+  background-color: $background;
+  color: $white;
+}
+
+a {
+  font-weight: 300;
+  color: $blue; // $pink; // rgb(253, 107, 156);
+}
+
+// h1 {
+//   color: $white;
+//   // border-bottom: 1px solid #73C1B3;
+//   border-bottom: 1px solid $pink;
+// }
+
 .more {
   text-align: center;
   margin-bottom: 1em;
