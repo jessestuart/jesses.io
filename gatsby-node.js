@@ -2,6 +2,17 @@ const _ = require('lodash')
 const path = require('path')
 const { createFilePath } = require('gatsby-source-filesystem')
 
+exports.onCreatePage = async ({ page, boundActionCreators }) =>
+  new Promise((resolve, reject) => {
+    if (page.path === '/') {
+      page.layout = 'home'
+      // Update the page.
+      boundActionCreators.createPage(page)
+    }
+
+    resolve()
+  })
+
 exports.createPages = ({ graphql, boundActionCreators }) => {
   const mdQuery = `
   {
