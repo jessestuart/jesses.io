@@ -6,6 +6,7 @@ import 'prismjs/themes/prism.css'
 
 class Template extends React.Component {
   render() {
+    console.log('render base index layout')
     const { children, location } = this.props
 
     const rootPath = '/'

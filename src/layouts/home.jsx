@@ -1,32 +1,39 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
-import SiteHeader from '../components/site-header'
 import _ from 'lodash'
+
+import Avatar from '../components/Avatar'
+import SiteHeader from '../components/site-header'
 
 import 'prismjs/themes/prism.css'
 
+import './home.scss'
+
 class HomeTemplate extends Component {
   render() {
-    const { children } = this.props
+    console.log('rendering home layout')
+    console.log({ props: this.props })
 
     const baseContainerStyle = {
       display: 'grid',
-      gridTemplateColumns: _.times(10, () => '9vw').join(' '),
-      gridGap: '1vw',
+      gridTemplateColumns: `repeat(10, '1fr')`,
+      gridGap: '15px',
     }
     const headerContainerStyle = {
       gridColumn: '1/11',
     }
     const bodyContainerStyle = {
-      gridColumn: '3/9',
+      gridColumn: '2/10',
     }
 
     return (
-      <div style={baseContainerStyle}>
+      <div className="homeContainer">
         <div style={headerContainerStyle}>
           <SiteHeader />
         </div>
-        <div style={bodyContainerStyle}>{children()}</div>
+        <div style={bodyContainerStyle}>
+          <Avatar />
+        </div>
       </div>
     )
   }

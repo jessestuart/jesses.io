@@ -13,6 +13,7 @@ module.exports = {
   },
   plugins: ['react'],
   globals: {
+    __PATH_PREFIX__: true,
     graphql: false,
   },
   parserOptions: {

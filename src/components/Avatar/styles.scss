@@ -1,4 +1,5 @@
-@import '../../layouts/base.scss';
+// @import '../../layouts/base.scss';
+@import '../../utils/colors.scss';
 
 .js-avatar-wrapper {
   align-items: center;
@@ -11,15 +12,15 @@
 
 img.js-avatar {
   border-radius: 50%;
-  box-shadow: 0 0 5px 5px #333;
+  box-shadow: 0 0 5px 5px $black;
   display: flex;
   justify-content: center;
   max-width: 100%;
   padding: 0;
 }
 
-@media (max-width: map-get($container-max-widths, 'xl') - 1) {
-  img.js-avatar {
-    max-width: 50%;
-  }
-}
+// @media (max-width: map-get($container-max-widths, 'xl') - 1) {
+//   img.js-avatar {
+//     max-width: 50%;
+//   }
+// }
