@@ -1,13 +1,12 @@
-// @import '../../layouts/base.scss';
 @import '../../utils/colors.scss';
 
 .js-avatar-wrapper {
   align-items: center;
   display: flex;
-  height: 100%;
+  // height: 100%;
   justify-content: center;
   margin: 0 auto;
-  padding-bottom: 20px;
+  // padding-bottom: 20px;
 }
 
 img.js-avatar {
@@ -15,7 +14,7 @@ img.js-avatar {
   box-shadow: 0 0 5px 5px $black;
   display: flex;
   justify-content: center;
-  max-width: 100%;
+  width: 75%;
   padding: 0;
 }
 

@@ -1,6 +1,7 @@
 import React from 'react'
-import SiteHeader from '../components/site-header'
 import _ from 'lodash'
+
+import { SiteHeader } from '../components'
 
 import 'prismjs/themes/prism.css'
 

@@ -36,10 +36,6 @@ const typography = new Typography(
         textAlign: 'justify',
         textIndent: '2em',
       },
-      body: {
-        // background: '#343a40',
-        // color: '#cccccc',
-      },
       code: {
         fontFamily: ['Fira Mono', 'monospace'].join(','),
         fontWeight: 500,

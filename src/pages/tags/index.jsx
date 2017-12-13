@@ -1,9 +1,9 @@
-import React from "react"
-import Helmet from "react-helmet"
-import kebabCase from "lodash/kebabCase"
-import Bio from '../../components/bio'
-import Tag from '../../components/tag'
+import React from 'react'
+import Helmet from 'react-helmet'
+import kebabCase from 'lodash/kebabCase'
 import { rhythm } from '../../utils/typography'
+
+import { Bio, Tag } from '../../components'
 
 class TagsPageRoute extends React.Component {
   render() {
@@ -16,11 +16,14 @@ class TagsPageRoute extends React.Component {
         <div>
           <h1>Tags</h1>
           <ul>
-            {allTags.map(tag =>
+            {allTags.map(tag => (
               <li key={tag.fieldValue}>
-                <Tag name={tag.fieldValue} display={`${tag.fieldValue} (${tag.totalCount})`} />
+                <Tag
+                  name={tag.fieldValue}
+                  display={`${tag.fieldValue} (${tag.totalCount})`}
+                />
               </li>
-            )}
+            ))}
           </ul>
         </div>
 

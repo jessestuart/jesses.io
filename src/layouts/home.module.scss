@@ -1,13 +1,23 @@
 .baseGrid {
   display: grid;
-  grid-template-columns: repeat(10, 1fr);
-  grid-gap: 15px;
+  grid-template-columns: repeat(12, 1fr);
+  grid-gap: 1rem;
 }
 
-.gridCol10 {
-  grid-column: 1 / 11;
+.gridCol12 {
+  grid-column: 1 / 13;
 }
 
 .bodyContainerStyle {
   grid-column: 2 / 10;
 }
+
+.avatarWrapper {
+  margin-top: 4rem;
+
+  grid-column: 4 / 10;
+}
+
+// .vh100 {
+//   height: 100vh;
+// }

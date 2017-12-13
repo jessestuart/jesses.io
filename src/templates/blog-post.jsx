@@ -5,8 +5,7 @@ import { Share } from 'react-twitter-widgets'
 
 import config from '../../gatsby-config'
 
-import Bio from '../components/bio'
-import Tag from '../components/tag'
+import { Bio, Tag } from '../components'
 import { rhythm, scale } from '../utils/typography'
 
 import './blog-post.scss'
@@ -47,13 +46,9 @@ class BlogPostTemplate extends Component {
             property="article:published_time"
             content={new Date(date).toISOString()}
           />
-          {tags.map(tag =>
-            <meta
-              content={tag}
-              key={tag}
-              property="article:tag"
-            />
-          )}
+          {tags.map(tag => (
+            <meta content={tag} key={tag} property="article:tag" />
+          ))}
         </Helmet>
 
         <h1>{title}</h1>

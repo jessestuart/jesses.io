@@ -1,7 +1,7 @@
 import React from 'react'
 import Link from 'gatsby-link'
 
-import './tag.scss'
+import './styles.scss'
 
 const Tag = props => {
   const { display, name } = props

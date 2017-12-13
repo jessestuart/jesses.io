@@ -1,17 +1,17 @@
 import React from 'react'
 import Link from 'gatsby-link'
-import config from '../../gatsby-config'
+import config from '../../../gatsby-config'
 import _ from 'lodash'
-import { scale } from '../utils/typography'
+import { scale } from '../../utils/typography'
 
-import colors from '../utils/colors'
+// import colors from '../utils/colors'
 
 const largeStyle = {
   ...scale(0.5),
   fontFamily: 'Lato',
   margin: 0,
   padding: '1rem',
-  borderBottom: `1px solid ${colors.pink}`,
+  // borderBottom: `1px solid ${colors.pink}`,
 }
 const smallStyle = { ...largeStyle }
 const titleStyle = {

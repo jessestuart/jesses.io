@@ -3,7 +3,8 @@ import Link from 'gatsby-link'
 import get from 'lodash/get'
 import Helmet from 'react-helmet'
 
-import Bio from '../components/bio'
+import { Bio } from '../components'
+
 import { rhythm } from '../utils/typography'
 
 import './index.scss'
