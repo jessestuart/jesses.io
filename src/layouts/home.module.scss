@@ -1,0 +1,13 @@
+.baseGrid {
+  display: grid;
+  grid-template-columns: repeat(10, 1fr);
+  grid-gap: 15px;
+}
+
+.gridCol10 {
+  grid-column: 1 / 11;
+}
+
+.bodyContainerStyle {
+  grid-column: 2 / 10;
+}

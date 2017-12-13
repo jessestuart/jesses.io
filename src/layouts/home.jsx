@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, { Component, Fragment } from 'react'
 import PropTypes from 'prop-types'
 import _ from 'lodash'
 
@@ -7,34 +7,27 @@ import SiteHeader from '../components/site-header'
 
 import 'prismjs/themes/prism.css'
 
-import './home.scss'
+import styles from './home.module.scss'
 
 class HomeTemplate extends Component {
   render() {
+    console.log({ styles })
     console.log('rendering home layout')
     console.log({ props: this.props })
 
-    const baseContainerStyle = {
-      display: 'grid',
-      gridTemplateColumns: `repeat(10, '1fr')`,
-      gridGap: '15px',
-    }
-    const headerContainerStyle = {
-      gridColumn: '1/11',
-    }
-    const bodyContainerStyle = {
-      gridColumn: '2/10',
-    }
-
     return (
-      <div className="homeContainer">
-        <div style={headerContainerStyle}>
-          <SiteHeader />
+      <Fragment>
+        <div className={styles.baseGrid}>
+          <div className={styles.gridCol10}>
+            <SiteHeader />
+          </div>
         </div>
-        <div style={bodyContainerStyle}>
-          <Avatar />
+        <div className={styles.baseGrid}>
+          <div style={{ gridColumn: '2 / 5' }}>
+            <Avatar />
+          </div>
         </div>
-      </div>
+      </Fragment>
     )
   }
 }
