@@ -21,8 +21,7 @@ class HTML extends Component {
       )
     }
 
-    const description =
-      'Cameron Pittman talks software and aerospace engineering, and lots more'
+    const description = 'Jesse has things to say.'
 
     return (
       <html {...this.props.htmlAttributes}>
@@ -37,11 +36,11 @@ class HTML extends Component {
           <meta name="description" content={description} />
 
           <meta name="twitter:card" content="summary" />
-          <meta name="twitter:site" content="@cwpittman" />
-          <meta name="twitter:creator" content="@cwpittman" />
+          <meta name="twitter:site" content="@jesse_stuart" />
+          <meta name="twitter:creator" content="@jesse_stuart" />
 
           <meta property="og:description" content={description} />
-          <meta property="og:site_name" content="Hurtling through Space" />
+          <meta property="og:site_name" content="Jesse Stuart" />
           <meta property="og:type" content="article" />
 
           <meta itemProp="description" content={description} />

@@ -30,8 +30,8 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
     }
   }`
   const { createPage } = boundActionCreators
-  const blogPost = path.resolve('./src/templates/blog-post.jsx')
-  const tagPage = path.resolve('./src/templates/tag-page.jsx')
+  const blogPost = path.resolve('./src/templates/blog-post.js')
+  const tagPage = path.resolve('./src/templates/tag-page.js')
   let tags = []
 
   const createPosts = edges => {

@@ -1,5 +1,5 @@
 {
-  "name": "js-gatsby-hurtling",
+  "name": "jessestuart",
   "description": "",
   "version": "1.0.0",
   "author": "Jesse Stuart",
@@ -51,32 +51,15 @@
     "tachyons": "^4.9.0",
     "typography-theme-wordpress-2016": "^0.15.10"
   },
-  "homepage": "https://github.com/cameronwp/personal-web#readme",
-  "keywords": [
-    "gatsby"
-  ],
+  "homepage": "https://jessestuart.com",
+  "keywords": ["blog", "gatsby", "photography", "react"],
   "license": "MIT",
   "lint-staged": {
-    "*.{js,jsx}": [
-      "prettier --write",
-      "git add"
-    ],
-    "*.json": [
-      "prettier --write",
-      "git add"
-    ],
-    "*.css": [
-      "prettier --write",
-      "git add"
-    ],
-    "*.scss": [
-      "prettier --write",
-      "git add"
-    ],
-    "*.md": [
-      "npm run lint:textfix",
-      "git add"
-    ]
+    "*.{js,jsx}": ["prettier --write", "git add"],
+    "*.json": ["prettier --write", "git add"],
+    "*.css": ["prettier --write", "git add"],
+    "*.scss": ["prettier --write", "git add"],
+    "*.md": ["npm run lint:textfix", "git add"]
   },
   "main": "n/a",
   "repository": {
@@ -88,9 +71,12 @@
     "deploy": "./node_modules/gatsby-cli/lib/index.js build && ./bin/deploy.js",
     "dev": "./node_modules/gatsby-cli/lib/index.js develop",
     "develop": "./node_modules/gatsby-cli/lib/index.js develop",
-    "fix-semi": "eslint --quiet --ignore-pattern node_modules --ignore-pattern public --parser babel-eslint --no-eslintrc --rule '{\"semi\": [2, \"never\"], \"no-extra-semi\": [2]}' --fix gatsby-node.js",
-    "format": "prettier --trailing-comma es5 --no-semi --single-quote --write 'src/**/*.js' 'src/**/*.md'",
-    "lint": "./node_modules/.bin/eslint --ext .js,.jsx --ignore-pattern public .",
+    "fix-semi":
+      "eslint --quiet --ignore-pattern node_modules --ignore-pattern public --parser babel-eslint --no-eslintrc --rule '{\"semi\": [2, \"never\"], \"no-extra-semi\": [2]}' --fix **/*.js",
+    "format":
+      "prettier --trailing-comma es5 --no-semi --single-quote --write 'src/**/*.js' 'src/**/*.md'",
+    "lint":
+      "./node_modules/.bin/eslint --ext .js,.jsx --ignore-pattern public .",
     "new": "./bin/newpost.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   }
