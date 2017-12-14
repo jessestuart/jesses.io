@@ -11,7 +11,6 @@ const largeStyle = {
   fontFamily: 'Lato',
   margin: 0,
   padding: '1rem',
-  // borderBottom: `1px solid ${colors.pink}`,
 }
 const smallStyle = { ...largeStyle }
 const titleStyle = {

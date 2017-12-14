@@ -1,10 +1,18 @@
 .avatarWrapper {
+  align-items: center;
+  display: flex;
   grid-column: 4 / 10;
-  margin-top: 4rem;
 }
 
 .introWrapper {
   grid-column: 1 / 13;
+}
+
+.introContainer {
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+  justify-content: center;
 }
 
 @media screen and (min-width: 60em) {

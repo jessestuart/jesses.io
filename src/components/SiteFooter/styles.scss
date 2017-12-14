@@ -1,14 +1,16 @@
-@import '../../layouts/base.scss';
+// @import '../../layouts/base.scss';
+@import '../../styles/js-tachyons.scss';
 
 .footer-section {
   border-top: 1px solid $gray-600;
   bottom: 0;
   display: flex;
   flex-direction: column;
-  font-size: $font-size-sm;
-  line-height: $line-height-wide;
+  font-size: 1.2rem;
   height: 4rem;
   justify-content: center;
+  line-height: 1.6rem;
   position: relative;
+  text-align: center;
   width: 100%;
 }

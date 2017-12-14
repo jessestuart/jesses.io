@@ -1,8 +1,12 @@
-// @import '../../layouts/base.scss';
-// @import '~tachyons-sass/tachyons.scss';
 @import '../../styles/js-tachyons.scss';
+// @import '~tachyons-sass/tachyons.scss';
 
-.headerSection {
+.gc311 {
+  grid-column: 3 / 11;
+}
+
+.profileFooterSection {
+  grid-column: 1 / 13;
   align-items: center;
   border-bottom: 5px solid $hot-pink;
   border-top: 2px solid $gray-600;

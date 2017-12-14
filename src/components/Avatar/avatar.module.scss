@@ -1,21 +1,21 @@
 @import '../../utils/colors.scss';
 
-.js-avatar-wrapper {
-  align-items: center;
-  display: flex;
-  // height: 100%;
-  justify-content: center;
-  margin: 0 auto;
-  // padding-bottom: 20px;
-}
+// .js-avatar-wrapper {
+//   align-items: center;
+//   display: flex;
+//   justify-content: center;
+//   margin: 0 auto;
+// }
+//   // padding-bottom: 20px;
+//   // height: 100%;
 
-img.js-avatar {
+.avatar {
   border-radius: 50%;
   box-shadow: 0 0 5px 5px $black;
   display: flex;
   justify-content: center;
-  // width: 75%;
   padding: 0;
+  // width: 75%;
 }
 
 // @media (max-width: map-get($container-max-widths, 'xl') - 1) {

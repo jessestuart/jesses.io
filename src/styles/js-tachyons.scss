@@ -11,3 +11,11 @@ $gray-600: #868E96 !default;
 $gray-700: #495057 !default;
 $gray-800: #343A40 !default;
 $gray-900: #212529 !default;
+
+h1, h2, h3, h4, h5 h6 {
+  margin: 0;
+}
+
+$font-family-monospace: 'BasisGrotesqueProMonoRegular', 'SFMono-Regular',
+  Menlo, Monaco, Consolas, 'Courier New', monospace
+  !default;

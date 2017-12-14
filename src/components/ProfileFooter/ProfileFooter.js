@@ -3,16 +3,24 @@ import classNames from 'classnames'
 
 import feather from 'feather-icons'
 
-import styles from './styles.scss'
+import styles from './styles.module.scss'
 
-const initialState = {
-  isAnimatingChevron: false,
-}
+// const initialState = {
+//   isAnimatingChevron: false,
+// }
 
 let intervals = []
 
-export default class ProfileDevIcons extends Component {
-  state = { ...initialState }
+export default class ProfileFooter extends Component {
+  // state = { ...initialState }
+
+  constructor() {
+    super()
+    this.initialState = {
+      isAnimatingChevron: false,
+    }
+    this.state = { ...this.intiialState }
+  }
 
   componentWillMount() {
     try {
@@ -52,9 +60,10 @@ export default class ProfileDevIcons extends Component {
 
   render() {
     const { isAnimatingChevron } = this.state
+    console.log({ styles })
     return (
       <section
-        className={classNames(styles.headerSection)}
+        className={classNames(styles.profileFooterSection)}
         // className="bg-primary text-white text-center header-section"
         // id="features"
       >
