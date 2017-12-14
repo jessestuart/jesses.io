@@ -1,16 +1,19 @@
-@import '../../layouts/base.scss';
+// @import '../../layouts/base.scss';
+// @import '~tachyons-sass/tachyons.scss';
+@import '../../styles/js-tachyons.scss';
 
-.header-section {
+.headerSection {
   align-items: center;
-  border-bottom: 5px solid $pink;
+  border-bottom: 5px solid $hot-pink;
   border-top: 2px solid $gray-600;
   display: flex;
+  font-family: 'monospace';
   flex-direction: column;
   padding: 20px 0 0;
   width: 100%;
 }
 
-.chevron-wrapper {
+.chevronWrapper {
   display: flex;
   align-items: center;
   justify-content: center;

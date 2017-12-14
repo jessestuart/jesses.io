@@ -11,8 +11,8 @@ export default function ProfileIntro() {
         <Avatar />
       </div>
       <div className={styles.introWrapper}>
-        <h2>Hi. I'm Jesse.</h2>
-        <h2>
+        <h2 className="fw5 tc">Hi. I'm Jesse.</h2>
+        <h2 className="fw5 tc">
           <span>I contradict myself.&nbsp;</span>
           <span className="span-dont-break">I contain multitudes.</span>
         </h2>

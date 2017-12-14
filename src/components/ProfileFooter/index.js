@@ -3,7 +3,7 @@ import classNames from 'classnames'
 
 import feather from 'feather-icons'
 
-import './styles.scss'
+import styles from './styles.scss'
 
 const initialState = {
   isAnimatingChevron: false,
@@ -54,17 +54,18 @@ export default class ProfileDevIcons extends Component {
     const { isAnimatingChevron } = this.state
     return (
       <section
-        className="bg-primary text-white text-center header-section"
-        id="features"
+        className={classNames(styles.headerSection)}
+        // className="bg-primary text-white text-center header-section"
+        // id="features"
       >
-        <h4 className="section-heading profile-footer-header">
+        <h4 className="fw2">
           I build software<br />
           on the pull requests<br />
           of giants.
         </h4>
         <div
           className={classNames(
-            'chevron-wrapper',
+            styles.chevronWrapper,
             isAnimatingChevron
               ? 'hvr-wobble-vertical hvr-wobble-vertical-animating'
               : null
