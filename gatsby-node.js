@@ -2,7 +2,7 @@ const _ = require('lodash')
 const path = require('path')
 const { createFilePath } = require('gatsby-source-filesystem')
 
-exports.onCreatePage = async ({ page, boundActionCreators }) =>
+exports.onCreatePage = ({ page, boundActionCreators }) =>
   new Promise((resolve, reject) => {
     if (page.path === '/') {
       page.layout = 'home'
