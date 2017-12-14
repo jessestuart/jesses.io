@@ -1,4 +1,4 @@
-@import '../../layouts/base.scss';
+@import '~tachyons-sass/tachyons.scss';
 
 .js-intro-container {
   display: flex;
@@ -8,7 +8,7 @@
   justify-content: center;
 
   .js-intro {
-    font-family: $font-family-serif;
+    font-family: var(--font-family-serif);
     font-weight: 500;
     margin-bottom: 1rem;
   }
@@ -46,13 +46,13 @@
 }
 
 .border-primary.js-intro-hr {
-  border-color: $gray-700 !important;
+  border-color: var(--black-40) !important;
   border-width: 1px;
   margin-top: 0;
   width: 100%;
 }
 
-@media (min-width: map-get($container-max-widths, 'xl') + 1) {
+@media (min-width: 961px) { // map-get($container-max-widths, 'xl') + 1) {
   .js-intro-section {
     text-align: right;
   }
@@ -62,7 +62,7 @@
   }
 }
 
-@media (max-width: map-get($container-max-widths, 'xl')) {
+@media (max-width: 960px) { // map-get($container-max-widths, 'xl')) {
   .js-intro-section {
     text-align: center;
   }

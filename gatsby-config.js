@@ -62,7 +62,7 @@ module.exports = {
     'gatsby-plugin-feed',
     'gatsby-plugin-offline',
     'gatsby-plugin-react-helmet',
-    'gatsby-plugin-react-next',
+    // 'js-gatsby-plugin-react-next',
     'gatsby-plugin-sass',
     {
       resolve: 'gatsby-plugin-typography',

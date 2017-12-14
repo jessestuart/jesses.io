@@ -1,4 +1,5 @@
 export Avatar from './Avatar'
 export Bio from './Bio'
+export ProfileIntro from './ProfileIntro'
 export SiteHeader from './SiteHeader'
 export Tag from './Tag'

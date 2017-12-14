@@ -1,23 +1,35 @@
+@import '~tachyons-sass/tachyons.scss';
+$hot-pink: #FF3484;
+
 .baseGrid {
   display: grid;
   grid-template-columns: repeat(12, 1fr);
   grid-gap: 1rem;
 }
 
+.gridRow10 {
+  grid-template-rows: repeat(10, 1fr);
+}
+
 .gridCol12 {
   grid-column: 1 / 13;
 }
 
-.bodyContainerStyle {
-  grid-column: 2 / 10;
-}
-
-.avatarWrapper {
-  margin-top: 4rem;
-
-  grid-column: 4 / 10;
-}
-
-// .vh100 {
-//   height: 100vh;
+// .bodyContainerStyle {
+//   grid-column: 2 / 10;
 // }
+
+// .avatarWrapper {
+//   grid-column: 4 / 10;
+//   margin-top: 4rem;
+// }
+
+// @media (--breakpoint-not-small) {
+//   .avatarWrapper {
+//     grid-column: 3 / 6;
+//   }
+// }
+
+.vh100 {
+  height: 100vh;
+}

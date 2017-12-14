@@ -1,0 +1,17 @@
+.avatarWrapper {
+  grid-column: 4 / 10;
+  margin-top: 4rem;
+}
+
+.introWrapper {
+  grid-column: 1 / 13;
+}
+
+@media screen and (min-width: 60em) {
+  .avatarWrapper {
+    grid-column: 3 / 6;
+  }
+  .introWrapper {
+    grid-column: 6 / 13;
+  }
+}

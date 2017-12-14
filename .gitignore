@@ -5,6 +5,7 @@
 .gatsby-context.js
 .intermediate-representation/
 .tern-port
+css/
 node_modules/
 public/
 tags
