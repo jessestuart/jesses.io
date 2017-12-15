@@ -60,7 +60,6 @@ export default class ProfileFooter extends Component {
 
   render() {
     const { isAnimatingChevron } = this.state
-    console.log({ styles })
     return (
       <section
         className={classNames(styles.profileFooterSection)}

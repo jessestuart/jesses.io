@@ -1,7 +1,6 @@
 import React, { Component, Fragment } from 'react'
 import PropTypes from 'prop-types'
 import classNames from 'classnames'
-import { scale } from '../utils/typography'
 
 import {
   ProfileFooter,
@@ -12,7 +11,7 @@ import {
 
 import 'prismjs/themes/prism.css'
 
-import '../styles/tachyons.css'
+import '../styles/js-tachyons.css'
 import styles from './home.module.scss'
 
 class HomeTemplate extends Component {
@@ -29,10 +28,6 @@ class HomeTemplate extends Component {
               <ProfileFooter />
             </div>
           </div>
-          {/* <div className={classNames(styles.baseGrid)}> */}
-          {/* <ProfileIntro />
-            <ProfileFooter /> */}
-          {/* </div> */}
         </div>
         <SiteFooter />
       </Fragment>

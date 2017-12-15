@@ -48,10 +48,15 @@
     "immutable-css-cli": "^1.1.1",
     "lodash": "^4.17.4",
     "normalize.css": "^7.0.0",
+    "postcss-cssnext": "^3.0.2",
     "postcss-custom-media": "^6.0.0",
+    "postcss-import": "^11.0.0",
+    "postcss-nested": "^3.0.0",
     "postcss-scss": "^1.0.2",
     "prettier": "^1.9.2",
     "react-twitter-widgets": "^1.7.1",
+    "stylelint": "^8.4.0",
+    "stylelint-config-standard": "^18.0.0",
     "tachyons-cli": "^1.2.0",
     "tachyons-colors": "^5.3.3",
     "tachyons-modules": "^1.1.10",
@@ -76,11 +81,7 @@
       "prettier --write",
       "git add"
     ],
-    "*.css": [
-      "prettier --write",
-      "git add"
-    ],
-    "*.scss": [
+    "*.{css,scss}": [
       "prettier --write",
       "git add"
     ],
@@ -100,7 +101,8 @@
     "dev": "./node_modules/gatsby-cli/lib/index.js develop",
     "fix-semi": "eslint --quiet --ignore-pattern node_modules --ignore-pattern public --parser babel-eslint --no-eslintrc --rule '{\"semi\": [2, \"never\"], \"no-extra-semi\": [2]}' --fix **/*.js",
     "format": "prettier --trailing-comma es5 --no-semi --single-quote --write 'src/**/*.js' 'src/**/*.md'",
-    "lint": "./node_modules/.bin/eslint --ext .js,.jsx --ignore-pattern public .",
+    "lint": "yarn run lint:js",
+    "lint:js": "./node_modules/.bin/eslint --ext .js,.jsx --ignore-pattern public .",
     "new": "./bin/newpost.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   }

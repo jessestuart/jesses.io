@@ -2,6 +2,12 @@ const _ = require('lodash')
 const path = require('path')
 const { createFilePath } = require('gatsby-source-filesystem')
 
+// const rucksack = require('rucksack-css')
+// const lost = require('lost')
+const cssnext = require('postcss-cssnext')
+const cssnested = require('postcss-nested')
+const atImport = require('postcss-import')
+
 exports.onCreatePage = ({ page, boundActionCreators }) =>
   new Promise((resolve, reject) => {
     if (page.path === '/') {
@@ -88,6 +94,25 @@ exports.onCreateNode = ({ node, boundActionCreators, getNode }) => {
 }
 
 exports.modifyWebpackConfig = function({ config }, stage) {
+  console.log(_.times(10, '='))
+  config.merge({
+    postcss: [
+      atImport(),
+      cssnested,
+      // lost(),
+      // rucksack(),
+      cssnext({
+        browsers: ['>1%', 'last 2 versions'],
+      }),
+    ],
+  })
+  config.merge({
+    resolve: {
+      root: [path.resolve('./src'), path.resolve('./')],
+    },
+  })
   config._config.devtool = 'eval'
+  console.log({ config })
+  // console.log({ roles: config. })
   return config
 }

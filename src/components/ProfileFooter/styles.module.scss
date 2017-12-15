@@ -1,4 +1,4 @@
-@import '../../styles/js-tachyons.scss';
+@import '../../styles/js-tachyons.css';
 // @import '~tachyons-sass/tachyons.scss';
 
 .gc311 {
@@ -8,8 +8,8 @@
 .profileFooterSection {
   grid-column: 1 / 13;
   align-items: center;
-  border-bottom: 5px solid $hot-pink;
-  border-top: 2px solid $gray-600;
+  border-bottom: 5px solid var(--hot-pink);
+  border-top: 2px solid var(--gray-600);
   display: flex;
   font-family: 'monospace';
   flex-direction: column;

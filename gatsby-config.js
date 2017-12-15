@@ -43,6 +43,7 @@ module.exports = {
         // add `postcss-scss` to your project's devDependencies
         // and add the following option here:
         filetypes: {
+          ".css": { syntax: `postcss` },
           ".scss": { syntax: `postcss-scss` },
         },
 

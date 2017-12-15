@@ -1,8 +1,9 @@
 import React from 'react'
-import Link from 'gatsby-link'
-import config from '../../../gatsby-config'
 import _ from 'lodash'
-import { scale } from '../../utils/typography'
+import Link from 'gatsby-link'
+
+import config from 'gatsby-config'
+import { scale } from 'utils/typography'
 
 // import colors from '../utils/colors'
 

@@ -10,8 +10,6 @@
 
 */
 
-
-
 /* Measure is limited to ~66 characters */
 .measure {
   max-width: var(--measure);
@@ -47,7 +45,7 @@
 }
 
 @media (--breakpoint-not-small) {
-  .measure-ns  {
+  .measure-ns {
     max-width: var(--measure);
   }
   .measure-wide-ns {

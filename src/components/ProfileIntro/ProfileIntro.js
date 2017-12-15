@@ -1,6 +1,6 @@
 import React, { Fragment } from 'react'
 
-import { Avatar } from '../'
+import { Avatar } from 'components'
 
 import styles from './styles.module.scss'
 
