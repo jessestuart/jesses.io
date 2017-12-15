@@ -10,15 +10,15 @@ import { Bio } from '../components'
 
 import { rhythm } from '../utils/typography'
 
-function renderTag(tag, index) {
-  return (
-    <div className="tag">
-      <a key={index} href="" className="tag-content">
-        {tag}
-      </a>
-    </div>
-  )
-}
+// function renderTag(tag, index) {
+//   return (
+//     <div className="tag">
+//       <a key={index} href="" className="tag-content">
+//         {tag}
+//       </a>
+//     </div>
+//   )
+// }
 
 class TagPageTemplate extends React.Component {
   render() {

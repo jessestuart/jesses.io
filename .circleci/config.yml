@@ -29,6 +29,13 @@ jobs:
           name: Compile static site.
           command: yarn build
 
+      - run:
+          name: Compress and package static resources into a tarball.
+          command: tar czf jessestuart.tar.gz public/
+
+      - store_artifacts:
+          path: jessestuart.tar.gz
+
       - deploy:
           name: Publish new version (master branch only)
           command: |

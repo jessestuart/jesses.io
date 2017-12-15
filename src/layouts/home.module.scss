@@ -23,6 +23,7 @@
 .profileMain {
   @extend .baseGrid;
   @extend .gridCol12;
+  margin-top: 20px;
   // height: 100vh- $navbar-height;
 }
 

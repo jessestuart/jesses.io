@@ -94,7 +94,6 @@ exports.onCreateNode = ({ node, boundActionCreators, getNode }) => {
 }
 
 exports.modifyWebpackConfig = function({ config }, stage) {
-  console.log(_.times(10, '='))
   config.merge({
     postcss: [
       atImport(),
@@ -107,11 +106,12 @@ exports.modifyWebpackConfig = function({ config }, stage) {
     ],
   })
   config.merge({
+    devtool: 'eval',
     resolve: {
       root: [path.resolve('./src'), path.resolve('./')],
     },
   })
-  config._config.devtool = 'eval'
+  // config._config.devtool = 'eval'
   console.log({ config })
   // console.log({ roles: config. })
   return config

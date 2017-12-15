@@ -2,20 +2,36 @@
 @import './tachyons.css';
 
 :root {
-  --hot-pink: #fc5270;
-
-  --gray-100: #f8f9fa;
-  --gray-200: #e9ecef;
-  --gray-300: #dee2e6;
-  --gray-400: #ced4da;
-  --gray-500: #adb5bd;
-  --gray-600: #868e96;
+  --hot-pink: #FC5270;
+  --gray-100: #F8F9FA;
+  --gray-200: #E9ECEF;
+  --gray-300: #DEE2E6;
+  --gray-400: #CED4DA;
+  --gray-500: #ADB5BD;
+  --gray-600: #868E96;
   --gray-700: #495057;
-  --gray-800: #343a40;
+  --gray-800: #343A40;
   --gray-900: #212529;
+  --monospace: 'BasisGrotesqueProMonoRegular', 'SFMono-Regular', Menlo, Monaco,
+    Consolas, 'Courier New', monospace;
+  --sans-serif: 'Lato', sans-serif;
+  --serif: 'Spectral', serif;
+}
 
-  --font-family-monospace: 'BasisGrotesqueProMonoRegular', 'SFMono-Regular',
-    Menlo, Monaco, Consolas, 'Courier New', monospace;
+.grid-col-3-6 {
+  grid-column: 3 / 6;
+}
+
+/* .grid-col-6-9 {
+  grid-column: 6 / 9;
+} */
+
+.grid-col-6-11 {
+  grid-column: 6 / 11;
+}
+
+.shadow-none {
+  box-shadow: none;
 }
 
 h1,

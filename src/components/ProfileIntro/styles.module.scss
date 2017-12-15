@@ -2,6 +2,8 @@
   align-items: center;
   display: flex;
   grid-column: 4 / 10;
+  justify-content: center;
+  max-width: 75%;
 }
 
 .introWrapper {
@@ -20,6 +22,6 @@
     grid-column: 3 / 6;
   }
   .introWrapper {
-    grid-column: 6 / 13;
+    grid-column: 6 / 10;
   }
 }

@@ -3,37 +3,16 @@ import _ from 'lodash'
 import Link from 'gatsby-link'
 
 import config from 'gatsby-config'
-import { scale } from 'utils/typography'
-
-// import colors from '../utils/colors'
-
-const largeStyle = {
-  ...scale(0.5),
-  fontFamily: 'Lato',
-  margin: 0,
-  padding: '1rem',
-}
-const smallStyle = { ...largeStyle }
-const titleStyle = {
-  boxShadow: 'none',
-  color: 'inherit',
-  textDecoration: 'none',
-}
-
-const innerTitle = () => (
-  <Link style={titleStyle} to={'/'}>
-    {_.get(config, 'siteMetadata.title')}
-  </Link>
-)
 
 /**
  * Render a SiteHeader. Size options are 'large' and 'small'. Default to 'small'.
  */
-const SiteHeader = props =>
-  _.eq(props.size, 'large') ? (
-    <h1 style={largeStyle}>{innerTitle()}</h1>
-  ) : (
-    <h3 style={smallStyle}>{innerTitle()}</h3>
-  )
+const SiteHeader = () => (
+  <h3 className="sans-serif fw2 f3 pa3">
+    <Link className="color-inherit no-underline shadow-none" to={'/'}>
+      {_.get(config, 'siteMetadata.title')}
+    </Link>
+  </h3>
+)
 
 export default SiteHeader
