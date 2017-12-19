@@ -43,8 +43,8 @@ module.exports = {
         // add `postcss-scss` to your project's devDependencies
         // and add the following option here:
         filetypes: {
-          ".css": { syntax: `postcss` },
-          ".scss": { syntax: `postcss-scss` },
+          '.css': { syntax: `postcss` },
+          '.scss': { syntax: `postcss-scss` },
         },
 
         // Exclude global styles from the plugin using a RegExp:
@@ -61,6 +61,7 @@ module.exports = {
     //   },
     // },
     'gatsby-plugin-feed',
+    'gatsby-plugin-netlify',
     'gatsby-plugin-offline',
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-react-next',
