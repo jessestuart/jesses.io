@@ -17,13 +17,11 @@ class HomeTemplate extends Component {
           <div className={classNames(styles.navbar, 'bb b--hot-pink')}>
             <SiteHeader />
           </div>
-          {/* <div className={styles.baseGrid}> */}
-          {/* <div className={classNames(styles.profileMain)}> */}
           <ProfileIntro />
-          {/* <ProfileFooter /> */}
-          {/* </div> */}
         </div>
-        <SiteFooter />
+        <div className="">
+          <SiteFooter />
+        </div>
       </Fragment>
     )
   }

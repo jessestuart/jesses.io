@@ -19,7 +19,8 @@
   --gray-900: #212529;
   --code: 'Roboto Mono', 'andale mono', 'SFMono-Regular', Menlo, Monaco,
     Consolas, 'Liberation Mono', monospace;
-  --sans-serif: 'Rubik', sans-serif;
+
+  /* --sans-serif: 'Rubik', sans-serif; */
   --serif: 'Spectral', serif;
   --font-size-1: 3rem;
   --font-size-2: 2.25rem;
@@ -28,6 +29,10 @@
   --font-size-5: 1rem;
   --font-size-6: 0.875rem;
   --font-size-7: 0.75rem;
+}
+
+.lato {
+  font-family: 'Lato', sans-serif;
 }
 
 .grid {

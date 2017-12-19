@@ -16,10 +16,6 @@ const typography = new Typography(
           styles: _.concat(fontWeights, 400),
         },
         {
-          name: 'Rubik',
-          styles: fontWeights,
-        },
-        {
           name: 'Lato',
           styles: fontWeights,
         },

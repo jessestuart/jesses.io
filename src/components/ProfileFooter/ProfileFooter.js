@@ -70,7 +70,7 @@ export default class ProfileFooter extends Component {
         // className="bg-primary text-white text-center header-section"
         // id="features"
       >
-        <h4 className="fw4 tc lh-copy code">
+        <h4 className="f4 fw4 tc lh-title code">
           I build software<br />
           on the pull requests<br />
           of giants.
