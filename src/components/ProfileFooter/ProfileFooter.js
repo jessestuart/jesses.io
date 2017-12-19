@@ -40,7 +40,7 @@ export default class ProfileFooter extends Component {
     })
     intervals.forEach(clearInterval)
     intervals = []
-    intervals.push(setInterval(this.animateChevron.bind(this), 4000))
+    // intervals.push(setInterval(this.animateChevron.bind(this), 4000))
   }
 
   componentWillUnmount() {
@@ -62,11 +62,15 @@ export default class ProfileFooter extends Component {
     const { isAnimatingChevron } = this.state
     return (
       <section
-        className={classNames(styles.profileFooterSection)}
+        // className={classNames(styles.profileFooterSection)}
+        className="bb b--hot-pink bg-purple pt3"
+        style={{
+          gridColumn: '1 / 13',
+        }}
         // className="bg-primary text-white text-center header-section"
         // id="features"
       >
-        <h4 className="fw2">
+        <h4 className="fw4 tc lh-copy code">
           I build software<br />
           on the pull requests<br />
           of giants.

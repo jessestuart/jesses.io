@@ -395,9 +395,9 @@ autoprefixer@^7.1.1, autoprefixer@^7.1.2:
     postcss "^6.0.14"
     postcss-value-parser "^3.2.3"
 
-aws-sdk@^2.170.0:
-  version "2.170.0"
-  resolved "https://registry.yarnpkg.com/aws-sdk/-/aws-sdk-2.170.0.tgz#4f9cfd26a268ef6a2969d3475ed8134bb3899525"
+aws-sdk@^2.171.0:
+  version "2.171.0"
+  resolved "https://registry.yarnpkg.com/aws-sdk/-/aws-sdk-2.171.0.tgz#69c2565e98e353d437402477cc3064a13caedc9c"
   dependencies:
     buffer "4.9.1"
     crypto-browserify "1.0.9"
@@ -1377,6 +1377,18 @@ better-assert@~1.0.0:
   resolved "https://registry.yarnpkg.com/better-assert/-/better-assert-1.0.2.tgz#40866b9e1b9e0b55b481894311e68faffaebc522"
   dependencies:
     callsite "1.0.0"
+
+better-queue-memory@^1.0.1:
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/better-queue-memory/-/better-queue-memory-1.0.2.tgz#aa6d169aa1d0cc77409185cb9cb5c7dc251bcd41"
+
+better-queue@^3.8.6:
+  version "3.8.6"
+  resolved "https://registry.yarnpkg.com/better-queue/-/better-queue-3.8.6.tgz#73220bdfab403924cffa7497220dd387abb73a63"
+  dependencies:
+    better-queue-memory "^1.0.1"
+    node-eta "^0.9.0"
+    uuid "^3.0.0"
 
 big.js@^3.1.3:
   version "3.2.0"
@@ -3495,9 +3507,9 @@ eslint-plugin-node@^5.2.1:
     resolve "^1.3.3"
     semver "5.3.0"
 
-eslint-plugin-prettier@^2.3.1:
-  version "2.3.1"
-  resolved "https://registry.yarnpkg.com/eslint-plugin-prettier/-/eslint-plugin-prettier-2.3.1.tgz#e7a746c67e716f335274b88295a9ead9f544e44d"
+eslint-plugin-prettier@^2.4.0:
+  version "2.4.0"
+  resolved "https://registry.yarnpkg.com/eslint-plugin-prettier/-/eslint-plugin-prettier-2.4.0.tgz#85cab0775c6d5e3344ef01e78d960f166fb93aae"
   dependencies:
     fast-diff "^1.1.1"
     jest-docblock "^21.0.0"
@@ -4525,9 +4537,9 @@ gatsby-transformer-sharp@^1.6.16:
     fs-extra "^4.0.2"
     image-size "^0.6.0"
 
-gatsby@^1.9.136:
-  version "1.9.136"
-  resolved "https://registry.yarnpkg.com/gatsby/-/gatsby-1.9.136.tgz#ff36e2a9903d63fc4f98fc026d0073754b9578df"
+gatsby@^1.9.142:
+  version "1.9.142"
+  resolved "https://registry.yarnpkg.com/gatsby/-/gatsby-1.9.142.tgz#020393389a759675012b120253e16663abe8dc14"
   dependencies:
     async "^2.1.2"
     babel-code-frame "^6.22.0"
@@ -4543,6 +4555,7 @@ gatsby@^1.9.136:
     babel-runtime "^6.26.0"
     babel-traverse "^6.24.1"
     babylon "^6.17.3"
+    better-queue "^3.8.6"
     bluebird "^3.5.0"
     chalk "^1.1.3"
     chokidar "^1.7.0"
@@ -4585,6 +4598,7 @@ gatsby@^1.9.136:
     lodash "^4.17.4"
     lodash-id "^0.14.0"
     lowdb "^0.16.2"
+    md5 "^2.2.1"
     md5-file "^3.1.1"
     mime "^1.3.6"
     mitt "^1.1.2"
@@ -6773,6 +6787,10 @@ lodash.templatesettings@^4.0.0:
   dependencies:
     lodash._reinterpolate "~3.0.0"
 
+lodash.throttle@^4.1.1:
+  version "4.1.1"
+  resolved "https://registry.yarnpkg.com/lodash.throttle/-/lodash.throttle-4.1.1.tgz#c23e91b710242ac70c37f1e1cda9274cc39bf2f4"
+
 lodash.toarray@^4.4.0:
   version "4.4.0"
   resolved "https://registry.yarnpkg.com/lodash.toarray/-/lodash.toarray-4.4.0.tgz#24c4bfcd6b2fba38bfd0594db1179d8e9b656561"
@@ -6933,7 +6951,7 @@ md5.js@^1.3.4:
     hash-base "^3.0.0"
     inherits "^2.0.1"
 
-md5@^2.0.0:
+md5@^2.0.0, md5@^2.2.1:
   version "2.2.1"
   resolved "https://registry.yarnpkg.com/md5/-/md5-2.2.1.tgz#53ab38d5fe3c8891ba465329ea23fac0540126f9"
   dependencies:
@@ -7323,6 +7341,10 @@ node-emoji@^1.0.4:
   resolved "https://registry.yarnpkg.com/node-emoji/-/node-emoji-1.8.1.tgz#6eec6bfb07421e2148c75c6bba72421f8530a826"
   dependencies:
     lodash.toarray "^4.4.0"
+
+node-eta@^0.9.0:
+  version "0.9.0"
+  resolved "https://registry.yarnpkg.com/node-eta/-/node-eta-0.9.0.tgz#9fb0b099bcd2a021940e603c64254dc003d9a7a8"
 
 node-fetch@^1.0.1:
   version "1.7.3"
@@ -9424,6 +9446,12 @@ react-sizeme@^2.3.6:
     element-resize-detector "^1.1.12"
     invariant "^2.2.2"
     lodash "^4.17.4"
+
+react-sizes@^0.4.3:
+  version "0.4.3"
+  resolved "https://registry.yarnpkg.com/react-sizes/-/react-sizes-0.4.3.tgz#a48f2788a9499ecd51868d989b2e5752796a40a1"
+  dependencies:
+    lodash.throttle "^4.1.1"
 
 react-twitter-widgets@^1.7.1:
   version "1.7.1"
@@ -11606,6 +11634,30 @@ typedarray@^0.0.6:
   version "0.0.6"
   resolved "https://registry.yarnpkg.com/typedarray/-/typedarray-0.0.6.tgz#867ac74e3864187b1d3d47d996a78ec5c8830777"
 
+typeface-lato@^0.0.44:
+  version "0.0.44"
+  resolved "https://registry.yarnpkg.com/typeface-lato/-/typeface-lato-0.0.44.tgz#8fa3fd89aa3a89a34da806ed2a3493a28d99afa8"
+
+typeface-montserrat@^0.0.45:
+  version "0.0.45"
+  resolved "https://registry.yarnpkg.com/typeface-montserrat/-/typeface-montserrat-0.0.45.tgz#17bd9a48d1b4a3ed7f3110db8e18ea828e88594b"
+
+typeface-poiret-one@^0.0.44:
+  version "0.0.44"
+  resolved "https://registry.yarnpkg.com/typeface-poiret-one/-/typeface-poiret-one-0.0.44.tgz#83cbc1ea8513cd7cf5b0501e8fb3a12e45056587"
+
+typeface-roboto-mono@^0.0.44:
+  version "0.0.44"
+  resolved "https://registry.yarnpkg.com/typeface-roboto-mono/-/typeface-roboto-mono-0.0.44.tgz#dbce32d7c59c73de61e0259531e527257413d0a3"
+
+typeface-rubik@^0.0.44:
+  version "0.0.44"
+  resolved "https://registry.yarnpkg.com/typeface-rubik/-/typeface-rubik-0.0.44.tgz#78c5f6bede690ad265bc138922d023e15326ee49"
+
+typeface-spectral@^0.0.44:
+  version "0.0.44"
+  resolved "https://registry.yarnpkg.com/typeface-spectral/-/typeface-spectral-0.0.44.tgz#00f1dac4b1d38eda79b7aceb48df2f36b39ae484"
+
 typography-breakpoint-constants@^0.15.10:
   version "0.15.10"
   resolved "https://registry.yarnpkg.com/typography-breakpoint-constants/-/typography-breakpoint-constants-0.15.10.tgz#bd5308dd57250e7f28a8c6e1c0e668ddf1178c5c"
@@ -11621,7 +11673,7 @@ typography-theme-wordpress-2016@^0.15.10:
     gray-percentage "^2.0.0"
     typography-breakpoint-constants "^0.15.10"
 
-typography@^0.16.0:
+typography@^0.16.0, typography@^0.16.6:
   version "0.16.6"
   resolved "https://registry.yarnpkg.com/typography/-/typography-0.16.6.tgz#8eeb6a3f10a97fd08025132bb50272104ae72aa3"
   dependencies:

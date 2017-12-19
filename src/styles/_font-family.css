@@ -26,7 +26,7 @@
 /* From http://cssfontstack.com */
 code,
 .code {
-  font-family: Consolas, monaco, monospace;
+  font-family: var(--code);
 }
 
 .courier {

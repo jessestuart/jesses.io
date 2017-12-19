@@ -1,5 +1,10 @@
 /* @import '~tachyons-sass/tachyons.scss'; */
+
 @import './tachyons.css';
+
+@custom-media --breakpoint-not-small screen and (min-width: 30em);
+@custom-media --breakpoint-medium screen and (min-width: 30em) and (max-width: 60em);
+@custom-media --breakpoint-large screen and (min-width: 60em);
 
 :root {
   --hot-pink: #FC5270;
@@ -12,19 +17,27 @@
   --gray-700: #495057;
   --gray-800: #343A40;
   --gray-900: #212529;
-  --monospace: 'BasisGrotesqueProMonoRegular', 'SFMono-Regular', Menlo, Monaco,
-    Consolas, 'Courier New', monospace;
+  --code: 'Roboto Mono', 'andale mono', 'SFMono-Regular', Menlo, Monaco,
+    Consolas, 'Liberation Mono', monospace;
   --sans-serif: 'Lato', sans-serif;
   --serif: 'Spectral', serif;
+}
+
+.grid {
+  display: grid;
+}
+
+.grid-full {
+  grid-column: 1 / 13;
 }
 
 .grid-col-3-6 {
   grid-column: 3 / 6;
 }
 
-/* .grid-col-6-9 {
+.grid-col-6-9 {
   grid-column: 6 / 9;
-} */
+}
 
 .grid-col-6-11 {
   grid-column: 6 / 11;

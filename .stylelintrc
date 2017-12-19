@@ -3,7 +3,7 @@
   "rules":  {
     "at-rule-empty-line-before": null,
     "at-rule-no-unknown": [true, {
-      "ignoreAtRules": ["value", "extend"]
+      "ignoreAtRules": ["value", "extend", "custom-media"]
     }],
     "color-hex-case": "upper",
     "declaration-empty-line-before": null,
