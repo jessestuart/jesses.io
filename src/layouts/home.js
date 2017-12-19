@@ -2,7 +2,7 @@ import React, { Component, Fragment } from 'react'
 import PropTypes from 'prop-types'
 import classNames from 'classnames'
 
-import { ProfileFooter, ProfileIntro, SiteFooter, SiteHeader } from 'components'
+import { ProfileIntro, SiteFooter, SiteHeader } from 'components'
 
 import 'prismjs/themes/prism.css'
 

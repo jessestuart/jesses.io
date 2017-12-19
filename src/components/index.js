@@ -1,5 +1,6 @@
 export Avatar from './Avatar/Avatar'
 export Bio from './Bio'
+export ProfileBlurb from './ProfileBlurb/ProfileBlurb'
 export ProfileFooter from './ProfileFooter/ProfileFooter'
 export ProfileIntro from './ProfileIntro/ProfileIntro'
 export SiteFooter from './SiteFooter/SiteFooter'
