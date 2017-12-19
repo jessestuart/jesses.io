@@ -1,19 +1,5 @@
 @import '../../styles/js-tachyons.css';
 
-// .avatarWrapper {
-//   align-items: center;
-//   display: flex;
-//   grid-column: 4 / 10;
-//   justify-content: center;
-//   max-width: 75%;
-// }
-
-// .avatarContainer,
-// .blurbContainer,
-// .introWrapper {
-//   display: grid;
-// }
-
 .introWrapper {
   display: grid;
   grid-template-columns: repeat(12, 1fr);
@@ -42,19 +28,3 @@
   grid-column: 1 / 13;
   grid-row: 5 / 7;
 }
-
-// .introContainer {
-//   display: flex;
-//   height: 100%;
-//   flex-direction: column;
-//   justify-content: center;
-// }
-
-// @media screen and (min-width: 60em) {
-//   .avatarWrapper {
-//     grid-column: 3 / 6;
-//   }
-//   .introWrapper {
-//     grid-column: 6 / 10;
-//   }
-// }
