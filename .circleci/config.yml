@@ -61,9 +61,11 @@ jobs:
             if [ "${CIRCLE_BRANCH}" = "master" ]; then
               echo $AWS_REGION
               eval $(aws ecr get-login --no-include-email --region us-east-1)
-              ECR_URL=$AWS_ACCOUNT_ID.dkr.ecr.$AWS_REGION.amazonaws.com/$DOCKER_IMAGE:$CIRCLE_BUILD_NUM
-              docker tag app $ECR_URL
-              docker push $ECR_URL
+              ECR_URL="672278003389.dkr.ecr.us-east-1.amazonaws.com"
+              IMAGE_TAG="jessestuart/jsgatsby:$CIRCLE_BUILD_NUM"
+              FULL_TAG="$ECR_URL/$IMAGE_TAG"
+              docker tag app $FULL_TAG
+              docker push $FULL_TAG
             fi
 
 workflows:
