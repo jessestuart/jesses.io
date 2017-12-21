@@ -4,21 +4,19 @@ jobs:
   build:
     docker:
       - image: circleci/node:8
-    working_directory: ~/repo
 
     steps:
       - checkout
 
       - restore_cache:
           keys:
-          - dependencies-{{ checksum "package.json" }}
-          # Fallback to using the latest cache if no exact match is found.
-          - dependencies
+            - dependencies-{{ checksum "package.json" }}
+            # Fallback to using the latest cache if no exact match is found.
+            - dependencies
 
       - run:
           name: Install dependencies.
-          command: |
-            yarn install
+          command: yarn install
 
       - save_cache:
           paths:
@@ -31,14 +29,46 @@ jobs:
 
       - run:
           name: Compress and package static resources into a tarball.
-          command: tar czf jessestuart.tar.gz public/
+          command: tar czf jessestuart_$CIRCLE_SHA1.tar.gz public/
 
       - store_artifacts:
-          path: jessestuart.tar.gz
+          path: jessestuart_$CIRCLE_SHA1.tar.gz
 
-      - deploy:
-          name: Publish new version (master branch only)
+  # ---------------------------------------------------------------------------
+
+  push_image:
+    name: Build and push Docker image to AWS ECR.
+    environment:
+      - AWS_ECR_URL: 672278003389.dkr.ecr.us-east-1.amazonaws.com/jessestuart/jsgatsby
+    docker:
+      - image: docker:17-git
+    steps:
+      - checkout
+      - setup_remote_docker
+      - run:
+          name: Install dependencies
           command: |
-            if [ "${CIRCLE_BRANCH}" == "master" ]; then
-              ./bin/deploy.js
+            apk add --no-cache py-pip
+            pip install awscli
+      - run:
+          name: Build Docker image for static site.
+          # Give the build a temporary tag that we'll override in the
+          # deploy step.
+          command: docker build -t app .
+      - run:
+          name: Push image to ECR.
+          command: |
+            if [ "${CIRCLE_BRANCH}" = "master" ]; then
+              echo $AWS_REGION
+              eval $(aws ecr get-login --no-include-email --region us-east-1)
+              ECR_URL=$AWS_ACCOUNT_ID.dkr.ecr.$AWS_REGION.amazonaws.com/$DOCKER_IMAGE:$CIRCLE_BUILD_NUM
+              docker tag app $ECR_URL
+              docker push $ECR_URL
             fi
+
+workflows:
+  version: 2
+  main:
+    jobs:
+      - build
+      - push_image
