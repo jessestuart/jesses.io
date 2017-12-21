@@ -39,33 +39,39 @@ jobs:
   push_image:
     name: Build and push Docker image to AWS ECR.
     environment:
-      - AWS_ECR_URL: 672278003389.dkr.ecr.us-east-1.amazonaws.com/jessestuart/jsgatsby
+      # yamllint disable-line
+      - IMAGE_ID: "672278003389.dkr.ecr.us-east-1.amazonaws.com/jessestuart/jsgatsby"
     docker:
       - image: docker:17-git
     steps:
       - checkout
+
       - setup_remote_docker
+
       - run:
           name: Install dependencies
           command: |
             apk add --no-cache py-pip
             pip install awscli
+
+      - run:
+          name: Authenticate with AWS ECR.
+          command: |
+            eval $(aws ecr get-login --no-include-email --region us-east-1)
+
       - run:
           name: Build Docker image for static site.
-          # Give the build a temporary tag that we'll override in the
-          # deploy step.
-          command: docker build -t app .
+          command: |
+            docker build -t "${IMAGE_ID}" .
+
       - run:
           name: Push image to ECR.
           command: |
-            if [ "${CIRCLE_BRANCH}" = "master" ]; then
-              echo $AWS_REGION
-              eval $(aws ecr get-login --no-include-email --region us-east-1)
-              ECR_URL="672278003389.dkr.ecr.us-east-1.amazonaws.com"
-              IMAGE_TAG="jessestuart/jsgatsby:$CIRCLE_BUILD_NUM"
-              FULL_TAG="$ECR_URL/$IMAGE_TAG"
-              docker tag app $FULL_TAG
-              docker push $FULL_TAG
+            docker tag    "${IMAGE_ID}" "${IMAGE_ID}:circle-${CIRCLE_BUILD_NUM}"
+            docker push                 "${IMAGE_ID}:circle-${CIRCLE_BUILD_NUM}"
+            if [ "${CIRCLE_BRANCH}" = 'master' ]; then
+              docker tag  "${IMAGE_ID}" "${IMAGE_ID}:latest"
+              docker push               "${IMAGE_ID}:latest"
             fi
 
 workflows:
