@@ -1,5 +1,4 @@
-import React, { Component, Fragment } from 'react'
-import PropTypes from 'prop-types'
+import React, { Fragment } from 'react'
 
 import { ProfileIntro, SiteFooter, SiteHeader } from 'components'
 
@@ -14,21 +13,5 @@ const HomeTemplate = () => (
     <SiteFooter />
   </Fragment>
 )
-
-// class HomeTemplate extends Component {
-//   render() {
-//     return (
-//       <Fragment>
-//         <SiteHeader />
-//         <ProfileIntro />
-//         <SiteFooter />
-//       </Fragment>
-//     )
-//   }
-// }
-
-// HomeTemplate.propTypes = {
-//   children: PropTypes.any,
-// }
 
 export default HomeTemplate
