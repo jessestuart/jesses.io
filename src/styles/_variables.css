@@ -76,6 +76,7 @@
   --box-shadow-3: 2px 2px 4px 2px rgba(0, 0, 0, 0.2);
   --box-shadow-4: 2px 2px 8px 0 rgba(0, 0, 0, 0.2);
   --box-shadow-5: 4px 4px 8px 0 rgba(0, 0, 0, 0.2);
+  --box-shadow-6: 0 0 12px 12px rgba(40, 40, 40, 0.6);
   --black: #000;
   --near-black: #111;
   --dark-gray: #333;

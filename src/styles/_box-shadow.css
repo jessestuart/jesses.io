@@ -26,6 +26,10 @@
   box-shadow: var(--box-shadow-5);
 }
 
+.shadow-6 {
+  box-shadow: var(--box-shadow-6);
+}
+
 @media (--breakpoint-not-small) {
   .shadow-1-ns {
     box-shadow: var(--box-shadow-1);
