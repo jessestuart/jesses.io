@@ -62,13 +62,8 @@ export default class ProfileFooter extends Component {
     const { isAnimatingChevron } = this.state
     return (
       <section
-        // className={classNames(styles.profileFooterSection)}
-        className="bb b--hot-pink bg-purple pt3"
-        style={{
-          gridColumn: '1 / 13',
-        }}
-        // className="bg-primary text-white text-center header-section"
-        // id="features"
+        className="bb bw3 b--hot-pink bg-purple pt3 mb1"
+        style={{ gridColumn: '1 / 13' }}
       >
         <h4 className="f4 fw4 tc lh-title code">
           I build software<br />

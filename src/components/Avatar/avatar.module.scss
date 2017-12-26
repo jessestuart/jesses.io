@@ -1,25 +1,15 @@
+@import '../../styles/js-tachyons.css';
 @import '../../utils/colors.scss';
-
-// .js-avatar-wrapper {
-//   align-items: center;
-//   display: flex;
-//   justify-content: center;
-//   margin: 0 auto;
-// }
-//   // padding-bottom: 20px;
-//   // height: 100%;
 
 .avatar {
   border-radius: 50%;
   box-shadow: 0 0 12px 12px rgba(40, 40, 40, 0.6);
-  display: flex;
-  justify-content: center;
   padding: 0;
-  // max-width: 75%;
+  margin: 0;
 }
 
-// @media (max-width: map-get($container-max-widths, 'xl') - 1) {
-//   img.js-avatar {
-//     max-width: 50%;
-//   }
-// }
+@media (--breakpoint-not-small) {
+  img.js-avatar {
+    max-width: 75%;
+  }
+}

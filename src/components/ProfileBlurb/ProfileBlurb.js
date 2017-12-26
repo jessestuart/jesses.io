@@ -21,8 +21,8 @@ const ProfileBlurb = () => (
 
 const ProfileBlurbHeading = () => (
   <Fragment>
-    <h2 className="f3 fw3 lh-title">Hi. I'm Jesse.</h2>
-    <h2 className="f3 fw3 lh-title mv3">
+    <h2 className="f3-ns f4 fw5 lh-title">Hi. I'm Jesse.</h2>
+    <h2 className="f3-ns f4 fw5 lh-title mv3">
       <span className="dib nowrap">I contradict myself.</span>
       <span className="dib nowrap ml2">I contain multitudes.</span>
     </h2>
@@ -30,8 +30,8 @@ const ProfileBlurbHeading = () => (
 )
 
 const SubBlurb = ({ emoji1, emoji2, children }) => (
-  <p className="flex justify-end items-center">
-    <span className="f4 fw3 lh-title dib">{children}</span>
+  <p className="flex justify-center justify-end-ns items-center">
+    <span className="f5 f4-ns fw3 lh-title dib tr">{children}</span>
     <span className="f4 ml2">
       {emoji1}&nbsp;{emoji2}
     </span>
@@ -41,7 +41,7 @@ const SubBlurb = ({ emoji1, emoji2, children }) => (
 SubBlurb.propTypes = {
   emoji1: PropTypes.string.isRequired,
   emoji2: PropTypes.string.isRequired,
-  children: PropTypes.string.isRequired,
+  children: PropTypes.oneOfType([PropTypes.array, PropTypes.string]).isRequired,
 }
 
 export default ProfileBlurb
