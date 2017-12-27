@@ -47,6 +47,7 @@
     "gatsby-transformer-remark": "^1.7.26",
     "gatsby-transformer-sharp": "^1.6.16",
     "immutable-css-cli": "^1.1.1",
+    "jest": "^22.0.4",
     "lodash": "^4.17.4",
     "normalize.css": "^7.0.0",
     "postcss-cssnext": "^3.0.2",
@@ -87,9 +88,9 @@
     "url": "git+https://github.com/jessestuart/js-gatsby-hurtling.git"
   },
   "scripts": {
-    "build": "./node_modules/gatsby-cli/lib/index.js build",
+    "build": "gatsby build",
     "deploy": "./node_modules/gatsby-cli/lib/index.js build && ./bin/deploy.js",
-    "dev": "./node_modules/gatsby-cli/lib/index.js develop",
+    "dev": "gatsby develop",
     "fix-semi":
       "eslint --quiet --ignore-pattern node_modules --ignore-pattern public --parser babel-eslint --no-eslintrc --rule '{\"semi\": [2, \"never\"], \"no-extra-semi\": [2]}' --fix **/*.js",
     "format":
@@ -97,7 +98,6 @@
     "lint": "yarn run lint:js",
     "lint:js":
       "./node_modules/.bin/eslint --ext .js,.jsx --ignore-pattern public .",
-    "new": "./bin/newpost.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest"
   }
 }

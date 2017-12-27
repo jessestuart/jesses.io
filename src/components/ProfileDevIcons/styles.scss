@@ -1,8 +1,11 @@
-@import '../../layouts/base.scss';
-@import '../../layouts/hvr-animations.scss';
+// @import '../../layouts/base.scss';
+// @import '../../layouts/hvr-animations.scss';
+@import '../../styles/js-tachyons.css';
 
-$devicon-margin-top: 25px;
-$devicon-brace-offset: 15px;
+:root {
+  --devicon-margin-top: 25px;
+  --devicon-brace-offset: 15px;
+}
 
 .js-intro-section {
   padding: 25px 0;
@@ -16,12 +19,12 @@ $devicon-brace-offset: 15px;
   line-height: 1.5rem;
 }
 
-.dev-icon-label,
-.dev-icon-brace {
-  font-size: $font-size-md;
-  color: $pink;
-  font-family: $font-family-monospace;
-}
+// .dev-icon-label,
+// .dev-icon-brace {
+//   font-size: $font-size-md;
+//   color: $pink;
+//   font-family: $font-family-monospace;
+// }
 
 .skills-container {
   position: relative;
@@ -32,9 +35,9 @@ $devicon-brace-offset: 15px;
     @media (max-width: 840px) {
       display: none;
     }
-    @media (min-width: map-get($container-max-widths, 'xl') + 1) {
-      font-size: $font-size-lg;
-    }
+    // @media (min-width: map-get($container-max-widths, 'xl') + 1) {
+    //   font-size: $font-size-lg;
+    // }
   }
 }
 
@@ -43,43 +46,43 @@ $devicon-brace-offset: 15px;
   min-width: 200px;
 }
 
-@media (min-width: map-get($container-max-widths, 'xl') + 1) {
-  .dev-icon-label {
-    left: -8rem;
-    position: absolute;
-    text-align: right;
-  }
+// @media (min-width: map-get($container-max-widths, 'xl') + 1) {
+//   .dev-icon-label {
+//     left: -8rem;
+//     position: absolute;
+//     text-align: right;
+//   }
 
-  .dev-icon-label,
-  .dev-icon-brace {
-    top: 2rem;
-  }
+//   .dev-icon-label,
+//   .dev-icon-brace {
+//     top: 2rem;
+//   }
 
-  .dev-icon-close-brace {
-    position: absolute;
-    right: 0;
-  }
-}
+//   .dev-icon-close-brace {
+//     position: absolute;
+//     right: 0;
+//   }
+// }
 
-@media (max-width: map-get($container-max-widths, 'xl')) {
-  .dev-icon-label {
-    font-weight: 700;
-    font-size: 1.5rem;
-    position: relative;
-    width: 100%;
-  }
+// @media (max-width: map-get($container-max-widths, 'xl')) {
+//   .dev-icon-label {
+//     font-weight: 700;
+//     font-size: 1.5rem;
+//     position: relative;
+//     width: 100%;
+//   }
 
-  .dev-icon-colon {
-    display: none;
-  }
+//   .dev-icon-colon {
+//     display: none;
+//   }
 
-  .dev-icon-brace {
-    display: none;
-  }
-}
+//   .dev-icon-brace {
+//     display: none;
+//   }
+// }
 
 .dev-icons-wrapper {
-  border-bottom: 5px solid $pink;
+  border-bottom: 5px solid var(--hot-pink);
 }
 
 .features-devicons {
@@ -88,17 +91,17 @@ $devicon-brace-offset: 15px;
 }
 
 .service-box-devicon {
-  margin: $devicon-margin-top auto !important;
+  margin: var(--devicon-margin-top) auto !important;
 }
 
 .skills-container + .skills-container {
-  border-top: 2px solid $green;
-  padding-top: $devicon-brace-offset;
+  border-top: 2px solid var(--green);
+  padding-top: var(--devicon-brace-offset);
 
-  @media (min-width: map-get($container-max-widths, 'xl') + 1) {
-    .dev-icon-label,
-    .dev-icon-close-brace {
-      top: 3rem !important;
-    }
-  }
+  // @media (min-width: map-get($container-max-widths, 'xl') + 1) {
+  //   .dev-icon-label,
+  //   .dev-icon-close-brace {
+  //     top: 3rem !important;
+  //   }
+  // }
 }
