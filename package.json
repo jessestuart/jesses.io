@@ -101,11 +101,14 @@
     "clean": "rm -rf node_modules/ .cache/ && yarn",
     "deploy": "./node_modules/gatsby-cli/lib/index.js build && ./bin/deploy.js",
     "dev": "gatsby develop",
+    "fix-semi":
+      "eslint --quiet --ignore-pattern node_modules --ignore-pattern public --parser babel-eslint --no-eslintrc --rule '{\"semi\": [2, \"never\"], \"no-extra-semi\": [2]}' --fix **/*.js",
     "format":
       "prettier --trailing-comma es5 --no-semi --single-quote --write 'src/**/*.js' 'src/**/*.md'",
     "lint": "yarn run lint:js",
     "lint:js":
       "./node_modules/.bin/eslint --ext .js,.jsx --ignore-pattern public .",
-    "test": "jest -c jest.config.js"
+    "new": "./bin/newpost.js",
+    "test": "jest -c test/jest.config.js"
   }
 }
