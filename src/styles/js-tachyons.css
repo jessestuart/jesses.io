@@ -1,8 +1,8 @@
 /* @import '~tachyons-sass/tachyons.scss'; */
 @import './tachyons.css';
 
-@custom-media --breakpoint-not-small screen and (min-width: 30em);
-@custom-media --breakpoint-medium screen and (min-width: 30em) and (max-width: 60em);
+@custom-media --breakpoint-not-small screen and (min-width: 45em);
+@custom-media --breakpoint-medium screen and (min-width: 45em) and (max-width: 60em);
 @custom-media --breakpoint-large screen and (min-width: 60em);
 
 :root {
@@ -16,8 +16,8 @@
   --gray-700: #495057;
   --gray-800: #343A40;
   --gray-900: #212529;
-  --code: 'Roboto Mono', 'andale mono', 'SFMono-Regular', Menlo, Monaco,
-    Consolas, 'Liberation Mono', monospace;
+  --code: 'Andale Mono', 'SFMono-Regular', Menlo, Monaco, Consolas,
+    'Liberation Mono', monospace;
 
   /* --sans-serif: 'Rubik', sans-serif; */
   --serif: 'Spectral', serif;

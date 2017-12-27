@@ -11650,28 +11650,13 @@ typeface-poiret-one@^0.0.44:
   version "0.0.44"
   resolved "https://registry.yarnpkg.com/typeface-poiret-one/-/typeface-poiret-one-0.0.44.tgz#83cbc1ea8513cd7cf5b0501e8fb3a12e45056587"
 
-typeface-roboto-mono@^0.0.44:
-  version "0.0.44"
-  resolved "https://registry.yarnpkg.com/typeface-roboto-mono/-/typeface-roboto-mono-0.0.44.tgz#dbce32d7c59c73de61e0259531e527257413d0a3"
-
 typeface-spectral@^0.0.44:
   version "0.0.44"
   resolved "https://registry.yarnpkg.com/typeface-spectral/-/typeface-spectral-0.0.44.tgz#00f1dac4b1d38eda79b7aceb48df2f36b39ae484"
 
-typography-breakpoint-constants@^0.15.10:
-  version "0.15.10"
-  resolved "https://registry.yarnpkg.com/typography-breakpoint-constants/-/typography-breakpoint-constants-0.15.10.tgz#bd5308dd57250e7f28a8c6e1c0e668ddf1178c5c"
-
 typography-normalize@^0.14.0:
   version "0.14.0"
   resolved "https://registry.yarnpkg.com/typography-normalize/-/typography-normalize-0.14.0.tgz#1d77c1fe2aaf4a51b3673c4c85c85a65a2d4b573"
-
-typography-theme-wordpress-2016@^0.15.10:
-  version "0.15.10"
-  resolved "https://registry.yarnpkg.com/typography-theme-wordpress-2016/-/typography-theme-wordpress-2016-0.15.10.tgz#8f14f002af9334303b858093358455e02d33131d"
-  dependencies:
-    gray-percentage "^2.0.0"
-    typography-breakpoint-constants "^0.15.10"
 
 typography@^0.16.0, typography@^0.16.6:
   version "0.16.6"

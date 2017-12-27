@@ -12,10 +12,6 @@ const typography = new Typography(
       fontFamily: ['Lato', 'sans-serif'],
       googleFonts: [
         {
-          name: 'Roboto Mono',
-          styles: _.concat(fontWeights, 400),
-        },
-        {
           name: 'Lato',
           styles: fontWeights,
         },
@@ -38,7 +34,7 @@ const typography = new Typography(
           textIndent: '2em',
         },
         code: {
-          fontFamily: ['Fira Mono', 'monospace'].join(','),
+          fontFamily: ['Andale Mono', 'monospace'].join(','),
           fontWeight: 500,
         },
         'p > code': {

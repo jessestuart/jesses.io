@@ -68,10 +68,8 @@
     "typeface-lato": "^0.0.44",
     "typeface-montserrat": "^0.0.45",
     "typeface-poiret-one": "^0.0.44",
-    "typeface-roboto-mono": "^0.0.44",
     "typeface-spectral": "^0.0.44",
     "typography": "^0.16.6",
-    "typography-theme-wordpress-2016": "^0.15.10",
     "watch": "^1.0.2"
   },
   "homepage": "https://jessestuart.com",
