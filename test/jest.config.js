@@ -6,8 +6,9 @@ module.exports = {
     '^(?!.*\\.module\\.scss$).*\\.scss$': '<rootDir>/__mocks__/styleMock.js',
     '\\.scss$': '<rootDir>/__mocks__/styleMock.js', // CSS modules
     // CSS Modules - match files that end with 'module.css'
-    '\\.module\\.css$': '<rootDir>/__mocks__/styleMock.js', // CSS modules
-    // '\\.module\\.css$': 'identity-obj-proxy', // CSS modules
+    // '\\.module\\.css$': '<rootDir>/__mocks__/styleMock.js', // CSS modules
+    '\\.module\\.scss$': 'identity-obj-proxy', // CSS modules
+    '\\.module\\.css$': 'identity-obj-proxy', // CSS modules
   },
   testPathIgnorePatterns: ['/node_modules/', '<rootDir>/.cache/'],
   globals: {
