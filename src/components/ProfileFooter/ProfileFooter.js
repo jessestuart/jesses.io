@@ -65,7 +65,7 @@ export default class ProfileFooter extends Component {
         className="bb bw3 b--hot-pink bg-purple pt3 mb1"
         style={{ gridColumn: '1 / 13' }}
       >
-        <h4 className="f4 fw4 tc lh-title code">
+        <h4 className="f4 fw7 tc lh-title code">
           I build software<br />
           on the pull requests<br />
           of giants.

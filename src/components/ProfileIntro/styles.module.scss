@@ -8,10 +8,6 @@
   @media (min-width: 45em) {
     grid-template-rows: repeat(2, 1fr);
   }
-
-  // grid-template-rows: repeat(6, 1fr);
-  // grid-template-rows: repeat(2, 1fr);
-  // grid-auto-rows: min-content;
 }
 
 .avatarContainer {
@@ -30,8 +26,12 @@
 .blurbContainer {
   grid-column: 1 / 13;
 
-  @media (min-width: 45em) {
+  @media (min-width: 45em) and (max-width: 60em) {
     grid-column: 5 / 12;
+    grid-row: 1 / 5;
+  }
+  @media (min-width: 60em) {
+    grid-column: 5 / 10;
     grid-row: 1 / 5;
   }
 }
