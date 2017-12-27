@@ -1,13 +1,12 @@
-@import '../utils/colors.scss';
+@import '../styles/js-tachyons.css';
 
 body {
-  background-color: $background;
-  color: $white;
+  background-color: #343A40;
+  color: var(--white-20);
 }
 
 a {
   font-weight: 300;
-  color: $blue; // $pink; // rgb(253, 107, 156);
 }
 
 .more {

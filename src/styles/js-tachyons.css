@@ -1,5 +1,5 @@
 /* @import '~tachyons-sass/tachyons.scss'; */
-@import './tachyons.css';
+@import './tachyons/tachyons.css';
 
 @custom-media --breakpoint-not-small screen and (min-width: 45em);
 @custom-media --breakpoint-medium screen and (min-width: 45em) and (max-width: 60em);

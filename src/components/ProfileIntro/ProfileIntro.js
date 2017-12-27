@@ -1,7 +1,7 @@
-import React, { Fragment } from 'react'
+import React from 'react'
 import classNames from 'classnames'
 
-import { Avatar, ProfileBlurb, ProfileFooter } from 'components'
+import { Avatar, ProfileBlurb, ProfileFooter } from '../../components'
 
 import styles from './styles.module.scss'
 

@@ -2,7 +2,7 @@ import React from 'react'
 import _ from 'lodash'
 import Link from 'gatsby-link'
 
-import config from 'gatsby-config'
+import config from '../../../gatsby-config'
 
 const SiteHeader = () => (
   <div className="bb b--hot-pink">
