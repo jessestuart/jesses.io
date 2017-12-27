@@ -31,13 +31,8 @@ const ProfileBlurbHeading = () => (
 
 const SubBlurb = ({ emoji1, emoji2, children }) => (
   <p className="flex justify-center justify-end-ns items-center">
-    <span
-      className="f5 f4-ns fw3 lh-title dib tc justify-end"
-      style={{ flex: 3 }}
-    >
-      {children}
-    </span>
-    <span className="f4 ml2 tc tr-ns" style={{ flex: 1 }}>
+    <span className="f5 f4-ns fw3 lh-title dib tr">{children}</span>
+    <span className="f4 ml2">
       {emoji1}&nbsp;&nbsp;{emoji2}
     </span>
   </p>
