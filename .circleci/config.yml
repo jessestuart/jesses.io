@@ -92,6 +92,7 @@ jobs:
           command: 'sh ./.circleci/setup_puppeteer.sh'
 
       - run: yarn install
+
       - save_cache:
         paths:
           - node_modules
@@ -106,3 +107,4 @@ workflows:
     jobs:
       - build
       - push_image
+			- capture_screenshots
