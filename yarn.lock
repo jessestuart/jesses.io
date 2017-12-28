@@ -11336,6 +11336,10 @@ tachyons-colors@^5.3.3:
   version "5.3.3"
   resolved "https://registry.yarnpkg.com/tachyons-colors/-/tachyons-colors-5.3.3.tgz#30b0a0662523f4d23ed6e3b9b54c78cdf4635b0d"
 
+tachyons-custom@^4.9.2:
+  version "4.9.2"
+  resolved "https://registry.yarnpkg.com/tachyons-custom/-/tachyons-custom-4.9.2.tgz#0a14b7a0dee1d06745278c2396150615306fe229"
+
 tachyons-modules@^1.1.10:
   version "1.1.10"
   resolved "https://registry.yarnpkg.com/tachyons-modules/-/tachyons-modules-1.1.10.tgz#2475da90c62f86dafd47b7c95d52496f7623e165"
@@ -11344,15 +11348,11 @@ tachyons-modules@^1.1.10:
     is-present "^1.0.0"
     pinkie-promise "^2.0.1"
 
-tachyons-sass@^4.9.0:
-  version "4.9.0"
-  resolved "https://registry.yarnpkg.com/tachyons-sass/-/tachyons-sass-4.9.0.tgz#fc34fe9c551093700321bc55424babd9476f650e"
+tachyons-sass@^4.9.2:
+  version "4.9.2"
+  resolved "https://registry.yarnpkg.com/tachyons-sass/-/tachyons-sass-4.9.2.tgz#57ada3d451ad41a55793e02bad7e41ed897779ab"
   dependencies:
-    tachyons "^4.9.0"
-
-tachyons@^4.9.0:
-  version "4.9.0"
-  resolved "https://registry.yarnpkg.com/tachyons/-/tachyons-4.9.0.tgz#2df058ea6b6eb3d2be12d62a69fecb0f6b1e0534"
+    tachyons-custom "^4.9.2"
 
 tapable@^0.1.8, tapable@~0.1.8:
   version "0.1.10"
