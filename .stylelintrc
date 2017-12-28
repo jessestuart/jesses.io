@@ -1,19 +1,30 @@
 {
   "extends": "stylelint-config-standard",
-  "rules":  {
+  "rules": {
     "at-rule-empty-line-before": null,
-    "at-rule-no-unknown": [true, {
-      "ignoreAtRules": ["value", "extend", "custom-media"]
-    }],
+    "at-rule-no-unknown": [
+      true,
+      {
+        "ignoreAtRules": ["value", "extend", "custom-media"]
+      }
+    ],
     "color-hex-case": "upper",
+    "declaration-colon-newline-after": null,
     "declaration-empty-line-before": null,
-    "property-no-unknown": [ true, {
-      "ignoreProperties": [ "composes" ]
-    }],
+    "property-no-unknown": [
+      true,
+      {
+        "ignoreProperties": ["composes"]
+      }
+    ],
     "rule-empty-line-before": null,
     "shorthand-property-no-redundant-values": null,
-    "selector-pseudo-class-no-unknown": [true, {
-      "ignorePseudoClasses": ["global"]
-    }]
+    "selector-pseudo-class-no-unknown": [
+      true,
+      {
+        "ignorePseudoClasses": ["global"]
+      }
+    ],
+    "value-list-comma-newline-after": null
   }
 }
