@@ -12,7 +12,7 @@ jobs:
           keys:
             - dependencies-{{ checksum "package.json" }}
             # Fallback to using the latest cache if no exact match is found.
-            - dependencies
+            - dependencies-
 
       - run:
           name: Install dependencies.
@@ -73,6 +73,32 @@ jobs:
               docker tag  "${IMAGE_ID}" "${IMAGE_ID}:latest"
               docker push               "${IMAGE_ID}:latest"
             fi
+
+  capture_screenshots:
+    name: Capture screenshots using puppeteer.
+    docker:
+      - image: circleci/node:8
+
+    steps:
+      - checkout
+
+      - restore_cache:
+          keys:
+          - dependencies-{{ checksum "package.json" }}
+          - dependencies-
+
+      - run:
+          name: Workaround for GoogleChrome/puppeteer#290
+          command: 'sh ./.circleci/setup_puppeteer.sh'
+
+      - run: yarn install
+      - save_cache:
+        paths:
+          - node_modules
+        key: dependencies-{{ checksum "package.json" }}
+
+      - run: yarn test
+
 
 workflows:
   version: 2

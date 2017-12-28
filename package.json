@@ -49,6 +49,7 @@
     "gatsby-source-filesystem": "^1.5.11",
     "gatsby-transformer-remark": "^1.7.26",
     "gatsby-transformer-sharp": "^1.6.16",
+    "hamburgers": "^0.9.1",
     "immutable-css-cli": "^1.1.1",
     "jest": "^22.0.4",
     "lodash": "^4.17.4",
@@ -60,6 +61,7 @@
     "postcss-scss": "^1.0.2",
     "prettier": "^1.9.2",
     "puppeteer": "^0.13.0",
+    "react-calendar-heatmap": "^1.6.3",
     "react-cosmos": "^3.2.0",
     "react-sizeme": "^2.3.6",
     "react-sizes": "^0.4.3",
@@ -81,30 +83,13 @@
     "watch": "^1.0.2"
   },
   "homepage": "https://jessestuart.com",
-  "keywords": [
-    "blog",
-    "gatsby",
-    "photography",
-    "react"
-  ],
+  "keywords": ["blog", "gatsby", "photography", "react"],
   "license": "MIT",
   "lint-staged": {
-    "*.{js,jsx}": [
-      "prettier --write",
-      "git add"
-    ],
-    "*.json": [
-      "prettier --write",
-      "git add"
-    ],
-    "*.{css,scss}": [
-      "prettier --write",
-      "git add"
-    ],
-    "*.md": [
-      "npm run lint:textfix",
-      "git add"
-    ]
+    "*.{js,jsx}": ["prettier --write", "git add"],
+    "*.json": ["prettier --write", "git add"],
+    "*.{css,scss}": ["prettier --write", "git add"],
+    "*.md": ["npm run lint:textfix", "git add"]
   },
   "main": "n/a",
   "repository": {
@@ -116,9 +101,11 @@
     "clean": "rm -rf node_modules/ .cache/ && yarn",
     "deploy": "./node_modules/gatsby-cli/lib/index.js build && ./bin/deploy.js",
     "dev": "gatsby develop",
-    "format": "prettier --trailing-comma es5 --no-semi --single-quote --write 'src/**/*.js' 'src/**/*.md'",
+    "format":
+      "prettier --trailing-comma es5 --no-semi --single-quote --write 'src/**/*.js' 'src/**/*.md'",
     "lint": "yarn run lint:js",
-    "lint:js": "./node_modules/.bin/eslint --ext .js,.jsx --ignore-pattern public .",
-    "test": "jest -c test/jest.config.js"
+    "lint:js":
+      "./node_modules/.bin/eslint --ext .js,.jsx --ignore-pattern public .",
+    "test": "jest -c jest.config.js"
   }
 }

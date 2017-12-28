@@ -1,4 +1,7 @@
 module.exports = {
+  globalSetup: './setup.js',
+  globalTeardown: './teardown.js',
+  testEnvironment: './puppeteer-environment.js',
   moduleNameMapper: {
     '\\.(jpg|jpeg|png|svg|woff|woff2)$': '<rootDir>/__mocks__/fileMock.js',
     // Plain CSS - match css files that don't end with '.module.css' https://regex101.com/r/VzwrKH/4
@@ -11,6 +14,7 @@ module.exports = {
   },
   testPathIgnorePatterns: ['/node_modules/', '<rootDir>/.cache/'],
   globals: {
-    __PATH_PREFIX__: '',
+    __PATH_PREFIX__: true,
+    __BROWSER__: true,
   },
 }
