@@ -107,4 +107,4 @@ workflows:
     jobs:
       - build
       - push_image
-			- capture_screenshots
+      - capture_screenshots
