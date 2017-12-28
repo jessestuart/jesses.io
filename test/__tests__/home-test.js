@@ -1,13 +1,20 @@
 import React from 'react'
-import renderer from 'react-test-renderer'
+// import renderer from 'react-test-renderer'
+import { configure, mount } from 'enzyme'
+import toJson from 'enzyme-to-json'
+import adapter from 'enzyme-adapter-react-15'
 
-import { ProfileIntro } from '../../src/components'
+import { Avatar } from '../../src/components'
 
 describe('Sanity test components.', () => {
-  it('Renders ProfileIntro component.', () => {
+  configure({ adapter })
+
+  it('Renders Avatar component.', () => {
     // const div = document.createElement('div')
+    const avatar = mount(<Avatar />)
+    expect(toJson(avatar)).toMatchSnapshot()
     // ReactDOM.render(<Avatar />, div)
-    const tree = renderer.create(<ProfileIntro />).toJSON()
-    expect(tree).toMatchSnapshot()
+    // const tree = renderer.create(<Avatar />).toJSON()
+    // expect(tree).toMatchSnapshot()
   })
 })
