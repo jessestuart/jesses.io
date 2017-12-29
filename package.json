@@ -65,7 +65,7 @@
     "react-cosmos": "^3.2.0",
     "react-sizeme": "^2.3.6",
     "react-sizes": "^0.4.3",
-    "react-test-renderer": "^15.6.2",
+    "react-test-renderer": "^16.2.0",
     "react-twitter-widgets": "^1.7.1",
     "react-with-available-width": "^2.0.0",
     "rimraf": "^2.6.2",
