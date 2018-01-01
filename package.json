@@ -109,6 +109,6 @@
     "lint:js":
       "./node_modules/.bin/eslint --ext .js,.jsx --ignore-pattern public .",
     "new": "./bin/newpost.js",
-    "test": "jest -c jest.config.js"
+    "test": "jest -c test/jest.config.js"
   }
 }
