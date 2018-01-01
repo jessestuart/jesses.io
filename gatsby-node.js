@@ -110,6 +110,5 @@ exports.modifyWebpackConfig = function({ config }, stage) {
     },
   })
   // config._config.devtool = 'eval'
-  console.log({ config })
   return config
 }
