@@ -1,15 +1,13 @@
 import React from 'react'
-import _ from 'lodash'
 
-const isProd = _.get(process, 'env.NODE_ENV') === 'production'
-const stylesString = isProd ? require(`!raw-loader!../public/styles.css`) : null
-
-const css = isProd ? (
-  <style
-    id="gatsby-inlined-css"
-    dangerouslySetInnerHTML={{ __html: stylesString }}
-  />
-) : null
+let stylesString
+if (process.env.NODE_ENV === 'production') {
+  try {
+    stylesString = require(`!raw-loader!../public/styles.css`)
+  } catch (e) {
+    console.error(e)
+  }
+}
 
 const description = 'Jesse has things to say.'
 
@@ -22,6 +20,14 @@ export default function HTML(props) {
     postBodyComponents,
     preBodyComponents,
   } = props
+
+  const css =
+    process.env.NODE_ENV === 'production' ? (
+      <style
+        id="gatsby-inlined-css"
+        dangerouslySetInnerHTML={{ __html: stylesString }}
+      />
+    ) : null
 
   return (
     <html {...htmlAttributes}>

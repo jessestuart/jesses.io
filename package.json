@@ -52,6 +52,7 @@
     "hamburgers": "^0.9.1",
     "immutable-css-cli": "^1.1.1",
     "jest": "^22.0.4",
+    "js-devicon": "^2.7.4",
     "lodash": "^4.17.4",
     "normalize.css": "^7.0.0",
     "postcss-cssnext": "^3.0.2",

@@ -3,7 +3,7 @@ import classNames from 'classnames'
 
 import feather from 'feather-icons'
 
-import styles from './styles.module.scss'
+import styles from './profile-footer.module.scss'
 
 // const initialState = {
 //   isAnimatingChevron: false,
