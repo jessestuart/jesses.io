@@ -4,7 +4,7 @@ import classNames from 'classnames'
 import DevIconColumn from './DevIconColumn'
 import DevIconSkills from './DevIconSkills'
 
-// import './styles.scss'
+import './styles.scss'
 
 const ProfileDevIcons = () => {
   return (
