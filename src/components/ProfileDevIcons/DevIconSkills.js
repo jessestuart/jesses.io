@@ -1,58 +1,58 @@
+import {
+  AngularJS,
+  Ansible,
+  Atom,
+  AWS,
+  Babel,
+  D3js,
+  Debian,
+  Docker,
+  Git,
+  Go,
+  Gradle,
+  Java,
+  Javascript,
+  Linux,
+  MongoDB,
+  Mysql,
+  Nginx,
+  Nodejs,
+  Packer,
+  Python,
+  React,
+  Redhat,
+  Redis,
+  Sass,
+  Sketch,
+  Terraform,
+  Typescript,
+  Ubuntu,
+  Vagrant,
+  Vim,
+  Webpack,
+} from '../Icons'
+
 const infra = [
-  {
-    label: 'docker',
-    useWordmark: false,
-  },
-  {
-    label: 'amazonwebservices',
-    useWordmark: false,
-  },
-  {
-    label: 'nginx',
-    useWordmark: false,
-  },
-  {
-    label: 'vagrant',
-    useWordmark: false,
-  },
+  Docker,
+  AWS,
+  Nginx,
+  Packer,
+  Ansible,
+  Vagrant,
 ]
 
 const backend = [
-  {
-    label: 'java',
-    useWordmark: false,
-  },
-  {
-    label: 'nodejs',
-    useWordmark: false,
-  },
-  {
-    label: 'go',
-    useWordmark: false,
-  },
-  {
-    label: 'python',
-    useWordmark: false,
-  },
+  Java,
+  Nodejs,
+  Go,
+  Python,
 ]
 
 const frontend = [
-  {
-    label: 'react',
-    useWordmark: false,
-  },
-  {
-    label: 'webpack',
-    useWordmark: false,
-  },
-  {
-    label: 'angularjs',
-    useWordmark: false,
-  },
-  {
-    label: 'typescript',
-    useWordmark: false,
-  },
+  React,
+  Webpack,
+  AngularJS,
+  Typescript,
 ]
 
 const DevIconSkills = [

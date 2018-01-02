@@ -6,6 +6,8 @@ import DevIconSkills from './DevIconSkills'
 
 import './styles.scss'
 
+console.log(DevIconSkills);
+
 const ProfileDevIcons = () => {
   return (
     <section
@@ -29,16 +31,17 @@ const ProfileDevIcons = () => {
           >
             {devIcon.label}
           </div>
-          {devIcon.icons.map(icon => (
+          {devIcon.icons.map((icon, innerIndex) => (
             <DevIconColumn
-              key={icon.label}
-              label={icon.label}
-              useWordmark={icon.useWordmark}
+              key={innerIndex}
+              // label={icon.label}
+              // useWordmark={icon.useWordmark}
+              DevIcon={icon}
               className={classNames({
                 'bb b--green': index + 1 < DevIconSkills.length,
               })}
               style={{
-                gridColumn: 'span 3',
+                gridColumn: `span 2`,
                 gridRow: `${index + 1} / ${index + 2}`,
               }}
             />
