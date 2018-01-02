@@ -1,14 +1,18 @@
 import React from 'react'
 import moment from 'moment'
 
+import { Heart } from 'react-feather'
+
 const SiteFooter = () => (
   <div style={{ display: 'grid' }}>
-    <footer className="flex f5 f4-ns pa4 flex-column bt b--white-50">
-      <div className="center">
+    <footer className="b--white-50 bt f5 flex flex-column lh-title pa4">
+      <div className="flex justify-center items-center">
         © 2015-{moment().format('YYYY')} Jesse Stuart
       </div>
-      <div className="center">
-        Pixels, bits and bytes hand-crafted with ❤️ in NYC.
+      <div className="flex justify-center items-center">
+        Pixels, bits and bytes hand-crafted with
+        <Heart className="hot-pink mh1" width="15" height="15" fill="#FC5270" />
+        in NYC.
       </div>
     </footer>
   </div>

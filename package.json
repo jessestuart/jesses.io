@@ -63,6 +63,8 @@
     "puppeteer": "^0.13.0",
     "react-calendar-heatmap": "^1.6.3",
     "react-cosmos": "^3.2.0",
+    "react-feather": "^1.0.8",
+    "react-headroom": "^2.2.2",
     "react-sizeme": "^2.3.6",
     "react-sizes": "^0.4.3",
     "react-test-renderer": "^16.2.0",
@@ -75,6 +77,7 @@
     "tachyons-colors": "^5.3.3",
     "tachyons-modules": "^1.1.10",
     "tachyons-sass": "^4.9.2",
+    "twemoji": "^2.5.0",
     "typeface-lato": "^0.0.44",
     "typeface-montserrat": "^0.0.45",
     "typeface-poiret-one": "^0.0.44",
@@ -83,13 +86,30 @@
     "watch": "^1.0.2"
   },
   "homepage": "https://jessestuart.com",
-  "keywords": ["blog", "gatsby", "photography", "react"],
+  "keywords": [
+    "blog",
+    "gatsby",
+    "photography",
+    "react"
+  ],
   "license": "MIT",
   "lint-staged": {
-    "*.{js,jsx}": ["prettier --write", "git add"],
-    "*.json": ["prettier --write", "git add"],
-    "*.{css,scss}": ["prettier --write", "git add"],
-    "*.md": ["npm run lint:textfix", "git add"]
+    "*.{js,jsx}": [
+      "prettier --write",
+      "git add"
+    ],
+    "*.json": [
+      "prettier --write",
+      "git add"
+    ],
+    "*.{css,scss}": [
+      "prettier --write",
+      "git add"
+    ],
+    "*.md": [
+      "npm run lint:textfix",
+      "git add"
+    ]
   },
   "main": "n/a",
   "repository": {
@@ -101,13 +121,10 @@
     "clean": "rm -rf node_modules/ .cache/ && yarn",
     "deploy": "./node_modules/gatsby-cli/lib/index.js build && ./bin/deploy.js",
     "dev": "gatsby develop",
-    "fix-semi":
-      "eslint --quiet --ignore-pattern node_modules --ignore-pattern public --parser babel-eslint --no-eslintrc --rule '{\"semi\": [2, \"never\"], \"no-extra-semi\": [2]}' --fix **/*.js",
-    "format":
-      "prettier --trailing-comma es5 --no-semi --single-quote --write 'src/**/*.js' 'src/**/*.md'",
+    "fix-semi": "eslint --quiet --ignore-pattern node_modules --ignore-pattern public --parser babel-eslint --no-eslintrc --rule '{\"semi\": [2, \"never\"], \"no-extra-semi\": [2]}' --fix **/*.js",
+    "format": "prettier --trailing-comma es5 --no-semi --single-quote --write 'src/**/*.js' 'src/**/*.md'",
     "lint": "yarn run lint:js",
-    "lint:js":
-      "./node_modules/.bin/eslint --ext .js,.jsx --ignore-pattern public .",
+    "lint:js": "./node_modules/.bin/eslint --ext .js,.jsx --ignore-pattern public .",
     "new": "./bin/newpost.js",
     "test": "jest -c test/jest.config.js"
   }
