@@ -13,7 +13,6 @@ const Template = ({ children, location }) => (
     }}
   >
     <SiteHeader />
-    <div>foo</div>
     <div style={{ gridColumn: '3 / 9' }}>{children()}</div>
   </div>
 )

@@ -1,20 +1,15 @@
 const chalk = require('chalk')
-const NodeEnvironment = require('jest-environment-node')
-const puppeteer = require('puppeteer')
 const fs = require('fs')
+const NodeEnvironment = require('jest-environment-node')
 const os = require('os')
 const path = require('path')
+const puppeteer = require('puppeteer')
 
 const DIR = path.join(os.tmpdir(), 'jest_puppeteer_global_setup')
 
 class PuppeteerEnvironment extends NodeEnvironment {
-  // eslint-disable-next-line no-useless-constructor
-  constructor(config) {
-    super(config)
-  }
-
   async setup() {
-    console.log(chalk.green('Setup Puppeteer Test Environment.'))
+    console.log(chalk.green('Initializing Puppeteer Test Environment.'))
     await super.setup()
     const wsEndpoint = fs.readFileSync(path.join(DIR, 'wsEndpoint'), 'utf8')
     if (!wsEndpoint) {

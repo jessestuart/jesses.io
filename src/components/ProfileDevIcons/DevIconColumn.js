@@ -1,28 +1,24 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import classNames from 'classnames'
 
-export default function DevIconColumn(props) {
-  const { label, useWordmark } = props
+const DevIconColumn = props => {
+  const { className, style, DevIcon } = props
 
   return (
-    <div className="col-lg-3 col-3">
-      <div
-        className="service-box service-box-devicon"
-        data-placement="top"
-        data-toggle="tooltip"
-        title={label}
-      >
-        <i
-          className={`devicon-${label}-plain${
-            useWordmark ? '-wordmark' : ''
-          } hvr-grow`}
-        />
-      </div>
+    <div
+      style={style}
+      className={classNames('pa4 flex justify-center items-center', className)}
+    >
+      <DevIcon width="100%" height="100%" className="hvr-grow" />
     </div>
   )
 }
 
 DevIconColumn.propTypes = {
-  label: PropTypes.string.isRequired,
-  useWordmark: PropTypes.bool.isRequired,
+  className: PropTypes.string,
+  DevIcon: PropTypes.any,
+  style: PropTypes.object,
 }
+
+export default DevIconColumn

@@ -11,7 +11,6 @@ jobs:
       - restore_cache:
           keys:
             - dependencies-{{ checksum "package.json" }}
-            # Fallback to using the latest cache if no exact match is found.
             - dependencies-
 
       - run:
@@ -26,6 +25,11 @@ jobs:
       - run:
           name: Compile static site.
           command: yarn build
+
+      - save_cache:
+          paths:
+            - public/
+          key: public-dir-{{ .Revision }}
 
       - run:
           name: Compress and package static resources into a tarball.
@@ -77,7 +81,7 @@ jobs:
   capture_screenshots:
     name: Capture screenshots using puppeteer.
     docker:
-      - image: circleci/node:8
+      - image: circleci/node:8-browsers
 
     steps:
       - checkout
@@ -87,24 +91,43 @@ jobs:
             - dependencies-{{ checksum "package.json" }}
             - dependencies-
 
+      - restore_cache:
+          key: public-dir-{{ .Revision }}
+
       - run:
           name: Workaround for GoogleChrome/puppeteer#290
-          command: 'sh .circleci/setup_puppeteer.sh'
+          command: |
+            chmod +x .circleci/setup-puppeteer.sh
+            .circleci/setup-puppeteer.sh
 
-      - run: yarn install
+      - run:
+          command: |
+            yarn install
+            yarn build
 
-      - save_cache:
-          paths:
-            - node_modules
-          key: dependencies-{{ checksum "package.json" }}
+      - run:
+          command: yarn dev
+          background: true
 
-      - run: yarn test
+      - run:
+          command: |
+            sleep 20
+            yarn test
 
+      - store_artifacts:
+          path: __snapshots__
 
 workflows:
   version: 2
   main:
     jobs:
       - build
-      - push_image
-      - capture_screenshots
+      - capture_screenshots:
+          requires:
+            - build
+      - push_image:
+          requires:
+            - build
+          filters:
+            branches:
+              only: master

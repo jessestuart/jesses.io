@@ -1,27 +1,27 @@
-@import '../styles/js-tachyons.css';
-
-:root {
-  --navbar-height: 60px;
-}
-
-.baseGrid {
-  display: grid;
-  grid-template-columns: repeat(12, 1fr);
-  grid-gap: 1rem;
-}
-
-.gridCol12 {
-  display: grid;
-  grid-column: 1 / 13;
-}
-
-.navbar {
-  @extend .gridCol12;
-  height: var(--navbar-height);
-}
-
-.profileMain {
-  @extend .baseGrid;
-  @extend .gridCol12;
-  margin-top: 20px;
-}
+// @import '../styles/js-tachyons.css';
+//
+// :root {
+//   --navbar-height: 60px;
+// }
+//
+// .baseGrid {
+//   display: grid;
+//   grid-template-columns: repeat(12, 1fr);
+//   grid-gap: 1rem;
+// }
+//
+// .gridCol12 {
+//   display: grid;
+//   grid-column: 1 / 13;
+// }
+//
+// .navbar {
+//   @extend .gridCol12;
+//   height: var(--navbar-height);
+// }
+//
+// .profileMain {
+//   @extend .baseGrid;
+//   @extend .gridCol12;
+//   margin-top: 20px;
+// }

@@ -21,8 +21,8 @@ site
 sitePage
 sitePlugin
 
-
 MarkdownRemark
+
 * children
 * excerpt
 * fields
@@ -37,6 +37,7 @@ MarkdownRemark
 * wordCount
 
 SitePage
+
 * children
 * id
 * internal
@@ -46,12 +47,15 @@ SitePage
 SitePlugin
 
 Directory
+
 * lots
 
 File
+
 * lots
 
 Site
+
 * buildTime
 * children
 * host
@@ -62,4 +66,3 @@ Site
 * polyfill
 * port
 * siteMetadata
-

@@ -3,7 +3,7 @@ import classNames from 'classnames'
 
 import feather from 'feather-icons'
 
-import styles from './styles.module.scss'
+import styles from './profile-footer.module.scss'
 
 // const initialState = {
 //   isAnimatingChevron: false,
@@ -62,7 +62,7 @@ export default class ProfileFooter extends Component {
     const { isAnimatingChevron } = this.state
     return (
       <section
-        className="bb bw3 b--hot-pink bg-purple pt3 mb1"
+        className="bb bw3 b--hot-pink bg-purple pt4 pb3 mb1"
         style={{ gridColumn: '1 / 13' }}
       >
         <h4 className="f4 fw7 tc lh-title code">

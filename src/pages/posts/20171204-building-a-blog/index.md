@@ -89,6 +89,7 @@ I was able to keep my [S3 bucket private while only allowing CloudFront access](
 ### Deployment
 
 Any pushes to GitHub trigger a [CircleCI](https://circleci.com/) build, which is configured [here](https://github.com/cameronwp/personal-web/blob/master/.circleci/config.yml)). If the branch happens to be `master`:
+
 1. it generates new static files in public/
 2. it uploads the public/ directory to S3
 3. it invalidates CloudFront's cache, so that changes go live in less than a minute instead of when caches expire.
