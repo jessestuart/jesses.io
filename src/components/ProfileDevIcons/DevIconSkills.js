@@ -7,16 +7,19 @@ import {
   D3js,
   Debian,
   Docker,
+  GatsbyJS,
   Git,
   Go,
   Gradle,
   Grails,
   Java,
   Javascript,
+  Jest,
   Kubernetes,
   Linux,
   MongoDB,
   Mysql,
+  Netlify,
   Nginx,
   Nodejs,
   Packer,
@@ -38,7 +41,9 @@ const infra = [Docker, Kubernetes, Ansible, Vagrant, Packer, Terraform]
 
 const backend = [Java, Grails, Go, Nodejs, Gradle, Python]
 
-const frontend = [React, Webpack, AngularJS, Sass]
+const frontend = [React, GatsbyJS, AngularJS, Netlify, Jest, Sass]
+
+const tooling = [Vim]
 
 const DevIconSkills = [
   {

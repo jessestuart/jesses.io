@@ -8,10 +8,7 @@ const DevIconColumn = props => {
   return (
     <div
       style={style}
-      className={classNames(
-        'pv4 ph4 flex justify-center items-center',
-        className
-      )}
+      className={classNames('pa4 flex justify-center items-center', className)}
     >
       <DevIcon width="100%" height="100%" className="hvr-grow" />
     </div>

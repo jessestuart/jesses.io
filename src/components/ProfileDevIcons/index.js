@@ -9,46 +9,55 @@ import './styles.scss'
 
 const ProfileDevIcons = () => {
   return (
-    <section
-      className="center w-90 code"
-      style={{
-        display: 'grid',
-        gridTemplateColumns: 'repeat(16, 1fr)',
-        gridTemplateRows: 'repeat(3, 1fr)',
-      }}
-    >
-      {DevIconSkills.map((devIcon, index) => (
-        <Fragment key={devIcon.label}>
-          <div
-            className={classNames(
-              'moon-grey flex items-center justify-end f3',
-              {
-                'bb b--white-50': index + 1 < DevIconSkills.length,
-              }
-            )}
-            style={{
-              gridColumn: 'span 2',
-              gridRow: `${index + 1} / ${index + 2}`,
-            }}
-          >
-            {devIcon.label}
-          </div>
-          {devIcon.icons.map((icon, innerIndex) => (
-            <DevIconColumn
-              key={innerIndex}
-              DevIcon={icon}
-              className={classNames({
-                'bb b--white-50': index + 1 < DevIconSkills.length,
-              })}
+    <Fragment>
+      <div className="serif f4 fw2 lh-copy flex justify-center">
+        <p className="flex w-50 center justify-center align-center">
+          I've always been passionate about tackling novel problems, at every
+          level of the stack. These are some of the technologies I've enjoyed
+          working with lately.
+        </p>
+      </div>
+      <section
+        className="center w-90 code"
+        style={{
+          display: 'grid',
+          gridTemplateColumns: 'repeat(14, 1fr)',
+          gridTemplateRows: 'repeat(4, 1fr)',
+        }}
+      >
+        {DevIconSkills.map((devIcon, index) => (
+          <Fragment key={devIcon.label}>
+            <div
+              className={classNames(
+                'moon-grey flex items-center justify-center f3',
+                {
+                  'bb b--white-50': index + 2 < DevIconSkills.length,
+                }
+              )}
               style={{
-                gridColumn: `span 2`,
+                gridColumn: 'span 2',
                 gridRow: `${index + 1} / ${index + 2}`,
               }}
-            />
-          ))}
-        </Fragment>
-      ))}
-    </section>
+            >
+              {devIcon.label}
+            </div>
+            {devIcon.icons.map((icon, innerIndex) => (
+              <DevIconColumn
+                key={innerIndex}
+                DevIcon={icon}
+                className={classNames({
+                  'bb b--white-50': index + 1 < DevIconSkills.length,
+                })}
+                style={{
+                  gridColumn: `span 2`,
+                  gridRow: `${index + 1} / ${index + 2}`,
+                }}
+              />
+            ))}
+          </Fragment>
+        ))}
+      </section>
+    </Fragment>
   )
 }
 
