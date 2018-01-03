@@ -1,4 +1,4 @@
-import React from "react"
+import React from 'react'
 
 const SassOriginal = props => (
   <svg viewBox="0 0 128 128" {...props}>
@@ -12,4 +12,3 @@ const SassOriginal = props => (
 )
 
 export default SassOriginal
-

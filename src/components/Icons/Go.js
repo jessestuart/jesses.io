@@ -1,4 +1,4 @@
-import React from "react"
+import React from 'react'
 
 const GopherFront1 = props => (
   <svg width="1em" height="1em" viewBox="0 0 98 128" {...props}>
@@ -47,4 +47,3 @@ const GopherFront1 = props => (
 )
 
 export default GopherFront1
-

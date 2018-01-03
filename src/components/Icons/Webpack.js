@@ -1,4 +1,4 @@
-import React from "react"
+import React from 'react'
 
 const WebpackOriginal = props => (
   <svg viewBox="0 0 128 128" {...props}>
@@ -14,4 +14,3 @@ const WebpackOriginal = props => (
 )
 
 export default WebpackOriginal
-

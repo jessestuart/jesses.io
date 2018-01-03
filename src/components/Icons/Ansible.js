@@ -1,4 +1,4 @@
-import React from "react"
+import React from 'react'
 
 const AnsibleSketch2 = props => (
   <svg width="1em" height="1em" viewBox="0 0 128 128" {...props}>
@@ -21,4 +21,3 @@ const AnsibleSketch2 = props => (
 )
 
 export default AnsibleSketch2
-

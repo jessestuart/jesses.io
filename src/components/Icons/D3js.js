@@ -1,4 +1,4 @@
-import React from "react"
+import React from 'react'
 
 const D3JsPlain = props => (
   <svg viewBox="0 0 128 128" {...props}>
@@ -36,4 +36,3 @@ const D3JsPlain = props => (
 )
 
 export default D3JsPlain
-

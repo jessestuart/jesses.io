@@ -11,14 +11,14 @@ const ProfileDevIcons = () => {
   return (
     <Fragment>
       <div className="serif f4 fw2 lh-copy flex justify-center">
-        <p className="flex w-50 center justify-center align-center">
+        <p className="flex w-50 center justify-center align-center pv3 tc">
           I've always been passionate about tackling novel problems, at every
           level of the stack. These are some of the technologies I've enjoyed
           working with lately.
         </p>
       </div>
       <section
-        className="center w-90 code"
+        className="center w-75 code"
         style={{
           display: 'grid',
           gridTemplateColumns: 'repeat(14, 1fr)',
@@ -31,7 +31,7 @@ const ProfileDevIcons = () => {
               className={classNames(
                 'moon-grey flex items-center justify-center f3',
                 {
-                  'bb b--white-50': index + 2 < DevIconSkills.length,
+                  'bb b--white-50': index + 1 < DevIconSkills.length,
                 }
               )}
               style={{
@@ -49,7 +49,7 @@ const ProfileDevIcons = () => {
                   'bb b--white-50': index + 1 < DevIconSkills.length,
                 })}
                 style={{
-                  gridColumn: `span 2`,
+                  gridColumn: 'span 2',
                   gridRow: `${index + 1} / ${index + 2}`,
                 }}
               />

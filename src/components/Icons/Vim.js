@@ -1,4 +1,4 @@
-import React from "react"
+import React from 'react'
 
 const VimPlain = props => (
   <svg viewBox="0 0 128 128" {...props}>
@@ -10,4 +10,3 @@ const VimPlain = props => (
 )
 
 export default VimPlain
-

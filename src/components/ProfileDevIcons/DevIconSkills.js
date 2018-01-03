@@ -28,7 +28,6 @@ import {
   Redhat,
   Redis,
   Sass,
-  Sketch,
   Terraform,
   Typescript,
   Ubuntu,
@@ -42,8 +41,6 @@ const infra = [Docker, Kubernetes, Ansible, Vagrant, Packer, Terraform]
 const backend = [Java, Grails, Go, Nodejs, Gradle, Python]
 
 const frontend = [React, GatsbyJS, AngularJS, Netlify, Jest, Sass]
-
-const tooling = [Vim]
 
 const DevIconSkills = [
   {

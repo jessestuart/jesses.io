@@ -1,4 +1,4 @@
-import React from "react"
+import React from 'react'
 
 const Kubernetes = props => (
   <svg width="1em" height="1em" viewBox="0 0 132 128" {...props}>
@@ -14,4 +14,3 @@ const Kubernetes = props => (
 )
 
 export default Kubernetes
-

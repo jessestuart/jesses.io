@@ -1,4 +1,4 @@
-import React from "react"
+import React from 'react'
 
 const TerraformSketch = props => (
   <svg width="1em" height="1em" viewBox="0 0 179 202" {...props}>
@@ -20,4 +20,3 @@ const TerraformSketch = props => (
 )
 
 export default TerraformSketch
-

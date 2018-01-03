@@ -1,4 +1,4 @@
-import React from "react"
+import React from 'react'
 
 const LinuxPlain = props => (
   <svg viewBox="0 0 128 128" {...props}>
@@ -11,4 +11,3 @@ const LinuxPlain = props => (
 )
 
 export default LinuxPlain
-

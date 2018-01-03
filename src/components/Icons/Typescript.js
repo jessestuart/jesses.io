@@ -1,4 +1,4 @@
-import React from "react"
+import React from 'react'
 
 const TypescriptPlain = props => (
   <svg viewBox="0 0 128 128" {...props}>
@@ -10,4 +10,3 @@ const TypescriptPlain = props => (
 )
 
 export default TypescriptPlain
-

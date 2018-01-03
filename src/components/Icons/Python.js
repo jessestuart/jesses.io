@@ -1,4 +1,4 @@
-import React from "react"
+import React from 'react'
 
 const PythonOriginal = props => (
   <svg viewBox="0 0 128 128" {...props}>
@@ -54,4 +54,3 @@ const PythonOriginal = props => (
 )
 
 export default PythonOriginal
-

@@ -1,4 +1,4 @@
-import React from "react"
+import React from 'react'
 
 const RedhatPlain = props => (
   <svg viewBox="0 0 128 128" {...props}>
@@ -10,4 +10,3 @@ const RedhatPlain = props => (
 )
 
 export default RedhatPlain
-
