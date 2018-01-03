@@ -1,5 +1,3 @@
-import ProfileDevIcons from './ProfileDevIcons/index'
-
 export Bio from './Bio'
 export Profile from './Profile'
 export ProfileDevIcons from './ProfileDevIcons'

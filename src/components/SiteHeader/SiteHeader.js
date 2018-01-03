@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import ReactDOM from 'react-dom'
 import _ from 'lodash'
 import Link from 'gatsby-link'
 import classNames from 'classnames'
@@ -14,8 +13,6 @@ class SiteHeader extends Component {
   state = { ...initialState }
 
   toggleHamburgerMenu = () => {
-    console.log({ this: this })
-    console.log('toggle')
     this.setState({
       isHamburgerMenuEnabled: !this.state.isHamburgerMenuEnabled,
     })
