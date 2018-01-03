@@ -19,7 +19,6 @@ import {
   Jest,
   Kubernetes,
   Linux,
-  MongoDB,
   Mysql,
   Netlify,
   Nginx,
