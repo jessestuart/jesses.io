@@ -8,6 +8,7 @@
     "react-helmet": "^5.2.0"
   },
   "devDependencies": {
+    "@storybook/react": "^3.3.3",
     "babel-jest": "^22.0.4",
     "chalk": "^2.3.0",
     "classnames": "^2.2.5",
@@ -88,30 +89,13 @@
     "watch": "^1.0.2"
   },
   "homepage": "https://jessestuart.com",
-  "keywords": [
-    "blog",
-    "gatsby",
-    "photography",
-    "react"
-  ],
+  "keywords": ["blog", "gatsby", "photography", "react"],
   "license": "MIT",
   "lint-staged": {
-    "*.{js,jsx}": [
-      "prettier --write",
-      "git add"
-    ],
-    "*.json": [
-      "prettier --write",
-      "git add"
-    ],
-    "*.{css,scss}": [
-      "prettier --write",
-      "git add"
-    ],
-    "*.md": [
-      "npm run lint:textfix",
-      "git add"
-    ]
+    "*.{js,jsx}": ["prettier --write", "git add"],
+    "*.json": ["prettier --write", "git add"],
+    "*.{css,scss}": ["prettier --write", "git add"],
+    "*.md": ["npm run lint:textfix", "git add"]
   },
   "main": "n/a",
   "repository": {
@@ -123,10 +107,13 @@
     "clean": "rm -rf node_modules/ .cache/ && yarn",
     "deploy": "./node_modules/gatsby-cli/lib/index.js build && ./bin/deploy.js",
     "dev": "gatsby develop",
-    "fix-semi": "eslint --quiet --ignore-pattern node_modules --ignore-pattern public --parser babel-eslint --no-eslintrc --rule '{\"semi\": [2, \"never\"], \"no-extra-semi\": [2]}' --fix **/*.js",
-    "format": "prettier --trailing-comma es5 --no-semi --single-quote --write 'src/**/*.js' 'src/**/*.md'",
+    "fix-semi":
+      "eslint --quiet --ignore-pattern node_modules --ignore-pattern public --parser babel-eslint --no-eslintrc --rule '{\"semi\": [2, \"never\"], \"no-extra-semi\": [2]}' --fix **/*.js",
+    "format":
+      "prettier --trailing-comma es5 --no-semi --single-quote --write 'src/**/*.js' 'src/**/*.md'",
     "lint": "yarn run lint:js",
-    "lint:js": "./node_modules/.bin/eslint --ext .js,.jsx --ignore-pattern public .",
+    "lint:js":
+      "./node_modules/.bin/eslint --ext .js,.jsx --ignore-pattern public .",
     "new": "./bin/newpost.js",
     "test": "jest -c test/jest.config.js"
   }

@@ -53,13 +53,19 @@ const SubBlurb = ({ emoji1, emoji2, children }) => (
     <span className="f6 ml2">
       <span
         dangerouslySetInnerHTML={{
-          __html: twemoji.parse(emoji1),
+          __html: twemoji.parse(emoji1, {
+            folder: 'svg',
+            ext: '.svg',
+          }),
         }}
       />
       &nbsp;&nbsp;
       <span
         dangerouslySetInnerHTML={{
-          __html: twemoji.parse(emoji2),
+          __html: twemoji.parse(emoji2, {
+            folder: 'svg',
+            ext: '.svg',
+          }),
         }}
       />
     </span>
