@@ -1,9 +1,11 @@
+/* eslint-disable no-unused-vars */
 import {
+  AWS,
   AngularJS,
   Ansible,
   Atom,
-  AWS,
   Babel,
+  Clojure,
   D3js,
   Debian,
   Docker,
@@ -27,6 +29,7 @@ import {
   React,
   Redhat,
   Redis,
+  Redux,
   Sass,
   Terraform,
   Typescript,
@@ -35,26 +38,18 @@ import {
   Vim,
   Webpack,
 } from '../Icons'
+/* eslint-enable no-unused-vars */
 
 const infra = [Docker, Kubernetes, Ansible, Vagrant, Packer, Terraform]
 
-const backend = [Java, Grails, Go, Nodejs, Gradle, Python]
+const backend = [Java, Grails, Go, Nodejs, Clojure, Python]
 
-const frontend = [React, GatsbyJS, AngularJS, Netlify, Jest, Sass]
+const frontend = [React, GatsbyJS, Jest, Redux, AngularJS, Netlify]
 
 const DevIconSkills = [
-  {
-    icons: infra,
-    label: 'infra',
-  },
-  {
-    icons: backend,
-    label: 'backend',
-  },
-  {
-    icons: frontend,
-    label: 'frontend',
-  },
+  { icons: infra, label: 'infra' },
+  { icons: backend, label: 'backend' },
+  { icons: frontend, label: 'frontend' },
 ]
 
 export default DevIconSkills

@@ -11,3 +11,11 @@
 
 * Redux
 * Swagger
+
+========================================================
+
+### Blog post Ideas
+
+* Gatsby + Docker + CircleCI pipeline
+
+- Homemaker
