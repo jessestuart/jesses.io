@@ -4,28 +4,30 @@ import classNames from 'classnames'
 import DevIconColumn from './DevIconColumn'
 import DevIconSkills from './DevIconSkills'
 
+// NB: Removing this breaks the responsive layout for the `Profile` component.
 import './styles.scss'
-
-console.log(DevIconSkills);
 
 const ProfileDevIcons = () => {
   return (
     <section
-      className="hot-pink center w-75 code"
+      className="center w-90 code"
       style={{
         display: 'grid',
-        gridTemplateColumns: 'repeat(12, 1fr)',
-        gridTemplateRows: 'repeat(4, 1fr)',
+        gridTemplateColumns: 'repeat(16, 1fr)',
+        gridTemplateRows: 'repeat(3, 1fr)',
       }}
     >
       {DevIconSkills.map((devIcon, index) => (
         <Fragment key={devIcon.label}>
           <div
-            className={classNames('flex items-center justify-end f4', {
-              'bb b--green': index + 1 < DevIconSkills.length,
-            })}
+            className={classNames(
+              'moon-grey flex items-center justify-end f3',
+              {
+                'bb b--white-50': index + 1 < DevIconSkills.length,
+              }
+            )}
             style={{
-              gridColumn: 'span 1',
+              gridColumn: 'span 2',
               gridRow: `${index + 1} / ${index + 2}`,
             }}
           >
@@ -34,11 +36,9 @@ const ProfileDevIcons = () => {
           {devIcon.icons.map((icon, innerIndex) => (
             <DevIconColumn
               key={innerIndex}
-              // label={icon.label}
-              // useWordmark={icon.useWordmark}
               DevIcon={icon}
               className={classNames({
-                'bb b--green': index + 1 < DevIconSkills.length,
+                'bb b--white-50': index + 1 < DevIconSkills.length,
               })}
               style={{
                 gridColumn: `span 2`,

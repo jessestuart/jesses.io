@@ -10,8 +10,10 @@ import {
   Git,
   Go,
   Gradle,
+  Grails,
   Java,
   Javascript,
+  Kubernetes,
   Linux,
   MongoDB,
   Mysql,
@@ -32,28 +34,11 @@ import {
   Webpack,
 } from '../Icons'
 
-const infra = [
-  Docker,
-  AWS,
-  Nginx,
-  Packer,
-  Ansible,
-  Vagrant,
-]
+const infra = [Docker, Kubernetes, Ansible, Vagrant, Packer, Terraform]
 
-const backend = [
-  Java,
-  Nodejs,
-  Go,
-  Python,
-]
+const backend = [Java, Grails, Go, Nodejs, Gradle, Python]
 
-const frontend = [
-  React,
-  Webpack,
-  AngularJS,
-  Typescript,
-]
+const frontend = [React, Webpack, AngularJS, Sass]
 
 const DevIconSkills = [
   {
