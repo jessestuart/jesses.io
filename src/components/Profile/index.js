@@ -5,7 +5,6 @@ import Avatar from './Avatar'
 import ProfileBlurb from './ProfileBlurb'
 import ProfileFooter from './ProfileFooter'
 
-import './profile-intro.module.scss'
 import styles from './profile-intro.module.scss'
 
 const Profile = () => (

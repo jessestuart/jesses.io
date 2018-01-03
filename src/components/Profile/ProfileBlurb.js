@@ -1,11 +1,14 @@
 import React, { Fragment } from 'react'
 import PropTypes from 'prop-types'
+import twemoji from 'twemoji'
 
+import './profile-blurb.scss'
+
+const beigbederUrl =
+  'https://www.scribd.com/doc/184481594/Love-Lasts-Three-Years'
 const colingUrl =
   'https://f001.backblazeb2.com/file/js-public/Dimensions%20of%20Variation%20in%20American%20English%20(COLING%2C%202014).pdf'
 const uspoUrl = 'https://f001.backblazeb2.com/file/js-public/US20150026079.pdf'
-const beigbederUrl =
-  'https://www.scribd.com/doc/184481594/Love-Lasts-Three-Years'
 
 const ProfileBlurb = () => (
   <Fragment>
@@ -47,8 +50,18 @@ const ProfileBlurbHeading = () => (
 const SubBlurb = ({ emoji1, emoji2, children }) => (
   <p className="flex justify-center justify-end-ns items-center">
     <span className="f5 f4-ns fw3 lh-title dib tr">{children}</span>
-    <span className="f4 ml2">
-      {emoji1}&nbsp;&nbsp;{emoji2}
+    <span className="f6 ml2">
+      <span
+        dangerouslySetInnerHTML={{
+          __html: twemoji.parse(emoji1),
+        }}
+      />
+      &nbsp;&nbsp;
+      <span
+        dangerouslySetInnerHTML={{
+          __html: twemoji.parse(emoji2),
+        }}
+      />
     </span>
   </p>
 )
