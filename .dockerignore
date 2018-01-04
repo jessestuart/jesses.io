@@ -1,3 +1,4 @@
-.git
-node_modules
-public
+.cache/
+.git/
+node_modules/
+public/
