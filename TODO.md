@@ -2,6 +2,7 @@
 
 * Integrate `react-calendar-heatmap` to highlight GH contributions.
 * Consolidate vendor stylesheets in `styles` directory.
+* Set up SonarQube
 
 ### Need-to-do
 
