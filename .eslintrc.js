@@ -7,6 +7,7 @@ module.exports = {
     'prettier/react',
     'prettier/standard',
   ],
+  parser: 'babel-eslint',
   env: {
     browser: true,
     es6: true,
@@ -26,6 +27,7 @@ module.exports = {
     },
   },
   rules: {
+    'no-console': 'warn',
     'react/prop-types': 'warn',
     'react/no-unescaped-entities': 'off',
   },

@@ -23,6 +23,10 @@ jobs:
           key: dependencies-{{ checksum "package.json" }}
 
       - run:
+          name: Run linter.
+          command: yarn lint
+
+      - run:
           name: Compile static site.
           command: yarn build
 
