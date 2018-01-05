@@ -10,6 +10,7 @@
   "devDependencies": {
     "babel-eslint": "^8.1.2",
     "babel-jest": "^22.0.4",
+    "caniuse-lite": "^1.0.30000787",
     "chalk": "^2.3.0",
     "classnames": "^2.2.5",
     "concurrently": "^3.5.1",
@@ -60,16 +61,20 @@
     "js-devicon": "^2.7.4",
     "lodash": "^4.17.4",
     "normalize.css": "^7.0.0",
+    "postcss": "^6.0.15",
     "postcss-cssnext": "^3.0.2",
     "postcss-custom-media": "^6.0.0",
     "postcss-import": "^11.0.0",
     "postcss-nested": "^3.0.0",
     "postcss-scss": "^1.0.3",
     "prettier": "^1.9.2",
+    "prop-types": "^15.6.0",
     "puppeteer": "^0.13.0",
     "raven-js": "^3.21.0",
+    "react": "^16.2.0",
     "react-calendar-heatmap": "^1.6.3",
     "react-cosmos": "^3.2.0",
+    "react-dom": "^16.2.0",
     "react-feather": "^1.0.8",
     "react-headroom": "^2.2.2",
     "react-sizeme": "^2.3.6",
@@ -105,13 +110,30 @@
     "watch": "^1.0.2"
   },
   "homepage": "https://jessestuart.com",
-  "keywords": ["blog", "gatsby", "photography", "react"],
+  "keywords": [
+    "blog",
+    "gatsby",
+    "photography",
+    "react"
+  ],
   "license": "MIT",
   "lint-staged": {
-    "*.{js,jsx}": ["prettier --write", "git add"],
-    "*.json": ["prettier --write", "git add"],
-    "*.{css,scss}": ["prettier --write", "git add"],
-    "*.md": ["yarn run lint:textfix", "git add"]
+    "*.{js,jsx}": [
+      "prettier --write",
+      "git add"
+    ],
+    "*.json": [
+      "prettier --write",
+      "git add"
+    ],
+    "*.{css,scss}": [
+      "prettier --write",
+      "git add"
+    ],
+    "*.md": [
+      "yarn run lint:textfix",
+      "git add"
+    ]
   },
   "main": "n/a",
   "private": true,

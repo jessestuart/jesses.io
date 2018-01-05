@@ -42,6 +42,9 @@ jobs:
       - store_artifacts:
           path: jessestuart_$CIRCLE_SHA1.tar.gz
 
+      - run:
+          command: mkdir -p /tmp/workspace/public
+
       - persist_to_workspace:
           root: /tmp/workspace/public
           paths:
