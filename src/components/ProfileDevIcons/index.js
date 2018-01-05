@@ -6,6 +6,7 @@ import DevIconSkills from './DevIconSkills'
 
 // NB: Removing this breaks the responsive layout for the `Profile` component.
 import './styles.scss'
+import styles from './profile-dev-icons.module.scss'
 
 const ProfileDevIcons = () => {
   return (
@@ -17,12 +18,7 @@ const ProfileDevIcons = () => {
         </p>
       </div>
       <section
-        className="center w-75 code"
-        style={{
-          display: 'grid',
-          gridTemplateColumns: 'repeat(14, 1fr)',
-          gridTemplateRows: 'repeat(4, 1fr)',
-        }}
+        className={classNames('center w-75 code', styles.devIconsSection)}
       >
         {DevIconSkills.map((devIcon, index) => (
           <Fragment key={devIcon.label}>

@@ -1,0 +1,8 @@
+.devIconsSection {
+  display: 'grid';
+}
+
+@media (--breakpoint-not-small) {
+  grid-template-columns: 'repeat(14, 1fr)';
+  grid-template-rows: 'repeat(4, 1fr)';
+}
