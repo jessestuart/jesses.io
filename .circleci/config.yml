@@ -42,6 +42,11 @@ jobs:
       - store_artifacts:
           path: jessestuart_$CIRCLE_SHA1.tar.gz
 
+      - persist_to_workspace:
+          root: /tmp/workspace/public
+          paths:
+            - public/*
+
   # ---------------------------------------------------------------------------
 
   push_image:
@@ -88,15 +93,15 @@ jobs:
       - image: circleci/node:8-browsers
 
     steps:
-      - checkout
-
-      - restore_cache:
-          keys:
-            - dependencies-{{ checksum "package.json" }}
-            - dependencies-
-
-      - restore_cache:
-          key: public-dir-{{ .Revision }}
+      # - restore_cache:
+      #     keys:
+      #       - dependencies-{{ checksum "package.json" }}
+      #       - dependencies-
+      #
+      # - restore_cache:
+      #     key: public-dir-{{ .Revision }}
+      - attach_workspace:
+          - at: /tmp/workspace/public
 
       - run:
           name: Workaround for GoogleChrome/puppeteer#290
@@ -105,17 +110,15 @@ jobs:
             .circleci/setup-puppeteer.sh
 
       - run:
-          command: |
-            yarn install
-            yarn build
+          command: npm install -g serve
 
       - run:
-          command: yarn dev
+          command: serve -p 8000 /tmp/workspace/public
           background: true
 
       - run:
           command: |
-            sleep 20
+            sleep 5
             yarn test
 
       - store_artifacts:

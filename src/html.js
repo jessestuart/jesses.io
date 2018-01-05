@@ -41,7 +41,7 @@ export default function HTML(props) {
 
         <meta name="description" content={description} />
 
-        <meta name="twitter:card" content="summary" />
+        <meta name="twitter:card" content={description} />
         <meta name="twitter:site" content="@jesse_stuart" />
         <meta name="twitter:creator" content="@jesse_stuart" />
 
