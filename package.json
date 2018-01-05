@@ -57,7 +57,7 @@
     "postcss-custom-media": "^6.0.0",
     "postcss-import": "^11.0.0",
     "postcss-nested": "^3.0.0",
-    "postcss-scss": "^1.0.2",
+    "postcss-scss": "^1.0.3",
     "prettier": "^1.9.2",
     "prompt": "^1.0.0",
     "puppeteer": "^0.13.0",
