@@ -1,8 +1,7 @@
 import React, { Fragment } from 'react'
 import PropTypes from 'prop-types'
 import twemoji from 'twemoji'
-import classNames from 'classnames'
-import styled, { css } from 'styled-components'
+import styled  from 'styled-components'
 
 import './profile-blurb.scss'
 

@@ -15,9 +15,10 @@
   --gray-700: #495057;
   --gray-800: rgba(55, 59, 70, 1);
   --gray-900: #212529;
-  --code: 'Andale Mono', 'SFMono-Regular', Menlo, Monaco, Consolas,
-    'Liberation Mono', monospace;
+  --code: 'Andale Mono', 'SFMono-Regular', Menlo, Consolas, 'Liberation Mono',
+    monospace;
   --serif: 'Spectral', serif;
+  --sans-serif: 'Open Sans', sans-serif;
   --font-size-1: 3rem;
   --font-size-2: 2.25rem;
   --font-size-3: 1.75rem;
@@ -29,6 +30,10 @@
 
 .lato {
   font-family: 'Lato', sans-serif;
+}
+
+.open-sans {
+  font-family: 'Open Sans', sans-serif;
 }
 
 .grid {
