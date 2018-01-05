@@ -18,7 +18,7 @@ import './blog-post.scss'
 
 class BlogPostTemplate extends Component {
   render() {
-    console.log(this.props)
+    // console.log(this.props)
 
     const post = get(this, 'props.data.markdownRemark')
     const pathname = get(this, 'props.location.pathname')

@@ -2,6 +2,7 @@
 version: 2
 jobs:
   build:
+    working_directory: ~/build
     docker:
       - image: circleci/node:8
 
@@ -15,7 +16,7 @@ jobs:
 
       - run:
           name: Install dependencies.
-          command: yarn install
+          command: yarn install --no-progress --prefer-offline
 
       - save_cache:
           paths:
@@ -46,7 +47,7 @@ jobs:
           command: mkdir -p /tmp/workspace/public
 
       - persist_to_workspace:
-          root: /tmp/workspace/public
+          root: ~/build
           paths:
             - public/*
 
@@ -96,15 +97,15 @@ jobs:
       - image: circleci/node:8-browsers
 
     steps:
-      # - restore_cache:
-      #     keys:
-      #       - dependencies-{{ checksum "package.json" }}
-      #       - dependencies-
-      #
-      # - restore_cache:
-      #     key: public-dir-{{ .Revision }}
-      - attach_workspace:
-          - at: /tmp/workspace/public
+      - checkout
+
+      - restore_cache:
+          keys:
+            - dependencies-{{ checksum "package.json" }}
+            - dependencies-
+
+      - restore_cache:
+          key: public-dir-{{ .Revision }}
 
       - run:
           name: Workaround for GoogleChrome/puppeteer#290
@@ -113,19 +114,20 @@ jobs:
             .circleci/setup-puppeteer.sh
 
       - run:
-          command: npm install -g serve
+          command: yarn install --no-progress --prefer-offline
 
       - run:
-          command: serve -p 8000 /tmp/workspace/public
+          command: yarn dev
           background: true
 
       - run:
           command: |
-            sleep 5
+            sleep 20
             yarn test
 
       - store_artifacts:
-          path: __snapshots__
+          path: test/__snapshots__
+
 
 workflows:
   version: 2

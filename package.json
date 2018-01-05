@@ -55,6 +55,7 @@
     "gatsby-transformer-remark": "^1.7.26",
     "gatsby-transformer-sharp": "^1.6.16",
     "hamburgers": "^0.9.1",
+    "http-serve": "^1.0.1",
     "husky": "^0.14.3",
     "immutable-css-cli": "^1.1.1",
     "jest": "^22.0.4",
@@ -83,6 +84,7 @@
     "react-twitter-widgets": "^1.7.1",
     "react-with-available-width": "^2.0.0",
     "rimraf": "^2.6.2",
+    "serve": "^6.4.3",
     "storybook": "^1.0.0",
     "styled-components": "^2.4.0",
     "stylelint": "^8.4.0",
@@ -107,33 +109,17 @@
     "typeface-source-sans-pro": "^0.0.44",
     "typeface-spectral": "^0.0.44",
     "typography": "^0.16.6",
-    "watch": "^1.0.2"
+    "watch": "^1.0.2",
+    "winston": "^2.4.0"
   },
   "homepage": "https://jessestuart.com",
-  "keywords": [
-    "blog",
-    "gatsby",
-    "photography",
-    "react"
-  ],
+  "keywords": ["blog", "gatsby", "photography", "react"],
   "license": "MIT",
   "lint-staged": {
-    "*.{js,jsx}": [
-      "prettier --write",
-      "git add"
-    ],
-    "*.json": [
-      "prettier --write",
-      "git add"
-    ],
-    "*.{css,scss}": [
-      "prettier --write",
-      "git add"
-    ],
-    "*.md": [
-      "yarn run lint:textfix",
-      "git add"
-    ]
+    "*.{js,jsx}": ["prettier --write", "git add"],
+    "*.json": ["prettier --write", "git add"],
+    "*.{css,scss}": ["prettier --write", "git add"],
+    "*.md": ["yarn run lint:textfix", "git add"]
   },
   "main": "n/a",
   "private": true,

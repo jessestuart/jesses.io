@@ -12,6 +12,7 @@ import './index.scss'
 class BlogIndex extends Component {
   render() {
     console.log(this.props)
+    console.log('blog index');
     const siteTitle = get(this, 'props.data.site.siteMetadata.title')
     const posts = get(this, 'props.data.allMarkdownRemark.edges')
 

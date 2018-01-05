@@ -1,13 +1,13 @@
 {
   "filters": {},
   "rules": {
-    "apostrophe": true,
+    /* "apostrophe": true, */
     "diacritics": true,
     "en-capitalization": true,
     "no-dead-link": true,
     "no-start-duplicated-conjunction": true,
-    "rousseau": true,
-    "stop-words": true,
+    /* "rousseau": true, */
+    /* "stop-words": true, */
     "terminology": true
   }
 }
