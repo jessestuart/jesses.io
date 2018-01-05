@@ -1,8 +1,9 @@
-.devIconsSection {
-  display: 'grid';
-}
+@import '../../styles/js-tachyons.css';
 
-@media (--breakpoint-not-small) {
-  grid-template-columns: 'repeat(14, 1fr)';
-  grid-template-rows: 'repeat(4, 1fr)';
+.devIconsSection {
+  display: grid;
+  @media (--breakpoint-not-small) {
+    grid-template-columns: repeat(14, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+  }
 }

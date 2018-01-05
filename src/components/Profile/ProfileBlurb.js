@@ -20,8 +20,8 @@ const ProfileBlurbHeading = () => (
       <span className="dib nowrap ml2">
         I contain&nbsp;
         <a
-          className="link moon-gray underline"
-          style={{ textDecorationColor: '#FC5270' }}
+          className="link moon-gray"
+          // style={{ textDecorationColor: '#FC5270' }}
           href="http://www.english.illinois.edu/maps/poets/s_z/whitman/song.htm"
         >
           multitudes.

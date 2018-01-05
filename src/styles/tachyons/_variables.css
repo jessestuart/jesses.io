@@ -145,9 +145,3 @@
   --washed-yellow: #FFFCEB;
   --washed-red: #FFDFDF;
 }
-
-a {
-  /* color: var(--light-yellow); */
-  color: inherit;
-  text-decoration: none;
-}

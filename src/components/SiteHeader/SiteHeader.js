@@ -25,19 +25,19 @@ class SiteHeader extends Component {
         className="bb b--hot-pink w-100 center"
         style={{ background: '#282C34' }}
       >
-        <div className="w-50 flex flex-row">
+        <div className="w-33 flex flex-row center">
           <HeaderLink href={'/'} isActive={true}>
             about
           </HeaderLink>
-          <HeaderLink href={'/'} isActive={true}>
+          <HeaderLink href={'/'} isActive={false}>
             words
           </HeaderLink>
-          <HeaderLink href={'/'} isActive={true}>
+          <HeaderLink href={'/'} isActive={false}>
             pictures
           </HeaderLink>
-          <HeaderLink href={'/'} isActive={true}>
+          {/* <HeaderLink href={'/'} isActive={true}>
             <Hamburger />
-          </HeaderLink>
+          </HeaderLink> */}
         </div>
       </div>
     )
@@ -48,7 +48,12 @@ const HeaderLink = ({ children, href, isActive }) => {
   return (
     <h3 className="lato fw7 f4 pa3 flex-auto">
       <Link
-        className="color-inherit no-underline shadow-none flex justify-center items-center"
+        className={classNames(
+          'white-90 shadow-none flex justify-center items-center',
+          {
+            'light-silver': !isActive,
+          }
+        )}
         to={href}
       >
         {children}

@@ -13,7 +13,7 @@
   --gray-500: #ADB5BD;
   --gray-600: #868E96;
   --gray-700: #495057;
-  --gray-800: #343A40;
+  --gray-800: rgba(55, 59, 70, 1);
   --gray-900: #212529;
   --code: 'Andale Mono', 'SFMono-Regular', Menlo, Monaco, Consolas,
     'Liberation Mono', monospace;
@@ -62,4 +62,9 @@ h4,
 h5,
 h6 {
   margin: 0;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
 }
