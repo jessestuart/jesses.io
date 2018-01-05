@@ -11,16 +11,18 @@ import { rhythm, scale } from '../utils/typography'
 import './blog-post.scss'
 
 const renderTag = (tag, index) => (
-  <div className="tag">
+  <div className="tag" key={tag}>
     <Tag name={tag} key={index} />
   </div>
 )
 
 class BlogPostTemplate extends Component {
   render() {
-    const post = this.props.data.markdownRemark
-    const { pathname } = this.props.location
-    const siteTitle = get(this.props, 'data.site.siteMetadata.title')
+    console.log(this.props)
+
+    const post = get(this, 'props.data.markdownRemark')
+    const pathname = get(this, 'props.location.pathname')
+    const siteTitle = get(this, 'props.data.site.siteMetadata.title')
     const { excerpt } = post
     const { date, title, tags, twitterprompt } = post.frontmatter
     const pageURL = `${config.siteMetadata.siteUrl}${pathname}`
@@ -35,7 +37,7 @@ class BlogPostTemplate extends Component {
     const comboTitle = `${title} | ${siteTitle}`
 
     return (
-      <div>
+      <article className="w-50 center bg-white-80 black-80">
         <Helmet title={comboTitle}>
           <meta itemProp="name" content={comboTitle} />
           <meta name="twitter:title" content={comboTitle} />
@@ -55,9 +57,9 @@ class BlogPostTemplate extends Component {
         <section style={sectionStyle}>
           <div className="meta-info">
             <div className="date">{date}</div>
-            <div className="tags">
+            {/* <div className="tags">
               <div className="flex-row">{tags.map(renderTag)}</div>
-            </div>
+            </div> */}
           </div>
         </section>
 
@@ -78,7 +80,7 @@ class BlogPostTemplate extends Component {
         </section>
         <hr style={{ marginBottom: rhythm(1) }} />
         <Bio />
-      </div>
+      </article>
     )
   }
 }

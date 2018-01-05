@@ -1,3 +1,11 @@
+@import '../styles/js-tachyons.css';
+
+// body {
+//   clear: fix;
+//   background-color: var(--white-80);
+//   color: var(--black-80);
+// }
+
 .meta-info {
   display: flex;
 }
@@ -37,7 +45,7 @@
 .prompt {
   font-size: 0.9em;
   flex-shrink: 3;
-  color: hsla(0,0%,0%,0.6);
+  color: hsla(0, 0%, 0%, 0.6);
 }
 
 .social {
