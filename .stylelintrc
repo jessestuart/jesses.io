@@ -5,7 +5,7 @@
     "at-rule-no-unknown": [
       true,
       {
-        "ignoreAtRules": ["value", "extend", "custom-media"]
+        "ignoreAtRules": ["value", "extend", "custom-media", "if", "else"]
       }
     ],
     "color-hex-case": "upper",
@@ -18,7 +18,7 @@
       }
     ],
     "rule-empty-line-before": null,
-    "shorthand-property-no-redundant-values": null,
+    "shorthand-property-no-redundant-values": true,
     "selector-pseudo-class-no-unknown": [
       true,
       {

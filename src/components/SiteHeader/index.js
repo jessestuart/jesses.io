@@ -15,7 +15,6 @@ class SiteHeader extends Component {
   }
 
   toggleHamburgerMenu() {
-    console.log('toggle')
     this.setState({
       isHamburgerMenuEnabled: !this.state.isHamburgerMenuEnabled,
     })

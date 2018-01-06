@@ -1,20 +1,18 @@
-import React from 'react'
+import React, { Fragment } from 'react'
 
-import { SiteHeader } from '../components'
+import { SiteHeader, SiteFooter } from '../components'
 
 import 'prismjs/themes/prism.css'
 
-const Template = ({ children, location }) => (
-  <div
-    style={{
-      display: 'grid',
-      gridGap: '1vw',
-      gridTemplateColumns: 'repeat(10, 9vw)',
-    }}
-  >
-    <SiteHeader />
-    <div style={{ gridColumn: '3 / 9' }}>{children()}</div>
-  </div>
-)
+const Template = ({ children, location }) => {
+  // console.log({ children, location })
+  return (
+    <Fragment>
+      <SiteHeader />
+      {children()}
+      <SiteFooter />
+    </Fragment>
+  )
+}
 
 export default Template

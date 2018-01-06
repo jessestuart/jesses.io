@@ -21,6 +21,7 @@
   &:hover {
     @if $hamburger-hover-use-filter == true {
       filter: $hamburger-hover-filter;
+      // stylelint-disable-next-line
     } @else {
       opacity: $hamburger-hover-opacity;
     }

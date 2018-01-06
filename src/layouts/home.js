@@ -1,18 +1,19 @@
-import React, { Fragment } from 'react'
+import React from 'react'
 
 import { ProfileDevIcons, Profile, SiteFooter, SiteHeader } from 'components'
 
 import 'js-devicon/devicon.min.css'
 import 'prismjs/themes/prism.css'
 import '../styles/js-tachyons.css'
+import './home.scss'
 
 const HomeTemplate = () => (
-  <Fragment>
+  <div className="moon-gray" style={{ backgroundColor: 'rgba(55, 59, 70, 1)' }}>
     <SiteHeader />
     <Profile />
     <ProfileDevIcons />
     <SiteFooter />
-  </Fragment>
+  </div>
 )
 
 export default HomeTemplate

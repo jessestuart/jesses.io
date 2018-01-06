@@ -2,8 +2,6 @@ const _ = require('lodash')
 const path = require('path')
 const { createFilePath } = require('gatsby-source-filesystem')
 
-// const rucksack = require('rucksack-css')
-// const lost = require('lost')
 const cssnext = require('postcss-cssnext')
 const cssnested = require('postcss-nested')
 const atImport = require('postcss-import')
@@ -12,9 +10,9 @@ exports.onCreatePage = ({ page, boundActionCreators }) =>
   new Promise((resolve, reject) => {
     if (page.path === '/') {
       page.layout = 'home'
-      // Update the page.
-      boundActionCreators.createPage(page)
     }
+    // Update the page.
+    boundActionCreators.createPage(page)
 
     resolve()
   })
@@ -109,6 +107,5 @@ exports.modifyWebpackConfig = function({ config }, stage) {
       root: [path.resolve('./src'), path.resolve('./')],
     },
   })
-  // config._config.devtool = 'eval'
   return config
 }

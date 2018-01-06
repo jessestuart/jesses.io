@@ -9,12 +9,10 @@ pipeline:
     volumes:
       - /tmp/cache:/cache
 
-  build:
+  install-dependencies:
     image: node
     commands:
       - yarn install
-      - yarn lint
-      - yarn build
 
   rebuild-cache:
     image: drillster/drone-volume-cache
@@ -23,3 +21,13 @@ pipeline:
       - ./node_modules
     volumes:
       - /tmp/cache:/cache
+
+  lint:
+    image: node
+    commands:
+      - yarn lint
+
+  build-site:
+    image: node
+    commands:
+      - yarn build

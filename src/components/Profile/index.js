@@ -22,7 +22,7 @@ const Profile = () => (
     <div className={classNames('tc tr-ns ph2', styles.blurbContainer)}>
       <ProfileBlurb />
     </div>
-    <div className={styles.footerContainer}>
+    <div className={classNames('bt b--light-silver', styles.footerContainer)}>
       <ProfileFooter />
     </div>
   </div>

@@ -4,7 +4,7 @@ describe('/ (Home page)', () => {
   let page
   beforeAll(async () => {
     page = await global.__BROWSER__.newPage()
-    await page.goto('localhost:8000')
+    await page.goto('http://localhost:8000')
   }, timeout)
 
   afterAll(async () => global.__BROWSER__.close())

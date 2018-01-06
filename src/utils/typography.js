@@ -1,7 +1,7 @@
 import _ from 'lodash'
 import Typography from 'typography'
 
-const fontWeights = _.map(_.range(300, 700, 200), String)
+const fontWeights = _.map(_.range(300, 700, 100), String)
 
 const typography = new Typography(
   _.assign(
@@ -17,6 +17,10 @@ const typography = new Typography(
         },
         {
           name: 'Spectral',
+          styles: fontWeights,
+        },
+        {
+          name: 'Source Sans Pro',
           styles: fontWeights,
         },
         // {

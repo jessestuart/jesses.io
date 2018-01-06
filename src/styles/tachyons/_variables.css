@@ -120,6 +120,12 @@
   --gold: #FFB700;
   --yellow: #FFD700;
   --light-yellow: #FBEBA9;
+
+  /* ------------------------------ */
+  --bg-mid: #343A40;
+  --bg-dark: #282C34;
+
+  /* ------------------------------ */
   --purple: #673AB7;
   --light-purple: rgb(199, 153, 255);
   --dark-pink: #D5008F;
@@ -138,10 +144,4 @@
   --washed-green: #E8FDF5;
   --washed-yellow: #FFFCEB;
   --washed-red: #FFDFDF;
-}
-
-a {
-  /* color: var(--light-yellow); */
-  color: inherit;
-  text-decoration: none;
 }
