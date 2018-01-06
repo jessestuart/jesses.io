@@ -2,9 +2,9 @@ const _ = require('lodash')
 const path = require('path')
 const { createFilePath } = require('gatsby-source-filesystem')
 
-const cssnext = require('postcss-cssnext')
-const cssnested = require('postcss-nested')
 const atImport = require('postcss-import')
+const cssnested = require('postcss-nested')
+const cssnext = require('postcss-cssnext')
 
 exports.onCreatePage = ({ page, boundActionCreators }) =>
   new Promise((resolve, reject) => {
@@ -94,15 +94,7 @@ exports.onCreateNode = ({ node, boundActionCreators, getNode }) => {
 exports.modifyWebpackConfig = function({ config }, stage) {
   config.merge({
     devtool: 'eval',
-    postcss: [
-      atImport(),
-      cssnested,
-      // lost(),
-      // rucksack(),
-      cssnext({
-        browsers: ['>1%', 'last 2 versions'],
-      }),
-    ],
+    postcss: [atImport(), cssnested, cssnext()],
     resolve: {
       root: [path.resolve('./src'), path.resolve('./')],
     },

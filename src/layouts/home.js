@@ -2,7 +2,6 @@ import React from 'react'
 
 import { ProfileDevIcons, Profile, SiteFooter, SiteHeader } from 'components'
 
-import 'js-devicon/devicon.min.css'
 import 'prismjs/themes/prism.css'
 import '../styles/js-tachyons.css'
 import './home.scss'
