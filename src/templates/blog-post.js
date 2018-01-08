@@ -1,11 +1,11 @@
 import React, { Component } from 'react'
 import Helmet from 'react-helmet'
 import get from 'lodash/get'
-import { Share } from 'react-twitter-widgets'
+// import { Share } from 'react-twitter-widgets'
 
 import config from '../../gatsby-config'
 
-import { Bio } from '../components'
+// import { Bio } from '../components'
 import { rhythm, scale } from '../utils/typography'
 
 import './blog-post.scss'
@@ -24,7 +24,7 @@ class BlogPostTemplate extends Component {
     const pathname = get(this, 'props.location.pathname')
     const siteTitle = get(this, 'props.data.site.siteMetadata.title')
     const { excerpt } = post
-    const { date, title, tags, twitterprompt } = post.frontmatter
+    const { date, title, tags } = post.frontmatter
     const pageURL = `${config.siteMetadata.siteUrl}${pathname}`
 
     const sectionStyle = {
