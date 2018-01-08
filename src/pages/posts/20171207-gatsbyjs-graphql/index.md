@@ -23,46 +23,46 @@ sitePlugin
 
 MarkdownRemark
 
-* children
-* excerpt
-* fields
-* fileAbsolutePath
-* frontmatter
-* html
-* id
-* internal
-* parent
-* tableOfContents
-* timeToRead (no args)
-* wordCount
+* Children
+* Excerpt
+* Fields
+* FileAbsolutePath
+* Frontmatter
+* HTML
+* ID
+* Internal
+* Parent
+* TableOfContents
+* TimeToRead (no args)
+* WordCount
 
 SitePage
 
-* children
-* id
-* internal
-* parent
-* path
+* Children
+* ID
+* Internal
+* Parent
+* Path
 
 SitePlugin
 
 Directory
 
-* lots
+* Lots
 
 File
 
-* lots
+* Lots
 
 Site
 
-* buildTime
-* children
-* host
-* id
-* internal
-* parent
-* pathPrefix
-* polyfill
-* port
-* siteMetadata
+* BuildTime
+* Children
+* Host
+* ID
+* Internal
+* Parent
+* PathPrefix
+* Polyfill
+* Port
+* SiteMetadata

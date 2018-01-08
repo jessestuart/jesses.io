@@ -6,14 +6,16 @@ const atImport = require('postcss-import')
 const cssnested = require('postcss-nested')
 const cssnext = require('postcss-cssnext')
 
+// Implement the Gatsby API “onCreatePage”. This is
+// called after every page is created.
 exports.onCreatePage = ({ page, boundActionCreators }) =>
   new Promise((resolve, reject) => {
-    if (page.path === '/') {
-      page.layout = 'home'
-    }
-    // Update the page.
-    boundActionCreators.createPage(page)
+    if (page.path.match(/^\/blog/)) {
+      page.layout = 'blog-layout'
 
+      // Update the page.
+      boundActionCreators.createPage(page)
+    }
     resolve()
   })
 

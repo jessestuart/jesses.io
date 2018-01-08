@@ -1,9 +1,17 @@
 import React, { Fragment } from 'react'
 import PropTypes from 'prop-types'
-import twemoji from 'twemoji'
-import styled  from 'styled-components'
+import styled from 'styled-components'
 
-import './profile-blurb.scss'
+import {
+  CrescentMoon,
+  France,
+  Microscope,
+  OpenBook,
+  PersonalComputer,
+  Rat,
+  Scroll,
+  ThinkingFace,
+} from '../Icons/Twemoji'
 
 const beigbederUrl =
   'https://www.scribd.com/doc/184481594/Love-Lasts-Three-Years'
@@ -19,8 +27,8 @@ const ProfileBlurbHeading = () => (
       <span className="dib nowrap ml2">
         I contain&nbsp;
         <a
-          className="link moon-gray"
-          // style={{ textDecorationColor: '#FC5270' }}
+          className="link moon-gray underline"
+          style={{ textDecorationColor: 'rgba(199, 153, 255, 0.5)' }}
           href="http://www.english.illinois.edu/maps/poets/s_z/whitman/song.htm"
         >
           multitudes.
@@ -33,56 +41,36 @@ const ProfileBlurbHeading = () => (
 const ProfileBlurb = () => (
   <Fragment>
     <ProfileBlurbHeading />
-    <SubBlurb emoji1="💻" emoji2="🤔">
+    <SubBlurb Emoji1={PersonalComputer} Emoji2={ThinkingFace}>
       NYC-based software engineer.
     </SubBlurb>
-    <SubBlurb emoji1="📖" emoji2="📜">
+    <SubBlurb Emoji1={OpenBook} Emoji2={Scroll}>
       <span className="db">
         Published <BlurbLink href={colingUrl}>NLP researcher</BlurbLink>, and
       </span>
       <BlurbLink href={uspoUrl}>USPO Patent holder.</BlurbLink>
     </SubBlurb>
-    <SubBlurb emoji1="🔬" emoji2="🐀">
+    <SubBlurb Emoji1={Microscope} Emoji2={Rat}>
       Neuroscientist by degree.
     </SubBlurb>
-    <SubBlurb emoji1="🇫🇷" emoji2="🌙">
+    <SubBlurb Emoji1={France} Emoji2={CrescentMoon}>
       <BlurbLink href={beigbederUrl}>French translator</BlurbLink> by night.
     </SubBlurb>
   </Fragment>
 )
 
-const SubBlurb = ({ emoji1, emoji2, children }) => (
+const SubBlurb = ({ Emoji1, Emoji2, children }) => (
   <p className="flex justify-center justify-end-ns items-center">
     <span className="f5 f4-ns fw3 dib tr" style={{ lineHeight: 1.375 }}>
       {children}
     </span>
-    <span className="f6 ml2">
-      <span
-        dangerouslySetInnerHTML={{
-          __html: twemoji.parse(emoji1, {
-            folder: 'svg',
-            ext: '.svg',
-          }),
-        }}
-      />
-      &nbsp;&nbsp;
-      <span
-        dangerouslySetInnerHTML={{
-          __html: twemoji.parse(emoji2, {
-            folder: 'svg',
-            ext: '.svg',
-          }),
-        }}
-      />
+    <span className="f6 dib">
+      <Emoji1 className="mh2" style={{ height: '1.25rem', width: '1.25rem' }} />
+      <Emoji2 style={{ height: '1.25rem', width: '1.25rem' }} />
     </span>
   </p>
 )
 
-// const UnstyledBlurbLink = ({ className, children, href }) => (
-//   <a href={href} className={classNames('mr1', className)}>
-//     {children}
-//   </a>
-// )
 const BlurbLink = styled.a`
   text-decoration: underline;
   text-decoration-color: rgba(199, 153, 255, 0.5);
@@ -91,8 +79,8 @@ const BlurbLink = styled.a`
 
 SubBlurb.propTypes = {
   children: PropTypes.oneOfType([PropTypes.array, PropTypes.string]).isRequired,
-  emoji1: PropTypes.string.isRequired,
-  emoji2: PropTypes.string.isRequired,
+  Emoji1: PropTypes.element.isRequired,
+  Emoji2: PropTypes.element.isRequired,
 }
 
 export default ProfileBlurb

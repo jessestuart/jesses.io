@@ -36,7 +36,7 @@ import {
   Vagrant,
   Vim,
   Webpack,
-} from '../Icons'
+} from '../Icons/DevIcons'
 /* eslint-enable no-unused-vars */
 
 const infra = [Docker, Kubernetes, Ansible, Vagrant, Packer, Terraform]

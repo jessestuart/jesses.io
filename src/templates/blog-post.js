@@ -70,7 +70,7 @@ class BlogPostTemplate extends Component {
             dangerouslySetInnerHTML={{ __html: post.html }}
           />
 
-          <section className="share-section">
+          {/* <section className="share-section">
             <div className="social">
               <Share
                 url={pageURL}
@@ -82,9 +82,9 @@ class BlogPostTemplate extends Component {
               />
             </div>
             <p className="prompt">Let's keep the conversation going!</p>
-          </section>
-          <hr style={{ marginBottom: rhythm(1) }} />
-          <Bio />
+          </section> */}
+          {/* <hr style={{ marginBottom: rhythm(1) }} /> */}
+          {/* <Bio /> */}
         </article>
       </div>
     )

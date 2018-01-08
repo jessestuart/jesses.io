@@ -10,8 +10,8 @@ tags:
 draft: true
 ---
 
-* deleteRemoved: false
-* cache-control: max-age
-* invalidating
-* browsers kept old versions, which is totally fine. but the cloudfront caches had been killed and the files were deleted from s3. so requests from old versions died
+* DeleteRemoved: false
+* Cache-control: max-age
+* Invalidating
+* Browsers kept old versions, which is totally fine. But the cloudfront caches had been killed and the files were deleted from s3. So requests from old versions died
 * http://someguyontheinter.net/blog/serving-index-pages-from-a-non-root-location-via-cloudfront/

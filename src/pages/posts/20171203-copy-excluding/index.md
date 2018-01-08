@@ -7,7 +7,7 @@ tags:
 draft: false
 ---
 
-I'm building this blog with [Gatsby](https://gatsbyjs.org), a tool for
+I'm building this blog with [Gatsby](https://www.gatsbyjs.org/), a tool for
 generating static sites relatively easily using a mix of React and markdown.
 I've spent the day pulling down starter kits and playing with them. Now that (I
 think) I have a relatively useful setup, it's time to check in my work. If

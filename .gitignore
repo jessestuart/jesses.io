@@ -6,5 +6,6 @@
 .intermediate-representation/
 .tern-port
 css/
+flow-libs/
 node_modules/
 public/

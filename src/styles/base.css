@@ -1,0 +1,99 @@
+@import './tachyons/tachyons.css';
+
+@custom-media --breakpoint-not-small screen and (min-width: 45em);
+@custom-media --breakpoint-medium screen and (min-width: 45em) and (max-width: 60em);
+@custom-media --breakpoint-large screen and (min-width: 60em);
+
+:root {
+  --hot-pink: #fc5270;
+  --gray-100: #f8f9fa;
+  --gray-200: #e9ecef;
+  --gray-300: #dee2e6;
+  --gray-400: #ced4da;
+  --gray-500: #adb5bd;
+  --gray-600: #868e96;
+  --gray-700: #495057;
+  --gray-800: rgba(55, 59, 70, 1);
+  --gray-900: #212529;
+  --code: 'Andale Mono', 'SFMono-Regular', Menlo, Consolas, 'Liberation Mono',
+    monospace;
+  --serif: 'Spectral', serif;
+  --sans-serif: 'Open Sans', sans-serif;
+  --font-size-1: 3rem;
+  --font-size-2: 2.25rem;
+  --font-size-3: 1.75rem;
+  --font-size-4: 1.15rem;
+  --font-size-5: 1rem;
+  --font-size-6: 0.875rem;
+  --font-size-7: 0.75rem;
+  --gray-primary: rgb(55, 59, 70);
+  --gray-primary-darker: rgb(41, 44, 52);
+  --header-purple: rgba(50, 0, 50, 0.8);
+  --line-height-solid: 1.25;
+  --line-height-title: 1.5;
+  --line-height-copy: 1.7;
+}
+
+.lato {
+  font-family: 'Lato', sans-serif;
+}
+
+.source-sans {
+  font-family: 'Source Sans Serif Pro', sans-serif;
+}
+
+.open-sans {
+  font-family: 'Open Sans', sans-serif;
+}
+
+.grid {
+  display: grid;
+}
+
+.grid-full {
+  grid-column: 1 / 13;
+}
+
+.grid-col-3-6 {
+  grid-column: 3 / 6;
+}
+
+.grid-col-6-9 {
+  grid-column: 6 / 9;
+}
+
+.grid-col-6-11 {
+  grid-column: 6 / 11;
+}
+
+.shadow-none {
+  box-shadow: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.bg-gray-primary {
+  background-color: var(--gray-primary);
+}
+.bg-gray-primary-darker {
+  background-color: var(--gray-primary-darker);
+}
+
+.header-purple {
+  color: var(--header-purple);
+}
+.b--header-purple {
+  border-color: var(--header-purple);
+}

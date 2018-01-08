@@ -23,6 +23,10 @@ const typography = new Typography(
           name: 'Source Sans Pro',
           styles: fontWeights,
         },
+        {
+          name: 'Open Sans',
+          styles: fontWeights,
+        },
         // {
         //   name: 'Arvo',
         //   styles: ['400', '400i', '700', '700i'],
