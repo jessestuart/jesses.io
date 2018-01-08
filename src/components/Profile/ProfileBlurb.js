@@ -18,6 +18,8 @@ const beigbederUrl =
 const colingUrl =
   'https://f001.backblazeb2.com/file/js-public/Dimensions%20of%20Variation%20in%20American%20English%20(COLING%2C%202014).pdf'
 const uspoUrl = 'https://f001.backblazeb2.com/file/js-public/US20150026079.pdf'
+const whitmanUrl =
+  'http://www.english.illinois.edu/maps/poets/s_z/whitman/song.htm'
 
 const ProfileBlurbHeading = () => (
   <Fragment>
@@ -26,13 +28,9 @@ const ProfileBlurbHeading = () => (
       <span className="dib nowrap">I contradict myself.</span>
       <span className="dib nowrap ml2">
         I contain&nbsp;
-        <a
-          className="link moon-gray underline"
-          style={{ textDecorationColor: 'rgba(199, 153, 255, 0.5)' }}
-          href="http://www.english.illinois.edu/maps/poets/s_z/whitman/song.htm"
-        >
+        <PrimaryBlurbLink className="link moon-gray" href={whitmanUrl}>
           multitudes.
-        </a>
+        </PrimaryBlurbLink>
       </span>
     </h2>
   </Fragment>
@@ -61,9 +59,7 @@ const ProfileBlurb = () => (
 
 const SubBlurb = ({ Emoji1, Emoji2, children }) => (
   <p className="flex justify-center justify-end-ns items-center">
-    <span className="f5 f4-ns fw3 dib tr" style={{ lineHeight: 1.375 }}>
-      {children}
-    </span>
+    <span className="f5 f4-ns fw3 dib tr lh-copy">{children}</span>
     <span className="f6 dib">
       <Emoji1 className="mh2" style={{ height: '1.25rem', width: '1.25rem' }} />
       <Emoji2 style={{ height: '1.25rem', width: '1.25rem' }} />
@@ -72,15 +68,52 @@ const SubBlurb = ({ Emoji1, Emoji2, children }) => (
 )
 
 const BlurbLink = styled.a`
-  text-decoration: underline;
-  text-decoration-color: rgba(199, 153, 255, 0.5);
-  text-underline-position: auto;
+  text-decoration: none;
+  border-bottom: 2px solid rgba(199, 153, 255, 0.7);
+  position: relative;
+
+  &::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    bottom: -2px;
+    left: 0;
+    background-color: rgba(126, 241, 249, 0.7);
+    visibility: hidden;
+    -webkit-transform: scaleX(0);
+    transform: scaleX(0);
+    -webkit-transition: all 0.2s ease-in-out 0s;
+    transition: all 0.2s ease-in-out 0s;
+  }
+  &:hover:before {
+    visibility: visible;
+    -webkit-transform: scaleX(1);
+    transform: scaleX(1);
+  }
+  &.no-slide:hover:before {
+    visibility: hidden;
+  }
+  &.no-slide:hover {
+    color: #7ef1f9;
+  }
+`
+
+const PrimaryBlurbLink = BlurbLink.extend`
+  border-bottom: 2px solid rgba(199, 153, 255, 0.7);
+  position: relative;
+
+  &:before {
+    position: absolute;
+    height: 3px;
+    bottom: -3px;
+  }
 `
 
 SubBlurb.propTypes = {
   children: PropTypes.oneOfType([PropTypes.array, PropTypes.string]).isRequired,
-  Emoji1: PropTypes.element.isRequired,
-  Emoji2: PropTypes.element.isRequired,
+  Emoji1: PropTypes.func.isRequired,
+  Emoji2: PropTypes.func.isRequired,
 }
 
 export default ProfileBlurb

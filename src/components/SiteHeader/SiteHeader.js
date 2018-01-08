@@ -4,6 +4,7 @@ import PropTypes from 'prop-types'
 import Link from 'gatsby-link'
 import classNames from 'classnames'
 import Headroom from 'react-headroom'
+import _ from 'lodash'
 
 import '../../styles/base.css'
 
@@ -47,9 +48,17 @@ class SiteHeader extends Component<Props> {
 
   render() {
     // const { isHamburgerMenuEnabled } = this.state
-    const isRoot = location.pathname === '/'
+    const pathname = _.get(this, 'props.location.pathname')
+    const isRoot = _.isNil(pathname) || pathname === '/'
     return (
-      <Headroom>
+      <Headroom
+        style={{
+          mozTransition: 'all 0.7s ease-in-out',
+          oTransaction: 'all 0.7s ease-in-out',
+          transition: 'all 0.7s ease-in-out',
+          webkitTranstion: 'all 0.7s ease-in-out',
+        }}
+      >
         <header
           className={classNames('bb b--hot-pink center site-header flex', {
             bw1: !isRoot,
@@ -63,16 +72,16 @@ class SiteHeader extends Component<Props> {
             <HeaderLink
               className="br b--mid-gray"
               href={'/blog'}
-              isActive={location.pathname === '/blog'}
+              isActive={pathname === '/blog'}
             >
               words
             </HeaderLink>
-            <HeaderLink href={'/photography'} isActive={false}>
+            <HeaderLink
+              href={'/photography'}
+              isActive={pathname === '/photography'}
+            >
               pictures
             </HeaderLink>
-            {/* <HeaderLink href={'/'} isActive={true}>
-              <Hamburger />
-            </HeaderLink> */}
           </div>
         </header>
       </Headroom>
