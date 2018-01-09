@@ -10,9 +10,9 @@
 .intermediate-representation/
 public/
 
-# Generic JS lib directories.
+# JS lib directories.
 flow-libs/
 node_modules/
 
-# Test / test coverage-related.
+# Test / test-coverage-related.
 test/coverage/
