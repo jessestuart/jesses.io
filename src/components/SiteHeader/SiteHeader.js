@@ -8,16 +8,6 @@ import _ from 'lodash'
 
 import '../../styles/base.css'
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-import '../../styles/js-tachyons.css'
-import '../../styles/hamburgers/hamburgers.scss'
-=======
-import './site-header.css'
->>>>>>> 22c978a... [commit message skipped]
-
-=======
->>>>>>> 0685726... [ui] Add twemojis as React components.
 const initialState = { isHamburgerMenuEnabled: false }
 
 type Props = {

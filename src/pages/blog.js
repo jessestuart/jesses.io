@@ -3,17 +3,8 @@ import Link from 'gatsby-link'
 import get from 'lodash/get'
 import Helmet from 'react-helmet'
 
-<<<<<<< HEAD
 class BlogIndex extends Component {
   render() {
-=======
-import './index.scss'
-
-class BlogIndex extends Component {
-  render() {
-    console.log(this.props)
-    console.log('blog index')
->>>>>>> 22c978a... [commit message skipped]
     const siteTitle = get(this, 'props.data.site.siteMetadata.title')
     const posts = get(this, 'props.data.allMarkdownRemark.edges')
 
@@ -67,11 +58,7 @@ export const pageQuery = graphql`
             slug
           }
           frontmatter {
-<<<<<<< HEAD
             date(formatString: "D MMMM YYYY")
-=======
-            date(formatString: "DD MMMM YYYY")
->>>>>>> 22c978a... [commit message skipped]
             title
           }
         }
