@@ -1,31 +1,72 @@
 import React from 'react'
-import classNames from 'classnames'
 
 import Avatar from './Avatar'
 import ProfileBlurb from './ProfileBlurb'
 import ProfileFooter from './ProfileFooter'
 
-import styles from './profile-intro.module.scss'
+import styled from 'styled-components'
+
+const IntroWrapper = styled.div.attrs({
+  className: 'items-center justify-center pv4',
+})`
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  min-height: calc(100vh - 21px);
+
+  @media (min-width: 45em) {
+    grid-template-rows: repeat(2, 1fr);
+  }
+`
+
+const AvatarContainer = styled.div.attrs({
+  className: 'center mw-100-ns mw-50',
+})`
+  grid-column: 5 / 9;
+
+  @media (min-width: 45em) and (max-width: 60em) {
+    grid-column: 2 / 5;
+    grid-row: 1 / 5;
+  }
+  @media (min-width: 60em) {
+    grid-column: 3 / 5;
+    grid-row: 1 / 5;
+  }
+`
+
+const BlurbContainer = styled.div.attrs({
+  className: 'tc tr-ns ph2',
+})`
+  grid-column: 1 / 13;
+
+  @media (min-width: 45em) and (max-width: 60em) {
+    grid-column: 5 / 12;
+    grid-row: 1 / 5;
+  }
+  @media (min-width: 60em) {
+    grid-column: 5 / 10;
+    grid-row: 1 / 5;
+  }
+`
+
+const FooterContainer = styled.div.attrs({
+  className: 'bt b--light-silver',
+})`
+  grid-column: 1 / 13;
+  grid-row: 5 / 7;
+`
 
 const Profile = () => (
-  <div
-    className={classNames(
-      'items-center justify-center pv4',
-      styles.introWrapper
-    )}
-  >
-    <div
-      className={classNames('center mw-100-ns mw-50', styles.avatarContainer)}
-    >
+  <IntroWrapper>
+    <AvatarContainer>
       <Avatar />
-    </div>
-    <div className={classNames('tc tr-ns ph2', styles.blurbContainer)}>
+    </AvatarContainer>
+    <BlurbContainer>
       <ProfileBlurb />
-    </div>
-    <div className={classNames('bt b--light-silver', styles.footerContainer)}>
+    </BlurbContainer>
+    <FooterContainer>
       <ProfileFooter />
-    </div>
-  </div>
+    </FooterContainer>
+  </IntroWrapper>
 )
 
 export default Profile

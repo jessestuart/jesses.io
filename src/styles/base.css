@@ -5,13 +5,13 @@
 @custom-media --breakpoint-large screen and (min-width: 60em);
 
 :root {
-  --hot-pink: #FC5270;
-  --gray-100: #F8F9FA;
-  --gray-200: #E9ECEF;
-  --gray-300: #DEE2E6;
-  --gray-400: #CED4DA;
-  --gray-500: #ADB5BD;
-  --gray-600: #868E96;
+  --hot-pink: #fc5270;
+  --gray-100: #f8f9fa;
+  --gray-200: #e9ecef;
+  --gray-300: #dee2e6;
+  --gray-400: #ced4da;
+  --gray-500: #adb5bd;
+  --gray-600: #868e96;
   --gray-700: #495057;
   --gray-800: rgba(55, 59, 70, 1);
   --gray-900: #212529;
@@ -22,10 +22,16 @@
   --font-size-1: 3rem;
   --font-size-2: 2.25rem;
   --font-size-3: 1.75rem;
-  --font-size-4: 1.25rem;
+  --font-size-4: 1.15rem;
   --font-size-5: 1rem;
   --font-size-6: 0.875rem;
   --font-size-7: 0.75rem;
+  --gray-primary: rgb(55, 59, 70);
+  --gray-primary-darker: rgb(41, 44, 52);
+  --header-purple: rgba(50, 0, 50, 0.8);
+  --line-height-solid: 1.25;
+  --line-height-title: 1.5;
+  --line-height-copy: 1.7;
 }
 
 .lato {
@@ -34,6 +40,10 @@
 
 .source-sans {
   font-family: 'Source Sans Serif Pro', sans-serif;
+}
+
+.open-sans {
+  font-family: 'Open Sans', sans-serif;
 }
 
 .grid {
@@ -72,4 +82,18 @@ h6 {
 a {
   color: inherit;
   text-decoration: none;
+}
+
+.bg-gray-primary {
+  background-color: var(--gray-primary);
+}
+.bg-gray-primary-darker {
+  background-color: var(--gray-primary-darker);
+}
+
+.header-purple {
+  color: var(--header-purple);
+}
+.b--header-purple {
+  border-color: var(--header-purple);
 }

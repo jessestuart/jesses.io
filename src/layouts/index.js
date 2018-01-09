@@ -4,15 +4,12 @@ import { SiteHeader, SiteFooter } from '../components'
 
 import 'prismjs/themes/prism.css'
 
-const Template = ({ children, location }) => {
-  // console.log({ children, location })
-  return (
-    <Fragment>
-      <SiteHeader />
-      {children()}
-      <SiteFooter />
-    </Fragment>
-  )
-}
+const Template = ({ children, location }) => (
+  <Fragment>
+    <SiteHeader />
+    {children()}
+    <SiteFooter />
+  </Fragment>
+)
 
 export default Template

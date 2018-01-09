@@ -10,7 +10,7 @@ import styles from './profile-dev-icons.module.scss'
 
 const ProfileDevIcons = () => {
   return (
-    <Fragment>
+    <div className="bb b--white-20 bw3">
       <div className="serif f4 fw2 lh-copy flex justify-center">
         <p className="flex w-50 center justify-center align-center pv3 tc">
           Tackling novel problems — at every level of the stack — is my jam.<br />
@@ -52,7 +52,7 @@ const ProfileDevIcons = () => {
           </Fragment>
         ))}
       </section>
-    </Fragment>
+    </div>
   )
 }
 

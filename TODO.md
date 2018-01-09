@@ -1,6 +1,7 @@
 ### Need-to-do
 
 * Add anchor tags to SVG icons
+* Add social media icons
 
 ### Ideas
 

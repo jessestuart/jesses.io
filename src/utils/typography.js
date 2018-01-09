@@ -1,7 +1,13 @@
+/* @flow */
 import _ from 'lodash'
 import Typography from 'typography'
 
-const fontWeights = _.map(_.range(300, 700, 100), String)
+import 'typeface-alegreya-sans'
+import 'typeface-lato'
+import 'typeface-open-sans'
+import 'typeface-spectral'
+
+const fontWeights = _.map(_.range(300, 800, 100), String)
 
 const typography = new Typography(
   _.assign(
@@ -21,6 +27,14 @@ const typography = new Typography(
         },
         {
           name: 'Source Sans Pro',
+          styles: fontWeights,
+        },
+        {
+          name: 'Open Sans',
+          styles: fontWeights,
+        },
+        {
+          name: 'Alegreya Sans',
           styles: fontWeights,
         },
         // {

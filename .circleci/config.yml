@@ -134,9 +134,6 @@ workflows:
   main:
     jobs:
       - build
-      - capture_screenshots:
-          requires:
-            - build
       - push_image:
           requires:
             - build

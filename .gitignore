@@ -1,10 +1,18 @@
+# OS stuffs.
 *.log
-.cache/
 .DS_Store
 .env
+.tern-port
+
+# Gatsby-specific generated output.
+.cache/
 .gatsby-context.js
 .intermediate-representation/
-.tern-port
-css/
-node_modules/
 public/
+
+# JS lib directories.
+flow-libs/
+node_modules/
+
+# Test / test-coverage-related.
+test/coverage/

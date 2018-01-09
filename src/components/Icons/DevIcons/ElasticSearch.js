@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react'
 
 const Elasticsearch = props => (
   <svg width="1em" height="1em" viewBox="0 0 115 128" {...props}>
@@ -27,6 +27,6 @@ const Elasticsearch = props => (
       d="M33.689 120.004a71.146 71.146 0 0 0 21.13-28.307H6.379c5.98 11.961 15.549 21.928 27.31 28.307z"
     />
   </svg>
-);
+)
 
-export default Elasticsearch;
+export default Elasticsearch

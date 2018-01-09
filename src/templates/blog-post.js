@@ -1,11 +1,11 @@
 import React, { Component } from 'react'
 import Helmet from 'react-helmet'
 import get from 'lodash/get'
-import { Share } from 'react-twitter-widgets'
+// import { Share } from 'react-twitter-widgets'
 
 import config from '../../gatsby-config'
 
-import { Bio } from '../components'
+// import { Bio } from '../components'
 import { rhythm, scale } from '../utils/typography'
 
 import './blog-post.scss'
@@ -18,13 +18,11 @@ import './blog-post.scss'
 
 class BlogPostTemplate extends Component {
   render() {
-    // console.log(this.props)
-
     const post = get(this, 'props.data.markdownRemark')
     const pathname = get(this, 'props.location.pathname')
     const siteTitle = get(this, 'props.data.site.siteMetadata.title')
     const { excerpt } = post
-    const { date, title, tags, twitterprompt } = post.frontmatter
+    const { date, title, tags } = post.frontmatter
     const pageURL = `${config.siteMetadata.siteUrl}${pathname}`
 
     const sectionStyle = {
@@ -70,7 +68,7 @@ class BlogPostTemplate extends Component {
             dangerouslySetInnerHTML={{ __html: post.html }}
           />
 
-          <section className="share-section">
+          {/* <section className="share-section">
             <div className="social">
               <Share
                 url={pageURL}
@@ -82,9 +80,9 @@ class BlogPostTemplate extends Component {
               />
             </div>
             <p className="prompt">Let's keep the conversation going!</p>
-          </section>
-          <hr style={{ marginBottom: rhythm(1) }} />
-          <Bio />
+          </section> */}
+          {/* <hr style={{ marginBottom: rhythm(1) }} /> */}
+          {/* <Bio /> */}
         </article>
       </div>
     )
