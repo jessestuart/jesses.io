@@ -2,6 +2,10 @@
 
 .devIconsSection {
   display: grid;
+  @media (max-width: 45em) {
+    grid-template-columns: repeat(8, 1fr);
+    grid-auto-rows: max-content;
+  }
   @media (--breakpoint-not-small) {
     grid-template-columns: repeat(14, 1fr);
     grid-template-rows: repeat(4, 1fr);

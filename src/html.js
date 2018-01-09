@@ -1,26 +1,26 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 
 let stylesString
 if (process.env.NODE_ENV === 'production') {
   try {
-    stylesString = require(`!raw-loader!../public/styles.css`)
+    // eslint-disable-next-line
+    stylesString = require('!raw-loader!../public/styles.css')
   } catch (e) {
     console.error(e)
   }
 }
 
-const description = 'Jesse has things to say.'
+const DESCRIPTION = 'Jesse has things to say.'
 
-export default function HTML(props) {
-  const {
-    body,
-    bodyAttributes,
-    headComponents,
-    htmlAttributes,
-    postBodyComponents,
-    preBodyComponents,
-  } = props
-
+const HTML = ({
+  body,
+  bodyAttributes,
+  headComponents,
+  htmlAttributes,
+  postBodyComponents,
+  preBodyComponents,
+}) => {
   const css =
     process.env.NODE_ENV === 'production' ? (
       <style
@@ -39,17 +39,17 @@ export default function HTML(props) {
           content="width=device-width, initial-scale=1, shrink-to-fit=no"
         />
 
-        <meta name="description" content={description} />
+        <meta name="description" content={DESCRIPTION} />
 
-        <meta name="twitter:card" content={description} />
+        <meta name="twitter:card" content={DESCRIPTION} />
         <meta name="twitter:site" content="@jesse_stuart" />
         <meta name="twitter:creator" content="@jesse_stuart" />
 
-        <meta property="og:description" content={description} />
+        <meta property="og:description" content={DESCRIPTION} />
         <meta property="og:site_name" content="Jesse Stuart" />
         <meta property="og:type" content="article" />
 
-        <meta itemProp="description" content={description} />
+        <meta itemProp="description" content={DESCRIPTION} />
 
         {headComponents}
         {css}
@@ -66,3 +66,14 @@ export default function HTML(props) {
     </html>
   )
 }
+
+HTML.propTypes = {
+  body: PropTypes.any,
+  bodyAttributes: PropTypes.any,
+  headComponents: PropTypes.any,
+  htmlAttributes: PropTypes.any,
+  postBodyComponents: PropTypes.any,
+  preBodyComponents: PropTypes.any,
+}
+
+export default HTML

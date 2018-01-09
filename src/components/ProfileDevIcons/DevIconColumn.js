@@ -1,6 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import classNames from 'classnames'
+import styled, { css } from 'styled-components'
 
 const DevIconColumn = props => {
   const { className, style, DevIcon } = props
@@ -14,6 +15,17 @@ const DevIconColumn = props => {
     </div>
   )
 }
+
+// const DevIconColumnStyled = styled.div.attrs({
+//   className: 'pa4 flex justify-center items-center',
+// })`
+//   ${props =>
+//     css`
+//       ${props.style};
+//       background: white;
+//       color: palevioletred;
+//     `};
+// `
 
 DevIconColumn.propTypes = {
   className: PropTypes.string,
