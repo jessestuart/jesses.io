@@ -10,7 +10,7 @@ pipeline:
       - /tmp/cache:/cache
 
   install-dependencies:
-    image: node
+    image: node:9
     commands:
       - yarn install
 
@@ -23,11 +23,11 @@ pipeline:
       - /tmp/cache:/cache
 
   lint:
-    image: node
+    image: node:9
     commands:
       - yarn lint
 
   build-site:
-    image: node
+    image: node:9
     commands:
       - yarn build
