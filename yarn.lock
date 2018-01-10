@@ -4943,9 +4943,9 @@ flatten@^1.0.2:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/flatten/-/flatten-1.0.2.tgz#dae46a9d78fbe25292258cc1e780a41d95c03782"
 
-flow-bin@^0.62.0:
-  version "0.62.0"
-  resolved "https://registry.yarnpkg.com/flow-bin/-/flow-bin-0.62.0.tgz#14bca669a6e3f95c0bc0c2d1eb55ec4e98cb1d83"
+flow-bin@^0.63.1:
+  version "0.63.1"
+  resolved "https://registry.yarnpkg.com/flow-bin/-/flow-bin-0.63.1.tgz#ab00067c197169a5fb5b4996c8f6927b06694828"
 
 flow-parser@^0.*:
   version "0.63.1"
@@ -5593,6 +5593,10 @@ get-stdin@^5.0.1:
 get-stream@^3.0.0:
   version "3.0.0"
   resolved "https://registry.yarnpkg.com/get-stream/-/get-stream-3.0.0.tgz#8e943d1358dc37555054ecbe2edb05aa174ede14"
+
+get-url-origin@^1.0.1:
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/get-url-origin/-/get-url-origin-1.0.1.tgz#edebfcc085433e84c6b32a5738b0996edfd5a7b9"
 
 get-value@^2.0.3, get-value@^2.0.6:
   version "2.0.6"
@@ -13876,11 +13880,12 @@ textlint-rule-helper@^2.0.0:
   dependencies:
     unist-util-visit "^1.1.0"
 
-textlint-rule-no-dead-link@^4.1.2:
-  version "4.1.3"
-  resolved "https://registry.yarnpkg.com/textlint-rule-no-dead-link/-/textlint-rule-no-dead-link-4.1.3.tgz#69af8340dc7100fec23b3ce42fae091c3708c56d"
+textlint-rule-no-dead-link@^4.2.0:
+  version "4.2.0"
+  resolved "https://registry.yarnpkg.com/textlint-rule-no-dead-link/-/textlint-rule-no-dead-link-4.2.0.tgz#6fb9f570a1aa52029e5ad600bfed7de55419d11a"
   dependencies:
     fs-extra "^5.0.0"
+    get-url-origin "^1.0.1"
     isomorphic-fetch "^2.2.1"
     textlint-rule-helper "^2.0.0"
 
