@@ -1,76 +1,75 @@
 import React, { Fragment } from 'react'
 import classNames from 'classnames'
-import styled, { css } from 'styled-components'
+import styled from 'styled-components'
 
 import DevIconColumn from './DevIconColumn'
 import DevIconSkills from './DevIconSkills'
 
-// NB: Removing this breaks the responsive layout for the `Profile` component.
-// import './styles.scss'
 import '../../styles/base.css'
 import '../../styles/hvr-animations.css'
-import styles from './profile-dev-icons.module.scss'
 
 const ProfileDevIcons = () => {
   return (
     <div className="bb b--white-20 bw3">
       <div className="flex justify-center align-center">
-        <p className="serif f4 fw3 lh-copy center pv3 tc w-50-ns w-75">
-          Tackling novel problems — at <em>every</em> level of the stack — is my
-          jam.<br />
+        <p className="serif f4 fw3 lh-copy center pv3 tc w-75">
+          Tackling novel problems —
+          <span style={{ whiteSpace: 'nowrap' }}>
+            &nbsp;at every level of the stack&nbsp;
+          </span>
+          — <span style={{ whiteSpace: 'nowrap' }}>is my jam.</span>
+          <br />
           Here are some of the technologies I've enjoyed hacking on lately:
         </p>
       </div>
-      <section
-        className={classNames('center w-75 code', styles.devIconsSection)}
-      >
+      <DevIconsSection>
         {DevIconSkills.map((devIcon, index) => (
           <Fragment key={devIcon.label}>
-            <div
-              className={classNames(
-                'moon-grey flex items-center justify-start f3',
-                {
-                  'bb b--white-50': index + 1 < DevIconSkills.length,
-                }
-              )}
-              style={{
-                gridColumn: 'span 2',
-                gridRow: `${index + 1} / ${index + 2}`,
-              }}
-            >
-              {devIcon.label}
-            </div>
+            <DevIconLabel>{devIcon.label}</DevIconLabel>
             {devIcon.icons.map((DevIcon, innerIndex) => (
-              // <DevIconColumnStyled key={innerIndex} index={innerIndex}>
-              //   <div className="pa4 w-50 flex justify-center items-center">
-              //     <DevIcon width="100%" height="100%" className="hvr-grow" />
-              //   </div>
-              // </DevIconColumnStyled>
               <DevIconColumn
                 key={innerIndex}
                 DevIcon={DevIcon}
                 className={classNames({
-                  'bb b--white-50': index + 1 < DevIconSkills.length,
+                  'bb b--white-50':
+                    innerIndex + 1 > devIcon.icons.length / 2 &&
+                    index < DevIconSkills.length,
+                  'bb-ns b--white-50': innerIndex + 1 < devIcon.icons.length,
                 })}
-                style={{
-                  gridColumn: 'span 2',
-                  gridRow: `${index + 1} / ${index + 2}`,
-                }}
               />
             ))}
           </Fragment>
         ))}
-      </section>
+      </DevIconsSection>
     </div>
   )
 }
 
-const DevIconColumnStyled = styled.div.attrs({ className: 'bb b--white-50' })`
-  grid-column: span 2;
-  ${props =>
-    css`
-      grid-row: ${props.index + 1} / ${props.index + 2};
-    `};
+const DevIconLabel = styled.div.attrs({
+  className: 'moon-grey flex items-center justify-start f3',
+})`
+  grid-column: span 9;
+  grid-row: span 2;
+  @media (max-width: 45em) {
+    border-bottom: 1px solid #fc5270;
+  }
+  @media (min-width: 45em) {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+    grid-row: span 1;
+    grid-column: span 2;
+  }
+`
+
+const DevIconsSection = styled.div.attrs({ className: 'center code w-90' })`
+  display: grid;
+  @media (max-width: 45em) {
+    grid-template-columns: repeat(9, 1fr);
+    grid-auto-rows: max-content;
+  }
+  @media (min-width: 45em) {
+    grid-template-columns: repeat(14, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+  }
 `
 
 export default ProfileDevIcons

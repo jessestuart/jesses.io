@@ -1,7 +1,15 @@
 import React, { Fragment } from 'react'
 import PropTypes from 'prop-types'
 
-import {
+import Twemoji from '../Icons/Twemoji'
+import { BlurbLink } from './ProfileLinks'
+import ProfileHeading from './ProfileHeading'
+
+const BEIGBEDER_URL = 'http://jstu.art/ojVB'
+const COLING_URL = 'http://jstu.art/oijk'
+const USPO_URL = 'http://jstu.art/oj1g'
+
+const {
   CrescentMoon,
   France,
   Microscope,
@@ -10,14 +18,7 @@ import {
   Rat,
   Scroll,
   ThinkingFace,
-} from '../Icons/Twemoji'
-
-import { BlurbLink } from './ProfileLinks'
-import ProfileHeading from './ProfileHeading'
-
-const BEIGBEDER_URL = 'http://jstu.art/ojVB'
-const COLING_URL = 'http://jstu.art/oijk'
-const USPO_URL = 'http://jstu.art/oj1g'
+} = Twemoji
 
 const ProfileBlurb = () => (
   <Fragment>

@@ -1,5 +1,7 @@
+import DevIcons from '../Icons/DevIcons'
+
 /* eslint-disable no-unused-vars */
-import {
+const {
   AWS,
   AngularJS,
   Ansible,
@@ -36,7 +38,7 @@ import {
   Vagrant,
   Vim,
   Webpack,
-} from '../Icons/DevIcons'
+} = DevIcons
 /* eslint-enable no-unused-vars */
 
 const infra = [Docker, Kubernetes, Ansible, Vagrant, Packer, Terraform]

@@ -1,33 +1,24 @@
 import React, { Component } from 'react'
 import classNames from 'classnames'
-import feather from 'feather-icons'
-
-import styles from './profile-footer.module.scss'
+import { ChevronDown } from 'react-feather'
 
 let intervals = []
+
+const initialState = { isAnimatingChevron: false }
 
 export default class ProfileFooter extends Component {
   constructor() {
     super()
-    this.state = { ...this.intiialState }
+    this.state = { ...initialState }
   }
 
   componentDidMount() {
-    feather.replace({
-      color: '#FF3A5C',
-      height: '2.5rem',
-      width: '2.5rem',
-    })
     intervals.forEach(clearInterval)
     intervals = []
     intervals.push(setInterval(this.animateChevron.bind(this), 4000))
   }
 
   componentWillUnmount() {
-    this.cancelAnimation()
-  }
-
-  cancelAnimation() {
     intervals.forEach(interval => clearInterval(interval))
     intervals = []
   }
@@ -50,13 +41,13 @@ export default class ProfileFooter extends Component {
           on the pull requests<br />
           of giants.
         </h4>
-        <div className="flex w-100 justify-center">
+        <div className="flex w-100 justify-center mt2">
           <div
             className={classNames({
               'hvr-wobble-vertical hvr-wobble-vertical-animating': isAnimatingChevron,
             })}
           >
-            <i data-feather="chevron-down" />
+            <ChevronDown color="#fc5270" size={'2rem'} />
           </div>
         </div>
       </section>

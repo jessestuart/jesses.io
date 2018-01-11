@@ -1,4 +1,3 @@
-/* @flow */
 import React, { Fragment } from 'react'
 
 import { SiteHeader, SiteFooter } from '../components'
@@ -6,7 +5,6 @@ import { SiteHeader, SiteFooter } from '../components'
 import 'prismjs/themes/prism.css'
 
 const BlogLayout = ({ children, location }) => {
-  // console.log({ children, location })
   return (
     <Fragment>
       <SiteHeader location={location} />

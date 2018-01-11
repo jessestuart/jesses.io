@@ -35,14 +35,18 @@
   "devDependencies": {
     "babel-eslint": "^8.2.1",
     "babel-jest": "^22.0.4",
+    "babel-plugin-lodash": "^3.3.2",
     "babel-plugin-styled-components": "^1.4.0",
+    "babel-preset-es2015": "^6.24.1",
     "babel-preset-flow": "^6.23.0",
+    "babel-preset-react": "^6.24.1",
     "bluebird": "^3.5.1",
     "chalk": "^2.3.0",
     "classnames": "^2.2.5",
     "concurrently": "^3.5.1",
     "copy-files": "^0.1.0",
     "copy-paste": "^1.3.0",
+    "coveralls": "^3.0.0",
     "eslint": "^4.15.0",
     "eslint-config-prettier": "^2.9.0",
     "eslint-config-standard": "^11.0.0-beta.0",
@@ -60,6 +64,7 @@
     "flow-typed": "^2.2.3",
     "hamburgers": "^0.9.1",
     "husky": "^0.14.3",
+    "identity-obj-proxy": "^3.0.0",
     "jest": "^22.0.5",
     "lint-staged": "^6.0.0",
     "lodash": "^4.17.4",
@@ -129,7 +134,7 @@
     "build": "gatsby build",
     "clean": "rm -rf node_modules/ .cache/ && yarn install -q",
     "dev": "gatsby develop",
-    "format": "prettier 'src/**/*.js' 'src/**/*.md'",
+    "format": "prettier 'ssrc/**/*.js' 'src/**/*.md'",
     "lint": "concurrently 'yarn lint:js' 'yarn lint:style'",
     "lint:js":
       "eslint --format 'node_modules/eslint-friendly-formatter' --quiet --ext .js .",
@@ -138,7 +143,13 @@
     "lint:text": "textlint src/pages/**/index.md",
     "lint:textfix": "textlint --fix src/pages/**/index.md",
     "precommit": "lint-staged",
-    "test": "jest -c test/jest.config.js",
-    "test:static": "serve -p 8000 public/ & yarn run test"
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "test:coverage": "jest --coverage",
+    "test:coveralls":
+      "cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js",
+    "test:coveralls-alt": "cat ./test/coverage/lcov.info | yarn coveralls",
+    "test:snapshots:update": "jest -u",
+    "test:snapshots:skip": "env MODE='skip-snapshots' jest"
   }
 }

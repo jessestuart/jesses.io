@@ -15,4 +15,5 @@ flow-libs/
 node_modules/
 
 # Test / test-coverage-related.
-test/coverage/
+test/coverage/*
+!test/coverage/lcov.info

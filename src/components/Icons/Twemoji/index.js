@@ -1,8 +1,21 @@
-export CrescentMoon from './CrescentMoon'
-export France from './France'
-export Microscope from './Microscope'
-export OpenBook from './OpenBook'
-export PersonalComputer from './PersonalComputer'
-export Rat from './Rat'
-export Scroll from './Scroll'
-export ThinkingFace from './ThinkingFace'
+import CrescentMoon from './CrescentMoon'
+import France from './France'
+import Microscope from './Microscope'
+import OpenBook from './OpenBook'
+import PersonalComputer from './PersonalComputer'
+import Rat from './Rat'
+import Scroll from './Scroll'
+import ThinkingFace from './ThinkingFace'
+
+const Twemoji = {
+  CrescentMoon,
+  France,
+  Microscope,
+  OpenBook,
+  PersonalComputer,
+  Rat,
+  Scroll,
+  ThinkingFace,
+}
+
+export default Twemoji
