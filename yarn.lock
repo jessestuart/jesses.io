@@ -13482,9 +13482,9 @@ typeface-poiret-one@^0.0.44:
   version "0.0.44"
   resolved "https://registry.yarnpkg.com/typeface-poiret-one/-/typeface-poiret-one-0.0.44.tgz#83cbc1ea8513cd7cf5b0501e8fb3a12e45056587"
 
-typeface-spectral@0.0.44:
-  version "0.0.44"
-  resolved "https://registry.yarnpkg.com/typeface-spectral/-/typeface-spectral-0.0.44.tgz#00f1dac4b1d38eda79b7aceb48df2f36b39ae484"
+typeface-spectral@0.0.47:
+  version "0.0.47"
+  resolved "https://registry.yarnpkg.com/typeface-spectral/-/typeface-spectral-0.0.47.tgz#0af26c82b49cdbdc425ad8b77e8201c24c3a52c0"
 
 typography-normalize@^0.14.0:
   version "0.14.0"
