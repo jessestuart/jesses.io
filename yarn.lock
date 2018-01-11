@@ -4943,9 +4943,9 @@ flatten@^1.0.2:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/flatten/-/flatten-1.0.2.tgz#dae46a9d78fbe25292258cc1e780a41d95c03782"
 
-flow-bin@^0.62.0:
-  version "0.62.0"
-  resolved "https://registry.yarnpkg.com/flow-bin/-/flow-bin-0.62.0.tgz#14bca669a6e3f95c0bc0c2d1eb55ec4e98cb1d83"
+flow-bin@^0.63.1:
+  version "0.63.1"
+  resolved "https://registry.yarnpkg.com/flow-bin/-/flow-bin-0.63.1.tgz#ab00067c197169a5fb5b4996c8f6927b06694828"
 
 flow-parser@^0.*:
   version "0.63.1"
@@ -11223,9 +11223,9 @@ react-cosmos-config@^3.1.1:
     react-cosmos-shared "^3.1.1"
     yargs "^9.0.1"
 
-react-cosmos-loader@^3.2.0:
-  version "3.2.0"
-  resolved "https://registry.yarnpkg.com/react-cosmos-loader/-/react-cosmos-loader-3.2.0.tgz#e695681fdc702f4a2435d5274be64c28046eb484"
+react-cosmos-loader@^3.2.1:
+  version "3.2.1"
+  resolved "https://registry.yarnpkg.com/react-cosmos-loader/-/react-cosmos-loader-3.2.1.tgz#ef9a2e5ad0712563f014e205223901c76114f8e6"
   dependencies:
     async-until "^1.0.0"
     deep-equal "^1.0.1"
@@ -11234,9 +11234,9 @@ react-cosmos-loader@^3.2.0:
     react-cosmos-shared "^3.1.1"
     react-cosmos-state-proxy "^3.2.0"
 
-react-cosmos-playground@^3.2.0:
-  version "3.2.0"
-  resolved "https://registry.yarnpkg.com/react-cosmos-playground/-/react-cosmos-playground-3.2.0.tgz#5ee7ada4eb3742242c67d4a226d76487c9742d91"
+react-cosmos-playground@^3.2.1:
+  version "3.2.1"
+  resolved "https://registry.yarnpkg.com/react-cosmos-playground/-/react-cosmos-playground-3.2.1.tgz#b27a6bdd93529d3a3403ad7879b61d1d9d5e30b8"
 
 react-cosmos-shared@^3.1.1:
   version "3.1.1"
@@ -11277,9 +11277,9 @@ react-cosmos-voyager@^3.1.1:
     glob "^7.1.1"
     traverse "^0.6.6"
 
-react-cosmos@^3.2.0:
-  version "3.2.0"
-  resolved "https://registry.yarnpkg.com/react-cosmos/-/react-cosmos-3.2.0.tgz#cb6ea69fdea648c8010665b2d5285ee024a7a7e4"
+react-cosmos@^3.2.1:
+  version "3.2.1"
+  resolved "https://registry.yarnpkg.com/react-cosmos/-/react-cosmos-3.2.1.tgz#815351225e9ff898374bfe25220868e06eec290b"
   dependencies:
     express "^4.15.4"
     fs-extra "^4.0.1"
@@ -11288,8 +11288,8 @@ react-cosmos@^3.2.0:
     import-from "^2.1.0"
     lodash.omit "^4.5.0"
     react-cosmos-config "^3.1.1"
-    react-cosmos-loader "^3.2.0"
-    react-cosmos-playground "^3.2.0"
+    react-cosmos-loader "^3.2.1"
+    react-cosmos-playground "^3.2.1"
     react-cosmos-shared "^3.1.1"
     react-cosmos-voyager "^3.1.1"
     react-cosmos-voyager2 "^3.1.1"
