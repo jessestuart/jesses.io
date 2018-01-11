@@ -4943,9 +4943,9 @@ flatten@^1.0.2:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/flatten/-/flatten-1.0.2.tgz#dae46a9d78fbe25292258cc1e780a41d95c03782"
 
-flow-bin@^0.62.0:
-  version "0.62.0"
-  resolved "https://registry.yarnpkg.com/flow-bin/-/flow-bin-0.62.0.tgz#14bca669a6e3f95c0bc0c2d1eb55ec4e98cb1d83"
+flow-bin@^0.63.1:
+  version "0.63.1"
+  resolved "https://registry.yarnpkg.com/flow-bin/-/flow-bin-0.63.1.tgz#ab00067c197169a5fb5b4996c8f6927b06694828"
 
 flow-parser@^0.*:
   version "0.63.1"
@@ -5159,9 +5159,17 @@ gatsby-cli@^1.1.28:
     yargs "^8.0.2"
     yurnalist "^0.2.1"
 
-gatsby-link@^1.6.32, gatsby-link@^1.6.33:
+gatsby-link@^1.6.32:
   version "1.6.33"
   resolved "https://registry.yarnpkg.com/gatsby-link/-/gatsby-link-1.6.33.tgz#dc32e46ab10087d0f5e3546aeee4fc2450b94ae9"
+  dependencies:
+    babel-runtime "^6.26.0"
+    prop-types "^15.5.8"
+    ric "^1.3.0"
+
+gatsby-link@^1.6.34:
+  version "1.6.34"
+  resolved "https://registry.yarnpkg.com/gatsby-link/-/gatsby-link-1.6.34.tgz#c1ce57cfcb2f693128b2a7d0eff3dde0c6cefec4"
   dependencies:
     babel-runtime "^6.26.0"
     prop-types "^15.5.8"
@@ -5397,9 +5405,9 @@ gatsby-transformer-sharp@^1.6.16:
     fs-extra "^4.0.2"
     image-size "^0.6.0"
 
-gatsby@^1.9.149:
-  version "1.9.150"
-  resolved "https://registry.yarnpkg.com/gatsby/-/gatsby-1.9.150.tgz#4b602afb70cc4155e69d28ed4275a5b816d2cdd7"
+gatsby@^1.9.152:
+  version "1.9.152"
+  resolved "https://registry.yarnpkg.com/gatsby/-/gatsby-1.9.152.tgz#daee92a04529588ff811ddf74d98cbb6ef927998"
   dependencies:
     async "^2.1.2"
     babel-code-frame "^6.22.0"
@@ -5440,7 +5448,7 @@ gatsby@^1.9.149:
     fs-extra "^4.0.1"
     gatsby-1-config-css-modules "^1.0.8"
     gatsby-cli "^1.1.28"
-    gatsby-link "^1.6.33"
+    gatsby-link "^1.6.34"
     gatsby-module-loader "^1.0.9"
     gatsby-react-router-scroll "^1.0.7"
     glob "^7.1.1"
@@ -5493,9 +5501,10 @@ gatsby@^1.9.149:
     socket.io "^2.0.3"
     static-site-generator-webpack-plugin "^3.4.1"
     string-similarity "^1.2.0"
-    style-loader "^0.13.0"
+    style-loader "^0.19.1"
     type-of "^2.0.1"
     url-loader "^0.5.7"
+    v8-compile-cache "^1.1.0"
     webpack "^1.13.3"
     webpack-configurator "^0.3.0"
     webpack-dev-middleware "^1.8.4"
@@ -12490,6 +12499,12 @@ sc-formatter@~3.0.0:
   version "3.0.2"
   resolved "https://registry.yarnpkg.com/sc-formatter/-/sc-formatter-3.0.2.tgz#9abdb14e71873ce7157714d3002477bbdb33c4e6"
 
+schema-utils@^0.3.0:
+  version "0.3.0"
+  resolved "https://registry.yarnpkg.com/schema-utils/-/schema-utils-0.3.0.tgz#f5877222ce3e931edae039f17eb3716e7137f8cf"
+  dependencies:
+    ajv "^5.0.0"
+
 scriptjs@^2.5.8:
   version "2.5.8"
   resolved "https://registry.yarnpkg.com/scriptjs/-/scriptjs-2.5.8.tgz#d0c43955c2e6bad33b6e4edf7b53b8965aa7ca5f"
@@ -13415,11 +13430,12 @@ structured-source@^3.0.2:
   dependencies:
     boundary "^1.0.1"
 
-style-loader@^0.13.0:
-  version "0.13.2"
-  resolved "https://registry.yarnpkg.com/style-loader/-/style-loader-0.13.2.tgz#74533384cf698c7104c7951150b49717adc2f3bb"
+style-loader@^0.19.1:
+  version "0.19.1"
+  resolved "https://registry.yarnpkg.com/style-loader/-/style-loader-0.19.1.tgz#591ffc80bcefe268b77c5d9ebc0505d772619f85"
   dependencies:
     loader-utils "^1.0.2"
+    schema-utils "^0.3.0"
 
 style-search@^0.1.0:
   version "0.1.0"
@@ -14673,6 +14689,10 @@ uuid@^3.0.0, uuid@^3.0.1, uuid@^3.1.0:
 uws@~0.14.4:
   version "0.14.5"
   resolved "https://registry.yarnpkg.com/uws/-/uws-0.14.5.tgz#67aaf33c46b2a587a5f6666d00f7691328f149dc"
+
+v8-compile-cache@^1.1.0:
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/v8-compile-cache/-/v8-compile-cache-1.1.0.tgz#1dc2a340fb8e5f800a32bcdbfb8c23cd747021b9"
 
 v8flags@^2.1.1:
   version "2.1.1"
