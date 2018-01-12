@@ -1,7 +1,4 @@
 module.exports = {
-  // globalSetup: './test/setup.js',
-  // globalTeardown: './test/teardown.js',
-  // testEnvironment: './test/puppeteer-environment.js',
   coverageDirectory: './test/coverage',
   moduleDirectories: ['node_modules', 'src', 'static'],
   transform: {
@@ -10,11 +7,7 @@ module.exports = {
     '^.+\\.js$': 'babel-jest',
   },
   moduleNameMapper: {
-    // Plain CSS - match css files that don't end with '.module.css' https://regex101.com/r/VzwrKH/4
-    '^(?!.*\\.module\\.(s)?css$).*\\.(s)?css$':
-      '<rootDir>/test/__mocks__/styleMock.js',
-    // CSS Modules - match files that end with 'module.css'
-    '\\.module\\.(s)?css$': 'identity-obj-proxy', // CSS modules
+    '\\.(s)?css$': '<rootDir>/test/__mocks__/styleMock.js',
   },
   testPathIgnorePatterns: ['/node_modules/', '<rootDir>/.cache/'],
   globals: {

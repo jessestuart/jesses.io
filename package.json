@@ -12,7 +12,6 @@
     "gatsby-plugin-nprogress": "^1.0.9",
     "gatsby-plugin-offline": "^1.0.12",
     "gatsby-plugin-purify-css": "^2.2.1",
-    "gatsby-plugin-react-css-modules": "^1.0.11",
     "gatsby-plugin-react-helmet": "^2.0.3",
     "gatsby-plugin-react-next": "^1.0.7",
     "gatsby-plugin-sass": "^1.0.15",
@@ -47,7 +46,6 @@
     "concurrently": "^3.5.1",
     "copy-files": "^0.1.0",
     "copy-paste": "^1.3.0",
-    "coveralls": "^3.0.0",
     "eslint": "^4.15.0",
     "eslint-config-prettier": "^2.9.0",
     "eslint-config-standard": "^11.0.0-beta.0",
@@ -133,9 +131,9 @@
   },
   "scripts": {
     "build": "gatsby build",
-    "clean": "rm -rf node_modules/ .cache/ && yarn install -q",
+    "clean": "rm -rf node_modules/ .cache/ && yarn install -s",
     "dev": "gatsby develop",
-    "format": "prettier 'ssrc/**/*.js' 'src/**/*.md'",
+    "format": "prettier 'src/**/*.js' 'src/**/*.md'",
     "lint": "concurrently 'yarn lint:js' 'yarn lint:style'",
     "lint:js":
       "eslint --format 'node_modules/eslint-friendly-formatter' --quiet --ext .js .",
@@ -146,11 +144,6 @@
     "precommit": "lint-staged",
     "test": "jest",
     "test:coverage": "jest --coverage",
-    "test:coveralls":
-      "cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js",
-    "test:coveralls-alt": "cat ./test/coverage/lcov.info | yarn coveralls",
-    "test:snapshots:skip": "env MODE='skip-snapshots' jest",
-    "test:snapshots:update": "jest -u",
     "test:watch": "jest --watch"
   }
 }

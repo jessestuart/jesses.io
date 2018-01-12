@@ -52,7 +52,7 @@ I stumbled upon [GatsbyJS](https://www.gatsbyjs.org/), which, similar to Jekyll,
 
 ### Hosting
 
-The simplest approach to hosting would probably have been GitHub pages. It's brain-dead simple to use regardless, but Gatsby even offers plugins to deploy to it. Unfortunately, GitHub pages doesn't really [support HTTPS with custom domains](https://hackernoon.com/set-up-ssl-on-github-pages-with-custom-domains-for-free-a576bdf51bc), which knocked it out of the running. (Ok, you can just use CloudFlare to cache GitHub pages, and then use SSL there, which is effectively what I wound up doing with AWS. I may even switch to GitHub pages in the future if S3 somehow gets expensive / not worth the hassle.)
+The simplest approach to hosting would probably have been GitHub pages. It's brain-dead simple to use regardless, but Gatsby even offers plugins to deploy to it. Unfortunately, GitHub pages doesn't really [support HTTPS with custom domains](https://hackernoon.com/set-up-ssl-on-github-pages-with-custom-domains-for-free-a576bdf51bc?gi=fe1ed60ab62e), which knocked it out of the running. (Ok, you can just use CloudFlare to cache GitHub pages, and then use SSL there, which is effectively what I wound up doing with AWS. I may even switch to GitHub pages in the future if S3 somehow gets expensive / not worth the hassle.)
 
 The next simplest option was [Surge](https://surge.sh/), which reminded me of a Heroku for static sites. It seemed reasonable, but I didn't like that SSL and HTTPS control would cost $13/mo. Given the relatively low traffic I expect, I _think_ I can get away with a lot less.
 
