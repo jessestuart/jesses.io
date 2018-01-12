@@ -12,13 +12,12 @@ class PhotographyIndex extends Component {
       <div className="bg-near-white">
         <Helmet title={siteTitle} />
         <div
-          className="w-90 center pa4"
+          className="w-75 center pa4"
           style={{
-            overflow: 'hidden',
             display: 'grid',
             gridGap: '0.5rem',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(15rem, 1fr))',
-            gridAutoRows: '30rem',
+            gridTemplateColumns: 'repeat(2, 1fr)',
+            gridAutoRows: '20rem',
             gridAutoFlow: 'row dense',
           }}
         >
@@ -33,17 +32,15 @@ class PhotographyIndex extends Component {
                   display: 'flex',
                   flexDirection: 'column',
                   justifyContent: 'center',
-                  boxSizing: 'border-box',
                   gridColumnStart: 'auto',
                   gridRowStart: 'auto',
-                  color: '#fff',
-                  backgroundSize: 'cover',
-                  backgroundPosition: 'center',
-                  boxShadow: '-2px 2px 10px 0px rgba(#444, 0.4)',
                   overflow: 'hidden',
                 }}
               >
-                <Img sizes={sizes} />
+                <Img
+                  sizes={sizes}
+                  style={{ boxShadow: '-2px 2px 10px 0px #CCC' }}
+                />
               </div>
             )
           })}

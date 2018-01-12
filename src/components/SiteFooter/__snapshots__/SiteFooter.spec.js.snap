@@ -2,7 +2,7 @@
 
 exports[`Render SiteFooter component with dark theme. 1`] = `
 <footer
-  className="b--hot-pink bb bw2 f6 f5-ns fw4 flex flex-column lh-title pa4 bg-gray-primary moon-gray"
+  className="b--hot-pink bb bottom-0 bw2 f5-ns f6 flex flex-column fw4 lh-title pa4 w-100 bg-gray-primary moon-gray"
 >
   <div
     className="flex justify-center items-center"
@@ -38,7 +38,7 @@ exports[`Render SiteFooter component with dark theme. 1`] = `
 
 exports[`Render SiteFooter component. 1`] = `
 <footer
-  className="b--hot-pink bb bw2 f6 f5-ns fw4 flex flex-column lh-title pa4 bg-light-gray"
+  className="b--hot-pink bb bottom-0 bw2 f5-ns f6 flex flex-column fw4 lh-title pa4 w-100 bg-light-gray"
 >
   <div
     className="flex justify-center items-center"

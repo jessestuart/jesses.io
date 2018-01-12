@@ -111,30 +111,13 @@
     "winston": "^3.0.0-rc1"
   },
   "homepage": "https://jessestuart.com",
-  "keywords": [
-    "blog",
-    "gatsby",
-    "photography",
-    "react"
-  ],
+  "keywords": ["blog", "gatsby", "photography", "react"],
   "license": "MIT",
   "lint-staged": {
-    "*.{js,jsx}": [
-      "prettier --write",
-      "git add"
-    ],
-    "*.json": [
-      "prettier --write",
-      "git add"
-    ],
-    "*.{css,scss}": [
-      "prettier --write",
-      "git add"
-    ],
-    "*.md": [
-      "yarn run lint:textfix",
-      "git add"
-    ]
+    "*.{js,jsx}": ["prettier --write", "git add"],
+    "*.json": ["prettier --write", "git add"],
+    "*.{css,scss}": ["prettier --write", "git add"],
+    "*.md": ["yarn run lint:textfix", "git add"]
   },
   "main": "n/a",
   "private": true,
@@ -150,8 +133,10 @@
     "clean": "rm -rf node_modules/ .cache/ && yarn install -s",
     "dev": "gatsby develop",
     "format": "prettier 'src/**/*.js' 'src/**/*.md'",
+    "idev": "yarn install -s && gatsby develop",
     "lint": "concurrently 'yarn lint:js' 'yarn lint:style'",
-    "lint:js": "eslint --format 'node_modules/eslint-friendly-formatter' --quiet --ext .js .",
+    "lint:js":
+      "eslint --format 'node_modules/eslint-friendly-formatter' --quiet --ext .js .",
     "lint:style": "stylelint 'src/**/*.(css|scss)'",
     "lint:stylefix": "stylelint --fix 'src/**/*.(css|scss)'",
     "lint:text": "textlint src/pages/**/index.md",
