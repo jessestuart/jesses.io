@@ -8,7 +8,7 @@ import { Heart } from 'react-feather'
 const SiteFooter = ({ theme }) => (
   <footer
     className={classNames(
-      'b--hot-pink bb bw2 f6 f5-ns fw4 flex flex-column lh-title pa4',
+      'b--hot-pink bb bottom-0 bw2 f5-ns f6 flex flex-column fw4 lh-title pa4 w-100',
       {
         'bg-gray-primary moon-gray': theme === SiteFooter.Theme.Dark,
         'bg-light-gray': theme === SiteFooter.Theme.Light,

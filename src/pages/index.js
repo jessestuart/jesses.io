@@ -1,5 +1,4 @@
 import React from 'react'
-
 import { ProfileDevIcons, Profile } from 'components'
 
 import 'prismjs/themes/prism.css'

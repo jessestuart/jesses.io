@@ -68,7 +68,7 @@ const DevIconsSection = styled.div.attrs({ className: 'center code w-90' })`
   }
   @media (min-width: 45em) {
     grid-template-columns: repeat(14, 1fr);
-    grid-template-rows: repeat(4, 1fr);
+    grid-template-rows: repeat(3, 1fr);
   }
 `
 

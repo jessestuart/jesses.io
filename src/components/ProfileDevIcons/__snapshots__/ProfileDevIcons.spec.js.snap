@@ -35,7 +35,7 @@ exports[`Render ProfileDevIcons component. 1`] = `
     </p>
   </div>
   <div
-    className="ProfileDevIcons__DevIconsSection-gZyCJK center code w-90 eFWQcI"
+    className="ProfileDevIcons__DevIconsSection-gZyCJK center code w-90 cFjGxe"
   >
     <div
       className="ProfileDevIcons__DevIconLabel-dFHCnQ moon-grey flex items-center justify-start f3 cHYnTt"
