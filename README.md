@@ -16,5 +16,5 @@
 [droneio-url]: http://drone.jessecod.es/jessestuart/jessestuart.com
 [quay-badge]: https://quay.io/repository/jessestuart/jessestuart.com/status
 [quay-url]: https://quay.io/repository/jessestuart/jessestuart.com
-[codecov-badge]: https://codecov.io/gh/jessestuart/jessestuart.com/branch/gh-pages/graph/badge.svg
+[codecov-badge]: https://codecov.io/gh/jessestuart/jessestuart.com/branch/master/graph/badge.svg?token=d5XoThUqwv
 [codecov-url]: https://codecov.io/gh/jessestuart/jessestuart.com
