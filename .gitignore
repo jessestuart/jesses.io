@@ -1,8 +1,11 @@
 # OS stuffs.
 *.log
 .DS_Store
+
+# IDEs, etc.
 .env
 .tern-port
+.vscode/*
 
 # Gatsby-specific generated output.
 .cache/
