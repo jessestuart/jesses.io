@@ -117,30 +117,13 @@
     "winston": "^3.0.0-rc1"
   },
   "homepage": "https://jessestuart.com",
-  "keywords": [
-    "blog",
-    "gatsby",
-    "photography",
-    "react"
-  ],
+  "keywords": ["blog", "gatsby", "photography", "react"],
   "license": "MIT",
   "lint-staged": {
-    "*.{js,jsx}": [
-      "prettier --write",
-      "git add"
-    ],
-    "*.json": [
-      "prettier --write",
-      "git add"
-    ],
-    "*.{css,scss}": [
-      "prettier --write",
-      "git add"
-    ],
-    "*.md": [
-      "yarn run lint:textfix",
-      "git add"
-    ]
+    "*.{js,jsx}": ["prettier --write", "git add"],
+    "*.json": ["prettier --write", "git add"],
+    "*.{css,scss}": ["prettier --write", "git add"],
+    "*.md": ["yarn run lint:textfix", "git add"]
   },
   "main": "n/a",
   "private": true,
@@ -157,7 +140,8 @@
     "dev": "gatsby develop",
     "format": "prettier 'src/**/*.js' 'src/**/*.md'",
     "lint": "concurrently 'yarn lint:js' 'yarn lint:style'",
-    "lint:js": "eslint --format 'node_modules/eslint-friendly-formatter' --quiet --ext .js .",
+    "lint:js":
+      "eslint --format 'node_modules/eslint-friendly-formatter' --quiet --ext .js .",
     "lint:style": "stylelint 'src/**/*.(css|scss)'",
     "lint:stylefix": "stylelint --fix 'src/**/*.(css|scss)'",
     "lint:text": "textlint src/pages/**/index.md",
@@ -167,8 +151,7 @@
     "test:coverage": "jest --coverage",
     "test:watch": "jest --watch",
     "update": "npm-check-updates -ua && yarn",
-    "snyk-protect": "snyk protect",
-    "prepublish": "npm run snyk-protect"
+    "snyk-protect": "snyk protect"
   },
   "snyk": true
 }
