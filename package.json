@@ -76,7 +76,7 @@
     "postcss-scss": "^1.0.3",
     "prettier": "^1.10.2",
     "prop-types": "^15.6.0",
-    "puppeteer": "^0.13.0",
+    "puppeteer": "^1.0.0",
     "raven-js": "^3.21.0",
     "react-calendar-heatmap": "^1.6.3",
     "react-cosmos": "^3.2.1",
