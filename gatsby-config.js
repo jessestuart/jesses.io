@@ -1,3 +1,10 @@
+const siteMetadata = {
+  author: 'Jesse Stuart',
+  description: '',
+  siteUrl: 'https://jessestuart.com',
+  title: 'Jesse Stuart',
+}
+
 const sourceFilesystem = {
   resolve: 'gatsby-source-filesystem',
   options: {
@@ -29,23 +36,6 @@ const transformerRemark = {
   },
 }
 
-const cssModulesPlugin = {
-  resolve: `gatsby-plugin-react-css-modules`,
-  options: {
-    // *.css files are included by default. To support SCSS, add
-    // `postcss-scss` to your project's devDependencies and add the
-    // following option here:
-    filetypes: {
-      '.css': { syntax: `postcss` },
-      '.scss': { syntax: `postcss-scss` },
-    },
-
-    // Exclude global styles from the plugin using a RegExp:
-    // eslint-disable-next-line
-    exclude: `\/global\/`,
-  },
-}
-
 const typographyPlugin = {
   resolve: 'gatsby-plugin-typography',
   options: {
@@ -53,26 +43,37 @@ const typographyPlugin = {
   },
 }
 
+const plugins = [
+  // ====================================
+  // Gotta load those sweet, sweet files.
+  // ====================================
+  sourceFilesystem,
+  // =======================================================================
+  // Add in React Helmet, and React 16 support until Gatsby HEAD catches up.
+  // =======================================================================
+  'gatsby-plugin-react-helmet',
+  'gatsby-plugin-react-next',
+  // ========================
+  // Styling-related plugins.
+  // ========================
+  'gatsby-plugin-sass',
+  'gatsby-plugin-styled-components',
+  typographyPlugin,
+  // ==========================================
+  // Transformers for Markdown and image files.
+  // ==========================================
+  transformerRemark,
+  'gatsby-transformer-sharp',
+  'gatsby-plugin-sharp',
+  // ===========
+  // Miscellany.
+  // ===========
+  'gatsby-plugin-feed',
+  'gatsby-plugin-netlify',
+  'gatsby-plugin-offline',
+]
+
 module.exports = {
-  siteMetadata: {
-    author: 'Jesse Stuart',
-    description: '',
-    siteUrl: 'https://jessestuart.com',
-    title: 'Jesse Stuart',
-  },
-  plugins: [
-    sourceFilesystem,
-    transformerRemark,
-    'gatsby-plugin-styled-components',
-    cssModulesPlugin,
-    'gatsby-transformer-sharp',
-    'gatsby-plugin-sharp',
-    'gatsby-plugin-feed',
-    'gatsby-plugin-netlify',
-    'gatsby-plugin-offline',
-    'gatsby-plugin-react-helmet',
-    'gatsby-plugin-react-next',
-    'gatsby-plugin-sass',
-    typographyPlugin,
-  ],
+  siteMetadata,
+  plugins,
 }

@@ -1,8 +1,11 @@
 # OS stuffs.
 *.log
 .DS_Store
+
+# IDEs, etc.
 .env
 .tern-port
+.vscode/*
 
 # Gatsby-specific generated output.
 .cache/
@@ -15,4 +18,5 @@ flow-libs/
 node_modules/
 
 # Test / test-coverage-related.
-test/coverage/
+test/coverage/*
+!test/coverage/lcov.info

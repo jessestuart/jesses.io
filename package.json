@@ -12,7 +12,6 @@
     "gatsby-plugin-nprogress": "^1.0.9",
     "gatsby-plugin-offline": "^1.0.12",
     "gatsby-plugin-purify-css": "^2.2.1",
-    "gatsby-plugin-react-css-modules": "^1.0.11",
     "gatsby-plugin-react-helmet": "^2.0.3",
     "gatsby-plugin-react-next": "^1.0.7",
     "gatsby-plugin-sass": "^1.0.15",
@@ -35,11 +34,15 @@
   "devDependencies": {
     "babel-eslint": "^8.2.1",
     "babel-jest": "^22.0.4",
+    "babel-plugin-lodash": "^3.3.2",
     "babel-plugin-styled-components": "^1.4.0",
+    "babel-preset-es2015": "^6.24.1",
     "babel-preset-flow": "^6.23.0",
+    "babel-preset-react": "^6.24.1",
     "bluebird": "^3.5.1",
     "chalk": "^2.3.0",
     "classnames": "^2.2.5",
+    "codecov": "^3.0.0",
     "concurrently": "^3.5.1",
     "copy-files": "^0.1.0",
     "copy-paste": "^1.3.0",
@@ -60,6 +63,7 @@
     "flow-typed": "^2.2.3",
     "hamburgers": "^0.9.1",
     "husky": "^0.14.3",
+    "identity-obj-proxy": "^3.0.0",
     "jest": "^22.0.5",
     "lint-staged": "^6.0.0",
     "lodash": "^4.17.4",
@@ -127,7 +131,7 @@
   },
   "scripts": {
     "build": "gatsby build",
-    "clean": "rm -rf node_modules/ .cache/ && yarn install -q",
+    "clean": "rm -rf node_modules/ .cache/ && yarn install -s",
     "dev": "gatsby develop",
     "format": "prettier 'src/**/*.js' 'src/**/*.md'",
     "lint": "concurrently 'yarn lint:js' 'yarn lint:style'",
@@ -138,7 +142,8 @@
     "lint:text": "textlint src/pages/**/index.md",
     "lint:textfix": "textlint --fix src/pages/**/index.md",
     "precommit": "lint-staged",
-    "test": "jest -c test/jest.config.js",
-    "test:static": "serve -p 8000 public/ & yarn run test"
+    "test": "jest",
+    "test:coverage": "jest --coverage",
+    "test:watch": "jest --watch"
   }
 }

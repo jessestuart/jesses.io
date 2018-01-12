@@ -1,10 +1,10 @@
-### Jessein.space
+# Jessestuart.com
 
 [![CircleCI][circleci-badge]][circleci-url]
 [![Drone.IO][droneio-badge]][droneio-url]
 [![Codefresh build status][codefresh-badge]][codefresh-url]
-
-<!-- [![Build Status][semaphoreci-badge]][semaphoreci-url] -->
+[![Quay][quay-badge]][quay-url]
+[![codecov][codecov-badge]][codecov-url]
 
 [circleci-badge]: https://circleci.com/gh/jessestuart/jessestuart.com.svg?style=shield&circle-token=95a9c23b2b0ed15a71639a318c98eea3b09a03b7
 [circleci-url]: https://circleci.com/gh/jessestuart/jessestuart.com
@@ -14,3 +14,7 @@
 [codefresh-url]: https://g.codefresh.io/repositories/jessestuart/js-gatsby-tachyons/builds?filter=trigger:build;branch:master;service:5a3c264a24611f0001c367d3~js-gatsby-tachyons
 [droneio-badge]: http://drone.jessecod.es/api/badges/jessestuart/jessestuart.com/status.svg
 [droneio-url]: http://drone.jessecod.es/jessestuart/jessestuart.com
+[quay-badge]: https://quay.io/repository/jessestuart/jessestuart.com/status
+[quay-url]: https://quay.io/repository/jessestuart/jessestuart.com
+[codecov-badge]: https://codecov.io/gh/jessestuart/jessestuart.com/branch/master/graph/badge.svg?token=d5XoThUqwv
+[codecov-url]: https://codecov.io/gh/jessestuart/jessestuart.com

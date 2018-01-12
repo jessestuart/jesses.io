@@ -2,7 +2,6 @@ import React from 'react'
 
 // import { Follow } from 'react-twitter-widgets'
 // import { rhythm } from '../../utils/typography'
-import './styles.scss'
 
 class Bio extends React.Component {
   render() {

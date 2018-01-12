@@ -1,4 +1,3 @@
-/* @flow */
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import Link from 'gatsby-link'
@@ -10,21 +9,7 @@ import '../../styles/base.css'
 
 const initialState = { isHamburgerMenuEnabled: false }
 
-type Props = {
-  location: {
-    pathname: string,
-  },
-}
-
-class SiteHeader extends Component<Props> {
-  static propTypes = {
-    location: PropTypes.shape({
-      pathname: PropTypes.string.isRequired,
-    }).isRequired,
-  }
-
-  static state = { ...initialState }
-
+class SiteHeader extends Component {
   // toggleHamburgerMenu = () => {
   //   const isHamburgerMenuEnabled: boolean = _.get(
   //     this,
@@ -78,6 +63,14 @@ class SiteHeader extends Component<Props> {
     )
   }
 }
+
+SiteHeader.propTypes = {
+  location: PropTypes.shape({
+    pathname: PropTypes.string.isRequired,
+  }).isRequired,
+}
+
+SiteHeader.state = { ...initialState }
 
 const HeaderLink = ({ children, className, href, isActive }) => {
   const headerClassNames: string = classNames(
