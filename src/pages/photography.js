@@ -15,14 +15,15 @@ class PhotographyIndex extends Component {
           className="w-75 center pa4"
           style={{
             display: 'grid',
-            gridGap: '0.5rem',
-            gridTemplateColumns: 'repeat(2, 1fr)',
-            gridAutoRows: '20rem',
+            gridGap: '5px',
+            gridTemplateColumns: 'repeat(auto-fill, minmax(25vw, 1fr))',
+            gridAutoRows: 'minmax(200px, auto)',
             gridAutoFlow: 'row dense',
           }}
         >
           {images.map(({ node }, index) => {
             console.log(node)
+            console.log(node.sizes.aspectRatio)
             const { sizes } = node
             return (
               <div
@@ -33,13 +34,15 @@ class PhotographyIndex extends Component {
                   flexDirection: 'column',
                   justifyContent: 'center',
                   gridColumnStart: 'auto',
-                  gridRowStart: 'auto',
+                  gridRow: node.sizes.aspectRatio > 1 ? 'span 1' : 'span 2',
                   overflow: 'hidden',
                 }}
               >
                 <Img
                   sizes={sizes}
-                  style={{ boxShadow: '-2px 2px 10px 0px #CCC' }}
+                  style={{
+                    boxShadow: '0 0.5px 0 0 #ffffff inset, 0 1px 2px 0 #B3B3B3',
+                  }}
                 />
               </div>
             )
