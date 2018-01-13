@@ -1,8 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import moment from 'moment'
 import classNames from 'classnames'
-
+import moment from 'moment'
 import { Heart } from 'react-feather'
 
 const SiteFooter = ({ theme }) => (
@@ -14,9 +13,12 @@ const SiteFooter = ({ theme }) => (
         'bg-light-gray': theme === SiteFooter.Theme.Light,
       }
     )}
+    style={{
+      borderTop: '1px solid #CCC',
+    }}
   >
     <div className="flex justify-center items-center">
-      © 2015–{moment().format('YYYY')} Jesse Stuart
+      © 2013–{moment().format('YYYY')} Jesse Stuart
     </div>
     <div className="dib center tc flex-ns justify-center items-center">
       Pixels, bits and bytes hand-crafted with

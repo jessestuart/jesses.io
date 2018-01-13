@@ -2,11 +2,15 @@ import React, { Component } from 'react'
 import get from 'lodash/get'
 import Helmet from 'react-helmet'
 import Img from 'gatsby-image'
+import _ from 'lodash'
 
 class PhotographyIndex extends Component {
   render() {
     const siteTitle = get(this, 'props.data.site.siteMetadata.title')
     const images = get(this, 'props.data.allImageSharp.edges')
+    if (_.isNil(images)) {
+      return <div />
+    }
 
     return (
       <div className="bg-near-white">
@@ -15,10 +19,9 @@ class PhotographyIndex extends Component {
           className="w-75 center pa4"
           style={{
             display: 'grid',
-            gridGap: '5px',
-            gridTemplateColumns: 'repeat(auto-fill, minmax(25vw, 1fr))',
+            gridGap: '10px',
+            gridTemplateColumns: 'repeat(auto-fill, minmax(20em, 1fr))',
             gridAutoRows: 'minmax(200px, auto)',
-            gridAutoFlow: 'row dense',
           }}
         >
           {images.map(({ node }, index) => {
@@ -29,19 +32,18 @@ class PhotographyIndex extends Component {
               <div
                 key={sizes.originalName}
                 style={{
-                  position: 'relative',
                   display: 'flex',
                   flexDirection: 'column',
-                  justifyContent: 'center',
                   gridColumnStart: 'auto',
                   gridRow: node.sizes.aspectRatio > 1 ? 'span 1' : 'span 2',
                   overflow: 'hidden',
+                  position: 'relative',
                 }}
               >
                 <Img
                   sizes={sizes}
                   style={{
-                    boxShadow: '0 0.5px 0 0 #ffffff inset, 0 1px 2px 0 #B3B3B3',
+                    boxShadow: '0 10px 6px -6px #777',
                   }}
                 />
               </div>

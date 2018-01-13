@@ -42,7 +42,7 @@ class SiteHeader extends Component {
             </HeaderLink>
             <HeaderLink
               href={'/photography'}
-              isActive={pathname === '/photography'}
+              isActive={pathname.startsWith('/photography')}
             >
               pictures
             </HeaderLink>

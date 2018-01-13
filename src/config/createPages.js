@@ -1,6 +1,19 @@
 const path = require('path')
 const Promise = require('bluebird')
 const log = require('../utils/log')
+const _ = require('lodash')
+
+const processGraphQL = ({ graphql, query, createPostsFn, resultPath }) => {
+  graphql(query)
+    .then(
+      result =>
+        _.isNil(result.errors)
+          ? _.get(result, resultPath)
+          : Promise.reject(result.errors)
+    )
+    .then(createPostsFn)
+    .catch(log.error)
+}
 
 const createPages = ({ graphql, boundActionCreators }) => {
   const mdQuery = `
@@ -19,32 +32,62 @@ const createPages = ({ graphql, boundActionCreators }) => {
     }
   }`
 
+  const imagePostQuery = `
+  {
+    allDirectory(filter: { sourceInstanceName: { eq: "images" } }) {
+      edges {
+        node {
+          id
+          base
+          sourceInstanceName
+        }
+      }
+    }
+  }`
+
   const { createPage } = boundActionCreators
   const blogPost = path.resolve('./src/templates/blog-post.js')
+  const photographyPost = path.resolve('./src/templates/photography-post.js')
 
-  const createPosts = edges => {
+  const createPhotographyPosts = edges => {
     edges.forEach(edge => {
+      const { base } = edge.node
       createPage({
-        path: edge.node.fields.slug,
-        component: blogPost,
+        path: `/photography/${base}`,
+        component: photographyPost,
         context: {
-          slug: edge.node.fields.slug,
+          base: `/${base}/`,
         },
       })
     })
   }
 
-  return graphql(mdQuery)
-    .then(result => {
-      const { errors } = result
-      if (errors) {
-        Promise.reject(errors)
-      }
+  processGraphQL({
+    graphql,
+    query: imagePostQuery,
+    resultPath: 'data.allDirectory.edges',
+    createPostsFn: createPhotographyPosts,
+  })
 
-      return result.data.allMarkdownRemark.edges
+  const createBlogPosts = edges => {
+    edges.forEach(edge => {
+      const { slug } = edge.node.fields
+      createPage({
+        path: slug,
+        component: blogPost,
+        context: {
+          slug,
+        },
+      })
     })
-    .then(createPosts)
-    .catch(log.error)
+  }
+
+  processGraphQL({
+    graphql,
+    query: mdQuery,
+    resultPath: 'data.allMarkdownRemark.edges',
+    createPostsFn: createBlogPosts,
+  })
 }
 
 module.exports = createPages
