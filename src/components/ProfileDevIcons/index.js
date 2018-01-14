@@ -10,7 +10,7 @@ import '../../styles/hvr-animations.css'
 
 const ProfileDevIcons = () => {
   return (
-    <div className="bb b--white-20 bw3">
+    <Fragment>
       <div className="flex justify-center align-center">
         <p className="serif f4 fw3 lh-copy center pv3 tc w-75">
           Tackling novel problems —
@@ -41,7 +41,7 @@ const ProfileDevIcons = () => {
           </Fragment>
         ))}
       </DevIconsSection>
-    </div>
+    </Fragment>
   )
 }
 

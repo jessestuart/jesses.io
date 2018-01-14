@@ -1,9 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Render ProfileDevIcons component. 1`] = `
-<div
-  className="bb b--white-20 bw3"
->
+Array [
   <div
     className="flex justify-center align-center"
   >
@@ -33,7 +31,7 @@ exports[`Render ProfileDevIcons component. 1`] = `
       <br />
       Here are some of the technologies I've enjoyed hacking on lately:
     </p>
-  </div>
+  </div>,
   <div
     className="ProfileDevIcons__DevIconsSection-gZyCJK center code w-90 cFjGxe"
   >
@@ -545,6 +543,6 @@ exports[`Render ProfileDevIcons component. 1`] = `
         />
       </svg>
     </div>
-  </div>
-</div>
+  </div>,
+]
 `;

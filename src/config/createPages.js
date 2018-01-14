@@ -1,7 +1,8 @@
-const path = require('path')
 const Promise = require('bluebird')
-const log = require('../utils/log')
 const _ = require('lodash')
+const path = require('path')
+
+const log = require('../utils/log')
 
 const processGraphQL = ({ graphql, query, createPostsFn, resultPath }) => {
   graphql(query)
@@ -34,12 +35,11 @@ const createPages = ({ graphql, boundActionCreators }) => {
 
   const imagePostQuery = `
   {
-    allDirectory(filter: { sourceInstanceName: { eq: "images" } }) {
+    allDirectory(filter: { dir: { regex: "/images$/" } }) {
       edges {
         node {
-          id
-          base
-          sourceInstanceName
+          i
+          name
         }
       }
     }
@@ -51,12 +51,12 @@ const createPages = ({ graphql, boundActionCreators }) => {
 
   const createPhotographyPosts = edges => {
     edges.forEach(edge => {
-      const { base } = edge.node
+      const { name } = edge.node
       createPage({
-        path: `/photography/${base}`,
+        path: `/photography/${name}`,
         component: photographyPost,
         context: {
-          base: `/${base}/`,
+          name: `/${name}/`,
         },
       })
     })

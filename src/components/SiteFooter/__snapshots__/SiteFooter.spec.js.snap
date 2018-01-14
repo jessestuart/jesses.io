@@ -3,11 +3,16 @@
 exports[`Render SiteFooter component with dark theme. 1`] = `
 <footer
   className="b--hot-pink bb bottom-0 bw2 f5-ns f6 flex flex-column fw4 lh-title pa4 w-100 bg-gray-primary moon-gray"
+  style={
+    Object {
+      "borderTop": "none",
+    }
+  }
 >
   <div
     className="flex justify-center items-center"
   >
-    © 2015–
+    © 2013–
     2018
      Jesse Stuart
   </div>
@@ -39,11 +44,16 @@ exports[`Render SiteFooter component with dark theme. 1`] = `
 exports[`Render SiteFooter component. 1`] = `
 <footer
   className="b--hot-pink bb bottom-0 bw2 f5-ns f6 flex flex-column fw4 lh-title pa4 w-100 bg-light-gray"
+  style={
+    Object {
+      "borderTop": "1px solid #CCC",
+    }
+  }
 >
   <div
     className="flex justify-center items-center"
   >
-    © 2015–
+    © 2013–
     2018
      Jesse Stuart
   </div>

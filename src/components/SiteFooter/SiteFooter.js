@@ -1,8 +1,8 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import classNames from 'classnames'
-import moment from 'moment'
 import { Heart } from 'react-feather'
+import { DateTime } from 'luxon'
 
 const SiteFooter = ({ theme }) => (
   <footer
@@ -14,11 +14,11 @@ const SiteFooter = ({ theme }) => (
       }
     )}
     style={{
-      borderTop: '1px solid #CCC',
+      borderTop: theme === SiteFooter.Theme.Light ? '1px solid #CCC' : 'none',
     }}
   >
     <div className="flex justify-center items-center">
-      © 2013–{moment().format('YYYY')} Jesse Stuart
+      © 2013–{DateTime.local().year} Jesse Stuart
     </div>
     <div className="dib center tc flex-ns justify-center items-center">
       Pixels, bits and bytes hand-crafted with
