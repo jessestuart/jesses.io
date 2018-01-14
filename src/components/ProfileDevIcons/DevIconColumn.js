@@ -30,7 +30,7 @@ const DevIconContainer = styled.div.attrs({
 
 DevIconColumn.propTypes = {
   className: PropTypes.string,
-  DevIcon: PropTypes.any,
+  DevIcon: PropTypes.func,
   style: PropTypes.object,
 }
 

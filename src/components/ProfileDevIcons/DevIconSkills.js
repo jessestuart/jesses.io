@@ -16,6 +16,7 @@ const {
   Go,
   Gradle,
   Grails,
+  GraphQL,
   Java,
   Javascript,
   Jest,
@@ -27,6 +28,7 @@ const {
   Nodejs,
   Packer,
   Python,
+  PythonNew,
   React,
   Redhat,
   Redis,
@@ -43,9 +45,9 @@ const {
 
 const infra = [Docker, Kubernetes, Ansible, Vagrant, Packer, Terraform]
 
-const backend = [Java, Grails, Go, Nodejs, Clojure, Python]
+const backend = [Java, Grails, Go, Nodejs, Clojure, PythonNew]
 
-const frontend = [React, GatsbyJS, Jest, Redux, AngularJS, Netlify]
+const frontend = [React, GatsbyJS, Jest, Redux, AngularJS, GraphQL]
 
 const DevIconSkills = [
   { icons: infra, label: 'infra' },

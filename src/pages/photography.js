@@ -1,43 +1,42 @@
 import React, { Component } from 'react'
 import Helmet from 'react-helmet'
-import Link from 'gatsby-link'
-// import Img from 'gatsby-image'
 import _ from 'lodash'
 import slug from 'slug'
+import { DateTime } from 'luxon'
+
+import { PhotographyGridSection } from '../components/Photography'
 
 class PhotographyIndex extends Component {
   render() {
     const { props } = this
     const siteTitle = _.get(props, 'data.site.siteMetadata.title')
-    // const images = get(this, 'props.data.allImageSharp.edges')
-    // if (_.isNil(images)) {
-    //   return <div />
-    // }
+    const images = _.get(props, 'data.allImageSharp.edges')
     const posts = _.get(props, 'data.allDirectory.edges')
-    console.log({ posts })
+
+    const title = `Photography | ${siteTitle}`
 
     return (
-      <div className="bg-light-gray black-80 pa4 flex flex-row justify-center flex-body-expand">
-        <Helmet title={siteTitle} />
-        {posts.map((post, index) => {
-          console.log({ post })
-          const title = _.get(post, 'node.name')
-          const linkSlug = `/photography/${slug(title)}`
-          return (
-            <section key={title} className="flex flex-row w-100 justify-center">
-              <h2 className="alegreya-sans mb2 f3 fw7 header-purple">
-                <Link style={{ boxShadow: 'none' }} to={linkSlug}>
-                  {title}
-                </Link>
-              </h2>
-              {/* <p className="f5 mb1 tr i open-sans">{node.frontmatter.date}</p> */}
-              {/* <p
-                className="f4"
-                dangerouslySetInnerHTML={{ __html: node.excerpt }}
-              /> */}
-            </section>
-          )
-        })}
+      <div className="bg-light-gray black-80 flex flex-row justify-center flex-body-expand">
+        <Helmet title={title} />
+        {_.reverse(_.sortBy(posts, post => new Date(post.node.name))).map(
+          post => {
+            const title = _.get(post, 'node.name')
+            const linkSlug = `/photography/${slug(title)}`
+            const linkImages = _.take(
+              _.filter(images, image => _.includes(image.node.id, title)),
+              6
+            )
+            const datetime = DateTime.fromISO(title)
+            return (
+              <PhotographyGridSection
+                key={title}
+                datetime={datetime}
+                linkImages={linkImages}
+                linkSlug={linkSlug}
+              />
+            )
+          }
+        )}
       </div>
     )
   }
@@ -63,7 +62,7 @@ export const pageQuery = graphql`
       edges {
         node {
           id
-          sizes(maxWidth: 768) {
+          sizes(maxWidth: 1024) {
             ...GatsbyImageSharpSizes
           }
         }

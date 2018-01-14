@@ -38,7 +38,7 @@ const createPages = ({ graphql, boundActionCreators }) => {
     allDirectory(filter: { dir: { regex: "/images$/" } }) {
       edges {
         node {
-          i
+          id
           name
         }
       }
@@ -57,6 +57,7 @@ const createPages = ({ graphql, boundActionCreators }) => {
         component: photographyPost,
         context: {
           name: `/${name}/`,
+          datetime: name,
         },
       })
     })

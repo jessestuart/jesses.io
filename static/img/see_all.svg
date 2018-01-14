@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="267" viewBox="0 0 400 267">
+  <g fill="none" fill-rule="evenodd">
+    <rect width="400" height="266.67" fill="#EAEAEA"/>
+    <text fill="#4A4A4A" font-family="WhitneyHTF-Light, Whitney HTF" font-size="64" font-weight="300">
+      <tspan x="81" y="156">see all</tspan>
+    </text>
+    <path fill="#F63F6C" stroke="#F63F6C" stroke-linecap="square" stroke-width="5" d="M260.5 137.04168L318.5 137.04168M318.5 137.04168L307.7 134.04168 307.7 140.04168 318.5 137.04168z"/>
+  </g>
+</svg>
