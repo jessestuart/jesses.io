@@ -143,11 +143,12 @@
     "lint:text": "textlint src/pages/**/index.md",
     "lint:textfix": "textlint --fix src/pages/**/index.md",
     "precommit": "lint-staged",
+    "snyk-protect": "snyk protect",
     "test": "jest",
     "test:coverage": "jest --coverage",
     "test:watch": "jest --watch",
     "update": "npm-check-updates -ua && yarn",
-    "snyk-protect": "snyk protect"
+    "willitpass": "concurrently 'yarn lint' 'yarn test'"
   },
   "snyk": true
 }

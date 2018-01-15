@@ -25,7 +25,6 @@ import Nodejs from './Nodejs'
 import Packer from './Packer'
 import PostCSS from './PostCSS'
 import Python from './Python'
-import PythonNew from './PythonNew'
 import React from './React'
 import Redhat from './Redhat'
 import Redis from './Redis'
@@ -67,7 +66,6 @@ const DevIcons = {
   Packer,
   PostCSS,
   Python,
-  PythonNew,
   React,
   Redhat,
   Redis,
