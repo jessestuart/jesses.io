@@ -1,10 +1,14 @@
 import React from 'react'
+import styled from 'styled-components'
 
 import Avatar from './Avatar'
 import ProfileBlurb from './ProfileBlurb'
 import ProfileFooter from './ProfileFooter'
+import BlackMirror from './BlackMirror'
 
-import styled from 'styled-components'
+import { BlurbLink } from './ProfileLinks'
+
+const WHITMAN_URL = 'http://jstu.art/ojNe'
 
 const IntroWrapper = styled.div.attrs({
   className: 'items-center justify-center pv4',
@@ -21,7 +25,7 @@ const IntroWrapper = styled.div.attrs({
 const AvatarContainer = styled.div.attrs({
   className: 'center mw-100-ns mw-50',
 })`
-  grid-column: 5 / 9;
+  grid-column: 4 / 9;
 
   @media (min-width: 45em) and (max-width: 60em) {
     grid-column: 2 / 5;
@@ -59,6 +63,7 @@ const Profile = () => (
   <IntroWrapper>
     <AvatarContainer>
       <Avatar />
+      <BlackMirror />
     </AvatarContainer>
     <BlurbContainer>
       <ProfileBlurb />
