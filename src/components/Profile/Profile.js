@@ -6,10 +6,6 @@ import ProfileBlurb from './ProfileBlurb'
 import ProfileFooter from './ProfileFooter'
 import BlackMirror from './BlackMirror'
 
-import { BlurbLink } from './ProfileLinks'
-
-const WHITMAN_URL = 'http://jstu.art/ojNe'
-
 const IntroWrapper = styled.div.attrs({
   className: 'items-center justify-center pv4',
 })`
