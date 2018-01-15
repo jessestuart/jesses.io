@@ -19,7 +19,6 @@
   --code: 'Andale Mono', 'SFMono-Regular', Menlo, Consolas, 'Liberation Mono',
     monospace;
   --serif: 'Spectral', serif;
-  --sans-serif: 'Open Sans', sans-serif;
   --font-size-1: 3rem;
   --font-size-2: 2.25rem;
   --font-size-3: 1.75rem;
@@ -45,6 +44,10 @@
 
 .open-sans {
   font-family: 'Open Sans', sans-serif;
+}
+
+.alegreya-sans {
+  font-family: 'Alegreya Sans', sans-serif;
 }
 
 .grid {
@@ -97,4 +100,28 @@ a {
 }
 .b--header-purple {
   border-color: var(--header-purple);
+}
+
+/*
+ * ======================
+ * Sticky footer support.
+ * ======================
+ */
+html,
+body {
+  height: 100%;
+}
+
+body,
+#___gatsby {
+  /* body > div:first-child { */
+  display: flex;
+  flex-direction: column;
+  flex: 1 0 auto;
+  width: 100%;
+}
+
+.flex-body-expand {
+  display: flex;
+  flex: 1 0 auto;
 }

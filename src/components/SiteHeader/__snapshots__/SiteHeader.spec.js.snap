@@ -4,10 +4,10 @@ exports[`Render SiteHeader component. 1`] = `
 <Headroom
   style={
     Object {
-      "mozTransition": "all 0.7s ease-in-out",
-      "oTransaction": "all 0.7s ease-in-out",
-      "transition": "all 0.7s ease-in-out",
-      "webkitTranstion": "all 0.7s ease-in-out",
+      "MozTransition": "all 0.7s ease-in-out",
+      "OTransaction": "all 0.7s ease-in-out",
+      "Transition": "all 0.7s ease-in-out",
+      "WebkitTranstion": "all 0.7s ease-in-out",
     }
   }
 >

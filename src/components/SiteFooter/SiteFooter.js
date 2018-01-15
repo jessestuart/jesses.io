@@ -1,22 +1,24 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import moment from 'moment'
 import classNames from 'classnames'
-
 import { Heart } from 'react-feather'
+import { DateTime } from 'luxon'
 
 const SiteFooter = ({ theme }) => (
   <footer
     className={classNames(
-      'b--hot-pink bb bw2 f6 f5-ns fw4 flex flex-column lh-title pa4',
+      'b--hot-pink bb bottom-0 bw2 f5-ns f6 flex flex-column fw4 lh-title pa4 w-100',
       {
         'bg-gray-primary moon-gray': theme === SiteFooter.Theme.Dark,
         'bg-light-gray': theme === SiteFooter.Theme.Light,
       }
     )}
+    style={{
+      borderTop: theme === SiteFooter.Theme.Light ? '1px solid #CCC' : 'none',
+    }}
   >
     <div className="flex justify-center items-center">
-      © 2015–{moment().format('YYYY')} Jesse Stuart
+      © 2013–{DateTime.local().year} Jesse Stuart
     </div>
     <div className="dib center tc flex-ns justify-center items-center">
       Pixels, bits and bytes hand-crafted with

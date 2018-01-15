@@ -1,7 +1,7 @@
-import AWS from './AWS'
 import AngularJS from './AngularJS'
 import Ansible from './Ansible'
 import Atom from './Atom'
+import AWS from './AWS'
 import Babel from './Babel'
 import Clojure from './Clojure'
 import D3js from './D3js'
@@ -12,6 +12,7 @@ import Git from './Git'
 import Go from './Go'
 import Gradle from './Gradle'
 import Grails from './Grails'
+import GraphQL from './GraphQL'
 import Java from './Java'
 import Javascript from './Javascript'
 import Jest from './Jest'
@@ -38,10 +39,10 @@ import Vim from './Vim'
 import Webpack from './Webpack'
 
 const DevIcons = {
-  AWS,
   AngularJS,
   Ansible,
   Atom,
+  AWS,
   Babel,
   Clojure,
   D3js,
@@ -52,6 +53,7 @@ const DevIcons = {
   Go,
   Gradle,
   Grails,
+  GraphQL,
   Java,
   Javascript,
   Jest,

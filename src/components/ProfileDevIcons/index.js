@@ -10,7 +10,7 @@ import '../../styles/hvr-animations.css'
 
 const ProfileDevIcons = () => {
   return (
-    <div className="bb b--white-20 bw3">
+    <Fragment>
       <div className="flex justify-center align-center">
         <p className="serif f4 fw3 lh-copy center pv3 tc w-75">
           Tackling novel problems —
@@ -41,7 +41,7 @@ const ProfileDevIcons = () => {
           </Fragment>
         ))}
       </DevIconsSection>
-    </div>
+    </Fragment>
   )
 }
 
@@ -68,7 +68,7 @@ const DevIconsSection = styled.div.attrs({ className: 'center code w-90' })`
   }
   @media (min-width: 45em) {
     grid-template-columns: repeat(14, 1fr);
-    grid-template-rows: repeat(4, 1fr);
+    grid-template-rows: repeat(3, 1fr);
   }
 `
 

@@ -1,20 +1,12 @@
 import React, { Component } from 'react'
 import Helmet from 'react-helmet'
 import get from 'lodash/get'
-// import { Share } from 'react-twitter-widgets'
 
 import config from '../../gatsby-config'
 
-// import { Bio } from '../components'
 import { rhythm, scale } from '../utils/typography'
 
 import './blog-post.scss'
-
-// const renderTag = (tag, index) => (
-//   <div className="tag" key={tag}>
-//     <Tag name={tag} key={index} />
-//   </div>
-// )
 
 class BlogPostTemplate extends Component {
   render() {
@@ -56,9 +48,6 @@ class BlogPostTemplate extends Component {
           <section style={sectionStyle}>
             <div className="meta-info">
               <div className="date">{date}</div>
-              {/* <div className="tags">
-              <div className="flex-row">{tags.map(renderTag)}</div>
-            </div> */}
             </div>
           </section>
 
@@ -67,22 +56,6 @@ class BlogPostTemplate extends Component {
             id="remark-post"
             dangerouslySetInnerHTML={{ __html: post.html }}
           />
-
-          {/* <section className="share-section">
-            <div className="social">
-              <Share
-                url={pageURL}
-                options={{
-                  size: 'small',
-                  text: twitterprompt || `Check out '${title}'`,
-                  via: 'cwpittman',
-                }}
-              />
-            </div>
-            <p className="prompt">Let's keep the conversation going!</p>
-          </section> */}
-          {/* <hr style={{ marginBottom: rhythm(1) }} /> */}
-          {/* <Bio /> */}
         </article>
       </div>
     )

@@ -12,6 +12,13 @@ const sourceFilesystem = {
     name: 'pages',
   },
 }
+const sourceFilesystemImages = {
+  resolve: 'gatsby-source-filesystem',
+  options: {
+    path: `${__dirname}/src/images`,
+    name: 'images',
+  },
+}
 
 const transformerRemark = {
   resolve: 'gatsby-transformer-remark',
@@ -21,12 +28,6 @@ const transformerRemark = {
         resolve: 'gatsby-remark-images',
         options: {
           maxWidth: 590,
-        },
-      },
-      {
-        resolve: 'gatsby-remark-responsive-iframe',
-        options: {
-          wrapperStyle: 'margin-bottom: 1.0725rem',
         },
       },
       'gatsby-remark-prismjs',
@@ -48,6 +49,7 @@ const plugins = [
   // Gotta load those sweet, sweet files.
   // ====================================
   sourceFilesystem,
+  sourceFilesystemImages,
   // =======================================================================
   // Add in React Helmet, and React 16 support until Gatsby HEAD catches up.
   // =======================================================================

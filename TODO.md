@@ -2,6 +2,7 @@
 
 * Add anchor tags to SVG icons
 * Add social media icons
+* Fix footer
 
 ### Ideas
 
