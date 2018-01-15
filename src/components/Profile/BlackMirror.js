@@ -13,7 +13,7 @@ const BlackMirror = () => (
       <Github
         fill="#333"
         strokeWidth="1px"
-        className="b--light-gray pa1"
+        className="b--light-gray pa1 hvr-grow"
         size="3rem"
       />
     </a>
@@ -21,7 +21,7 @@ const BlackMirror = () => (
       <Linkedin
         fill="#0077b5"
         strokeWidth="0.9px"
-        className="b--light-gray pa1"
+        className="b--light-gray pa1 hvr-grow"
         size="3rem"
       />
     </a>
@@ -29,7 +29,7 @@ const BlackMirror = () => (
       <Instagram
         strokeWidth="1px"
         fill="#C74861"
-        className="b--light-gray pa1"
+        className="b--light-gray pa1 hvr-grow"
         size="3rem"
       />
     </a>
@@ -37,7 +37,7 @@ const BlackMirror = () => (
       <Twitter
         fill="#1da1f2"
         strokeWidth="1px"
-        className="b--light-gray pa1"
+        className="b--light-gray pa1 hvr-grow"
         size="3rem"
       />
     </a>
