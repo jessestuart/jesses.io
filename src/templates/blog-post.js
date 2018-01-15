@@ -12,7 +12,7 @@ class BlogPostTemplate extends Component {
     const pathname = get(this, 'props.location.pathname')
     const siteTitle = get(this, 'props.data.site.siteMetadata.title')
     const { excerpt } = post
-    const { date, title, tags } = post.frontmatter
+    const { date, title } = post.frontmatter
     const pageURL = `${config.siteMetadata.siteUrl}${pathname}`
 
     const comboTitle = `${title} | ${siteTitle}`
@@ -30,9 +30,6 @@ class BlogPostTemplate extends Component {
               property="article:published_time"
               content={new Date(date).toISOString()}
             />
-            {tags.map(tag => (
-              <meta content={tag} key={tag} property="article:tag" />
-            ))}
           </Helmet>
 
           <BlogHeader date={date} slug={pathname} title={title} />
