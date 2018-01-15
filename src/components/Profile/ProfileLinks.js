@@ -6,25 +6,28 @@ export const BlurbLink = styled.a`
   position: relative;
 
   &::before {
-    background-color: rgba(253, 82, 112, 0.8);
-    bottom: -2px;
     content: '';
-    height: 2px;
-    left: 0;
     position: absolute;
-    transform: scaleX(0);
-    transition: all 0.2s ease-in-out 0s;
-    visibility: hidden;
     width: 100%;
+    height: 2px;
+    bottom: -2px;
+    left: 0;
+    background-color: rgba(253, 82, 112, 0.9);
+    visibility: hidden;
+    -webkit-transform: scaleX(0);
+    transform: scaleX(0);
+    -webkit-transition: all 0.3s ease-in-out 0s;
+    transition: all 0.3s ease-in-out 0s;
   }
   &:hover:before {
-    transform: scaleX(1);
     visibility: visible;
+    -webkit-transform: scaleX(1);
+    transform: scaleX(1);
   }
   &.no-slide:hover:before {
     visibility: hidden;
   }
   &.no-slide:hover {
-    color: #f63f6c;
+    color: #7ef1f9;
   }
 `
