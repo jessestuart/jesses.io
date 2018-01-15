@@ -18,7 +18,7 @@ exports[`Render Profile component. 1`] = `
         href="https://github.com/jessestuart/"
       >
         <svg
-          className="b--light-gray pa1"
+          className="b--light-gray pa1 hvr-grow"
           fill="#333"
           height="3rem"
           stroke="currentColor"
@@ -38,7 +38,7 @@ exports[`Render Profile component. 1`] = `
         href="https://www.linkedin.com/in/jessedstuart/"
       >
         <svg
-          className="b--light-gray pa1"
+          className="b--light-gray pa1 hvr-grow"
           fill="#0077b5"
           height="3rem"
           stroke="currentColor"
@@ -69,7 +69,7 @@ exports[`Render Profile component. 1`] = `
         href="https://instagram.com/jaystu/"
       >
         <svg
-          className="b--light-gray pa1"
+          className="b--light-gray pa1 hvr-grow"
           fill="#C74861"
           height="3rem"
           stroke="currentColor"
@@ -103,7 +103,7 @@ exports[`Render Profile component. 1`] = `
         href="https://twitter.com/jesse_stuart/"
       >
         <svg
-          className="b--light-gray pa1"
+          className="b--light-gray pa1 hvr-grow"
           fill="#1da1f2"
           height="3rem"
           stroke="currentColor"
