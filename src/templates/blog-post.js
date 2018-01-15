@@ -2,11 +2,9 @@ import React, { Component } from 'react'
 import Helmet from 'react-helmet'
 import get from 'lodash/get'
 
+import { BlogHeader } from '../components/Blog'
+
 import config from '../../gatsby-config'
-
-import { rhythm, scale } from '../utils/typography'
-
-import './blog-post.scss'
 
 class BlogPostTemplate extends Component {
   render() {
@@ -17,18 +15,11 @@ class BlogPostTemplate extends Component {
     const { date, title, tags } = post.frontmatter
     const pageURL = `${config.siteMetadata.siteUrl}${pathname}`
 
-    const sectionStyle = {
-      ...scale(-0.2),
-      display: 'block',
-      marginBottom: rhythm(0.8), // subtract a little to account for .tag margin-bottom
-      marginTop: rhythm(-0.5),
-    }
-
     const comboTitle = `${title} | ${siteTitle}`
 
     return (
-      <div className="bg-near-white black-80">
-        <article className="w-50 center">
+      <div className="bg-near-white black-80 lh-copy">
+        <article className="w-50-ns w-75 center">
           <Helmet title={comboTitle}>
             <meta itemProp="name" content={comboTitle} />
             <meta name="twitter:title" content={comboTitle} />
@@ -44,15 +35,10 @@ class BlogPostTemplate extends Component {
             ))}
           </Helmet>
 
-          <h1 className="pv4">{title}</h1>
-          <section style={sectionStyle}>
-            <div className="meta-info">
-              <div className="date">{date}</div>
-            </div>
-          </section>
+          <BlogHeader date={date} slug={pathname} title={title} />
 
           <div
-            className="f4 fw5 lh-title"
+            className="f4 fw5"
             id="remark-post"
             dangerouslySetInnerHTML={{ __html: post.html }}
           />
@@ -78,7 +64,7 @@ export const pageQuery = graphql`
       frontmatter {
         tags
         title
-        date(formatString: "DD MMMM YYYY")
+        date(formatString: "D MMMM YYYY")
         twitterprompt
       }
     }

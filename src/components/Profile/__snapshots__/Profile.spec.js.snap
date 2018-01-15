@@ -33,7 +33,7 @@ exports[`Render Profile component. 1`] = `
       >
         I contain 
         <a
-          className="link moon-gray dib ProfileLinks__BlurbLink-gbarVe ewDYrf"
+          className="link moon-gray dib ProfileLinks__BlurbLink-gbarVe wgMLU"
           href="http://jstu.art/ojNe"
           style={
             Object {
@@ -179,7 +179,7 @@ exports[`Render Profile component. 1`] = `
         >
           Published 
           <a
-            className="ProfileLinks__BlurbLink-gbarVe ewDYrf"
+            className="ProfileLinks__BlurbLink-gbarVe wgMLU"
             href="http://jstu.art/oijk"
           >
             NLP researcher
@@ -187,7 +187,7 @@ exports[`Render Profile component. 1`] = `
           , and
         </span>
         <a
-          className="ProfileLinks__BlurbLink-gbarVe ewDYrf"
+          className="ProfileLinks__BlurbLink-gbarVe wgMLU"
           href="http://jstu.art/oj1g"
         >
           USPO Patent holder
@@ -405,7 +405,7 @@ exports[`Render Profile component. 1`] = `
         className="f5 f4-ns fw3 dib tr lh-copy"
       >
         <a
-          className="ProfileLinks__BlurbLink-gbarVe ewDYrf"
+          className="ProfileLinks__BlurbLink-gbarVe wgMLU"
           href="http://jstu.art/ojVB"
         >
           French translator

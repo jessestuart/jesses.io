@@ -50,6 +50,10 @@
   font-family: 'Alegreya Sans', sans-serif;
 }
 
+.alegreya-sc {
+  font-family: 'Alegreya SC', serif;
+}
+
 .grid {
   display: grid;
 }

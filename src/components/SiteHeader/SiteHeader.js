@@ -35,8 +35,8 @@ class SiteHeader extends Component {
             </HeaderLink>
             <HeaderLink
               className="br b--mid-gray"
-              href={'/blog'}
-              isActive={pathname === '/blog'}
+              href={'/posts'}
+              isActive={pathname.startsWith('/posts')}
             >
               words
             </HeaderLink>
