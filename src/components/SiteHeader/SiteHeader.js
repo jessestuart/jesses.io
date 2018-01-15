@@ -5,6 +5,7 @@ import Headroom from 'react-headroom'
 import _ from 'lodash'
 
 import HeaderLink from './HeaderLink'
+import Logo from '../Icons/Logo-Light.svg'
 
 import '../../styles/base.css'
 
@@ -29,6 +30,15 @@ class SiteHeader extends Component {
           })}
           style={{ background: '#282C34' }}
         >
+          <div
+            className="absolute ml4 flex items-center"
+            style={{
+              top: '50%',
+              transform: 'translateY(-50%)',
+            }}
+          >
+            <img src={Logo} style={{ maxHeight: '35px', margin: 0 }} />
+          </div>
           <div className="w-35-ns flex flex-row center source-sans fw3">
             <HeaderLink className="br b--mid-gray" href={'/'} isActive={isRoot}>
               about
