@@ -93,8 +93,8 @@ jobs:
           key: dependencies-{{ checksum "package.json" }}
 
       - run:
-          name: Run Jest tests.
-          command: yarn test && yarn codecov -t $CODECOV_TOKEN
+          name: Run Jest tests & upload coverage to Codecov.
+          command: yarn test:coverage && yarn codecov -t $CODECOV_TOKEN
 
   # ---------------------------------------------------------------------------
 
@@ -172,7 +172,6 @@ jobs:
 
       - store_artifacts:
           path: test/__snapshots__
-
 
 workflows:
   version: 2
