@@ -9,6 +9,9 @@ import config from '../../gatsby-config'
 class BlogPostTemplate extends Component {
   render() {
     const post = get(this, 'props.data.markdownRemark')
+    if (!post) {
+      return <div />
+    }
     const pathname = get(this, 'props.location.pathname')
     const siteTitle = get(this, 'props.data.site.siteMetadata.title')
     const { excerpt } = post
@@ -59,10 +62,8 @@ export const pageQuery = graphql`
       html
       excerpt
       frontmatter {
-        tags
         title
         date(formatString: "D MMMM YYYY")
-        twitterprompt
       }
     }
   }

@@ -1,11 +1,6 @@
 ---
 title: Refactoring the Gatsby Starter Blog
 date: 2017-12-09T10:28:28-06:00
-tags:
-  - gatsbyjs
-  - react
-  - js
-  - css
 draft: false
 ---
 

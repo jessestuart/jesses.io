@@ -175,8 +175,8 @@ after@0.8.2:
   resolved "https://registry.yarnpkg.com/after/-/after-0.8.2.tgz#fedb394f9f0e02aa9768e702bda23b505fae7e1f"
 
 agent-base@^4.1.0:
-  version "4.1.2"
-  resolved "https://registry.yarnpkg.com/agent-base/-/agent-base-4.1.2.tgz#80fa6cde440f4dcf9af2617cf246099b5d99f0c8"
+  version "4.2.0"
+  resolved "https://registry.yarnpkg.com/agent-base/-/agent-base-4.2.0.tgz#9838b5c3392b962bad031e6a4c5e1024abec45ce"
   dependencies:
     es6-promisify "^5.0.0"
 
@@ -3941,8 +3941,8 @@ eslint-plugin-node@^5.2.1:
     semver "5.3.0"
 
 eslint-plugin-prettier@^2.4.0:
-  version "2.4.0"
-  resolved "https://registry.yarnpkg.com/eslint-plugin-prettier/-/eslint-plugin-prettier-2.4.0.tgz#85cab0775c6d5e3344ef01e78d960f166fb93aae"
+  version "2.5.0"
+  resolved "https://registry.yarnpkg.com/eslint-plugin-prettier/-/eslint-plugin-prettier-2.5.0.tgz#39a91dd7528eaf19cd42c0ee3f2c1f684606a05f"
   dependencies:
     fast-diff "^1.1.1"
     jest-docblock "^21.0.0"
@@ -4165,6 +4165,10 @@ exif-parser@^0.1.9:
 exit-hook@^1.0.0:
   version "1.1.1"
   resolved "https://registry.yarnpkg.com/exit-hook/-/exit-hook-1.1.1.tgz#f05ca233b48c05d54fff07765df8507e95c02ff8"
+
+exit@^0.1.2:
+  version "0.1.2"
+  resolved "https://registry.yarnpkg.com/exit/-/exit-0.1.2.tgz#0632638f8d877cc82107d30a0fff1a17cba1cd0c"
 
 expand-brackets@^0.1.4:
   version "0.1.5"
@@ -4882,8 +4886,8 @@ gatsby-plugin-netlify@^1.0.13:
     webpack-assets-manifest "^1.0.0"
 
 gatsby-plugin-nprogress@^1.0.9:
-  version "1.0.9"
-  resolved "https://registry.yarnpkg.com/gatsby-plugin-nprogress/-/gatsby-plugin-nprogress-1.0.9.tgz#5d93af3e4fd6809c7df5676faf7a478a027e6e8b"
+  version "1.0.10"
+  resolved "https://registry.yarnpkg.com/gatsby-plugin-nprogress/-/gatsby-plugin-nprogress-1.0.10.tgz#6154c5b59e1b05f0ee4e4b9c162da03f6aa741ed"
   dependencies:
     babel-runtime "^6.26.0"
     nprogress "^0.2.0"
@@ -5040,8 +5044,8 @@ gatsby-transformer-sharp@^1.6.16:
     image-size "^0.6.0"
 
 gatsby@^1.9.155:
-  version "1.9.155"
-  resolved "https://registry.yarnpkg.com/gatsby/-/gatsby-1.9.155.tgz#49fe4063fa2d19279f90b4a1019dcf20ce94d08a"
+  version "1.9.157"
+  resolved "https://registry.yarnpkg.com/gatsby/-/gatsby-1.9.157.tgz#b9fee3bc27bffe606a325f4086c4370b04dbc26f"
   dependencies:
     async "^2.1.2"
     babel-code-frame "^6.22.0"
@@ -5636,8 +5640,8 @@ gzip-size@3.0.0:
     duplexer "^0.1.1"
 
 hamburgers@^0.9.1:
-  version "0.9.1"
-  resolved "https://registry.yarnpkg.com/hamburgers/-/hamburgers-0.9.1.tgz#49bc3bca667a693a8458388c9ef265ae611348d5"
+  version "0.9.3"
+  resolved "https://registry.yarnpkg.com/hamburgers/-/hamburgers-0.9.3.tgz#73b3d299652a028647ca68b2957df172c76cc636"
 
 handlebars@4.0.11, handlebars@^4.0.3:
   version "4.0.11"
@@ -6809,12 +6813,13 @@ jest-changed-files@^22.1.0:
   dependencies:
     throat "^4.0.0"
 
-jest-cli@^22.1.0:
-  version "22.1.0"
-  resolved "https://registry.yarnpkg.com/jest-cli/-/jest-cli-22.1.0.tgz#bac47a37f48fffb1d9ff4bfd482b5b74dbc96511"
+jest-cli@^22.1.1:
+  version "22.1.1"
+  resolved "https://registry.yarnpkg.com/jest-cli/-/jest-cli-22.1.1.tgz#fa101866fbce926d875dfe5b3565785dc7922b1d"
   dependencies:
     ansi-escapes "^3.0.0"
     chalk "^2.0.1"
+    exit "^0.1.2"
     glob "^7.1.2"
     graceful-fs "^4.1.11"
     import-local "^1.0.0"
@@ -6824,15 +6829,15 @@ jest-cli@^22.1.0:
     istanbul-lib-instrument "^1.8.0"
     istanbul-lib-source-maps "^1.2.1"
     jest-changed-files "^22.1.0"
-    jest-config "^22.1.0"
+    jest-config "^22.1.1"
     jest-environment-jsdom "^22.1.0"
     jest-get-type "^22.1.0"
     jest-haste-map "^22.1.0"
     jest-message-util "^22.1.0"
     jest-regex-util "^22.1.0"
     jest-resolve-dependencies "^22.1.0"
-    jest-runner "^22.1.0"
-    jest-runtime "^22.1.0"
+    jest-runner "^22.1.1"
+    jest-runtime "^22.1.1"
     jest-snapshot "^22.1.0"
     jest-util "^22.1.0"
     jest-worker "^22.1.0"
@@ -6846,16 +6851,16 @@ jest-cli@^22.1.0:
     which "^1.2.12"
     yargs "^10.0.3"
 
-jest-config@^22.1.0:
-  version "22.1.0"
-  resolved "https://registry.yarnpkg.com/jest-config/-/jest-config-22.1.0.tgz#a87af6491d07508f032138447096d5398dd3e47a"
+jest-config@^22.1.1:
+  version "22.1.1"
+  resolved "https://registry.yarnpkg.com/jest-config/-/jest-config-22.1.1.tgz#642ffc0c704ca66a598eae1f2a473d1f9096056d"
   dependencies:
     chalk "^2.0.1"
     glob "^7.1.1"
     jest-environment-jsdom "^22.1.0"
     jest-environment-node "^22.1.0"
     jest-get-type "^22.1.0"
-    jest-jasmine2 "^22.1.0"
+    jest-jasmine2 "^22.1.1"
     jest-regex-util "^22.1.0"
     jest-resolve "^22.1.0"
     jest-util "^22.1.0"
@@ -6915,9 +6920,9 @@ jest-haste-map@^22.1.0:
     micromatch "^2.3.11"
     sane "^2.0.0"
 
-jest-jasmine2@^22.1.0:
-  version "22.1.0"
-  resolved "https://registry.yarnpkg.com/jest-jasmine2/-/jest-jasmine2-22.1.0.tgz#60888a1091a4eb507ce88ddb84d6f8d6a744ae4a"
+jest-jasmine2@^22.1.1:
+  version "22.1.1"
+  resolved "https://registry.yarnpkg.com/jest-jasmine2/-/jest-jasmine2-22.1.1.tgz#990a13cd62803ae44bcb6e34909d3b0ebd2dcb13"
   dependencies:
     callsites "^2.0.0"
     chalk "^2.0.1"
@@ -6976,32 +6981,34 @@ jest-resolve@^22.1.0:
     browser-resolve "^1.11.2"
     chalk "^2.0.1"
 
-jest-runner@^22.1.0:
-  version "22.1.0"
-  resolved "https://registry.yarnpkg.com/jest-runner/-/jest-runner-22.1.0.tgz#32d6932c8009471244d5f30cd0fea9b6b4721e75"
+jest-runner@^22.1.1:
+  version "22.1.1"
+  resolved "https://registry.yarnpkg.com/jest-runner/-/jest-runner-22.1.1.tgz#5486c9312cf24fe6f3a855bdff58009a34e7c5a8"
   dependencies:
-    jest-config "^22.1.0"
+    exit "^0.1.2"
+    jest-config "^22.1.1"
     jest-docblock "^22.1.0"
     jest-haste-map "^22.1.0"
-    jest-jasmine2 "^22.1.0"
+    jest-jasmine2 "^22.1.1"
     jest-leak-detector "^22.1.0"
     jest-message-util "^22.1.0"
-    jest-runtime "^22.1.0"
+    jest-runtime "^22.1.1"
     jest-util "^22.1.0"
     jest-worker "^22.1.0"
     throat "^4.0.0"
 
-jest-runtime@^22.1.0:
-  version "22.1.0"
-  resolved "https://registry.yarnpkg.com/jest-runtime/-/jest-runtime-22.1.0.tgz#79541453dee0a12b47f1193b68864423da4dbf75"
+jest-runtime@^22.1.1:
+  version "22.1.1"
+  resolved "https://registry.yarnpkg.com/jest-runtime/-/jest-runtime-22.1.1.tgz#2b765fc750a0cda28806419007e220df08dfe505"
   dependencies:
     babel-core "^6.0.0"
     babel-jest "^22.1.0"
     babel-plugin-istanbul "^4.1.5"
     chalk "^2.0.1"
     convert-source-map "^1.4.0"
+    exit "^0.1.2"
     graceful-fs "^4.1.11"
-    jest-config "^22.1.0"
+    jest-config "^22.1.1"
     jest-haste-map "^22.1.0"
     jest-regex-util "^22.1.0"
     jest-resolve "^22.1.0"
@@ -7062,10 +7069,10 @@ jest-worker@^22.1.0:
     merge-stream "^1.0.1"
 
 jest@^22.0.6:
-  version "22.1.0"
-  resolved "https://registry.yarnpkg.com/jest/-/jest-22.1.0.tgz#8060ecaf891ec04822ebfc7a794a8da80841aaf9"
+  version "22.1.1"
+  resolved "https://registry.yarnpkg.com/jest/-/jest-22.1.1.tgz#96bf8cc65059e2fdc84c5b4de4e4a736d799a342"
   dependencies:
-    jest-cli "^22.1.0"
+    jest-cli "^22.1.1"
 
 jimp@^0.2.24:
   version "0.2.28"
@@ -10915,8 +10922,8 @@ react-hot-loader@^3.0.0-beta.6:
     source-map "^0.6.1"
 
 react-medium-image-zoom@^3.0.8:
-  version "3.0.8"
-  resolved "https://registry.yarnpkg.com/react-medium-image-zoom/-/react-medium-image-zoom-3.0.8.tgz#dcfe13392748cc2acb36842f8829fde980223af0"
+  version "3.0.9"
+  resolved "https://registry.yarnpkg.com/react-medium-image-zoom/-/react-medium-image-zoom-3.0.9.tgz#9da028ecb53b935bc70403ae26503b9e88a6cbe7"
 
 react-proxy@^3.0.0-alpha.0:
   version "3.0.0-alpha.1"
@@ -11917,9 +11924,10 @@ sane@^2.0.0:
     fsevents "^1.1.1"
 
 sanitize-html@^1.14.1:
-  version "1.16.3"
-  resolved "https://registry.yarnpkg.com/sanitize-html/-/sanitize-html-1.16.3.tgz#96c1b44a36ff7312e1c22a14b05274370ac8bd56"
+  version "1.17.0"
+  resolved "https://registry.yarnpkg.com/sanitize-html/-/sanitize-html-1.17.0.tgz#5c95e57044604d4797367efd9152acaf5b087bb4"
   dependencies:
+    chalk "^2.3.0"
     htmlparser2 "^3.9.0"
     lodash.clonedeep "^4.5.0"
     lodash.escaperegexp "^4.1.2"

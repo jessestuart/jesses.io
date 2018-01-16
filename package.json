@@ -115,10 +115,10 @@
   "keywords": ["blog", "gatsby", "photography", "react"],
   "license": "MIT",
   "lint-staged": {
-    "*.js": ["prettier --write", "git add"],
+    "*.js": ["prettier --write", "git add -f"],
     "*.json": ["prettier --write", "git add"],
     "*.css": ["prettier --write", "git add"],
-    "*.md": ["yarn run lint:textfix", "git add"]
+    "*.md": ["yarn run lint:text", "git add"]
   },
   "main": "n/a",
   "private": true,

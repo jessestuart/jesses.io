@@ -8,6 +8,9 @@ class BlogIndex extends Component {
   render() {
     const siteTitle = get(this, 'props.data.site.siteMetadata.title')
     const posts = get(this, 'props.data.allMarkdownRemark.edges')
+    if (!posts) {
+      return <div />
+    }
 
     return (
       <Fragment>
