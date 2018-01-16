@@ -4,7 +4,7 @@ const path = require('path')
 
 const log = require('../utils/log')
 
-const processGraphQL = ({ graphql, query, createPostsFn, resultPath }) => {
+const processGraphQL = ({ graphql, query, createPostsFn, resultPath }) =>
   graphql(query)
     .then(
       result =>
@@ -14,9 +14,10 @@ const processGraphQL = ({ graphql, query, createPostsFn, resultPath }) => {
     )
     .then(createPostsFn)
     .catch(log.error)
-}
 
 const createPages = ({ graphql, boundActionCreators }) => {
+  const { createPage } = boundActionCreators
+
   const mdQuery = `
   {
     allMarkdownRemark(limit: 1000) {
@@ -30,6 +31,7 @@ const createPages = ({ graphql, boundActionCreators }) => {
     }
   }`
 
+  // TODO: Update query to match specifically date strings. Or something.
   const imagePostQuery = `
   {
     allDirectory(filter: { dir: { regex: "/images$/" } }) {
@@ -42,7 +44,6 @@ const createPages = ({ graphql, boundActionCreators }) => {
     }
   }`
 
-  const { createPage } = boundActionCreators
   const blogPost = path.resolve('./src/templates/blog-post.js')
   const photographyPost = path.resolve('./src/templates/photography-post.js')
 

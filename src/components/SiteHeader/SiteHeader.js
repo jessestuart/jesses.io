@@ -13,7 +13,7 @@ const initialState = { isHamburgerMenuEnabled: false }
 
 class SiteHeader extends Component {
   render() {
-    const pathname = _.get(this, 'props.location.pathname')
+    const pathname = _.get(this, 'props.location.pathname') || '/'
     const isRoot = _.isNil(pathname) || pathname === '/'
     return (
       <Headroom
