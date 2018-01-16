@@ -4,7 +4,7 @@ const path = require('path')
 
 const log = require('../utils/log')
 
-const processGraphQL = ({ graphql, query, createPostsFn, resultPath }) =>
+const processGraphQL = ({ graphql, query, createPostsFn, resultPath }) => {
   graphql(query)
     .then(
       result =>
@@ -14,6 +14,7 @@ const processGraphQL = ({ graphql, query, createPostsFn, resultPath }) =>
     )
     .then(createPostsFn)
     .catch(log.error)
+}
 
 const createPages = ({ graphql, boundActionCreators }) => {
   const { createPage } = boundActionCreators

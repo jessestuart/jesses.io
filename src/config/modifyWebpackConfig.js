@@ -10,6 +10,7 @@ const modifyWebpackConfig = ({ config, stage }) => {
     config.plugin('Lodash', webpackLodashPlugin, null)
   }
   config.merge({
+    devtool: 'eval',
     postcss: [atImport(), cssnested, cssnext()],
     resolve: {
       root: [path.resolve('./src'), path.resolve('./')],
