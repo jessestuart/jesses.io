@@ -25,9 +25,6 @@ const createPages = ({ graphql, boundActionCreators }) => {
           fields {
             slug
           }
-          frontmatter {
-            tags
-          }
         }
       }
     }

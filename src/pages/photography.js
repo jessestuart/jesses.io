@@ -16,7 +16,7 @@ class PhotographyIndex extends Component {
     const title = `Photography | ${siteTitle}`
 
     return (
-      <div className="bg-light-gray black-80 flex flex-row justify-center flex-body-expand">
+      <div className="bg-near-white black-80">
         <Helmet title={title} />
         {_.reverse(_.sortBy(posts, post => new Date(post.node.name))).map(
           post => {

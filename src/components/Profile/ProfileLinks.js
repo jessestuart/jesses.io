@@ -12,12 +12,12 @@ export const BlurbLink = styled.a`
     height: 2px;
     bottom: -2px;
     left: 0;
-    background-color: rgba(126, 241, 249, 0.7);
+    background-color: rgba(253, 82, 112, 0.9);
     visibility: hidden;
     -webkit-transform: scaleX(0);
     transform: scaleX(0);
-    -webkit-transition: all 0.2s ease-in-out 0s;
-    transition: all 0.2s ease-in-out 0s;
+    -webkit-transition: all 0.3s ease-in-out 0s;
+    transition: all 0.3s ease-in-out 0s;
   }
   &:hover:before {
     visibility: visible;

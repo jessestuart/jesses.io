@@ -29,7 +29,6 @@ import React from './React'
 import Redhat from './Redhat'
 import Redis from './Redis'
 import Redux from './Redux'
-import Sass from './Sass'
 import Sentry from './Sentry'
 import Terraform from './Terraform'
 import Typescript from './Typescript'
@@ -70,7 +69,6 @@ const DevIcons = {
   Redhat,
   Redis,
   Redux,
-  Sass,
   Sentry,
   Terraform,
   Typescript,

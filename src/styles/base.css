@@ -6,13 +6,13 @@
 @custom-media --breakpoint-large screen and (min-width: 60em);
 
 :root {
-  --hot-pink: #fc5270;
-  --gray-100: #f8f9fa;
-  --gray-200: #e9ecef;
-  --gray-300: #dee2e6;
-  --gray-400: #ced4da;
-  --gray-500: #adb5bd;
-  --gray-600: #868e96;
+  --hot-pink: #FC5270;
+  --gray-100: #F8F9FA;
+  --gray-200: #E9ECEF;
+  --gray-300: #DEE2E6;
+  --gray-400: #CED4DA;
+  --gray-500: #ADB5BD;
+  --gray-600: #868E96;
   --gray-700: #495057;
   --gray-800: rgba(55, 59, 70, 1);
   --gray-900: #212529;
@@ -48,6 +48,10 @@
 
 .alegreya-sans {
   font-family: 'Alegreya Sans', sans-serif;
+}
+
+.alegreya-sc {
+  font-family: 'Alegreya SC', serif;
 }
 
 .grid {

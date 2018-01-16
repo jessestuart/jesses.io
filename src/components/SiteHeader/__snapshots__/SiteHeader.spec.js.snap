@@ -20,6 +20,25 @@ exports[`Render SiteHeader component. 1`] = `
     }
   >
     <div
+      className="absolute ml4 flex items-center"
+      style={
+        Object {
+          "top": "50%",
+          "transform": "translateY(-50%)",
+        }
+      }
+    >
+      <img
+        src="Logo-Light.svg"
+        style={
+          Object {
+            "margin": 0,
+            "maxHeight": "35px",
+          }
+        }
+      />
+    </div>
+    <div
       className="w-35-ns flex flex-row center source-sans fw3"
     >
       <h3
@@ -37,7 +56,7 @@ exports[`Render SiteHeader component. 1`] = `
       >
         <MockedLink
           className="shadow-none flex justify-center items-center"
-          to="/blog"
+          to="/posts"
         >
           words
         </MockedLink>

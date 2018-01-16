@@ -58,7 +58,6 @@ const plugins = [
   // ========================
   // Styling-related plugins.
   // ========================
-  'gatsby-plugin-sass',
   'gatsby-plugin-styled-components',
   typographyPlugin,
   // ==========================================

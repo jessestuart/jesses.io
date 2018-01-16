@@ -13,8 +13,6 @@ class PhotographyPostTemplate extends Component {
     const siteTitle = _.get(props, 'data.site.siteMetadata.title')
     const date = _.get(props, 'pathContext.name')
     const datetime = date ? DateTime.fromISO(date.replace(/\//g, '')) : null
-    // const { date, title, tags } = post.frontmatter
-    // const pageURL = `${config.siteMetadata.siteUrl}${pathname}`
 
     const title = `Photography | ${date} | ${siteTitle}`
 

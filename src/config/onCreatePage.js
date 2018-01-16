@@ -4,7 +4,7 @@ const Promise = require('bluebird')
 // called after every page is created.
 const onCreatePage = ({ page, boundActionCreators }) =>
   new Promise((resolve, reject) => {
-    if (page.path.match(/^\/blog/)) {
+    if (page.path.match(/^\/posts/)) {
       page.layout = 'blog-layout'
       boundActionCreators.createPage(page)
     }
