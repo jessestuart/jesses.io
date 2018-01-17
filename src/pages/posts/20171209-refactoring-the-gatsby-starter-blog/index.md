@@ -1,7 +1,7 @@
 ---
 title: Refactoring the Gatsby Starter Blog
 date: 2017-12-09T10:28:28-06:00
-draft: false
+draft: true
 ---
 
 Before I begin, I want to point out that I _really_ like GatsbyJS. It basically solved all of my frontend requirements in one fell swoop. The development and build processes built into the gatsby-cli have been amazing. I plan on sticking with it until the next _Great JavaScript Framework_ overtakes React.

@@ -6,6 +6,8 @@ import { BlogHeader } from '../components/Blog'
 
 import config from '../../gatsby-config'
 
+import './blog-post.css'
+
 class BlogPostTemplate extends Component {
   render() {
     const post = get(this, 'props.data.markdownRemark')

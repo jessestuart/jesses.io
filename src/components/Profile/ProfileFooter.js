@@ -1,37 +1,53 @@
+// @flow
 import React, { Component } from 'react'
-import classNames from 'classnames'
+import Promise from 'bluebird'
 import styled from 'styled-components'
+import classNames from 'classnames'
 import { ChevronDown } from 'react-feather'
 
-import makeCancelable from '../../utils/make-cancelable.js'
+import Cancelable from '../../utils/cancelable.js'
 
 const initialState = { isAnimatingChevron: false }
 
-let interval = {}
-let promise = {}
+Promise.config({ cancellation: true })
 
+// $FlowFixMe
 export default class ProfileFooter extends Component {
+  cancelable: Promise<*>
+  interval: any
+  state: {
+    isAnimatingChevron: boolean,
+  }
   constructor() {
     super()
+    this.interval = {}
     this.state = { ...initialState }
   }
 
   componentDidMount() {
-    promise = makeCancelable(
+    this.cancelable = new Cancelable(
       new Promise(resolve => {
-        interval = setInterval(() => {
-          this.setState({ isAnimatingChevron: true }, () =>
-            setTimeout(() => this.setState({ isAnimatingChevron: false }), 2000)
-          )
-        }, 4000)
-        resolve()
+        this.interval = setInterval(
+          () => this.toggleChevronAnimation(resolve),
+          4000
+        )
       })
     )
   }
 
+  toggleChevronAnimation(resolveFn: Function) {
+    Promise.delay(2000).then(() => {
+      if (!this.cancelable.cancelled) {
+        // $FlowFixMe
+        this.setState({ isAnimatingChevron: !this.state.isAnimatingChevron })
+      }
+      resolveFn()
+    })
+  }
+
   componentWillUnmount() {
-    clearInterval(interval)
-    promise.cancel()
+    clearInterval(this.interval)
+    this.cancelable.cancel()
   }
 
   render() {
