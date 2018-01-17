@@ -21,7 +21,7 @@ class BlogPostTemplate extends Component {
     const comboTitle = `${title} | ${siteTitle}`
 
     return (
-      <div className="bg-near-white black-80 lh-copy">
+      <div className="bg-near-white black-80 lh-copy flex-body-expand">
         <article className="w-50-ns w-75 center">
           <Helmet title={comboTitle}>
             <meta itemProp="name" content={comboTitle} />

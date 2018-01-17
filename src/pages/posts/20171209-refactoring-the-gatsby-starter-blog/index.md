@@ -4,7 +4,7 @@ date: 2017-12-09T10:28:28-06:00
 draft: false
 ---
 
-Before I begin, I want to point out that I _really_ like GatsbyJS. It basically solved [all of my frontend requirements](/posts/20171204-building-a-blog/index.html) in one fell swoop. The development and build processes built into the gatsby-cli have been amazing. I plan on sticking with it until the next *Great JavaScript Framework*™ overtakes React.
+Before I begin, I want to point out that I _really_ like GatsbyJS. It basically solved all of my frontend requirements in one fell swoop. The development and build processes built into the gatsby-cli have been amazing. I plan on sticking with it until the next _Great JavaScript Framework_ overtakes React.
 
 That being said, I want to document a case study of the way I've refactored the [starter blog](https://github.com/gatsbyjs/gatsby-starter-blog/) to improve maintainability. I want to demonstrate an example of clean frontend code. Of course, this is a discussion about the _current_ version of the starter blog. I've seen relatively recent commits, so I can only assume that the repository will change and improve by the time you read this.
 

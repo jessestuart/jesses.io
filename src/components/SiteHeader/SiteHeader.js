@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
-import classNames from 'classnames'
 import Headroom from 'react-headroom'
 import _ from 'lodash'
 
@@ -25,9 +24,9 @@ class SiteHeader extends Component {
         }}
       >
         <header
-          className={classNames('bb b--hot-pink center site-header flex', {
-            bw1: !isRoot,
-          })}
+          className={`bb b--hot-pink center site-header flex ${
+            !isRoot ? 'bw1' : ''
+          }`}
           style={{ background: '#282C34' }}
         >
           <div
