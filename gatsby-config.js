@@ -27,11 +27,12 @@ const transformerRemark = {
       {
         resolve: 'gatsby-remark-images',
         options: {
-          maxWidth: 590,
+          maxWidth: 768,
         },
       },
-      'gatsby-remark-prismjs',
+      'gatsby-remark-autolink-headers',
       'gatsby-remark-copy-linked-files',
+      'gatsby-remark-prismjs',
       'gatsby-remark-smartypants',
     ],
   },

@@ -23,4 +23,5 @@
 
 * Gatsby + Docker + CircleCI pipeline
 
-- Homemaker
+* Homemaker
+  * Add CLI (?)

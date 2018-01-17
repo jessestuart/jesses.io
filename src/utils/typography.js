@@ -11,7 +11,7 @@ const typography = new Typography(
     {},
     {
       bodyFontFamily: ['Lato', 'sans-serif'],
-      headerFontFamily: ['Spectral', 'serif'],
+      headerFontFamily: ['Lato', 'sans-serif'],
       fontFamily: ['Lato', 'sans-serif'],
       overrideThemeStyles: ({ rhythm }, options, styles) => ({
         blockquote: {

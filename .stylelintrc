@@ -8,7 +8,7 @@
         "ignoreAtRules": ["value", "extend", "custom-media", "if", "else"]
       }
     ],
-    "color-hex-case": "upper",
+    "color-hex-case": "lower",
     "declaration-colon-newline-after": null,
     "declaration-empty-line-before": null,
     "property-no-unknown": [
