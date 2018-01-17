@@ -5,9 +5,10 @@ import { ChevronDown } from 'react-feather'
 
 import makeCancelable from '../../utils/make-cancelable.js'
 
+const initialState = { isAnimatingChevron: false }
+
 let interval = {}
 let promise = {}
-const initialState = { isAnimatingChevron: false }
 
 export default class ProfileFooter extends Component {
   constructor() {
