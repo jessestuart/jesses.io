@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Render Profile component. 1`] = `
+exports[`Render Profile component. Render Profile component. 1`] = `
 <div
   className="Profile__IntroWrapper-krHzZt items-center justify-center pv4 kNpbjJ"
 >
@@ -599,13 +599,8 @@ exports[`Render Profile component. 1`] = `
   <div
     className="Profile__FooterContainer-caaTfV bt b--light-silver hJgCxy"
   >
-    <section
-      className="bb bw2 b--hot-pink bg-purple pt4 pb3 mb1"
-      style={
-        Object {
-          "gridColumn": "1 / 13",
-        }
-      }
+    <div
+      className="ProfileFooter__ProfileFooterSection-fAJWLj bb bw2 b--hot-pink bg-purple pt4 pb3 mb1 hFmNli"
     >
       <h4
         className="f4 fw7 tc lh-title code"
@@ -639,7 +634,7 @@ exports[`Render Profile component. 1`] = `
           </svg>
         </div>
       </div>
-    </section>
+    </div>
   </div>
 </div>
 `;

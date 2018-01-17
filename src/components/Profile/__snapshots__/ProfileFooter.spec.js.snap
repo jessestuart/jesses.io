@@ -1,0 +1,40 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Render ProfileFooter component. 1`] = `
+<div
+  className="ProfileFooter__ProfileFooterSection-fAJWLj bb bw2 b--hot-pink bg-purple pt4 pb3 mb1 hFmNli"
+>
+  <h4
+    className="f4 fw7 tc lh-title code"
+  >
+    I build software
+    <br />
+    on the pull requests
+    <br />
+    of giants.
+  </h4>
+  <div
+    className="flex w-100 justify-center mt2"
+  >
+    <div
+      className=""
+    >
+      <svg
+        fill="none"
+        height="2rem"
+        stroke="#fc5270"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="2"
+        viewBox="0 0 24 24"
+        width="2rem"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <polyline
+          points="6 9 12 15 18 9"
+        />
+      </svg>
+    </div>
+  </div>
+</div>
+`;
