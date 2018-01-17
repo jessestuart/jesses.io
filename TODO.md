@@ -1,8 +1,6 @@
 ### Need-to-do
 
 * Add anchor tags to SVG icons
-* Add social media icons
-* Fix footer
 
 ### Ideas
 
@@ -18,11 +16,10 @@
 
 * Better logging
 * Sentry
-* Code coverage reporting
 
 ========================================================
 
-### Blog post Ideas
+### Blog Post Ideas
 
 * Gatsby + Docker + CircleCI pipeline
 

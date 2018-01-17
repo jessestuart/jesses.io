@@ -12,7 +12,12 @@ const ProfileDevIcons = () => {
   return (
     <Fragment>
       <div className="flex justify-center align-center">
-        <p className="serif f4 fw3 lh-copy center pv3 tc w-75">
+        <p
+          className="serif fw3 lh-copy center pv3 tc w-75"
+          style={{
+            fontSize: '1.3rem',
+          }}
+        >
           Tackling novel problems —
           <span style={{ whiteSpace: 'nowrap' }}>
             &nbsp;at every level of the stack&nbsp;
@@ -46,8 +51,9 @@ const ProfileDevIcons = () => {
 }
 
 const DevIconLabel = styled.div.attrs({
-  className: 'moon-grey flex items-center justify-start f3',
+  className: 'moon-grey flex items-center justify-start',
 })`
+  font-size: 1.5rem;
   grid-column: span 9;
   grid-row: span 2;
   @media (max-width: 45em) {

@@ -6,7 +6,12 @@ Array [
     className="flex justify-center align-center"
   >
     <p
-      className="serif f4 fw3 lh-copy center pv3 tc w-75"
+      className="serif fw3 lh-copy center pv3 tc w-75"
+      style={
+        Object {
+          "fontSize": "1.3rem",
+        }
+      }
     >
       Tackling novel problems —
       <span
@@ -36,7 +41,7 @@ Array [
     className="ProfileDevIcons__DevIconsSection-gZyCJK center code w-90 cFjGxe"
   >
     <div
-      className="ProfileDevIcons__DevIconLabel-dFHCnQ moon-grey flex items-center justify-start f3 cHYnTt"
+      className="ProfileDevIcons__DevIconLabel-dFHCnQ moon-grey flex items-center justify-start hJYBwG"
     >
       infra
     </div>
@@ -183,7 +188,7 @@ Array [
       </svg>
     </div>
     <div
-      className="ProfileDevIcons__DevIconLabel-dFHCnQ moon-grey flex items-center justify-start f3 cHYnTt"
+      className="ProfileDevIcons__DevIconLabel-dFHCnQ moon-grey flex items-center justify-start hJYBwG"
     >
       backend
     </div>
@@ -363,7 +368,7 @@ Array [
       </svg>
     </div>
     <div
-      className="ProfileDevIcons__DevIconLabel-dFHCnQ moon-grey flex items-center justify-start f3 cHYnTt"
+      className="ProfileDevIcons__DevIconLabel-dFHCnQ moon-grey flex items-center justify-start hJYBwG"
     >
       frontend
     </div>
