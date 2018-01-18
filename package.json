@@ -61,7 +61,7 @@
     "hamburgers": "^0.9.1",
     "husky": "^0.14.3",
     "identity-obj-proxy": "^3.0.0",
-    "jest": "^22.0.6",
+    "jest": "^22.1.2",
     "lint-staged": "^6.0.0",
     "lodash": "^4.17.4",
     "normalize.css": "^7.0.0",
