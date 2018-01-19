@@ -79,7 +79,7 @@
     "react-cosmos": "^3.2.1",
     "react-feather": "^1.0.8",
     "react-headroom": "^2.2.2",
-    "react-medium-image-zoom": "^3.0.8",
+    "react-medium-image-zoom": "^3.0.10",
     "react-test-renderer": "^16.2.0",
     "react-twitter-widgets": "^1.7.1",
     "react-with-available-width": "^2.0.0",
