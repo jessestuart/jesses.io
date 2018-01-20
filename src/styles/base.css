@@ -34,6 +34,10 @@
   --line-height-copy: 1.7;
 }
 
+.spectral {
+  font-family: 'Spectral', serif;
+}
+
 .lato {
   font-family: 'Lato', sans-serif;
 }
@@ -78,6 +82,7 @@ h2 {
 
 a {
   color: inherit;
+  text-decoration: none;
 }
 
 .bg-gray-primary {

@@ -1,7 +1,7 @@
 ---
 title: On Making Homemaker
 date: 2018-01-16T10:28:28-05:00
-draft: false
+draft: true
 ---
 
 ### Background: A tale of too many VMs

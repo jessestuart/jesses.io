@@ -1,53 +1,69 @@
-// @flow
+/* @flow */
 import React, { Component } from 'react'
 import Promise from 'bluebird'
 import styled from 'styled-components'
 import classNames from 'classnames'
+import _ from 'lodash'
 import { ChevronDown } from 'react-feather'
 
 import Cancelable from '../../utils/cancelable.js'
 
 const initialState = { isAnimatingChevron: false }
 
+// Configure Bluebird's Promise lib to be cancelable --
+// we use this to cancel the bouncing chevron animation
+// when the component is unmounted (e.g., because the user
+// has navigated away from the Home page).
 Promise.config({ cancellation: true })
 
 // $FlowFixMe
 export default class ProfileFooter extends Component {
-  cancelable: Promise<*>
+  cancelable: Cancelable<*>
   interval: any
   state: {
     isAnimatingChevron: boolean,
   }
+
   constructor() {
     super()
-    this.interval = {}
     this.state = { ...initialState }
   }
 
-  componentDidMount() {
-    this.cancelable = new Cancelable(
-      new Promise(resolve => {
-        this.interval = setInterval(
-          () => this.toggleChevronAnimation(resolve),
-          4000
-        )
-      })
-    )
+  shouldComponentUpdate() {
+    return !this.cancelable.cancelled
   }
 
-  toggleChevronAnimation(resolveFn: Function) {
-    Promise.delay(2000).then(() => {
-      if (!this.cancelable.cancelled) {
-        // $FlowFixMe
-        this.setState({ isAnimatingChevron: !this.state.isAnimatingChevron })
-      }
-      resolveFn()
-    })
+  componentDidMount() {
+    this.cancelable = new Cancelable(this.toggleChevronAnimation())
   }
 
   componentWillUnmount() {
+    this.cancelChevronAnimation()
+  }
+
+  cancelChevronAnimation() {
     clearInterval(this.interval)
     this.cancelable.cancel()
+  }
+
+  toggleChevronAnimation() {
+    return new Promise(() => {
+      this.interval = setInterval(
+        () =>
+          Promise.delay(2000).then(() => {
+            const canceled = _.get(this, 'cancelable.canceled')
+            if (!canceled) {
+              // $FlowFixMe
+              this.setState({
+                isAnimatingChevron: !this.state.isAnimatingChevron,
+              })
+            } else {
+              this.cancelChevronAnimation()
+            }
+          }),
+        4000
+      )
+    })
   }
 
   render() {
