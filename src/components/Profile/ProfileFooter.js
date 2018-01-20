@@ -70,7 +70,7 @@ export default class ProfileFooter extends Component {
     const { isAnimatingChevron } = this.state
     return (
       <ProfileFooterSection>
-        <h4 className="f4 fw7 tc lh-title code">
+        <h4 className="f4 fw3 tc lh-title code white-80">
           I build software<br />
           on the pull requests<br />
           of giants.
