@@ -39,11 +39,6 @@ jobs:
       - store_artifacts:
           path: jessestuart_$CIRCLE_SHA1.tar.gz
 
-      - persist_to_workspace:
-          root: ~/jessestuart
-          paths:
-            - public/*
-
   lint:
     working_directory: ~/jessestuart
     docker:
@@ -93,8 +88,8 @@ jobs:
           key: dependencies-{{ checksum "package.json" }}
 
       - run:
-          name: Run Jest tests.
-          command: yarn test && yarn codecov -t $CODECOV_TOKEN
+          name: Run Jest tests & upload coverage to Codecov.
+          command: yarn test:coverage && yarn codecov -t $CODECOV_TOKEN
 
   # ---------------------------------------------------------------------------
 
@@ -104,7 +99,7 @@ jobs:
       # yamllint disable-line
       - IMAGE_ID: "672278003389.dkr.ecr.us-east-1.amazonaws.com/jessestuart/jsgatsby"
     docker:
-      - image: docker:17-git
+      - image: docker:18-git
     steps:
       - checkout
 
