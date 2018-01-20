@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import Helmet from 'react-helmet'
 import _ from 'lodash'
-import slug from 'slug'
 import { DateTime } from 'luxon'
 
 import { PhotographyGridSection } from '../components/Photography'
@@ -21,7 +20,7 @@ class PhotographyIndex extends Component {
         {_.reverse(_.sortBy(posts, post => new Date(post.node.name))).map(
           post => {
             const title = _.get(post, 'node.name')
-            const linkSlug = `/photography/${slug(title)}`
+            const linkSlug = `/photography/${title}`
             const linkImages = _.take(
               _.filter(images, image => _.includes(image.node.id, title)),
               6
