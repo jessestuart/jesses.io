@@ -5107,9 +5107,9 @@ gatsby-transformer-sharp@^1.6.16:
     fs-extra "^4.0.2"
     image-size "^0.6.0"
 
-gatsby@^1.9.155:
-  version "1.9.157"
-  resolved "https://registry.yarnpkg.com/gatsby/-/gatsby-1.9.157.tgz#b9fee3bc27bffe606a325f4086c4370b04dbc26f"
+gatsby@^1.9.159:
+  version "1.9.159"
+  resolved "https://registry.yarnpkg.com/gatsby/-/gatsby-1.9.159.tgz#fc8303dc158bcced2489c53fe3790d2c7b84b632"
   dependencies:
     async "^2.1.2"
     babel-code-frame "^6.22.0"
