@@ -5042,9 +5042,9 @@ gatsby-remark-images@^1.5.36:
     slash "^1.0.0"
     unist-util-select "^1.5.0"
 
-gatsby-remark-prismjs@^1.2.11:
-  version "1.2.11"
-  resolved "https://registry.yarnpkg.com/gatsby-remark-prismjs/-/gatsby-remark-prismjs-1.2.11.tgz#2e0705c228ef8d282785f0f922ffd629126cbdf2"
+gatsby-remark-prismjs@^1.2.12:
+  version "1.2.12"
+  resolved "https://registry.yarnpkg.com/gatsby-remark-prismjs/-/gatsby-remark-prismjs-1.2.12.tgz#3ca1067daaa0bd738dce6d1005310cb85f7ee04e"
   dependencies:
     babel-runtime "^6.26.0"
     parse-numeric-range "^0.0.2"
