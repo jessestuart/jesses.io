@@ -10,7 +10,14 @@ class BlogIndex extends Component {
     const siteTitle = _.get(props, 'data.site.siteMetadata.title')
     const posts = _.get(props, 'data.allMarkdownRemark.edges')
     if (!posts) {
-      return <div />
+      return (
+        <Fragment>
+          <Helmet title={siteTitle} />
+          <div className="spectral f3 fw5 flex justify-center items-center h-100">
+            No posts currently available. Sit tight.
+          </div>
+        </Fragment>
+      )
     }
 
     return (

@@ -15,5 +15,6 @@ export default class Cancelable {
 
   cancel() {
     this.cancelled = true
+    this.promise.cancel()
   }
 }

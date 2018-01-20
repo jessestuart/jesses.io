@@ -4,8 +4,10 @@ import Link from 'gatsby-link'
 import { DateTime } from 'luxon'
 
 const PhotographySectionHeader = ({ datetime, href }) => (
-  <div className="alegreya mb2 f2 fw4 header-purple bb b--header-purple tr">
-    <Link to={href}>{datetime.toFormat('dd LLLL yyyy')}</Link>
+  <div className="alegreya-sans mb2 f2 fw4 header-purple bb b--header-purple tr">
+    <Link style={{ textDecoration: 'none' }} to={href}>
+      {datetime.toFormat('dd LLLL yyyy')}
+    </Link>
   </div>
 )
 
