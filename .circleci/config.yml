@@ -173,7 +173,6 @@ jobs:
       - store_artifacts:
           path: test/__snapshots__
 
-
 workflows:
   version: 2
   main:
