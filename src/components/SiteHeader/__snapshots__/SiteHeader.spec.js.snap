@@ -1,5 +1,62 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Render SiteHeader component as not-root. 1`] = `
+<Headroom
+  style={
+    Object {
+      "MozTransition": "all 0.7s ease-in-out",
+      "OTransaction": "all 0.7s ease-in-out",
+      "Transition": "all 0.7s ease-in-out",
+      "WebkitTranstion": "all 0.7s ease-in-out",
+    }
+  }
+>
+  <header
+    className="bb b--hot-pink center site-header flex bw1"
+    style={
+      Object {
+        "background": "#282C34",
+      }
+    }
+  >
+    <div
+      className="w-35-ns flex flex-row center source-sans fw3"
+    >
+      <h3
+        className="lato f4 ph3 mv2 pv2 flex-auto br b--mid-gray light-silver fw3"
+      >
+        <MockedLink
+          className="shadow-none flex justify-center items-center"
+          to="/"
+        >
+          about
+        </MockedLink>
+      </h3>
+      <h3
+        className="lato f4 ph3 mv2 pv2 flex-auto br b--mid-gray light-silver fw3"
+      >
+        <MockedLink
+          className="shadow-none flex justify-center items-center"
+          to="/posts"
+        >
+          words
+        </MockedLink>
+      </h3>
+      <h3
+        className="lato f4 ph3 mv2 pv2 flex-auto light-silver fw3"
+      >
+        <MockedLink
+          className="shadow-none flex justify-center items-center"
+          to="/photography"
+        >
+          pictures
+        </MockedLink>
+      </h3>
+    </div>
+  </header>
+</Headroom>
+`;
+
 exports[`Render SiteHeader component. 1`] = `
 <Headroom
   style={
@@ -12,32 +69,13 @@ exports[`Render SiteHeader component. 1`] = `
   }
 >
   <header
-    className="bb b--hot-pink center site-header flex"
+    className="bb b--hot-pink center site-header flex "
     style={
       Object {
         "background": "#282C34",
       }
     }
   >
-    <div
-      className="absolute ml4 flex items-center"
-      style={
-        Object {
-          "top": "50%",
-          "transform": "translateY(-50%)",
-        }
-      }
-    >
-      <img
-        src="Logo-Light.svg"
-        style={
-          Object {
-            "margin": 0,
-            "maxHeight": "35px",
-          }
-        }
-      />
-    </div>
     <div
       className="w-35-ns flex flex-row center source-sans fw3"
     >

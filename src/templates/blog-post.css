@@ -1,0 +1,12 @@
+@import '../styles/base.css';
+
+p > code {
+  background: #e4e4e4;
+  color: var(--hot-pink);
+  padding: 4px;
+  border-radius: 5px;
+}
+
+pre {
+  margin-bottom: 1.45rem !important;
+}
