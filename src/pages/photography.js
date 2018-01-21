@@ -1,11 +1,11 @@
-import React, { Component } from 'react'
+import React, { PureComponent } from 'react'
 import Helmet from 'react-helmet'
 import _ from 'lodash'
 import { DateTime } from 'luxon'
 
 import { PhotographyGridSection } from '../components/Photography'
 
-class PhotographyIndex extends Component {
+class PhotographyIndex extends PureComponent {
   render() {
     const { props } = this
     const siteTitle = _.get(props, 'data.site.siteMetadata.title')

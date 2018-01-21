@@ -23,7 +23,7 @@ class SiteHeader extends Component {
         }}
       >
         <header
-          className={`bb b--hot-pink center site-header flex ${
+          className={`bb b--hot-pink center site-header flex mb3 ${
             !isRoot ? 'bw1' : ''
           }`}
           style={{ background: '#282C34' }}

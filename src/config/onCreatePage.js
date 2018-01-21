@@ -8,10 +8,6 @@ const onCreatePage = ({ page, boundActionCreators }) =>
       page.layout = 'blog-layout'
       boundActionCreators.createPage(page)
     }
-    if (page.path === '/') {
-      page.layout = 'home-layout'
-      boundActionCreators.createPage(page)
-    }
     resolve()
   })
 
