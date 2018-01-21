@@ -20,8 +20,14 @@ exports[`Render ProfileFooter component after 10s. 1`] = `
   >
     <div
       className=""
+      style={
+        Object {
+          "maxWidth": "2rem",
+        }
+      }
     >
       <svg
+        className="mw-5"
         fill="none"
         height="2rem"
         stroke="#fc5270"
@@ -59,8 +65,14 @@ exports[`Render ProfileFooter component. 1`] = `
   >
     <div
       className=""
+      style={
+        Object {
+          "maxWidth": "2rem",
+        }
+      }
     >
       <svg
+        className="mw-5"
         fill="none"
         height="2rem"
         stroke="#fc5270"
