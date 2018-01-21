@@ -51,14 +51,14 @@ export default class ProfileFooter extends Component {
       this.interval = setInterval(
         () =>
           Promise.delay(2000).then(() => {
-            const canceled = _.get(this, 'cancelable.canceled')
-            if (!canceled) {
+            const isAnimationCanceled = _.get(this, 'cancelable.canceled')
+            if (isAnimationCanceled) {
+              this.cancelChevronAnimation()
+            } else {
               // $FlowFixMe
               this.setState({
                 isAnimatingChevron: !this.state.isAnimatingChevron,
               })
-            } else {
-              this.cancelChevronAnimation()
             }
           }),
         4000
@@ -70,7 +70,7 @@ export default class ProfileFooter extends Component {
     const { isAnimatingChevron } = this.state
     return (
       <ProfileFooterSection>
-        <h4 className="f4 fw7 tc lh-title code">
+        <h4 className="f4 fw3 tc lh-title code white-80">
           I build software<br />
           on the pull requests<br />
           of giants.
@@ -80,8 +80,9 @@ export default class ProfileFooter extends Component {
             className={classNames({
               'hvr-wobble-vertical hvr-wobble-vertical-animating': isAnimatingChevron,
             })}
+            style={{ maxWidth: '2rem' }}
           >
-            <ChevronDown color="#fc5270" size={'2rem'} />
+            <ChevronDown className="mw-5" color="#fc5270" size="2rem" />
           </div>
         </div>
       </ProfileFooterSection>

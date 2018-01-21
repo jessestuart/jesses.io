@@ -9,10 +9,10 @@
 @custom-media --breakpoint-large screen and (min-width: 60em);
 
 :root {
-  --sans-serif: -apple-system, BlinkMacSystemFont, 'avenir next', avenir,
-    helvetica, 'helvetica neue', ubuntu, roboto, noto, 'segoe ui', arial,
+  --sans-serif: 'Lato', -apple-system, BlinkMacSystemFont, 'Avenir Next', Avenir,
+    Helvetica, 'Helvetica Neue', Ubuntu, Roboto, Noto, 'Segoe UI', Arial,
     sans-serif;
-  --serif: 'Spectral', georgia, serif;
+  --serif: 'Spectral', Georgia, serif;
   --font-size-headline: 6rem;
   --font-size-subheadline: 5rem;
   --font-size-1: 3rem;

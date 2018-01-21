@@ -1,9 +1,9 @@
-FROM node:8 as builder
+FROM node:latest as builder
 
 WORKDIR /app
 COPY package.json yarn.lock /app/
 RUN \
-  apt-get install build-essentials; \
+  apt-get install build-essential; \
   yarn install;
 
 COPY . /app

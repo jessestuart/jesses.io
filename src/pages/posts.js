@@ -1,23 +1,17 @@
-import React, { Component, Fragment } from 'react'
+import React, { PureComponent, Fragment } from 'react'
 import Helmet from 'react-helmet'
 import _ from 'lodash'
 
-import { BlogHeader } from '../components/Blog'
+import { BlogHeader, BlogNoPosts } from '../components/Blog'
 
-class BlogIndex extends Component {
+class BlogIndex extends PureComponent {
   render() {
     const { props } = this
     const siteTitle = _.get(props, 'data.site.siteMetadata.title')
     const posts = _.get(props, 'data.allMarkdownRemark.edges')
+
     if (!posts) {
-      return (
-        <Fragment>
-          <Helmet title={siteTitle} />
-          <div className="spectral f3 fw5 flex justify-center items-center h-100">
-            No posts currently available. Sit tight.
-          </div>
-        </Fragment>
-      )
+      return <BlogNoPosts siteTitle={siteTitle} />
     }
 
     return (
