@@ -4,8 +4,13 @@ import styled from 'styled-components'
 const ImageZoomGrid = styled.div`
   display: grid;
   grid-gap: 10px;
-  grid-template-columns: repeat(auto-fill, minmax(20em, 1fr));
   grid-auto-rows: minmax(200px, auto);
+  @media (min-width: 45em) {
+    grid-template-columns: repeat(auto-fill, minmax(15em, 1fr));
+  }
+  @media (max-width: 45em) {
+    grid-template-columns: repeat(auto-fill, minmax(50vw, 1fr));
+  }
 `
 
 // eslint-disable-next-line react/display-name

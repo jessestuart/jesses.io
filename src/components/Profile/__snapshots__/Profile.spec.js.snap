@@ -12,22 +12,23 @@ exports[`Render Profile component. Render Profile component. 1`] = `
       src="avatar_square.jpg"
     />
     <div
-      className="flex justify-around mv4"
+      className="BlackMirror__BlackMirrorDiv-kyYuCJ flex justify-around mv4 laQvyw"
     >
       <a
         className="ma1"
         href="https://github.com/jessestuart/"
       >
         <svg
-          className="b--light-gray pa1 hvr-grow"
+          className="b--light-gray hvr-grow"
           fill="#333333"
-          height="3rem"
+          height="2rem"
+          max-width="40px"
           stroke="currentColor"
           strokeLinecap="round"
           strokeLinejoin="round"
           strokeWidth="1px"
           viewBox="0 0 24 24"
-          width="3rem"
+          width="2rem"
           xmlns="http://www.w3.org/2000/svg"
         >
           <path
@@ -40,15 +41,16 @@ exports[`Render Profile component. Render Profile component. 1`] = `
         href="https://www.linkedin.com/in/jessedstuart/"
       >
         <svg
-          className="b--light-gray pa1 hvr-grow"
+          className="b--light-gray hvr-grow"
           fill="#0077B5"
-          height="3rem"
+          height="2rem"
+          max-width="40px"
           stroke="currentColor"
           strokeLinecap="round"
           strokeLinejoin="round"
           strokeWidth="1px"
           viewBox="0 0 24 24"
-          width="3rem"
+          width="2rem"
           xmlns="http://www.w3.org/2000/svg"
         >
           <path
@@ -72,15 +74,16 @@ exports[`Render Profile component. Render Profile component. 1`] = `
         href="https://instagram.com/jaystu/"
       >
         <svg
-          className="b--light-gray pa1 hvr-grow"
+          className="b--light-gray hvr-grow"
           fill="#C74861"
-          height="3rem"
+          height="2rem"
+          max-width="40px"
           stroke="currentColor"
           strokeLinecap="round"
           strokeLinejoin="round"
           strokeWidth="1px"
           viewBox="0 0 24 24"
-          width="3rem"
+          width="2rem"
           xmlns="http://www.w3.org/2000/svg"
         >
           <rect
@@ -107,15 +110,16 @@ exports[`Render Profile component. Render Profile component. 1`] = `
         href="https://twitter.com/jesse_stuart/"
       >
         <svg
-          className="b--light-gray pa1 hvr-grow"
+          className="b--light-gray hvr-grow"
           fill="#1DA1F2"
-          height="3rem"
+          height="2rem"
+          max-width="40px"
           stroke="currentColor"
           strokeLinecap="round"
           strokeLinejoin="round"
           strokeWidth="1px"
           viewBox="0 0 24 24"
-          width="3rem"
+          width="2rem"
           xmlns="http://www.w3.org/2000/svg"
         >
           <path
