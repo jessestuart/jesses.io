@@ -1,4 +1,5 @@
 import React from 'react'
+import styled from 'styled-components'
 
 import { Github, Linkedin, Instagram, Twitter } from 'react-feather'
 
@@ -35,7 +36,7 @@ const Icons = [
 ]
 
 const BlackMirror = () => (
-  <div className="flex justify-around mv4">
+  <BlackMirrorDiv>
     {Icons.map(icon => {
       const { Image } = icon
       return (
@@ -43,13 +44,22 @@ const BlackMirror = () => (
           <Image
             fill={icon.color}
             strokeWidth="1px"
-            className="b--light-gray pa1 hvr-grow"
-            size="3rem"
+            className="b--light-gray hvr-grow"
+            max-width="40px"
+            size="2rem"
           />
         </a>
       )
     })}
-  </div>
+  </BlackMirrorDiv>
 )
+
+const BlackMirrorDiv = styled.div.attrs({
+  className: 'flex justify-around mv4',
+})`
+  @media (max-width: 45em) {
+    display: none !important;
+  }
+`
 
 export default BlackMirror
