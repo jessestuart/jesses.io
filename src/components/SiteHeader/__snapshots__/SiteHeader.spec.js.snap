@@ -12,7 +12,7 @@ exports[`Render SiteHeader component as not-root. 1`] = `
   }
 >
   <header
-    className="bb b--hot-pink center site-header flex bw1"
+    className="bb b--hot-pink center site-header flex mb3 bw1"
     style={
       Object {
         "background": "#282C34",
@@ -69,7 +69,7 @@ exports[`Render SiteHeader component. 1`] = `
   }
 >
   <header
-    className="bb b--hot-pink center site-header flex "
+    className="bb b--hot-pink center site-header flex mb3 "
     style={
       Object {
         "background": "#282C34",
