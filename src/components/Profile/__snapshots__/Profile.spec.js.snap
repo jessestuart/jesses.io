@@ -15,6 +15,7 @@ exports[`Render Profile component. Render Profile component. 1`] = `
       className="flex justify-around mv4"
     >
       <a
+        className="ma1"
         href="https://github.com/jessestuart/"
       >
         <svg
@@ -35,6 +36,7 @@ exports[`Render Profile component. Render Profile component. 1`] = `
         </svg>
       </a>
       <a
+        className="ma1"
         href="https://www.linkedin.com/in/jessedstuart/"
       >
         <svg
@@ -66,6 +68,7 @@ exports[`Render Profile component. Render Profile component. 1`] = `
         </svg>
       </a>
       <a
+        className="ma1"
         href="https://instagram.com/jaystu/"
       >
         <svg
@@ -100,6 +103,7 @@ exports[`Render Profile component. Render Profile component. 1`] = `
         </svg>
       </a>
       <a
+        className="ma1"
         href="https://twitter.com/jesse_stuart/"
       >
         <svg
@@ -603,7 +607,7 @@ exports[`Render Profile component. Render Profile component. 1`] = `
       className="ProfileFooter__ProfileFooterSection-fAJWLj bb bw2 b--hot-pink bg-purple pt4 pb3 mb1 hFmNli"
     >
       <h4
-        className="f4 fw7 tc lh-title code"
+        className="f4 fw3 tc lh-title code white-80"
       >
         I build software
         <br />
@@ -616,8 +620,14 @@ exports[`Render Profile component. Render Profile component. 1`] = `
       >
         <div
           className=""
+          style={
+            Object {
+              "maxWidth": "2rem",
+            }
+          }
         >
           <svg
+            className="mw-5"
             fill="none"
             height="2rem"
             stroke="#fc5270"

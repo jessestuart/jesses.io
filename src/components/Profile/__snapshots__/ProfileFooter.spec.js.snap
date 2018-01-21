@@ -7,7 +7,7 @@ exports[`Render ProfileFooter component after 10s. 1`] = `
   className="ProfileFooter__ProfileFooterSection-fAJWLj bb bw2 b--hot-pink bg-purple pt4 pb3 mb1 hFmNli"
 >
   <h4
-    className="f4 fw7 tc lh-title code"
+    className="f4 fw3 tc lh-title code white-80"
   >
     I build software
     <br />
@@ -20,8 +20,14 @@ exports[`Render ProfileFooter component after 10s. 1`] = `
   >
     <div
       className=""
+      style={
+        Object {
+          "maxWidth": "2rem",
+        }
+      }
     >
       <svg
+        className="mw-5"
         fill="none"
         height="2rem"
         stroke="#fc5270"
@@ -46,7 +52,7 @@ exports[`Render ProfileFooter component. 1`] = `
   className="ProfileFooter__ProfileFooterSection-fAJWLj bb bw2 b--hot-pink bg-purple pt4 pb3 mb1 hFmNli"
 >
   <h4
-    className="f4 fw7 tc lh-title code"
+    className="f4 fw3 tc lh-title code white-80"
   >
     I build software
     <br />
@@ -59,8 +65,14 @@ exports[`Render ProfileFooter component. 1`] = `
   >
     <div
       className=""
+      style={
+        Object {
+          "maxWidth": "2rem",
+        }
+      }
     >
       <svg
+        className="mw-5"
         fill="none"
         height="2rem"
         stroke="#fc5270"
