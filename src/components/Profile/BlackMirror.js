@@ -39,7 +39,7 @@ const BlackMirror = () => (
     {Icons.map(icon => {
       const { Image } = icon
       return (
-        <a key={icon.url} href={icon.url}>
+        <a key={icon.url} href={icon.url} className="ma1">
           <Image
             fill={icon.color}
             strokeWidth="1px"
