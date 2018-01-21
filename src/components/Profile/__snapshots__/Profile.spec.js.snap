@@ -167,7 +167,7 @@ exports[`Render Profile component. Render Profile component. 1`] = `
       className="flex justify-center justify-end-ns items-center"
     >
       <span
-        className="f5 f4-ns fw3 dib tr lh-copy"
+        className="f4 fw3 dib tr lh-copy"
       >
         NYC-based software engineer.
       </span>
@@ -289,7 +289,7 @@ exports[`Render Profile component. Render Profile component. 1`] = `
       className="flex justify-center justify-end-ns items-center"
     >
       <span
-        className="f5 f4-ns fw3 dib tr lh-copy"
+        className="f4 fw3 dib tr lh-copy"
       >
         <span
           className="db"
@@ -409,7 +409,7 @@ exports[`Render Profile component. Render Profile component. 1`] = `
       className="flex justify-center justify-end-ns items-center"
     >
       <span
-        className="f5 f4-ns fw3 dib tr lh-copy"
+        className="f4 fw3 dib tr lh-copy"
       >
         Neuroscientist by degree.
       </span>
@@ -519,7 +519,7 @@ exports[`Render Profile component. Render Profile component. 1`] = `
       className="flex justify-center justify-end-ns items-center"
     >
       <span
-        className="f5 f4-ns fw3 dib tr lh-copy"
+        className="f4 fw3 dib tr lh-copy"
       >
         <a
           className="ProfileLinks__BlurbLink-gbarVe gjhBpp"
@@ -611,7 +611,7 @@ exports[`Render Profile component. Render Profile component. 1`] = `
       className="ProfileFooter__ProfileFooterSection-fAJWLj bb bw2 b--hot-pink bg-purple pt4 pb3 mb1 hFmNli"
     >
       <h4
-        className="f4 fw3 tc lh-title code white-80"
+        className="f4 fw5 tc lh-title code white-80"
       >
         I build software
         <br />

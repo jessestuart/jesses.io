@@ -70,9 +70,11 @@ const plugins = [
   // ===========
   // Miscellany.
   // ===========
+  'gatsby-plugin-remove-trailing-slashes',
   'gatsby-plugin-feed',
-  'gatsby-plugin-netlify',
   'gatsby-plugin-offline',
+  // This ostensibly has to go at the end of the plugins declaration array.
+  'gatsby-plugin-netlify',
 ]
 
 module.exports = {
