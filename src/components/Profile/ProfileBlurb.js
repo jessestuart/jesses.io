@@ -43,7 +43,7 @@ const ProfileBlurb = () => (
 
 const SubBlurb = ({ Emoji1, Emoji2, children }) => (
   <p className="flex justify-center justify-end-ns items-center">
-    <span className="f5 f4-ns fw3 dib tr lh-copy">{children}</span>
+    <span className="f4 fw3 dib tr lh-copy">{children}</span>
     <span className="f6 dib">
       <Emoji1 className="mh2" style={{ height: '1.25rem', width: '1.25rem' }} />
       <Emoji2 style={{ height: '1.25rem', width: '1.25rem' }} />

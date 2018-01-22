@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="394" height="394" viewBox="0 0 394 394">
+  <defs>
+    <circle id="logo_dark-b" cx="187" cy="187" r="187"/>
+    <filter id="logo_dark-a" width="108.6%" height="108.6%" x="-3.7%" y="-3.7%" filterUnits="objectBoundingBox">
+      <feMorphology in="SourceAlpha" operator="dilate" radius="1" result="shadowSpreadOuter1"/>
+      <feOffset dx="2" dy="2" in="shadowSpreadOuter1" result="shadowOffsetOuter1"/>
+      <feGaussianBlur in="shadowOffsetOuter1" result="shadowBlurOuter1" stdDeviation="4"/>
+      <feColorMatrix in="shadowBlurOuter1" values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.7 0"/>
+    </filter>
+  </defs>
+  <g fill="none" fill-rule="evenodd" transform="translate(8 8)">
+    <use fill="#000" filter="url(#logo_dark-a)" xlink:href="#logo_dark-b"/>
+    <use fill="#282C34" xlink:href="#logo_dark-b"/>
+    <path fill="#FC5270" d="M77.232,109.76 L157.872,109.76 L157.872,212.828 C157.872,253.148 135.696,270.032 67.908,268.52 L67.908,243.32 C123.6,245.84 128.64,240.296 128.64,213.08 L128.64,132.692 L77.232,132.692 L77.232,109.76 Z M206.76,241.808 C259.932,245.84 279.084,236.768 279.084,223.664 C279.084,198.212 206.256,189.14 206.256,153.104 C206.256,129.668 232.968,104.972 297.984,108.5 L299.496,134.456 C248.844,130.928 236.244,137.732 236.244,149.072 C236.244,172.508 309.072,182.84 309.072,220.136 C309.072,244.832 282.108,270.788 206.76,267.764 L206.76,241.808 Z"/>
+  </g>
+</svg>
