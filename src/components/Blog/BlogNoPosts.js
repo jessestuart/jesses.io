@@ -1,6 +1,6 @@
 import React from 'react'
-import PropTypes from 'prop-types'
-import { GitMerge } from 'react-feather'
+import Link from 'gatsby-link'
+import { PortfolioItem } from '../../components/Portfolio'
 
 const BlogNoPosts = () => (
   <div className="flex justify-center items-center flex-body-expand flex-column h-100">
@@ -13,7 +13,13 @@ const BlogNoPosts = () => (
     </section>
     <section>
       <p className="lato f4 fw4 mt5">
-        In the meantime, you can check out a sampling of my publications:
+        In the meantime, you can check out a sampling of my publications as well
+        as an extended C.V. over{' '}
+        <Link className="underline header-purple fw7" to="/curriculum-vitae">
+          here{' '}
+        </Link>
+        to get the scoop on what I've been up to lately, including my published
+        works:
       </p>
       <ul className="list ma0">
         <PortfolioItem
@@ -28,21 +34,5 @@ const BlogNoPosts = () => (
     </section>
   </div>
 )
-
-const PortfolioItem = ({ link, title }) => (
-  <li className="f4">
-    <a className="flex items-center" href={link}>
-      <div>
-        <GitMerge className="mr2" size="30px" color="#933E51" />
-      </div>
-      <p className="fw7 underline">{title}</p>
-    </a>
-  </li>
-)
-
-PortfolioItem.propTypes = {
-  link: PropTypes.string.isRequired,
-  title: PropTypes.string.isRequired,
-}
 
 export default BlogNoPosts

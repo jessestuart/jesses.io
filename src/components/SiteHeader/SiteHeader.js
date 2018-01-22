@@ -40,10 +40,17 @@ class SiteHeader extends Component {
               words
             </HeaderLink>
             <HeaderLink
+              className="br b--mid-gray"
               href={'/photography'}
               isActive={pathname.startsWith('/photography')}
             >
               pictures
+            </HeaderLink>
+            <HeaderLink
+              href={'/curriculum-vitae'}
+              isActive={pathname.startsWith('/curriculum-vitae')}
+            >
+              C.V.
             </HeaderLink>
           </div>
         </header>

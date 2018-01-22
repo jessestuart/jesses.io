@@ -5,7 +5,7 @@ import 'typeface-alegreya-sans'
 import 'typeface-alegreya-sans-sc'
 import 'typeface-lato'
 import 'typeface-spectral'
-import 'typeface-roboto-mono'
+import 'typeface-pt-mono'
 
 const typography = new Typography(
   Object.assign(
@@ -22,7 +22,7 @@ const typography = new Typography(
         },
         code: {
           textShadow: 'none',
-          fontFamily: ['Roboto Mono', 'monospace'].join(','),
+          fontFamily: ['PT Mono', 'monospace'].join(','),
           fontWeight: 500,
         },
         '.gatsby-highlight > pre': {

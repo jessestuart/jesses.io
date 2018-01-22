@@ -43,13 +43,23 @@ exports[`Render SiteHeader component as not-root. 1`] = `
         </MockedLink>
       </h3>
       <h3
-        className="lato f4 ph3 mv2 pv2 flex-auto light-silver fw3"
+        className="lato f4 ph3 mv2 pv2 flex-auto br b--mid-gray light-silver fw3"
       >
         <MockedLink
           className="shadow-none flex justify-center items-center"
           to="/photography"
         >
           pictures
+        </MockedLink>
+      </h3>
+      <h3
+        className="lato f4 ph3 mv2 pv2 flex-auto light-silver fw3"
+      >
+        <MockedLink
+          className="shadow-none flex justify-center items-center"
+          to="/curriculum-vitae"
+        >
+          C.V.
         </MockedLink>
       </h3>
     </div>
@@ -100,13 +110,23 @@ exports[`Render SiteHeader component. 1`] = `
         </MockedLink>
       </h3>
       <h3
-        className="lato f4 ph3 mv2 pv2 flex-auto light-silver fw3"
+        className="lato f4 ph3 mv2 pv2 flex-auto br b--mid-gray light-silver fw3"
       >
         <MockedLink
           className="shadow-none flex justify-center items-center"
           to="/photography"
         >
           pictures
+        </MockedLink>
+      </h3>
+      <h3
+        className="lato f4 ph3 mv2 pv2 flex-auto light-silver fw3"
+      >
+        <MockedLink
+          className="shadow-none flex justify-center items-center"
+          to="/curriculum-vitae"
+        >
+          C.V.
         </MockedLink>
       </h3>
     </div>
