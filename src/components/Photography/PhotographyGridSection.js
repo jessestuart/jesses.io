@@ -1,6 +1,5 @@
 import React from 'react'
-// import ImageZoom from 'react-medium-image-zoom'
-import Img from 'gatsby-image'
+import ImageZoom from 'react-medium-image-zoom'
 import _ from 'lodash'
 
 import {
@@ -19,7 +18,7 @@ const PhotographyGridSection = ({ datetime, linkImages, linkSlug }) =>
             key={node.id}
             aspectRatio={node.sizes.aspectRatio}
           >
-            <Img sizes={node.sizes} />
+            <ImageZoom image={{ src: node.sizes.src }} />
           </ImageZoomGridElement>
         ))}
       </ImageZoomGrid>
