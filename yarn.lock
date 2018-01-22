@@ -72,10 +72,6 @@
     lodash "^4.2.0"
     to-fast-properties "^2.0.0"
 
-"@std/esm@^0.19.5":
-  version "0.19.7"
-  resolved "https://registry.yarnpkg.com/@std/esm/-/esm-0.19.7.tgz#8eeab6c54596a92e3557992621c91e8166a19852"
-
 "@textlint/ast-node-types@^3.0.0":
   version "3.0.1"
   resolved "https://registry.yarnpkg.com/@textlint/ast-node-types/-/ast-node-types-3.0.1.tgz#cf35e913aef798f0efac797144e167744a7857e8"
@@ -9887,9 +9883,9 @@ postcss-cssnext@^2.8.0:
     postcss-selector-matches "^2.0.0"
     postcss-selector-not "^2.0.0"
 
-postcss-cssnext@^3.0.2:
-  version "3.0.2"
-  resolved "https://registry.yarnpkg.com/postcss-cssnext/-/postcss-cssnext-3.0.2.tgz#63b77adb0b8a4c1d5ec32cd345539535a3417d48"
+postcss-cssnext@^3.1.0:
+  version "3.1.0"
+  resolved "https://registry.yarnpkg.com/postcss-cssnext/-/postcss-cssnext-3.1.0.tgz#927dc29341a938254cde38ea60a923b9dfedead9"
   dependencies:
     autoprefixer "^7.1.1"
     caniuse-api "^2.0.0"
@@ -9911,7 +9907,7 @@ postcss-cssnext@^3.0.2:
     postcss-custom-media "^6.0.0"
     postcss-custom-properties "^6.1.0"
     postcss-custom-selectors "^4.0.1"
-    postcss-font-family-system-ui "^2.0.1"
+    postcss-font-family-system-ui "^3.0.0"
     postcss-font-variant "^3.0.0"
     postcss-image-set-polyfill "^0.3.5"
     postcss-initial "^2.0.0"
@@ -10010,13 +10006,11 @@ postcss-font-family-system-ui@^1.0.1:
     postcss "^5.2.12"
     postcss-value-parser "^3.3.0"
 
-postcss-font-family-system-ui@^2.0.1:
-  version "2.1.4"
-  resolved "https://registry.yarnpkg.com/postcss-font-family-system-ui/-/postcss-font-family-system-ui-2.1.4.tgz#f09d9a69c8597bd085fda44f9d8a29f379058bfe"
+postcss-font-family-system-ui@^3.0.0:
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/postcss-font-family-system-ui/-/postcss-font-family-system-ui-3.0.0.tgz#675fe7a9e029669f05f8dba2e44c2225ede80623"
   dependencies:
-    "@std/esm" "^0.19.5"
-    postcss "^6.0.1"
-    postcss-value-parser "^3.3.0"
+    postcss "^6.0"
 
 postcss-font-variant@^2.0.0:
   version "2.0.1"
@@ -10429,7 +10423,7 @@ postcss@^5.0.0, postcss@^5.0.10, postcss@^5.0.11, postcss@^5.0.12, postcss@^5.0.
     source-map "^0.5.6"
     supports-color "^3.2.3"
 
-postcss@^6.0.0, postcss@^6.0.1, postcss@^6.0.11, postcss@^6.0.13, postcss@^6.0.14, postcss@^6.0.15, postcss@^6.0.16, postcss@^6.0.5, postcss@^6.0.6, postcss@^6.0.8:
+postcss@^6.0, postcss@^6.0.0, postcss@^6.0.1, postcss@^6.0.11, postcss@^6.0.13, postcss@^6.0.14, postcss@^6.0.15, postcss@^6.0.16, postcss@^6.0.5, postcss@^6.0.6, postcss@^6.0.8:
   version "6.0.16"
   resolved "https://registry.yarnpkg.com/postcss/-/postcss-6.0.16.tgz#112e2fe2a6d2109be0957687243170ea5589e146"
   dependencies:
