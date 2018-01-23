@@ -21,7 +21,7 @@
     "gatsby-remark-prismjs": "^1.2.12",
     "gatsby-remark-smartypants": "^1.4.10",
     "gatsby-source-filesystem": "^1.5.14",
-    "gatsby-transformer-remark": "^1.7.28",
+    "gatsby-transformer-remark": "^1.7.29",
     "gatsby-transformer-sharp": "^1.6.16",
     "luxon": "^0.3.1",
     "react": "^16.2.0",
