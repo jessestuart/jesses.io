@@ -1,0 +1,5 @@
+platform:
+  NPM:
+    tests:
+      deprecated: skip
+      unlicensed: skip
