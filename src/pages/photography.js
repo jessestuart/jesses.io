@@ -17,7 +17,7 @@ class PhotographyIndex extends PureComponent {
     return (
       <div className="bg-near-white black-80">
         <Helmet title={title} />
-        {_.reverse(_.sortBy(posts, post => new Date(post.node.name))).map(
+        {_.reverse(_.sortBy(posts, post => new Date(post.node.name) || 0)).map(
           post => {
             const title = _.get(post, 'node.name')
             const linkSlug = `/photography/${title}`

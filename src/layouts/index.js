@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react'
+import React from 'react'
 import PropTypes from 'prop-types'
 
 import { SiteHeader, SiteFooter } from '../components'
@@ -6,11 +6,13 @@ import { SiteHeader, SiteFooter } from '../components'
 import 'prismjs/themes/prism.css'
 
 const BaseTemplate = ({ children, location }) => (
-  <Fragment>
+  <div className="moon-gray bg-gray-primary">
     <SiteHeader location={location} />
-    {children()}
+    <div className="w-100 flex justify-center flex-body-expand">
+      {children()}
+    </div>
     <SiteFooter />
-  </Fragment>
+  </div>
 )
 
 BaseTemplate.propTypes = {

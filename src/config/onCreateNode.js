@@ -1,9 +1,11 @@
 const { createFilePath } = require('gatsby-source-filesystem')
+const _ = require('lodash')
 
 const onCreateNode = ({ node, boundActionCreators, getNode }) => {
   const { createNodeField } = boundActionCreators
+  const type = _.get(node, 'internal.type')
 
-  if (node.internal.type === 'Directory') {
+  if (type === 'Directory') {
     const value = createFilePath({ node, getNode })
     createNodeField({
       name: 'slug',
@@ -12,7 +14,7 @@ const onCreateNode = ({ node, boundActionCreators, getNode }) => {
     })
   }
 
-  if (node.internal.type === 'MarkdownRemark') {
+  if (type === 'MarkdownRemark') {
     const value = createFilePath({ node, getNode })
     createNodeField({
       name: 'slug',
