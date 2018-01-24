@@ -18,6 +18,19 @@
 * Sentry
   * https://github.com/octalmage/gatsby-plugin-sentry
 
+### Photography
+- Add exif plugin?
+
+// const exifImage = exif.ExifImage(
+//   { image: image.Body },
+//   (err, exifData) => {
+//     // console.log({ err, exifData })
+//     const exif = exifData.exif
+//     console.log({ exif })
+//   }
+// )
+// })
+
 ========================================================
 
 ### Blog Post Ideas

@@ -7,7 +7,7 @@ exports[`Render ProfileFooter component after 10s. 1`] = `
   className="ProfileFooter__ProfileFooterSection-fAJWLj bb bw2 b--hot-pink bg-purple pt4 pb3 mb1 hFmNli"
 >
   <h4
-    className="f4 fw5 tc lh-title code white-70"
+    className="f4 fw4 tc lh-title code white-80"
   >
     I build software
     <br />
@@ -47,7 +47,7 @@ exports[`Render ProfileFooter component. 1`] = `
   className="ProfileFooter__ProfileFooterSection-fAJWLj bb bw2 b--hot-pink bg-purple pt4 pb3 mb1 hFmNli"
 >
   <h4
-    className="f4 fw5 tc lh-title code white-70"
+    className="f4 fw4 tc lh-title code white-80"
   >
     I build software
     <br />
