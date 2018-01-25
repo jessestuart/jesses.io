@@ -13741,9 +13741,9 @@ typeface-alegreya-sans-sc@^0.0.45:
   version "0.0.45"
   resolved "https://registry.yarnpkg.com/typeface-alegreya-sans-sc/-/typeface-alegreya-sans-sc-0.0.45.tgz#b6d3be45a3616627c534e25fa76ca1812f684c3f"
 
-typeface-alegreya-sans@^0.0.45:
-  version "0.0.45"
-  resolved "https://registry.yarnpkg.com/typeface-alegreya-sans/-/typeface-alegreya-sans-0.0.45.tgz#d33285d0e96b2005c5b4c4dbfb7acb9d66c0c261"
+typeface-alegreya-sans@^0.0.54:
+  version "0.0.54"
+  resolved "https://registry.yarnpkg.com/typeface-alegreya-sans/-/typeface-alegreya-sans-0.0.54.tgz#0d7410bc3b4795e404a82b34abd55226bc4e77ba"
 
 typeface-alegreya-sc@^0.0.45:
   version "0.0.45"
