@@ -13753,9 +13753,9 @@ typeface-alegreya@^0.0.45:
   version "0.0.45"
   resolved "https://registry.yarnpkg.com/typeface-alegreya/-/typeface-alegreya-0.0.45.tgz#ff801a697643468de8a41b4b8f3ba6eeea2312fc"
 
-typeface-lato@^0.0.44:
-  version "0.0.44"
-  resolved "https://registry.yarnpkg.com/typeface-lato/-/typeface-lato-0.0.44.tgz#8fa3fd89aa3a89a34da806ed2a3493a28d99afa8"
+typeface-lato@^0.0.54:
+  version "0.0.54"
+  resolved "https://registry.yarnpkg.com/typeface-lato/-/typeface-lato-0.0.54.tgz#6ea56309a8b0cfdb7e8246e05de4b58b8272b47c"
 
 typeface-roboto-mono@^0.0.44:
   version "0.0.44"
