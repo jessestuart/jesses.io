@@ -101,7 +101,7 @@
     "typeface-alegreya-sc": "^0.0.45",
     "typeface-lato": "^0.0.44",
     "typeface-roboto-mono": "^0.0.44",
-    "typeface-spectral": "0.0.44",
+    "typeface-spectral": "0.0.54",
     "typography": "^0.16.6",
     "winston": "^3.0.0-rc1"
   },
