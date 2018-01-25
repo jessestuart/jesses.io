@@ -13737,9 +13737,9 @@ typedarray@^0.0.6:
   version "0.0.6"
   resolved "https://registry.yarnpkg.com/typedarray/-/typedarray-0.0.6.tgz#867ac74e3864187b1d3d47d996a78ec5c8830777"
 
-typeface-alegreya-sans-sc@^0.0.45:
-  version "0.0.45"
-  resolved "https://registry.yarnpkg.com/typeface-alegreya-sans-sc/-/typeface-alegreya-sans-sc-0.0.45.tgz#b6d3be45a3616627c534e25fa76ca1812f684c3f"
+typeface-alegreya-sans-sc@^0.0.54:
+  version "0.0.54"
+  resolved "https://registry.yarnpkg.com/typeface-alegreya-sans-sc/-/typeface-alegreya-sans-sc-0.0.54.tgz#d59cd512372ce2caf9184e7bc082ee30b42c33b3"
 
 typeface-alegreya-sans@^0.0.45:
   version "0.0.45"
