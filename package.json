@@ -58,7 +58,7 @@
     "gatsby-plugin-remove-trailing-slashes": "^1.0.4",
     "husky": "^0.14.3",
     "jest": "^22.1.4",
-    "lint-staged": "^6.0.1",
+    "lint-staged": "^6.1.0",
     "lodash": "^4.17.4",
     "npm-check-updates": "^2.14.0",
     "postcss": "^6.0.16",
