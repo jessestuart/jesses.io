@@ -5093,9 +5093,9 @@ gatsby-transformer-remark@^1.7.29:
     unist-util-select "^1.5.0"
     unist-util-visit "^1.1.1"
 
-gatsby-transformer-sharp@^1.6.16:
-  version "1.6.16"
-  resolved "https://registry.yarnpkg.com/gatsby-transformer-sharp/-/gatsby-transformer-sharp-1.6.16.tgz#16464dcfbb2099f49805b2e244da0b3fea63b88e"
+gatsby-transformer-sharp@^1.6.17:
+  version "1.6.17"
+  resolved "https://registry.yarnpkg.com/gatsby-transformer-sharp/-/gatsby-transformer-sharp-1.6.17.tgz#a0c36d02ac1ef056cccd01e27209795b2367d2b1"
   dependencies:
     babel-runtime "^6.26.0"
     bluebird "^3.5.0"
