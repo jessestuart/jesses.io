@@ -120,9 +120,6 @@
     "type": "git",
     "url": "git+https://github.com/jessestuart/js-gatsby-hurtling.git"
   },
-  "resolutions": {
-    "typeface-spectral": "0.0.54"
-  },
   "scripts": {
     "build": "gatsby build",
     "clean": "rm -rf node_modules/ .cache/ && yarn install -s",
