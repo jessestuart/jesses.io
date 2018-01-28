@@ -4983,7 +4983,7 @@ gatsby-plugin-remove-trailing-slashes@^1.0.4:
   dependencies:
     babel-runtime "^6.26.0"
 
-gatsby-plugin-sharp@^1.6.27:
+gatsby-plugin-sharp@^1.6.26, gatsby-plugin-sharp@^1.6.27:
   version "1.6.27"
   resolved "https://registry.yarnpkg.com/gatsby-plugin-sharp/-/gatsby-plugin-sharp-1.6.27.tgz#28b697d19417ec1bf5ad0d4d805d5c634ed12c46"
   dependencies:
@@ -5115,7 +5115,7 @@ gatsby-transformer-remark@^1.7.30:
     unist-util-select "^1.5.0"
     unist-util-visit "^1.1.1"
 
-gatsby-transformer-sharp@^1.6.17:
+gatsby-transformer-sharp@^1.6.16:
   version "1.6.17"
   resolved "https://registry.yarnpkg.com/gatsby-transformer-sharp/-/gatsby-transformer-sharp-1.6.17.tgz#a0c36d02ac1ef056cccd01e27209795b2367d2b1"
   dependencies:
