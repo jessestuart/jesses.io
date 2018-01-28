@@ -9,10 +9,10 @@ jobs:
     steps:
       - checkout
 
-      - restore_cache:
-          keys:
-            - dependencies-{{ checksum "package.json" }}
-            - dependencies-
+      # - restore_cache:
+      #     keys:
+      #       - dependencies-{{ checksum "package.json" }}
+      #       - dependencies-
 
       - run:
           name: Install dependencies.
@@ -47,10 +47,10 @@ jobs:
     steps:
       - checkout
 
-      - restore_cache:
-          keys:
-            - dependencies-{{ checksum "package.json" }}
-            - dependencies-
+      # - restore_cache:
+      #     keys:
+      #       - dependencies-{{ checksum "package.json" }}
+      #       - dependencies-
 
       - run:
           name: Install dependencies.
@@ -73,10 +73,10 @@ jobs:
     steps:
       - checkout
 
-      - restore_cache:
-          keys:
-            - dependencies-{{ checksum "package.json" }}
-            - dependencies-
+      # - restore_cache:
+      #     keys:
+      #       - dependencies-{{ checksum "package.json" }}
+      #       - dependencies-
 
       - run:
           name: Install dependencies.
