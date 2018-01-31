@@ -56,6 +56,7 @@
     "flow-bin": "^0.64.0",
     "flow-typed": "^2.3.0",
     "gatsby-plugin-remove-trailing-slashes": "^1.0.4",
+    "greenkeeper-lockfile": "^1.13.2",
     "husky": "^0.14.3",
     "jest": "^22.1.4",
     "lint-staged": "^6.1.0",
