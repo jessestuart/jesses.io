@@ -18,6 +18,10 @@ jobs:
           name: Install dependencies.
           command: yarn install -s --no-progress
 
+      - run:
+          name: Run Greenkeeper to update lockfile.
+          command: yarn run greenkeeper-lockfile-update
+
       - save_cache:
           paths:
             - node_modules
@@ -26,6 +30,10 @@ jobs:
       - run:
           name: Compile static site.
           command: yarn build
+
+      - run:
+          name: Upload Greenkeeper lockfile.
+          command: yarn run greenkeeper-lockfile-upload
 
       - save_cache:
           paths:
