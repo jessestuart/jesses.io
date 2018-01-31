@@ -1,10 +1,9 @@
-# Jessestuart.com
-
-[![Greenkeeper badge](https://badges.greenkeeper.io/jessestuart/jessestuart.com.svg?token=ec6300d31268bad8045d786b62351f72d188fc9ed09cb2df7206448ae9da07c3&ts=1517389593689)](https://greenkeeper.io/)
+# `jessestuart.com`
 
 [![CircleCI][circleci-badge]][circleci-url]
 [![Drone.IO][droneio-badge]][droneio-url]
 [![codecov][codecov-badge]][codecov-url]
+[![Greenkeeper badge][greenkeeper-badge]][greenkeeper-url]
 ![dependencyci][dependencyci-badge]
 [![Quay][quay-badge]][quay-url]
 
@@ -17,6 +16,8 @@
 [dependencyci-badge]: https://dependencyci.com/github/splitrb/split/badge?style=flat
 [droneio-badge]: http://drone.jessecod.es/api/badges/jessestuart/jessestuart.com/status.svg
 [droneio-url]: http://drone.jessecod.es/jessestuart/jessestuart.com
+[greenkeeper-badge]: https://badges.greenkeeper.io/jessestuart/jessestuart.com.svg?token=ec6300d31268bad8045d786b62351f72d188fc9ed09cb2df7206448ae9da07c3&ts=1517389593689
+[greenkeeper-url]: https://greenkeeper.io/
 [quay-badge]: https://quay.io/repository/jessestuart/jessestuart.com/status
 [quay-url]: https://quay.io/repository/jessestuart/jessestuart.com
 [semaphoreci-badge]: https://semaphoreci.com/api/v1/projects/2c39a37c-7b37-462a-be9d-a9cf3fdb54a0/1696206/badge.svg
