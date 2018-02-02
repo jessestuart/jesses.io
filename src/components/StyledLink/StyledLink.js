@@ -36,8 +36,9 @@ export const generateUnderlineStyles = ({ linkColor, hoverColor }) => `
 `
 
 export default styled.span`
-  ${generateUnderlineStyles(
-    props => props.linkColor,
-    props => props.hoverColor
-  )};
+  ${props =>
+    generateUnderlineStyles({
+      linkColor: props.linkColor,
+      hoverColor: props.hoverColor,
+    })};
 `
