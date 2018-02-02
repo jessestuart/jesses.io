@@ -51,7 +51,7 @@ const ProfileDevIcons = () => {
 }
 
 const DevIconLabel = styled.div.attrs({
-  className: 'moon-grey flex items-center justify-start',
+  className: 'moon-gray flex items-center justify-start',
 })`
   font-size: 1.5rem;
   grid-column: span 9;

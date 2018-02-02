@@ -2,13 +2,18 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { GitMerge } from 'react-feather'
 
+import StyledLink from '../../components/StyledLink/StyledLink'
+import colors from '../../utils/colors'
+
 const PortfolioItem = ({ link, title }) => (
-  <li className="f4">
+  <li className="f4 portfolio-item">
     <a className="flex items-center" href={link}>
       <div>
-        <GitMerge className="mr2" size="30px" color="#933E51" />
+        <GitMerge className="mr2" size="30px" color={colors.secondary.light6} />
       </div>
-      <p className="fw7 underline">{title}</p>
+      <p className="fw7">
+        <StyledLink>{title} </StyledLink>
+      </p>
     </a>
   </li>
 )

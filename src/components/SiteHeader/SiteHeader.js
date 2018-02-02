@@ -23,14 +23,14 @@ class SiteHeader extends Component {
         }}
       >
         <header
-          className={`bb b--hot-pink center site-header flex mb3 ${
+          className={`bb b--hot-pink center site-header flex ${
             !isRoot ? 'bw1' : ''
           }`}
           style={{ background: '#282C34' }}
         >
           <div className="w-35-ns flex flex-row center source-sans fw3">
             <HeaderLink className="br b--mid-gray" href={'/'} isActive={isRoot}>
-              about
+              home
             </HeaderLink>
             <HeaderLink
               className="br b--mid-gray"
@@ -50,7 +50,7 @@ class SiteHeader extends Component {
               href={'/curriculum-vitae'}
               isActive={pathname.startsWith('/curriculum-vitae')}
             >
-              C.V.
+              about
             </HeaderLink>
           </div>
         </header>

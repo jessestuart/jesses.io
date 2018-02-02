@@ -1,12 +1,55 @@
 @import '../styles/base.css';
 
-p > code {
+p code,
+li code,
+p a code,
+li a code {
   background: #e4e4e4;
-  color: var(--hot-pink);
-  padding: 4px;
-  border-radius: 5px;
+
+  border-radius: 3px;
+
+  color: #c62d47;
+
+  /* color: var(--hot-pink); */
+
+  /* color: #673ab7; */
+
+  /* color: #A23649; */
+
+  font-size: 1rem;
+  font-weight: 400;
+  margin: 0 2px;
+  padding: 1px;
 }
 
 pre {
+  font-size: 1rem;
   margin-bottom: 1.45rem !important;
+}
+
+article a {
+  border-bottom: 2px solid #d7b9fd;
+  position: relative;
+  text-decoration: none;
+}
+
+article a::before {
+  -webkit-transform: scaleX(0);
+  -webkit-transition: all 0.3s ease-in-out 0s;
+  transform: scaleX(0);
+  transition: all 0.3s ease-in-out 0s;
+  background-color: #f66d84;
+  bottom: -2px;
+  content: '';
+  height: 2px;
+  left: 0;
+  position: absolute;
+  visibility: hidden;
+  width: 100%;
+}
+
+article a:hover::before {
+  -webkit-transform: scaleX(1);
+  transform: scaleX(1);
+  visibility: visible;
 }
