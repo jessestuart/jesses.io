@@ -4,6 +4,8 @@ import classNames from 'classnames'
 import { Heart } from 'react-feather'
 import { DateTime } from 'luxon'
 
+import colors from '../../utils/colors'
+
 const SiteFooter = ({ theme }) => (
   <footer
     className={classNames(
@@ -14,7 +16,10 @@ const SiteFooter = ({ theme }) => (
       }
     )}
     style={{
-      borderTop: theme === SiteFooter.Theme.Light ? '1px solid #CCC' : 'none',
+      borderTop:
+        theme === SiteFooter.Theme.Light
+          ? `1px solid ${colors.secondary.light5}`
+          : `3px solid ${colors.secondary.light5}`,
     }}
   >
     <div className="flex justify-center items-center">
@@ -22,7 +27,12 @@ const SiteFooter = ({ theme }) => (
     </div>
     <div className="dib center tc flex-ns justify-center items-center">
       Pixels, bits and bytes hand-crafted with
-      <Heart className="hot-pink mh1" width="15" height="15" fill="#FC5270" />
+      <Heart
+        className="hot-pink mh1"
+        width="15"
+        height="15"
+        fill={colors.primary.main}
+      />
       in NYC.
     </div>
   </footer>
