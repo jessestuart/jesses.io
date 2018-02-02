@@ -5,6 +5,8 @@ import styled from 'styled-components'
 import DevIconColumn from './DevIconColumn'
 import DevIconSkills from './DevIconSkills'
 
+import colors from '../../utils/colors'
+
 import '../../styles/base.css'
 import '../../styles/hvr-animations.css'
 
@@ -57,7 +59,7 @@ const DevIconLabel = styled.div.attrs({
   grid-column: span 9;
   grid-row: span 2;
   @media (max-width: 45em) {
-    border-bottom: 1px solid #fc5270;
+    border-bottom: 1px solid ${colors.primary.main};
   }
   @media (min-width: 45em) {
     border-bottom: 1px solid rgba(255, 255, 255, 0.5);

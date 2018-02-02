@@ -6,14 +6,15 @@ import classNames from 'classnames'
 import _ from 'lodash'
 import { ChevronDown } from 'react-feather'
 
+import colors from '../../utils/colors'
+
 import Cancelable from '../../utils/cancelable.js'
 
 const initialState = { isAnimatingChevron: false }
 
-// Configure Bluebird's Promise lib to be cancelable --
-// we use this to cancel the bouncing chevron animation
-// when the component is unmounted (e.g., because the user
-// has navigated away from the Home page).
+// Configure Bluebird's Promise lib to be cancelable -- we use this to cancel
+// the bouncing chevron animation when the component is unmounted (e.g.,
+// because the user has navigated away from the Home page).
 Promise.config({ cancellation: true })
 
 // $FlowFixMe
@@ -82,7 +83,11 @@ export default class ProfileFooter extends Component {
             })}
             style={{ maxWidth: '2rem' }}
           >
-            <ChevronDown className="mw-5" color="#fc5270" size="2rem" />
+            <ChevronDown
+              className="mw-5"
+              color={colors.primary.main}
+              size="2rem"
+            />
           </div>
         </div>
       </ProfileFooterSection>
