@@ -2,7 +2,7 @@ import React, { Fragment } from 'react'
 import PropTypes from 'prop-types'
 
 import Twemoji from '../Icons/Twemoji'
-import { BlurbLink } from './ProfileLinks'
+import StyledLink from '../StyledLink/StyledLink'
 import ProfileHeading from './ProfileHeading'
 
 const BEIGBEDER_URL = 'http://jstu.art/ojVB'
@@ -28,15 +28,15 @@ const ProfileBlurb = () => (
     </SubBlurb>
     <SubBlurb Emoji1={OpenBook} Emoji2={Scroll}>
       <span className="db">
-        Published <BlurbLink href={COLING_URL}>NLP researcher</BlurbLink>, and
+        Published <StyledLink href={COLING_URL}>NLP researcher</StyledLink>, and
       </span>
-      <BlurbLink href={USPO_URL}>USPO Patent holder</BlurbLink>.
+      <StyledLink href={USPO_URL}>USPO Patent holder</StyledLink>.
     </SubBlurb>
     <SubBlurb Emoji1={Microscope} Emoji2={Rat}>
       Neuroscientist by degree.
     </SubBlurb>
     <SubBlurb Emoji1={France} Emoji2={CrescentMoon}>
-      <BlurbLink href={BEIGBEDER_URL}>French translator</BlurbLink> by night.
+      <StyledLink href={BEIGBEDER_URL}>French translator</StyledLink> by night.
     </SubBlurb>
   </Fragment>
 )

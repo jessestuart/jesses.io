@@ -1,8 +1,11 @@
 import styled from 'styled-components'
 
-export const BlurbLink = styled.a`
+const defaultLinkColor = 'rgba(199, 153, 255, 0.7)'
+const defaultHoverColor = 'rgba(253, 82, 112, 0.7)'
+
+export const generateUnderlineStyles = ({ linkColor, hoverColor }) => `
   text-decoration: none;
-  border-bottom: 2px solid rgba(199, 153, 255, 0.7);
+  border-bottom: 2px solid ${linkColor || defaultLinkColor};
   position: relative;
 
   &::before {
@@ -12,7 +15,7 @@ export const BlurbLink = styled.a`
     height: 2px;
     bottom: -2px;
     left: 0;
-    background-color: rgba(253, 82, 112, 0.9);
+    background-color: ${hoverColor || defaultHoverColor};
     visibility: hidden;
     -webkit-transform: scaleX(0);
     transform: scaleX(0);
@@ -30,4 +33,11 @@ export const BlurbLink = styled.a`
   &.no-slide:hover {
     color: #7ef1f9;
   }
+`
+
+export default styled.span`
+  ${generateUnderlineStyles(
+    props => props.linkColor,
+    props => props.hoverColor
+  )};
 `

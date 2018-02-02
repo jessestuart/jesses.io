@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import Helmet from 'react-helmet'
-import get from 'lodash/get'
+import _ from 'lodash'
 
 import { BlogHeader } from '../components/Blog'
 
@@ -10,41 +10,42 @@ import './blog-post.css'
 
 class BlogPostTemplate extends Component {
   render() {
-    const post = get(this, 'props.data.markdownRemark')
+    const { props } = this
+    const post = _.get(props, 'data.markdownRemark')
     if (!post) {
       return <div />
     }
-    const pathname = get(this, 'props.location.pathname')
-    const siteTitle = get(this, 'props.data.site.siteMetadata.title')
+    const pathname = _.get(props, 'location.pathname')
+    const siteTitle = _.get(props, 'data.site.siteMetadata.title')
     const { excerpt } = post
     const { date, title } = post.frontmatter
     const pageURL = `${config.siteMetadata.siteUrl}${pathname}`
 
-    const comboTitle = `${title} | ${siteTitle}`
+    const comboTitle = `${title || 'Posts'} | ${siteTitle}`
 
     return (
-      <div className="bg-near-white black-80 lh-copy flex-body-expand mt3">
-        <article className="w-50-ns w-75 center">
-          <Helmet title={comboTitle}>
-            <meta itemProp="name" content={comboTitle} />
-            <meta name="twitter:title" content={comboTitle} />
-            <meta name="twitter:description" content={excerpt} />
-            <meta property="og:title" content={comboTitle} />
-            <meta property="og:url" content={pageURL} />
-            <meta
-              property="article:published_time"
-              content={new Date(date).toISOString()}
-            />
-          </Helmet>
-
-          <BlogHeader date={date} slug={pathname} title={title} />
-
-          <div
-            className="f4 fw5"
-            id="remark-post"
-            dangerouslySetInnerHTML={{ __html: post.html }}
+      <div className="bg-near-white black-80 lh-copy flex-body-expand">
+        <Helmet title={comboTitle}>
+          <meta itemProp="name" content={comboTitle} />
+          <meta name="twitter:title" content={comboTitle} />
+          <meta name="twitter:description" content={excerpt} />
+          <meta property="og:title" content={comboTitle} />
+          <meta property="og:url" content={pageURL} />
+          <meta
+            property="article:published_time"
+            content={new Date(date).toISOString()}
           />
-        </article>
+        </Helmet>
+        <div className="mw-100">
+          <BlogHeader date={date} slug={pathname} title={title} />
+          <article className="center justify">
+            <div
+              className="f4 fw5"
+              id="remark-post"
+              dangerouslySetInnerHTML={{ __html: post.html }}
+            />
+          </article>
+        </div>
       </div>
     )
   }
