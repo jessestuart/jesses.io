@@ -87,7 +87,7 @@ TL;DR, here's what goes down to put this all together:
 ### Takeaways
 
 The tooling around this stack may still be a little rough around the edges --
-after all, native Go support was only announced in January of 2019 -- but thanks
+after all, native Go support was only announced in January of 2018 -- but thanks
 to the efforts of organizations like Hashicorp, Apex, and the rest of the OSS
 community, it's now possible to rapidly iterate on an idea from prototype to
 production-ready in a matter of just a few hours.
