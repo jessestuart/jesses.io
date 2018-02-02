@@ -41,7 +41,7 @@ Array [
     className="ProfileDevIcons__DevIconsSection-gZyCJK center code w-90 cFjGxe"
   >
     <div
-      className="ProfileDevIcons__DevIconLabel-dFHCnQ moon-grey flex items-center justify-start hJYBwG"
+      className="ProfileDevIcons__DevIconLabel-dFHCnQ moon-gray flex items-center justify-start fWDujC"
     >
       infra
     </div>
@@ -188,7 +188,7 @@ Array [
       </svg>
     </div>
     <div
-      className="ProfileDevIcons__DevIconLabel-dFHCnQ moon-grey flex items-center justify-start hJYBwG"
+      className="ProfileDevIcons__DevIconLabel-dFHCnQ moon-gray flex items-center justify-start fWDujC"
     >
       backend
     </div>
@@ -368,7 +368,7 @@ Array [
       </svg>
     </div>
     <div
-      className="ProfileDevIcons__DevIconLabel-dFHCnQ moon-grey flex items-center justify-start hJYBwG"
+      className="ProfileDevIcons__DevIconLabel-dFHCnQ moon-gray flex items-center justify-start fWDujC"
     >
       frontend
     </div>

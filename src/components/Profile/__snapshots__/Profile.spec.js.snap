@@ -133,12 +133,12 @@ exports[`Render Profile component. Render Profile component. 1`] = `
     className="Profile__BlurbContainer-innCgm tc tr-ns ph2 frIVhO"
   >
     <h2
-      className="f3-ns f3 fw5 lh-title"
+      className="spectral f3-ns f3 fw5 lh-title"
     >
       Hi — I'm Jesse.
     </h2>
     <h2
-      className="f3-ns f3 fw5 lh-title mv3"
+      className="spectral f3-ns f3 fw5 lh-title mv3"
     >
       <span
         className="dib nowrap"
@@ -149,8 +149,8 @@ exports[`Render Profile component. Render Profile component. 1`] = `
         className="dib nowrap ml2"
       >
         I contain 
-        <a
-          className="link moon-gray dib ProfileLinks__BlurbLink-gbarVe gjhBpp"
+        <span
+          className="link moon-gray dib StyledLink-khUpca ibeCqC"
           href="http://jstu.art/ojNe"
           style={
             Object {
@@ -159,7 +159,7 @@ exports[`Render Profile component. Render Profile component. 1`] = `
           }
         >
           multitudes
-        </a>
+        </span>
         .
       </span>
     </h2>
@@ -295,20 +295,20 @@ exports[`Render Profile component. Render Profile component. 1`] = `
           className="db"
         >
           Published 
-          <a
-            className="ProfileLinks__BlurbLink-gbarVe gjhBpp"
+          <span
+            className="StyledLink-khUpca ibeCqC"
             href="http://jstu.art/oijk"
           >
             NLP researcher
-          </a>
+          </span>
           , and
         </span>
-        <a
-          className="ProfileLinks__BlurbLink-gbarVe gjhBpp"
+        <span
+          className="StyledLink-khUpca ibeCqC"
           href="http://jstu.art/oj1g"
         >
           USPO Patent holder
-        </a>
+        </span>
         .
       </span>
       <span
@@ -521,12 +521,12 @@ exports[`Render Profile component. Render Profile component. 1`] = `
       <span
         className="f4 fw3 dib tr lh-copy"
       >
-        <a
-          className="ProfileLinks__BlurbLink-gbarVe gjhBpp"
+        <span
+          className="StyledLink-khUpca ibeCqC"
           href="http://jstu.art/ojVB"
         >
           French translator
-        </a>
+        </span>
          by night.
       </span>
       <span
@@ -634,7 +634,7 @@ exports[`Render Profile component. Render Profile component. 1`] = `
             className="mw-5"
             fill="none"
             height="2rem"
-            stroke="#fc5270"
+            stroke="#ff3a5c"
             strokeLinecap="round"
             strokeLinejoin="round"
             strokeWidth="2"

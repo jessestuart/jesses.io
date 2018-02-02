@@ -2,28 +2,37 @@
 
 exports[`Render BlogHeader component. 1`] = `
 Array [
-  <h2
-    className="mb2 mt4 f3 fw7 underline header-purple"
+  <MockedLink
+    to="2018-01-01"
   >
-    <MockedLink
-      to="2018-01-01"
+    <h2
+      className="alegreya-sans f2 fw5 header-purple mb2 mt4"
     >
-      FooBar
-    </MockedLink>
-  </h2>,
+      <span
+        className="StyledLink-khUpca ibeCqC"
+      >
+        FooBar
+      </span>
+    </h2>
+  </MockedLink>,
   <p
     className="f6 mv2 flex items-center"
   >
     <svg
       className="header-purple mr2"
       fill="none"
-      height="1rem"
+      height="24"
       stroke="currentColor"
       strokeLinecap="round"
       strokeLinejoin="round"
       strokeWidth="2"
+      style={
+        Object {
+          "maxWidth": "15px",
+        }
+      }
       viewBox="0 0 24 24"
-      width="1rem"
+      width="24"
       xmlns="http://www.w3.org/2000/svg"
     >
       <rect
