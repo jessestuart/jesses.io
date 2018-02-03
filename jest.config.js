@@ -13,5 +13,6 @@ module.exports = {
   globals: {
     __PATH_PREFIX__: true,
     __BROWSER__: true,
+    graphql: true,
   },
 }
