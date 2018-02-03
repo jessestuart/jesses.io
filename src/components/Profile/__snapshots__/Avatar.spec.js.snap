@@ -1,8 +1,3 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Render Avatar component. 1`] = `
-<img
-  className="br-100 flex justify-center mv2 pa0 shadow-6"
-  src="avatar_square.jpg"
-/>
-`;
+exports[`Render Avatar component. 1`] = `null`;

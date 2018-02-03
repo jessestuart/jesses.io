@@ -16,6 +16,12 @@ export default Home
 
 export const query = graphql`
   query AvatarImageQuery {
-    ...avatar
+    file(name: { eq: "avatar-square" }) {
+      childImageSharp {
+        sizes {
+          ...GatsbyImageSharpSizes
+        }
+      }
+    }
   }
 `
