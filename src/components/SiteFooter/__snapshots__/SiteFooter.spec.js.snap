@@ -5,7 +5,7 @@ exports[`Render SiteFooter component with dark theme. 1`] = `
   className="b--hot-pink bb bottom-0 bw2 f5-ns f6 flex flex-column fw4 lh-title pa4 w-100 bg-gray-primary moon-gray"
   style={
     Object {
-      "borderTop": "3px solid #a58fcd",
+      "borderTop": "3px solid #b39cdb",
     }
   }
 >
@@ -22,7 +22,7 @@ exports[`Render SiteFooter component with dark theme. 1`] = `
     Pixels, bits and bytes hand-crafted with
     <svg
       className="hot-pink mh1"
-      fill="#ff3a5c"
+      fill="#FF3A5C"
       height="15"
       stroke="currentColor"
       strokeLinecap="round"
@@ -46,7 +46,7 @@ exports[`Render SiteFooter component. 1`] = `
   className="b--hot-pink bb bottom-0 bw2 f5-ns f6 flex flex-column fw4 lh-title pa4 w-100 bg-light-gray"
   style={
     Object {
-      "borderTop": "1px solid #a58fcd",
+      "borderTop": "1px solid #b39cdb",
     }
   }
 >
@@ -63,7 +63,7 @@ exports[`Render SiteFooter component. 1`] = `
     Pixels, bits and bytes hand-crafted with
     <svg
       className="hot-pink mh1"
-      fill="#ff3a5c"
+      fill="#FF3A5C"
       height="15"
       stroke="currentColor"
       strokeLinecap="round"

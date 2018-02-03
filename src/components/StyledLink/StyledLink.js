@@ -1,7 +1,14 @@
 import styled from 'styled-components'
+import colors from '../../utils/colors'
+import color from 'onecolor'
 
-const defaultLinkColor = 'rgba(199, 153, 255, 0.7)'
-const defaultHoverColor = 'rgba(253, 82, 112, 0.7)'
+const defaultHoverColor = color(colors.secondary.light7)
+  .alpha(0.8)
+  .cssa()
+
+const defaultLinkColor = color(colors.primary.main)
+  .alpha(0.8)
+  .cssa()
 
 export const generateUnderlineStyles = ({ linkColor, hoverColor }) => `
   text-decoration: none;
@@ -19,19 +26,13 @@ export const generateUnderlineStyles = ({ linkColor, hoverColor }) => `
     visibility: hidden;
     -webkit-transform: scaleX(0);
     transform: scaleX(0);
-    -webkit-transition: all 0.3s ease-in-out 0s;
-    transition: all 0.3s ease-in-out 0s;
+    -webkit-transition: all 0.25s ease-in-out 0s;
+    transition: all 0.25s ease-in-out 0s;
   }
   &:hover:before {
     visibility: visible;
     -webkit-transform: scaleX(1);
     transform: scaleX(1);
-  }
-  &.no-slide:hover:before {
-    visibility: hidden;
-  }
-  &.no-slide:hover {
-    color: #7ef1f9;
   }
 `
 

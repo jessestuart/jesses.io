@@ -65,6 +65,7 @@
     "lint-staged": "^6.1.0",
     "lodash": "^4.17.4",
     "npm-check-updates": "^2.14.0",
+    "onecolor": "^3.0.5",
     "postcss": "^6.0.17",
     "postcss-cssnext": "^3.1.0",
     "postcss-custom-media": "^6.0.0",

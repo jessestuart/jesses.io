@@ -9,12 +9,12 @@ const BlogHeader = ({ date, slug, title }) => {
   return (
     <Fragment>
       <Link to={slug}>
-        <h2 className="alegreya-sans f2 fw5 header-purple mb2 mt4">
+        <h2 className="alegreya-sans f2 fw5 header-primary mb2 mt4">
           <StyledLink>{title}</StyledLink>
         </h2>
       </Link>
       <p className="f6 mv2 flex items-center">
-        <Calendar className="header-purple mr2" style={{ maxWidth: '15px' }} />
+        <Calendar className="header-primary mr2" style={{ maxWidth: '15px' }} />
         {date}
       </p>
     </Fragment>

@@ -3,6 +3,7 @@ import Typography from 'typography'
 import CodePlugin from 'typography-plugin-code'
 import _ from 'lodash'
 
+import color from 'onecolor'
 import colors from './colors'
 
 import 'typeface-alegreya-sans'
@@ -11,10 +12,18 @@ import 'typeface-lato'
 import 'typeface-spectral'
 import 'typeface-roboto-mono'
 
+const defaultLinkColor = color(colors.secondary.light7)
+  .alpha(0.8)
+  .cssa()
+
+const defaultHoverColor = color(colors.primary.main)
+  .alpha(0.8)
+  .cssa()
+
 const pseudoUnderline = {
   textDecoration: 'none',
   fontWeight: 'bold',
-  borderBottom: `2px solid ${colors.secondary.light5}`,
+  borderBottom: `2px solid ${defaultLinkColor}`,
   position: 'relative',
 }
 
@@ -38,7 +47,7 @@ const options = {
   bodyFontFamily: _.concat(['Lato'], sansSerifFallbacks),
   headerFontFamily: _.concat(['Alegreya Sans'], sansSerifFallbacks),
   fontFamily: _.concat(['Lato'], sansSerifFallbacks),
-  overrideThemeStyles: ({ rhythm }, options, styles) => ({
+  overrideStyles: ({ rhythm, scale }, options) => ({
     blockquote: {
       fontStyle: 'inherit',
       textAlign: 'justify',
@@ -65,23 +74,23 @@ const options = {
     },
     'article a': {
       ...pseudoUnderline,
-      color: `#450F19`,
+      color: colors.accent,
     },
     'article a::before': {
-      content: '',
+      content: ' ',
       position: 'absolute',
       width: '100%',
       height: '2px',
       bottom: '-2px',
       left: '0',
-      backgroundColor: `${colors.primary.main}`,
+      backgroundColor: `${defaultHoverColor}`,
       visibility: 'hidden',
       '-webkit-transform': 'scaleX(0)',
       transform: 'scaleX(0)',
-      '-webkit-transition': 'all 0.3s ease-in-out 0s',
-      transition: 'all 0.3s ease-in-out 0s',
+      '-webkit-transition': 'all 0.25s ease-in-out 0s',
+      transition: 'all 0.25s ease-in-out 0s',
     },
-    'article a:hover:before': {
+    'article a:hover::before': {
       visibility: 'visible',
       '-webkit-transform': 'scaleX(1)',
       transform: 'scaleX(1)',

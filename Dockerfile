@@ -1,7 +1,7 @@
 FROM node:latest as builder
 
 WORKDIR /app
-COPY package.json yarn.lock /app
+COPY package.json yarn.lock /app/
 RUN yarn install
 
 COPY . /app
