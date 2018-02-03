@@ -73,6 +73,7 @@ const plugins = [
   'gatsby-plugin-remove-trailing-slashes',
   'gatsby-plugin-feed',
   'gatsby-plugin-offline',
+  'gatsby-plugin-lodash',
   // This ostensibly has to go at the end of the plugins declaration array.
   'gatsby-plugin-netlify',
 ]

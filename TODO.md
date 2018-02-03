@@ -16,6 +16,7 @@
 
 * Better logging
 * Sentry
+  * https://github.com/octalmage/gatsby-plugin-sentry
 
 ========================================================
 
