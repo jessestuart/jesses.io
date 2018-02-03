@@ -664,7 +664,7 @@ DA:38,1
 DA:39,1
 DA:41,4
 DA:42,4
-DA:57,1
+DA:56,1
 LF:14
 LH:14
 BRF:0
@@ -751,7 +751,7 @@ DA:57,0
 DA:60,6
 DA:71,11
 DA:72,11
-DA:98,2
+DA:97,2
 LF:19
 LH:18
 BRDA:56,0,0,0
@@ -937,16 +937,6 @@ SF:/Users/jestuart/dev/jessestuart.com/src/utils/colors.js
 FNF:0
 FNH:0
 DA:3,4
-LF:1
-LH:1
-BRF:0
-BRH:0
-end_of_record
-TN:
-SF:/Users/jestuart/dev/jessestuart.com/static/img/avatar_square.jpg
-FNF:0
-FNH:0
-DA:1,2
 LF:1
 LH:1
 BRF:0

@@ -4923,6 +4923,12 @@ gatsby-plugin-feed@^1.3.16:
     pify "^3.0.0"
     rss "^1.2.2"
 
+gatsby-plugin-google-analytics@^1.0.17:
+  version "1.0.17"
+  resolved "https://registry.yarnpkg.com/gatsby-plugin-google-analytics/-/gatsby-plugin-google-analytics-1.0.17.tgz#055d4189ad5a23df91e0cfa42992c9df66a72f06"
+  dependencies:
+    babel-runtime "^6.26.0"
+
 gatsby-plugin-lodash@^1.0.8:
   version "1.0.8"
   resolved "https://registry.yarnpkg.com/gatsby-plugin-lodash/-/gatsby-plugin-lodash-1.0.8.tgz#6f730fbe699d0068cadb954b9c59013e769bc192"

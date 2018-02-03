@@ -7,10 +7,6 @@ exports[`Render Profile component. Render Profile component. 1`] = `
   <div
     className="Profile__AvatarContainer-bEEKLc center mw-100-ns mw-50 fLUkUL"
   >
-    <img
-      className="br-100 flex justify-center mv2 pa0 shadow-6"
-      src="avatar_square.jpg"
-    />
     <div
       className="BlackMirror__BlackMirrorDiv-kyYuCJ flex justify-around mv4 laQvyw"
     >
@@ -21,14 +17,13 @@ exports[`Render Profile component. Render Profile component. 1`] = `
         <svg
           className="b--light-gray hvr-grow"
           fill="#333333"
-          height="2rem"
-          max-width="40px"
+          height="35px"
           stroke="currentColor"
           strokeLinecap="round"
           strokeLinejoin="round"
           strokeWidth="1px"
           viewBox="0 0 24 24"
-          width="2rem"
+          width="35px"
           xmlns="http://www.w3.org/2000/svg"
         >
           <path
@@ -43,14 +38,13 @@ exports[`Render Profile component. Render Profile component. 1`] = `
         <svg
           className="b--light-gray hvr-grow"
           fill="#0077B5"
-          height="2rem"
-          max-width="40px"
+          height="35px"
           stroke="currentColor"
           strokeLinecap="round"
           strokeLinejoin="round"
           strokeWidth="1px"
           viewBox="0 0 24 24"
-          width="2rem"
+          width="35px"
           xmlns="http://www.w3.org/2000/svg"
         >
           <path
@@ -76,14 +70,13 @@ exports[`Render Profile component. Render Profile component. 1`] = `
         <svg
           className="b--light-gray hvr-grow"
           fill="#C74861"
-          height="2rem"
-          max-width="40px"
+          height="35px"
           stroke="currentColor"
           strokeLinecap="round"
           strokeLinejoin="round"
           strokeWidth="1px"
           viewBox="0 0 24 24"
-          width="2rem"
+          width="35px"
           xmlns="http://www.w3.org/2000/svg"
         >
           <rect
@@ -112,14 +105,13 @@ exports[`Render Profile component. Render Profile component. 1`] = `
         <svg
           className="b--light-gray hvr-grow"
           fill="#1DA1F2"
-          height="2rem"
-          max-width="40px"
+          height="35px"
           stroke="currentColor"
           strokeLinecap="round"
           strokeLinejoin="round"
           strokeWidth="1px"
           viewBox="0 0 24 24"
-          width="2rem"
+          width="35px"
           xmlns="http://www.w3.org/2000/svg"
         >
           <path
@@ -611,7 +603,7 @@ exports[`Render Profile component. Render Profile component. 1`] = `
       className="ProfileFooter__ProfileFooterSection-fAJWLj bb bw2 b--hot-pink bg-purple pt4 pb3 mb1 hFmNli"
     >
       <h4
-        className="f4 fw5 tc lh-title code white-80"
+        className="f4 fw4 tc lh-title code white-70"
       >
         I build software
         <br />
@@ -624,22 +616,17 @@ exports[`Render Profile component. Render Profile component. 1`] = `
       >
         <div
           className=""
-          style={
-            Object {
-              "maxWidth": "2rem",
-            }
-          }
         >
           <svg
             className="mw-5"
             fill="none"
-            height="2rem"
+            height="30px"
             stroke="#ff3a5c"
             strokeLinecap="round"
             strokeLinejoin="round"
             strokeWidth="2"
             viewBox="0 0 24 24"
-            width="2rem"
+            width="30px"
             xmlns="http://www.w3.org/2000/svg"
           >
             <polyline

@@ -71,7 +71,7 @@ export default class ProfileFooter extends Component {
     const { isAnimatingChevron } = this.state
     return (
       <ProfileFooterSection>
-        <h4 className="f4 fw5 tc lh-title code white-80">
+        <h4 className="f4 fw4 tc lh-title code white-70">
           I build software<br />
           on the pull requests<br />
           of giants.
@@ -81,12 +81,11 @@ export default class ProfileFooter extends Component {
             className={classNames({
               'hvr-wobble-vertical hvr-wobble-vertical-animating': isAnimatingChevron,
             })}
-            style={{ maxWidth: '2rem' }}
           >
             <ChevronDown
               className="mw-5"
               color={colors.primary.main}
-              size="2rem"
+              size="30px"
             />
           </div>
         </div>
