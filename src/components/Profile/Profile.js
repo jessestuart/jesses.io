@@ -55,10 +55,10 @@ const FooterContainer = styled.div.attrs({
   grid-row: 5 / 7;
 `
 
-const Profile = () => (
+const Profile = ({ avatar }) => (
   <IntroWrapper>
     <AvatarContainer>
-      <Avatar />
+      <Avatar image={avatar} />
       <BlackMirror />
     </AvatarContainer>
     <BlurbContainer>

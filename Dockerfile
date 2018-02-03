@@ -1,10 +1,8 @@
 FROM node:latest as builder
 
 WORKDIR /app
-COPY package.json yarn.lock /app/
-RUN \
-  apt-get install build-essential; \
-  yarn install;
+COPY package.json yarn.lock /app
+RUN yarn install
 
 COPY . /app
 RUN yarn build

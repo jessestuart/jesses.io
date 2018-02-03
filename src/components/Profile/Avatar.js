@@ -1,12 +1,12 @@
 import React from 'react'
 import classNames from 'classnames'
+import Img from 'gatsby-image'
+import _ from 'lodash'
 
-import avatarImage from '../../../static/img/avatar_square.jpg'
-
-const Avatar = () => (
-  <img
-    className={classNames('br-100 flex justify-center mv2 pa0 shadow-6')}
-    src={avatarImage}
+const Avatar = ({ image }) => (
+  <Img
+    className={classNames('br-100 justify-center mv2 pa0 shadow-6')}
+    sizes={_.get(image, 'sizes')}
   />
 )
 
