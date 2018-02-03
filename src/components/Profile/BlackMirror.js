@@ -45,8 +45,7 @@ const BlackMirror = () => (
             fill={icon.color}
             strokeWidth="1px"
             className="b--light-gray hvr-grow"
-            max-width="40px"
-            size="2rem"
+            size="35px"
           />
         </a>
       )

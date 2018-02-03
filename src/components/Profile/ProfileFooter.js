@@ -81,12 +81,11 @@ export default class ProfileFooter extends Component {
             className={classNames({
               'hvr-wobble-vertical hvr-wobble-vertical-animating': isAnimatingChevron,
             })}
-            style={{ maxWidth: '2rem' }}
           >
             <ChevronDown
               className="mw-5"
               color={colors.primary.main}
-              size="2rem"
+              size="30px"
             />
           </div>
         </div>
