@@ -15,7 +15,7 @@ const BlogNoPosts = () => (
       <p className="lato f4 fw4 mt5">
         In the meantime, you can check out a sampling of my publications as well
         as an extended C.V. over{' '}
-        <Link className="underline header-purple fw7" to="/curriculum-vitae">
+        <Link className="underline header-primary fw7" to="/curriculum-vitae">
           here{' '}
         </Link>
         to get the scoop on what I've been up to lately, including my published

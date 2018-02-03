@@ -6,7 +6,7 @@ import { DateTime } from 'luxon'
 import StyledLink from '../StyledLink/StyledLink'
 
 const PhotographySectionHeader = ({ datetime, href }) => (
-  <div className="alegreya-sans mb2 f2 fw5 header-purple tr w-100">
+  <div className="alegreya-sans f2 fw5 header-primary mb2 tr w-100">
     <Link style={{ textDecoration: 'none' }} to={href}>
       <StyledLink className="db">
         {datetime.toFormat('dd LLLL yyyy')}

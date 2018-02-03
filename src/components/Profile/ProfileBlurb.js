@@ -1,9 +1,10 @@
 import React, { Fragment } from 'react'
 import PropTypes from 'prop-types'
 
-import Twemoji from '../Icons/Twemoji'
-import StyledLink from '../StyledLink/StyledLink'
+import ProfileStyledLink from './ProfileStyledLink'
 import ProfileHeading from './ProfileHeading'
+
+import Twemoji from '../Icons/Twemoji'
 
 const BEIGBEDER_URL = 'http://jstu.art/ojVB'
 const COLING_URL = 'http://jstu.art/oijk'
@@ -28,15 +29,20 @@ const ProfileBlurb = () => (
     </SubBlurb>
     <SubBlurb Emoji1={OpenBook} Emoji2={Scroll}>
       <span className="db">
-        Published <StyledLink href={COLING_URL}>NLP researcher</StyledLink>, and
+        Published{' '}
+        <ProfileStyledLink href={COLING_URL}>NLP researcher</ProfileStyledLink>,
+        and
       </span>
-      <StyledLink href={USPO_URL}>USPO Patent holder</StyledLink>.
+      <ProfileStyledLink href={USPO_URL}>USPO Patent holder</ProfileStyledLink>.
     </SubBlurb>
     <SubBlurb Emoji1={Microscope} Emoji2={Rat}>
       Neuroscientist by degree.
     </SubBlurb>
     <SubBlurb Emoji1={France} Emoji2={CrescentMoon}>
-      <StyledLink href={BEIGBEDER_URL}>French translator</StyledLink> by night.
+      <ProfileStyledLink href={BEIGBEDER_URL}>
+        French translator
+      </ProfileStyledLink>{' '}
+      by night.
     </SubBlurb>
   </Fragment>
 )

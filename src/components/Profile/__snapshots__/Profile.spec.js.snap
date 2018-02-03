@@ -5,7 +5,7 @@ exports[`Render Profile component. Render Profile component. 1`] = `
   className="Profile__IntroWrapper-krHzZt items-center justify-center pv4 kNpbjJ"
 >
   <div
-    className="Profile__AvatarContainer-bEEKLc center mw-100-ns mw-50 fLUkUL"
+    className="Profile__AvatarContainer-bEEKLc center w-100-ns w-50 fLUkUL"
   >
     <div
       className="BlackMirror__BlackMirrorDiv-kyYuCJ flex justify-around mv4 laQvyw"
@@ -125,12 +125,12 @@ exports[`Render Profile component. Render Profile component. 1`] = `
     className="Profile__BlurbContainer-innCgm tc tr-ns ph2 frIVhO"
   >
     <h2
-      className="spectral f3-ns f3 fw5 lh-title"
+      className="spectral f3-ns f3 fw5 lh-title moon-gray"
     >
       Hi — I'm Jesse.
     </h2>
     <h2
-      className="spectral f3-ns f3 fw5 lh-title mv3"
+      className="spectral f3-ns f3 fw5 lh-title mv3 moon-gray"
     >
       <span
         className="dib nowrap"
@@ -142,13 +142,7 @@ exports[`Render Profile component. Render Profile component. 1`] = `
       >
         I contain 
         <span
-          className="link moon-gray dib StyledLink-khUpca ibeCqC"
-          href="http://jstu.art/ojNe"
-          style={
-            Object {
-              "lineHeight": 1,
-            }
-          }
+          className="StyledLink-khUpca fAVQee"
         >
           multitudes
         </span>
@@ -286,18 +280,17 @@ exports[`Render Profile component. Render Profile component. 1`] = `
         <span
           className="db"
         >
-          Published 
+          Published
+           
           <span
-            className="StyledLink-khUpca ibeCqC"
-            href="http://jstu.art/oijk"
+            className="StyledLink-khUpca fAVQee"
           >
             NLP researcher
           </span>
           , and
         </span>
         <span
-          className="StyledLink-khUpca ibeCqC"
-          href="http://jstu.art/oj1g"
+          className="StyledLink-khUpca fAVQee"
         >
           USPO Patent holder
         </span>
@@ -514,12 +507,12 @@ exports[`Render Profile component. Render Profile component. 1`] = `
         className="f4 fw3 dib tr lh-copy"
       >
         <span
-          className="StyledLink-khUpca ibeCqC"
-          href="http://jstu.art/ojVB"
+          className="StyledLink-khUpca fAVQee"
         >
           French translator
         </span>
-         by night.
+         
+        by night.
       </span>
       <span
         className="f6 dib"
@@ -603,7 +596,7 @@ exports[`Render Profile component. Render Profile component. 1`] = `
       className="ProfileFooter__ProfileFooterSection-fAJWLj bb bw2 b--hot-pink bg-purple pt4 pb3 mb1 hFmNli"
     >
       <h4
-        className="f4 fw4 tc lh-title code white-70"
+        className="f4 fw5 tc lh-title code white-70"
       >
         I build software
         <br />
@@ -621,7 +614,7 @@ exports[`Render Profile component. Render Profile component. 1`] = `
             className="mw-5"
             fill="none"
             height="30px"
-            stroke="#ff3a5c"
+            stroke="#FF3A5C"
             strokeLinecap="round"
             strokeLinejoin="round"
             strokeWidth="2"
