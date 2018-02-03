@@ -5,7 +5,14 @@
 @custom-media --breakpoint-medium screen and (min-width: 45em) and (max-width: 60em);
 @custom-media --breakpoint-large screen and (min-width: 60em);
 
+/*
+ * Alternatives for header-primary:
+ * - rgba(50, 0, 50, 0.8)
+ * - rgba(85, 19, 30, 0.9)
+ * - #55131e
+ */
 :root {
+  --header-primary: rgba(50, 0, 50, 0.8);
   --hot-pink: #fc5270;
   --gray-100: #f8f9fa;
   --gray-200: #e9ecef;
@@ -27,9 +34,6 @@
   --font-size-7: 0.75rem;
   --gray-primary: rgb(55, 59, 70);
   --gray-primary-darker: rgb(41, 44, 52);
-
-  /* --header-purple: rgba(50, 0, 50, 0.8); */
-  --header-purple: #55131e;
   --line-height-solid: 1.25;
   --line-height-title: 1.5;
   --line-height-copy: 1.7;
@@ -74,6 +78,7 @@ h4,
 h5,
 h6 {
   margin: 0;
+  color: var(--header-primary);
 }
 
 a {
@@ -88,11 +93,11 @@ a {
   background-color: var(--gray-primary-darker);
 }
 
-.header-purple {
-  color: var(--header-purple);
+.header-primary {
+  color: var(--header-primary);
 }
-.b--header-purple {
-  border-color: var(--header-purple);
+.b--header-primary {
+  border-color: var(--header-primary);
 }
 
 /*

@@ -56,7 +56,7 @@ TL;DR, here's what goes down to put this all together:
 1. Attach a custom IAM policy granting access for that role to respond to S3
    events.
 1. Create a Lambda function, and hook it up to the aforementioned IAM role.
-1. When the Lambda is triggered, a simple `Go` function is invoked that queries
+1. When the Lambda is triggered, a simple Go function is invoked that queries
    S3, downloads the JPEG asset, parses out the EXIF data (including the date
    created), and executes a final `PutObject` on the destination bucket with the
    updated data.

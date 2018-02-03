@@ -19,7 +19,7 @@ const IntroWrapper = styled.div.attrs({
 `
 
 const AvatarContainer = styled.div.attrs({
-  className: 'center mw-100-ns mw-50',
+  className: 'center w-100-ns w-50',
 })`
   grid-column: 4 / 9;
 
