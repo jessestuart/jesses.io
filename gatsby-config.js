@@ -45,6 +45,13 @@ const typographyPlugin = {
   },
 }
 
+const googleAnalyticsPlugin = {
+  resolve: 'gatsby-plugin-google-analytics',
+  options: {
+    trackingId: 'UA-113515971-1',
+  },
+}
+
 const plugins = [
   // ====================================
   // Gotta load those sweet, sweet files.
@@ -52,7 +59,7 @@ const plugins = [
   sourceFilesystem,
   sourceFilesystemImages,
   // =======================================================================
-  // Add in React Helmet, and React 16 support until Gatsby HEAD catches up.
+  // Add in React Helmet and React 16 support until Gatsby v2 is released.
   // =======================================================================
   'gatsby-plugin-react-helmet',
   'gatsby-plugin-react-next',
@@ -64,9 +71,13 @@ const plugins = [
   // ==========================================
   // Transformers for Markdown and image files.
   // ==========================================
-  transformerRemark,
-  'gatsby-transformer-sharp',
   'gatsby-plugin-sharp',
+  'gatsby-transformer-sharp',
+  transformerRemark,
+  // ==========
+  // Analytics.
+  // ==========
+  googleAnalyticsPlugin,
   // ===========
   // Miscellany.
   // ===========
