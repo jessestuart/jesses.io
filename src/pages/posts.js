@@ -1,5 +1,4 @@
-import React, { PureComponent, Fragment } from 'react'
-import Helmet from 'react-helmet'
+import React, { PureComponent } from 'react'
 import _ from 'lodash'
 
 import { BlogHeader, BlogNoPosts } from '../components/Blog'
@@ -15,21 +14,23 @@ class BlogIndex extends PureComponent {
     }
 
     return (
-      <Fragment>
-        <Helmet title={siteTitle} />
+      <div className="bg-near-white flex-body-expand flex-column w-100">
         {posts.map(({ node }) => {
           const { excerpt, fields, frontmatter } = node
           const date = _.get(frontmatter, 'date')
           const slug = _.get(fields, 'slug')
           const title = _.get(frontmatter, 'title')
           return (
-            <div key={slug}>
+            <section
+              key={slug}
+              className="mw7 center flex-body-expand flex-column"
+            >
               <BlogHeader date={date} slug={slug} title={title || slug} />
               <p className="f4" dangerouslySetInnerHTML={{ __html: excerpt }} />
-            </div>
+            </section>
           )
         })}
-      </Fragment>
+      </div>
     )
   }
 }

@@ -1,4 +1,4 @@
-import React, { PureComponent } from 'react'
+import React, { Fragment, PureComponent } from 'react'
 import Helmet from 'react-helmet'
 import _ from 'lodash'
 import { DateTime } from 'luxon'
@@ -12,13 +12,13 @@ class PhotographyIndex extends PureComponent {
     const images = _.get(props, 'data.allImageSharp.edges')
     const posts = _.get(props, 'data.allDirectory.edges')
 
-    const title = `Photography | ${siteTitle}`
-
     return (
-      <div className="bg-near-white black-80">
-        <Helmet title={title} />
-        {_.reverse(_.sortBy(posts, post => new Date(post.node.name) || 0)).map(
-          post => {
+      <Fragment>
+        <Helmet title={`Photography | ${siteTitle}`} />
+        <div className="bg-near-white black-80">
+          {_.reverse(
+            _.sortBy(posts, post => new Date(post.node.name) || 0)
+          ).map(post => {
             const title = _.get(post, 'node.name')
             const linkSlug = `/photography/${title}`
             const linkImages = _.take(
@@ -34,9 +34,9 @@ class PhotographyIndex extends PureComponent {
                 linkSlug={linkSlug}
               />
             )
-          }
-        )}
-      </div>
+          })}
+        </div>
+      </Fragment>
     )
   }
 }

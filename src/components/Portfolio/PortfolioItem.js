@@ -9,7 +9,7 @@ const PortfolioItem = ({ link, title }) => (
   <li className="f4 portfolio-item">
     <a className="flex items-center" href={link}>
       <div>
-        <GitMerge className="mr2" size="30px" color={colors.secondary.light6} />
+        <GitMerge className="mr2" size="30px" color={colors.secondary.light9} />
       </div>
       <p className="fw7">
         <StyledLink>{title} </StyledLink>
