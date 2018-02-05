@@ -2,6 +2,8 @@ const aws = require('aws-sdk')
 const Promise = require('bluebird')
 const { createRemoteFileNode } = require('gatsby-source-filesystem')
 const _ = require('lodash')
+const exif = require('exif-parser')
+const DateTime = require('luxon').DateTime
 
 const S3 = new aws.S3({ apiVersion: '2006-03-01' })
 
@@ -12,7 +14,8 @@ const constructS3UrlForAsset = ({ bucketName, key }) =>
 
 exports.sourceNodes = async (
   { boundActionCreators, getNode, hasNodeChanged, store, cache },
-  { bucketName }
+  { bucketName },
+  done
 ) => {
   const { createNode } = boundActionCreators
 
@@ -32,6 +35,7 @@ exports.sourceNodes = async (
       )
     })
   )
+  done()
 }
 
 const createS3RemoteFileNode = async ({
@@ -62,11 +66,11 @@ const createS3RemoteFileNode = async ({
   return entity
 }
 
-const createS3ImageAssetNode = ({
-  createNode,
-  fileNode,
+const createS3ImageAssetNode = async ({
   bucketName,
+  createNode,
   entity,
+  fileNode,
 }) => {
   const { Key, ETag } = entity
   // TODO: Could probably pull this from fileNode.
@@ -76,9 +80,15 @@ const createS3ImageAssetNode = ({
   // > to the contents of an object, not its metadata.
   // @see https://docs.aws.amazon.com/AmazonS3/latest/API/RESTCommonResponseHeaders.html
   const objectHash = ETag.replace(/"/g, '')
-  createNode({
-    // Data for the node.
+  const image = await S3.getObject({ Bucket: `js-photos`, Key }).promise()
+  const parsedExif = exif.create(image.Body).parse()
+  // const dateCreated = DateTime.fromMillis(
+  //   parsedExif.tags.DateTimeOriginal * 1000
+  // )
+  console.log(`\nCreated node for key ${entity.Key}`)
+  await createNode({
     ...entity,
+    ...parsedExif.tags,
     id: Key,
     parent: null,
     children: [],
