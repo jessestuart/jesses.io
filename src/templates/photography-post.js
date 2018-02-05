@@ -38,15 +38,15 @@ export const pageQuery = graphql`
         title
       }
     }
-    allImageSharp(filter: { id: { regex: $name } }) {
+    allS3ImageAsset(filter: { EXIF: { DateCreatedISO: { eq: $name } } }) {
       edges {
         node {
           id
-          sizes(maxWidth: 1024) {
-            ...GatsbyImageSharpSizes
-          }
         }
       }
     }
   }
 `
+// sizes(maxWidth: 1024) {
+//   ...GatsbyImageSharpSizes
+// }

@@ -22,6 +22,15 @@ const onCreateNode = ({ node, boundActionCreators, getNode }) => {
       value,
     })
   }
+
+  if (type === 'S3ImageAsset') {
+    const value = createFilePath({ node, getNode })
+    createNodeField({
+      name: 'slug',
+      node,
+      value,
+    })
+  }
 }
 
 module.exports = onCreateNode

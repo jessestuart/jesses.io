@@ -4223,7 +4223,7 @@ exenv@^1.2.1:
   version "1.2.2"
   resolved "https://registry.yarnpkg.com/exenv/-/exenv-1.2.2.tgz#2ae78e85d9894158670b03d47bec1f03bd91bb9d"
 
-exif-parser@^0.1.9:
+exif-parser@^0.1.12, exif-parser@^0.1.9:
   version "0.1.12"
   resolved "https://registry.yarnpkg.com/exif-parser/-/exif-parser-0.1.12.tgz#58a9d2d72c02c1f6f02a0ef4a9166272b7760922"
 
@@ -8027,6 +8027,10 @@ lodash@4, lodash@^4.0.0, lodash@^4.1.0, lodash@^4.11.1, lodash@^4.13.1, lodash@^
 lodash@4.11.1:
   version "4.11.1"
   resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.11.1.tgz#a32106eb8e2ec8e82c241611414773c9df15f8bc"
+
+lodash@^4.17.5:
+  version "4.17.5"
+  resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.5.tgz#99a92d65c0272debe8c96b6057bc8fbfa3bed511"
 
 log-symbols@^1.0.2:
   version "1.0.2"

@@ -1,20 +1,38 @@
-const aws = require('aws-sdk')
+const AWS = require('aws-sdk')
 const Promise = require('bluebird')
-const { createRemoteFileNode } = require('gatsby-source-filesystem')
 const _ = require('lodash')
 
-const S3 = new aws.S3({ apiVersion: '2006-03-01' })
+const { createRemoteFileNode } = require('gatsby-source-filesystem')
+
+const S3 = new AWS.S3({ apiVersion: '2006-03-01' })
 
 const S3SourceGatsbyNodeType = 'S3ImageAsset'
 
 const constructS3UrlForAsset = ({ bucketName, key }) =>
   `https://${bucketName}.s3.amazonaws.com/${key}`
 
+const onCreateNode = async ({ node, boundActionCreators, loadNodeContent }) => {
+  const { createNode, createParentChildLink } = boundActionCreators
+  if (node.internal.mediaType !== 'image/jpeg') {
+    return
+  }
+  const image = await loadNodeContent(node)
+  console.log('Loaded image:')
+  console.log({ image })
+}
+
+exports.onCreateNode = onCreateNode
+
+// [temp]
+const obj = {}
+let count = 0
+
 exports.sourceNodes = async (
   { boundActionCreators, getNode, hasNodeChanged, store, cache },
-  { bucketName }
+  { bucketName },
+  done
 ) => {
-  const { createNode } = boundActionCreators
+  const { createNode, createParentChildLink } = boundActionCreators
 
   const listObjectsResponse = await S3.listObjectsV2({
     Bucket: bucketName,
@@ -23,15 +41,28 @@ exports.sourceNodes = async (
 
   await Promise.all(
     s3Entities.map(async entity => {
-      const entityData = { bucketName, cache, createNode, entity, store }
-      await createS3RemoteFileNode(entityData).then(fileNode =>
-        createS3ImageAssetNode({
-          ...entityData,
-          fileNode,
-        })
-      )
+      // [temp]
+      obj[entity.Key] = count
+      const entityData = {
+        bucketName,
+        cache,
+        createNode,
+        createParentChildLink,
+        entity,
+        store,
+      }
+      const fileNode = await createS3RemoteFileNode(entityData)
+      if (fileNode) {
+        entityData.localFile___NODE = fileNode.id
+      }
+      await createS3ImageAssetNode({
+        ...entityData,
+        fileNode,
+        done,
+      })
     })
   )
+  done()
 }
 
 const createS3RemoteFileNode = async ({
@@ -42,9 +73,8 @@ const createS3RemoteFileNode = async ({
   store,
 }) => {
   const s3Url = constructS3UrlForAsset({ bucketName, key: entity.Key })
-  let fileNode
   try {
-    fileNode = await createRemoteFileNode({
+    return await createRemoteFileNode({
       url: s3Url,
       store,
       cache,
@@ -53,20 +83,17 @@ const createS3RemoteFileNode = async ({
   } catch (err) {
     // eslint-disable-next-line
     console.error('Unable to create file node.', err)
+    return null
   }
-
-  if (fileNode) {
-    entity.localFile___NODE = fileNode.id
-  }
-
-  return entity
 }
 
-const createS3ImageAssetNode = ({
+const createS3ImageAssetNode = async ({
   createNode,
+  createParentChildLink,
   fileNode,
   bucketName,
   entity,
+  done,
 }) => {
   const { Key, ETag } = entity
   // TODO: Could probably pull this from fileNode.
@@ -77,10 +104,13 @@ const createS3ImageAssetNode = ({
   // @see https://docs.aws.amazon.com/AmazonS3/latest/API/RESTCommonResponseHeaders.html
   const objectHash = ETag.replace(/"/g, '')
   createNode({
-    // Data for the node.
     ...entity,
-    id: Key,
-    parent: null,
+    // ...tags,
+    // DateCreated: dateCreated.toISODate(),
+    id: `${Key} >> ${S3SourceGatsbyNodeType}`,
+    absolutePath: fileNode.absolutePath,
+    Key,
+    parent: fileNode.id,
     children: [],
     internal: {
       content: constructS3UrlForAsset({ bucketName, key: Key }),
@@ -89,8 +119,10 @@ const createS3ImageAssetNode = ({
       type: S3SourceGatsbyNodeType,
     },
   })
+  count++
+  console.log(
+    `\nDone creating node for entity ${entity.Key} (${count} / ${_.size(obj)})`
+  )
 }
 
-// =========================================================================
-
-// exports.setFieldsOnGraphQLNodeType = require('./extend-s3-object-node')
+exports.setFieldsOnGraphQLNodeType = require(`./extend-node-type`).extendNodeType

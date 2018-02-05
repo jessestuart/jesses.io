@@ -2,7 +2,7 @@ FROM node:latest as builder
 
 WORKDIR /app
 COPY package.json yarn.lock /app/
-RUN yarn install
+RUN yarn build:s3-plugin && yarn -s
 
 COPY . /app
 RUN yarn build
