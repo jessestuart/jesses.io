@@ -1,6 +1,7 @@
 const _ = require('lodash')
 const path = require('path')
 const Promise = require('bluebird')
+const DateTime = require('luxon').DateTime
 
 const log = require('../utils/log')
 
@@ -31,21 +32,17 @@ const mdQuery = `
 
 const imagePostQuery = `
 {
-  allDirectory(filter: { dir: { regex: "/images$/" } }) {
+  allS3ImageAsset {
     edges {
       node {
         id
-        name
+        EXIF {
+          DateCreatedISO
+        }
       }
     }
   }
 }`
-
-// const allImagesQuery = `
-// {
-//   allImageSharp
-// }
-// `
 
 const createPages = ({ graphql, boundActionCreators }) => {
   const { createPage } = boundActionCreators
@@ -55,23 +52,46 @@ const createPages = ({ graphql, boundActionCreators }) => {
   )
 
   const createPhotographyPosts = edges => {
-    edges.forEach(edge => {
-      const { name } = edge.node
+    const imagesGroupedByDate = _.groupBy(edges, 'node.EXIF.DateCreatedISO')
+    _.each(imagesGroupedByDate, (images, date) => {
       createPage({
-        path: `/photography/${name}`,
+        path: `/photography/${date}`,
         component: photographyTemplate,
         context: {
-          name: `/${name}/`,
-          datetime: name,
+          name: `/${date}/`,
+          datetime: DateTime.fromISO(date),
         },
       })
     })
+    // imagesGroupedByDate.forEach((images, date) => {
+    //   console.log('date and images:')
+    //   console.log({ date, images })
+    // createPage({
+    //   path: `/photography/${name}`,
+    //   component: photographyTemplate,
+    //   context: {
+    //     name: `/${name}/`,
+    //     datetime: name,
+    //   },
+    // })
+    // })
+    // edges.forEach(edge => {
+    //   const { name } = edge.node
+    //   createPage({
+    //     path: `/photography/${name}`,
+    //     component: photographyTemplate,
+    //     context: {
+    //       name: `/${name}/`,
+    //       datetime: name,
+    //     },
+    //   })
+    // })
   }
 
   processGraphQL({
     graphql,
     query: imagePostQuery,
-    resultPath: 'data.allDirectory.edges',
+    resultPath: 'data.allS3ImageAsset.edges',
     createPostsFn: createPhotographyPosts,
   })
 
@@ -87,6 +107,25 @@ const createPages = ({ graphql, boundActionCreators }) => {
       })
     })
   }
+
+  // processGraphQL({
+  //   graphql,
+  //   query: imagePostQuery,
+  //   resultPath: 'data.allDirectory.edges',
+  //   createPostsFn: createPhotographyPosts,
+  // })
+  // const createBlogPosts = edges => {
+  //   edges.forEach(edge => {
+  //     const { slug } = edge.node.fields
+  //     createPage({
+  //       path: slug,
+  //       component: blogTemplate,
+  //       context: {
+  //         slug,
+  //       },
+  //     })
+  //   })
+  // }
 
   processGraphQL({
     graphql,

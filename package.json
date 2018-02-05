@@ -58,6 +58,7 @@
     "eslint-plugin-promise": "^3.6.0",
     "eslint-plugin-react": "^7.6.1",
     "eslint-plugin-standard": "^3.0.1",
+    "exif-parser": "^0.1.12",
     "flow-bin": "^0.65.0",
     "flow-typed": "^2.3.0",
     "gray-percentage": "^2.0.0",
@@ -128,7 +129,9 @@
     "url": "git+https://github.com/jessestuart/js-gatsby-hurtling.git"
   },
   "scripts": {
-    "build": "gatsby build",
+    "build": "yarn run build:s3-plugin && gatsby build",
+    "build:s3-plugin":
+      "export PLUGIN_ROOT=plugins/gatsby-source-s3 && $PLUGIN_ROOT/node_modules/.bin/babel $PLUGIN_ROOT/src --out-dir $PLUGIN_ROOT --ignore $PLUGIN_ROOT/__tests__",
     "clean": "rm -rf node_modules/ .cache/ && yarn install -s",
     "dev": "gatsby develop",
     "dev:install": "yarn install -s && gatsby develop",
@@ -147,6 +150,8 @@
     "test:coverage": "jest --coverage",
     "test:watch": "jest --watch",
     "update": "ncu -ua -x typeface-spectral && yarn",
+    "watch:s3-plugin":
+      "export PLUGIN_ROOT=plugins/gatsby-source-s3 && $PLUGIN_ROOT/node_modules/.bin/babel -w $PLUGIN_ROOT/src --out-dir $PLUGIN_ROOT --ignore $PLUGIN_ROOT/__tests__",
     "willitpass": "concurrently 'yarn lint' 'yarn test'"
   },
   "snyk": true
