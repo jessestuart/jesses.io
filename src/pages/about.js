@@ -7,8 +7,8 @@ import Logo from '../../src/components/Icons/logo_dark.svg'
 
 const CV = () => (
   <div className="bg-near-white black-80 flex justify-center flex-body-expand pv5">
-    <section className="w-75 w-50-ns">
-      <div className="flex justify-center center items-center">
+    <section className="center flex-body-expand w-50-ns w-75">
+      <div className="center flex items-center justify-center">
         <img src={Logo} style={{ maxHeight: 200 }} />
       </div>
       <p className="lato f4 fw4 mt5">
