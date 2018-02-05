@@ -9,7 +9,7 @@ import colors from '../../utils/colors'
 const SiteFooter = ({ theme }) => (
   <footer
     className={classNames(
-      'b--hot-pink bb bottom-0 bw2 f5-ns f6 flex flex-column fw4 lh-title pa4 w-100',
+      'b--hot-pink bb bottom-0 bw2 f5-ns f6 flex flex-column fw4 lh-title pa4 w-100 black-80',
       {
         'bg-gray-primary moon-gray': theme === SiteFooter.Theme.Dark,
         'bg-light-gray': theme === SiteFooter.Theme.Light,
