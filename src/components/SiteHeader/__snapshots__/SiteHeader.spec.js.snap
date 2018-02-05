@@ -57,7 +57,7 @@ exports[`Render SiteHeader component as not-root. 1`] = `
       >
         <MockedLink
           className="shadow-none flex justify-center items-center"
-          to="/curriculum-vitae"
+          to="/about"
         >
           about
         </MockedLink>
@@ -124,7 +124,7 @@ exports[`Render SiteHeader component. 1`] = `
       >
         <MockedLink
           className="shadow-none flex justify-center items-center"
-          to="/curriculum-vitae"
+          to="/about"
         >
           about
         </MockedLink>

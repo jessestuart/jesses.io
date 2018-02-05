@@ -15,6 +15,7 @@ class BlogPostTemplate extends Component {
     if (!post) {
       return <div />
     }
+
     const pathname = _.get(props, 'location.pathname')
     const siteTitle = _.get(props, 'data.site.siteMetadata.title')
     const { excerpt } = post
@@ -24,7 +25,7 @@ class BlogPostTemplate extends Component {
     const comboTitle = `${title || 'Posts'} | ${siteTitle}`
 
     return (
-      <div className="bg-near-white black-80 lh-copy flex-body-expand">
+      <div className="w-100 bg-near-white black-80 lh-copy ">
         <Helmet title={comboTitle}>
           <meta itemProp="name" content={comboTitle} />
           <meta name="twitter:title" content={comboTitle} />
@@ -36,15 +37,17 @@ class BlogPostTemplate extends Component {
             content={new Date(date).toISOString()}
           />
         </Helmet>
-        <div className="mw-100">
-          <BlogHeader date={date} slug={pathname} title={title} />
-          <article className="center justify">
-            <div
-              className="f4 fw5"
-              id="remark-post"
-              dangerouslySetInnerHTML={{ __html: post.html }}
-            />
-          </article>
+        <div className="mw7 justify-center center">
+          <div className="mw-100">
+            <BlogHeader date={date} slug={pathname} title={title} />
+            <article className="center justify">
+              <div
+                className="f4 fw5"
+                id="remark-post"
+                dangerouslySetInnerHTML={{ __html: post.html }}
+              />
+            </article>
+          </div>
         </div>
       </div>
     )

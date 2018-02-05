@@ -1,6 +1,6 @@
-const Promise = require('bluebird')
 const _ = require('lodash')
 const path = require('path')
+const Promise = require('bluebird')
 
 const log = require('../utils/log')
 
@@ -16,42 +16,50 @@ const processGraphQL = ({ graphql, query, createPostsFn, resultPath }) => {
     .catch(log.error)
 }
 
+const mdQuery = `
+{
+  allMarkdownRemark(limit: 1000) {
+    edges {
+      node {
+        fields {
+          slug
+        }
+      }
+    }
+  }
+}`
+
+const imagePostQuery = `
+{
+  allDirectory(filter: { dir: { regex: "/images$/" } }) {
+    edges {
+      node {
+        id
+        name
+      }
+    }
+  }
+}`
+
+// const allImagesQuery = `
+// {
+//   allImageSharp
+// }
+// `
+
 const createPages = ({ graphql, boundActionCreators }) => {
-  const mdQuery = `
-  {
-    allMarkdownRemark(limit: 1000) {
-      edges {
-        node {
-          fields {
-            slug
-          }
-        }
-      }
-    }
-  }`
-
-  const imagePostQuery = `
-  {
-    allDirectory(filter: { dir: { regex: "/images$/" } }) {
-      edges {
-        node {
-          id
-          name
-        }
-      }
-    }
-  }`
-
   const { createPage } = boundActionCreators
-  const blogPost = path.resolve('./src/templates/blog-post.js')
-  const photographyPost = path.resolve('./src/templates/photography-post.js')
+  const blogTemplate = path.resolve('./src/templates/blog-post.js')
+  const photographyTemplate = path.resolve(
+    './src/templates/photography-post.js'
+  )
 
   const createPhotographyPosts = edges => {
     edges.forEach(edge => {
       const { name } = edge.node
       createPage({
         path: `/photography/${name}`,
-        component: photographyPost,
+        component: photographyTemplate,
         context: {
           name: `/${name}/`,
           datetime: name,
@@ -72,7 +80,7 @@ const createPages = ({ graphql, boundActionCreators }) => {
       const { slug } = edge.node.fields
       createPage({
         path: slug,
-        component: blogPost,
+        component: blogTemplate,
         context: {
           slug,
         },

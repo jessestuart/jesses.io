@@ -58,6 +58,18 @@ const plugins = [
   // ====================================
   sourceFilesystem,
   sourceFilesystemImages,
+  {
+    resolve: 'gatsby-source-s3',
+    options: {
+      bucketName: 'js-photos',
+    },
+  },
+  {
+    resolve: 'gatsby-plugin-sentry',
+    options: {
+      dsn: 'https://08ceff9135074b54882d704b4af1eec0@sentry.jessecod.es/2',
+    },
+  },
   // =======================================================================
   // Add in React Helmet and React 16 support until Gatsby v2 is released.
   // =======================================================================
