@@ -14,17 +14,14 @@ class BlogIndex extends PureComponent {
     }
 
     return (
-      <div className="bg-near-white flex-body-expand flex-column w-100">
+      <div className="bg-near-white flex-body-expand pv5 lh-copy">
         {posts.map(({ node }) => {
           const { excerpt, fields, frontmatter } = node
           const date = _.get(frontmatter, 'date')
           const slug = _.get(fields, 'slug')
           const title = _.get(frontmatter, 'title')
           return (
-            <section
-              key={slug}
-              className="mw7 center flex-body-expand flex-column"
-            >
+            <section key={slug} className="mw7 center flex-body-expand">
               <BlogHeader date={date} slug={slug} title={title || slug} />
               <p className="f4" dangerouslySetInnerHTML={{ __html: excerpt }} />
             </section>
