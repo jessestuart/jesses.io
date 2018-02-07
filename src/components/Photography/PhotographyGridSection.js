@@ -9,12 +9,8 @@ import {
   PhotographySectionHeader,
 } from '.'
 
-type Props = {
-  datetime: DateTime,
-}
-
-const PhotographyGridSection = ({ datetime, images, slug }) => {
-  return _.isNil(images) ? null : (
+const PhotographyGridSection = ({ datetime, images, slug }: Props) =>
+  _.isNil(images) ? null : (
     <section className="center flex flex-column w-75 justify-center pv5">
       <PhotographySectionHeader datetime={datetime} href={slug} />
       <ImageZoomGrid>
@@ -26,6 +22,11 @@ const PhotographyGridSection = ({ datetime, images, slug }) => {
       </ImageZoomGrid>
     </section>
   )
+
+type Props = {
+  datetime: DateTime,
+  images: Array,
+  slug: String,
 }
 
 export default PhotographyGridSection

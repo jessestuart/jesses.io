@@ -52,24 +52,29 @@ const googleAnalyticsPlugin = {
   },
 }
 
+const sourceS3 = {
+  resolve: 'gatsby-source-s3',
+  options: {
+    bucketName: 'js-photos',
+    cdnDomain: 'dsud7k9s6taft.cloudfront.net',
+    protocol: 'https',
+  },
+}
+
+const sentryPlugin = {
+  resolve: 'gatsby-plugin-sentry',
+  options: {
+    dsn: 'https://08ceff9135074b54882d704b4af1eec0@sentry.jessecod.es/2',
+  },
+}
+
 const plugins = [
   // ====================================
   // Gotta load those sweet, sweet files.
   // ====================================
   sourceFilesystem,
   sourceFilesystemImages,
-  {
-    resolve: 'gatsby-source-s3',
-    options: {
-      bucketName: 'js-photos',
-    },
-  },
-  {
-    resolve: 'gatsby-plugin-sentry',
-    options: {
-      dsn: 'https://08ceff9135074b54882d704b4af1eec0@sentry.jessecod.es/2',
-    },
-  },
+  sourceS3,
   // =======================================================================
   // Add in React Helmet and React 16 support until Gatsby v2 is released.
   // =======================================================================
@@ -90,6 +95,7 @@ const plugins = [
   // Analytics.
   // ==========
   googleAnalyticsPlugin,
+  sentryPlugin,
   // ===========
   // Miscellany.
   // ===========

@@ -18,10 +18,9 @@ test_task:
 
   test_script: yarn test
 
-build_task:
-  node_modules_cache:
-    folder: node_modules
-    fingerprint_script: cat yarn.lock
-    populate_script: yarn -s
-
-  build_script: yarn build
+# build_task:
+#   node_modules_cache:
+#     folder: node_modules
+#     fingerprint_script: cat yarn.lock
+#     populate_script: yarn -s
+#   build_script: yarn build

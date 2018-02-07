@@ -27,7 +27,9 @@ pipeline:
     commands:
       - yarn lint
 
-  build-site:
-    image: node:9
-    commands:
-      - yarn build
+#   build-site:
+#     image: node:9
+#     commands:
+#       - mkdir ~/.aws/
+#       - echo '[default]\naws_access_key = $$aws_access_key\naws_secret_access_key = $$aws_secret_key' > ~/.aws/credentials
+#       - yarn build
