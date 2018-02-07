@@ -36,7 +36,6 @@ const imagePostQuery = `
   allS3ImageAsset {
     edges {
       node {
-        id
         EXIF {
           DateCreatedISO
         }

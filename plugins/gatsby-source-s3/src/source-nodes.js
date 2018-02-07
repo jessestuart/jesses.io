@@ -29,16 +29,13 @@ type SourceS3Options = {
   protocol: ?String,
 }
 
-// [temp]
-const obj = {}
-let count = 0
-
 const constructS3UrlForAsset = ({
   bucketName,
   domain,
   key,
   protocol = 'https',
 }): ?String => {
+  // Both `key` and either one of `bucketName` or `domain` are required.
   if (!key || (!bucketName && !domain)) {
     return null
   }
@@ -65,16 +62,23 @@ exports.sourceNodes = async (
 
   await Promise.all(
     s3Entities.map(async entity => {
-      // [temp]
-      obj[entity.Key] = count
-      // [temp]
+      const s3Url = constructS3UrlForAsset({
+        bucketName,
+        domain,
+        key: entity.Key,
+        protocol,
+      })
       const entityData = {
         bucketName,
         cache,
         createNode,
+        domain,
         entity,
+        protocol,
         store,
+        s3Url,
       }
+
       const fileNode = await createS3RemoteFileNode(entityData)
       if (fileNode) {
         entityData.localFile___NODE = fileNode.id
@@ -89,14 +93,8 @@ exports.sourceNodes = async (
   done()
 }
 
-const createS3RemoteFileNode = async ({
-  bucketName,
-  cache,
-  createNode,
-  entity,
-  store,
-}) => {
-  const s3Url = constructS3UrlForAsset({ bucketName, key: entity.Key })
+const createS3RemoteFileNode = async ({ cache, createNode, store, s3Url }) => {
+  console.log({ s3Url })
   try {
     return await createRemoteFileNode({
       url: s3Url,
@@ -113,10 +111,10 @@ const createS3RemoteFileNode = async ({
 
 const createS3ImageAssetNode = async ({
   createNode,
-  fileNode,
-  bucketName,
-  entity,
   done,
+  entity,
+  fileNode,
+  s3Url,
 }) => {
   const { Key, ETag } = entity
   // TODO: Could probably pull this from fileNode.
@@ -134,14 +132,10 @@ const createS3ImageAssetNode = async ({
     parent: fileNode.id,
     children: [],
     internal: {
-      content: constructS3UrlForAsset({ bucketName, key: Key }),
+      content: s3Url,
       contentDigest: objectHash,
       mediaType: ContentType,
       type: S3SourceGatsbyNodeType,
     },
   })
-  count++
-  console.log(
-    `\nDone creating node for entity ${entity.Key} (${count} / ${_.size(obj)})`
-  )
 }

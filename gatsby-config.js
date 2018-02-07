@@ -56,7 +56,7 @@ const sourceS3 = {
   resolve: 'gatsby-source-s3',
   options: {
     bucketName: 'js-photos',
-    cdnDomain: 'dsud7k9s6taft.cloudfront.net',
+    domain: 'dsud7k9s6taft.cloudfront.net',
     protocol: 'https',
   },
 }
