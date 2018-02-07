@@ -11,17 +11,17 @@ const S3SourceGatsbyNodeType = 'S3ImageAsset'
 const constructS3UrlForAsset = ({ bucketName, key }) =>
   `https://${bucketName}.s3.amazonaws.com/${key}`
 
-const onCreateNode = async ({ node, boundActionCreators, loadNodeContent }) => {
-  const { createNode, createParentChildLink } = boundActionCreators
-  if (node.internal.mediaType !== 'image/jpeg') {
-    return
-  }
-  const image = await loadNodeContent(node)
-  console.log('Loaded image:')
-  console.log({ image })
-}
+// const onCreateNode = async ({ node, boundActionCreators, loadNodeContent }) => {
+//   const { createNode, createParentChildLink } = boundActionCreators
+//   if (node.internal.mediaType !== 'image/jpeg') {
+//     return
+//   }
+//   const image = await loadNodeContent(node)
+//   console.log('Loaded image:')
+//   console.log({ image })
+// }
 
-exports.onCreateNode = onCreateNode
+// exports.onCreateNode = onCreateNode
 
 // [temp]
 const obj = {}
@@ -105,8 +105,6 @@ const createS3ImageAssetNode = async ({
   const objectHash = ETag.replace(/"/g, '')
   createNode({
     ...entity,
-    // ...tags,
-    // DateCreated: dateCreated.toISODate(),
     id: `${Key} >> ${S3SourceGatsbyNodeType}`,
     absolutePath: fileNode.absolutePath,
     Key,

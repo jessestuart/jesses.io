@@ -3,6 +3,7 @@ const path = require('path')
 const Promise = require('bluebird')
 const DateTime = require('luxon').DateTime
 
+const PageType = require('../utils/enums/page-type')
 const log = require('../utils/log')
 
 const processGraphQL = ({ graphql, query, createPostsFn, resultPath }) => {
@@ -58,34 +59,12 @@ const createPages = ({ graphql, boundActionCreators }) => {
         path: `/photography/${date}`,
         component: photographyTemplate,
         context: {
-          name: `/${date}/`,
+          name: date,
           datetime: DateTime.fromISO(date),
+          type: PageType.Photography,
         },
       })
     })
-    // imagesGroupedByDate.forEach((images, date) => {
-    //   console.log('date and images:')
-    //   console.log({ date, images })
-    // createPage({
-    //   path: `/photography/${name}`,
-    //   component: photographyTemplate,
-    //   context: {
-    //     name: `/${name}/`,
-    //     datetime: name,
-    //   },
-    // })
-    // })
-    // edges.forEach(edge => {
-    //   const { name } = edge.node
-    //   createPage({
-    //     path: `/photography/${name}`,
-    //     component: photographyTemplate,
-    //     context: {
-    //       name: `/${name}/`,
-    //       datetime: name,
-    //     },
-    //   })
-    // })
   }
 
   processGraphQL({
@@ -103,29 +82,11 @@ const createPages = ({ graphql, boundActionCreators }) => {
         component: blogTemplate,
         context: {
           slug,
+          type: PageType.Blog,
         },
       })
     })
   }
-
-  // processGraphQL({
-  //   graphql,
-  //   query: imagePostQuery,
-  //   resultPath: 'data.allDirectory.edges',
-  //   createPostsFn: createPhotographyPosts,
-  // })
-  // const createBlogPosts = edges => {
-  //   edges.forEach(edge => {
-  //     const { slug } = edge.node.fields
-  //     createPage({
-  //       path: slug,
-  //       component: blogTemplate,
-  //       context: {
-  //         slug,
-  //       },
-  //     })
-  //   })
-  // }
 
   processGraphQL({
     graphql,
