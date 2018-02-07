@@ -3,4 +3,4 @@ const PageType = {
   Photography: 'Photography',
 }
 
-export default PageType
+module.exports = PageType
