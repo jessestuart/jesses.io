@@ -50,22 +50,23 @@ export const pageQuery = graphql`
         title
       }
     }
-    allDirectory(filter: { dir: { regex: "/images$/" } }) {
+    allS3ImageAsset {
       edges {
         node {
-          name
-        }
-      }
-    }
-    allImageSharp {
-      edges {
-        node {
-          id
-          sizes(maxWidth: 1024) {
-            ...GatsbyImageSharpSizes
+          childImageSharp {
+            sizes(maxWidth: 1024) {
+              ...GatsbyImageSharpSizes
+            }
           }
         }
       }
     }
   }
 `
+// allDirectory(filter: { dir: { regex: "/images$/" } }) {
+//   edges {
+//     node {
+//       name
+//     }
+//   }
+// }

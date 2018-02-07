@@ -2,7 +2,7 @@ const { createFilePath } = require('gatsby-source-filesystem')
 const _ = require('lodash')
 
 const onCreateNode = ({ node, boundActionCreators, getNode }) => {
-  const { createNodeField } = boundActionCreators
+  const { createNodeField, createParentChildLink } = boundActionCreators
   const type = _.get(node, 'internal.type')
 
   if (type === 'Directory') {
@@ -24,12 +24,9 @@ const onCreateNode = ({ node, boundActionCreators, getNode }) => {
   }
 
   if (type === 'S3ImageAsset') {
-    const value = createFilePath({ node, getNode })
-    createNodeField({
-      name: 'slug',
-      node,
-      value,
-    })
+    const parent = getNode(node.parent)
+    const imageSharp = getNode(parent.children[0])
+    createParentChildLink({ parent: node, child: imageSharp })
   }
 }
 

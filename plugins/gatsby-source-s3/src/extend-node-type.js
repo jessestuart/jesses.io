@@ -1,4 +1,5 @@
 /* @flow */
+const Promise = require('bluebird')
 const fs = require(`fs`)
 const {
   GraphQLObjectType,
@@ -31,13 +32,11 @@ type S3Image = {
 }
 
 const resolveExifData = (image: S3Image) => {
-  console.log({ image })
   const file = fs.readFileSync(image.absolutePath)
   const tags = exif.create(file).parse().tags
   const DateCreatedISO = DateTime.fromMillis(
     tags.DateTimeOriginal * 1000
   ).toISODate()
-  console.log({ DateCreatedISO })
   return {
     DateCreatedISO,
     ..._.pick(tags, [
@@ -54,11 +53,13 @@ const resolveExifData = (image: S3Image) => {
 }
 
 const extendNodeType = ({ type }: ExtendNodeTypeOptions) => {
-  if (type.name !== `S3ImageAsset`) {
+  if (type.name !== 'S3ImageAsset') {
     return {}
   }
 
-  return {
+  console.log('extending s3 image asset')
+
+  return Promise.resolve({
     ETag: { type: GraphQLString },
     EXIF: {
       type: new GraphQLObjectType({
@@ -82,7 +83,7 @@ const extendNodeType = ({ type }: ExtendNodeTypeOptions) => {
         }
       },
     },
-  }
+  })
 }
 
 exports.extendNodeType = extendNodeType
