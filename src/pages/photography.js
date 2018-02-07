@@ -1,24 +1,21 @@
-import React, { Fragment, PureComponent } from 'react'
+import React, { Fragment } from 'react'
 import Helmet from 'react-helmet'
 import _ from 'lodash'
 import { DateTime } from 'luxon'
 
 import { PhotographyGridSection } from '../components/Photography'
 
-class PhotographyIndex extends PureComponent {
-  render() {
-    const { props } = this
-    const siteTitle = _.get(props, 'data.site.siteMetadata.title')
-    const images = _.get(props, 'data.allImageSharp.edges')
-    const posts = _.get(props, 'data.allDirectory.edges')
-
-    return (
-      <Fragment>
-        <Helmet title={`Photography | ${siteTitle}`} />
-        <div className="bg-near-white black-80">
-          {_.reverse(
-            _.sortBy(posts, post => new Date(post.node.name) || 0)
-          ).map(post => {
+const PhotographyIndex = ({ data }) => {
+  console.log({ data })
+  const siteTitle = _.get(data, 'site.siteMetadata.title')
+  const images = _.get(data, 'allImageSharp.edges')
+  const posts = _.get(data, 'allDirectory.edges')
+  return (
+    <Fragment>
+      <Helmet title={`Photography | ${siteTitle}`} />
+      <div className="bg-near-white black-80">
+        {_.reverse(_.sortBy(posts, post => new Date(post.node.name) || 0)).map(
+          post => {
             const title = _.get(post, 'node.name')
             const linkSlug = `/photography/${title}`
             const linkImages = _.take(
@@ -34,11 +31,11 @@ class PhotographyIndex extends PureComponent {
                 linkSlug={linkSlug}
               />
             )
-          })}
-        </div>
-      </Fragment>
-    )
-  }
+          }
+        )}
+      </div>
+    </Fragment>
+  )
 }
 
 export default PhotographyIndex
@@ -53,6 +50,10 @@ export const pageQuery = graphql`
     allS3ImageAsset {
       edges {
         node {
+          id
+          EXIF {
+            DateCreatedISO
+          }
           childImageSharp {
             sizes(maxWidth: 1024) {
               ...GatsbyImageSharpSizes
@@ -63,10 +64,3 @@ export const pageQuery = graphql`
     }
   }
 `
-// allDirectory(filter: { dir: { regex: "/images$/" } }) {
-//   edges {
-//     node {
-//       name
-//     }
-//   }
-// }

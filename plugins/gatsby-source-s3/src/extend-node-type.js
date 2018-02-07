@@ -1,6 +1,6 @@
 /* @flow */
 const Promise = require('bluebird')
-const fs = require(`fs`)
+const fs = require(`fs-extra`)
 const {
   GraphQLObjectType,
   GraphQLString,
@@ -11,32 +11,85 @@ const exif = require('exif-parser')
 const DateTime = require('luxon').DateTime
 const _ = require(`lodash`)
 
-type ExtendNodeTypeOptions = {
-  type: {
-    name: String,
-  },
+/**
+ * ExifData persists the exif data parsed from an image binary
+ * within Gatsby's GraphQL data infra. The best way to access
+ * these fields is directly via the S3ImageAsset node -- e.g.,
+ * @example
+ * ```graphql
+ * {
+ *   allS3ImageAsset {
+ *     edges {
+ *       node {
+ *         id
+ *         EXIF {
+ *           DateCreatedISO
+ *           FNumber
+ *           // ...etc
+ *         }
+ *       }
+ *     }
+ *   }
+ * }
+ * ```
+ *
+ * Note that you can also obtain direct access to the `ImageSharp`
+ * node as a child relation:
+ * @example
+ * ```graphql
+ * {
+ *   allS3ImageAsset {
+ *     edges {
+ *       node {
+ *         id
+ *         EXIF {
+ *           DateCreatedISO
+ *           FNumber
+ *           // ...etc
+ *         }
+ *       }
+ *     }
+ *   }
+ * }
+ * ```
+ */
+type ExifData = {
+  DateCreatedISO: String,
+  DateTimeOriginal: Number,
+  ExposureTime: Number,
+  FNumber: Number,
+  FocalLength: Number,
+  ISO: Number,
+  LensModel: String,
+  Model: String,
+  ShutterSpeedValue: Number,
 }
 
-type S3Image = {
-  Key: String,
-  ETag: String,
+/**
+ * S3ImageAssetNode is a minimal wrapper composing the default Node
+ * fields with those obtained from S3 -- initially just `Key`
+ * and `ETag` (object digest), but the full map of Exif
+ * properties are injected during the `extend-node-type` step.
+ */
+type S3ImageAssetNode = {
   id: String,
   absolutePath: String,
+  ETag: String,
+  Key: String,
+  EXIF: ?ExifData,
   internal: {
     content: String,
     contentDigest: String,
     mediaType: String,
     type: String,
-    owner: String,
   },
 }
 
-const resolveExifData = (image: S3Image) => {
+const resolveExifData = (image: S3ImageAssetNode): ExifData => {
   const file = fs.readFileSync(image.absolutePath)
   const tags = exif.create(file).parse().tags
-  const DateCreatedISO = DateTime.fromMillis(
-    tags.DateTimeOriginal * 1000
-  ).toISODate()
+  const timestamp = tags.DateTimeOriginal * 1000
+  const DateCreatedISO = DateTime.fromMillis(timestamp).toISODate()
   return {
     DateCreatedISO,
     ..._.pick(tags, [
@@ -52,15 +105,20 @@ const resolveExifData = (image: S3Image) => {
   }
 }
 
+type ExtendNodeTypeOptions = {
+  type: {
+    name: String,
+  },
+}
+
 const extendNodeType = ({ type }: ExtendNodeTypeOptions) => {
-  if (type.name !== 'S3ImageAsset') {
+  if (type.name !== 'S3ImageAssetNodeAsset') {
     return {}
   }
 
-  console.log('extending s3 image asset')
-
   return Promise.resolve({
     ETag: { type: GraphQLString },
+    Key: { type: GraphQLString },
     EXIF: {
       type: new GraphQLObjectType({
         name: 'ExifData',
@@ -76,7 +134,7 @@ const extendNodeType = ({ type }: ExtendNodeTypeOptions) => {
           ShutterSpeedValue: { type: GraphQLFloat },
         },
       }),
-      resolve(image: S3Image) {
+      resolve(image: S3ImageAssetNode) {
         return {
           ...type,
           ...resolveExifData(image),
