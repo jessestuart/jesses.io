@@ -112,7 +112,7 @@ type ExtendNodeTypeOptions = {
 }
 
 const extendNodeType = ({ type }: ExtendNodeTypeOptions) => {
-  if (type.name !== 'S3ImageAssetNodeAsset') {
+  if (type.name !== 'S3ImageAsset') {
     return {}
   }
 

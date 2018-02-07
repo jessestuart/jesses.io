@@ -11,7 +11,7 @@ import {
 
 const PhotographyGridSection = ({ datetime, images, slug }: Props) =>
   _.isNil(images) ? null : (
-    <section className="center flex flex-column w-75 justify-center pv5">
+    <section className="center flex flex-column justify-center pv5 w-75">
       <PhotographySectionHeader datetime={datetime} href={slug} />
       <ImageZoomGrid>
         {images.map(image => (
