@@ -1,11 +1,12 @@
 /* @flow */
 import React, { Fragment } from 'react'
 import { ProfileDevIcons, Profile } from '../components'
+import _ from 'lodash'
 
 const Home = ({ data }: Props) => (
   <Fragment>
     <div className="moon-gray bg-gray-primary">
-      <Profile avatar={data.file.childImageSharp} />
+      <Profile avatar={_.get(data, 'file.childImageSharp')} />
       <ProfileDevIcons />
     </div>
   </Fragment>
