@@ -1,14 +1,19 @@
 // =========================
 // Third party dependencies.
 // =========================
-const AWS = require('aws-sdk')
-const S3 = new AWS.S3({ apiVersion: '2006-03-01' })
-const Promise = require('bluebird')
 const _ = require('lodash')
+const AWS = require('aws-sdk')
+const Promise = require('bluebird')
+
 // ============
 // Gatsby APIs.
 // ============
 const { createRemoteFileNode } = require('gatsby-source-filesystem')
+
+// =================
+// AWS config setup.
+// =================
+const S3 = new AWS.S3({ apiVersion: '2006-03-01' })
 
 // =========================
 // Plugin-specific contants.
@@ -55,9 +60,12 @@ exports.sourceNodes = async (
 ) => {
   const { createNode } = boundActionCreators
 
-  const listObjectsResponse = await S3.listObjectsV2({
-    Bucket: bucketName,
-  }).promise()
+  const listObjectsResponse = await S3.makeUnauthenticatedRequest(
+    'listObjectsV2',
+    {
+      Bucket: bucketName,
+    }
+  ).promise()
   const s3Entities = _.get(listObjectsResponse, 'Contents')
 
   await Promise.all(
@@ -94,7 +102,6 @@ exports.sourceNodes = async (
 }
 
 const createS3RemoteFileNode = async ({ cache, createNode, store, s3Url }) => {
-  console.log({ s3Url })
   try {
     return await createRemoteFileNode({
       url: s3Url,
