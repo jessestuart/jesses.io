@@ -1,15 +1,15 @@
 /* @flow */
 const Promise = require('bluebird')
-const fs = require(`fs-extra`)
+const fs = require('fs')
 const {
   GraphQLObjectType,
   GraphQLString,
   GraphQLInt,
   GraphQLFloat,
-} = require(`graphql`)
+} = require('graphql')
 const exif = require('exif-parser')
 const DateTime = require('luxon').DateTime
-const _ = require(`lodash`)
+const _ = require('lodash')
 
 /**
  * ExifData persists the exif data parsed from an image binary

@@ -42,10 +42,10 @@ jobs:
 
       - run:
           name: Compress and package static resources into a tarball.
-          command: tar czf jessestuart_$CIRCLE_SHA1.tar.gz public/
+          command: tar czf "jessestuart_${CIRCLE_BUILD_NUM}.tar.gz" public/
 
       - store_artifacts:
-          path: jessestuart_$CIRCLE_SHA1.tar.gz
+          path: "jessestuart_${CIRCLE_SHA1}.tar.gz"
 
   lint:
     working_directory: ~/jessestuart
