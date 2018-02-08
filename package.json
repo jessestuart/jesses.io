@@ -136,7 +136,7 @@
   "scripts": {
     "build": "yarn build:s3-plugin && gatsby build",
     "build:s3-plugin":
-      "cd ./plugins/gatsby-source-s3 && yarn && babel ./src --out-dir . --ignore __tests__ && cd ../../",
+      "cd ./plugins/gatsby-source-s3 && yarn && yarn build && cd ../../",
     "clean": "rm -rf node_modules/ .cache/ && yarn -s",
     "dev": "gatsby develop",
     "dev:install": "yarn -s && gatsby develop",
@@ -155,8 +155,7 @@
     "test:coverage": "jest --coverage",
     "test:watch": "jest --watch",
     "update": "ncu -ua -x typeface-spectral && yarn",
-    "watch:s3-plugin":
-      "export PLUGIN_ROOT=plugins/gatsby-source-s3 && pushd $PLUGIN_ROOT && yarn -s && yarn babel -w ./src --out-dir . --ignore ./__tests__",
+    "watch:s3-plugin": "yarn build:s3-plugin -w",
     "willitpass": "concurrently 'yarn lint' 'yarn test'"
   },
   "snyk": true
