@@ -9,7 +9,7 @@ const modifyWebpackConfig = ({ config }, stage) =>
     devtool: 'eval',
     postcss: [atImport(), cssnested, cssnext()],
     resolve: {
-      root: [path.resolve('./src'), path.resolve('./')],
+      root: [path.resolve('./src')],
     },
   })
 

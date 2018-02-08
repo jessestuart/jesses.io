@@ -1,6 +1,0 @@
-# Global settings applied to the whole site.
-# - “publish” is the directory to publish (relative to root of your repo),
-# - “command” is your build command,
-[build]
-  publish = "public"
-  command = "YARN_FLAGS='--no-ignore-optional' gatsby build"

@@ -58,12 +58,14 @@
     "eslint-plugin-promise": "^3.6.0",
     "eslint-plugin-react": "^7.6.1",
     "eslint-plugin-standard": "^3.0.1",
+    "exif-parser": "^0.1.12",
     "flow-bin": "^0.65.0",
     "flow-typed": "^2.3.0",
     "gray-percentage": "^2.0.0",
     "greenkeeper-lockfile": "^1.13.2",
     "husky": "^0.14.3",
     "jest": "^22.2.1",
+    "lerna": "^2.8.0",
     "lint-staged": "^6.1.0",
     "lodash": "^4.17.5",
     "npm-check-updates": "^2.14.0",
@@ -112,6 +114,10 @@
     "typography-plugin-code": "^0.16.11",
     "winston": "^3.0.0-rc1"
   },
+  "engine": {
+    "node": ">=9",
+    "yarn": ">=1.3"
+  },
   "homepage": "https://jessestuart.com",
   "keywords": ["blog", "gatsby", "photography", "react"],
   "license": "MIT",
@@ -128,11 +134,13 @@
     "url": "git+https://github.com/jessestuart/js-gatsby-hurtling.git"
   },
   "scripts": {
-    "build": "gatsby build",
-    "clean": "rm -rf node_modules/ .cache/ && yarn install -s",
+    "build": "yarn build:s3-plugin && gatsby build",
+    "build:s3-plugin":
+      "cd ./plugins/gatsby-source-s3 && yarn && yarn build && cd ../../",
+    "clean": "rm -rf node_modules/ .cache/ && yarn -s",
     "dev": "gatsby develop",
-    "dev:install": "yarn install -s && gatsby develop",
-    "flow:install": "yarn run flow-typed -o -l ./flow-libs/ install",
+    "dev:install": "yarn -s && gatsby develop",
+    "flow:install": "flow-typed -o -l ./flow-libs/ install",
     "format": "prettier 'src/**/*.js' 'src/**/*.md'",
     "lint": "concurrently 'yarn lint:js' 'yarn lint:style'",
     "lint:js":
@@ -147,6 +155,7 @@
     "test:coverage": "jest --coverage",
     "test:watch": "jest --watch",
     "update": "ncu -ua -x typeface-spectral && yarn",
+    "watch:s3-plugin": "yarn build:s3-plugin -w",
     "willitpass": "concurrently 'yarn lint' 'yarn test'"
   },
   "snyk": true
