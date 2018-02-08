@@ -35,7 +35,7 @@
   "devDependencies": {
     "aws-sdk": "^2.188.0",
     "babel-eslint": "^8.2.1",
-    "babel-jest": "^22.1.0",
+    "babel-jest": "^22.2.0",
     "babel-plugin-lodash": "^3.3.2",
     "babel-plugin-styled-components": "^1.5.0",
     "babel-preset-env": "^1.6.1",
