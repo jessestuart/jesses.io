@@ -1,6 +1,7 @@
 import React from 'react'
 import ImageZoom from 'react-medium-image-zoom'
 import _ from 'lodash'
+import { DateTime } from 'luxon'
 
 import {
   ImageZoomGrid,
@@ -8,21 +9,24 @@ import {
   PhotographySectionHeader,
 } from '.'
 
-const PhotographyGridSection = ({ datetime, linkImages, linkSlug }) =>
-  _.isNil(linkImages) ? null : (
-    <section className="center flex flex-column w-75 justify-center pv5">
-      <PhotographySectionHeader datetime={datetime} href={linkSlug} />
+const PhotographyGridSection = ({ datetime, images, slug }: Props) =>
+  _.isNil(images) ? null : (
+    <section className="center flex flex-column justify-center pv5 w-75">
+      <PhotographySectionHeader datetime={datetime} href={slug} />
       <ImageZoomGrid>
-        {linkImages.map(({ node }, index) => (
-          <ImageZoomGridElement
-            key={node.id}
-            aspectRatio={node.sizes.aspectRatio}
-          >
-            <ImageZoom image={{ src: node.sizes.src }} />
+        {images.map(image => (
+          <ImageZoomGridElement key={image.src} aspectRatio={image.aspectRatio}>
+            <ImageZoom image={{ src: image.src }} />
           </ImageZoomGridElement>
         ))}
       </ImageZoomGrid>
     </section>
   )
+
+type Props = {
+  datetime: DateTime,
+  images: Array,
+  slug: String,
+}
 
 export default PhotographyGridSection
