@@ -16,7 +16,7 @@ jobs:
 
       - run:
           name: Install dependencies.
-          command: yarn install -s --no-progress
+          command: yarn -s --no-progress
 
       - run:
           name: Run Greenkeeper to update lockfile.
@@ -42,10 +42,11 @@ jobs:
 
       - run:
           name: Compress and package static resources into a tarball.
-          command: tar czf "jessestuart_${CIRCLE_BUILD_NUM}.tar.gz" public/
+          command: |
+            tar czf "jessestuart.tar.gz" public/
 
       - store_artifacts:
-          path: "jessestuart_${CIRCLE_SHA1}.tar.gz"
+          path: "jessestuart.tar.gz"
 
   lint:
     working_directory: ~/jessestuart
@@ -62,7 +63,7 @@ jobs:
 
       - run:
           name: Install dependencies.
-          command: yarn install -s --no-progress
+          command: yarn -s --no-progress
 
       - save_cache:
           paths:
@@ -88,7 +89,7 @@ jobs:
 
       - run:
           name: Install dependencies.
-          command: yarn install -s --no-progress
+          command: yarn -s --no-progress
 
       - save_cache:
           paths:
