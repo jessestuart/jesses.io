@@ -681,9 +681,9 @@ autoprefixer@^7.1.1, autoprefixer@^7.1.2:
     postcss "^6.0.16"
     postcss-value-parser "^3.2.3"
 
-aws-sdk@^2.190.0:
-  version "2.190.0"
-  resolved "https://registry.yarnpkg.com/aws-sdk/-/aws-sdk-2.190.0.tgz#c7b48b3845345b60795943eb919700cf7edf5734"
+aws-sdk@^2.191.0:
+  version "2.191.0"
+  resolved "https://registry.yarnpkg.com/aws-sdk/-/aws-sdk-2.191.0.tgz#f6e7d0e952b43110702c126f6747b8ec66553da5"
   dependencies:
     buffer "4.9.1"
     events "^1.1.1"
@@ -5070,9 +5070,9 @@ gatsby-1-config-css-modules@^1.0.8:
   dependencies:
     babel-runtime "^6.26.0"
 
-gatsby-cli@^1.1.37:
-  version "1.1.37"
-  resolved "https://registry.yarnpkg.com/gatsby-cli/-/gatsby-cli-1.1.37.tgz#2d86e766211a39e94ba38ecdfc426c8b9c4fcbf3"
+gatsby-cli@^1.1.39:
+  version "1.1.39"
+  resolved "https://registry.yarnpkg.com/gatsby-cli/-/gatsby-cli-1.1.39.tgz#f2f4bf67d081de88c0a9a3728d9fcf0e215e182d"
   dependencies:
     babel-code-frame "^6.26.0"
     babel-runtime "^6.26.0"
@@ -5331,9 +5331,9 @@ gatsby-transformer-sharp@^1.6.18:
     fs-extra "^4.0.2"
     image-size "^0.6.0"
 
-gatsby@^1.9.184:
-  version "1.9.184"
-  resolved "https://registry.yarnpkg.com/gatsby/-/gatsby-1.9.184.tgz#03ee3b39fb4056180140ebaed041a7523acf955a"
+gatsby@^1.9.188:
+  version "1.9.188"
+  resolved "https://registry.yarnpkg.com/gatsby/-/gatsby-1.9.188.tgz#2bacf2b956cfdf514c4be9be86b1e78b781f1307"
   dependencies:
     async "^2.1.2"
     babel-code-frame "^6.22.0"
@@ -5373,7 +5373,7 @@ gatsby@^1.9.184:
     front-matter "^2.1.0"
     fs-extra "^4.0.1"
     gatsby-1-config-css-modules "^1.0.8"
-    gatsby-cli "^1.1.37"
+    gatsby-cli "^1.1.39"
     gatsby-link "^1.6.36"
     gatsby-module-loader "^1.0.9"
     gatsby-react-router-scroll "^1.0.10"
@@ -8317,10 +8317,6 @@ lodash@4, lodash@^4.0.0, lodash@^4.1.0, lodash@^4.11.1, lodash@^4.13.1, lodash@^
 lodash@4.11.1:
   version "4.11.1"
   resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.11.1.tgz#a32106eb8e2ec8e82c241611414773c9df15f8bc"
-
-lodash@^4.17.5:
-  version "4.17.5"
-  resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.5.tgz#99a92d65c0272debe8c96b6057bc8fbfa3bed511"
 
 log-symbols@^1.0.2:
   version "1.0.2"
@@ -12830,6 +12826,10 @@ snyk-python-plugin@1.5.4:
   version "1.5.4"
   resolved "https://registry.yarnpkg.com/snyk-python-plugin/-/snyk-python-plugin-1.5.4.tgz#b349aec6e21cfbe074f4f2c68d3c2a8b75fcd3f5"
 
+snyk-python-plugin@1.5.6:
+  version "1.5.6"
+  resolved "https://registry.yarnpkg.com/snyk-python-plugin/-/snyk-python-plugin-1.5.6.tgz#ce31f0b687f23d127f7af39180ea2901b2891fec"
+
 snyk-resolve-deps@1.7.0:
   version "1.7.0"
   resolved "https://registry.yarnpkg.com/snyk-resolve-deps/-/snyk-resolve-deps-1.7.0.tgz#13743a058437dff890baaf437c333c966a743cb6"
@@ -12862,6 +12862,12 @@ snyk-sbt-plugin@1.2.2:
   dependencies:
     debug "^2.2.0"
 
+snyk-sbt-plugin@1.2.3:
+  version "1.2.3"
+  resolved "https://registry.yarnpkg.com/snyk-sbt-plugin/-/snyk-sbt-plugin-1.2.3.tgz#5615786f19825ee64acb50b1a041843b4a9c4e0f"
+  dependencies:
+    debug "^2.2.0"
+
 snyk-tree@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/snyk-tree/-/snyk-tree-1.0.0.tgz#0fb73176dbf32e782f19100294160448f9111cc8"
@@ -12878,7 +12884,7 @@ snyk-try-require@^1.1.1, snyk-try-require@^1.2.0:
     lru-cache "^4.0.0"
     then-fs "^2.0.0"
 
-snyk@^1.25.1, snyk@^1.69.6:
+snyk@^1.25.1:
   version "1.69.6"
   resolved "https://registry.yarnpkg.com/snyk/-/snyk-1.69.6.tgz#ec4f320113e66c3c687f79c2bb6f421716ba4c4c"
   dependencies:
@@ -12908,6 +12914,45 @@ snyk@^1.25.1, snyk@^1.69.6:
     snyk-resolve "1.0.0"
     snyk-resolve-deps "1.7.0"
     snyk-sbt-plugin "1.2.2"
+    snyk-tree "^1.0.0"
+    snyk-try-require "^1.2.0"
+    tempfile "^1.1.1"
+    then-fs "^2.0.0"
+    undefsafe "0.0.3"
+    update-notifier "^0.5.0"
+    url "^0.11.0"
+    uuid "^3.0.1"
+
+snyk@^1.69.7:
+  version "1.69.7"
+  resolved "https://registry.yarnpkg.com/snyk/-/snyk-1.69.7.tgz#ac879aabbc425aa2a8b77900a8f6d1c21ba8d2fe"
+  dependencies:
+    abbrev "^1.0.7"
+    ansi-escapes "^1.3.0"
+    chalk "^1.1.1"
+    configstore "^1.2.0"
+    debug "^2.2.0"
+    es6-promise "^3.0.2"
+    hasbin "^1.2.3"
+    inquirer "1.0.3"
+    needle "^2.0.1"
+    open "^0.0.5"
+    os-name "^1.0.3"
+    proxy-from-env "^1.0.0"
+    recursive-readdir "^2.2.1"
+    semver "^5.1.0"
+    snyk-config "1.0.1"
+    snyk-go-plugin "1.4.5"
+    snyk-gradle-plugin "1.2.0"
+    snyk-module "1.8.1"
+    snyk-mvn-plugin "1.1.1"
+    snyk-nuget-plugin "1.3.9"
+    snyk-php-plugin "1.3.2"
+    snyk-policy "^1.10.1"
+    snyk-python-plugin "1.5.6"
+    snyk-resolve "1.0.0"
+    snyk-resolve-deps "1.7.0"
+    snyk-sbt-plugin "1.2.3"
     snyk-tree "^1.0.0"
     snyk-try-require "^1.2.0"
     tempfile "^1.1.1"
