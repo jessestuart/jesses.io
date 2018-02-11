@@ -13,11 +13,11 @@ const HeaderLink = ({ children, className, href, isActive }) => {
     }
   )
   return (
-    <h3 className={headerClassNames}>
+    <ul className={headerClassNames}>
       <Link className="shadow-none flex justify-center items-center" to={href}>
         {children}
       </Link>
-    </h3>
+    </ul>
   )
 }
 

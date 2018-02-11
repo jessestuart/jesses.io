@@ -1,21 +1,18 @@
 @import '../styles/base.css';
 
+/*
+ * Alternative `color`s:
+ * - #673AB7
+ * - #A23649
+ * - #C62D47
+ */
 p code,
 li code,
 p a code,
 li a code {
   background: #e4e4e4;
-
   border-radius: 3px;
-
-  /* color: #c62d47; */
-
   color: var(--hot-pink);
-
-  /* color: #673ab7; */
-
-  /* color: #A23649; */
-
   font-size: 1rem;
   font-weight: 400;
   margin: 0 2px;
@@ -28,7 +25,7 @@ pre {
 }
 
 article a {
-  border-bottom: 2px solid #ff617c;
+  border-bottom: 2px solid var(--hot-pink);
 
   position: relative;
   text-decoration: none;

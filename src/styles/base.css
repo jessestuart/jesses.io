@@ -1,4 +1,5 @@
-@import './tachyons/tachyons.css';
+/* @import './tachyons/tachyons.css'; */
+@import 'js-tachyons';
 
 @custom-media --breakpoint-small screen and (max-width: 45em);
 @custom-media --breakpoint-not-small screen and (min-width: 45em);
@@ -14,29 +15,10 @@
 :root {
   --header-primary: rgba(50, 0, 50, 0.8);
   --hot-pink: #fc5270;
-  --gray-100: #f8f9fa;
-  --gray-200: #e9ecef;
-  --gray-300: #dee2e6;
-  --gray-400: #ced4da;
-  --gray-500: #adb5bd;
-  --gray-600: #868e96;
-  --gray-700: #495057;
-  --gray-800: rgba(55, 59, 70, 1);
-  --gray-900: #212529;
   --code: 'Roboto Mono', Menlo, Consolas, 'Liberation Mono', monospace;
   --serif: 'Spectral', serif;
-  --font-size-1: 3rem;
-  --font-size-2: 2.25rem;
-  --font-size-3: 1.75rem;
-  --font-size-4: 1.15rem;
-  --font-size-5: 1rem;
-  --font-size-6: 0.875rem;
-  --font-size-7: 0.75rem;
   --gray-primary: rgb(55, 59, 70);
   --gray-primary-darker: rgb(41, 44, 52);
-  --line-height-solid: 1.25;
-  --line-height-title: 1.5;
-  --line-height-copy: 1.7;
 }
 
 .spectral {
@@ -79,6 +61,11 @@ h5,
 h6 {
   margin: 0;
   color: var(--header-primary);
+}
+
+li,
+ul {
+  margin: 0;
 }
 
 a {

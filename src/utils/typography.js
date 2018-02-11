@@ -2,6 +2,7 @@
 import Typography from 'typography'
 import CodePlugin from 'typography-plugin-code'
 import _ from 'lodash'
+import fp from 'lodash/fp'
 
 import color from 'onecolor'
 import colors from './colors'
@@ -27,7 +28,7 @@ const pseudoUnderline = {
   position: 'relative',
 }
 
-const sansSerifFallbacks = [
+const sansSerifFontFamilies = [
   '-apple-system',
   'BlinkMacSystemFont',
   'Segoe UI',
@@ -42,16 +43,53 @@ const sansSerifFallbacks = [
   'sans-serif',
 ]
 
+const serifFontFamilies = [
+  'Spectral',
+  'Georgia',
+  'Times New Roman',
+  'Times',
+  'serif',
+]
+
+const monospaceFontFamilies = [
+  'Space Mono',
+  'SFMono-Regular',
+  'Menlo',
+  'Monaco',
+  'Consolas',
+  'Liberation Mono',
+  'Courier New',
+  'monospace',
+]
+
+const baseFontFamilyList = _.concat(['Lato'], sansSerifFontFamilies)
+
+const mapFontFamilyListToString: Function = fp.join(',')
+
 const options = {
+  fontFamily: _.concat(['Lato'], sansSerifFontFamilies),
+  bodyFontFamily: baseFontFamilyList,
+  headerFontFamily: _.concat(['Alegreya Sans'], sansSerifFontFamilies),
+  monospaceFontFamily: monospaceFontFamilies,
+  baseFontSize: `18px`,
+  baseLineHeight: 1.4,
+  headerLineHeight: 1.075,
+  headerColor: colors.gray.dark,
+  bodyColor: colors.gray.copy,
+  blockMarginBottom: 0.75,
+  scaleRatio: 2,
   plugins: [new CodePlugin()],
-  bodyFontFamily: _.concat(['Lato'], sansSerifFallbacks),
-  headerFontFamily: _.concat(['Alegreya Sans'], sansSerifFallbacks),
-  fontFamily: _.concat(['Lato'], sansSerifFallbacks),
   overrideStyles: ({ rhythm, scale }, options) => ({
     blockquote: {
       fontStyle: 'inherit',
       textAlign: 'justify',
       textIndent: '2em',
+    },
+    '.spectral': {
+      fontFamily: mapFontFamilyListToString(serifFontFamilies),
+    },
+    '.lato': {
+      fontFamily: mapFontFamilyListToString(baseFontFamilyList),
     },
     code: {
       fontFamily: ['Roboto Mono', 'Consolas', 'monospace'].join(','),
@@ -70,37 +108,37 @@ const options = {
     },
     '.pseudo-underline': {
       ...pseudoUnderline,
-      fontFamily: options.headerFontFamily.join(`,`),
+      fontFamily: options.headerFontFamily.join(','),
     },
     'article a': {
       ...pseudoUnderline,
       color: colors.accent,
     },
     'article a::before': {
-      content: ' ',
-      position: 'absolute',
-      width: '100%',
-      height: '2px',
-      bottom: '-2px',
-      left: '0',
-      backgroundColor: `${defaultHoverColor}`,
-      visibility: 'hidden',
       '-webkit-transform': 'scaleX(0)',
-      transform: 'scaleX(0)',
       '-webkit-transition': 'all 0.25s ease-in-out 0s',
+      backgroundColor: `${defaultHoverColor}`,
+      bottom: '-2px',
+      content: '',
+      height: '2px',
+      left: '0',
+      position: 'absolute',
+      transform: 'scaleX(0)',
       transition: 'all 0.25s ease-in-out 0s',
+      visibility: 'hidden',
+      width: '100%',
     },
     'article a:hover::before': {
-      visibility: 'visible',
       '-webkit-transform': 'scaleX(1)',
       transform: 'scaleX(1)',
+      visibility: 'visible',
     },
     'article a.anchor': {
-      color: `inherit`,
-      fill: colors.primary,
-      textDecoration: `none`,
-      borderBottom: `none`,
-      boxShadow: `none`,
+      borderBottom: 'none',
+      boxShadow: 'none',
+      color: 'inherit',
+      fill: colors.primary.main,
+      textDecoration: 'none',
     },
   }),
 }

@@ -8,6 +8,8 @@
 * Consolidate vendor stylesheets in `styles` directory.
 * Set up SonarQube
 
+- Code block style: http://jstu.art/pRnP
+
 ### Icons to add
 
 * Swagger
@@ -19,15 +21,16 @@
   * https://github.com/octalmage/gatsby-plugin-sentry
 
 ### Photography
-- Add exif plugin?
+
+* Add exif plugin?
 
 // const exifImage = exif.ExifImage(
-//   { image: image.Body },
-//   (err, exifData) => {
-//     // console.log({ err, exifData })
-//     const exif = exifData.exif
-//     console.log({ exif })
-//   }
+// { image: image.Body },
+// (err, exifData) => {
+// // console.log({ err, exifData })
+// const exif = exifData.exif
+// console.log({ exif })
+// }
 // )
 // })
 

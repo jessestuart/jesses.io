@@ -25,6 +25,7 @@
     "gatsby-source-filesystem": "^1.5.18",
     "gatsby-transformer-remark": "^1.7.31",
     "gatsby-transformer-sharp": "^1.6.18",
+    "js-tachyons": "^1.0.5-4",
     "luxon": "^0.4.0",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
