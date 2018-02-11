@@ -1,17 +1,18 @@
 /* @flow */
 import Typography from 'typography'
-import CodePlugin from 'typography-plugin-code'
-import _ from 'lodash'
-import fp from 'lodash/fp'
-
-import color from 'onecolor'
-import colors from './colors'
 
 import 'typeface-alegreya-sans'
 import 'typeface-alegreya-sans-sc'
 import 'typeface-lato'
-import 'typeface-spectral'
 import 'typeface-roboto-mono'
+import 'typeface-spectral'
+
+import CodePlugin from 'typography-plugin-code'
+import _ from 'lodash'
+import color from 'onecolor'
+import fp from 'lodash/fp'
+
+import colors from './colors'
 
 const defaultLinkColor = color(colors.secondary.light7)
   .alpha(0.8)
@@ -67,13 +68,13 @@ const baseFontFamilyList = _.concat(['Lato'], sansSerifFontFamilies)
 const mapFontFamilyListToString: Function = fp.join(',')
 
 const options = {
-  fontFamily: _.concat(['Lato'], sansSerifFontFamilies),
+  fontFamily: baseFontFamilyList,
   bodyFontFamily: baseFontFamilyList,
   headerFontFamily: _.concat(['Alegreya Sans'], sansSerifFontFamilies),
   monospaceFontFamily: monospaceFontFamilies,
-  baseFontSize: `18px`,
-  baseLineHeight: 1.4,
-  headerLineHeight: 1.075,
+  baseFontSize: '16px',
+  baseLineHeight: 1.75,
+  headerLineHeight: 1.3,
   headerColor: colors.gray.dark,
   bodyColor: colors.gray.copy,
   blockMarginBottom: 0.75,
@@ -91,9 +92,8 @@ const options = {
     '.lato': {
       fontFamily: mapFontFamilyListToString(baseFontFamilyList),
     },
-    code: {
-      fontFamily: ['Roboto Mono', 'Consolas', 'monospace'].join(','),
-      fontSize: '0.9rem !important',
+    '#___gatsby code': {
+      fontFamily: mapFontFamilyListToString(monospaceFontFamilies),
       fontWeight: 400,
       textShadow: 'none',
     },

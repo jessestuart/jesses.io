@@ -900,7 +900,7 @@ end_of_record
 TN:
 SF:/Users/jestuart/dev/jessestuart.com/src/components/StyledLink/StyledLink.js
 FN:13,(anonymous_0)
-FN:40,(anonymous_1)
+FN:37,(anonymous_1)
 FNF:2
 FNH:2
 FNDA:7,(anonymous_0)
@@ -908,13 +908,13 @@ FNDA:7,(anonymous_1)
 DA:5,3
 DA:9,3
 DA:13,7
-DA:41,7
+DA:38,7
 LF:4
 LH:4
-BRDA:15,0,0,7
-BRDA:15,0,1,2
-BRDA:25,1,0,7
-BRDA:25,1,1,2
+BRDA:14,0,0,7
+BRDA:14,0,1,2
+BRDA:19,1,0,7
+BRDA:19,1,1,2
 BRF:4
 BRH:4
 end_of_record

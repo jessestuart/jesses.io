@@ -11,7 +11,7 @@ const IntroWrapper = styled.div.attrs({
 })`
   display: grid;
   grid-template-columns: repeat(12, 1fr);
-  min-height: calc(100vh - 21px);
+  min-height: calc(100vh - 23px);
 
   @media (min-width: 45em) {
     grid-template-rows: repeat(2, 1fr);

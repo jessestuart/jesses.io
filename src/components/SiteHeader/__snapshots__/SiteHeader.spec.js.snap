@@ -22,7 +22,7 @@ exports[`Render SiteHeader component as not-root. 1`] = `
     <div
       className="w-35-ns flex flex-row center source-sans fw3"
     >
-      <h3
+      <ul
         className="lato f4 ph3 mv2 pv2 flex-auto br b--mid-gray light-silver fw3"
       >
         <MockedLink
@@ -31,8 +31,8 @@ exports[`Render SiteHeader component as not-root. 1`] = `
         >
           home
         </MockedLink>
-      </h3>
-      <h3
+      </ul>
+      <ul
         className="lato f4 ph3 mv2 pv2 flex-auto br b--mid-gray light-silver fw3"
       >
         <MockedLink
@@ -41,8 +41,8 @@ exports[`Render SiteHeader component as not-root. 1`] = `
         >
           words
         </MockedLink>
-      </h3>
-      <h3
+      </ul>
+      <ul
         className="lato f4 ph3 mv2 pv2 flex-auto br b--mid-gray light-silver fw3"
       >
         <MockedLink
@@ -51,8 +51,8 @@ exports[`Render SiteHeader component as not-root. 1`] = `
         >
           pictures
         </MockedLink>
-      </h3>
-      <h3
+      </ul>
+      <ul
         className="lato f4 ph3 mv2 pv2 flex-auto light-silver fw3"
       >
         <MockedLink
@@ -61,7 +61,7 @@ exports[`Render SiteHeader component as not-root. 1`] = `
         >
           about
         </MockedLink>
-      </h3>
+      </ul>
     </div>
   </header>
 </Headroom>
@@ -89,7 +89,7 @@ exports[`Render SiteHeader component. 1`] = `
     <div
       className="w-35-ns flex flex-row center source-sans fw3"
     >
-      <h3
+      <ul
         className="lato f4 ph3 mv2 pv2 flex-auto br b--mid-gray white-90 fw4"
       >
         <MockedLink
@@ -98,8 +98,8 @@ exports[`Render SiteHeader component. 1`] = `
         >
           home
         </MockedLink>
-      </h3>
-      <h3
+      </ul>
+      <ul
         className="lato f4 ph3 mv2 pv2 flex-auto br b--mid-gray light-silver fw3"
       >
         <MockedLink
@@ -108,8 +108,8 @@ exports[`Render SiteHeader component. 1`] = `
         >
           words
         </MockedLink>
-      </h3>
-      <h3
+      </ul>
+      <ul
         className="lato f4 ph3 mv2 pv2 flex-auto br b--mid-gray light-silver fw3"
       >
         <MockedLink
@@ -118,8 +118,8 @@ exports[`Render SiteHeader component. 1`] = `
         >
           pictures
         </MockedLink>
-      </h3>
-      <h3
+      </ul>
+      <ul
         className="lato f4 ph3 mv2 pv2 flex-auto light-silver fw3"
       >
         <MockedLink
@@ -128,7 +128,7 @@ exports[`Render SiteHeader component. 1`] = `
         >
           about
         </MockedLink>
-      </h3>
+      </ul>
     </div>
   </header>
 </Headroom>
