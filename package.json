@@ -67,7 +67,7 @@
     "postcss": "^6.0.17",
     "postcss-cssnext": "^3.1.0",
     "postcss-custom-media": "^6.0.0",
-    "postcss-import": "^11.0.0",
+    "postcss-import": "^11.1.0",
     "postcss-nested": "^3.0.0",
     "prettier": "^1.10.2",
     "prop-types": "^15.6.0",
