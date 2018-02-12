@@ -86,6 +86,7 @@ type S3ImageAssetNode = {
 }
 
 const resolveExifData = (image: S3ImageAssetNode): ExifData => {
+  // $FlowFixMe
   const file = fs.readFileSync(image.absolutePath)
   const tags = exif.create(file).parse().tags
   const timestamp = tags.DateTimeOriginal * 1000

@@ -9,7 +9,7 @@ const linkColor = color(colors.secondary.light7)
   .cssa()
 
 const hoverColor = color(colors.primary.main)
-  .alpha(0.7)
+  .alpha(0.8)
   .cssa()
 
 const ProfileStyledLink = ({ children }) => (

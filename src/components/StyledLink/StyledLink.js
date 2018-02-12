@@ -10,36 +10,30 @@ const defaultLinkColor = color(colors.primary.main)
   .alpha(0.8)
   .cssa()
 
-export const generateUnderlineStyles = ({ linkColor, hoverColor }) => `
-  text-decoration: none;
+const generateUnderlineStyles = ({ linkColor, hoverColor }) => `
   border-bottom: 2px solid ${linkColor || defaultLinkColor};
   position: relative;
+  text-decoration: none;
 
   &::before {
-    content: '';
-    position: absolute;
-    width: 100%;
-    height: 2px;
-    bottom: -2px;
-    left: 0;
     background-color: ${hoverColor || defaultHoverColor};
-    visibility: hidden;
-    -webkit-transform: scaleX(0);
+    bottom: -2px;
+    content: '';
+    height: 2px;
+    left: 0;
+    position: absolute;
     transform: scaleX(0);
-    -webkit-transition: all 0.25s ease-in-out 0s;
     transition: all 0.25s ease-in-out 0s;
+    visibility: hidden;
+    width: 100%;
   }
   &:hover:before {
-    visibility: visible;
-    -webkit-transform: scaleX(1);
     transform: scaleX(1);
+    visibility: visible;
   }
 `
 
 export default styled.span`
-  ${props =>
-    generateUnderlineStyles({
-      linkColor: props.linkColor,
-      hoverColor: props.hoverColor,
-    })};
+  ${({ hoverColor, linkColor }) =>
+    generateUnderlineStyles({ linkColor, hoverColor })};
 `

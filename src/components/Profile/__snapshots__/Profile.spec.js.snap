@@ -2,7 +2,7 @@
 
 exports[`Render Profile component. Render Profile component. 1`] = `
 <div
-  className="Profile__IntroWrapper-krHzZt items-center justify-center pv4 kNpbjJ"
+  className="Profile__IntroWrapper-krHzZt items-center justify-center pv4 jZRrWi"
 >
   <div
     className="Profile__AvatarContainer-bEEKLc center w-100-ns w-50 fLUkUL"
@@ -125,12 +125,12 @@ exports[`Render Profile component. Render Profile component. 1`] = `
     className="Profile__BlurbContainer-innCgm tc tr-ns ph2 frIVhO"
   >
     <h2
-      className="spectral f3-ns f3 fw5 lh-title moon-gray"
+      className="f3 fw5 lh-title white-80 spectral"
     >
       Hi — I'm Jesse.
     </h2>
     <h2
-      className="spectral f3-ns f3 fw5 lh-title mv3 moon-gray"
+      className="f3 fw5 lh-title white-80 mv3 spectral"
     >
       <span
         className="dib nowrap"
@@ -142,7 +142,7 @@ exports[`Render Profile component. Render Profile component. 1`] = `
       >
         I contain 
         <span
-          className="StyledLink-khUpca fAVQee"
+          className="StyledLink-khUpca jZqCYV"
         >
           multitudes
         </span>
@@ -283,14 +283,14 @@ exports[`Render Profile component. Render Profile component. 1`] = `
           Published
            
           <span
-            className="StyledLink-khUpca fAVQee"
+            className="StyledLink-khUpca jZqCYV"
           >
             NLP researcher
           </span>
           , and
         </span>
         <span
-          className="StyledLink-khUpca fAVQee"
+          className="StyledLink-khUpca jZqCYV"
         >
           USPO Patent holder
         </span>
@@ -507,7 +507,7 @@ exports[`Render Profile component. Render Profile component. 1`] = `
         className="f4 fw3 dib tr lh-copy"
       >
         <span
-          className="StyledLink-khUpca fAVQee"
+          className="StyledLink-khUpca jZqCYV"
         >
           French translator
         </span>

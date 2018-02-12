@@ -2,6 +2,7 @@
 import React, { Fragment } from 'react'
 import { ProfileDevIcons, Profile } from '../components'
 import _ from 'lodash'
+import type { GatsbyImage } from '../types/gatsby-image'
 
 const Home = ({ data }: Props) => (
   <Fragment>
@@ -15,15 +16,7 @@ const Home = ({ data }: Props) => (
 type Props = {
   data: {
     file: {
-      childImageSharp: {
-        sizes: {
-          aspectRatio: Number,
-          base64: String,
-          sizes: String,
-          src: String,
-          srcSet: String,
-        },
-      },
+      childImageSharp: GatsbyImage,
     },
   },
 }
