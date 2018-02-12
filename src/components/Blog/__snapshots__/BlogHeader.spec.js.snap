@@ -2,19 +2,19 @@
 
 exports[`Render BlogHeader component. 1`] = `
 Array [
-  <MockedLink
-    to="2018-01-01"
+  <h2
+    className="alegreya-sans f2 fw5 header-primary mb2 mt4"
   >
-    <h2
-      className="alegreya-sans f2 fw5 header-primary mb2 mt4"
+    <MockedLink
+      to="2018-01-01"
     >
       <span
-        className="StyledLink-khUpca HidjM"
+        className="StyledLink-khUpca CcbPu"
       >
         FooBar
       </span>
-    </h2>
-  </MockedLink>,
+    </MockedLink>
+  </h2>,
   <p
     className="f6 mv2 flex items-center"
   >

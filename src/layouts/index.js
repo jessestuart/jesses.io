@@ -5,6 +5,7 @@ import _ from 'lodash'
 
 import config from '../../gatsby-config'
 
+import 'js-tachyons'
 import '../styles/base.css'
 
 import { SiteFooter, SiteHeader } from '../components'

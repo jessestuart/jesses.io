@@ -6,7 +6,6 @@ const cssnext = require('postcss-cssnext')
 
 const modifyWebpackConfig = ({ config }, stage) =>
   config.merge({
-    devtool: 'eval',
     postcss: [atImport(), cssnested, cssnext()],
     resolve: {
       root: [path.resolve('./src')],
