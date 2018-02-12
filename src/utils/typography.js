@@ -2,9 +2,7 @@
 import Typography from 'typography'
 
 import 'typeface-alegreya-sans'
-import 'typeface-alegreya-sans-sc'
 import 'typeface-lato'
-import 'typeface-roboto-mono'
 import 'typeface-spectral'
 
 import CodePlugin from 'typography-plugin-code'
@@ -53,7 +51,7 @@ const serifFontFamilies = [
 ]
 
 const monospaceFontFamilies = [
-  'Space Mono',
+  'Fira Mono',
   'SFMono-Regular',
   'Menlo',
   'Monaco',

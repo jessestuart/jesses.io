@@ -1,5 +1,3 @@
-@import 'js-tachyons';
-
 @custom-media --breakpoint-small screen and (max-width: 45em);
 @custom-media --breakpoint-not-small screen and (min-width: 45em);
 @custom-media --breakpoint-medium screen and (min-width: 45em) and (max-width: 60em);
@@ -12,18 +10,10 @@
  * - #55131e
  */
 :root {
+  --gray-primary-darker: rgb(41, 44, 52);
+  --gray-primary: rgb(55, 59, 70);
   --header-primary: rgba(50, 0, 50, 0.8);
   --hot-pink: #ff3a5c;
-
-  /* --code: 'Roboto Mono', Menlo, Consolas, 'Liberation Mono', monospace; */
-
-  /* --serif: 'Spectral', serif; */
-
-  --gray-primary: rgb(55, 59, 70);
-  --gray-primary-darker: rgb(41, 44, 52);
-  --line-height-solid: 1.25;
-  --line-height-title: 1.5;
-  --line-height-copy: 1.7;
 }
 
 .spectral {

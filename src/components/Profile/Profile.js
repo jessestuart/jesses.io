@@ -1,3 +1,4 @@
+/* @flow */
 import React from 'react'
 import styled from 'styled-components'
 
@@ -5,6 +6,8 @@ import Avatar from './Avatar'
 import ProfileBlurb from './ProfileBlurb'
 import ProfileFooter from './ProfileFooter'
 import BlackMirror from './BlackMirror'
+
+import type { GatsbyImage } from '../../types/gatsby-image'
 
 const IntroWrapper = styled.div.attrs({
   className: 'items-center justify-center pv4',
@@ -55,7 +58,7 @@ const FooterContainer = styled.div.attrs({
   grid-row: 5 / 7;
 `
 
-const Profile = ({ avatar }) => (
+const Profile = ({ avatar }: GatsbyImage) => (
   <IntroWrapper>
     <AvatarContainer>
       <Avatar image={avatar} />
