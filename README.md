@@ -14,8 +14,8 @@
 [codefresh-badge]: https://g.codefresh.io/api/badges/build?repoOwner=jessestuart&repoName=js-gatsby-tachyons&branch=master&pipelineName=js-gatsby-tachyons&accountName=jesse&key=eyJhbGciOiJIUzI1NiJ9.NWExNzRiZmE2M2NmM2UwMDAxOGRmZjdh.uSVHuuCHfQtayHNWawvO9loC4PEirkl458tnBt2yOVU&type=cf-1
 [codefresh-url]: https://g.codefresh.io/repositories/jessestuart/js-gatsby-tachyons/builds?filter=trigger:build;branch:master;service:5a3c264a24611f0001c367d3~js-gatsby-tachyons
 [dependencyci-badge]: https://dependencyci.com/github/splitrb/split/badge?style=flat
-[droneio-badge]: http://drone.jessecod.es/api/badges/jessestuart/jessestuart.com/status.svg
-[droneio-url]: http://drone.jessecod.es/jessestuart/jessestuart.com
+[droneio-badge]: http://ci.jesses.io/api/badges/jessestuart/jessestuart.com/status.svg
+[droneio-url]: http://ci.jesses.io/jessestuart/jessestuart.com
 [greenkeeper-badge]: https://badges.greenkeeper.io/jessestuart/jessestuart.com.svg?token=ec6300d31268bad8045d786b62351f72d188fc9ed09cb2df7206448ae9da07c3&ts=1517389593689
 [greenkeeper-url]: https://greenkeeper.io/
 [quay-badge]: https://quay.io/repository/jessestuart/jessestuart.com/status
