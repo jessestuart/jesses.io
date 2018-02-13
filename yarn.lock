@@ -4790,9 +4790,9 @@ gatsby-plugin-google-analytics@^1.0.17:
   dependencies:
     babel-runtime "^6.26.0"
 
-gatsby-plugin-lodash@^1.0.8:
-  version "1.0.8"
-  resolved "https://registry.yarnpkg.com/gatsby-plugin-lodash/-/gatsby-plugin-lodash-1.0.8.tgz#6f730fbe699d0068cadb954b9c59013e769bc192"
+gatsby-plugin-lodash@^1.0.9:
+  version "1.0.9"
+  resolved "https://registry.yarnpkg.com/gatsby-plugin-lodash/-/gatsby-plugin-lodash-1.0.9.tgz#4a77643cc6e1f85614913ea536aa9dac2a81341e"
   dependencies:
     babel-plugin-lodash "^3.2.11"
     babel-runtime "^6.26.0"
