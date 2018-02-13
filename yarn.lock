@@ -4823,9 +4823,9 @@ gatsby-plugin-react-next@^1.0.8:
     react "^16.0.0"
     react-dom "^16.0.0"
 
-gatsby-plugin-remove-trailing-slashes@^1.0.4:
-  version "1.0.4"
-  resolved "https://registry.yarnpkg.com/gatsby-plugin-remove-trailing-slashes/-/gatsby-plugin-remove-trailing-slashes-1.0.4.tgz#71fd776f7e74e2ff379beebd4868a8e4d7a141c8"
+gatsby-plugin-remove-trailing-slashes@^1.0.5:
+  version "1.0.5"
+  resolved "https://registry.yarnpkg.com/gatsby-plugin-remove-trailing-slashes/-/gatsby-plugin-remove-trailing-slashes-1.0.5.tgz#7c8161f6419fb33f52888ad2366ae50bbb95586a"
   dependencies:
     babel-runtime "^6.26.0"
 
