@@ -37,18 +37,16 @@ class BlogPostTemplate extends Component {
             content={new Date(date).toISOString()}
           />
         </Helmet>
-        <div className="mw7 justify-center center">
-          <div className="mw-100">
-            <BlogHeader date={date} slug={pathname} title={title} />
-            <article className="center justify">
-              <div
-                className="f4 fw5"
-                id="remark-post"
-                dangerouslySetInnerHTML={{ __html: post.html }}
-              />
-            </article>
-          </div>
-        </div>
+        <section className="mw7 center flex-body-expand">
+          <BlogHeader date={date} slug={pathname} title={title} />
+          <article className="center justify mw-100">
+            <div
+              className="f4 fw5"
+              id="remark-post"
+              dangerouslySetInnerHTML={{ __html: post.html }}
+            />
+          </article>
+        </section>
       </div>
     )
   }
