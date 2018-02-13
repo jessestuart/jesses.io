@@ -4784,9 +4784,9 @@ gatsby-plugin-feed@^1.3.17:
     pify "^3.0.0"
     rss "^1.2.2"
 
-gatsby-plugin-google-analytics@^1.0.17:
-  version "1.0.17"
-  resolved "https://registry.yarnpkg.com/gatsby-plugin-google-analytics/-/gatsby-plugin-google-analytics-1.0.17.tgz#055d4189ad5a23df91e0cfa42992c9df66a72f06"
+gatsby-plugin-google-analytics@^1.0.19:
+  version "1.0.19"
+  resolved "https://registry.yarnpkg.com/gatsby-plugin-google-analytics/-/gatsby-plugin-google-analytics-1.0.19.tgz#e9112f01118e0a16eb61f1b39bb0757feba88f2b"
   dependencies:
     babel-runtime "^6.26.0"
 
