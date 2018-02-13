@@ -1,29 +1,31 @@
 /* @flow */
 import React, { Component } from 'react'
+import _ from 'lodash'
+import classNames from 'classnames'
 import Promise from 'bluebird'
 import styled from 'styled-components'
-import classNames from 'classnames'
-import _ from 'lodash'
+
 import { ChevronDown } from 'react-feather'
 
 import colors from '../../utils/colors'
-
 import Cancelable from '../../utils/cancelable.js'
-
-const initialState = { isAnimatingChevron: false }
 
 // Configure Bluebird's Promise lib to be cancelable -- we use this to cancel
 // the bouncing chevron animation when the component is unmounted (e.g.,
 // because the user has navigated away from the Home page).
 Promise.config({ cancellation: true })
 
-// $FlowFixMe
-export default class ProfileFooter extends Component {
+type Props = {}
+
+type State = {
+  isAnimatingChevron: boolean,
+}
+
+const initialState = { isAnimatingChevron: false }
+
+export default class ProfileFooter extends Component<Props, State> {
   cancelable: Cancelable<*>
   interval: any
-  state: {
-    isAnimatingChevron: boolean,
-  }
 
   constructor() {
     super()
@@ -71,12 +73,12 @@ export default class ProfileFooter extends Component {
     const { isAnimatingChevron } = this.state
     return (
       <ProfileFooterSection>
-        <h4 className="f4 fw4 tc lh-title code white-80">
+        <h4 className="f4 fira-mono fw4 lh-title tc white-80">
           I build software<br />
           on the pull requests<br />
           of giants.
         </h4>
-        <div className="flex w-100 justify-center mt2">
+        <div className="flex justify-center mt2 w-100">
           <div
             className={classNames({
               'hvr-wobble-vertical hvr-wobble-vertical-animating': isAnimatingChevron,
@@ -95,7 +97,7 @@ export default class ProfileFooter extends Component {
 }
 
 const ProfileFooterSection = styled.div.attrs({
-  className: 'bb bw2 b--hot-pink bg-purple pt4 pb3 mb1',
+  className: 'b--hot-pink bb bg-purple bw2 mb1 pb3 pt4',
 })`
   grid-column: 1 / 13;
 `

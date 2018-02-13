@@ -12,8 +12,8 @@ const hoverColor = color(colors.primary.main)
   .alpha(0.8)
   .cssa()
 
-const ProfileStyledLink = ({ children }) => (
-  <StyledLink linkColor={linkColor} hoverColor={hoverColor}>
+const ProfileStyledLink = ({ children, href }) => (
+  <StyledLink linkColor={linkColor} hoverColor={hoverColor} href={href}>
     {children}
   </StyledLink>
 )

@@ -143,6 +143,7 @@ exports[`Render Profile component. Render Profile component. 1`] = `
         I contain 
         <span
           className="StyledLink-khUpca jZqCYV"
+          href="http://jstu.art/ojNe"
         >
           multitudes
         </span>
@@ -284,6 +285,7 @@ exports[`Render Profile component. Render Profile component. 1`] = `
            
           <span
             className="StyledLink-khUpca jZqCYV"
+            href="http://jstu.art/oijk"
           >
             NLP researcher
           </span>
@@ -291,6 +293,7 @@ exports[`Render Profile component. Render Profile component. 1`] = `
         </span>
         <span
           className="StyledLink-khUpca jZqCYV"
+          href="http://jstu.art/oj1g"
         >
           USPO Patent holder
         </span>
@@ -508,6 +511,7 @@ exports[`Render Profile component. Render Profile component. 1`] = `
       >
         <span
           className="StyledLink-khUpca jZqCYV"
+          href="http://jstu.art/ojVB"
         >
           French translator
         </span>
@@ -593,10 +597,10 @@ exports[`Render Profile component. Render Profile component. 1`] = `
     className="Profile__FooterContainer-caaTfV bt b--light-silver hJgCxy"
   >
     <div
-      className="ProfileFooter__ProfileFooterSection-fAJWLj bb bw2 b--hot-pink bg-purple pt4 pb3 mb1 hFmNli"
+      className="ProfileFooter__ProfileFooterSection-fAJWLj b--hot-pink bb bg-purple bw2 mb1 pb3 pt4 hFmNli"
     >
       <h4
-        className="f4 fw4 tc lh-title code white-80"
+        className="f4 fira-mono fw4 lh-title tc white-80"
       >
         I build software
         <br />
@@ -605,7 +609,7 @@ exports[`Render Profile component. Render Profile component. 1`] = `
         of giants.
       </h4>
       <div
-        className="flex w-100 justify-center mt2"
+        className="flex justify-center mt2 w-100"
       >
         <div
           className=""
