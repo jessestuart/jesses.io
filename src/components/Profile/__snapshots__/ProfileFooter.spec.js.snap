@@ -4,10 +4,10 @@ exports[`Render ProfileFooter component (cancelled) after 10s. 1`] = `null`;
 
 exports[`Render ProfileFooter component after 10s. 1`] = `
 <div
-  className="ProfileFooter__ProfileFooterSection-fAJWLj bb bw2 b--hot-pink bg-purple pt4 pb3 mb1 hFmNli"
+  className="ProfileFooter__ProfileFooterSection-fAJWLj b--hot-pink bb bg-purple bw2 mb1 pb3 pt4 hFmNli"
 >
   <h4
-    className="f4 fw4 tc lh-title code white-80"
+    className="f4 fira-mono fw4 lh-title tc white-80"
   >
     I build software
     <br />
@@ -16,7 +16,7 @@ exports[`Render ProfileFooter component after 10s. 1`] = `
     of giants.
   </h4>
   <div
-    className="flex w-100 justify-center mt2"
+    className="flex justify-center mt2 w-100"
   >
     <div
       className=""
@@ -44,10 +44,10 @@ exports[`Render ProfileFooter component after 10s. 1`] = `
 
 exports[`Render ProfileFooter component. 1`] = `
 <div
-  className="ProfileFooter__ProfileFooterSection-fAJWLj bb bw2 b--hot-pink bg-purple pt4 pb3 mb1 hFmNli"
+  className="ProfileFooter__ProfileFooterSection-fAJWLj b--hot-pink bb bg-purple bw2 mb1 pb3 pt4 hFmNli"
 >
   <h4
-    className="f4 fw4 tc lh-title code white-80"
+    className="f4 fira-mono fw4 lh-title tc white-80"
   >
     I build software
     <br />
@@ -56,7 +56,7 @@ exports[`Render ProfileFooter component. 1`] = `
     of giants.
   </h4>
   <div
-    className="flex w-100 justify-center mt2"
+    className="flex justify-center mt2 w-100"
   >
     <div
       className=""
