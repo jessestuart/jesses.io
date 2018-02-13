@@ -4852,9 +4852,9 @@ gatsby-plugin-sharp@^1.6.27:
     sharp "^0.19.0"
     svgo "^0.7.2"
 
-gatsby-plugin-styled-components@^2.0.5:
-  version "2.0.5"
-  resolved "https://registry.yarnpkg.com/gatsby-plugin-styled-components/-/gatsby-plugin-styled-components-2.0.5.tgz#3d881748eb5c3666cc82783de39a912a9f31e640"
+gatsby-plugin-styled-components@^2.0.6:
+  version "2.0.6"
+  resolved "https://registry.yarnpkg.com/gatsby-plugin-styled-components/-/gatsby-plugin-styled-components-2.0.6.tgz#92041815b213e3e62a35d26b4505c2dd4714164c"
   dependencies:
     babel-runtime "^6.26.0"
 
