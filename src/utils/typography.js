@@ -1,14 +1,15 @@
 /* @flow */
+import _ from 'lodash'
+import color from 'onecolor'
+import fp from 'lodash/fp'
 import Typography from 'typography'
 
 import 'typeface-alegreya-sans'
+import 'typeface-fira-mono'
 import 'typeface-lato'
 import 'typeface-spectral'
 
 import CodePlugin from 'typography-plugin-code'
-import _ from 'lodash'
-import color from 'onecolor'
-import fp from 'lodash/fp'
 
 import colors from './colors'
 
@@ -89,6 +90,12 @@ const options = {
     },
     '.lato': {
       fontFamily: mapFontFamilyListToString(baseFontFamilyList),
+    },
+    '.code': {
+      fontFamily: mapFontFamilyListToString(monospaceFontFamilies),
+    },
+    '.fira-mono': {
+      fontFamily: mapFontFamilyListToString(monospaceFontFamilies),
     },
     '#___gatsby code': {
       fontFamily: mapFontFamilyListToString(monospaceFontFamilies),
