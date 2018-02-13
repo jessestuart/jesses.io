@@ -4799,9 +4799,9 @@ gatsby-plugin-lodash@^1.0.8:
     lodash "^4.17.4"
     lodash-webpack-plugin "^0.11.4"
 
-gatsby-plugin-netlify@^1.0.17:
-  version "1.0.17"
-  resolved "https://registry.yarnpkg.com/gatsby-plugin-netlify/-/gatsby-plugin-netlify-1.0.17.tgz#ec273dc188785657d3bc15396a81c3b3e0895ee3"
+gatsby-plugin-netlify@^1.0.18:
+  version "1.0.18"
+  resolved "https://registry.yarnpkg.com/gatsby-plugin-netlify/-/gatsby-plugin-netlify-1.0.18.tgz#a95be9bddaddaa44cba438e7e64454d6314b152b"
   dependencies:
     babel-runtime "^6.26.0"
     fs-extra "^4.0.2"
