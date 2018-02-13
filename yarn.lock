@@ -4858,9 +4858,9 @@ gatsby-plugin-styled-components@^2.0.5:
   dependencies:
     babel-runtime "^6.26.0"
 
-gatsby-plugin-typography@^1.7.13:
-  version "1.7.13"
-  resolved "https://registry.yarnpkg.com/gatsby-plugin-typography/-/gatsby-plugin-typography-1.7.13.tgz#c653c1697f48327a33f15cc5fda87ee06384063b"
+gatsby-plugin-typography@^1.7.14:
+  version "1.7.14"
+  resolved "https://registry.yarnpkg.com/gatsby-plugin-typography/-/gatsby-plugin-typography-1.7.14.tgz#911baf7e5b5db1478f4aca7a50ad57622a32560a"
   dependencies:
     babel-runtime "^6.26.0"
     react-typography "^0.16.1"
