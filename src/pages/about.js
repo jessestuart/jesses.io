@@ -19,18 +19,17 @@ const CV = () => (
       </p>
       <p className="lato f4 fw4">
         Please feel free to hit me up via the communication tool of your
-        choosing (<StyledLink className="b" href="mailto:hi@jessestuart.com">
-          Email
-        </StyledLink>,{' '}
-        <StyledLink
-          className="b"
-          href="https://https://twitter.com/jesse_stuart/"
-        >
-          Twitter,{' '}
-        </StyledLink>
-        <StyledLink className="b" href="https://github.com/jessestuart">
-          Github
-        </StyledLink>) if you'd like to chat.
+        choosing (
+        <a href="mailto:hi@jessestuart.com">
+          <StyledLink className="b">Email</StyledLink>
+        </a>,
+        <a href="https://https://twitter.com/jesse_stuart/">
+          <StyledLink className="b">Twitter,</StyledLink>
+        </a>
+        <a href="https://github.com/jessestuart">
+          <StyledLink className="b">Github</StyledLink>
+        </a>
+        ) if you'd like to chat.
       </p>
       <ul className="list ma0">
         <PortfolioItem
