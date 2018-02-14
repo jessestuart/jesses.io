@@ -1,7 +1,8 @@
+/* @flow */
 import React from 'react'
 import styled from 'styled-components'
 
-const ImageZoomGrid = styled.div`
+const StyledImageZoomGrid = styled.div`
   display: grid;
   grid-gap: 10px;
   grid-auto-rows: minmax(200px, auto);
@@ -13,5 +14,12 @@ const ImageZoomGrid = styled.div`
   }
 `
 
-// eslint-disable-next-line react/display-name
-export default ({ children }) => <ImageZoomGrid>{children}</ImageZoomGrid>
+type Props = {
+  children?: React.Node,
+}
+
+const ImageZoomGrid = ({ children }: Props) => (
+  <StyledImageZoomGrid>{children}</StyledImageZoomGrid>
+)
+
+export default ImageZoomGrid

@@ -141,12 +141,16 @@ exports[`Render Profile component. Render Profile component. 1`] = `
         className="dib nowrap ml2"
       >
         I contain 
-        <span
-          className="StyledLink-khUpca jZqCYV"
+        <a
           href="http://jstu.art/ojNe"
         >
-          multitudes
-        </span>
+          <span
+            className="StyledLink-khUpca jZqCYV"
+            href="http://jstu.art/ojNe"
+          >
+            multitudes
+          </span>
+        </a>
         .
       </span>
     </h2>
@@ -283,20 +287,28 @@ exports[`Render Profile component. Render Profile component. 1`] = `
         >
           Published
            
-          <span
-            className="StyledLink-khUpca jZqCYV"
+          <a
             href="http://jstu.art/oijk"
           >
-            NLP researcher
-          </span>
+            <span
+              className="StyledLink-khUpca jZqCYV"
+              href="http://jstu.art/oijk"
+            >
+              NLP researcher
+            </span>
+          </a>
           , and
         </span>
-        <span
-          className="StyledLink-khUpca jZqCYV"
+        <a
           href="http://jstu.art/oj1g"
         >
-          USPO Patent holder
-        </span>
+          <span
+            className="StyledLink-khUpca jZqCYV"
+            href="http://jstu.art/oj1g"
+          >
+            USPO Patent holder
+          </span>
+        </a>
         .
       </span>
       <span
@@ -509,12 +521,16 @@ exports[`Render Profile component. Render Profile component. 1`] = `
       <span
         className="f4 fw3 dib tr lh-copy"
       >
-        <span
-          className="StyledLink-khUpca jZqCYV"
+        <a
           href="http://jstu.art/ojVB"
         >
-          French translator
-        </span>
+          <span
+            className="StyledLink-khUpca jZqCYV"
+            href="http://jstu.art/ojVB"
+          >
+            French translator
+          </span>
+        </a>
          
         by night.
       </span>

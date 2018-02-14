@@ -1,7 +1,10 @@
+/* @flow */
 import React from 'react'
 import ImageZoom from 'react-medium-image-zoom'
 import _ from 'lodash'
+import fp from 'lodash/fp'
 import { DateTime } from 'luxon'
+import type { GatsbyImage } from '../../types/gatsby-image'
 
 import {
   ImageZoomGrid,
@@ -9,12 +12,32 @@ import {
   PhotographySectionHeader,
 } from '.'
 
-const PhotographyGridSection = ({ datetime, images, slug }: Props) =>
-  _.isNil(images) ? null : (
+type Props = {
+  datetime: DateTime,
+  images: Array<GatsbyImage>,
+  slug: string,
+  isPreview: boolean,
+}
+
+const PhotographyGridSection = ({
+  datetime,
+  images,
+  slug,
+  isPreview = true,
+}: Props) => {
+  if (_.isNil(images)) {
+    return
+  }
+
+  const sortedImages =
+    // Sort images by date created, with most recent appearing first.
+    _.flow(fp.sortBy('EXIF.DateTimeOriginal'), fp.reverse)(images)
+
+  return (
     <section className="center flex flex-column justify-center pv5 w-75">
       <PhotographySectionHeader datetime={datetime} href={slug} />
       <ImageZoomGrid>
-        {images.map(image => (
+        {sortedImages.map(image => (
           <ImageZoomGridElement key={image.src} aspectRatio={image.aspectRatio}>
             <ImageZoom image={{ src: image.src }} />
           </ImageZoomGridElement>
@@ -22,11 +45,6 @@ const PhotographyGridSection = ({ datetime, images, slug }: Props) =>
       </ImageZoomGrid>
     </section>
   )
-
-type Props = {
-  datetime: DateTime,
-  images: Array,
-  slug: String,
 }
 
 export default PhotographyGridSection

@@ -1,26 +1,35 @@
+/* @flow */
 import React from 'react'
-import PropTypes from 'prop-types'
 import { GitMerge } from 'react-feather'
+import styled from 'styled-components'
 
 import StyledLink from '../../components/StyledLink/StyledLink'
 import colors from '../../utils/colors'
 
-const PortfolioItem = ({ link, title }) => (
-  <li className="f4 portfolio-item">
-    <a className="flex items-center" href={link}>
-      <div>
-        <GitMerge className="mr2" size="30px" color={colors.secondary.light9} />
-      </div>
-      <p className="fw7">
-        <StyledLink>{title} </StyledLink>
-      </p>
+type Props = {
+  link: string,
+  title: string,
+}
+
+const GitMergeStyled = styled.div`
+  transition: all 500ms;
+  stroke: ${colors.primary.dark5};
+  &:hover {
+    stroke: ${colors.secondary.light8};
+  }
+`
+
+const PortfolioItem = ({ link, title }: Props) => (
+  <li className="f4 portfolio-item flex items-center mb2">
+    <a href={link}>
+      <GitMergeStyled>
+        <GitMerge className="mr2" size="30px" color="inherit" />
+      </GitMergeStyled>
     </a>
+    <StyledLink className="fw7 f4" href={link}>
+      {title}
+    </StyledLink>
   </li>
 )
-
-PortfolioItem.propTypes = {
-  link: PropTypes.string.isRequired,
-  title: PropTypes.string.isRequired,
-}
 
 export default PortfolioItem

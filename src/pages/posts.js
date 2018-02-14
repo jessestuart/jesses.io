@@ -1,17 +1,12 @@
 import React, { PureComponent } from 'react'
 import _ from 'lodash'
 
-import { BlogHeader, BlogNoPosts } from '../components/Blog'
+import { BlogHeader } from '../components/Blog'
 
 class BlogIndex extends PureComponent {
   render() {
     const { props } = this
-    const siteTitle = _.get(props, 'data.site.siteMetadata.title')
     const posts = _.get(props, 'data.allMarkdownRemark.edges')
-
-    if (!posts) {
-      return <BlogNoPosts siteTitle={siteTitle} />
-    }
 
     return (
       <div className="bg-near-white flex-body-expand pv5 lh-copy">

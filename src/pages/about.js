@@ -1,12 +1,14 @@
+/* @flow */
 import React from 'react'
 import { PortfolioItem } from '../components/Portfolio'
+import { StyledLink } from '../components/StyledLink'
 
 import '../styles/base.css'
 
 import Logo from '../../src/components/Icons/logo_dark.svg'
 
 const CV = () => (
-  <div className="bg-near-white black-80 flex justify-center flex-body-expand pv5">
+  <div className="lato bg-near-white black-80 flex justify-center flex-body-expand pv5 lh-title">
     <section className="center flex-body-expand w-50-ns w-75">
       <div className="center flex items-center justify-center">
         <img src={Logo} style={{ maxHeight: 200 }} />
@@ -17,7 +19,17 @@ const CV = () => (
       </p>
       <p className="lato f4 fw4">
         Please feel free to hit me up via the communication tool of your
-        choosing (Email, Twitter, Github) if you'd like to chat.
+        choosing (
+        <a href="mailto:hi@jessestuart.com">
+          <StyledLink className="b">Email</StyledLink>
+        </a>,
+        <a href="https://https://twitter.com/jesse_stuart/">
+          <StyledLink className="b">Twitter,</StyledLink>
+        </a>
+        <a href="https://github.com/jessestuart">
+          <StyledLink className="b">Github</StyledLink>
+        </a>
+        ) if you'd like to chat.
       </p>
       <ul className="list ma0">
         <PortfolioItem
