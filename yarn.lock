@@ -7009,9 +7009,9 @@ js-base64@^2.1.9:
   version "2.4.3"
   resolved "https://registry.yarnpkg.com/js-base64/-/js-base64-2.4.3.tgz#2e545ec2b0f2957f41356510205214e98fad6582"
 
-js-tachyons@^1.1.0:
-  version "1.1.0"
-  resolved "https://registry.yarnpkg.com/js-tachyons/-/js-tachyons-1.1.0.tgz#b15a12e2b4eafbcabab1a8423fb09a8bdd6ac59a"
+js-tachyons@^1.1.1:
+  version "1.1.1"
+  resolved "https://registry.yarnpkg.com/js-tachyons/-/js-tachyons-1.1.1.tgz#20dd6df045ddec851d5b63a5916ccc21855d87cd"
 
 js-tokens@^3.0.0, js-tokens@^3.0.2:
   version "3.0.2"
