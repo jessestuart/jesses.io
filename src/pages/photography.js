@@ -1,3 +1,4 @@
+/* @flow */
 import React, { Fragment } from 'react'
 import Helmet from 'react-helmet'
 import _ from 'lodash'
@@ -6,11 +7,28 @@ import { DateTime } from 'luxon'
 
 import { PhotographyGridSection } from '../components/Photography'
 
-const PhotographyIndex = ({ data }) => {
+import type { S3ImageAsset } from '../types/s3-image-asset'
+
+type Props = {
+  data: {
+    site: {
+      metadata: {
+        title: string,
+      },
+    },
+    allS3ImageAssets: {
+      edges: Array<S3ImageAsset>,
+    },
+  },
+}
+
+const PhotographyIndex = ({ data }: Props) => {
   const siteTitle = _.get(data, 'site.siteMetadata.title')
-  const imageNodes = _.flow(fp.get('allS3ImageAsset.edges'), fp.map('node'))(
-    data
-  )
+  const imageNodes =
+    // Collect all of the image nodes for each S3ImageAsset resorce into a
+    // single array.
+    _.flow(fp.get('allS3ImageAsset.edges'), fp.map('node'))(data)
+
   const imagesGroupedByDate = _.groupBy(imageNodes, 'EXIF.DateCreatedISO')
   const sortedArrayOfGroupedImages = _.reverse(
     _.sortBy(imagesGroupedByDate, imageGroup =>
@@ -34,6 +52,7 @@ const PhotographyIndex = ({ data }) => {
             <PhotographyGridSection
               datetime={datetime}
               images={linkImages}
+              isPreview={true}
               key={title}
               slug={linkSlug}
             />
@@ -62,7 +81,7 @@ export const pageQuery = graphql`
             DateTimeOriginal
           }
           childImageSharp {
-            sizes(maxWidth: 1024) {
+            sizes(maxWidth: 2048) {
               ...GatsbyImageSharpSizes
             }
           }

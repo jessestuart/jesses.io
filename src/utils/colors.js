@@ -1,4 +1,5 @@
 import gray from 'gray-percentage'
+import color from 'onecolor'
 
 const colors = {
   accent: 'rgba(50, 0, 50, 0.8)',
@@ -73,5 +74,16 @@ const colors = {
     calm: gray(46, 270),
   },
 }
+
+const defaultHover: string = color(colors.secondary.light7)
+  .alpha(0.8)
+  .cssa()
+
+const defaultLink: string = color(colors.primary.main)
+  .alpha(0.8)
+  .cssa()
+
+colors.defaultHover = defaultHover
+colors.defaultLink = defaultLink
 
 export default colors

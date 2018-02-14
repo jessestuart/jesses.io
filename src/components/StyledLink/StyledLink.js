@@ -1,15 +1,6 @@
 /* @flow */
 import styled from 'styled-components'
 import colors from '../../utils/colors'
-import color from 'onecolor'
-
-const defaultHoverColor: string = color(colors.secondary.light7)
-  .alpha(0.8)
-  .cssa()
-
-const defaultLinkColor: string = color(colors.primary.main)
-  .alpha(0.8)
-  .cssa()
 
 type Props = {
   linkColor?: string,
@@ -17,13 +8,13 @@ type Props = {
   href?: string,
 }
 
-const generateUnderlineStyles = ({ hoverColor, href, linkColor }: Props) => `
-  border-bottom: 2px solid ${linkColor || defaultLinkColor};
+const generateUnderlineStyles = ({ hoverColor, linkColor }) => `
+  border-bottom: 2px solid ${linkColor || colors.defaultLink};
   position: relative;
   text-decoration: none;
 
   &::before {
-    background-color: ${hoverColor || defaultHoverColor};
+    background-color: ${hoverColor || colors.defaultHover};
     bottom: -2px;
     content: '';
     height: 2px;
@@ -41,5 +32,5 @@ const generateUnderlineStyles = ({ hoverColor, href, linkColor }: Props) => `
 `
 
 export default styled.span`
-  ${props => generateUnderlineStyles(props)};
+  ${(props: Props) => generateUnderlineStyles(props)};
 `

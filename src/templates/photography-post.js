@@ -24,9 +24,10 @@ class PhotographyPostTemplate extends Component {
       <div className="bg-light-gray black-80 w-100 flex-body-expand">
         <Helmet title={title} />
         <PhotographyGridSection
-          key={pathname}
           datetime={datetime}
           images={images}
+          isPreview={false}
+          key={pathname}
         />
       </div>
     )
@@ -46,7 +47,7 @@ export const pageQuery = graphql`
       edges {
         node {
           childImageSharp {
-            sizes(maxWidth: 1024) {
+            sizes {
               ...GatsbyImageSharpSizes
             }
           }
