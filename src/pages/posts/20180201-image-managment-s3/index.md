@@ -42,7 +42,8 @@ AWS infrastructure components are required to wire everything together (IAM, S3,
 CloudWatch, etc). And for declaring and maintaining these resources, nothing
 beats Hashicorp's [Terraform][terraform] -- it has its shortcomings, but it's
 well worth checking out if you're interested in the declarative
-infrastructure-as-code.
+infrastructure-as-code scene. It's not too difficult to pick up, and I've found
+it much easier to manage than configuring AWS through the web UI.
 
 Luckily, Apex integrates well with Terraform -- the `apex infra` command
 essentially proxies all commands directly while exposing a few Apex-provided
