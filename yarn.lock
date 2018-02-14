@@ -4982,9 +4982,9 @@ gatsby-transformer-sharp@^1.6.19:
     fs-extra "^4.0.2"
     image-size "^0.6.0"
 
-gatsby@^1.9.194:
-  version "1.9.194"
-  resolved "https://registry.yarnpkg.com/gatsby/-/gatsby-1.9.194.tgz#6cc32ed3ab408ba25e6150c0571c3153924e8055"
+gatsby@^1.9.197:
+  version "1.9.197"
+  resolved "https://registry.yarnpkg.com/gatsby/-/gatsby-1.9.197.tgz#6b35aaff791e82b674146218f9f8c56ecaf229ea"
   dependencies:
     async "^2.1.2"
     babel-code-frame "^6.22.0"
@@ -5018,6 +5018,7 @@ gatsby@^1.9.194:
     express "^4.14.0"
     express-graphql "^0.6.6"
     extract-text-webpack-plugin "^1.0.1"
+    fast-levenshtein "~2.0.4"
     file-loader "^0.9.0"
     flat "^2.0.1"
     friendly-errors-webpack-plugin "^1.6.1"
