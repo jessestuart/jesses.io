@@ -10376,9 +10376,9 @@ react-cosmos-state-proxy@^3.6.1:
     prop-types "^15.5.10"
     react-cosmos-shared "^3.6.1"
 
-react-cosmos-voyager2@^3.6.1:
-  version "3.6.1"
-  resolved "https://registry.yarnpkg.com/react-cosmos-voyager2/-/react-cosmos-voyager2-3.6.1.tgz#b30b46166933a5c88399ade4e99e258008f7844e"
+react-cosmos-voyager2@^3.7.0:
+  version "3.7.0"
+  resolved "https://registry.yarnpkg.com/react-cosmos-voyager2/-/react-cosmos-voyager2-3.7.0.tgz#e594c5c746ee11a41fb9f44c061141a222652466"
   dependencies:
     babel-types "^6.26.0"
     babylon "^6.18.0"
@@ -10396,9 +10396,9 @@ react-cosmos-voyager@^3.6.1:
     glob "^7.1.1"
     traverse "^0.6.6"
 
-react-cosmos@^3.6.1:
-  version "3.6.1"
-  resolved "https://registry.yarnpkg.com/react-cosmos/-/react-cosmos-3.6.1.tgz#5afb2ba429e797e8127ff771c734ad437ded219e"
+react-cosmos@^3.7.0:
+  version "3.7.0"
+  resolved "https://registry.yarnpkg.com/react-cosmos/-/react-cosmos-3.7.0.tgz#50e6195069226d9d54ce666eae234303f562cfa5"
   dependencies:
     express "^4.15.4"
     fs-extra "^4.0.1"
@@ -10411,7 +10411,7 @@ react-cosmos@^3.6.1:
     react-cosmos-playground "^3.6.1"
     react-cosmos-shared "^3.6.1"
     react-cosmos-voyager "^3.6.1"
-    react-cosmos-voyager2 "^3.6.1"
+    react-cosmos-voyager2 "^3.7.0"
     react-dev-utils "^4.2.1"
     react-error-overlay "^4.0.0"
     resolve-from "^3.0.0"

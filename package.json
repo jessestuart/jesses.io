@@ -74,7 +74,7 @@
     "prop-types": "^15.6.0",
     "raven-js": "^3.22.3",
     "react-calendar-heatmap": "^1.6.3",
-    "react-cosmos": "^3.6.1",
+    "react-cosmos": "^3.7.0",
     "react-feather": "^1.0.8",
     "react-headroom": "^2.2.2",
     "react-medium-image-zoom": "^3.0.10",
