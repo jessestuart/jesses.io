@@ -6,28 +6,32 @@ pipeline:
     restore: true
     mount:
       - ./node_modules
+      - ./public
+      - ./.cache
     volumes:
       - /tmp/cache:/cache
 
   install-dependencies:
-    image: node:9
+    image: node:latest
     commands:
       - yarn install
+
+  lint:
+    image: node:latest
+    commands:
+      - yarn lint
+
+  build-site:
+    image: node:latest
+    commands:
+      - yarn build
 
   rebuild-cache:
     image: drillster/drone-volume-cache
     rebuild: true
     mount:
       - ./node_modules
+      - ./public
+      - ./.cache
     volumes:
       - /tmp/cache:/cache
-
-  lint:
-    image: node:9
-    commands:
-      - yarn lint
-
-  build-site:
-    image: node:9
-    commands:
-      - yarn build
