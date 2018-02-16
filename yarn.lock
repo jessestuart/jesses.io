@@ -7816,9 +7816,9 @@ ltcdr@^2.2.1:
   version "2.2.1"
   resolved "https://registry.yarnpkg.com/ltcdr/-/ltcdr-2.2.1.tgz#5ab87ad1d4c1dab8e8c08bbf037ee0c1902287cf"
 
-luxon@^0.4.0:
-  version "0.4.0"
-  resolved "https://registry.yarnpkg.com/luxon/-/luxon-0.4.0.tgz#e7146ce52a6db7e82448438827860092d75bb8d6"
+luxon@^0.5.0:
+  version "0.5.0"
+  resolved "https://registry.yarnpkg.com/luxon/-/luxon-0.5.0.tgz#965fa3e0b99ecb5e4e80736099d575db08de0891"
   dependencies:
     full-icu "^1.2.0"
 
