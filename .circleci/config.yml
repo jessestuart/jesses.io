@@ -1,7 +1,7 @@
 ---
 version: 2
 jobs:
-  build:
+  install_dependencies:
     working_directory: ~/jessestuart
     docker:
       - image: circleci/node:9
@@ -28,25 +28,8 @@ jobs:
           key: dependencies-{{ checksum "package.json" }}
 
       - run:
-          name: Compile static site.
-          command: yarn build
-
-      - run:
           name: Upload Greenkeeper lockfile.
           command: yarn run greenkeeper-lockfile-upload
-
-      - save_cache:
-          paths:
-            - public/
-          key: public-dir-{{ .Revision }}
-
-      - run:
-          name: Compress and package static resources into a tarball.
-          command: |
-            tar czf "jessestuart.tar.gz" public/
-
-      - store_artifacts:
-          path: "jessestuart.tar.gz"
 
   lint:
     working_directory: ~/jessestuart
@@ -99,6 +82,39 @@ jobs:
       - run:
           name: Run Jest tests & upload coverage to Codecov.
           command: yarn test:coverage && yarn codecov -t $CODECOV_TOKEN
+
+  build:
+    working_directory: ~/jessestuart
+    docker:
+      - image: circleci/node:9
+    steps:
+      - checkout
+
+      - restore_cache:
+          keys:
+            - dependencies-{{ checksum "package.json" }}
+            - dependencies-
+
+      - run:
+          name: Install dependencies.
+          command: yarn -s --no-progress
+
+      - run:
+          name: Compile static site.
+          command: yarn build
+
+      - save_cache:
+          paths:
+            - public/
+          key: public-dir-{{ .Revision }}
+
+      - run:
+          name: Compress and package static resources into a tarball.
+          command: |
+            tar czf "jessestuart.tar.gz" public/
+
+      - store_artifacts:
+          path: "jessestuart.tar.gz"
 
   # ---------------------------------------------------------------------------
 
@@ -181,9 +197,16 @@ workflows:
   version: 2
   main:
     jobs:
-      - build
-      - lint
-      - test
+      - install_dependencies
+      - build:
+          requires:
+            - install_dependencies
+      - lint:
+          requires:
+            - install_dependencies
+      - test:
+          requires:
+            - install_dependencies
       - push_image:
           requires:
             - build
