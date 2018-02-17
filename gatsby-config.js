@@ -1,3 +1,5 @@
+const IS_CI = process.env.NODE_ENV === 'ci'
+
 const siteMetadata = {
   author: 'Jesse Stuart',
   description: '',
@@ -55,8 +57,8 @@ const googleAnalyticsPlugin = {
 const sourceS3 = {
   resolve: 'gatsby-source-s3',
   options: {
-    bucketName: 'js-photos',
-    domain: 'dsud7k9s6taft.cloudfront.net',
+    bucketName: IS_CI ? 'js-photos-dev' : 'jesse.pics',
+    domain: IS_CI ? null : 'jesse.pics',
     protocol: 'https',
   },
 }
@@ -64,7 +66,7 @@ const sourceS3 = {
 const sentryPlugin = {
   resolve: 'gatsby-plugin-sentry',
   options: {
-    dsn: 'https://08ceff9135074b54882d704b4af1eec0@sentry.jessecod.es/2',
+    dsn: 'https://7f22c2cad4c847429110f1657836e280@sentry.jesses.io/2',
   },
 }
 

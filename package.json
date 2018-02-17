@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "author": "Jesse Stuart <hi@jessestuart.com>",
   "dependencies": {
-    "gatsby": "^1.9.201",
+    "gatsby": "^1.9.202",
     "gatsby-image": "^1.0.37",
     "gatsby-link": "^1.6.37",
     "gatsby-plugin-feed": "^1.3.18",
@@ -65,7 +65,7 @@
     "lint-staged": "^6.1.1",
     "lodash": "^4.17.5",
     "onecolor": "^3.0.5",
-    "postcss": "^6.0.18",
+    "postcss": "^6.0.19",
     "postcss-cssnext": "^3.1.0",
     "postcss-custom-media": "^6.0.0",
     "postcss-import": "^11.1.0",
@@ -81,7 +81,6 @@
     "react-test-renderer": "^16.2.0",
     "rimraf": "^2.6.2",
     "scrollprogress": "^3.0.2",
-    "serve": "^6.4.9",
     "snyk": "^1.69.7",
     "styled-components": "^3.1.6",
     "stylelint": "^8.4.0",
@@ -127,6 +126,7 @@
   },
   "scripts": {
     "build": "yarn build:s3-plugin && gatsby build",
+    "build:ci": "NODE_ENV=ci yarn build",
     "build:s3-plugin":
       "cd ./plugins/gatsby-source-s3 && yarn && yarn build && cd ../../",
     "clean": "rm -rf node_modules/ .cache/ && yarn -s",
