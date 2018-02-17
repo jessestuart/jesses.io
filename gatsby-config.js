@@ -1,3 +1,5 @@
+const IS_CI = process.env.NODE_ENV === 'ci'
+
 const siteMetadata = {
   author: 'Jesse Stuart',
   description: '',
@@ -55,8 +57,8 @@ const googleAnalyticsPlugin = {
 const sourceS3 = {
   resolve: 'gatsby-source-s3',
   options: {
-    bucketName: 'js-photos',
-    domain: 'dsud7k9s6taft.cloudfront.net',
+    bucketName: IS_CI ? 'js-photos-dev' : 'jesse.pics',
+    domain: IS_CI ? null : 'jesse.pics',
     protocol: 'https',
   },
 }

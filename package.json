@@ -127,6 +127,7 @@
   },
   "scripts": {
     "build": "yarn build:s3-plugin && gatsby build",
+    "build:ci": "NODE_ENV=ci yarn build",
     "build:s3-plugin":
       "cd ./plugins/gatsby-source-s3 && yarn && yarn build && cd ../../",
     "clean": "rm -rf node_modules/ .cache/ && yarn -s",

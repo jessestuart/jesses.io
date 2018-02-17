@@ -24,7 +24,7 @@ pipeline:
   build-site:
     image: node:latest
     commands:
-      - yarn build
+      - yarn build:ci
 
   rebuild-cache:
     image: drillster/drone-volume-cache
