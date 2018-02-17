@@ -39,7 +39,10 @@ const PhotographyGridSection = ({
       <ImageZoomGrid>
         {sortedImages.map(image => (
           <ImageZoomGridElement key={image.src} aspectRatio={image.aspectRatio}>
-            <ImageZoom image={{ src: image.src }} />
+            <ImageZoom
+              image={{ src: image.src, srcSet: image.srcSet }}
+              imageZoom={{ src: image.src, srcSet: image.srcSet }}
+            />
           </ImageZoomGridElement>
         ))}
       </ImageZoomGrid>

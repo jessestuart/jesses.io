@@ -101,7 +101,7 @@ jobs:
 
       - run:
           name: Compile static site.
-          command: yarn build
+          command: yarn build:ci
 
       - save_cache:
           paths:
