@@ -1,0 +1,4 @@
+[ver:1,total:60]
+.cirrus.yml:20,1518908400:20,m
+.circleci/config.yml:20,1518908400:20,r
+.drone.yml:20,1518908400:20,r
