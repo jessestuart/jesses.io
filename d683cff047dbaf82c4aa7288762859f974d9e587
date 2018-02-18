@@ -1,0 +1,14 @@
+[ver:1,total:6000]
+src/components/Photography/PhotographyGridSection.js:2007,1518944400:1007,1518948000:700,1518951600:300,m
+src/templates/blog-post.css:750,1518944400:320,1518948000:430,m
+src/pages/posts.js:747,1518948000:747,m
+src/utils/typography.js:658,1518944400:398,1518948000:260,m
+src/components/Blog/BlogHeader.js:502,1518944400:248,1518948000:254,m
+src/pages/photography.js:305,1518944400:30,1518948000:275,m
+src/components/Photography/ImageZoomGrid.js:270,1518948000:60,1518951600:210,m
+src/config/createPages.js:180,1518948000:180,m
+src/components/Photography/PhotographySectionHeader.js:164,1518944400:10,1518948000:154,r
+src/templates/blog-post.js:160,1518944400:130,1518948000:30,m
+src/components/Photography/ImageZoomGridElement.js:150,1518948000:150,m
+src/styles/base.css:77,1518944400:77,r
+src/utils/colors.js:30,1518951600:30,r
