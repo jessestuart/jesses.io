@@ -1,0 +1,17 @@
+[ver:1,total:3960]
+src/components/Photography/PhotographyGridSection.js:1669,1518951600:1439,1518955200:230,m
+src/pages/photography.js:755,1518951600:255,1518955200:500,m
+src/utils/colors.js:390,1518951600:390,m
+src/components/StyledPanel/StyledPanel.js:382,1518951600:52,1518955200:330,m
+src/utils/typography.js:160,1518951600:60,1518955200:100,m
+src/templates/photography-post.js:130,1518951600:80,1518955200:50,m
+package.json:120,1518955200:120,m
+src/components/Photography/PhotographySectionHeader.js:95,1518951600:95,r
+src/components/Photography/ImageZoomGridElement.js:70,1518951600:70,m
+src/components/StyledLink/StyledLink.js:60,1518951600:60,r
+src/components/StyledPanel/index.js:32,1518951600:32,d
+src/types/s3-image-asset.js:30,1518955200:30,r
+src/components/Blog/BlogHeader.js:27,1518951600:27,r
+TODO.md:20,1518955200:20,m
+src/components/StyledLink/index.js:12,1518951600:12,r
+src/components/Photography/ImageZoomGrid.js:8,1518951600:8,r
