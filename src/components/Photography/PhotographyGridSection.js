@@ -1,10 +1,13 @@
 /* @flow */
 import React from 'react'
-import ImageZoom from 'react-medium-image-zoom'
+import Img from 'gatsby-image'
 import _ from 'lodash'
 import fp from 'lodash/fp'
+// import styled from 'styled-components'
 import { DateTime } from 'luxon'
+
 import type { GatsbyImage } from '../../types/gatsby-image'
+import StyledPanel from '../StyledPanel/StyledPanel'
 
 import {
   ImageZoomGrid,
@@ -16,38 +19,75 @@ type Props = {
   datetime: DateTime,
   images: Array<GatsbyImage>,
   slug: string,
-  isPreview: boolean,
 }
 
-const PhotographyGridSection = ({
-  datetime,
-  images,
-  slug,
-  isPreview = true,
-}: Props) => {
-  if (_.isNil(images)) {
+const PhotographyGridSection = ({ datetime, images, slug }: Props) => {
+  if (!images) {
     return
   }
-
-  const sortedImages =
-    // Sort images by date created, with most recent appearing first.
-    _.flow(fp.sortBy('EXIF.DateTimeOriginal'), fp.reverse)(images)
-
+  // const sortedImages = _.flow(
+  //   fp.sortBy('EXIF.DateTimeOriginal'),
+  //   fp.get('childImageSharp.thumbnailSizes')
+  // )(image)
+  const sortedImages = _.sortBy(images, 'EXIF.DateTimeOriginal')
+  console.log({ sortedImages })
   return (
-    <section className="center flex flex-column justify-center pv5 w-75">
+    <StyledPanel>
       <PhotographySectionHeader datetime={datetime} href={slug} />
       <ImageZoomGrid>
-        {sortedImages.map(image => (
-          <ImageZoomGridElement key={image.src} aspectRatio={image.aspectRatio}>
-            <ImageZoom
-              image={{ src: image.src, srcSet: image.srcSet }}
-              imageZoom={{ src: image.src, srcSet: image.srcSet }}
-            />
-          </ImageZoomGridElement>
-        ))}
+        {images.map(image => {
+          console.log({ image })
+          // const thumbnailSizes = _.sortBy(
+          //   // _.get(image, 'childImageSharp.thumbnailSizes'),
+          //   image,
+          //   'EXIF.DateTimeOriginal'
+          // ).map(i => i.childImageSharp.thumbnailSizes)
+          const thumbnailSizes = _.get(image, 'childImageSharp.thumbnailSizes')
+
+          if (!thumbnailSizes) {
+            return
+          }
+
+          return (
+            <ImageZoomGridElement
+              key={thumbnailSizes.src}
+              aspectRatio={thumbnailSizes.aspectRatio}
+            >
+              <Img sizes={thumbnailSizes} />
+            </ImageZoomGridElement>
+          )
+        })}
       </ImageZoomGrid>
-    </section>
+    </StyledPanel>
   )
 }
 
 export default PhotographyGridSection
+
+// export const s3ImageAssetImageFragment = graphql`
+//   fragment S3ImageAsset_image on S3ImageAsset {
+//     id
+//     EXIF {
+//       DateCreatedISO
+//       DateTimeOriginal
+//     }
+//     childImageSharp {
+//       original {
+//         height
+//         width
+//       }
+//       thumbnailSizes: sizes(maxWidth: 512) {
+//         aspectRatio
+//         src
+//         srcSet
+//         sizes
+//       }
+//       largeSizes: sizes(maxWidth: 1024, quality: 75) {
+//         aspectRatio
+//         src
+//         srcSet
+//         sizes
+//       }
+//     }
+//   }
+// `

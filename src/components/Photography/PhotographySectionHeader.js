@@ -12,7 +12,7 @@ type Props = {
 
 const PhotographySectionHeader = ({ datetime, href }: Props) => (
   <Link to={href || '#'}>
-    <StyledLink className="alegreya-sans f2 fw5 header-primary mb2 tr w-100 db">
+    <StyledLink className="alegreya-sans db f2 fw5 header-primary mb3 tr w-100">
       {datetime.toFormat('dd LLLL yyyy')}
     </StyledLink>
   </Link>

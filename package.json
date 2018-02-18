@@ -7,6 +7,7 @@
     "gatsby-image": "^1.0.37",
     "gatsby-link": "^1.6.37",
     "gatsby-plugin-feed": "^1.3.18",
+    "gatsby-plugin-glamor": "^1.6.12",
     "gatsby-plugin-google-analytics": "^1.0.19",
     "gatsby-plugin-lodash": "^1.0.9",
     "gatsby-plugin-netlify": "^1.0.18",
@@ -29,7 +30,8 @@
     "luxon": "^0.5.0",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
-    "react-helmet": "^5.2.0"
+    "react-helmet": "^5.2.0",
+    "react-modal-image": "^2.1.4"
   },
   "devDependencies": {
     "babel-eslint": "^8.2.1",
@@ -76,8 +78,12 @@
     "react-calendar-heatmap": "^1.6.3",
     "react-cosmos": "^3.7.1",
     "react-feather": "^1.0.8",
+    "react-grid-gallery": "^0.4.8",
     "react-headroom": "^2.2.2",
+    "react-icons": "^2.2.7",
+    "react-images": "^0.5.17",
     "react-medium-image-zoom": "^3.0.10",
+    "react-modal": "^3.2.1",
     "react-test-renderer": "^16.2.0",
     "rimraf": "^2.6.2",
     "scrollprogress": "^3.0.2",
@@ -116,7 +122,7 @@
     "*.js": ["prettier --write", "git add -f"],
     "*.json": ["prettier --write", "git add"],
     "*.css": ["prettier --write", "git add"],
-    "*.md": ["yarn lint:text", "git add"]
+    "src/pages/posts/**/*.md": ["yarn lint:text", "git add"]
   },
   "main": "n/a",
   "private": true,
@@ -126,7 +132,7 @@
   },
   "scripts": {
     "build": "yarn build:s3-plugin && gatsby build",
-    "build:ci": "NODE_ENV=ci yarn build",
+    "build:ci": "GATSBY_ENV=ci yarn build",
     "build:s3-plugin":
       "cd ./plugins/gatsby-source-s3 && yarn && yarn build && cd ../../",
     "clean": "rm -rf node_modules/ .cache/ && yarn -s",

@@ -2,6 +2,8 @@ import React, { Component } from 'react'
 import Helmet from 'react-helmet'
 import _ from 'lodash'
 
+import colors from '../utils/colors'
+import StyledPanel from '../components/StyledPanel/StyledPanel'
 import { BlogHeader } from '../components/Blog'
 
 import config from '../../gatsby-config'
@@ -25,7 +27,7 @@ class BlogPostTemplate extends Component {
     const comboTitle = `${title || 'Posts'} | ${siteTitle}`
 
     return (
-      <div className="w-100 bg-near-white black-80 lh-copy pv5">
+      <div className="bg-light-gray black-80 lh-copy pa3-ns pv4 w-100">
         <Helmet title={comboTitle}>
           <meta itemProp="name" content={comboTitle} />
           <meta name="twitter:title" content={comboTitle} />
@@ -37,16 +39,14 @@ class BlogPostTemplate extends Component {
             content={new Date(date).toISOString()}
           />
         </Helmet>
-        <section className="mw7 center flex-body-expand">
+        <div className="mw7-ns center">
           <BlogHeader date={date} slug={pathname} title={title} />
-          <article className="center justify mw-100">
-            <div
-              className="f4 fw5"
-              id="remark-post"
-              dangerouslySetInnerHTML={{ __html: post.html }}
-            />
-          </article>
-        </section>
+          <article
+            className="center justify mw-100 f4 fw5"
+            id="remark-post"
+            dangerouslySetInnerHTML={{ __html: post.html }}
+          />
+        </div>
       </div>
     )
   }

@@ -17,13 +17,12 @@ const defaultLinkColor = color(colors.secondary.light7)
   .alpha(0.8)
   .cssa()
 
-const defaultHoverColor = color(colors.primary.main)
-  .alpha(0.8)
-  .cssa()
+// const defaultHoverColor = color(colors.primary.main)
+//   .alpha(0.8)
+//   .cssa()
 
 const pseudoUnderline = {
   textDecoration: 'none',
-  fontWeight: 'bold',
   borderBottom: `2px solid ${defaultLinkColor}`,
   position: 'relative',
 }
@@ -114,29 +113,6 @@ const options = {
     '.pseudo-underline': {
       ...pseudoUnderline,
       fontFamily: options.headerFontFamily.join(','),
-    },
-    'article a': {
-      ...pseudoUnderline,
-      color: colors.accent,
-    },
-    'article a::before': {
-      '-webkit-transform': 'scaleX(0)',
-      '-webkit-transition': 'all 0.25s ease-in-out 0s',
-      backgroundColor: `${defaultHoverColor}`,
-      bottom: '-2px',
-      content: '',
-      height: '2px',
-      left: '0',
-      position: 'absolute',
-      transform: 'scaleX(0)',
-      transition: 'all 0.25s ease-in-out 0s',
-      visibility: 'hidden',
-      width: '100%',
-    },
-    'article a:hover::before': {
-      '-webkit-transform': 'scaleX(1)',
-      transform: 'scaleX(1)',
-      visibility: 'visible',
     },
     'article a.anchor': {
       borderBottom: 'none',

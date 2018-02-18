@@ -21,7 +21,7 @@ const Layout = ({ children, location }: Props) => (
       <meta property="og:url" content={config.siteMetadata.siteUrl} />
     </Helmet>
     <SiteHeader location={location} />
-    <div className="w-100 flex-body-expand">{children()}</div>
+    <div className="flex-body-expand">{children()}</div>
     <SiteFooter />
   </Fragment>
 )
