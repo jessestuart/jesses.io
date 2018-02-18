@@ -1,0 +1,6 @@
+[ver:1,total:540]
+src/components/Photography/PhotographySectionHeader.js:240,1518969600:240,r
+src/components/StyledPanel/StyledPanel.js:180,1518969600:180,r
+src/config/onCreateNode.js:60,1518969600:60,r
+plugins/gatsby-source-s3/src/source-nodes.js:45,1518969600:45,r
+plugins/gatsby-source-s3/src/extend-node-type.js:15,1518969600:15,r
