@@ -3,3 +3,15 @@ src/components/Photography/PhotographyGridSection.js:30,1518915600:30,m
 .git/COMMIT_EDITMSG:30,1518915600:30,r
 .git/rebase-merge/git-rebase-todo:30,1518915600:30,r
 src/config/createPages.js:30,1518915600:30,r
+
+[ver:1,total:5940]
+src/pages/photography.js:2956,1518832800:2106,1518843600:650,1518847200:170,1518850800:30,m
+src/components/Photography/PhotographyGridSection.js:1760,1518832800:450,1518843600:890,1518847200:360,1518850800:60,m
+TODO.md:510,1518847200:480,1518850800:30,m
+package.json:210,1518843600:60,1518850800:150,r
+src/templates/photography-post.js:204,1518832800:204,r
+src/components/Profile/ProfileStyledLink.js:90,1518829200:30,1518832800:60,r
+src/components/Photography/ImageZoomGridElement.js:90,1518843600:80,1518847200:10,r
+.textlintrc:60,1518850800:60,r
+src/types/gatsby-image.js:30,1518850800:30,r
+src/pages/about.js:30,1518829200:30,r
