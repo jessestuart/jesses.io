@@ -1,0 +1,7 @@
+[ver:1,total:1560]
+gatsby-config.js:540,1518962400:540,m
+package.json:360,1518962400:360,m
+plugins/gatsby-source-s3/src/source-nodes.js:270,1518962400:270,r
+src/pages/photography.js:236,1518962400:236,m
+src/components/Photography/PhotographyGridSection.js:114,1518962400:114,m
+src/templates/photography-post.js:40,1518962400:40,r
