@@ -1,0 +1,10 @@
+[ver:1,total:4860]
+src/components/StyledPanel/StyledPanel.js:1367,1518994800:1367,m
+src/components/Photography/PhotographyGridSection.js:1094,1518994800:189,1519002000:905,m
+src/templates/blog-post.js:926,1518994800:277,1518998400:484,1519002000:165,m
+src/templates/photography-post.js:910,1518998400:200,1519002000:710,m
+src/pages/photography.js:237,1518994800:237,m
+src/pages/posts.js:171,1518994800:90,1518998400:36,1519002000:45,m
+gatsby-config.js:60,1518994800:60,m
+src/templates/blog-post.css:60,1518994800:60,r
+src/layouts/index.js:35,1519002000:35,r
