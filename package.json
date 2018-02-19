@@ -133,8 +133,7 @@
   "scripts": {
     "build": "yarn build:s3-plugin && gatsby build",
     "build:ci": "GATSBY_ENV=ci yarn build",
-    "build:s3-plugin":
-      "cd ./plugins/gatsby-source-s3 && yarn && yarn build && cd ../../",
+    "build:s3-plugin": "cd ./plugins/gatsby-source-s3 && yarn && cd ../../",
     "clean": "rm -rf node_modules/ .cache/ && yarn -s",
     "dev": "gatsby develop",
     "dev:install": "yarn -s && gatsby develop",

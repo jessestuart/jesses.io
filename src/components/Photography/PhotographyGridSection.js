@@ -2,9 +2,8 @@
 import React from 'react'
 import Img from 'gatsby-image'
 import _ from 'lodash'
-import fp from 'lodash/fp'
-// import styled from 'styled-components'
 import { DateTime } from 'luxon'
+// import styled from 'styled-components'
 
 import type { GatsbyImage } from '../../types/gatsby-image'
 import StyledPanel from '../StyledPanel/StyledPanel'
@@ -25,25 +24,14 @@ const PhotographyGridSection = ({ datetime, images, slug }: Props) => {
   if (!images) {
     return
   }
-  // const sortedImages = _.flow(
-  //   fp.sortBy('EXIF.DateTimeOriginal'),
-  //   fp.get('childImageSharp.thumbnailSizes')
-  // )(image)
   const sortedImages = _.sortBy(images, 'EXIF.DateTimeOriginal')
-  console.log({ sortedImages })
+
   return (
     <StyledPanel>
       <PhotographySectionHeader datetime={datetime} href={slug} />
       <ImageZoomGrid>
-        {images.map(image => {
-          console.log({ image })
-          // const thumbnailSizes = _.sortBy(
-          //   // _.get(image, 'childImageSharp.thumbnailSizes'),
-          //   image,
-          //   'EXIF.DateTimeOriginal'
-          // ).map(i => i.childImageSharp.thumbnailSizes)
+        {sortedImages.map(image => {
           const thumbnailSizes = _.get(image, 'childImageSharp.thumbnailSizes')
-
           if (!thumbnailSizes) {
             return
           }

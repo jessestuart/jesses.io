@@ -4,12 +4,14 @@ const atImport = require('postcss-import')
 const cssnested = require('postcss-nested')
 const cssnext = require('postcss-cssnext')
 
-const modifyWebpackConfig = ({ config }, stage) =>
+const modifyWebpackConfig = ({ config }, stage) => {
   config.merge({
-    postcss: [atImport(), cssnested, cssnext()],
+    postcss: () => [atImport(), cssnested, cssnext()],
     resolve: {
       root: [path.resolve('./src')],
     },
   })
+  return config
+}
 
 module.exports = modifyWebpackConfig

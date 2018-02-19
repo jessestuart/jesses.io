@@ -2,8 +2,8 @@ import React, { Component } from 'react'
 import Helmet from 'react-helmet'
 import _ from 'lodash'
 
-import colors from '../utils/colors'
-import StyledPanel from '../components/StyledPanel/StyledPanel'
+// import colors from '../utils/colors'
+// import StyledPanel from '../components/StyledPanel/StyledPanel'
 import { BlogHeader } from '../components/Blog'
 
 import config from '../../gatsby-config'
