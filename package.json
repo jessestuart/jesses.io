@@ -84,7 +84,7 @@
     "snyk": "^1.69.7",
     "styled-components": "^3.1.6",
     "stylelint": "^9.0.0",
-    "stylelint-config-standard": "^18.0.0",
+    "stylelint-config-standard": "^18.1.0",
     "textlint": "^10.1.4",
     "textlint-rule-apostrophe": "^1.0.0",
     "textlint-rule-diacritics": "^0.0.2",
