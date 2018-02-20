@@ -2,8 +2,6 @@ import React, { Component } from 'react'
 import Helmet from 'react-helmet'
 import _ from 'lodash'
 
-// import colors from '../utils/colors'
-// import StyledPanel from '../components/StyledPanel/StyledPanel'
 import { BlogHeader } from '../components/Blog'
 
 import config from '../../gatsby-config'
@@ -27,7 +25,10 @@ class BlogPostTemplate extends Component {
     const comboTitle = `${title || 'Posts'} | ${siteTitle}`
 
     return (
-      <div className="bg-light-gray black-80 lh-copy pa3-ns pv4 w-100">
+      <div
+        className="black-80 lh-copy pa3 pv4 w-100"
+        style={{ background: '#FBFAFC' }}
+      >
         <Helmet title={comboTitle}>
           <meta itemProp="name" content={comboTitle} />
           <meta name="twitter:title" content={comboTitle} />
