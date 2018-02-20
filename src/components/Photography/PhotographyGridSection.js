@@ -1,9 +1,9 @@
 /* @flow */
-import React from 'react'
+import React, { Component } from 'react'
 import Img from 'gatsby-image'
 import _ from 'lodash'
 import { DateTime } from 'luxon'
-// import styled from 'styled-components'
+import Lightbox from 'react-image-lightbox'
 
 import type { GatsbyImage } from '../../types/gatsby-image'
 import StyledPanel from '../StyledPanel/StyledPanel'
@@ -20,62 +20,100 @@ type Props = {
   slug: string,
 }
 
-const PhotographyGridSection = ({ datetime, images, slug }: Props) => {
-  if (!images) {
-    return
+const initialState = {
+  isLightboxOpen: false,
+  lightboxImages: [],
+  index: 0,
+}
+
+type ToggleLightboxOptions = {
+  index?: number,
+  isLightboxOpen: boolean,
+  lightboxImages?: Array<string>,
+}
+
+class PhotographyGridSection extends Component<Props> {
+  state = { ...initialState }
+
+  toggleLightbox({
+    index,
+    isLightboxOpen,
+    lightboxImages,
+  }: ToggleLightboxOptions) {
+    const images = lightboxImages || this.state.lightboxImages
+    this.setState({
+      index,
+      isLightboxOpen,
+      lightboxImages: images,
+      lightboxSrc: images[index],
+      nextImageSrc: images[(index + 1) % images.length],
+      prevImageSrc: images[(index - 1) % images.length],
+    })
   }
-  const sortedImages = _.sortBy(images, 'EXIF.DateTimeOriginal')
 
-  return (
-    <StyledPanel>
-      <PhotographySectionHeader datetime={datetime} href={slug} />
-      <ImageZoomGrid>
-        {sortedImages.map(image => {
-          const thumbnailSizes = _.get(image, 'childImageSharp.thumbnailSizes')
-          if (!thumbnailSizes) {
-            return
-          }
+  render() {
+    const { datetime, images, slug } = this.props
+    if (_.isEmpty(images)) {
+      return
+    }
 
-          return (
-            <ImageZoomGridElement
-              key={thumbnailSizes.src}
-              aspectRatio={thumbnailSizes.aspectRatio}
-            >
-              <Img sizes={thumbnailSizes} />
-            </ImageZoomGridElement>
-          )
-        })}
-      </ImageZoomGrid>
-    </StyledPanel>
-  )
+    const sortedImages = _.sortBy(images, 'EXIF.DateTimeOriginal')
+    const lightboxImages = _.map(sortedImages, 'childImageSharp.largeSizes.src')
+
+    return (
+      <StyledPanel>
+        <PhotographySectionHeader datetime={datetime} href={slug} />
+        <ImageZoomGrid>
+          {sortedImages.map((image, index) => {
+            const thumbnailSizes = _.get(
+              image,
+              'childImageSharp.thumbnailSizes'
+            )
+            if (_.isEmpty(thumbnailSizes)) {
+              return
+            }
+
+            return (
+              <ImageZoomGridElement
+                key={thumbnailSizes.src}
+                onClick={() =>
+                  this.toggleLightbox({
+                    index,
+                    isLightboxOpen: !this.state.isLightboxOpen,
+                    lightboxImages,
+                  })
+                }
+                aspectRatio={thumbnailSizes.aspectRatio}
+              >
+                <Img sizes={thumbnailSizes} className="pointer" />
+              </ImageZoomGridElement>
+            )
+          })}
+        </ImageZoomGrid>
+        {this.state.isLightboxOpen ? (
+          <Lightbox
+            enableZoom={false}
+            mainSrc={this.state.lightboxSrc}
+            nextSrc={this.state.nextImageSrc}
+            prevSrc={this.state.prevImageSrc}
+            onCloseRequest={() => this.setState({ isLightboxOpen: false })}
+            onMovePrevRequest={() =>
+              this.toggleLightbox({
+                index: this.state.index - 1,
+                isLightboxOpen: true,
+              })
+            }
+            onMoveNextRequest={() =>
+              this.toggleLightbox({
+                index: this.state.index + 1,
+                isLightboxOpen: true,
+              })
+            }
+          />
+        ) : null}
+      </StyledPanel>
+    )
+  }
 }
 
 export default PhotographyGridSection
-
-// export const s3ImageAssetImageFragment = graphql`
-//   fragment S3ImageAsset_image on S3ImageAsset {
-//     id
-//     EXIF {
-//       DateCreatedISO
-//       DateTimeOriginal
-//     }
-//     childImageSharp {
-//       original {
-//         height
-//         width
-//       }
-//       thumbnailSizes: sizes(maxWidth: 512) {
-//         aspectRatio
-//         src
-//         srcSet
-//         sizes
-//       }
-//       largeSizes: sizes(maxWidth: 1024, quality: 75) {
-//         aspectRatio
-//         src
-//         srcSet
-//         sizes
-//       }
-//     }
-//   }
-// `

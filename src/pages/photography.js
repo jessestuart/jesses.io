@@ -95,7 +95,7 @@ export const pageQuery = graphql`
               srcSet
               sizes
             }
-            largeSizes: sizes(maxWidth: 1024, quality: 75) {
+            largeSizes: sizes(maxWidth: 1536, quality: 90) {
               aspectRatio
               src
               srcSet

@@ -9,13 +9,13 @@ const ImageZoomGridElement = styled.div`
   overflow: hidden;
   position: relative;
   img {
-    boxshadow: 3px 3px 4px 2px rgba(125, 125, 125, 0.5);
+    box-shadow: 3px 3px 4px 2px rgba(125, 125, 125, 0.9);
   }
 `
 
 // eslint-disable-next-line react/display-name
-export default ({ aspectRatio, children }) => (
-  <ImageZoomGridElement aspectRatio={aspectRatio}>
+export default ({ aspectRatio, children, onClick }) => (
+  <ImageZoomGridElement aspectRatio={aspectRatio} onClick={onClick}>
     {children}
   </ImageZoomGridElement>
 )

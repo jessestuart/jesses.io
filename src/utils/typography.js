@@ -121,6 +121,9 @@ const options = {
       fill: colors.primary.main,
       textDecoration: 'none',
     },
+    button: {
+      outline: 'none',
+    },
   }),
 }
 
