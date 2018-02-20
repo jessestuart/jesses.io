@@ -3,7 +3,7 @@
 exports[`Render BlogHeader component. 1`] = `
 Array [
   <h2
-    className="alegreya-sans f2 fw5 header-primary mb2 mt4"
+    className="alegreya-sans f2 fw5 header-primary mt4"
   >
     <MockedLink
       to="2018-01-01"

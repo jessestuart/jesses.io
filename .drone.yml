@@ -1,15 +1,15 @@
 ---
 pipeline:
 
-  restore-cache:
-    image: drillster/drone-volume-cache
-    restore: true
-    mount:
-      - ./node_modules
-      - ./public
-      - ./.cache
-    volumes:
-      - /tmp/cache:/cache
+  # restore-cache:
+  #   image: drillster/drone-volume-cache
+  #   restore: true
+  #   mount:
+  #     - ./node_modules
+  #     - ./public
+  #     - ./.cache
+  #   volumes:
+  #     - /tmp/cache:/cache
 
   install-dependencies:
     image: node:latest

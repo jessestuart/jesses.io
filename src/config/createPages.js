@@ -36,6 +36,7 @@ const imagePostQuery = `
   allS3ImageAsset {
     edges {
       node {
+        ETag
         EXIF {
           DateCreatedISO
         }
@@ -52,10 +53,26 @@ const createPages = ({ graphql, boundActionCreators }) => {
   )
 
   const createPhotographyPosts = edges => {
+    // First, create the photography "album" pages -- these are a collection
+    // of photos grouped by date.
     const imagesGroupedByDate = _.groupBy(edges, 'node.EXIF.DateCreatedISO')
     _.each(imagesGroupedByDate, (images, date) => {
       createPage({
         path: `/photography/${date}`,
+        component: photographyTemplate,
+        context: {
+          name: date,
+          datetime: DateTime.fromISO(date),
+          type: PageType.Photography,
+        },
+      })
+    })
+    // Next create an individual page for each photo.
+    _.each(_.map(edges, 'node'), image => {
+      const date = _.get(image, 'EXIF.DateCreatedISO')
+      const ETag = _.get(image, 'ETag')
+      createPage({
+        path: `/photography/${date}/${ETag}`,
         component: photographyTemplate,
         context: {
           name: date,

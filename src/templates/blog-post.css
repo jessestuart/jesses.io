@@ -33,7 +33,6 @@ pre {
 
 article a {
   border-bottom: 2px solid var(--hot-pink);
-
   position: relative;
   text-decoration: none;
 }
@@ -57,4 +56,8 @@ article a:hover::before {
   -webkit-transform: scaleX(1);
   transform: scaleX(1);
   visibility: visible;
+}
+
+article p a {
+  font-weight: 700;
 }

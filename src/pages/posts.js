@@ -1,25 +1,31 @@
-import React, { PureComponent } from 'react'
+import React, { Component } from 'react'
 import _ from 'lodash'
 
+import StyledPanel from '../components/StyledPanel/StyledPanel'
 import { BlogHeader } from '../components/Blog'
 
-class BlogIndex extends PureComponent {
+class BlogIndex extends Component {
   render() {
     const { props } = this
     const posts = _.get(props, 'data.allMarkdownRemark.edges')
 
     return (
-      <div className="bg-near-white flex-body-expand pv5 lh-copy">
+      <div className="bg-near-white flex-body-expand lh-copy pa3-ns pv4">
         {posts.map(({ node }) => {
           const { excerpt, fields, frontmatter } = node
           const date = _.get(frontmatter, 'date')
           const slug = _.get(fields, 'slug')
           const title = _.get(frontmatter, 'title')
           return (
-            <section key={slug} className="mw7 center flex-body-expand">
-              <BlogHeader date={date} slug={slug} title={title || slug} />
-              <p className="f4" dangerouslySetInnerHTML={{ __html: excerpt }} />
-            </section>
+            <StyledPanel key={slug}>
+              <article>
+                <BlogHeader date={date} slug={slug} title={title || slug} />
+                <p
+                  className="f4"
+                  dangerouslySetInnerHTML={{ __html: excerpt }}
+                />
+              </article>
+            </StyledPanel>
           )
         })}
       </div>

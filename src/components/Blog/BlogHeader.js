@@ -8,7 +8,7 @@ import StyledLink from '../StyledLink/StyledLink'
 const BlogHeader = ({ date, slug, title }) => {
   return (
     <Fragment>
-      <h2 className="alegreya-sans f2 fw5 header-primary mb2 mt4">
+      <h2 className="alegreya-sans f2 fw5 header-primary mt4">
         <Link to={slug}>
           <StyledLink>{title}</StyledLink>
         </Link>

@@ -1,10 +1,12 @@
 /* @flow */
-import React from 'react'
-import ImageZoom from 'react-medium-image-zoom'
+import React, { Component } from 'react'
+import Img from 'gatsby-image'
 import _ from 'lodash'
-import fp from 'lodash/fp'
 import { DateTime } from 'luxon'
+import Lightbox from 'react-image-lightbox'
+
 import type { GatsbyImage } from '../../types/gatsby-image'
+import StyledPanel from '../StyledPanel/StyledPanel'
 
 import {
   ImageZoomGrid,
@@ -16,38 +18,105 @@ type Props = {
   datetime: DateTime,
   images: Array<GatsbyImage>,
   slug: string,
-  isPreview: boolean,
 }
 
-const PhotographyGridSection = ({
-  datetime,
-  images,
-  slug,
-  isPreview = true,
-}: Props) => {
-  if (_.isNil(images)) {
-    return
+const initialState = {
+  isLightboxOpen: false,
+  lightboxImages: [],
+  index: 0,
+}
+
+type ToggleLightboxOptions = {
+  index?: number,
+  isLightboxOpen: boolean,
+  lightboxImages?: Array<string>,
+}
+
+class PhotographyGridSection extends Component<Props> {
+  state = { ...initialState }
+
+  toggleLightbox({
+    index,
+    isLightboxOpen,
+    lightboxImages,
+  }: ToggleLightboxOptions) {
+    const images = lightboxImages || this.state.lightboxImages
+    this.setState({
+      index,
+      isLightboxOpen,
+      lightboxImages: images,
+      lightboxSrc: images[index],
+      nextImageSrc: images[(index + 1) % images.length],
+      prevImageSrc: images[(index - 1) % images.length],
+    })
   }
 
-  const sortedImages =
-    // Sort images by date created, with most recent appearing first.
-    _.flow(fp.sortBy('EXIF.DateTimeOriginal'), fp.reverse)(images)
+  render() {
+    const { datetime, images, slug } = this.props
+    if (_.isEmpty(images)) {
+      return null
+    }
 
-  return (
-    <section className="center flex flex-column justify-center pv5 w-75">
-      <PhotographySectionHeader datetime={datetime} href={slug} />
-      <ImageZoomGrid>
-        {sortedImages.map(image => (
-          <ImageZoomGridElement key={image.src} aspectRatio={image.aspectRatio}>
-            <ImageZoom
-              image={{ src: image.src, srcSet: image.srcSet }}
-              imageZoom={{ src: image.src, srcSet: image.srcSet }}
-            />
-          </ImageZoomGridElement>
-        ))}
-      </ImageZoomGrid>
-    </section>
-  )
+    const sortedImages = _.sortBy(images, 'EXIF.DateTimeOriginal')
+    const lightboxImages = _.map(sortedImages, 'childImageSharp.largeSizes.src')
+
+    return (
+      <StyledPanel>
+        <PhotographySectionHeader datetime={datetime} href={slug} />
+        <ImageZoomGrid>
+          {sortedImages.map((image, index) => {
+            const thumbnailSizes = _.get(
+              image,
+              'childImageSharp.thumbnailSizes'
+            )
+            if (
+              _.isEmpty(thumbnailSizes) ||
+              _.isNil(_.get(thumbnailSizes, 'src'))
+            ) {
+              return null
+            }
+
+            return (
+              <ImageZoomGridElement
+                key={thumbnailSizes.src}
+                onClick={() =>
+                  this.toggleLightbox({
+                    index,
+                    isLightboxOpen: !this.state.isLightboxOpen,
+                    lightboxImages,
+                  })
+                }
+                aspectRatio={thumbnailSizes.aspectRatio}
+              >
+                <Img sizes={thumbnailSizes} className="pointer" />
+              </ImageZoomGridElement>
+            )
+          })}
+        </ImageZoomGrid>
+        {this.state.isLightboxOpen ? (
+          <Lightbox
+            enableZoom={false}
+            mainSrc={this.state.lightboxSrc}
+            nextSrc={this.state.nextImageSrc}
+            prevSrc={this.state.prevImageSrc}
+            onCloseRequest={() => this.setState({ isLightboxOpen: false })}
+            onMovePrevRequest={() =>
+              this.toggleLightbox({
+                index: this.state.index - 1,
+                isLightboxOpen: true,
+              })
+            }
+            onMoveNextRequest={() =>
+              this.toggleLightbox({
+                index: this.state.index + 1,
+                isLightboxOpen: true,
+              })
+            }
+          />
+        ) : null}
+      </StyledPanel>
+    )
+  }
 }
 
 export default PhotographyGridSection

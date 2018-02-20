@@ -1,4 +1,4 @@
-const IS_CI = process.env.NODE_ENV === 'ci'
+const IS_CI = process.env.GATSBY_ENV === 'ci'
 
 const siteMetadata = {
   author: 'Jesse Stuart',

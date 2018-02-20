@@ -1,6 +1,70 @@
 ---
 version: 2
+
+# ====================
+# WORKFLOW DECLARATION
+# ====================
+workflows:
+  version: 2
+  main:
+    jobs:
+      - install_dependencies
+      - build:
+          requires:
+            - install_dependencies
+      - lint:
+          requires:
+            - install_dependencies
+      - test:
+          requires:
+            - install_dependencies
+      - push_image:
+          requires:
+            - build
+          filters:
+            branches:
+              only: master
+
+# ====================
+# SHARED JOBS POINTERS
+# ====================
+restore_cache: &restore_cache
+  restore_cache:
+    keys:
+      - dependencies-{{ checksum "package.json" }}
+      - dependencies-
+
+restore_public_dir_cache: &restore_public_dir_cache
+  restore_cache:
+    paths:
+      - public/
+    keys:
+      - public-dir-{{ .Revision }}
+      - public-dir-{{ .Branch }}
+      - public-dir-
+
+save_cache: &save_cache
+  save_cache:
+    paths:
+      - node_modules/
+    key: dependencies-{{ checksum "package.json" }}
+
+save_public_dir_cache: &save_public_dir_cache
+  save_cache:
+    paths:
+      - public/
+    key: public-dir-{{ .Branch }}
+
+install_dependencies: &install_dependencies
+  run:
+    name: Install dependencies.
+    command: yarn -s --no-progress
+
+# ================
+# JOB DECLARATIONS
+# ================
 jobs:
+
   install_dependencies:
     working_directory: ~/jessestuart
     docker:
@@ -8,25 +72,12 @@ jobs:
 
     steps:
       - checkout
-
-      - restore_cache:
-          keys:
-            - dependencies-{{ checksum "package.json" }}
-            - dependencies-
-
-      - run:
-          name: Install dependencies.
-          command: yarn -s --no-progress
-
+      - *restore_cache
+      - *install_dependencies
       - run:
           name: Run Greenkeeper to update lockfile.
           command: yarn run greenkeeper-lockfile-update
-
-      - save_cache:
-          paths:
-            - node_modules
-          key: dependencies-{{ checksum "package.json" }}
-
+      - *save_cache
       - run:
           name: Upload Greenkeeper lockfile.
           command: yarn run greenkeeper-lockfile-upload
@@ -38,21 +89,7 @@ jobs:
 
     steps:
       - checkout
-
-      - restore_cache:
-          keys:
-            - dependencies-{{ checksum "package.json" }}
-            - dependencies-
-
-      - run:
-          name: Install dependencies.
-          command: yarn -s --no-progress
-
-      - save_cache:
-          paths:
-            - node_modules
-          key: dependencies-{{ checksum "package.json" }}
-
+      - *restore_cache
       - run:
           name: Run linter.
           command: yarn lint
@@ -64,21 +101,7 @@ jobs:
 
     steps:
       - checkout
-
-      - restore_cache:
-          keys:
-            - dependencies-{{ checksum "package.json" }}
-            - dependencies-
-
-      - run:
-          name: Install dependencies.
-          command: yarn -s --no-progress
-
-      - save_cache:
-          paths:
-            - node_modules
-          key: dependencies-{{ checksum "package.json" }}
-
+      - *restore_cache
       - run:
           name: Run Jest tests & upload coverage to Codecov.
           command: yarn test:coverage && yarn codecov -t $CODECOV_TOKEN
@@ -89,32 +112,22 @@ jobs:
       - image: circleci/node:9
     steps:
       - checkout
-
-      - restore_cache:
-          keys:
-            - dependencies-{{ checksum "package.json" }}
-            - dependencies-
+      - *restore_cache
+      - *restore_public_dir_cache
 
       - run:
-          name: Install dependencies.
-          command: yarn -s --no-progress
-
-      - run:
-          name: Compile static site.
+          name: Build static site.
           command: yarn build:ci
 
-      - save_cache:
-          paths:
-            - public/
-          key: public-dir-{{ .Revision }}
+      - *save_cache
+      - *save_public_dir_cache
 
       - run:
           name: Compress and package static resources into a tarball.
-          command: |
-            tar czf "jessestuart.tar.gz" public/
+          command: tar czf jessestuart.tar.gz public/
 
       - store_artifacts:
-          path: "jessestuart.tar.gz"
+          path: jessestuart.tar.gz
 
   # ---------------------------------------------------------------------------
 
@@ -131,7 +144,7 @@ jobs:
       - setup_remote_docker
 
       - run:
-          name: Install dependencies
+          name: Install AWS CLI via pip.
           command: |
             apk add --no-cache py-pip
             pip install awscli
@@ -192,24 +205,3 @@ jobs:
 
       - store_artifacts:
           path: test/__snapshots__
-
-workflows:
-  version: 2
-  main:
-    jobs:
-      - install_dependencies
-      - build:
-          requires:
-            - install_dependencies
-      - lint:
-          requires:
-            - install_dependencies
-      - test:
-          requires:
-            - install_dependencies
-      - push_image:
-          requires:
-            - build
-          filters:
-            branches:
-              only: master

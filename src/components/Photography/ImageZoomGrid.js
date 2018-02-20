@@ -4,10 +4,10 @@ import styled from 'styled-components'
 
 const StyledImageZoomGrid = styled.div`
   display: grid;
-  grid-gap: 10px;
-  grid-auto-rows: minmax(200px, auto);
+  grid-gap: 1em;
+  grid-auto-rows: minmax(4em, auto);
   @media (min-width: 45em) {
-    grid-template-columns: repeat(auto-fill, minmax(15em, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(16em, 1fr));
   }
   @media (max-width: 45em) {
     grid-template-columns: repeat(auto-fill, minmax(50vw, 1fr));
