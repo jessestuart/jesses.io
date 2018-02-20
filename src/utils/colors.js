@@ -30,6 +30,7 @@ const colors = {
   },
   secondary: {
     // Light Secondary shades --
+    light0: '#FBFAFC',
     light1: '#efebf7',
     light2: '#e0d7f0',
     light3: '#d1c3e9',

@@ -24,15 +24,16 @@
 
 * Add exif plugin?
 
-// const exifImage = exif.ExifImage(
-// { image: image.Body },
-// (err, exifData) => {
-// // console.log({ err, exifData })
-// const exif = exifData.exif
-// console.log({ exif })
-// }
-// )
-// })
+```
+const exifImage = exif.ExifImage(
+  { image: image.Body },
+  (err, exifData) => {
+    // console.log({ err, exifData })
+    const exif = exifData.exif
+    console.log({ exif })
+  }
+)
+```
 
 ========================================================
 
@@ -42,3 +43,15 @@
 
 * Homemaker
   * Add CLI (?)
+
+### 20180217
+
+* Replace `react-medium-image-zoom` component. It has a number of problems:
+  * The 'zoom' effect is actually a CSS scale transform, so the srcset isn't
+    actually serving the proper resolution image.
+  * It's got serious UI stutter issues on mobile safari.
+* Fix R/L padding for blog template
+* Center avatar on home page
+
+- https://www.npmjs.com/package/scrollprogress
+
