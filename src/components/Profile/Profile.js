@@ -24,7 +24,7 @@ const IntroWrapper = styled.div.attrs({
 const AvatarContainer = styled.div.attrs({
   className: 'center w-100-ns w-50',
 })`
-  grid-column: 4 / 9;
+  grid-column: 1 / 13;
 
   @media (min-width: 45em) and (max-width: 60em) {
     grid-column: 2 / 5;
