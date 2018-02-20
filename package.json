@@ -31,7 +31,7 @@
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
     "react-helmet": "^5.2.0",
-    "react-modal-image": "^2.1.4"
+    "react-image-lightbox": "^4.5.0"
   },
   "devDependencies": {
     "babel-eslint": "^8.2.1",
@@ -79,10 +79,6 @@
     "react-cosmos": "^3.7.1",
     "react-feather": "^1.0.8",
     "react-headroom": "^2.2.2",
-    "react-icons": "^2.2.7",
-    "react-images": "^0.5.17",
-    "react-medium-image-zoom": "^3.0.10",
-    "react-modal": "^3.2.1",
     "react-test-renderer": "^16.2.0",
     "rimraf": "^2.6.2",
     "scrollprogress": "^3.0.2",
