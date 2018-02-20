@@ -9,7 +9,7 @@ lint_task:
   #   fingerprint_script: cat yarn.lock
   #   populate_script: yarn -s
 
-  test_script: yarn lint
+  test_script: yarn -s && yarn lint
 
 test_task:
 
@@ -18,7 +18,7 @@ test_task:
   #   fingerprint_script: cat yarn.lock
   #   populate_script: yarn -s
 
-  test_script: yarn test
+  test_script: yarn -s && yarn test
 
 build_task:
 
@@ -27,4 +27,4 @@ build_task:
   #   fingerprint_script: cat yarn.lock
   #   populate_script: yarn -s
 
-  build_script: yarn build:ci
+  build_script: yarn -s && yarn build:ci
