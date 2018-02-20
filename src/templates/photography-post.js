@@ -9,10 +9,9 @@ import { PhotographyGridSection } from '../components/Photography'
 class PhotographyPostTemplate extends Component {
   render() {
     const { props } = this
-    const images = _.flow(
-      fp.get('data.allS3ImageAsset.edges'),
-      fp.map('node.childImageSharp.sizes')
-    )(props)
+    const images = _.flow(fp.get('data.allS3ImageAsset.edges'), fp.map('node'))(
+      props
+    )
     const pathname = _.get(props, 'location.pathname')
     const siteTitle = _.get(props, 'data.site.siteMetadata.title')
     const date = _.get(props, 'pathContext.name')
@@ -21,7 +20,8 @@ class PhotographyPostTemplate extends Component {
     const title = `Photography | ${date} | ${siteTitle}`
 
     return (
-      <div className="bg-light-gray black-80 w-100 flex-body-expand">
+      // <div className="bg-light-gray black-80 w-100 flex-body-expand">
+      <div className="bg-light-gray black-80 pa3-ns pv4 w-100">
         <Helmet title={title} />
         <PhotographyGridSection
           datetime={datetime}
@@ -46,9 +46,27 @@ export const pageQuery = graphql`
     allS3ImageAsset(filter: { EXIF: { DateCreatedISO: { eq: $name } } }) {
       edges {
         node {
+          id
+          EXIF {
+            DateCreatedISO
+            DateTimeOriginal
+          }
           childImageSharp {
-            sizes {
-              ...GatsbyImageSharpSizes
+            original {
+              height
+              width
+            }
+            thumbnailSizes: sizes(maxWidth: 512) {
+              aspectRatio
+              src
+              srcSet
+              sizes
+            }
+            largeSizes: sizes(maxWidth: 1024, quality: 75) {
+              aspectRatio
+              src
+              srcSet
+              sizes
             }
           }
         }

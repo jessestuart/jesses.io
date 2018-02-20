@@ -1,4 +1,4 @@
-const IS_CI = process.env.NODE_ENV === 'ci'
+const IS_CI = process.env.GATSBY_ENV === 'ci'
 
 const siteMetadata = {
   author: 'Jesse Stuart',
@@ -86,6 +86,8 @@ const plugins = [
   // Styling-related plugins.
   // ========================
   'gatsby-plugin-styled-components',
+  // TODO: Temporary -- remove this.
+  'gatsby-plugin-glamor',
   typographyPlugin,
   // ==========================================
   // Transformers for Markdown and image files.

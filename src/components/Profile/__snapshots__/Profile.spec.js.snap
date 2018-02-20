@@ -5,7 +5,7 @@ exports[`Render Profile component. Render Profile component. 1`] = `
   className="Profile__IntroWrapper-krHzZt items-center justify-center pv4 jZRrWi"
 >
   <div
-    className="Profile__AvatarContainer-bEEKLc center w-100-ns w-50 fLUkUL"
+    className="Profile__AvatarContainer-bEEKLc center w-100-ns w-50 jeMMpb"
   >
     <div
       className="BlackMirror__BlackMirrorDiv-kyYuCJ flex justify-around mv4 laQvyw"
