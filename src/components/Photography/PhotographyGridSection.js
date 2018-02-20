@@ -54,7 +54,7 @@ class PhotographyGridSection extends Component<Props> {
   render() {
     const { datetime, images, slug } = this.props
     if (_.isEmpty(images)) {
-      return
+      return null
     }
 
     const sortedImages = _.sortBy(images, 'EXIF.DateTimeOriginal')
@@ -70,7 +70,7 @@ class PhotographyGridSection extends Component<Props> {
               'childImageSharp.thumbnailSizes'
             )
             if (_.isEmpty(thumbnailSizes)) {
-              return
+              return null
             }
 
             return (
