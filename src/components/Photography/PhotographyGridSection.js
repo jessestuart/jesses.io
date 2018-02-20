@@ -69,7 +69,10 @@ class PhotographyGridSection extends Component<Props> {
               image,
               'childImageSharp.thumbnailSizes'
             )
-            if (_.isEmpty(thumbnailSizes)) {
+            if (
+              _.isEmpty(thumbnailSizes) ||
+              _.isNil(_.get(thumbnailSizes, 'src'))
+            ) {
               return null
             }
 

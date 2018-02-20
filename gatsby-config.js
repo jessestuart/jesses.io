@@ -86,8 +86,6 @@ const plugins = [
   // Styling-related plugins.
   // ========================
   'gatsby-plugin-styled-components',
-  // TODO: Temporary -- remove this.
-  'gatsby-plugin-glamor',
   typographyPlugin,
   // ==========================================
   // Transformers for Markdown and image files.
