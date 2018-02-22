@@ -2,3 +2,20 @@
 
 [ver:1,total:120]
 .git/rebase-merge/git-rebase-todo:120,1519290000:120,r
+
+[ver:1,total:60]
+src/components/Profile/Avatar.spec.js:60,1519290000:60,r
+
+[ver:1,total:0]
+
+[ver:1,total:1020]
+plugins/gatsby-source-s3/src/source-nodes.js:720,1519282800:360,1519286400:360,m
+plugins/gatsby-source-s3/src/extend-node-type.js:240,1519282800:240,r
+plugins/gatsby-source-s3/extend-node-type.js:60,1519282800:60,r
+
+[ver:1,total:720]
+package.json:420,1519189200:360,1519192800:60,m
+.git/PULLREQ_EDITMSG:180,1519160400:180,d
+gatsby-config.js:60,1519189200:60,m
+src/pages/photography.js:40,1519189200:40,r
+src/templates/photography-post.js:20,1519189200:20,r
