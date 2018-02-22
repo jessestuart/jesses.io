@@ -5,3 +5,13 @@ src/components/Profile/Avatar.spec.js:30,1519290000:30,r
 [ver:1,total:180]
 package.json:120,1519243200:120,m
 .git/rebase-merge/git-rebase-todo:60,1519243200:60,d
+
+[ver:1,total:180]
+package.json:120,1519243200:120,m
+.git/rebase-merge/git-rebase-todo:60,1519243200:60,d
+
+[ver:1,total:60]
+src/components/Profile/Avatar.spec.js:30,1519290000:30,r
+.git/rebase-merge/git-rebase-todo:30,1519290000:30,d
+
+[ver:1,total:0]
