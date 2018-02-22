@@ -16,7 +16,7 @@ const { createRemoteFileNode } = require('gatsby-source-filesystem')
 const S3 = new AWS.S3({ apiVersion: '2006-03-01' })
 
 // =========================
-// Plugin-specific contants.
+// Plugin-specific constants.
 // =========================
 const S3SourceGatsbyNodeType = 'S3ImageAsset'
 
