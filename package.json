@@ -22,7 +22,7 @@
     "gatsby-remark-images": "^1.5.48",
     "gatsby-remark-prismjs": "^1.2.15",
     "gatsby-remark-smartypants": "^1.4.11",
-    "gatsby-source-filesystem": "^1.5.21",
+    "gatsby-source-filesystem": "^1.5.22",
     "gatsby-transformer-remark": "^1.7.33",
     "gatsby-transformer-sharp": "^1.6.20",
     "js-tachyons": "^1.1.2",
