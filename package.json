@@ -73,7 +73,7 @@
     "postcss-nested": "^3.0.0",
     "prettier": "^1.10.2",
     "prop-types": "^15.6.0",
-    "raven-js": "^3.22.3",
+    "raven-js": "^3.22.4",
     "react-calendar-heatmap": "^1.6.3",
     "react-cosmos": "^3.7.1",
     "react-feather": "^1.0.8",
