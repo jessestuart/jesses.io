@@ -15,7 +15,7 @@
     "gatsby-plugin-remove-trailing-slashes": "^1.0.5",
     "gatsby-plugin-sentry": "^0.0.3",
     "gatsby-plugin-sharp": "^1.6.34",
-    "gatsby-plugin-styled-components": "^2.0.8",
+    "gatsby-plugin-styled-components": "^2.0.9",
     "gatsby-plugin-typography": "^1.7.14",
     "gatsby-remark-autolink-headers": "^1.4.12",
     "gatsby-remark-copy-linked-files": "^1.5.28",
