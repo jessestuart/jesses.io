@@ -4,7 +4,7 @@
   "author": "Jesse Stuart <hi@jessestuart.com>",
   "dependencies": {
     "gatsby": "^1.9.215",
-    "gatsby-image": "^1.0.39",
+    "gatsby-image": "^1.0.40",
     "gatsby-link": "^1.6.37",
     "gatsby-plugin-feed": "^1.3.18",
     "gatsby-plugin-google-analytics": "^1.0.19",
