@@ -9,4 +9,6 @@ const GraphQL = props => (
   </svg>
 )
 
+GraphQL.href = 'https://graphql.org'
+
 export default GraphQL

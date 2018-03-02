@@ -1,6 +1,6 @@
 import React from 'react'
 
-const AnsibleSketch2 = props => (
+const Ansible = props => (
   <svg width="1em" height="1em" viewBox="0 0 128 128" {...props}>
     <g fill="none" fillRule="evenodd">
       <path
@@ -20,4 +20,6 @@ const AnsibleSketch2 = props => (
   </svg>
 )
 
-export default AnsibleSketch2
+Ansible.href = 'https://ansible.com'
+
+export default Ansible

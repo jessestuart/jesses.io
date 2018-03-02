@@ -1,6 +1,6 @@
 import React from 'react'
 
-const ReactOriginal = props => (
+const ReactIcon = props => (
   <svg viewBox="0 0 128 128" {...props}>
     <g fill="#61DAFB">
       <circle cx={64} cy={64} r={11.4} />
@@ -9,4 +9,6 @@ const ReactOriginal = props => (
   </svg>
 )
 
-export default ReactOriginal
+ReactIcon.href = 'https://react.org'
+
+export default ReactIcon

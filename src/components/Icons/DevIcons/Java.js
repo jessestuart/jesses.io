@@ -1,6 +1,6 @@
 import React from 'react'
 
-const JavaOriginal = props => (
+const Java = props => (
   <svg viewBox="0 0 128 128" {...props}>
     <path
       fill="#0074BD"
@@ -25,4 +25,6 @@ const JavaOriginal = props => (
   </svg>
 )
 
-export default JavaOriginal
+Java.href = 'http://openjdk.java.net'
+
+export default Java

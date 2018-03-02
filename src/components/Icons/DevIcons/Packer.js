@@ -1,6 +1,6 @@
 import React from 'react'
 
-const PackerOriginal = props => (
+const Packer = props => (
   <svg width="1em" height="1em" viewBox="0 0 128 128" {...props}>
     <path
       fill="#2895DB"
@@ -13,4 +13,6 @@ const PackerOriginal = props => (
   </svg>
 )
 
-export default PackerOriginal
+Packer.href = 'https://packer.io'
+
+export default Packer

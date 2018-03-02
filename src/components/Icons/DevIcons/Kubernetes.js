@@ -13,4 +13,6 @@ const Kubernetes = props => (
   </svg>
 )
 
+Kubernetes.href = 'https://kubernetes.io'
+
 export default Kubernetes

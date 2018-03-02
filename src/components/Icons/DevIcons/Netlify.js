@@ -9,4 +9,6 @@ const Netlify = props => (
   </svg>
 )
 
+Netlify.href = 'https://netlify.com'
+
 export default Netlify

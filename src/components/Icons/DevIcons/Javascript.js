@@ -1,6 +1,6 @@
 import React from 'react'
 
-const JavascriptPlain = props => (
+const Javascript = props => (
   <svg viewBox="0 0 128 128" {...props}>
     <path
       fill="#F0DB4F"
@@ -9,4 +9,6 @@ const JavascriptPlain = props => (
   </svg>
 )
 
-export default JavascriptPlain
+Javascript.href = 'https://babeljs.io'
+
+export default Javascript
