@@ -15,4 +15,6 @@ const Python = props => (
   </svg>
 )
 
+Python.href = 'https://python.org'
+
 export default Python

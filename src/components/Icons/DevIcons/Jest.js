@@ -13,4 +13,6 @@ const Jest = props => (
   </svg>
 )
 
+Jest.href = 'https://facebook.github.io/jest/'
+
 export default Jest

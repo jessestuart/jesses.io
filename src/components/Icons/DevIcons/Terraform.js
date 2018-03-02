@@ -1,6 +1,6 @@
 import React from 'react'
 
-const TerraformSketch = props => (
+const Terraform = props => (
   <svg width="1em" height="1em" viewBox="0 0 179 202" {...props}>
     <g fill="none" fillRule="evenodd">
       <g fillRule="nonzero">
@@ -19,4 +19,6 @@ const TerraformSketch = props => (
   </svg>
 )
 
-export default TerraformSketch
+Terraform.href = 'https://terraform.io'
+
+export default Terraform

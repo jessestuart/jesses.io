@@ -1,6 +1,6 @@
 import React from 'react'
 
-const VagrantOriginal4 = props => (
+const Vagrant = props => (
   <svg width="1em" height="1em" viewBox="0 0 128 128" {...props}>
     <path
       fill="#1159cc"
@@ -13,4 +13,6 @@ const VagrantOriginal4 = props => (
   </svg>
 )
 
-export default VagrantOriginal4
+Vagrant.href = 'https://vagrantup.com'
+
+export default Vagrant

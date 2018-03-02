@@ -7,7 +7,9 @@ const DevIconColumn = props => {
 
   return (
     <DevIconContainer style={style} className={className}>
-      <DevIcon width="75%" height="75%" className="hvr-grow" />
+      <a href={DevIcon.href}>
+        <DevIcon width="75%" height="75%" className="hvr-grow" />
+      </a>
     </DevIconContainer>
   )
 }

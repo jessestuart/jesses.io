@@ -3,8 +3,8 @@
   "version": "1.0.0",
   "author": "Jesse Stuart <hi@jessestuart.com>",
   "dependencies": {
-    "gatsby": "^1.9.221",
-    "gatsby-image": "^1.0.40",
+    "gatsby": "^1.9.222",
+    "gatsby-image": "^1.0.41",
     "gatsby-link": "^1.6.38",
     "gatsby-plugin-feed": "^1.3.19",
     "gatsby-plugin-google-analytics": "^1.0.20",
@@ -16,11 +16,11 @@
     "gatsby-plugin-sentry": "^0.0.3",
     "gatsby-plugin-sharp": "^1.6.37",
     "gatsby-plugin-styled-components": "^2.0.9",
-    "gatsby-plugin-typography": "^1.7.16",
+    "gatsby-plugin-typography": "^1.7.17",
     "gatsby-remark-autolink-headers": "^1.4.13",
-    "gatsby-remark-copy-linked-files": "^1.5.29",
+    "gatsby-remark-copy-linked-files": "^1.5.30",
     "gatsby-remark-images": "^1.5.53",
-    "gatsby-remark-prismjs": "^1.2.16",
+    "gatsby-remark-prismjs": "^1.2.17",
     "gatsby-remark-smartypants": "^1.4.12",
     "gatsby-source-filesystem": "^1.5.25",
     "gatsby-transformer-remark": "^1.7.34",
@@ -41,11 +41,11 @@
     "babel-preset-flow": "^6.23.0",
     "babel-preset-react": "^6.24.1",
     "bluebird": "^3.5.1",
-    "chalk": "^2.3.1",
+    "chalk": "^2.3.2",
     "classnames": "^2.2.5",
     "codecov": "^3.0.0",
     "concurrently": "^3.5.1",
-    "eslint": "^4.18.1",
+    "eslint": "^4.18.2",
     "eslint-config-prettier": "^2.9.0",
     "eslint-config-standard": "^11.0.0",
     "eslint-friendly-formatter": "^3.0.0",
@@ -65,6 +65,7 @@
     "jest": "^22.4.2",
     "lint-staged": "^7.0.0",
     "lodash": "^4.17.5",
+    "minio": "^4.0.0",
     "onecolor": "^3.0.5",
     "postcss": "^6.0.19",
     "postcss-cssnext": "^3.1.0",
@@ -73,7 +74,7 @@
     "postcss-nested": "^3.0.0",
     "prettier": "^1.11.1",
     "prop-types": "^15.6.1",
-    "raven-js": "^3.22.4",
+    "raven-js": "^3.23.1",
     "react-calendar-heatmap": "^1.6.3",
     "react-cosmos": "^3.7.1",
     "react-feather": "^1.0.8",
@@ -107,7 +108,7 @@
   },
   "engine": {
     "node": ">=9",
-    "yarn": ">=1.3"
+    "yarn": ">=1.4"
   },
   "homepage": "https://jessestuart.com",
   "keywords": ["blog", "gatsby", "photography", "react"],
@@ -122,7 +123,7 @@
   "private": true,
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/jessestuart/js-gatsby-hurtling.git"
+    "url": "https://github.com/jessestuart/jessestuart.com"
   },
   "scripts": {
     "build": "yarn build:s3-plugin && gatsby build",
@@ -130,7 +131,6 @@
     "build:s3-plugin": "cd ./plugins/gatsby-source-s3 && yarn && cd ../../",
     "clean": "rm -rf node_modules/ .cache/ && yarn -s",
     "dev": "gatsby develop",
-    "dev:install": "yarn -s && gatsby develop",
     "flow:install": "flow-typed -o -l ./flow-libs/ install",
     "format": "prettier 'src/**/*.js' 'src/**/*.md'",
     "lint": "concurrently 'yarn lint:js' 'yarn lint:style'",

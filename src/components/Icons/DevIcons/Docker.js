@@ -1,6 +1,6 @@
 import React from 'react'
 
-const DockerTile1 = props => (
+const Docker = props => (
   <svg width="1em" height="1em" viewBox="0 0 184 128" {...props}>
     <path
       fill="#0DB7ED"
@@ -9,4 +9,6 @@ const DockerTile1 = props => (
   </svg>
 )
 
-export default DockerTile1
+Docker.href = 'https://docker.com'
+
+export default Docker

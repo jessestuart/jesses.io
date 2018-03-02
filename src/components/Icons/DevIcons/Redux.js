@@ -9,4 +9,6 @@ const Redux = props => (
   </svg>
 )
 
+Redux.href = 'https://redux.js.org'
+
 export default Redux
