@@ -25,4 +25,6 @@ const Clojure = props => (
   </svg>
 )
 
+Clojure.href = 'https://clojure.org'
+
 export default Clojure

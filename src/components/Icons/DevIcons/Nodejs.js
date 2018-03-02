@@ -1,6 +1,6 @@
 import React from 'react'
 
-const NodejsPlain = props => (
+const NodeJS = props => (
   <svg viewBox="0 0 128 128" {...props}>
     <path
       fill="#83CD29"
@@ -9,4 +9,6 @@ const NodejsPlain = props => (
   </svg>
 )
 
-export default NodejsPlain
+NodeJS.href = 'https://nodejs.org'
+
+export default NodeJS

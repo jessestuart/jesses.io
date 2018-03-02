@@ -1,6 +1,6 @@
 import React from 'react'
 
-const AngularIcon = props => (
+const Angular = props => (
   <svg width="1em" height="1em" viewBox="0 0 964 1024" {...props}>
     <path
       fill="#e23237"
@@ -17,4 +17,6 @@ const AngularIcon = props => (
   </svg>
 )
 
-export default AngularIcon
+Angular.href = 'https://angular.io'
+
+export default Angular

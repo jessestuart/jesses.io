@@ -1,6 +1,6 @@
 import React from 'react'
 
-const GrailsSketch = props => (
+const Grails = props => (
   <svg width="1em" height="1em" viewBox="0 0 183 128" {...props}>
     <path
       fill="#7ab852"
@@ -9,4 +9,6 @@ const GrailsSketch = props => (
   </svg>
 )
 
-export default GrailsSketch
+Grails.href = 'https://grails.org'
+
+export default Grails

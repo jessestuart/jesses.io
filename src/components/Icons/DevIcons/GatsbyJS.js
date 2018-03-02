@@ -1,6 +1,6 @@
 import React from 'react'
 
-const GatsbyjsSketch = props => (
+const GatsbyJS = props => (
   <svg width="1em" height="1em" viewBox="0 0 1024 1024" {...props}>
     <path
       fill="#744c9e"
@@ -13,4 +13,6 @@ const GatsbyjsSketch = props => (
   </svg>
 )
 
-export default GatsbyjsSketch
+GatsbyJS.href = 'https://gatsbyjs.org'
+
+export default GatsbyJS
