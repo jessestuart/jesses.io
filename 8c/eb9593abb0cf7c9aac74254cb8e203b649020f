@@ -1,0 +1,9 @@
+[ver:1,total:3120]
+src/pages/posts/20180303-blogging-postmodernity/index.md:2010,1520100000:180,1520103600:180,1520107200:300,1520110800:360,1520118000:180,1520121600:780,1520125200:30,m
+src/components/Blog/BlogHeader.js:500,1520100000:380,1520125200:120,m
+src/components/Blog/BlogSection.js:250,1520100000:250,m
+src/templates/blog-post.js:150,1520100000:150,m
+src/components/Portfolio/PortfolioItem.js:100,1520100000:100,r
+src/components/Blog/BlogHeader.spec.js:60,1520125200:60,m
+src/pages/posts/20180201-image-managment-s3/index.md:30,1520125200:30,r
+src/utils/colors.js:20,1520100000:20,r
