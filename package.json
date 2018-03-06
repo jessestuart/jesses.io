@@ -19,7 +19,7 @@
     "gatsby-plugin-typography": "^1.7.17",
     "gatsby-remark-autolink-headers": "^1.4.13",
     "gatsby-remark-copy-linked-files": "^1.5.30",
-    "gatsby-remark-images": "^1.5.53",
+    "gatsby-remark-images": "^1.5.55",
     "gatsby-remark-prismjs": "^1.2.17",
     "gatsby-remark-smartypants": "^1.4.12",
     "gatsby-source-filesystem": "^1.5.25",
