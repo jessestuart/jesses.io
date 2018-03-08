@@ -1,4 +1,13 @@
+const _ = require('lodash')
+
+// If we detect if we're running in a CI environment, only a few sample
+// photos will be downloaded from a test bucket, rather the the full
+// high-resolution photos displayed in production. This is simply to
+// save on AWS costs :)
 const IS_CI = process.env.GATSBY_ENV === 'ci'
+
+// We use `NODE_ENV` to disable Sentry logging in development.
+const IS_PROD = process.env.NODE_ENV === 'production'
 
 const siteMetadata = {
   author: 'Jesse Stuart',
@@ -70,7 +79,7 @@ const sentryPlugin = {
   },
 }
 
-const plugins = [
+const plugins = _.compact([
   // ====================================
   // Gotta load those sweet, sweet files.
   // ====================================
@@ -97,7 +106,7 @@ const plugins = [
   // Analytics.
   // ==========
   googleAnalyticsPlugin,
-  sentryPlugin,
+  IS_PROD ? sentryPlugin : null,
   // ===========
   // Miscellany.
   // ===========
@@ -106,7 +115,7 @@ const plugins = [
   'gatsby-plugin-lodash',
   // This ostensibly has to go at the end of the plugins declaration array.
   'gatsby-plugin-netlify',
-]
+])
 
 module.exports = {
   siteMetadata,
