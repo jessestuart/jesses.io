@@ -3953,9 +3953,9 @@ eslint-plugin-prettier@^2.6.0:
     fast-diff "^1.1.1"
     jest-docblock "^21.0.0"
 
-eslint-plugin-promise@^3.6.0:
-  version "3.6.0"
-  resolved "https://registry.yarnpkg.com/eslint-plugin-promise/-/eslint-plugin-promise-3.6.0.tgz#54b7658c8f454813dc2a870aff8152ec4969ba75"
+eslint-plugin-promise@^3.7.0:
+  version "3.7.0"
+  resolved "https://registry.yarnpkg.com/eslint-plugin-promise/-/eslint-plugin-promise-3.7.0.tgz#f4bde5c2c77cdd69557a8f69a24d1ad3cfc9e67e"
 
 eslint-plugin-react@^7.7.0:
   version "7.7.0"
@@ -4615,9 +4615,9 @@ flatten@^1.0.2:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/flatten/-/flatten-1.0.2.tgz#dae46a9d78fbe25292258cc1e780a41d95c03782"
 
-flow-bin@^0.66.0:
-  version "0.66.0"
-  resolved "https://registry.yarnpkg.com/flow-bin/-/flow-bin-0.66.0.tgz#a96dde7015dc3343fd552a7b4963c02be705ca26"
+flow-bin@^0.67.1:
+  version "0.67.1"
+  resolved "https://registry.yarnpkg.com/flow-bin/-/flow-bin-0.67.1.tgz#eabb7197cce870ac9442cfd04251c7ddc30377db"
 
 flow-typed@^2.3.0:
   version "2.3.0"
