@@ -1,0 +1,12 @@
+[ver:1,total:0]
+
+[ver:1,total:6396]
+src/components/Blog/BlogHeader.js:2140,1520593200:410,1520596800:960,1520622000:190,1520625600:580,m
+src/pages/about.js:1554,1520593200:1114,1520596800:210,1520622000:230,m
+src/pages/posts.js:1460,1520596800:300,1520622000:480,1520625600:680,m
+src/pages/photography.js:800,1520625600:800,m
+src/templates/blog-post.js:312,1520593200:12,1520596800:270,1520622000:30,m
+src/components/Blog/BlogSection.js:60,1520596800:60,m
+src/templates/blog-post.css:30,1520622000:30,r
+src/components/Photography/PhotographyGridSection.js:20,1520625600:20,m
+src/templates/photography-post.js:20,1520625600:20,r
