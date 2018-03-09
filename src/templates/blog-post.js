@@ -26,7 +26,7 @@ class BlogPostTemplate extends Component {
 
     return (
       <div
-        className="black-80 lh-copy pa3 pv4 w-100"
+        className="black-80 flex-body-expand lh-copy pa3 pv4 w-100"
         style={{ background: '#FBFAFC' }}
       >
         <Helmet title={comboTitle}>
@@ -40,10 +40,10 @@ class BlogPostTemplate extends Component {
             content={new Date(date).toISOString()}
           />
         </Helmet>
-        <div className="mw7-ns center">
+        <div className="center mw7-ns">
           <BlogHeader date={date} slug={pathname} title={title} />
           <article
-            className="center justify mw-100 f4 fw5"
+            className="center f4 fw5 justify mw-100"
             id="remark-post"
             dangerouslySetInnerHTML={{ __html: post.html }}
           />
