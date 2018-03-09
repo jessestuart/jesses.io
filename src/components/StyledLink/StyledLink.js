@@ -31,6 +31,6 @@ const generateUnderlineStyles = ({ hoverColor, linkColor }) => `
   }
 `
 
-export default styled.span`
+export default styled.a`
   ${(props: Props) => generateUnderlineStyles(props)};
 `

@@ -1,5 +1,6 @@
 /* @flow */
 import React from 'react'
+import type { Node } from 'react'
 import styled from 'styled-components'
 
 const StyledImageZoomGrid = styled.div`
@@ -15,7 +16,7 @@ const StyledImageZoomGrid = styled.div`
 `
 
 type Props = {
-  children?: React.Node,
+  children?: Node,
 }
 
 const ImageZoomGrid = ({ children }: Props) => (

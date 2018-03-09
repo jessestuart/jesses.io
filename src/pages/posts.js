@@ -1,12 +1,38 @@
+/* @flow */
 import React, { Component } from 'react'
 import _ from 'lodash'
 
 import StyledPanel from '../components/StyledPanel/StyledPanel'
 import { BlogHeader } from '../components/Blog'
 
+type MarkdownRemarkNode = {
+  excerpt: string,
+  fields: {
+    slug: string,
+  },
+  frontmatter: {
+    date: string,
+    title: string,
+  },
+}
+
+type Props = {
+  location: {
+    pathname: string,
+  },
+  data: {
+    allMarkdownRemark: {
+      edges: {
+        node: Array<MarkdownRemarkNode>,
+      },
+    },
+  },
+}
+
 class BlogIndex extends Component {
   render() {
-    const { props } = this
+    const { props }: Props = this
+    const { location } = props
     const posts = _.get(props, 'data.allMarkdownRemark.edges')
 
     return (
@@ -19,7 +45,14 @@ class BlogIndex extends Component {
           return (
             <StyledPanel key={slug}>
               <article>
-                <BlogHeader date={date} slug={slug} title={title || slug} />
+                <BlogHeader
+                  link={slug}
+                  location={location}
+                  date={date}
+                  title={title || slug}
+                >
+                  {title}
+                </BlogHeader>
                 <p
                   className="f4"
                   dangerouslySetInnerHTML={{ __html: excerpt }}
