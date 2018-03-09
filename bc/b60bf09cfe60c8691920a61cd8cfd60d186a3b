@@ -10,3 +10,14 @@ package.json:90,1520625600:90,r
 
 [ver:1,total:60]
 package.json:60,1520402400:60,m
+
+[ver:1,total:360]
+.git/PULLREQ_EDITMSG:180,1520625600:180,d
+package.json:90,1520625600:90,r
+.git/rebase-merge/git-rebase-todo:60,1520625600:60,r
+.git/COMMIT_EDITMSG:30,1520625600:30,r
+
+[ver:1,total:60]
+package.json:60,1520402400:60,m
+
+[ver:1,total:0]
