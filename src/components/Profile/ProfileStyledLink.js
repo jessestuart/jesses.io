@@ -1,5 +1,6 @@
 /* @flow */
 import React from 'react'
+import type { Node } from 'react'
 import color from 'onecolor'
 import colors from '../../utils/colors'
 
@@ -14,7 +15,7 @@ const hoverColor: string = color(colors.primary.main)
   .cssa()
 
 type Props = {
-  children: React.Node,
+  children: Node,
   href: string,
 }
 

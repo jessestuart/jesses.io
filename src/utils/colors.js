@@ -62,8 +62,6 @@ const colors = {
     blend8: '#ee3a66',
   },
   bgDark: 'rgb(55, 59, 70)',
-  success: '',
-  warning: '',
   ui: {
     bright: '#FFC9D2',
     light: '#f5f3f7',
@@ -76,15 +74,12 @@ const colors = {
   },
 }
 
-const defaultHover: string = color(colors.secondary.light7)
+colors.defaultHover = color(colors.secondary.light7)
   .alpha(0.8)
   .cssa()
 
-const defaultLink: string = color(colors.primary.main)
+colors.defaultLink = color(colors.primary.main)
   .alpha(0.8)
   .cssa()
-
-colors.defaultHover = defaultHover
-colors.defaultLink = defaultLink
 
 export default colors

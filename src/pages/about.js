@@ -1,52 +1,64 @@
 /* @flow */
-import React from 'react'
+import React, { Fragment } from 'react'
+import Helmet from 'react-helmet'
+
+import config from '../../gatsby-config'
+
+import { BlogHeader } from '../components/Blog'
 import { PortfolioItem } from '../components/Portfolio'
 import { StyledLink } from '../components/StyledLink'
+import StyledPanel from '../components/StyledPanel/StyledPanel'
 
-import '../styles/base.css'
+import Logo from '../components/Icons/logo_dark.svg'
 
-import Logo from '../../src/components/Icons/logo_dark.svg'
+const ContactInfoList = () => (
+  <Fragment>
+    <StyledLink className="b" href="mailto:hi@jessestuart.com">
+      Email
+    </StyledLink>,&nbsp;
+    <StyledLink className="b" href="https://twitter.com/jesse_stuart/">
+      Twitter
+    </StyledLink>,&nbsp;
+    <StyledLink className="b" href="https://github.com/jessestuart">
+      Github
+    </StyledLink>
+  </Fragment>
+)
 
-const CV = () => (
-  <div className="lato bg-near-white black-80 flex justify-center flex-body-expand pv5 lh-title">
-    <section className="center flex-body-expand w-50-ns w-75">
+const PortfolioItemsList = () => (
+  <ul className="list ma0">
+    <PortfolioItem title="Curriculum Vitae" link="cv/JS_Resume_2018.pdf" />
+    <PortfolioItem
+      title="Biber Redux: Reconsidering Dimensions of Variation in American English"
+      link="publications/genre-variation.pdf"
+    />
+    <PortfolioItem
+      title="Systems and methods for determining packages of licensable assets"
+      link="http://jstu.art/ooQi"
+    />
+  </ul>
+)
+
+const About = () => (
+  <div className="bg-near-white lh-copy pa3-ns pv4">
+    <Helmet title={`About | ${config.siteMetadata.title}`} />
+    <StyledPanel className="mt2">
       <div className="center flex items-center justify-center">
-        <img src={Logo} style={{ maxHeight: 200 }} />
+        <img src={Logo} style={{ maxHeight: 200, marginBottom: 0 }} />
       </div>
+
+      <BlogHeader className="w-100 flex flex-column">Get in touch</BlogHeader>
       <p className="lato f4 fw4 mt5">
         You can check out a sampling of my publications below, or scope out my
         C.V. to learn more about what I've been up to.
       </p>
       <p className="lato f4 fw4">
-        Please feel free to hit me up via the communication tool of your
-        choosing (
-        <a href="mailto:hi@jessestuart.com">
-          <StyledLink className="b">Email</StyledLink>
-        </a>,
-        <a href="https://https://twitter.com/jesse_stuart/">
-          <StyledLink className="b">Twitter,</StyledLink>
-        </a>
-        <a href="https://github.com/jessestuart">
-          <StyledLink className="b">Github</StyledLink>
-        </a>
-        ) if you'd like to chat.
+        Feel free to hit me up via whichever communication platform you prefer (<ContactInfoList />,
+        etc.) if you'd like to chat.
       </p>
-      <ul className="list ma0">
-        <PortfolioItem
-          title="Curriculum Vitae"
-          link="cv/jessestuart_resume_2018.pdf"
-        />
-        <PortfolioItem
-          title="Biber Redux: Reconsidering Dimensions of Variation in American English"
-          link="publications/genre-variation.pdf"
-        />
-        <PortfolioItem
-          title="Systems and methods for determining packages of licensable assets"
-          link="http://jstu.art/ooQi"
-        />
-      </ul>
-    </section>
+      <PortfolioItemsList />
+    </StyledPanel>
   </div>
 )
 
-export default CV
+export default About
