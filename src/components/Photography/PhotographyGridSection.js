@@ -20,27 +20,34 @@ type Props = {
   slug: string,
 }
 
-const initialState = {
-  isLightboxOpen: false,
-  lightboxImages: [],
-  index: 0,
+type State = {
+  isLightboxOpen: boolean,
+  lightboxImages: Array<string>,
+  index: number,
+  lightboxSrc?: string,
+  nextImageSrc?: string,
+  prevImageSrc?: string,
 }
 
 type ToggleLightboxOptions = {
-  index?: number,
+  index: number,
   isLightboxOpen: boolean,
   lightboxImages?: Array<string>,
 }
 
-class PhotographyGridSection extends Component<Props> {
-  state = { ...initialState }
+class PhotographyGridSection extends Component<Props, State> {
+  state = {
+    isLightboxOpen: false,
+    lightboxImages: [],
+    index: 0,
+  }
 
   toggleLightbox({
     index,
     isLightboxOpen,
     lightboxImages,
   }: ToggleLightboxOptions) {
-    const images = lightboxImages || this.state.lightboxImages
+    const images: Array<string> = lightboxImages || this.state.lightboxImages
     this.setState({
       index,
       isLightboxOpen,

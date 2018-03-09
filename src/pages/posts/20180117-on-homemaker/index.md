@@ -12,8 +12,9 @@ I've also grown quite scrupulous over the years in the [configuration of my
 environments][dotfiles-url]. These concerns, you can imagine, are often at odds
 with one another.
 
-EC2 instances, Docker containers, Vagrant boxes, Digital Ocean Droplets,
-Linode nodes, Vultr, Scaleway, etc. -- I grew tired of `ssh`-ing or `docker exec`-ing in to some variation of the same unfriendly prompt:
+EC2 instances, Docker containers, Vagrant boxes, Digital Ocean Droplets, Linode
+nodes, Vultr, Scaleway, etc. -- I grew tired of `ssh`-ing or `docker exec`-ing
+in to some variation of the same unfriendly prompt:
 
 ```
 Last login: Mon Jan 01 00:00:00 2018

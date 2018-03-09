@@ -1,4 +1,8 @@
+import Helmet from 'react-helmet'
 import React from 'react'
+
+import config from '../../gatsby-config'
+import StyledPanel from '../components/StyledPanel/StyledPanel'
 
 /**
  * TODO: Replace this.
@@ -6,13 +10,11 @@ import React from 'react'
 class FourOhFour extends React.Component {
   render() {
     return (
-      <div style={{ marginTop: '5em' }}>
-        <h2>404 - page not found</h2>
-        <p>"Oh no, not again."</p>
-        <img
-          src="/potted-plant.jpg"
-          alt="potted plant (it's a joke from the hitchhiker's guide to the galaxy)"
-        />
+      <div className="bg-near-white flex-body-expand lh-copy pa3-ns pv4">
+        <Helmet title={`404 | ${config.siteMetadata.title}`} />
+        <StyledPanel>
+          <h2>:(</h2>
+        </StyledPanel>
       </div>
     )
   }

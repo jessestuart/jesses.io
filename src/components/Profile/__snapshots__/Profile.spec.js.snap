@@ -144,12 +144,12 @@ exports[`Render Profile component. Render Profile component. 1`] = `
         <a
           href="http://jstu.art/ojNe"
         >
-          <span
+          <a
             className="StyledLink-khUpca jZqCYV"
             href="http://jstu.art/ojNe"
           >
             multitudes
-          </span>
+          </a>
         </a>
         .
       </span>
@@ -290,24 +290,24 @@ exports[`Render Profile component. Render Profile component. 1`] = `
           <a
             href="http://jstu.art/oijk"
           >
-            <span
+            <a
               className="StyledLink-khUpca jZqCYV"
               href="http://jstu.art/oijk"
             >
               NLP researcher
-            </span>
+            </a>
           </a>
           , and
         </span>
         <a
           href="http://jstu.art/oj1g"
         >
-          <span
+          <a
             className="StyledLink-khUpca jZqCYV"
             href="http://jstu.art/oj1g"
           >
             USPO Patent holder
-          </span>
+          </a>
         </a>
         .
       </span>
@@ -524,12 +524,12 @@ exports[`Render Profile component. Render Profile component. 1`] = `
         <a
           href="http://jstu.art/ojVB"
         >
-          <span
+          <a
             className="StyledLink-khUpca jZqCYV"
             href="http://jstu.art/ojVB"
           >
             French translator
-          </span>
+          </a>
         </a>
          
         by night.
