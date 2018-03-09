@@ -10592,9 +10592,9 @@ react-hot-loader@^3.0.0-beta.6:
     redbox-react "^1.3.6"
     source-map "^0.6.1"
 
-react-image-lightbox@^4.5.0:
-  version "4.5.0"
-  resolved "https://registry.yarnpkg.com/react-image-lightbox/-/react-image-lightbox-4.5.0.tgz#2edf22fb8e8a8a8eebfde87790751e4c06247a49"
+react-image-lightbox@^4.6.0:
+  version "4.6.0"
+  resolved "https://registry.yarnpkg.com/react-image-lightbox/-/react-image-lightbox-4.6.0.tgz#14b823a1aaf914f471613dc4ca59d8ce4c3dbf97"
   dependencies:
     prop-types "^15.5.8"
     react-modal "^3.1.10"
