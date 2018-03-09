@@ -32,10 +32,7 @@ const CV = () => (
         ) if you'd like to chat.
       </p>
       <ul className="list ma0">
-        <PortfolioItem
-          title="Curriculum Vitae"
-          link="cv/jessestuart_resume_2018.pdf"
-        />
+        <PortfolioItem title="Curriculum Vitae" link="cv/JS_Resume_2018.pdf" />
         <PortfolioItem
           title="Biber Redux: Reconsidering Dimensions of Variation in American English"
           link="publications/genre-variation.pdf"
