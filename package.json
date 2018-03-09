@@ -110,7 +110,7 @@
   },
   "engine": {
     "node": ">=9",
-    "yarn": ">=1.4"
+    "yarn": ">=1.5"
   },
   "homepage": "https://jessestuart.com",
   "keywords": ["blog", "gatsby", "photography", "react"],
