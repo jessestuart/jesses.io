@@ -4844,9 +4844,9 @@ gatsby-module-loader@^1.0.11:
     babel-runtime "^6.26.0"
     loader-utils "^0.2.16"
 
-gatsby-plugin-feed@^1.3.19:
-  version "1.3.19"
-  resolved "https://registry.yarnpkg.com/gatsby-plugin-feed/-/gatsby-plugin-feed-1.3.19.tgz#0fa92430c47dab0ed32fd54d4a187b7708c124e7"
+gatsby-plugin-feed@^1.3.20:
+  version "1.3.20"
+  resolved "https://registry.yarnpkg.com/gatsby-plugin-feed/-/gatsby-plugin-feed-1.3.20.tgz#8dd760999c01164fd41560c6b276a1986b5beb53"
   dependencies:
     babel-runtime "^6.26.0"
     lodash.merge "^4.6.0"
