@@ -74,6 +74,7 @@
     "postcss-nested": "^3.0.0",
     "prettier": "^1.11.1",
     "prop-types": "^15.6.1",
+    "purgecss": "^0.20.0",
     "raven-js": "^3.23.1",
     "react-calendar-heatmap": "^1.6.3",
     "react-cosmos": "^3.7.1",
@@ -104,6 +105,7 @@
     "typeface-spectral": "0.0.54",
     "typography": "^0.16.6",
     "typography-plugin-code": "^0.16.11",
+    "voca": "^1.4.0",
     "winston": "^3.0.0-rc2"
   },
   "engine": {
@@ -130,7 +132,10 @@
     "build:ci": "GATSBY_ENV=ci yarn build",
     "build:s3-plugin": "cd ./plugins/gatsby-source-s3 && yarn && cd ../../",
     "clean": "rm -rf node_modules/ .cache/ && yarn -s",
-    "dev": "gatsby develop",
+    "dev":
+      "GATSBY_ENV=ci NODE_OPTIONS=--max_old_space_size=4096 gatsby develop",
+    "dev:photos":
+      "NODE_OPTIONS=--max_old_space_size=4096 concurrently 'yarn watch:s3-plugin' 'yarn gatsby develop'",
     "flow:install": "flow-typed -o -l ./flow-libs/ install",
     "format": "prettier 'src/**/*.js' 'src/**/*.md'",
     "lint": "concurrently 'yarn lint:js' 'yarn lint:style'",
