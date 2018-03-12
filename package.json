@@ -26,7 +26,7 @@
     "gatsby-transformer-remark": "^1.7.36",
     "gatsby-transformer-sharp": "^1.6.22",
     "js-tachyons": "^1.1.2",
-    "luxon": "^0.5.3",
+    "luxon": "^0.5.6",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
     "react-helmet": "^5.2.0",
@@ -74,7 +74,7 @@
     "postcss-nested": "^3.0.0",
     "prettier": "^1.11.1",
     "prop-types": "^15.6.1",
-    "purgecss": "^0.20.0",
+    "purgecss": "^0.20.1",
     "raven-js": "^3.23.1",
     "react-calendar-heatmap": "^1.6.3",
     "react-cosmos": "^3.7.1",
@@ -110,7 +110,7 @@
   },
   "engine": {
     "node": ">=9",
-    "yarn": ">=1.4"
+    "yarn": ">=1.5"
   },
   "homepage": "https://jessestuart.com",
   "keywords": ["blog", "gatsby", "photography", "react"],

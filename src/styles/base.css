@@ -87,16 +87,13 @@ a {
  * Sticky footer support.
  * ======================
  */
-html,
-body {
-  height: 100%;
-}
 
 body,
 #___gatsby {
   display: flex;
   flex-direction: column;
   flex: 1 0 auto;
+  min-height: 100vh;
   width: 100%;
 }
 

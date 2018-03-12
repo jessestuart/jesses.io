@@ -6,7 +6,7 @@ import type { GatsbyImage } from '../types/gatsby-image'
 
 const Home = ({ data }: Props) => (
   <Fragment>
-    <div className="moon-gray bg-gray-primary">
+    <div className="moon-gray bg-gray-primary w-100">
       <Profile avatar={_.get(data, 'file.childImageSharp')} />
       <ProfileDevIcons />
     </div>

@@ -40,7 +40,7 @@ const PortfolioItemsList = () => (
 )
 
 const About = () => (
-  <div className="bg-near-white lh-copy pa3-ns pv4">
+  <div className="bg-near-white lh-copy pa3-ns pv4 w-100">
     <Helmet title={`About | ${config.siteMetadata.title}`} />
     <StyledPanel className="mt2">
       <div className="center flex items-center justify-center">
