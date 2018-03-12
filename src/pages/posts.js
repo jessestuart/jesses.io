@@ -29,14 +29,14 @@ type Props = {
   },
 }
 
-class BlogIndex extends Component {
+class BlogIndex extends Component<Props> {
   render() {
-    const { props }: Props = this
+    const { props } = this
     const { location } = props
     const posts = _.get(props, 'data.allMarkdownRemark.edges')
 
     return (
-      <div className="bg-near-white flex-body-expand lh-copy pa3-ns pv4">
+      <div className="bg-near-white lh-copy pa3-ns pv4 w-100">
         {posts.map(({ node }) => {
           const { excerpt, fields, frontmatter } = node
           const date = _.get(frontmatter, 'date')
