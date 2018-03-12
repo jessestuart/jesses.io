@@ -20,8 +20,7 @@ class PhotographyPostTemplate extends Component {
     const title = `Photography | ${date} | ${siteTitle}`
 
     return (
-      // <div className="bg-light-gray black-80 w-100 flex-body-expand">
-      <div className="bg-light-gray black-80 pa3-ns pv4 w-100">
+      <div className="bg-near-white black-80 pa3-ns pv4 w-100">
         <Helmet title={title} />
         <PhotographyGridSection
           datetime={datetime}
