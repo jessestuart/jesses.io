@@ -4998,13 +4998,13 @@ gatsby-remark-images@^1.5.56:
     slash "^1.0.0"
     unist-util-select "^1.5.0"
 
-gatsby-remark-prismjs@^1.2.17:
-  version "1.2.17"
-  resolved "https://registry.yarnpkg.com/gatsby-remark-prismjs/-/gatsby-remark-prismjs-1.2.17.tgz#86ab9dccd6f0952182c4d36cb9290effee6d5dee"
+gatsby-remark-prismjs@^1.2.18:
+  version "1.2.18"
+  resolved "https://registry.yarnpkg.com/gatsby-remark-prismjs/-/gatsby-remark-prismjs-1.2.18.tgz#b18a9130fe111095c4b53aba41f235c440be2197"
   dependencies:
     babel-runtime "^6.26.0"
     parse-numeric-range "0.0.2"
-    prismjs "^1.11.0"
+    prismjs "^1.12.2"
     unist-util-visit "^1.3.0"
 
 gatsby-remark-smartypants@^1.4.12:
@@ -10264,9 +10264,9 @@ pretty-format@^22.4.0:
     ansi-regex "^3.0.0"
     ansi-styles "^3.2.0"
 
-prismjs@^1.11.0:
-  version "1.12.0"
-  resolved "https://registry.yarnpkg.com/prismjs/-/prismjs-1.12.0.tgz#5edbc56096789c9d11b7e16cc84e8c8d4fc85613"
+prismjs@^1.12.2:
+  version "1.12.2"
+  resolved "https://registry.yarnpkg.com/prismjs/-/prismjs-1.12.2.tgz#a40a6cd5bf36716e316cb75df91976a7d5d694e6"
   optionalDependencies:
     clipboard "^2.0.0"
 
