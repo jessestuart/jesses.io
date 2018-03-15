@@ -7918,9 +7918,9 @@ ltcdr@^2.2.1:
   version "2.2.1"
   resolved "https://registry.yarnpkg.com/ltcdr/-/ltcdr-2.2.1.tgz#5ab87ad1d4c1dab8e8c08bbf037ee0c1902287cf"
 
-luxon@^0.5.6:
-  version "0.5.6"
-  resolved "https://registry.yarnpkg.com/luxon/-/luxon-0.5.6.tgz#9b1639d77fa18fbb649079ed3dbf626fa35940ee"
+luxon@^0.5.8:
+  version "0.5.8"
+  resolved "https://registry.yarnpkg.com/luxon/-/luxon-0.5.8.tgz#b647a67802ed93028576f02e6bb140a9668cdb7f"
 
 macaddress@^0.2.8:
   version "0.2.8"
