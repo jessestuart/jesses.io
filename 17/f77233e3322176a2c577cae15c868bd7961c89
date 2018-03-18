@@ -1,0 +1,14 @@
+[ver:1,total:4080]
+src/components/SiteHeader/SiteHeader.js:2842,1521144000:1882,1521147600:240,1521151200:360,1521158400:180,1521162000:180,m
+src/utils/typography.js:330,1521144000:330,m
+Dockerfile:180,1521158400:180,r
+src/components/Photography/PhotographyGridSection.js:138,1521309600:138,r
+.flowconfig:130,1521309600:130,m
+src/pages/posts.js:122,1521144000:122,r
+.eslintrc.js:120,1521309600:120,m
+src/components/Profile/ProfileStyledLink.js:86,1521144000:86,m
+src/components/StyledLink/StyledLink.js:80,1521144000:80,m
+src/pages/about.js:20,1521144000:20,r
+node_modules/graphql/error/locatedError.js.flow:12,1521309600:12,r
+src/pages/photography.js:10,1521309600:10,r
+.babelrc:10,1521309600:10,r
