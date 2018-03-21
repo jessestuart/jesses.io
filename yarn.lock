@@ -10495,12 +10495,12 @@ punycode@^1.2.4, punycode@^1.4.1:
   version "1.4.1"
   resolved "https://registry.yarnpkg.com/punycode/-/punycode-1.4.1.tgz#c0d5a63b2718800ad8e1eb0fa5269c84dd41845e"
 
-purgecss@^0.20.1:
-  version "0.20.1"
-  resolved "https://registry.yarnpkg.com/purgecss/-/purgecss-0.20.1.tgz#179f637a0785239e2a67157d191fba9179ea16a4"
+purgecss@^0.21.0:
+  version "0.21.0"
+  resolved "https://registry.yarnpkg.com/purgecss/-/purgecss-0.21.0.tgz#64e62668ef11c9bc03d233843ad7006e1dfe578d"
   dependencies:
     glob "^7.1.2"
-    postcss "^6.0.19"
+    postcss "^6.0.20"
     postcss-selector-parser "^3.1.1"
     yargs "^11.1.0"
 
