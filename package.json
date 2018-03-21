@@ -74,7 +74,7 @@
     "postcss-nested": "^3.0.0",
     "prettier": "^1.11.1",
     "prop-types": "^15.6.1",
-    "purgecss": "^0.20.1",
+    "purgecss": "^0.21.0",
     "raven-js": "^3.23.3",
     "react-calendar-heatmap": "^1.6.3",
     "react-cosmos": "^4.0.0-beta.0",
