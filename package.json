@@ -26,7 +26,7 @@
     "gatsby-transformer-remark": "^1.7.37",
     "gatsby-transformer-sharp": "^1.6.22",
     "js-tachyons": "^1.1.2",
-    "luxon": "^0.5.8",
+    "luxon": "^1.0.0",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
     "react-helmet": "^5.2.0",
