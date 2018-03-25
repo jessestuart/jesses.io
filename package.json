@@ -65,7 +65,7 @@
     "jest": "^22.4.2",
     "lint-staged": "^7.0.0",
     "lodash": "^4.17.5",
-    "minio": "^4.0.0",
+    "minio": "^5.0.0",
     "onecolor": "^3.0.5",
     "postcss": "^6.0.20",
     "postcss-cssnext": "^3.1.0",
