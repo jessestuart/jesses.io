@@ -5179,9 +5179,9 @@ gatsby-plugin-remove-trailing-slashes@^1.0.9:
   dependencies:
     babel-runtime "^6.26.0"
 
-gatsby-plugin-sentry@^0.0.3:
-  version "0.0.3"
-  resolved "https://registry.yarnpkg.com/gatsby-plugin-sentry/-/gatsby-plugin-sentry-0.0.3.tgz#961067948b2aa3fddfed1b962e6f8e3763a30a24"
+gatsby-plugin-sentry@^0.0.4:
+  version "0.0.4"
+  resolved "https://registry.yarnpkg.com/gatsby-plugin-sentry/-/gatsby-plugin-sentry-0.0.4.tgz#707a14a1ce29599c56eff1a37881b55595ee395b"
   dependencies:
     babel-runtime "^6.26.0"
 
