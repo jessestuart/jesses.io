@@ -75,7 +75,7 @@
     "prettier": "^1.11.1",
     "prop-types": "^15.6.1",
     "purgecss": "^0.21.0",
-    "raven-js": "^3.24.0",
+    "raven-js": "^3.24.1",
     "react-calendar-heatmap": "^1.6.3",
     "react-cosmos": "^4.0.0-beta.1",
     "react-feather": "^1.0.8",
