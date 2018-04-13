@@ -1,0 +1,13 @@
+[ver:1,total:5160]
+src/components/SiteFooter/SiteFooter.js:1367,1522454400:120,1522458000:1247,m
+src/components/Profile/BlackMirror.js:1328,1522454400:262,1522458000:1006,1522472400:60,m
+src/components/SiteHeader/SiteHeader.js:1326,1522454400:1326,m
+src/styles/base.css:445,1522458000:445,m
+src/components/Profile/Profile.js:257,1522458000:257,m
+src/components/Profile/ProfileFooter.js:120,1522458000:120,r
+.git/PULLREQ_EDITMSG:120,1522454400:120,d
+src/utils/colors.js:90,1522458000:90,r
+package.json:60,1522454400:60,r
+yarn.lock:20,1522454400:20,r
+test/coverage/lcov-report/components/Profile/Profile.js.html:15,1522458000:15,r
+test/coverage/lcov-report/components/Profile/BlackMirror.js.html:12,1522454400:12,r
