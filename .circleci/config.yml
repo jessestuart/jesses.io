@@ -152,7 +152,7 @@ jobs:
       - run:
           name: Authenticate with AWS ECR.
           command: |
-            eval $(aws ecr get-login --no-include-email --region us-east-1)
+            yes | eval $(aws ecr get-login --no-include-email --region us-east-1)
 
       - run:
           name: Build Docker image for static site.
