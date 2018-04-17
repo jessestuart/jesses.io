@@ -41,7 +41,7 @@
     "babel-preset-flow": "^6.23.0",
     "babel-preset-react": "^6.24.1",
     "bluebird": "^3.5.1",
-    "chalk": "^2.3.2",
+    "chalk": "^2.4.0",
     "classnames": "^2.2.5",
     "codecov": "^3.0.0",
     "concurrently": "^3.5.1",
