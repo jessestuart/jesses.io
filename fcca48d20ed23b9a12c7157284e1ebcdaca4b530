@@ -1,0 +1,10 @@
+[ver:1,total:900]
+plugins/gatsby-source-s3/src/extend-node-type.js:415,1524052800:415,m
+plugins/gatsby-source-s3/.gitignore:200,1524052800:200,r
+plugins/gatsby-source-s3/src/types/exif-data.js:80,1524052800:80,m
+plugins/gatsby-source-s3/src/types/s3-image-asset-node.js:75,1524052800:75,m
+plugins/gatsby-source-s3/extend-node-type.js:60,1524052800:60,r
+plugins/gatsby-source-s3/.babelrc:20,1524052800:20,r
+plugins/gatsby-source-s3/.babelrc.js:20,1524052800:20,r
+plugins/gatsby-source-s3/gatsby-node.js:15,1524052800:15,r
+plugins/gatsby-source-s3/source-nodes.js:15,1524052800:15,r
