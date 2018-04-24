@@ -103,7 +103,7 @@
     "typeface-fira-mono": "^0.0.54",
     "typeface-lato": "^0.0.54",
     "typeface-spectral": "0.0.54",
-    "typography": "^0.16.6",
+    "typography": "^0.16.16",
     "typography-plugin-code": "^0.16.11",
     "voca": "^1.4.0",
     "winston": "^3.0.0-rc2"
