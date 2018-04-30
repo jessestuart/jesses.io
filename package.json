@@ -30,7 +30,7 @@
     "react": "^16.3.1",
     "react-dom": "^16.3.1",
     "react-helmet": "^5.2.0",
-    "react-image-lightbox": "^4.6.0"
+    "react-image-lightbox": "^5.0.0"
   },
   "devDependencies": {
     "babel-eslint": "^8.2.2",
