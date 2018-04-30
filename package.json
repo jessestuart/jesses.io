@@ -67,7 +67,7 @@
     "lodash": "^4.17.5",
     "minio": "^5.0.0",
     "onecolor": "^3.0.5",
-    "postcss": "^6.0.21",
+    "postcss": "^6.0.22",
     "postcss-cssnext": "^3.1.0",
     "postcss-custom-media": "^6.0.0",
     "postcss-import": "^11.1.0",
