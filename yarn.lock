@@ -13297,9 +13297,9 @@ textlint-rule-stop-words@^1.0.3:
     split-lines "^1.1.0"
     textlint-rule-helper "^2.0.0"
 
-textlint-rule-terminology@^1.1.27:
-  version "1.1.27"
-  resolved "https://registry.yarnpkg.com/textlint-rule-terminology/-/textlint-rule-terminology-1.1.27.tgz#12da9f6d277ce83239237f4ec33f53d3ffccb3d4"
+textlint-rule-terminology@^1.1.28:
+  version "1.1.28"
+  resolved "https://registry.yarnpkg.com/textlint-rule-terminology/-/textlint-rule-terminology-1.1.28.tgz#003f329f5f43f436d21c034415e810582ff9d1b3"
   dependencies:
     lodash "^4.17.4"
     strip-json-comments "^2.0.1"
