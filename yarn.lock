@@ -5807,9 +5807,9 @@ gray-percentage@^2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/gray-percentage/-/gray-percentage-2.0.0.tgz#b72a274d1b1379104a0050b63b207dc53fe56f99"
 
-greenkeeper-lockfile@^1.14.0:
-  version "1.14.0"
-  resolved "https://registry.yarnpkg.com/greenkeeper-lockfile/-/greenkeeper-lockfile-1.14.0.tgz#c6c25d62cd08fcd30ccdb5f11f171f7c80a1a7ce"
+greenkeeper-lockfile@^1.15.0:
+  version "1.15.0"
+  resolved "https://registry.yarnpkg.com/greenkeeper-lockfile/-/greenkeeper-lockfile-1.15.0.tgz#f989b6833a09e07176d2f9410a5f8eec59ae5fc7"
   dependencies:
     lodash "^4.17.4"
     require-relative "^0.8.7"
