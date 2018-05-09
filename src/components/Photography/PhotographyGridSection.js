@@ -100,7 +100,7 @@ class PhotographyGridSection extends Component<Props, State> {
         {this.state.isLightboxOpen ? (
           <Lightbox
             enableZoom={false}
-            mainSrc={this.state.lightboxSrc}
+            mainSrc={this.state.lightboxSrc || ''}
             nextSrc={this.state.nextImageSrc}
             prevSrc={this.state.prevImageSrc}
             onCloseRequest={() => this.setState({ isLightboxOpen: false })}
