@@ -1,0 +1,16 @@
+[ver:1,total:4380]
+src/config/createPages.js:1010,1524067200:1010,r
+plugins/gatsby-source-s3/src/source-nodes.js:730,1524056400:730,r
+.circleci/config.yml:600,1524070800:180,1524888000:420,r
+src/pages/photography.js:420,1524060000:390,1524063600:30,r
+gatsby-config.js:360,1524063600:90,1524067200:270,r
+plugins/gatsby-source-s3/src/types/exif-data.js:260,1524060000:90,1524067200:170,d
+plugins/gatsby-source-s3/src/types/source-s3-options.js:190,1524056400:190,d
+plugins/gatsby-source-s3/src/extend-node-type.js:180,1524056400:30,1524074400:150,r
+plugins/gatsby-source-s3/package.json:180,1524430800:180,r
+package.json:180,1524070800:120,1524074400:60,m
+plugins/gatsby-source-s3/src/types/s3-image-asset-node.js:80,1524067200:50,1524074400:30,d
+plugins/gatsby-source-s3/source-nodes.js:80,1524056400:80,r
+plugins/gatsby-source-s3/src/gatsby-node.js:70,1524056400:70,r
+plugins/gatsby-source-s3/gatsby-node.js:20,1524056400:20,r
+.git/PULLREQ_EDITMSG:20,1524056400:20,d
