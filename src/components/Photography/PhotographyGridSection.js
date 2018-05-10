@@ -3,7 +3,6 @@ import React, { Component } from 'react'
 import Img from 'gatsby-image'
 import _ from 'lodash'
 import { DateTime } from 'luxon'
-import Lightbox from 'react-image-lightbox'
 
 import type { GatsbyImage } from '../../types/gatsby-image'
 import StyledPanel from '../StyledPanel/StyledPanel'
@@ -13,6 +12,11 @@ import {
   ImageZoomGridElement,
   PhotographySectionHeader,
 } from '.'
+
+let Lightbox
+if (typeof window !== 'undefined') {
+  Lightbox = require('react-image-lightbox')
+}
 
 type Props = {
   datetime: DateTime,
@@ -100,7 +104,7 @@ class PhotographyGridSection extends Component<Props, State> {
         {this.state.isLightboxOpen ? (
           <Lightbox
             enableZoom={false}
-            mainSrc={this.state.lightboxSrc}
+            mainSrc={this.state.lightboxSrc || ''}
             nextSrc={this.state.nextImageSrc}
             prevSrc={this.state.prevImageSrc}
             onCloseRequest={() => this.setState({ isLightboxOpen: false })}
