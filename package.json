@@ -6,7 +6,7 @@
     "gatsby": "^1.9.259",
     "gatsby-image": "^1.0.51",
     "gatsby-link": "^1.6.44",
-    "gatsby-plugin-feed": "^1.3.21",
+    "gatsby-plugin-feed": "^1.3.22",
     "gatsby-plugin-google-analytics": "^1.0.31",
     "gatsby-plugin-lodash": "^1.0.11",
     "gatsby-plugin-netlify": "^1.0.19",
