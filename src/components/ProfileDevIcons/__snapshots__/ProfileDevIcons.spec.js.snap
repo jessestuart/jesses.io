@@ -47,7 +47,6 @@ Array [
     </div>
     <div
       className="bb-ns b--white-50 DevIconColumn__DevIconContainer-kCjOSG pa3 pa4-l flex justify-center items-center dAXxdM"
-      style={undefined}
     >
       <a
         href="https://docker.com"
@@ -67,7 +66,6 @@ Array [
     </div>
     <div
       className="bb-ns b--white-50 DevIconColumn__DevIconContainer-kCjOSG pa3 pa4-l flex justify-center items-center dAXxdM"
-      style={undefined}
     >
       <a
         href="https://kubernetes.io"
@@ -91,7 +89,6 @@ Array [
     </div>
     <div
       className="bb-ns b--white-50 DevIconColumn__DevIconContainer-kCjOSG pa3 pa4-l flex justify-center items-center dAXxdM"
-      style={undefined}
     >
       <a
         href="https://ansible.com"
@@ -125,7 +122,6 @@ Array [
     </div>
     <div
       className="bb b--white-50 bb-ns b--white-50 DevIconColumn__DevIconContainer-kCjOSG pa3 pa4-l flex justify-center items-center dAXxdM"
-      style={undefined}
     >
       <a
         href="https://vagrantup.com"
@@ -149,7 +145,6 @@ Array [
     </div>
     <div
       className="bb b--white-50 bb-ns b--white-50 DevIconColumn__DevIconContainer-kCjOSG pa3 pa4-l flex justify-center items-center dAXxdM"
-      style={undefined}
     >
       <a
         href="https://packer.io"
@@ -173,7 +168,6 @@ Array [
     </div>
     <div
       className="bb b--white-50 DevIconColumn__DevIconContainer-kCjOSG pa3 pa4-l flex justify-center items-center dAXxdM"
-      style={undefined}
     >
       <a
         href="https://terraform.io"
@@ -218,7 +212,6 @@ Array [
     </div>
     <div
       className="bb-ns b--white-50 DevIconColumn__DevIconContainer-kCjOSG pa3 pa4-l flex justify-center items-center dAXxdM"
-      style={undefined}
     >
       <a
         href="http://openjdk.java.net"
@@ -254,7 +247,6 @@ Array [
     </div>
     <div
       className="bb-ns b--white-50 DevIconColumn__DevIconContainer-kCjOSG pa3 pa4-l flex justify-center items-center dAXxdM"
-      style={undefined}
     >
       <a
         href="https://grails.org"
@@ -274,7 +266,6 @@ Array [
     </div>
     <div
       className="bb-ns b--white-50 DevIconColumn__DevIconContainer-kCjOSG pa3 pa4-l flex justify-center items-center dAXxdM"
-      style={undefined}
     >
       <a
         href="https://golang.org"
@@ -333,7 +324,6 @@ Array [
     </div>
     <div
       className="bb b--white-50 bb-ns b--white-50 DevIconColumn__DevIconContainer-kCjOSG pa3 pa4-l flex justify-center items-center dAXxdM"
-      style={undefined}
     >
       <a
         href="https://nodejs.org"
@@ -353,7 +343,6 @@ Array [
     </div>
     <div
       className="bb b--white-50 bb-ns b--white-50 DevIconColumn__DevIconContainer-kCjOSG pa3 pa4-l flex justify-center items-center dAXxdM"
-      style={undefined}
     >
       <a
         href="https://python.org"
@@ -381,7 +370,6 @@ Array [
     </div>
     <div
       className="bb b--white-50 DevIconColumn__DevIconContainer-kCjOSG pa3 pa4-l flex justify-center items-center dAXxdM"
-      style={undefined}
     >
       <a
         href="https://clojure.org"
@@ -422,7 +410,6 @@ Array [
     </div>
     <div
       className="bb-ns b--white-50 DevIconColumn__DevIconContainer-kCjOSG pa3 pa4-l flex justify-center items-center dAXxdM"
-      style={undefined}
     >
       <a
         href="https://react.org"
@@ -450,7 +437,6 @@ Array [
     </div>
     <div
       className="bb-ns b--white-50 DevIconColumn__DevIconContainer-kCjOSG pa3 pa4-l flex justify-center items-center dAXxdM"
-      style={undefined}
     >
       <a
         href="https://redux.js.org"
@@ -470,7 +456,6 @@ Array [
     </div>
     <div
       className="bb-ns b--white-50 DevIconColumn__DevIconContainer-kCjOSG pa3 pa4-l flex justify-center items-center dAXxdM"
-      style={undefined}
     >
       <a
         href="https://graphql.org"
@@ -490,7 +475,6 @@ Array [
     </div>
     <div
       className="bb b--white-50 bb-ns b--white-50 DevIconColumn__DevIconContainer-kCjOSG pa3 pa4-l flex justify-center items-center dAXxdM"
-      style={undefined}
     >
       <a
         href="https://facebook.github.io/jest/"
@@ -514,7 +498,6 @@ Array [
     </div>
     <div
       className="bb b--white-50 bb-ns b--white-50 DevIconColumn__DevIconContainer-kCjOSG pa3 pa4-l flex justify-center items-center dAXxdM"
-      style={undefined}
     >
       <a
         href="https://gatsbyjs.org"
@@ -538,7 +521,6 @@ Array [
     </div>
     <div
       className="bb b--white-50 DevIconColumn__DevIconContainer-kCjOSG pa3 pa4-l flex justify-center items-center dAXxdM"
-      style={undefined}
     >
       <a
         href="https://angular.io"
