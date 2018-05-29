@@ -34,7 +34,7 @@
   },
   "devDependencies": {
     "babel-eslint": "^8.2.3",
-    "babel-jest": "^23.0.0-alpha.0",
+    "babel-jest": "^23.0.1",
     "babel-plugin-lodash": "^3.3.2",
     "babel-plugin-styled-components": "^1.5.1",
     "babel-preset-env": "^1.7.0",
@@ -54,15 +54,15 @@
     "eslint-plugin-jsx-a11y": "^6.0.3",
     "eslint-plugin-node": "^6.0.1",
     "eslint-plugin-prettier": "^2.6.0",
-    "eslint-plugin-promise": "^3.7.0",
+    "eslint-plugin-promise": "^3.8.0",
     "eslint-plugin-react": "^7.8.2",
     "eslint-plugin-standard": "^3.1.0",
-    "flow-bin": "^0.72.0",
+    "flow-bin": "^0.73.0",
     "flow-typed": "^2.4.0",
     "gray-percentage": "^2.0.0",
     "greenkeeper-lockfile": "^1.15.1",
     "husky": "^0.14.3",
-    "jest": "^22.4.4",
+    "jest": "^23.0.1",
     "lint-staged": "^7.1.2",
     "lodash": "^4.17.10",
     "minio": "^5.0.2",
@@ -72,20 +72,20 @@
     "postcss-custom-media": "^6.0.0",
     "postcss-import": "^11.1.0",
     "postcss-nested": "^3.0.0",
-    "prettier": "^1.12.1",
+    "prettier": "^1.13.2",
     "prismjs": "^1.14.0",
     "prop-types": "^15.6.1",
     "purgecss": "^1.0.0",
     "raven-js": "^3.25.2",
     "react-calendar-heatmap": "^1.6.3",
-    "react-cosmos": "^4.3.0",
+    "react-cosmos": "^4.4.0",
     "react-feather": "^1.1.0",
     "react-headroom": "^2.2.2",
     "react-test-renderer": "^16.4.0",
     "rimraf": "^2.6.2",
     "scrollprogress": "^3.0.2",
-    "snyk": "^1.80.1",
-    "styled-components": "^3.2.6",
+    "snyk": "^1.82.0",
+    "styled-components": "^3.3.0",
     "stylelint": "^9.2.1",
     "stylelint-config-standard": "^18.2.0",
     "textlint": "^10.2.1",
@@ -95,7 +95,7 @@
     "textlint-rule-no-dead-link": "^4.3.0",
     "textlint-rule-no-start-duplicated-conjunction": "^2.0.2",
     "textlint-rule-stop-words": "^1.0.3",
-    "textlint-rule-terminology": "^1.1.28",
+    "textlint-rule-terminology": "^1.1.29",
     "trashable": "^1.0.6",
     "typeface-alegreya": "^0.0.54",
     "typeface-alegreya-sans": "^0.0.54",
@@ -114,13 +114,30 @@
     "yarn": ">=1.5"
   },
   "homepage": "https://jessestuart.com",
-  "keywords": ["blog", "gatsby", "photography", "react"],
+  "keywords": [
+    "blog",
+    "gatsby",
+    "photography",
+    "react"
+  ],
   "license": "MIT",
   "lint-staged": {
-    "*.js": ["prettier --write", "git add -f"],
-    "*.json": ["prettier --write", "git add"],
-    "*.css": ["prettier --write", "git add"],
-    "src/pages/posts/**/*.md": ["yarn lint:text", "git add"]
+    "*.js": [
+      "prettier --write",
+      "git add -f"
+    ],
+    "*.json": [
+      "prettier --write",
+      "git add"
+    ],
+    "*.css": [
+      "prettier --write",
+      "git add"
+    ],
+    "src/pages/posts/**/*.md": [
+      "yarn lint:text",
+      "git add"
+    ]
   },
   "main": "n/a",
   "private": true,
@@ -133,15 +150,12 @@
     "build:ci": "GATSBY_ENV=ci yarn build",
     "build:s3-plugin": "cd ./plugins/gatsby-source-s3 && yarn && cd ../../",
     "clean": "rm -rf node_modules/ .cache/ && yarn -s",
-    "dev":
-      "GATSBY_ENV=ci NODE_OPTIONS=--max_old_space_size=4096 gatsby develop",
-    "dev:photos":
-      "NODE_OPTIONS=--max_old_space_size=4096 concurrently 'yarn watch:s3-plugin' 'yarn gatsby develop'",
+    "dev": "GATSBY_ENV=ci NODE_OPTIONS=--max_old_space_size=4096 gatsby develop",
+    "dev:photos": "NODE_OPTIONS=--max_old_space_size=4096 concurrently 'yarn watch:s3-plugin' 'yarn gatsby develop'",
     "flow:install": "flow-typed -o -l ./flow-libs/ install",
     "format": "prettier 'src/**/*.js' 'src/**/*.md'",
     "lint": "concurrently 'yarn lint:js' 'yarn lint:style'",
-    "lint:js":
-      "eslint --format 'node_modules/eslint-friendly-formatter' --quiet --ext .js .",
+    "lint:js": "eslint --format 'node_modules/eslint-friendly-formatter' --quiet --ext .js .",
     "lint:style": "stylelint 'src/**/*.css'",
     "lint:stylefix": "stylelint --fix 'src/**/*.css'",
     "lint:text": "textlint src/pages/**/index.md",
