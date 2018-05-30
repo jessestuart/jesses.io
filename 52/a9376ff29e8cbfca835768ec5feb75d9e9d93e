@@ -3,3 +3,12 @@
 [ver:1,total:180]
 .nvmrc:150,1527692400:60,1527696000:90,m
 .circleci/config.yml:30,1527696000:30,m
+
+[ver:1,total:60]
+.circleci/config.yml:60,1527696000:60,m
+
+[ver:1,total:60]
+.circleci/config.yml:60,1527696000:60,m
+
+[ver:1,total:300]
+.circleci/config.yml:300,1527696000:300,m
