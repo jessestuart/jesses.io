@@ -21,6 +21,8 @@ workflows:
       - push_image:
           requires:
             - build
+            - lint
+            - test
           filters:
             branches:
               only: master
@@ -31,8 +33,8 @@ workflows:
 restore_cache: &restore_cache
   restore_cache:
     keys:
-      - dependencies-{{ checksum "package.json" }}
-      - dependencies-
+      - dependencies-{{ checksum ".nvmrc" }}-{{ checksum "package.json" }}
+      - dependencies-{{ checksum ".nvmrc" }}
 
 restore_public_dir_cache: &restore_public_dir_cache
   restore_cache:
@@ -47,7 +49,7 @@ save_cache: &save_cache
   save_cache:
     paths:
       - node_modules/
-    key: dependencies-{{ checksum "package.json" }}
+    key: dependencies-{{ checksum ".nvmrc" }}-{{ checksum "package.json" }}
 
 save_public_dir_cache: &save_public_dir_cache
   save_cache:
@@ -68,7 +70,7 @@ jobs:
   install_dependencies:
     working_directory: ~/jessestuart
     docker:
-      - image: circleci/node:9
+      - image: circleci/node:10
 
     steps:
       - checkout
@@ -85,7 +87,7 @@ jobs:
   lint:
     working_directory: ~/jessestuart
     docker:
-      - image: circleci/node:9
+      - image: circleci/node:10
 
     steps:
       - checkout
@@ -97,7 +99,7 @@ jobs:
   test:
     working_directory: ~/jessestuart
     docker:
-      - image: circleci/node:9
+      - image: circleci/node:10
 
     steps:
       - checkout
@@ -109,7 +111,7 @@ jobs:
   build:
     working_directory: ~/jessestuart
     docker:
-      - image: circleci/node:9
+      - image: circleci/node:10
     steps:
       - checkout
       - *restore_cache
@@ -170,7 +172,7 @@ jobs:
 
   capture_screenshots:
     docker:
-      - image: circleci/node:9-browsers
+      - image: circleci/node:10-browsers
 
     steps:
       - checkout
