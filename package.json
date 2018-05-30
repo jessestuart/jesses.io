@@ -143,7 +143,7 @@
   "private": true,
   "repository": {
     "type": "git",
-    "url": "https://github.com/jessestuart/jessestuart.com"
+    "url": "https://github.com/jessestuart/jesses.io"
   },
   "scripts": {
     "build": "yarn build:s3-plugin && gatsby build",
