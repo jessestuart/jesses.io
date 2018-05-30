@@ -142,14 +142,10 @@ exports[`Render Profile component. Render Profile component. 1`] = `
       >
         I contain 
         <a
+          className="StyledLink-khUpca jZqCYV"
           href="http://jstu.art/ojNe"
         >
-          <a
-            className="StyledLink-khUpca jZqCYV"
-            href="http://jstu.art/ojNe"
-          >
-            multitudes
-          </a>
+          multitudes
         </a>
         .
       </span>
@@ -288,26 +284,18 @@ exports[`Render Profile component. Render Profile component. 1`] = `
           Published
            
           <a
+            className="StyledLink-khUpca jZqCYV"
             href="http://jstu.art/oijk"
           >
-            <a
-              className="StyledLink-khUpca jZqCYV"
-              href="http://jstu.art/oijk"
-            >
-              NLP researcher
-            </a>
+            NLP researcher
           </a>
           , and
         </span>
         <a
+          className="StyledLink-khUpca jZqCYV"
           href="http://jstu.art/oj1g"
         >
-          <a
-            className="StyledLink-khUpca jZqCYV"
-            href="http://jstu.art/oj1g"
-          >
-            USPO Patent holder
-          </a>
+          USPO Patent holder
         </a>
         .
       </span>
@@ -522,14 +510,10 @@ exports[`Render Profile component. Render Profile component. 1`] = `
         className="f4 fw3 dib tr lh-copy"
       >
         <a
+          className="StyledLink-khUpca jZqCYV"
           href="http://jstu.art/ojVB"
         >
-          <a
-            className="StyledLink-khUpca jZqCYV"
-            href="http://jstu.art/ojVB"
-          >
-            French translator
-          </a>
+          French translator
         </a>
          
         by night.

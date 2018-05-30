@@ -20,11 +20,9 @@ type Props = {
 }
 
 const ProfileStyledLink = ({ children, href }: Props) => (
-  <a href={href}>
-    <StyledLink linkColor={linkColor} hoverColor={hoverColor} href={href}>
-      {children}
-    </StyledLink>
-  </a>
+  <StyledLink linkColor={linkColor} hoverColor={hoverColor} href={href}>
+    {children}
+  </StyledLink>
 )
 
 export default ProfileStyledLink

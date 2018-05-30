@@ -15,7 +15,8 @@ import {
 
 let Lightbox
 if (typeof window !== 'undefined') {
-  Lightbox = require('react-image-lightbox')
+  require('react-image-lightbox/style.css')
+  Lightbox = require('react-image-lightbox').default
 }
 
 type Props = {
