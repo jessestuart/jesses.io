@@ -107,7 +107,7 @@
     "typography": "^0.16.17",
     "typography-plugin-code": "^0.16.11",
     "voca": "^1.4.0",
-    "winston": "^3.0.0-rc2"
+    "winston": "^3.0.0-rc6"
   },
   "engine": {
     "node": ">=9",
