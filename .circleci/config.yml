@@ -106,7 +106,7 @@ jobs:
       - *restore_cache
       - run:
           name: Run Jest tests & upload coverage to Codecov.
-          command: yarn test:coverage && yarn codecov -t $CODECOV_TOKEN
+          command: yarn test:coverage && yarn codecov
 
   build:
     working_directory: ~/jessestuart
