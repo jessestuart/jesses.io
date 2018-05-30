@@ -132,7 +132,6 @@ jobs:
   # ---------------------------------------------------------------------------
 
   push_image:
-    name: Build and push Docker image to AWS ECR.
     environment:
       # yamllint disable-line
       - IMAGE_ID: "672278003389.dkr.ecr.us-east-1.amazonaws.com/jessestuart/jsgatsby"
@@ -170,7 +169,6 @@ jobs:
             fi
 
   capture_screenshots:
-    name: Capture screenshots using puppeteer.
     docker:
       - image: circleci/node:9-browsers
 
