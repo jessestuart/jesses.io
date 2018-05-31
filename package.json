@@ -62,7 +62,7 @@
     "gray-percentage": "^2.0.0",
     "greenkeeper-lockfile": "^1.15.1",
     "husky": "^0.14.3",
-    "jest": "^23.0.1",
+    "jest": "^23.1.0",
     "lint-staged": "^7.1.2",
     "lodash": "^4.17.10",
     "minio": "^5.0.2",
