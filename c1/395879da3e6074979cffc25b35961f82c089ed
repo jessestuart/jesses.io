@@ -2,3 +2,7 @@
 .git/rebase-merge/git-rebase-todo:150,1527980400:150,r
 .git/COMMIT_EDITMSG:60,1527980400:60,r
 .git/PULLREQ_EDITMSG:30,1527980400:30,d
+
+[ver:1,total:180]
+.git/PULLREQ_EDITMSG:120,1527980400:120,d
+package.json:60,1527980400:60,m
