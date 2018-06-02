@@ -1,0 +1,11 @@
+[ver:1,total:2940]
+package.json:780,1527908400:720,1527976800:60,m
+plugins/gatsby-source-s3/src/source-nodes.js:720,1527710400:540,1527717600:180,r
+src/templates/blog-post.js:440,1527973200:440,r
+plugins/gatsby-source-s3/src/extend-node-type.js:290,1527710400:290,r
+.circleci/config.yml:180,1527699600:180,r
+plugins/gatsby-source-s3/.eslintrc.js:180,1527908400:180,r
+src/styles/base.css:180,1527973200:180,r
+plugins/gatsby-source-s3/src/gatsby-node.js:70,1527710400:70,r
+src/layouts/index.js:60,1527973200:60,r
+src/templates/blog-post.css:40,1527973200:40,r
