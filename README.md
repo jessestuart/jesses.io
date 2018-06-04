@@ -1,5 +1,7 @@
 # `jesses.io`
 
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/fd2e781b25ed4340a205b421c4b06bef)](https://app.codacy.com/app/jdstuart/jesses.io?utm_source=github.com&utm_medium=referral&utm_content=jessestuart/jesses.io&utm_campaign=badger)
+
 [![CircleCI][circleci-badge]][circleci-url]
 [![codecov][codecov-badge]][codecov-url]
 [![Greenkeeper badge][greenkeeper-badge]][greenkeeper-url]
