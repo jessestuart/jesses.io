@@ -1,0 +1,10 @@
+{
+  "groups": {
+    "default": {
+      "packages": [
+        "package.json",
+        "plugins/gatsby-source-s3/package.json"
+      ]
+    }
+  }
+}
