@@ -10475,9 +10475,9 @@ punycode@^1.2.4, punycode@^1.4.1:
   version "1.4.1"
   resolved "https://registry.yarnpkg.com/punycode/-/punycode-1.4.1.tgz#c0d5a63b2718800ad8e1eb0fa5269c84dd41845e"
 
-purgecss@^1.0.0:
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/purgecss/-/purgecss-1.0.0.tgz#827ff21052813b18d03564c61d2f794c2a2edaae"
+purgecss@^1.0.1:
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/purgecss/-/purgecss-1.0.1.tgz#652e6b0958b6fd362591f401c406ed33d0cdb958"
   dependencies:
     glob "^7.1.2"
     postcss "^6.0.22"
