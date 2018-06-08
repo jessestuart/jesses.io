@@ -4,9 +4,12 @@
 [![codecov][codecov-badge]][codecov-url]
 [![Greenkeeper badge][greenkeeper-badge]][greenkeeper-url]
 [![Quay][quay-badge]][quay-url]
+[![Codacy Badge][codacy]][codacy 2]
 
 [circleci-badge]: https://circleci.com/gh/jessestuart/jesses.io.svg?style=shield&circle-token=95a9c23b2b0ed15a71639a318c98eea3b09a03b7
 [circleci-url]: https://circleci.com/gh/jessestuart/jessestuart.com
+[codacy 2]: https://www.codacy.com/app/jdstuart/jesses.io?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=jessestuart/jesses.io&amp;utm_campaign=Badge_Grade
+[codacy]: https://api.codacy.com/project/badge/Grade/2911803c593c4cfdb497856457224796
 [codecov-badge]: https://codecov.io/gh/jessestuart/jesses.io/branch/master/graph/badge.svg
 [codecov-url]: https://codecov.io/gh/jessestuart/jesses.io
 [codefresh-badge]: https://g.codefresh.io/api/badges/build?repoOwner=jessestuart&repoName=js-gatsby-tachyons&branch=master&pipelineName=js-gatsby-tachyons&accountName=jesse&key=eyJhbGciOiJIUzI1NiJ9.NWExNzRiZmE2M2NmM2UwMDAxOGRmZjdh.uSVHuuCHfQtayHNWawvO9loC4PEirkl458tnBt2yOVU&type=cf-1

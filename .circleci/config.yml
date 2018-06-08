@@ -134,26 +134,20 @@ jobs:
   # ---------------------------------------------------------------------------
 
   push_image:
-    environment:
-      # yamllint disable-line
-      - IMAGE_ID: "672278003389.dkr.ecr.us-east-1.amazonaws.com/jessestuart/jsgatsby"
     docker:
       - image: docker:18-git
+    environment:
+      - IMAGE_ID: "jessestuart/jesses.io"
     steps:
       - checkout
 
       - setup_remote_docker
 
       - run:
-          name: Install AWS CLI via pip.
+          name: Authenticate with Docker Hub.
           command: |
-            apk add --no-cache py-pip
-            pip install awscli
-
-      - run:
-          name: Authenticate with AWS ECR.
-          command: |
-            eval $(aws ecr get-login --no-include-email --region us-east-1)
+            # Login to Docker Hub.
+            echo $DOCKERHUB_PASS | docker login -u $DOCKERHUB_USER --password-stdin
 
       - run:
           name: Build Docker image for static site.
@@ -163,11 +157,11 @@ jobs:
       - run:
           name: Push image to ECR.
           command: |
-            docker tag    "${IMAGE_ID}" "${IMAGE_ID}:circle-${CIRCLE_BUILD_NUM}"
-            docker push                 "${IMAGE_ID}:circle-${CIRCLE_BUILD_NUM}"
+            DATETIME_TAG="$(date -u +'%Y%m%d')-$(date -u +'%H%M%S')"
+            docker tag    "${IMAGE_ID}" "${IMAGE_ID}:${DATETIME_TAG}"
+            docker push                 "${IMAGE_ID}:${DATETIME_TAG}"
             if [ "${CIRCLE_BRANCH}" = 'master' ]; then
-              docker tag  "${IMAGE_ID}" "${IMAGE_ID}:latest"
-              docker push               "${IMAGE_ID}:latest"
+              docker push "${IMAGE_ID}"
             fi
 
   capture_screenshots:
