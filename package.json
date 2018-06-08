@@ -23,6 +23,7 @@
     "gatsby-remark-prismjs": "^2.0.3",
     "gatsby-remark-smartypants": "^1.4.12",
     "gatsby-source-filesystem": "^1.5.38",
+    "gatsby-source-s3-image": "^0.0.4",
     "gatsby-transformer-remark": "^1.7.42",
     "gatsby-transformer-sharp": "^1.6.26",
     "js-tachyons": "^1.1.3",
@@ -146,12 +147,11 @@
     "url": "https://github.com/jessestuart/jesses.io"
   },
   "scripts": {
-    "build": "yarn build:s3-plugin && gatsby build",
+    "build": "gatsby build",
     "build:ci": "GATSBY_ENV=ci yarn build",
-    "build:s3-plugin": "cd ./plugins/gatsby-source-s3 && yarn && cd ../../",
     "clean": "rm -rf node_modules/ .cache/ && yarn -s",
     "dev": "GATSBY_ENV=ci NODE_OPTIONS=--max_old_space_size=4096 gatsby develop",
-    "dev:photos": "NODE_OPTIONS=--max_old_space_size=4096 concurrently 'yarn watch:s3-plugin' 'yarn gatsby develop'",
+    "dev:photos": "NODE_OPTIONS=--max_old_space_size=4096 concurrently 'yarn gatsby develop'",
     "flow:install": "flow-typed -o -l ./flow-libs/ install",
     "format": "prettier 'src/**/*.js' 'src/**/*.md'",
     "lint": "concurrently 'yarn lint:js' 'yarn lint:style'",
@@ -166,7 +166,6 @@
     "test:coverage": "jest --coverage",
     "test:watch": "jest --watch",
     "update": "ncu -ua && yarn -s",
-    "watch:s3-plugin": "yarn build:s3-plugin -w",
     "willitpass": "concurrently 'yarn lint' 'yarn test'"
   },
   "snyk": true

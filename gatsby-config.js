@@ -64,11 +64,11 @@ const googleAnalyticsPlugin = {
 }
 
 const sourceS3 = {
-  resolve: 'gatsby-source-s3',
+  resolve: 'gatsby-source-s3-image',
   options: {
     bucketName: IS_CI ? 'js-photos-dev' : 'jesse.pics',
-    domain: IS_CI ? null : 'jesse.pics',
-    protocol: 'https',
+    domain: IS_CI ? null : 'jesse.pics.s3.amazonaws.com',
+    protocol: 'http',
   },
 }
 
