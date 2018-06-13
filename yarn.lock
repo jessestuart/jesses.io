@@ -5890,6 +5890,10 @@ has-symbol-support-x@^1.4.1:
   version "1.4.2"
   resolved "https://registry.yarnpkg.com/has-symbol-support-x/-/has-symbol-support-x-1.4.2.tgz#1409f98bc00247da45da67cee0a36f282ff26455"
 
+has-symbols@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/has-symbols/-/has-symbols-1.0.0.tgz#ba1a8f1af2a0fc39650f5c850367704122063b44"
+
 has-to-string-tag-x@^1.2.0:
   version "1.4.1"
   resolved "https://registry.yarnpkg.com/has-to-string-tag-x/-/has-to-string-tag-x-1.4.1.tgz#a045ab383d7b4b2012a00148ab0aa5f290044d4d"
@@ -8012,7 +8016,7 @@ log-symbols@^1.0.2:
   dependencies:
     chalk "^1.0.0"
 
-log-symbols@^2.0.0, log-symbols@^2.2.0:
+log-symbols@^2.0.0, log-symbols@^2.1.0, log-symbols@^2.2.0:
   version "2.2.0"
   resolved "https://registry.yarnpkg.com/log-symbols/-/log-symbols-2.2.0.tgz#5740e1c5d6f0dfda4ad9323b5332107ef6b4c40a"
   dependencies:
@@ -8041,6 +8045,13 @@ logform@^1.7.0:
     ms "^2.1.1"
     triple-beam "^1.2.0"
 
+loglevelnext@^1.0.1:
+  version "1.0.5"
+  resolved "https://registry.yarnpkg.com/loglevelnext/-/loglevelnext-1.0.5.tgz#36fc4f5996d6640f539ff203ba819641680d75a2"
+  dependencies:
+    es6-symbol "^3.1.1"
+    object.assign "^4.1.0"
+
 longest-streak@^2.0.1:
   version "2.0.2"
   resolved "https://registry.yarnpkg.com/longest-streak/-/longest-streak-2.0.2.tgz#2421b6ba939a443bb9ffebf596585a50b4c38e2e"
@@ -8055,7 +8066,7 @@ loose-envify@^1.0.0, loose-envify@^1.1.0, loose-envify@^1.2.0, loose-envify@^1.3
   dependencies:
     js-tokens "^3.0.0"
 
-loud-rejection@^1.0.0, loud-rejection@^1.2.0:
+loud-rejection@^1.0.0, loud-rejection@^1.2.0, loud-rejection@^1.6.0:
   version "1.6.0"
   resolved "https://registry.yarnpkg.com/loud-rejection/-/loud-rejection-1.6.0.tgz#5b46f80147edee578870f086d04821cf998e551f"
   dependencies:
@@ -8413,6 +8424,10 @@ mime@1.4.1:
 mime@^1.2.11, mime@^1.3.4, mime@^1.3.6, mime@^1.4.1, mime@^1.5.0:
   version "1.6.0"
   resolved "https://registry.yarnpkg.com/mime/-/mime-1.6.0.tgz#32cd9e5c64553bd58d19a568af452acff04981b1"
+
+mime@^2.1.0:
+  version "2.3.1"
+  resolved "https://registry.yarnpkg.com/mime/-/mime-2.3.1.tgz#b1621c54d63b97c47d3cfe7f7215f7d64517c369"
 
 mimic-fn@^1.0.0:
   version "1.2.0"
@@ -8900,7 +8915,7 @@ object-hash@^1.1.4:
   version "1.3.0"
   resolved "https://registry.yarnpkg.com/object-hash/-/object-hash-1.3.0.tgz#76d9ba6ff113cf8efc0d996102851fe6723963e2"
 
-object-keys@^1.0.8, object-keys@^1.0.9:
+object-keys@^1.0.11, object-keys@^1.0.8, object-keys@^1.0.9:
   version "1.0.11"
   resolved "https://registry.yarnpkg.com/object-keys/-/object-keys-1.0.11.tgz#c54601778ad560f1142ce0e01bcca8b56d13426d"
 
@@ -8913,6 +8928,15 @@ object-visit@^1.0.0:
   resolved "https://registry.yarnpkg.com/object-visit/-/object-visit-1.0.1.tgz#f79c4493af0c5377b59fe39d395e41042dd045bb"
   dependencies:
     isobject "^3.0.0"
+
+object.assign@^4.1.0:
+  version "4.1.0"
+  resolved "https://registry.yarnpkg.com/object.assign/-/object.assign-4.1.0.tgz#968bf1100d7956bb3ca086f006f846b3bc4008da"
+  dependencies:
+    define-properties "^1.1.2"
+    function-bind "^1.1.1"
+    has-symbols "^1.0.0"
+    object-keys "^1.0.11"
 
 object.defaults@^1.1.0:
   version "1.1.0"
@@ -10700,9 +10724,9 @@ react-calendar-heatmap@^1.6.3:
   dependencies:
     prop-types "^15.5.10"
 
-react-cosmos-config@^4.4.0:
-  version "4.4.0"
-  resolved "https://registry.yarnpkg.com/react-cosmos-config/-/react-cosmos-config-4.4.0.tgz#ed1c202b2e3c1d443fb6d537765981f616d1f741"
+react-cosmos-config@^4.5.0:
+  version "4.5.0"
+  resolved "https://registry.yarnpkg.com/react-cosmos-config/-/react-cosmos-config-4.5.0.tgz#454a0f6e4ee92d8f37b7cca30d868c86525f1ebd"
   dependencies:
     react-cosmos-shared "^4.4.0"
     yargs "^11.0.0"
@@ -10718,9 +10742,9 @@ react-cosmos-loader@^4.4.0:
     react-cosmos-shared "^4.4.0"
     react-cosmos-state-proxy "^4.4.0"
 
-react-cosmos-playground@^4.4.0:
-  version "4.4.0"
-  resolved "https://registry.yarnpkg.com/react-cosmos-playground/-/react-cosmos-playground-4.4.0.tgz#d5f7ea300f63c3e52043f91b38c529c77739adca"
+react-cosmos-playground@^4.5.0:
+  version "4.5.0"
+  resolved "https://registry.yarnpkg.com/react-cosmos-playground/-/react-cosmos-playground-4.5.0.tgz#626f970c185762305a59fd0c2dab98a798f0fe64"
 
 react-cosmos-shared@^4.4.0:
   version "4.4.0"
@@ -10760,9 +10784,9 @@ react-cosmos-voyager@^4.4.0:
     glob "^7.1.1"
     traverse "^0.6.6"
 
-react-cosmos@^4.4.0:
-  version "4.4.0"
-  resolved "https://registry.yarnpkg.com/react-cosmos/-/react-cosmos-4.4.0.tgz#d1187f1d56040f13964a424b6c32110c4bbf6753"
+react-cosmos@^4.5.0:
+  version "4.5.0"
+  resolved "https://registry.yarnpkg.com/react-cosmos/-/react-cosmos-4.5.0.tgz#b182e6a91a8c3a97a633e10b6cb1562871576d76"
   dependencies:
     babel-polyfill "^6.26.0"
     express "^4.16.3"
@@ -10772,16 +10796,16 @@ react-cosmos@^4.4.0:
     import-from "^2.1.0"
     lodash.omit "^4.5.0"
     object.values "^1.0.4"
-    react-cosmos-config "^4.4.0"
+    react-cosmos-config "^4.5.0"
     react-cosmos-loader "^4.4.0"
-    react-cosmos-playground "^4.4.0"
+    react-cosmos-playground "^4.5.0"
     react-cosmos-shared "^4.4.0"
     react-cosmos-voyager "^4.4.0"
     react-cosmos-voyager2 "^4.4.0"
     react-dev-utils "^5.0.1"
     react-error-overlay "^4.0.0"
     resolve-from "^4.0.0"
-    webpack-dev-middleware "^1.12.0"
+    webpack-dev-middleware "^2.0.6"
     webpack-hot-middleware "^2.22.2"
     yargs "^11.0.0"
 
@@ -13855,6 +13879,10 @@ urix@^0.1.0:
   version "0.1.0"
   resolved "https://registry.yarnpkg.com/urix/-/urix-0.1.0.tgz#da937f7a62e21fec1fd18d49b35c2935067a6c72"
 
+url-join@^2.0.2:
+  version "2.0.5"
+  resolved "https://registry.yarnpkg.com/url-join/-/url-join-2.0.5.tgz#5af22f18c052a000a48d7b82c5e9c2e2feeda728"
+
 url-loader@^0.6.2:
   version "0.6.2"
   resolved "https://registry.yarnpkg.com/url-loader/-/url-loader-0.6.2.tgz#a007a7109620e9d988d14bce677a1decb9a993f7"
@@ -14167,7 +14195,7 @@ webpack-core@~0.6.9:
     source-list-map "~0.1.7"
     source-map "~0.4.1"
 
-webpack-dev-middleware@^1.10.2, webpack-dev-middleware@^1.12.0, webpack-dev-middleware@^1.8.4:
+webpack-dev-middleware@^1.10.2, webpack-dev-middleware@^1.8.4:
   version "1.12.2"
   resolved "https://registry.yarnpkg.com/webpack-dev-middleware/-/webpack-dev-middleware-1.12.2.tgz#f8fc1120ce3b4fc5680ceecb43d777966b21105e"
   dependencies:
@@ -14176,6 +14204,18 @@ webpack-dev-middleware@^1.10.2, webpack-dev-middleware@^1.12.0, webpack-dev-midd
     path-is-absolute "^1.0.0"
     range-parser "^1.0.3"
     time-stamp "^2.0.0"
+
+webpack-dev-middleware@^2.0.6:
+  version "2.0.6"
+  resolved "https://registry.yarnpkg.com/webpack-dev-middleware/-/webpack-dev-middleware-2.0.6.tgz#a51692801e8310844ef3e3790e1eacfe52326fd4"
+  dependencies:
+    loud-rejection "^1.6.0"
+    memory-fs "~0.4.1"
+    mime "^2.1.0"
+    path-is-absolute "^1.0.0"
+    range-parser "^1.0.3"
+    url-join "^2.0.2"
+    webpack-log "^1.0.1"
 
 webpack-dev-server@^1.16.1:
   version "1.16.5"
@@ -14203,6 +14243,15 @@ webpack-hot-middleware@^2.13.2, webpack-hot-middleware@^2.22.2:
     html-entities "^1.2.0"
     querystring "^0.2.0"
     strip-ansi "^3.0.0"
+
+webpack-log@^1.0.1:
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/webpack-log/-/webpack-log-1.2.0.tgz#a4b34cda6b22b518dbb0ab32e567962d5c72a43d"
+  dependencies:
+    chalk "^2.1.0"
+    log-symbols "^2.1.0"
+    loglevelnext "^1.0.1"
+    uuid "^3.1.0"
 
 webpack-md5-hash@0.0.5:
   version "0.0.5"
