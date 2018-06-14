@@ -18,7 +18,7 @@
     "gatsby-plugin-styled-components": "^2.0.11",
     "gatsby-plugin-typography": "^1.7.18",
     "gatsby-remark-autolink-headers": "^1.4.18",
-    "gatsby-remark-copy-linked-files": "^1.5.35",
+    "gatsby-remark-copy-linked-files": "^1.5.36",
     "gatsby-remark-images": "^1.5.66",
     "gatsby-remark-prismjs": "^2.0.3",
     "gatsby-remark-smartypants": "^1.4.12",
