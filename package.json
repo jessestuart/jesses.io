@@ -31,7 +31,8 @@
     "react": "^16.4.0",
     "react-dom": "^16.4.0",
     "react-helmet": "^5.2.0",
-    "react-image-lightbox": "^5.0.0"
+    "react-image-lightbox": "^5.0.0",
+    "snyk": "^1.88.2"
   },
   "devDependencies": {
     "babel-eslint": "^8.2.3",
@@ -85,7 +86,6 @@
     "react-test-renderer": "^16.4.0",
     "rimraf": "^2.6.2",
     "scrollprogress": "^3.0.2",
-    "snyk": "^1.82.1",
     "styled-components": "^3.3.2",
     "stylelint": "^9.2.1",
     "stylelint-config-standard": "^18.2.0",
@@ -166,7 +166,8 @@
     "test:coverage": "jest --coverage",
     "test:watch": "jest --watch",
     "update": "ncu -ua && yarn -s",
-    "willitpass": "concurrently 'yarn lint' 'yarn test'"
+    "willitpass": "concurrently 'yarn lint' 'yarn test'",
+    "prepare": "npm run snyk-protect"
   },
   "snyk": true
 }
