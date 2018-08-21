@@ -74,7 +74,7 @@
     "postcss-import": "11.1.0",
     "postcss-nested": "3.0.0",
     "prettier": "1.13.4",
-    "prismjs": "1.14.0",
+    "prismjs": "1.15.0",
     "prop-types": "15.6.1",
     "purgecss": "1.0.1",
     "raven-js": "3.26.1",
