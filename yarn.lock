@@ -3977,7 +3977,7 @@ es6-promise@^3.0.2:
   version "3.3.1"
   resolved "https://registry.yarnpkg.com/es6-promise/-/es6-promise-3.3.1.tgz#a08cdde84ccdbf34d027a1451bc91d4bcd28a613"
 
-es6-promise@^4.0.3, es6-promise@^4.1.0, es6-promise@^4.1.1:
+es6-promise@^4.0.3, es6-promise@^4.1.0:
   version "4.2.4"
   resolved "https://registry.yarnpkg.com/es6-promise/-/es6-promise-4.2.4.tgz#dc4221c2b16518760bd8c39a52d8f356fc00ed29"
 
@@ -10512,9 +10512,9 @@ proxy-addr@~2.0.3:
     forwarded "~0.1.2"
     ipaddr.js "1.6.0"
 
-proxy-agent@^3.0.0:
-  version "3.0.0"
-  resolved "https://registry.yarnpkg.com/proxy-agent/-/proxy-agent-3.0.0.tgz#f6768e202889b2285d39906d3a94768416f8f713"
+proxy-agent@^2.0.0:
+  version "2.3.1"
+  resolved "https://registry.yarnpkg.com/proxy-agent/-/proxy-agent-2.3.1.tgz#3d49d863d46cf5f37ca8394848346ea02373eac6"
   dependencies:
     agent-base "^4.2.0"
     debug "^3.1.0"
@@ -12214,16 +12214,26 @@ snapdragon@^0.8.1:
     source-map-resolve "^0.5.0"
     use "^3.1.0"
 
-snyk-config@2.1.0:
-  version "2.1.0"
-  resolved "https://registry.yarnpkg.com/snyk-config/-/snyk-config-2.1.0.tgz#4bda9ad2df6ff79413ad7a263ab720a3f851bf93"
+snyk-config@2.2.0:
+  version "2.2.0"
+  resolved "https://registry.yarnpkg.com/snyk-config/-/snyk-config-2.2.0.tgz#d400ce50e293ce5c3ade4cf46a53bea8205771e6"
   dependencies:
     debug "^3.1.0"
+    lodash "^4.17.5"
     nconf "^0.10.0"
 
-snyk-go-plugin@1.5.1:
-  version "1.5.1"
-  resolved "https://registry.yarnpkg.com/snyk-go-plugin/-/snyk-go-plugin-1.5.1.tgz#220016f2dc51e1f5fe8efe496049039ad3f03010"
+snyk-docker-plugin@1.10.4:
+  version "1.10.4"
+  resolved "https://registry.yarnpkg.com/snyk-docker-plugin/-/snyk-docker-plugin-1.10.4.tgz#ae8fa9ce29b3c11e7177f292143d111f57d6038c"
+  dependencies:
+    debug "^3.1.0"
+    fs-extra "^5.0.0"
+    needle "^2.0.1"
+    temp-dir "^1.0.0"
+
+snyk-go-plugin@1.5.2:
+  version "1.5.2"
+  resolved "https://registry.yarnpkg.com/snyk-go-plugin/-/snyk-go-plugin-1.5.2.tgz#c45273a2a05ca621553b3a0c60511757f8d24e1b"
   dependencies:
     graphlib "^2.1.1"
     tmp "0.0.33"
@@ -12246,12 +12256,19 @@ snyk-mvn-plugin@1.2.0:
   version "1.2.0"
   resolved "https://registry.yarnpkg.com/snyk-mvn-plugin/-/snyk-mvn-plugin-1.2.0.tgz#e23c60e35457ce5a26fd4252ddf120dbd7e9ef2a"
 
-snyk-nuget-plugin@1.6.2:
-  version "1.6.2"
-  resolved "https://registry.yarnpkg.com/snyk-nuget-plugin/-/snyk-nuget-plugin-1.6.2.tgz#ea21181be53c1e7c9183907c25a71d914c5888b9"
+snyk-nodejs-lockfile-parser@1.4.1:
+  version "1.4.1"
+  resolved "https://registry.yarnpkg.com/snyk-nodejs-lockfile-parser/-/snyk-nodejs-lockfile-parser-1.4.1.tgz#bfa090168be78bdb7ba2d28fbe67197e1a39d1f1"
+  dependencies:
+    lodash "4.17.10"
+    path "0.12.7"
+    source-map-support "^0.5.7"
+
+snyk-nuget-plugin@1.6.4:
+  version "1.6.4"
+  resolved "https://registry.yarnpkg.com/snyk-nuget-plugin/-/snyk-nuget-plugin-1.6.4.tgz#83cb3e699667ea808803d4020aa0e053e6f3bab4"
   dependencies:
     debug "^3.1.0"
-    es6-promise "^4.1.1"
     lodash "^4.17.10"
     xml2js "^0.4.17"
     zip "^1.2.0"
@@ -12278,9 +12295,9 @@ snyk-policy@1.12.0:
     snyk-try-require "^1.1.1"
     then-fs "^2.0.0"
 
-snyk-python-plugin@1.6.1:
-  version "1.6.1"
-  resolved "https://registry.yarnpkg.com/snyk-python-plugin/-/snyk-python-plugin-1.6.1.tgz#eb3194b37b4710edebee3406a2adea4a0159e89f"
+snyk-python-plugin@1.8.1:
+  version "1.8.1"
+  resolved "https://registry.yarnpkg.com/snyk-python-plugin/-/snyk-python-plugin-1.8.1.tgz#622427a30c0570726c9a8c9499e0079184d10874"
   dependencies:
     tmp "0.0.33"
 
@@ -12310,11 +12327,11 @@ snyk-resolve@1.0.1, snyk-resolve@^1.0.0, snyk-resolve@^1.0.1:
     debug "^3.1.0"
     then-fs "^2.0.0"
 
-snyk-sbt-plugin@1.3.0:
-  version "1.3.0"
-  resolved "https://registry.yarnpkg.com/snyk-sbt-plugin/-/snyk-sbt-plugin-1.3.0.tgz#81ec0e8fcbf1b3261a196e387f3d08adb3cf4b66"
+snyk-sbt-plugin@1.3.1:
+  version "1.3.1"
+  resolved "https://registry.yarnpkg.com/snyk-sbt-plugin/-/snyk-sbt-plugin-1.3.1.tgz#15b4a212672dfba33f26aec953229db1a962f29e"
   dependencies:
-    debug "^2.2.0"
+    debug "^3.1.0"
 
 snyk-tree@^1.0.0:
   version "1.0.0"
@@ -12322,7 +12339,16 @@ snyk-tree@^1.0.0:
   dependencies:
     archy "^1.0.0"
 
-snyk-try-require@1.3.0, snyk-try-require@^1.1.1:
+snyk-try-require@1.3.1:
+  version "1.3.1"
+  resolved "https://registry.yarnpkg.com/snyk-try-require/-/snyk-try-require-1.3.1.tgz#6e026f92e64af7fcccea1ee53d524841e418a212"
+  dependencies:
+    debug "^3.1.0"
+    lodash.clonedeep "^4.3.0"
+    lru-cache "^4.0.0"
+    then-fs "^2.0.0"
+
+snyk-try-require@^1.1.1:
   version "1.3.0"
   resolved "https://registry.yarnpkg.com/snyk-try-require/-/snyk-try-require-1.3.0.tgz#f35706acf91c8af788d58e1f1ad6bf0fcf6c5493"
   dependencies:
@@ -12331,9 +12357,9 @@ snyk-try-require@1.3.0, snyk-try-require@^1.1.1:
     lru-cache "^4.0.0"
     then-fs "^2.0.0"
 
-snyk@1.82.1:
-  version "1.82.1"
-  resolved "https://registry.yarnpkg.com/snyk/-/snyk-1.82.1.tgz#df0abf9d398507b512e2749790da67e56c3a853e"
+snyk@1.92.5:
+  version "1.92.5"
+  resolved "https://registry.yarnpkg.com/snyk/-/snyk-1.92.5.tgz#ebf42302679346d056ed8537ea8ccedd5e23b1ad"
   dependencies:
     abbrev "^1.1.1"
     ansi-escapes "^3.1.0"
@@ -12346,24 +12372,26 @@ snyk@1.82.1:
     needle "^2.0.1"
     opn "^5.2.0"
     os-name "^2.0.1"
-    proxy-agent "^3.0.0"
+    proxy-agent "^2.0.0"
     proxy-from-env "^1.0.0"
     recursive-readdir "^2.2.2"
     semver "^5.5.0"
-    snyk-config "2.1.0"
-    snyk-go-plugin "1.5.1"
+    snyk-config "2.2.0"
+    snyk-docker-plugin "1.10.4"
+    snyk-go-plugin "1.5.2"
     snyk-gradle-plugin "1.3.0"
     snyk-module "1.8.2"
     snyk-mvn-plugin "1.2.0"
-    snyk-nuget-plugin "1.6.2"
+    snyk-nodejs-lockfile-parser "1.4.1"
+    snyk-nuget-plugin "1.6.4"
     snyk-php-plugin "1.5.1"
     snyk-policy "1.12.0"
-    snyk-python-plugin "1.6.1"
+    snyk-python-plugin "1.8.1"
     snyk-resolve "1.0.1"
     snyk-resolve-deps "3.1.0"
-    snyk-sbt-plugin "1.3.0"
+    snyk-sbt-plugin "1.3.1"
     snyk-tree "^1.0.0"
-    snyk-try-require "1.3.0"
+    snyk-try-require "1.3.1"
     tempfile "^2.0.0"
     then-fs "^2.0.0"
     undefsafe "^2.0.0"
@@ -12501,6 +12529,13 @@ source-map-support@^0.4.12, source-map-support@^0.4.15:
 source-map-support@^0.5.6:
   version "0.5.6"
   resolved "https://registry.yarnpkg.com/source-map-support/-/source-map-support-0.5.6.tgz#4435cee46b1aab62b8e8610ce60f788091c51c13"
+  dependencies:
+    buffer-from "^1.0.0"
+    source-map "^0.6.0"
+
+source-map-support@^0.5.7:
+  version "0.5.9"
+  resolved "https://registry.yarnpkg.com/source-map-support/-/source-map-support-0.5.9.tgz#41bc953b2534267ea2d605bccfa7bfa3111ced5f"
   dependencies:
     buffer-from "^1.0.0"
     source-map "^0.6.0"
