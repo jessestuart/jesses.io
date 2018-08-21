@@ -140,6 +140,10 @@
   dependencies:
     any-observable "^0.3.0"
 
+"@skidding/linked-list@^1.0.2":
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/@skidding/linked-list/-/linked-list-1.0.2.tgz#e3fc74a22a5f745d61a2baae1e396813014ef115"
+
 "@textlint/ast-node-types@^3.0.0":
   version "3.0.1"
   resolved "https://registry.yarnpkg.com/@textlint/ast-node-types/-/ast-node-types-3.0.1.tgz#cf35e913aef798f0efac797144e167744a7857e8"
@@ -715,9 +719,11 @@ async-limiter@~1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/async-limiter/-/async-limiter-1.0.0.tgz#78faed8c3d074ab81f22b4e985d79e8738f720f8"
 
-async-until@^1.0.0:
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/async-until/-/async-until-1.0.0.tgz#5db55a07b89b1446f9ca541cdb37b29989f681f0"
+async-until@^1.1.1:
+  version "1.1.1"
+  resolved "https://registry.yarnpkg.com/async-until/-/async-until-1.1.1.tgz#a846158966ef1801f0e97241ada20b04a4364742"
+  dependencies:
+    babel-runtime "^6.26.0"
 
 async@^0.9.0:
   version "0.9.2"
@@ -2012,7 +2018,7 @@ braces@^1.8.2:
     preserve "^0.2.0"
     repeat-element "^1.1.2"
 
-braces@^2.3.1:
+braces@^2.3.0, braces@^2.3.1:
   version "2.3.2"
   resolved "https://registry.yarnpkg.com/braces/-/braces-2.3.2.tgz#5979fd3f14cd531565e5fa2df1abfff1dfaee729"
   dependencies:
@@ -2466,6 +2472,25 @@ chokidar@^1.0.0, chokidar@^1.6.1, chokidar@^1.7.0:
     readdirp "^2.0.0"
   optionalDependencies:
     fsevents "^1.0.0"
+
+chokidar@^2.0.4:
+  version "2.0.4"
+  resolved "https://registry.yarnpkg.com/chokidar/-/chokidar-2.0.4.tgz#356ff4e2b0e8e43e322d18a372460bbcf3accd26"
+  dependencies:
+    anymatch "^2.0.0"
+    async-each "^1.0.0"
+    braces "^2.3.0"
+    glob-parent "^3.1.0"
+    inherits "^2.0.1"
+    is-binary-path "^1.0.0"
+    is-glob "^4.0.0"
+    lodash.debounce "^4.0.8"
+    normalize-path "^2.1.1"
+    path-is-absolute "^1.0.0"
+    readdirp "^2.0.0"
+    upath "^1.0.5"
+  optionalDependencies:
+    fsevents "^1.2.2"
 
 chownr@^1.0.1:
   version "1.0.1"
@@ -3303,6 +3328,12 @@ decamelize-keys@^1.0.0:
 decamelize@^1.0.0, decamelize@^1.1.0, decamelize@^1.1.1, decamelize@^1.1.2, decamelize@^1.2.0:
   version "1.2.0"
   resolved "https://registry.yarnpkg.com/decamelize/-/decamelize-1.2.0.tgz#f6534d15148269b20352e7bee26f501f9a191290"
+
+decamelize@^2.0.0:
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/decamelize/-/decamelize-2.0.0.tgz#656d7bbc8094c4c788ea53c5840908c9c7d063c7"
+  dependencies:
+    xregexp "4.0.0"
 
 decode-uri-component@^0.2.0:
   version "0.2.0"
@@ -4728,6 +4759,12 @@ find-up@^2.0.0, find-up@^2.1.0:
   dependencies:
     locate-path "^2.0.0"
 
+find-up@^3.0.0:
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/find-up/-/find-up-3.0.0.tgz#49169f1d7993430646da61ecc5ae355c21c97b73"
+  dependencies:
+    locate-path "^3.0.0"
+
 find-versions@^1.0.0:
   version "1.2.1"
   resolved "https://registry.yarnpkg.com/find-versions/-/find-versions-1.2.1.tgz#cbde9f12e38575a0af1be1b9a2c5d5fd8f186b62"
@@ -4946,7 +4983,7 @@ fs.realpath@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/fs.realpath/-/fs.realpath-1.0.0.tgz#1504ad2523158caa40db4a2787cb01411994ea4f"
 
-fsevents@^1.0.0, fsevents@^1.2.3:
+fsevents@^1.0.0, fsevents@^1.2.2, fsevents@^1.2.3:
   version "1.2.4"
   resolved "https://registry.yarnpkg.com/fsevents/-/fsevents-1.2.4.tgz#f41dcb1af2582af3692da36fc55cbd8e1041c426"
   dependencies:
@@ -5889,6 +5926,10 @@ has-gulplog@^0.1.0:
 has-symbol-support-x@^1.4.1:
   version "1.4.2"
   resolved "https://registry.yarnpkg.com/has-symbol-support-x/-/has-symbol-support-x-1.4.2.tgz#1409f98bc00247da45da67cee0a36f282ff26455"
+
+has-symbols@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/has-symbols/-/has-symbols-1.0.0.tgz#ba1a8f1af2a0fc39650f5c850367704122063b44"
 
 has-to-string-tag-x@^1.2.0:
   version "1.4.1"
@@ -7748,6 +7789,13 @@ locate-path@^2.0.0:
     p-locate "^2.0.0"
     path-exists "^3.0.0"
 
+locate-path@^3.0.0:
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/locate-path/-/locate-path-3.0.0.tgz#dbec3b3ab759758071b58fe59fc41871af21400e"
+  dependencies:
+    p-locate "^3.0.0"
+    path-exists "^3.0.0"
+
 lodash-es@^4.2.1:
   version "4.17.10"
   resolved "https://registry.yarnpkg.com/lodash-es/-/lodash-es-4.17.10.tgz#62cd7104cdf5dd87f235a837f0ede0e8e5117e05"
@@ -7817,6 +7865,10 @@ lodash.camelcase@^4.3.0:
 lodash.clonedeep@^4.3.0, lodash.clonedeep@^4.3.1, lodash.clonedeep@^4.5.0:
   version "4.5.0"
   resolved "https://registry.yarnpkg.com/lodash.clonedeep/-/lodash.clonedeep-4.5.0.tgz#e23f3f9c4f8fbdde872529c1071857a086e5ccef"
+
+lodash.debounce@^4.0.8:
+  version "4.0.8"
+  resolved "https://registry.yarnpkg.com/lodash.debounce/-/lodash.debounce-4.0.8.tgz#82d79bff30a67c4005ffd5e2515300ad9ca4d7af"
 
 lodash.defaults@^4.0.1:
   version "4.2.0"
@@ -8012,7 +8064,7 @@ log-symbols@^1.0.2:
   dependencies:
     chalk "^1.0.0"
 
-log-symbols@^2.0.0, log-symbols@^2.2.0:
+log-symbols@^2.0.0, log-symbols@^2.1.0, log-symbols@^2.2.0:
   version "2.2.0"
   resolved "https://registry.yarnpkg.com/log-symbols/-/log-symbols-2.2.0.tgz#5740e1c5d6f0dfda4ad9323b5332107ef6b4c40a"
   dependencies:
@@ -8041,6 +8093,13 @@ logform@^1.7.0:
     ms "^2.1.1"
     triple-beam "^1.2.0"
 
+loglevelnext@^1.0.1:
+  version "1.0.5"
+  resolved "https://registry.yarnpkg.com/loglevelnext/-/loglevelnext-1.0.5.tgz#36fc4f5996d6640f539ff203ba819641680d75a2"
+  dependencies:
+    es6-symbol "^3.1.1"
+    object.assign "^4.1.0"
+
 longest-streak@^2.0.1:
   version "2.0.2"
   resolved "https://registry.yarnpkg.com/longest-streak/-/longest-streak-2.0.2.tgz#2421b6ba939a443bb9ffebf596585a50b4c38e2e"
@@ -8055,7 +8114,7 @@ loose-envify@^1.0.0, loose-envify@^1.1.0, loose-envify@^1.2.0, loose-envify@^1.3
   dependencies:
     js-tokens "^3.0.0"
 
-loud-rejection@^1.0.0, loud-rejection@^1.2.0:
+loud-rejection@^1.0.0, loud-rejection@^1.2.0, loud-rejection@^1.6.0:
   version "1.6.0"
   resolved "https://registry.yarnpkg.com/loud-rejection/-/loud-rejection-1.6.0.tgz#5b46f80147edee578870f086d04821cf998e551f"
   dependencies:
@@ -8413,6 +8472,10 @@ mime@1.4.1:
 mime@^1.2.11, mime@^1.3.4, mime@^1.3.6, mime@^1.4.1, mime@^1.5.0:
   version "1.6.0"
   resolved "https://registry.yarnpkg.com/mime/-/mime-1.6.0.tgz#32cd9e5c64553bd58d19a568af452acff04981b1"
+
+mime@^2.1.0:
+  version "2.3.1"
+  resolved "https://registry.yarnpkg.com/mime/-/mime-2.3.1.tgz#b1621c54d63b97c47d3cfe7f7215f7d64517c369"
 
 mimic-fn@^1.0.0:
   version "1.2.0"
@@ -8900,6 +8963,10 @@ object-hash@^1.1.4:
   version "1.3.0"
   resolved "https://registry.yarnpkg.com/object-hash/-/object-hash-1.3.0.tgz#76d9ba6ff113cf8efc0d996102851fe6723963e2"
 
+object-keys@^1.0.11:
+  version "1.0.12"
+  resolved "https://registry.yarnpkg.com/object-keys/-/object-keys-1.0.12.tgz#09c53855377575310cca62f55bb334abff7b3ed2"
+
 object-keys@^1.0.8, object-keys@^1.0.9:
   version "1.0.11"
   resolved "https://registry.yarnpkg.com/object-keys/-/object-keys-1.0.11.tgz#c54601778ad560f1142ce0e01bcca8b56d13426d"
@@ -8913,6 +8980,15 @@ object-visit@^1.0.0:
   resolved "https://registry.yarnpkg.com/object-visit/-/object-visit-1.0.1.tgz#f79c4493af0c5377b59fe39d395e41042dd045bb"
   dependencies:
     isobject "^3.0.0"
+
+object.assign@^4.1.0:
+  version "4.1.0"
+  resolved "https://registry.yarnpkg.com/object.assign/-/object.assign-4.1.0.tgz#968bf1100d7956bb3ca086f006f846b3bc4008da"
+  dependencies:
+    define-properties "^1.1.2"
+    function-bind "^1.1.1"
+    has-symbols "^1.0.0"
+    object-keys "^1.0.11"
 
 object.defaults@^1.1.0:
   version "1.1.0"
@@ -9133,11 +9209,23 @@ p-limit@^1.1.0:
   dependencies:
     p-try "^1.0.0"
 
+p-limit@^2.0.0:
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/p-limit/-/p-limit-2.0.0.tgz#e624ed54ee8c460a778b3c9f3670496ff8a57aec"
+  dependencies:
+    p-try "^2.0.0"
+
 p-locate@^2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/p-locate/-/p-locate-2.0.0.tgz#20a0103b222a70c8fd39cc2e580680f3dde5ec43"
   dependencies:
     p-limit "^1.1.0"
+
+p-locate@^3.0.0:
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/p-locate/-/p-locate-3.0.0.tgz#322d69a05c0264b25997d9f40cd8a891ab0064a4"
+  dependencies:
+    p-limit "^2.0.0"
 
 p-map@^1.1.1:
   version "1.2.0"
@@ -9156,6 +9244,10 @@ p-timeout@^1.1.1:
 p-try@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/p-try/-/p-try-1.0.0.tgz#cbc79cdbaf8fd4228e13f621f2b1a237c1b207b3"
+
+p-try@^2.0.0:
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/p-try/-/p-try-2.0.0.tgz#85080bb87c64688fa47996fe8f7dfbe8211760b1"
 
 pac-proxy-agent@^2.0.1:
   version "2.0.2"
@@ -10491,6 +10583,13 @@ prop-types@15.6.1, prop-types@^15.5.10, prop-types@^15.5.4, prop-types@^15.5.8, 
     loose-envify "^1.3.1"
     object-assign "^4.1.1"
 
+prop-types@^15.6.2:
+  version "15.6.2"
+  resolved "https://registry.yarnpkg.com/prop-types/-/prop-types-15.6.2.tgz#05d5ca77b4453e985d60fc7ff8c859094a497102"
+  dependencies:
+    loose-envify "^1.3.1"
+    object-assign "^4.1.1"
+
 proper-lockfile@^1.1.2:
   version "1.2.0"
   resolved "https://registry.yarnpkg.com/proper-lockfile/-/proper-lockfile-1.2.0.tgz#ceff5dd89d3e5f10fb75e1e8e76bc75801a59c34"
@@ -10700,90 +10799,95 @@ react-calendar-heatmap@1.6.3:
   dependencies:
     prop-types "^15.5.10"
 
-react-cosmos-config@^4.4.0:
-  version "4.4.0"
-  resolved "https://registry.yarnpkg.com/react-cosmos-config/-/react-cosmos-config-4.4.0.tgz#ed1c202b2e3c1d443fb6d537765981f616d1f741"
+react-cosmos-config@^4.6.1:
+  version "4.6.1"
+  resolved "https://registry.yarnpkg.com/react-cosmos-config/-/react-cosmos-config-4.6.1.tgz#1fc4dbb69fa8243e4a6d58d3deefdf2573dee426"
   dependencies:
-    react-cosmos-shared "^4.4.0"
-    yargs "^11.0.0"
+    react-cosmos-shared "^4.6.1"
+    yargs "^12.0.1"
 
-react-cosmos-loader@^4.4.0:
-  version "4.4.0"
-  resolved "https://registry.yarnpkg.com/react-cosmos-loader/-/react-cosmos-loader-4.4.0.tgz#8b14893ea0a8cefb44e74f79190a4788266f8ccd"
+react-cosmos-loader@^4.6.4:
+  version "4.6.4"
+  resolved "https://registry.yarnpkg.com/react-cosmos-loader/-/react-cosmos-loader-4.6.4.tgz#50eb6ecc2d5494ba4719bd3515f8f6f5369e1ca0"
   dependencies:
-    async-until "^1.0.0"
+    "@skidding/linked-list" "^1.0.2"
+    async-until "^1.1.1"
     deep-equal "^1.0.1"
     lodash.merge "^4.6.1"
-    prop-types "^15.6.1"
-    react-cosmos-shared "^4.4.0"
-    react-cosmos-state-proxy "^4.4.0"
+    prop-types "^15.6.2"
+    react-cosmos-shared "^4.6.1"
+    react-cosmos-state-proxy "^4.6.1"
+    react-cosmos-voyager2 "^4.6.4"
+    react-is "^16.4.1"
+    socket.io-client "^2.1.1"
+    url-parse "^1.4.1"
 
-react-cosmos-playground@^4.4.0:
-  version "4.4.0"
-  resolved "https://registry.yarnpkg.com/react-cosmos-playground/-/react-cosmos-playground-4.4.0.tgz#d5f7ea300f63c3e52043f91b38c529c77739adca"
+react-cosmos-playground@^4.6.4:
+  version "4.6.4"
+  resolved "https://registry.yarnpkg.com/react-cosmos-playground/-/react-cosmos-playground-4.6.4.tgz#8298501995e7004e24af96960734b35c7a96c115"
 
-react-cosmos-shared@^4.4.0:
-  version "4.4.0"
-  resolved "https://registry.yarnpkg.com/react-cosmos-shared/-/react-cosmos-shared-4.4.0.tgz#e38df16619d08ff5931340d18962e856db0af945"
+react-cosmos-shared@^4.6.1:
+  version "4.6.1"
+  resolved "https://registry.yarnpkg.com/react-cosmos-shared/-/react-cosmos-shared-4.6.1.tgz#deacaaaa69b79b408a6c0931597badb17e36ec95"
   dependencies:
     lodash.isplainobject "^4.0.6"
-    prop-types "^15.6.1"
+    prop-types "^15.6.2"
     resolve-from "^4.0.0"
     slash "^2.0.0"
 
-react-cosmos-state-proxy@^4.4.0:
-  version "4.4.0"
-  resolved "https://registry.yarnpkg.com/react-cosmos-state-proxy/-/react-cosmos-state-proxy-4.4.0.tgz#56507e15efc3f7911dcafed8fa44cdd81e75e36c"
+react-cosmos-state-proxy@^4.6.1:
+  version "4.6.1"
+  resolved "https://registry.yarnpkg.com/react-cosmos-state-proxy/-/react-cosmos-state-proxy-4.6.1.tgz#822185542bcb9a56bfa79a3d15d2b1d8a5fad5b6"
   dependencies:
     lodash.isempty "^4.4.0"
     lodash.isequal "^4.4.0"
     lodash.omit "^4.5.0"
-    react-cosmos-shared "^4.4.0"
+    react-cosmos-shared "^4.6.1"
 
-react-cosmos-voyager2@^4.4.0:
-  version "4.4.0"
-  resolved "https://registry.yarnpkg.com/react-cosmos-voyager2/-/react-cosmos-voyager2-4.4.0.tgz#bc8cc85bfc9493c5345d0b28366a67e364bc17cf"
+react-cosmos-voyager2@^4.6.4:
+  version "4.6.4"
+  resolved "https://registry.yarnpkg.com/react-cosmos-voyager2/-/react-cosmos-voyager2-4.6.4.tgz#c0bcbd665ed5ba7390d9edae366c6c04790ffa6f"
   dependencies:
     babel-types "^6.26.0"
     babylon "^6.18.0"
-    commondir "^1.0.1"
     glob "^7.1.2"
     lodash.sortby "^4.7.0"
     micromatch "^3.1.10"
-    react-cosmos-shared "^4.4.0"
+    react-cosmos-shared "^4.6.1"
     util.promisify "^1.0.0"
 
-react-cosmos-voyager@^4.4.0:
-  version "4.4.0"
-  resolved "https://registry.yarnpkg.com/react-cosmos-voyager/-/react-cosmos-voyager-4.4.0.tgz#db5104c4b575bc6bef7d51f02c52bca88e428cf0"
+react-cosmos-voyager@^4.6.1:
+  version "4.6.1"
+  resolved "https://registry.yarnpkg.com/react-cosmos-voyager/-/react-cosmos-voyager-4.6.1.tgz#1a473510cca2cb619686991e38c2404b138d954f"
   dependencies:
     glob "^7.1.1"
     traverse "^0.6.6"
 
-react-cosmos@4.4.0:
-  version "4.4.0"
-  resolved "https://registry.yarnpkg.com/react-cosmos/-/react-cosmos-4.4.0.tgz#d1187f1d56040f13964a424b6c32110c4bbf6753"
+react-cosmos@4.6.4:
+  version "4.6.4"
+  resolved "https://registry.yarnpkg.com/react-cosmos/-/react-cosmos-4.6.4.tgz#c3a64a9eb371586a9ef61e2c38e89d6500170129"
   dependencies:
-    babel-polyfill "^6.26.0"
+    chokidar "^2.0.4"
     express "^4.16.3"
     fs-extra "^6.0.1"
     glob "^7.1.1"
     http-proxy-middleware "^0.18.0"
     import-from "^2.1.0"
-    lodash.omit "^4.5.0"
+    lodash "^4.17.10"
     object.values "^1.0.4"
-    react-cosmos-config "^4.4.0"
-    react-cosmos-loader "^4.4.0"
-    react-cosmos-playground "^4.4.0"
-    react-cosmos-shared "^4.4.0"
-    react-cosmos-voyager "^4.4.0"
-    react-cosmos-voyager2 "^4.4.0"
+    react-cosmos-config "^4.6.1"
+    react-cosmos-loader "^4.6.4"
+    react-cosmos-playground "^4.6.4"
+    react-cosmos-shared "^4.6.1"
+    react-cosmos-voyager "^4.6.1"
+    react-cosmos-voyager2 "^4.6.4"
     react-dev-utils "^5.0.1"
     react-error-overlay "^4.0.0"
     resolve-from "^4.0.0"
-    webpack-dev-middleware "^1.12.0"
+    socket.io "^2.1.1"
+    webpack-dev-middleware "^2.0.6"
     webpack-hot-middleware "^2.22.2"
-    yargs "^11.0.0"
+    yargs "^12.0.1"
 
 react-deep-force-update@^2.1.1:
   version "2.1.1"
@@ -10902,6 +11006,10 @@ react-image-lightbox@5.0.0:
 react-is@^16.3.1, react-is@^16.4.0:
   version "16.4.0"
   resolved "https://registry.yarnpkg.com/react-is/-/react-is-16.4.0.tgz#cc9fdc855ac34d2e7d9d2eb7059bbc240d35ffcf"
+
+react-is@^16.4.1:
+  version "16.4.2"
+  resolved "https://registry.yarnpkg.com/react-is/-/react-is-16.4.2.tgz#84891b56c2b6d9efdee577cc83501dfc5ecead88"
 
 react-lifecycles-compat@^3.0.0:
   version "3.0.4"
@@ -12372,7 +12480,7 @@ socket.io-adapter@~1.1.0:
   version "1.1.1"
   resolved "https://registry.yarnpkg.com/socket.io-adapter/-/socket.io-adapter-1.1.1.tgz#2a805e8a14d6372124dd9159ad4502f8cb07f06b"
 
-socket.io-client@2.1.1:
+socket.io-client@2.1.1, socket.io-client@^2.1.1:
   version "2.1.1"
   resolved "https://registry.yarnpkg.com/socket.io-client/-/socket.io-client-2.1.1.tgz#dcb38103436ab4578ddb026638ae2f21b623671f"
   dependencies:
@@ -12399,7 +12507,7 @@ socket.io-parser@~3.2.0:
     debug "~3.1.0"
     isarray "2.0.1"
 
-socket.io@^2.0.3:
+socket.io@^2.0.3, socket.io@^2.1.1:
   version "2.1.1"
   resolved "https://registry.yarnpkg.com/socket.io/-/socket.io-2.1.1.tgz#a069c5feabee3e6b214a75b40ce0652e1cfb9980"
   dependencies:
@@ -13823,6 +13931,10 @@ unzipper@^0.8.11:
     readable-stream "~2.1.5"
     setimmediate "~1.0.4"
 
+upath@^1.0.5:
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/upath/-/upath-1.1.0.tgz#35256597e46a581db4793d0ce47fa9aebfc9fabd"
+
 update-check@1.5.1:
   version "1.5.1"
   resolved "https://registry.yarnpkg.com/update-check/-/update-check-1.5.1.tgz#24fc52266273cb8684d2f1bf9687c0e52dcf709f"
@@ -13855,6 +13967,10 @@ urix@^0.1.0:
   version "0.1.0"
   resolved "https://registry.yarnpkg.com/urix/-/urix-0.1.0.tgz#da937f7a62e21fec1fd18d49b35c2935067a6c72"
 
+url-join@^2.0.2:
+  version "2.0.5"
+  resolved "https://registry.yarnpkg.com/url-join/-/url-join-2.0.5.tgz#5af22f18c052a000a48d7b82c5e9c2e2feeda728"
+
 url-loader@^0.6.2:
   version "0.6.2"
   resolved "https://registry.yarnpkg.com/url-loader/-/url-loader-0.6.2.tgz#a007a7109620e9d988d14bce677a1decb9a993f7"
@@ -13872,6 +13988,13 @@ url-parse-lax@^1.0.0:
 url-parse@^1.1.8, url-parse@~1.4.0:
   version "1.4.0"
   resolved "https://registry.yarnpkg.com/url-parse/-/url-parse-1.4.0.tgz#6bfdaad60098c7fe06f623e42b22de62de0d3d75"
+  dependencies:
+    querystringify "^2.0.0"
+    requires-port "^1.0.0"
+
+url-parse@^1.4.1:
+  version "1.4.3"
+  resolved "https://registry.yarnpkg.com/url-parse/-/url-parse-1.4.3.tgz#bfaee455c889023219d757e045fa6a684ec36c15"
   dependencies:
     querystringify "^2.0.0"
     requires-port "^1.0.0"
@@ -14167,7 +14290,7 @@ webpack-core@~0.6.9:
     source-list-map "~0.1.7"
     source-map "~0.4.1"
 
-webpack-dev-middleware@^1.10.2, webpack-dev-middleware@^1.12.0, webpack-dev-middleware@^1.8.4:
+webpack-dev-middleware@^1.10.2, webpack-dev-middleware@^1.8.4:
   version "1.12.2"
   resolved "https://registry.yarnpkg.com/webpack-dev-middleware/-/webpack-dev-middleware-1.12.2.tgz#f8fc1120ce3b4fc5680ceecb43d777966b21105e"
   dependencies:
@@ -14176,6 +14299,18 @@ webpack-dev-middleware@^1.10.2, webpack-dev-middleware@^1.12.0, webpack-dev-midd
     path-is-absolute "^1.0.0"
     range-parser "^1.0.3"
     time-stamp "^2.0.0"
+
+webpack-dev-middleware@^2.0.6:
+  version "2.0.6"
+  resolved "https://registry.yarnpkg.com/webpack-dev-middleware/-/webpack-dev-middleware-2.0.6.tgz#a51692801e8310844ef3e3790e1eacfe52326fd4"
+  dependencies:
+    loud-rejection "^1.6.0"
+    memory-fs "~0.4.1"
+    mime "^2.1.0"
+    path-is-absolute "^1.0.0"
+    range-parser "^1.0.3"
+    url-join "^2.0.2"
+    webpack-log "^1.0.1"
 
 webpack-dev-server@^1.16.1:
   version "1.16.5"
@@ -14203,6 +14338,15 @@ webpack-hot-middleware@^2.13.2, webpack-hot-middleware@^2.22.2:
     html-entities "^1.2.0"
     querystring "^0.2.0"
     strip-ansi "^3.0.0"
+
+webpack-log@^1.0.1:
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/webpack-log/-/webpack-log-1.2.0.tgz#a4b34cda6b22b518dbb0ab32e567962d5c72a43d"
+  dependencies:
+    chalk "^2.1.0"
+    log-symbols "^2.1.0"
+    loglevelnext "^1.0.1"
+    uuid "^3.1.0"
 
 webpack-md5-hash@0.0.5:
   version "0.0.5"
@@ -14506,6 +14650,10 @@ xregexp@2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/xregexp/-/xregexp-2.0.0.tgz#52a63e56ca0b84a7f3a5f3d61872f126ad7a5943"
 
+xregexp@4.0.0:
+  version "4.0.0"
+  resolved "https://registry.yarnpkg.com/xregexp/-/xregexp-4.0.0.tgz#e698189de49dd2a18cc5687b05e17c8e43943020"
+
 "xtend@>=4.0.0 <4.1.0-0", xtend@^4.0.0, xtend@^4.0.1, xtend@~4.0.0, xtend@~4.0.1:
   version "4.0.1"
   resolved "https://registry.yarnpkg.com/xtend/-/xtend-4.0.1.tgz#a5c6d532be656e23db820efb943a1f04998d63af"
@@ -14513,6 +14661,10 @@ xregexp@2.0.0:
 y18n@^3.2.0, y18n@^3.2.1:
   version "3.2.1"
   resolved "https://registry.yarnpkg.com/y18n/-/y18n-3.2.1.tgz#6d15fba884c08679c0d77e88e7759e811e07fa41"
+
+"y18n@^3.2.1 || ^4.0.0":
+  version "4.0.0"
+  resolved "https://registry.yarnpkg.com/y18n/-/y18n-4.0.0.tgz#95ef94f85ecc81d007c264e190a120f0a3c8566b"
 
 yallist@^2.1.2:
   version "2.1.2"
@@ -14531,6 +14683,12 @@ yaml-loader@^0.4.0:
 yargs-parser@^10.0.0:
   version "10.0.0"
   resolved "https://registry.yarnpkg.com/yargs-parser/-/yargs-parser-10.0.0.tgz#c737c93de2567657750cb1f2c00be639fd19c994"
+  dependencies:
+    camelcase "^4.1.0"
+
+yargs-parser@^10.1.0:
+  version "10.1.0"
+  resolved "https://registry.yarnpkg.com/yargs-parser/-/yargs-parser-10.1.0.tgz#7202265b89f7e9e9f2e5765e0fe735a905edbaa8"
   dependencies:
     camelcase "^4.1.0"
 
@@ -14604,6 +14762,23 @@ yargs@^11.1.0:
     which-module "^2.0.0"
     y18n "^3.2.1"
     yargs-parser "^9.0.2"
+
+yargs@^12.0.1:
+  version "12.0.1"
+  resolved "https://registry.yarnpkg.com/yargs/-/yargs-12.0.1.tgz#6432e56123bb4e7c3562115401e98374060261c2"
+  dependencies:
+    cliui "^4.0.0"
+    decamelize "^2.0.0"
+    find-up "^3.0.0"
+    get-caller-file "^1.0.1"
+    os-locale "^2.0.0"
+    require-directory "^2.1.1"
+    require-main-filename "^1.0.1"
+    set-blocking "^2.0.0"
+    string-width "^2.0.0"
+    which-module "^2.0.0"
+    y18n "^3.2.1 || ^4.0.0"
+    yargs-parser "^10.1.0"
 
 yargs@^3.19.0:
   version "3.32.0"
