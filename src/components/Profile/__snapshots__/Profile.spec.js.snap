@@ -2,13 +2,13 @@
 
 exports[`Render Profile component. Render Profile component. 1`] = `
 <div
-  className="Profile__IntroWrapper-krHzZt items-center justify-center pv4 jZRrWi"
+  className="Profile__IntroWrapper-QUVbl items-center justify-center pv4 bosune"
 >
   <div
-    className="Profile__AvatarContainer-bEEKLc center w-100-ns w-50 jeMMpb"
+    className="Profile__AvatarContainer-qjaHT center w-100-ns w-50 iQjNxu"
   >
     <div
-      className="BlackMirror__BlackMirrorDiv-kyYuCJ flex justify-around mv4 laQvyw"
+      className="BlackMirror__BlackMirrorDiv-jUdWJK flex justify-around mv4 kqFKRa"
     >
       <a
         className="ma1"
@@ -122,7 +122,7 @@ exports[`Render Profile component. Render Profile component. 1`] = `
     </div>
   </div>
   <div
-    className="Profile__BlurbContainer-innCgm tc tr-ns ph2 frIVhO"
+    className="Profile__BlurbContainer-boBiCK tc tr-ns ph2 lbahJb"
   >
     <h2
       className="f3 fw5 lh-title white-80 spectral"
@@ -142,7 +142,7 @@ exports[`Render Profile component. Render Profile component. 1`] = `
       >
         I contain 
         <a
-          className="StyledLink-khUpca jZqCYV"
+          className="StyledLink-eJtUmc flbpKg"
           href="http://jstu.art/ojNe"
         >
           multitudes
@@ -284,7 +284,7 @@ exports[`Render Profile component. Render Profile component. 1`] = `
           Published
            
           <a
-            className="StyledLink-khUpca jZqCYV"
+            className="StyledLink-eJtUmc flbpKg"
             href="http://jstu.art/oijk"
           >
             NLP researcher
@@ -292,7 +292,7 @@ exports[`Render Profile component. Render Profile component. 1`] = `
           , and
         </span>
         <a
-          className="StyledLink-khUpca jZqCYV"
+          className="StyledLink-eJtUmc flbpKg"
           href="http://jstu.art/oj1g"
         >
           USPO Patent holder
@@ -510,7 +510,7 @@ exports[`Render Profile component. Render Profile component. 1`] = `
         className="f4 fw3 dib tr lh-copy"
       >
         <a
-          className="StyledLink-khUpca jZqCYV"
+          className="StyledLink-eJtUmc flbpKg"
           href="http://jstu.art/ojVB"
         >
           French translator
@@ -594,10 +594,10 @@ exports[`Render Profile component. Render Profile component. 1`] = `
     </p>
   </div>
   <div
-    className="Profile__FooterContainer-caaTfV bt b--light-silver hJgCxy"
+    className="Profile__FooterContainer-gcNvwx bt b--light-silver kICsnN"
   >
     <div
-      className="ProfileFooter__ProfileFooterSection-fAJWLj b--hot-pink bb bg-purple bw2 mb1 pb3 pt4 hFmNli"
+      className="ProfileFooter__ProfileFooterSection-bFgHiJ b--hot-pink bb bg-purple bw2 mb1 pb3 pt4 hHGtvQ"
     >
       <h4
         className="f4 fira-mono fw4 lh-title tc white-80"

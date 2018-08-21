@@ -2,12 +2,12 @@
 
 exports[`Render StyledLink component with custom colors. 1`] = `
 <a
-  className="StyledLink-khUpca WzwRW"
+  className="StyledLink-eJtUmc EYXa"
 />
 `;
 
 exports[`Render StyledLink component with default colors. 1`] = `
 <a
-  className="StyledLink-khUpca CcbPu"
+  className="StyledLink-eJtUmc AwSYv"
 />
 `;

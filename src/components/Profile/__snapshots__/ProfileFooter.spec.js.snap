@@ -4,7 +4,7 @@ exports[`Render ProfileFooter component (cancelled) after 10s. 1`] = `null`;
 
 exports[`Render ProfileFooter component after 10s. 1`] = `
 <div
-  className="ProfileFooter__ProfileFooterSection-fAJWLj b--hot-pink bb bg-purple bw2 mb1 pb3 pt4 hFmNli"
+  className="ProfileFooter__ProfileFooterSection-bFgHiJ b--hot-pink bb bg-purple bw2 mb1 pb3 pt4 hHGtvQ"
 >
   <h4
     className="f4 fira-mono fw4 lh-title tc white-80"
@@ -44,7 +44,7 @@ exports[`Render ProfileFooter component after 10s. 1`] = `
 
 exports[`Render ProfileFooter component. 1`] = `
 <div
-  className="ProfileFooter__ProfileFooterSection-fAJWLj b--hot-pink bb bg-purple bw2 mb1 pb3 pt4 hFmNli"
+  className="ProfileFooter__ProfileFooterSection-bFgHiJ b--hot-pink bb bg-purple bw2 mb1 pb3 pt4 hHGtvQ"
 >
   <h4
     className="f4 fira-mono fw4 lh-title tc white-80"
