@@ -1,0 +1,6 @@
+{
+  "extends": [":base", ":automergeLinters"],
+  "gitAuthor": "ednbot",
+  "labels": ["renovate"],
+  "prHourlyLimit": 0
+}
