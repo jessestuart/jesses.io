@@ -33,29 +33,29 @@ workflows:
 restore_cache: &restore_cache
   restore_cache:
     keys:
-      - dependencies-{{ checksum ".nvmrc" }}-{{ checksum "package.json" }}
-      - dependencies-{{ checksum ".nvmrc" }}
+      - v1-dependencies-{{ checksum ".nvmrc" }}-{{ checksum "package.json" }}
+      - v1-dependencies-{{ checksum ".nvmrc" }}
 
 restore_public_dir_cache: &restore_public_dir_cache
   restore_cache:
     paths:
-      - public/
+      - v1-public/
     keys:
-      - public-dir-{{ .Revision }}
-      - public-dir-{{ .Branch }}
-      - public-dir-
+      - v1-public-dir-{{ .Revision }}
+      - v1-public-dir-{{ .Branch }}
+      - v1-public-dir-
 
 save_cache: &save_cache
   save_cache:
     paths:
       - node_modules/
-    key: dependencies-{{ checksum ".nvmrc" }}-{{ checksum "package.json" }}
+    key: v1-dependencies-{{ checksum ".nvmrc" }}-{{ checksum "package.json" }}
 
 save_public_dir_cache: &save_public_dir_cache
   save_cache:
     paths:
       - public/
-    key: public-dir-{{ .Branch }}
+    key: v1-public-dir-{{ .Branch }}
 
 install_dependencies: &install_dependencies
   run:
