@@ -5091,11 +5091,11 @@ gatsby-plugin-remove-trailing-slashes@1.0.9:
   dependencies:
     babel-runtime "^6.26.0"
 
-gatsby-plugin-sentry@0.0.4:
-  version "0.0.4"
-  resolved "https://registry.yarnpkg.com/gatsby-plugin-sentry/-/gatsby-plugin-sentry-0.0.4.tgz#707a14a1ce29599c56eff1a37881b55595ee395b"
+gatsby-plugin-sentry@0.1.0:
+  version "0.1.0"
+  resolved "https://registry.yarnpkg.com/gatsby-plugin-sentry/-/gatsby-plugin-sentry-0.1.0.tgz#5bbf0ccae2d22e360c1ef68f8a8f8d41a7cda128"
   dependencies:
-    babel-runtime "^6.26.0"
+    raven-js latest
 
 gatsby-plugin-sharp@1.6.47, gatsby-plugin-sharp@^1.6.47:
   version "1.6.47"
@@ -10650,6 +10650,10 @@ range-parser@^1.0.3, range-parser@~1.2.0:
 raven-js@3.26.1:
   version "3.26.1"
   resolved "https://registry.yarnpkg.com/raven-js/-/raven-js-3.26.1.tgz#13f78804f2bed524a7283382e1bca7ab423950a3"
+
+raven-js@latest:
+  version "3.26.4"
+  resolved "https://registry.yarnpkg.com/raven-js/-/raven-js-3.26.4.tgz#32aae3a63a9314467a453c94c89a364ea43707be"
 
 raw-body@2.3.2:
   version "2.3.2"
