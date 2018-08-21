@@ -46,7 +46,7 @@
     "classnames": "2.2.6",
     "codecov": "3.0.2",
     "concurrently": "3.5.1",
-    "eslint": "4.19.1",
+    "eslint": "5.4.0",
     "eslint-config-prettier": "3.0.1",
     "eslint-config-standard": "11.0.0",
     "eslint-friendly-formatter": "4.0.1",
