@@ -80,7 +80,7 @@
     "raven-js": "3.26.1",
     "react-calendar-heatmap": "1.6.3",
     "react-cosmos": "4.4.0",
-    "react-feather": "1.1.0",
+    "react-feather": "1.1.1",
     "react-headroom": "2.2.2",
     "react-test-renderer": "16.4.0",
     "rimraf": "2.6.2",
