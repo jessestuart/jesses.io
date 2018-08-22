@@ -76,7 +76,7 @@
     "prettier": "1.14.2",
     "prismjs": "1.15.0",
     "prop-types": "15.6.2",
-    "purgecss": "1.0.1",
+    "purgecss": "1.1.0",
     "raven-js": "3.26.4",
     "react-calendar-heatmap": "1.6.3",
     "react-cosmos": "4.6.4",
