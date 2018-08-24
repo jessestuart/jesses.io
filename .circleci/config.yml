@@ -18,14 +18,6 @@ workflows:
       - test:
           requires:
             - install_dependencies
-      - push_image:
-          requires:
-            - build
-            - lint
-            - test
-          filters:
-            branches:
-              only: master
 
 # ====================
 # SHARED JOBS POINTERS
@@ -140,20 +132,16 @@ jobs:
       - IMAGE_ID: "jessestuart/jesses.io"
     steps:
       - checkout
-
       - setup_remote_docker
-
       - run:
           name: Authenticate with Docker Hub.
           command: |
             # Login to Docker Hub.
             echo $DOCKERHUB_PASS | docker login -u $DOCKERHUB_USER --password-stdin
-
       - run:
           name: Build Docker image for static site.
           command: |
             docker build -t "${IMAGE_ID}" .
-
       - run:
           name: Push image to ECR.
           command: |
