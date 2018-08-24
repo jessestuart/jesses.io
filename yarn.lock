@@ -12932,9 +12932,9 @@ specificity@^0.4.0:
   version "0.4.0"
   resolved "https://registry.yarnpkg.com/specificity/-/specificity-0.4.0.tgz#301b1ab5455987c37d6d94f8c956ef9d9fb48c1d"
 
-split-lines@^1.1.0:
-  version "1.1.0"
-  resolved "https://registry.yarnpkg.com/split-lines/-/split-lines-1.1.0.tgz#3abba8f598614142f9db8d27ab6ab875662a1e09"
+split-lines@^2.0.0:
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/split-lines/-/split-lines-2.0.0.tgz#13f42cdf8cf0d3f5d3fed797b80986168c06defc"
 
 split-string@^3.0.1, split-string@^3.0.2:
   version "3.1.0"
@@ -13564,12 +13564,12 @@ textlint-rule-no-start-duplicated-conjunction@2.0.2:
     sentence-splitter "^3.0.6"
     textlint-rule-helper "^2.0.0"
 
-textlint-rule-stop-words@1.0.3:
-  version "1.0.3"
-  resolved "https://registry.yarnpkg.com/textlint-rule-stop-words/-/textlint-rule-stop-words-1.0.3.tgz#fe2f40cbe5837331b2a09fdec57cc71758093bf0"
+textlint-rule-stop-words@1.0.5:
+  version "1.0.5"
+  resolved "https://registry.yarnpkg.com/textlint-rule-stop-words/-/textlint-rule-stop-words-1.0.5.tgz#df7d8e24dc9cabc483761c78c5b20004170f6372"
   dependencies:
-    lodash "^4.17.4"
-    split-lines "^1.1.0"
+    lodash "^4.17.10"
+    split-lines "^2.0.0"
     textlint-rule-helper "^2.0.0"
 
 textlint-rule-terminology@1.1.29:
