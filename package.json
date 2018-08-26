@@ -45,7 +45,7 @@
     "chalk": "2.4.1",
     "classnames": "2.2.6",
     "codecov": "3.0.4",
-    "concurrently": "4.0.0",
+    "concurrently": "4.0.1",
     "eslint": "5.4.0",
     "eslint-config-prettier": "3.0.1",
     "eslint-config-standard": "11.0.0",
