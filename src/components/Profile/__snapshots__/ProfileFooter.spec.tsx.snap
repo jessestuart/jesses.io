@@ -1,0 +1,85 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Render ProfileFooter component (cancelled) after 10s. 1`] = `null`;
+
+exports[`Render ProfileFooter component after 10s. 1`] = `
+<div
+  className="sc-bdVaJa b--hot-pink bb bg-purple bw2 mb1 pb3 pt4 huPIdW"
+>
+  <h4
+    className="f4 fira-mono fw4 lh-title tc white-80"
+  >
+    I build software
+    <br />
+    on the pull requests
+    <br />
+    of giants.
+  </h4>
+  <div
+    className="flex justify-center mt2 w-100"
+  >
+    <div
+      className=""
+    >
+      <svg
+        className="mw-5"
+        fill="none"
+        height="30px"
+        stroke="#FF3A5C"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="2"
+        viewBox="0 0 24 24"
+        width="30px"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <polyline
+          points="6 9 12 15 18 9"
+        />
+      </svg>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Render ProfileFooter component. 1`] = `
+<div
+  className="sc-bdVaJa b--hot-pink bb bg-purple bw2 mb1 pb3 pt4 huPIdW"
+>
+  <h4
+    className="f4 fira-mono fw4 lh-title tc white-80"
+  >
+    I build software
+    <br />
+    on the pull requests
+    <br />
+    of giants.
+  </h4>
+  <div
+    className="flex justify-center mt2 w-100"
+  >
+    <div
+      className=""
+    >
+      <svg
+        className="mw-5"
+        fill="none"
+        height="30px"
+        stroke="#FF3A5C"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="2"
+        viewBox="0 0 24 24"
+        width="30px"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <polyline
+          points="6 9 12 15 18 9"
+        />
+      </svg>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Render ProfileFooter component. 2`] = `null`;

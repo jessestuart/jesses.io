@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Render StyledLink component with custom colors. 1`] = `
+<a
+  className="sc-bdVaJa kOnrXn"
+/>
+`;
+
+exports[`Render StyledLink component with default colors. 1`] = `
+<a
+  className="sc-bdVaJa iwQflW"
+/>
+`;

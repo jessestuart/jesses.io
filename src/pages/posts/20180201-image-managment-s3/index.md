@@ -64,22 +64,22 @@ TL;DR, here's what goes down to put this all together:
 
 ### What's next?
 
-* I started working on a system to persist EXIF metadata properties in a
+- I started working on a system to persist EXIF metadata properties in a
   lightweight DB like DynamoDB -- the motivation here would be limiting the
   overhead of EXIF processing to a one-time serverless function, as opposed to
   requiring that computation to be performed client-side on every page load for
   e.g., a photo gallery.
 
-- The system is currently tightly coupled to AWS -- it probably wouldn't be too
+* The system is currently tightly coupled to AWS -- it probably wouldn't be too
   difficult to implement support for any S3-compliant Object Storage provider
   (e.g., [Minio][minio], [DigitalOcean Spaces][do-spaces], [Openstack
   Swift][os-swift]).
 
 ### FAQ
 
-* **Q**: Can I use the same bucket for the source and destination?
+- **Q**: Can I use the same bucket for the source and destination?
 
-- **A**: Not without introducing more opinionated logic / filtering to the
+* **A**: Not without introducing more opinionated logic / filtering to the
   Lambda function -- I wasn't able to determine a trivial way to distinguish
   between images uploaded by a user versus images (re)-uploaded by the Lambda
   (both are treated as a `PutObject` request), resulting in... yeah, an infinite
