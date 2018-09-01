@@ -91,6 +91,8 @@ const plugins = _.compact([
   // =======================================================================
   'gatsby-plugin-react-helmet',
   'gatsby-plugin-react-next',
+  // Typescript
+  'gatsby-plugin-typescript',
   // ========================
   // Styling-related plugins.
   // ========================
