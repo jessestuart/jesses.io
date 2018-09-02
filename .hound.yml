@@ -1,7 +1,5 @@
-eslint:
-  enabled: true
-  config_file: .eslintrc.js
-  ignore_file: .eslintignore
-tslint:
+eslint: 
+  enabled: false
+tslint: 
   enabled: true
   config_file: tslint.json

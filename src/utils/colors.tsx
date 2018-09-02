@@ -1,7 +1,20 @@
 import gray from 'gray-percentage'
 import color from 'onecolor'
 
-const colors = {
+type Colors = {
+  accent: any
+  bgDark: any
+  blend: any
+  defaultHover?: any
+  defaultLink?: any
+  gray: any
+  linkColor: any
+  primary: any
+  secondary: any
+  ui: any
+}
+
+const colors: Colors = {
   accent: 'rgba(50, 0, 50, 0.8)',
   primary: {
     // Light Primary shades.
