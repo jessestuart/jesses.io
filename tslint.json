@@ -2,7 +2,7 @@
   "extends": ["tslint-config-standard", "tslint-config-prettier"],
   "defaultSeverity": "error",
   "linterOptions": {
-    "include": ["src/**/*.{js,ts,tsx}"],
+    "include": ["src/**/*.{ts,tsx}"],
     "exclude": ["node_modules/**/*.ts"]
   },
   "rules": {
