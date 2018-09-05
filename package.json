@@ -44,7 +44,7 @@
     "bluebird": "3.5.1",
     "chalk": "2.4.1",
     "classnames": "2.2.6",
-    "codecov": "3.0.4",
+    "codecov": "3.1.0",
     "concurrently": "4.0.1",
     "eslint": "5.5.0",
     "eslint-config-prettier": "3.0.1",
