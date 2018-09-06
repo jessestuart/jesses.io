@@ -8811,9 +8811,9 @@ minimist@~0.0.1:
   version "0.0.10"
   resolved "https://registry.yarnpkg.com/minimist/-/minimist-0.0.10.tgz#de3f98543dbf96082be48ad1a0c7cda836301dcf"
 
-minio@7.0.0:
-  version "7.0.0"
-  resolved "https://registry.yarnpkg.com/minio/-/minio-7.0.0.tgz#e37564849ac15485ed38daee668d7db028730949"
+minio@7.0.1:
+  version "7.0.1"
+  resolved "https://registry.yarnpkg.com/minio/-/minio-7.0.1.tgz#61b3a94607657ee51f91f0ada188f88c2e66553e"
   dependencies:
     async "^1.5.2"
     block-stream2 "^1.0.0"
