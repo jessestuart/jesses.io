@@ -38,15 +38,15 @@ Array [
     </p>
   </div>,
   <div
-    className="ProfileDevIcons__DevIconsSection-jpBnAM center code w-90 bEuDTQ"
+    className="ProfileDevIcons__DevIconsSection-sc-14swnzc-1 center code w-90 jbKEuE"
   >
     <div
-      className="ProfileDevIcons__DevIconLabel-UzoeZ fira-mono moon-gray flex items-center justify-start jqtFoc"
+      className="ProfileDevIcons__DevIconLabel-sc-14swnzc-0 fira-mono moon-gray flex items-center justify-start gRlYGr"
     >
       infra
     </div>
     <div
-      className="bb-ns b--white-50 DevIconColumn__DevIconContainer-jRjche pa3 pa4-l flex justify-center items-center fxVJOv"
+      className="bb-ns b--white-50 DevIconColumn__DevIconContainer-sc-1ho6lce-0 pa3 pa4-l flex justify-center items-center hLtOwh"
     >
       <a
         href="https://docker.com"
@@ -65,7 +65,7 @@ Array [
       </a>
     </div>
     <div
-      className="bb-ns b--white-50 DevIconColumn__DevIconContainer-jRjche pa3 pa4-l flex justify-center items-center fxVJOv"
+      className="bb-ns b--white-50 DevIconColumn__DevIconContainer-sc-1ho6lce-0 pa3 pa4-l flex justify-center items-center hLtOwh"
     >
       <a
         href="https://kubernetes.io"
@@ -88,7 +88,7 @@ Array [
       </a>
     </div>
     <div
-      className="bb-ns b--white-50 DevIconColumn__DevIconContainer-jRjche pa3 pa4-l flex justify-center items-center fxVJOv"
+      className="bb-ns b--white-50 DevIconColumn__DevIconContainer-sc-1ho6lce-0 pa3 pa4-l flex justify-center items-center hLtOwh"
     >
       <a
         href="https://ansible.com"
@@ -121,7 +121,7 @@ Array [
       </a>
     </div>
     <div
-      className="bb b--white-50 bb-ns b--white-50 DevIconColumn__DevIconContainer-jRjche pa3 pa4-l flex justify-center items-center fxVJOv"
+      className="bb b--white-50 bb-ns b--white-50 DevIconColumn__DevIconContainer-sc-1ho6lce-0 pa3 pa4-l flex justify-center items-center hLtOwh"
     >
       <a
         href="https://vagrantup.com"
@@ -144,7 +144,7 @@ Array [
       </a>
     </div>
     <div
-      className="bb b--white-50 bb-ns b--white-50 DevIconColumn__DevIconContainer-jRjche pa3 pa4-l flex justify-center items-center fxVJOv"
+      className="bb b--white-50 bb-ns b--white-50 DevIconColumn__DevIconContainer-sc-1ho6lce-0 pa3 pa4-l flex justify-center items-center hLtOwh"
     >
       <a
         href="https://packer.io"
@@ -167,7 +167,7 @@ Array [
       </a>
     </div>
     <div
-      className="bb b--white-50 DevIconColumn__DevIconContainer-jRjche pa3 pa4-l flex justify-center items-center fxVJOv"
+      className="bb b--white-50 DevIconColumn__DevIconContainer-sc-1ho6lce-0 pa3 pa4-l flex justify-center items-center hLtOwh"
     >
       <a
         href="https://terraform.io"
@@ -206,12 +206,12 @@ Array [
       </a>
     </div>
     <div
-      className="ProfileDevIcons__DevIconLabel-UzoeZ fira-mono moon-gray flex items-center justify-start jqtFoc"
+      className="ProfileDevIcons__DevIconLabel-sc-14swnzc-0 fira-mono moon-gray flex items-center justify-start gRlYGr"
     >
       backend
     </div>
     <div
-      className="bb-ns b--white-50 DevIconColumn__DevIconContainer-jRjche pa3 pa4-l flex justify-center items-center fxVJOv"
+      className="bb-ns b--white-50 DevIconColumn__DevIconContainer-sc-1ho6lce-0 pa3 pa4-l flex justify-center items-center hLtOwh"
     >
       <a
         href="http://openjdk.java.net"
@@ -246,7 +246,7 @@ Array [
       </a>
     </div>
     <div
-      className="bb-ns b--white-50 DevIconColumn__DevIconContainer-jRjche pa3 pa4-l flex justify-center items-center fxVJOv"
+      className="bb-ns b--white-50 DevIconColumn__DevIconContainer-sc-1ho6lce-0 pa3 pa4-l flex justify-center items-center hLtOwh"
     >
       <a
         href="https://grails.org"
@@ -265,7 +265,7 @@ Array [
       </a>
     </div>
     <div
-      className="bb-ns b--white-50 DevIconColumn__DevIconContainer-jRjche pa3 pa4-l flex justify-center items-center fxVJOv"
+      className="bb-ns b--white-50 DevIconColumn__DevIconContainer-sc-1ho6lce-0 pa3 pa4-l flex justify-center items-center hLtOwh"
     >
       <a
         href="https://golang.org"
@@ -323,7 +323,7 @@ Array [
       </a>
     </div>
     <div
-      className="bb b--white-50 bb-ns b--white-50 DevIconColumn__DevIconContainer-jRjche pa3 pa4-l flex justify-center items-center fxVJOv"
+      className="bb b--white-50 bb-ns b--white-50 DevIconColumn__DevIconContainer-sc-1ho6lce-0 pa3 pa4-l flex justify-center items-center hLtOwh"
     >
       <a
         href="https://nodejs.org"
@@ -342,7 +342,7 @@ Array [
       </a>
     </div>
     <div
-      className="bb b--white-50 bb-ns b--white-50 DevIconColumn__DevIconContainer-jRjche pa3 pa4-l flex justify-center items-center fxVJOv"
+      className="bb b--white-50 bb-ns b--white-50 DevIconColumn__DevIconContainer-sc-1ho6lce-0 pa3 pa4-l flex justify-center items-center hLtOwh"
     >
       <a
         href="https://python.org"
@@ -369,7 +369,7 @@ Array [
       </a>
     </div>
     <div
-      className="bb b--white-50 DevIconColumn__DevIconContainer-jRjche pa3 pa4-l flex justify-center items-center fxVJOv"
+      className="bb b--white-50 DevIconColumn__DevIconContainer-sc-1ho6lce-0 pa3 pa4-l flex justify-center items-center hLtOwh"
     >
       <a
         href="https://clojure.org"
@@ -404,12 +404,12 @@ Array [
       </a>
     </div>
     <div
-      className="ProfileDevIcons__DevIconLabel-UzoeZ fira-mono moon-gray flex items-center justify-start jqtFoc"
+      className="ProfileDevIcons__DevIconLabel-sc-14swnzc-0 fira-mono moon-gray flex items-center justify-start gRlYGr"
     >
       frontend
     </div>
     <div
-      className="bb-ns b--white-50 DevIconColumn__DevIconContainer-jRjche pa3 pa4-l flex justify-center items-center fxVJOv"
+      className="bb-ns b--white-50 DevIconColumn__DevIconContainer-sc-1ho6lce-0 pa3 pa4-l flex justify-center items-center hLtOwh"
     >
       <a
         href="https://react.org"
@@ -436,7 +436,7 @@ Array [
       </a>
     </div>
     <div
-      className="bb-ns b--white-50 DevIconColumn__DevIconContainer-jRjche pa3 pa4-l flex justify-center items-center fxVJOv"
+      className="bb-ns b--white-50 DevIconColumn__DevIconContainer-sc-1ho6lce-0 pa3 pa4-l flex justify-center items-center hLtOwh"
     >
       <a
         href="https://redux.js.org"
@@ -455,7 +455,7 @@ Array [
       </a>
     </div>
     <div
-      className="bb-ns b--white-50 DevIconColumn__DevIconContainer-jRjche pa3 pa4-l flex justify-center items-center fxVJOv"
+      className="bb-ns b--white-50 DevIconColumn__DevIconContainer-sc-1ho6lce-0 pa3 pa4-l flex justify-center items-center hLtOwh"
     >
       <a
         href="https://graphql.org"
@@ -474,7 +474,7 @@ Array [
       </a>
     </div>
     <div
-      className="bb b--white-50 bb-ns b--white-50 DevIconColumn__DevIconContainer-jRjche pa3 pa4-l flex justify-center items-center fxVJOv"
+      className="bb b--white-50 bb-ns b--white-50 DevIconColumn__DevIconContainer-sc-1ho6lce-0 pa3 pa4-l flex justify-center items-center hLtOwh"
     >
       <a
         href="https://facebook.github.io/jest/"
@@ -497,7 +497,7 @@ Array [
       </a>
     </div>
     <div
-      className="bb b--white-50 bb-ns b--white-50 DevIconColumn__DevIconContainer-jRjche pa3 pa4-l flex justify-center items-center fxVJOv"
+      className="bb b--white-50 bb-ns b--white-50 DevIconColumn__DevIconContainer-sc-1ho6lce-0 pa3 pa4-l flex justify-center items-center hLtOwh"
     >
       <a
         href="https://gatsbyjs.org"
@@ -520,7 +520,7 @@ Array [
       </a>
     </div>
     <div
-      className="bb b--white-50 DevIconColumn__DevIconContainer-jRjche pa3 pa4-l flex justify-center items-center fxVJOv"
+      className="bb b--white-50 DevIconColumn__DevIconContainer-sc-1ho6lce-0 pa3 pa4-l flex justify-center items-center hLtOwh"
     >
       <a
         href="https://angular.io"
