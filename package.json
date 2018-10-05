@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "author": "Jesse Stuart <hi@jessestuart.com>",
   "dependencies": {
-    "gatsby": "1.9.277",
+    "gatsby": "1.9.279",
     "gatsby-image": "1.0.55",
     "gatsby-link": "1.6.46",
     "gatsby-plugin-feed": "1.3.25",
