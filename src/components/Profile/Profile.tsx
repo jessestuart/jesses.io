@@ -8,6 +8,10 @@ import ProfileFooter from './ProfileFooter'
 
 import { GatsbyImage } from '../../types/gatsby-image'
 
+interface Props {
+  avatar?: GatsbyImage
+}
+
 const IntroWrapper = styled.div.attrs({
   className: 'items-center justify-center pv4',
 })`
@@ -57,7 +61,7 @@ const FooterContainer = styled.div.attrs({
   grid-row: 5 / 7;
 `
 
-const Profile = ({ avatar }: GatsbyImage) => (
+const Profile = ({ avatar }: Props) => (
   <IntroWrapper>
     <AvatarContainer>
       <Avatar image={avatar} />

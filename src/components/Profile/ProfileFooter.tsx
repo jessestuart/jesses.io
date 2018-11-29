@@ -21,7 +21,7 @@ interface State {
 const initialState = { isAnimatingChevron: false }
 
 export default class ProfileFooter extends Component<{}, State> {
-  public cancelable: any
+  // public cancelable: any
   public interval: any
 
   constructor(props, state) {
@@ -30,11 +30,12 @@ export default class ProfileFooter extends Component<{}, State> {
   }
 
   public shouldComponentUpdate() {
-    return !this.cancelable.cancelled
+    // return !this.cancelable.canceled
+    return true
   }
 
   public componentDidMount() {
-    this.cancelable = new Cancelable(this.toggleChevronAnimation())
+    // this.cancelable = new Cancelable(this.toggleChevronAnimation())
   }
 
   public componentWillUnmount() {
@@ -43,27 +44,21 @@ export default class ProfileFooter extends Component<{}, State> {
 
   public cancelChevronAnimation() {
     clearInterval(this.interval)
-    this.cancelable.cancel()
+    // this.cancelable.cancel()
   }
 
   public toggleChevronAnimation() {
-    return new Promise(() => {
-      this.interval = setInterval(
-        () =>
-          Promise.delay(2000).then(() => {
-            const isAnimationCanceled = _.get(this, 'cancelable.canceled')
-            if (isAnimationCanceled) {
-              this.cancelChevronAnimation()
-            } else {
-              // $FlowFixMe
-              this.setState({
-                isAnimatingChevron: !this.state.isAnimatingChevron,
-              })
-            }
-          }),
-        4000
-      )
-    })
+    this.interval = setInterval(async () => {
+      await Promise.delay(2000)
+      const isAnimationCanceled = _.get(this, 'cancelable.canceled')
+      if (isAnimationCanceled) {
+        this.cancelChevronAnimation()
+      } else {
+        this.setState({
+          isAnimatingChevron: !this.state.isAnimatingChevron,
+        })
+      }
+    }, 4000)
   }
 
   public render() {

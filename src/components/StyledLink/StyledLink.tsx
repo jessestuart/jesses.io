@@ -7,7 +7,7 @@ interface Props {
   href?: string
 }
 
-const generateUnderlineStyles = ({ hoverColor, linkColor }) => `
+const generateUnderlineStyles = ({ hoverColor, linkColor }: Props) => `
   border-bottom: 2px solid ${linkColor || colors.defaultLink};
   position: relative;
   text-decoration: none;

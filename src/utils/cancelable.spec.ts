@@ -3,7 +3,7 @@ import Cancelable from './cancelable'
 test('Create Cancelable, without canceling.', () => {
   let foo = 'bar'
   const cancelable = new Cancelable(
-    new Promise((resolve, reject) => {
+    new Promise<void>((resolve, reject) => {
       setTimeout(() => {
         foo = 'baz'
       }, 1000)
@@ -16,7 +16,7 @@ test('Create Cancelable, without canceling.', () => {
 test('Create Cancelable and cancel, then ensure no side effects.', async () => {
   let foo = 'bar'
   const cancelable = new Cancelable(
-    new Promise((resolve, reject) => {
+    new Promise<void>((resolve, reject) => {
       setTimeout(() => {
         foo = 'baz'
       }, 1000)
@@ -27,14 +27,14 @@ test('Create Cancelable and cancel, then ensure no side effects.', async () => {
   cancelable.cancel()
   await cancelable.then(() => {
     expect(foo).toBe('bar')
-    expect(cancelable.canceled).toBeFalsy()
+    expect(cancelable.cancelled).toBeFalsy()
   })
 })
 
 test('Create Cancelable and ensure errors are gracefully handled.', async () => {
   const foo = 'bar'
   const cancelable = new Cancelable(
-    new Promise((resolve, reject) => {
+    new Promise<void>((resolve, reject) => {
       // eslint-disable-next-line
       reject()
     })

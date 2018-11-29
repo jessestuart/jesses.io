@@ -7,12 +7,18 @@ import HeaderLink from './HeaderLink'
 
 import '../../styles/base.css'
 
-const initialState = { isHamburgerMenuEnabled: false }
+interface Props {
+  className: string
+  location: {
+    pathname: string
+  }
+}
 
-class SiteHeader extends Component {
+class SiteHeader extends Component<Props> {
   public render() {
-    const pathname = _.get(this, 'props.location.pathname')
+    const pathname = _.get(this, 'props.location.pathname', '/')
     const isRoot = _.isNil(pathname) || pathname === '/'
+
     return (
       <Headroom
         style={{
@@ -58,19 +64,5 @@ class SiteHeader extends Component {
     )
   }
 }
-
-SiteHeader.propTypes = {
-  location: PropTypes.shape({
-    pathname: PropTypes.string.isRequired,
-  }).isRequired,
-}
-
-SiteHeader.defaultProps = {
-  location: {
-    pathname: '/',
-  },
-}
-
-SiteHeader.state = { ...initialState }
 
 export default SiteHeader

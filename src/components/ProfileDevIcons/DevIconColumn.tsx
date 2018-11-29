@@ -2,7 +2,12 @@ import PropTypes from 'prop-types'
 import React from 'react'
 import styled from 'styled-components'
 
-const DevIconColumn = props => {
+interface Props {
+  className?: string
+  DevIcon: React.SFC
+  style?: object
+}
+const DevIconColumn = (props: Props) => {
   const { className, style, DevIcon } = props
 
   return (
@@ -14,7 +19,9 @@ const DevIconColumn = props => {
   )
 }
 
-const DevIconContainer = styled.div.attrs({
+const DevIconContainer: React.SFC<
+  Props & { className?: string }
+> = styled.div.attrs({
   className: 'pa3 pa4-l flex justify-center items-center',
 })`
   grid-row: auto;
@@ -29,11 +36,5 @@ const DevIconContainer = styled.div.attrs({
     border-bottom: none !important;
   }
 `
-
-DevIconColumn.propTypes = {
-  className: PropTypes.string,
-  DevIcon: PropTypes.func,
-  style: PropTypes.object,
-}
 
 export default DevIconColumn

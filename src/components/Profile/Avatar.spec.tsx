@@ -5,7 +5,9 @@ import Avatar from './Avatar'
 jest.mock('gatsby-image')
 
 test('Render Avatar component.', () => {
-  const component = renderer.create(<Avatar />)
+  const component = renderer.create(
+    <Avatar image={'https://my-site.com/foo.png'} />
+  )
   const tree = component.toJSON()
   expect(tree).toMatchSnapshot()
 })
