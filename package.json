@@ -72,7 +72,7 @@
     "postcss-custom-media": "7.0.2",
     "postcss-import": "12.0.0",
     "postcss-nested": "4.1.0",
-    "prettier": "1.14.2",
+    "prettier": "1.15.3",
     "prismjs": "1.15.0",
     "prop-types": "15.6.2",
     "purgecss": "1.1.0",
