@@ -75,7 +75,7 @@ const sourceS3 = {
 const sentryPlugin = {
   resolve: 'gatsby-plugin-sentry',
   options: {
-    dsn: 'https://7f22c2cad4c847429110f1657836e280@sentry.jesses.io/2',
+    dsn: 'https://5f7a25ceef2148bf946ffd3b8cd781c3@sentry.io/1340322',
   },
 }
 
