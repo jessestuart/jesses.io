@@ -17367,10 +17367,10 @@ typeface-alegreya-sans@0.0.54:
   resolved "https://registry.yarnpkg.com/typeface-alegreya-sans/-/typeface-alegreya-sans-0.0.54.tgz#0d7410bc3b4795e404a82b34abd55226bc4e77ba"
   integrity sha512-i7Fzx9smv527Ej8PSKP8btAz5nVQ/YACB3vKCTQiVk4SbLZeGJ+6X4bBq5ApWkPwDQkyrd+yHNK4NJ9R57siUQ==
 
-typeface-alegreya@0.0.54:
-  version "0.0.54"
-  resolved "https://registry.yarnpkg.com/typeface-alegreya/-/typeface-alegreya-0.0.54.tgz#10f829d7659ae4d0fc601dfb5f582f597b43a848"
-  integrity sha512-eK0xDkF+HpbTdphpi2DwKtNACX7Q5dmYSrDXlIqywB2mmNynp70Mt80Dc4bYWEcuHxdNHWuIO5YBmoL+BfMeLQ==
+typeface-alegreya@0.0.69:
+  version "0.0.69"
+  resolved "https://registry.yarnpkg.com/typeface-alegreya/-/typeface-alegreya-0.0.69.tgz#92d82f3e68360d5d5cee01be812f5aeb19ade8a7"
+  integrity sha512-02wj0QZEaxnDH37ZX3fsCu6vlKdaH8f1bzJxuymXNCoEcN3tFKMLC9omAtx8G+EbChb1gm5Nw+9XmPIYzi93fA==
 
 typeface-fira-mono@0.0.54:
   version "0.0.54"
