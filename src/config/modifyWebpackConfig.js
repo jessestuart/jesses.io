@@ -1,8 +1,7 @@
-const path = require('path')
-
 const atImport = require('postcss-import')
 const cssnested = require('postcss-nested')
 const cssnext = require('postcss-cssnext')
+const path = require('path')
 
 const modifyWebpackConfig = ({ config }, stage) => {
   config.merge({

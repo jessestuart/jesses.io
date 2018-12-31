@@ -1,6 +1,15 @@
 {
-  "extends": [":base", ":automergeLinters"],
-  "gitAuthor": "ednbot",
+  "automerge": true,
+  "extends": [":base"],
+  "gitAuthor": "jesse-b0t",
   "labels": ["renovate"],
+  "major": { "automerge": false },
+  "packageRules": [
+    {
+      "enabled": false,
+      "groupName": "gatsby",
+      "packagePatterns": ["^gatsby"]
+    }
+  ],
   "prHourlyLimit": 0
 }
