@@ -1,10 +1,13 @@
 const _ = require('lodash')
 
+const { version } = require('./package.json')
+
 // If we detect if we're running in a CI environment, only a few sample
 // photos will be downloaded from a test bucket, rather the the full
 // high-resolution photos displayed in production. This is simply to
 // save on AWS costs :)
-const IS_CI = process.env.GATSBY_ENV === 'ci'
+const GATSBY_ENV = process.env.GATSBY_ENV
+const IS_DEV = GATSBY_ENV !== 'Production'
 
 // We use `NODE_ENV` to disable Sentry logging in development.
 const IS_PROD = process.env.NODE_ENV === 'production'
@@ -66,8 +69,8 @@ const googleAnalyticsPlugin = {
 const sourceS3 = {
   resolve: 'gatsby-source-s3-image',
   options: {
-    bucketName: IS_CI ? 'js-photos-dev' : 'jesse.pics',
-    domain: IS_CI ? null : 'jesse.pics.s3.amazonaws.com',
+    bucketName: IS_DEV ? 'js-photos-dev' : 'jesse.pics',
+    domain: IS_DEV ? null : 'jesse.pics.s3.amazonaws.com',
     protocol: 'http',
   },
 }
@@ -76,6 +79,8 @@ const sentryPlugin = {
   resolve: 'gatsby-plugin-sentry',
   options: {
     dsn: 'https://5f7a25ceef2148bf946ffd3b8cd781c3@sentry.io/1340322',
+    environment: GATSBY_ENV,
+    version,
   },
 }
 

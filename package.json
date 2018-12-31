@@ -84,6 +84,7 @@
     "react-test-renderer": "16.5.1",
     "rimraf": "2.6.2",
     "scrollprogress": "3.0.2",
+    "semantic-release": "15.13.2",
     "snyk": "1.95.3",
     "styled-components": "3.4.6",
     "stylelint": "9.6.0",
@@ -108,10 +109,6 @@
     "typography-plugin-code": "0.16.11",
     "voca": "1.4.0",
     "winston": "3.1.0"
-  },
-  "engine": {
-    "node": ">=9",
-    "yarn": ">=1.5"
   },
   "homepage": "https://jessestuart.com",
   "keywords": [
@@ -146,10 +143,10 @@
     "url": "https://github.com/jessestuart/jesses.io"
   },
   "scripts": {
-    "build": "gatsby build",
-    "build:ci": "GATSBY_ENV=ci yarn build",
+    "build": "GATSBY_ENV=Production gatsby build",
+    "build:ci": "GATSBY_ENV=Staging gatsby build",
     "clean": "rm -rf node_modules/ .cache/ && yarn -s",
-    "dev": "GATSBY_ENV=ci NODE_OPTIONS=--max_old_space_size=4096 gatsby develop",
+    "dev": "GATSBY_ENV=Development NODE_OPTIONS=--max_old_space_size=4096 gatsby develop",
     "dev:photos": "NODE_OPTIONS=--max_old_space_size=4096 concurrently 'yarn gatsby develop'",
     "flow:install": "flow-typed -o -l ./flow-libs/ install",
     "format": "prettier 'src/**/*.js' 'src/**/*.md'",
