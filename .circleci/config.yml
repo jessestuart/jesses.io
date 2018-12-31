@@ -1,5 +1,4 @@
----
-version: 2
+version: 2.1
 
 # ====================
 # WORKFLOW DECLARATION
@@ -18,6 +17,32 @@ workflows:
       - test:
           requires:
             - install_dependencies
+      - push_image:
+          requires:
+            - build
+            - lint
+            - test
+          filters:
+            branches:
+              only:
+                - master
+      - semantic_release:
+          requires:
+            - build
+            - lint
+            - test
+          filters:
+            branches:
+              only:
+                - master
+
+# ===================
+# Shared definitions.
+# ===================
+defaults: &defaults
+  working_directory: ~/jesses.io
+  docker:
+    - image: node:11
 
 # ====================
 # SHARED JOBS POINTERS
@@ -25,8 +50,8 @@ workflows:
 restore_cache: &restore_cache
   restore_cache:
     keys:
-      - v1-dependencies-{{ checksum ".nvmrc" }}-{{ checksum "package.json" }}
-      - v1-dependencies-{{ checksum ".nvmrc" }}
+      - v1-dependencies-{{ checksum "package.json" }}
+      - v1-dependencies-
 
 restore_public_dir_cache: &restore_public_dir_cache
   restore_cache:
@@ -41,7 +66,7 @@ save_cache: &save_cache
   save_cache:
     paths:
       - node_modules/
-    key: v1-dependencies-{{ checksum ".nvmrc" }}-{{ checksum "package.json" }}
+    key: v1-dependencies-{{ checksum "package.json" }}
 
 save_public_dir_cache: &save_public_dir_cache
   save_cache:
@@ -52,18 +77,22 @@ save_public_dir_cache: &save_public_dir_cache
 install_dependencies: &install_dependencies
   run:
     name: Install dependencies.
-    command: yarn -s --no-progress
+    command: yarn --silent --no-progress --frozen-lockfile --prefer-offline
+
+semantic_release: &semantic_release
+  <<: *defaults
+  steps:
+    - checkout
+    - *restore_cache
+    - *install_dependencies
+    - run: yarn semantic-release
 
 # ================
 # JOB DECLARATIONS
 # ================
 jobs:
-
   install_dependencies:
-    working_directory: ~/jessestuart
-    docker:
-      - image: circleci/node:10
-
+    <<: *defaults
     steps:
       - checkout
       - *restore_cache
@@ -77,10 +106,7 @@ jobs:
           command: yarn run greenkeeper-lockfile-upload
 
   lint:
-    working_directory: ~/jessestuart
-    docker:
-      - image: circleci/node:10
-
+    <<: *defaults
     steps:
       - checkout
       - *restore_cache
@@ -89,10 +115,7 @@ jobs:
           command: yarn lint
 
   test:
-    working_directory: ~/jessestuart
-    docker:
-      - image: circleci/node:10
-
+    <<: *defaults
     steps:
       - checkout
       - *restore_cache
@@ -101,9 +124,7 @@ jobs:
           command: yarn test:coverage && yarn codecov
 
   build:
-    working_directory: ~/jessestuart
-    docker:
-      - image: circleci/node:10
+    <<: *defaults
     steps:
       - checkout
       - *restore_cache
@@ -129,7 +150,7 @@ jobs:
     docker:
       - image: docker:18-git
     environment:
-      - IMAGE_ID: "jessestuart/jesses.io"
+      - IMAGE_ID: 'jessestuart/jesses.io'
     steps:
       - checkout
       - setup_remote_docker
@@ -151,6 +172,8 @@ jobs:
             if [ "${CIRCLE_BRANCH}" = 'master' ]; then
               docker push "${IMAGE_ID}"
             fi
+
+  semantic_release: *semantic_release
 
   capture_screenshots:
     docker:

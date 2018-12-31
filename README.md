@@ -1,14 +1,16 @@
 # `jesses.io`
 
 [![CircleCI][circleci-badge]][circleci-url]
+[![Quay][quay-badge]][quay-url]
 [![codecov][codecov-badge]][codecov-url]
 [![Codacy Badge][codacy]][codacy 2]
-[![Quay][quay-badge]][quay-url]
+[![Language grade: JavaScript][shields]][lgtm]
+[![Total alerts][shields 2]][lgtm 2]
 
 [circleci-badge]: https://circleci.com/gh/jessestuart/jesses.io.svg?style=shield&circle-token=95a9c23b2b0ed15a71639a318c98eea3b09a03b7
 [circleci-url]: https://circleci.com/gh/jessestuart/jessestuart.com
-[codacy 2]: https://www.codacy.com/app/jdstuart/jesses.io?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=jessestuart/jesses.io&amp;utm_campaign=Badge_Grade
 [codacy]: https://api.codacy.com/project/badge/Grade/bbe5df00e1bb479aa35619bea5dda582
+[codacy 2]: https://www.codacy.com/app/jdstuart/jesses.io?utm_source=github.com&utm_medium=referral&utm_content=jessestuart/jesses.io&utm_campaign=Badge_Grade
 [codecov-badge]: https://codecov.io/gh/jessestuart/jesses.io/branch/master/graph/badge.svg
 [codecov-url]: https://codecov.io/gh/jessestuart/jesses.io
 [codefresh-badge]: https://g.codefresh.io/api/badges/build?repoOwner=jessestuart&repoName=js-gatsby-tachyons&branch=master&pipelineName=js-gatsby-tachyons&accountName=jesse&key=eyJhbGciOiJIUzI1NiJ9.NWExNzRiZmE2M2NmM2UwMDAxOGRmZjdh.uSVHuuCHfQtayHNWawvO9loC4PEirkl458tnBt2yOVU&type=cf-1
@@ -17,7 +19,11 @@
 [droneio-url]: http://ci.jesses.io/jessestuart/jessestuart.com
 [greenkeeper-badge]: https://badges.greenkeeper.io/jessestuart/jessestuart.com.svg?token=ec6300d31268bad8045d786b62351f72d188fc9ed09cb2df7206448ae9da07c3&ts=1517389593689
 [greenkeeper-url]: https://greenkeeper.io/
+[lgtm]: https://lgtm.com/projects/g/jessestuart/jesses.io/context:javascript
+[lgtm 2]: https://lgtm.com/projects/g/jessestuart/jesses.io/alerts/
 [quay-badge]: https://quay.io/repository/jessestuart/jessestuart.com/status
 [quay-url]: https://quay.io/repository/jessestuart/jessestuart.com
 [semaphoreci-badge]: https://semaphoreci.com/api/v1/projects/2c39a37c-7b37-462a-be9d-a9cf3fdb54a0/1696206/badge.svg
 [semaphoreci-url]: https://semaphoreci.com/jessestuart-95/js-gatsby-tachyons
+[shields]: https://img.shields.io/lgtm/grade/javascript/g/jessestuart/jesses.io.svg?logo=lgtm&logoWidth=18
+[shields 2]: https://img.shields.io/lgtm/alerts/g/jessestuart/jesses.io.svg?logo=lgtm&logoWidth=18

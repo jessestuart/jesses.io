@@ -1,11 +1,9 @@
 module.exports = {
   extends: [
     'standard',
+    'standard-react',
     'plugin:react/recommended',
     'prettier',
-    'prettier/flowtype',
-    'prettier/react',
-    'prettier/standard',
   ],
   parser: 'babel-eslint',
   env: {
@@ -14,7 +12,7 @@ module.exports = {
     jest: true,
     node: true,
   },
-  plugins: ['react'],
+  plugins: ['import'],
   globals: {
     __PATH_PREFIX__: true,
     graphql: false,
