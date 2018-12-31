@@ -52,7 +52,7 @@
     "chalk": "2.4.1",
     "classnames": "2.2.6",
     "codecov": "3.1.0",
-    "concurrently": "4.0.1",
+    "concurrently": "4.1.0",
     "depcheck": "0.6.11",
     "eslint": "5.8.0",
     "eslint-config-prettier": "3.1.0",
