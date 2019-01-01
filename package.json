@@ -108,21 +108,9 @@
   ],
   "license": "MIT",
   "lint-staged": {
-    "*.js": [
+    "*.{css,js,json}": [
       "prettier --write",
       "git add -f"
-    ],
-    "*.json": [
-      "prettier --write",
-      "git add"
-    ],
-    "*.css": [
-      "prettier --write",
-      "git add"
-    ],
-    "src/pages/posts/**/*.md": [
-      "yarn lint:text",
-      "git add"
     ]
   },
   "main": "n/a",
@@ -149,6 +137,7 @@
     "snyk-protect": "snyk protect",
     "test": "jest",
     "test:coverage": "jest --coverage",
+    "test:update-snapshots": "jest --updateSnapshot",
     "test:watch": "jest --watch",
     "update": "ncu -ua && yarn -s",
     "willitpass": "concurrently 'yarn lint' 'yarn test'"
