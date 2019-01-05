@@ -1,28 +1,22 @@
-import PropTypes from 'prop-types'
 import React from 'react'
 import styled from 'styled-components'
 
 interface Props {
   className?: string
-  DevIcon: React.SFC
+  DevIcon: any
   style?: object
 }
-const DevIconColumn = (props: Props) => {
-  const { className, style, DevIcon } = props
 
-  return (
-    <DevIconContainer style={style} className={className}>
-      <a href={DevIcon.href}>
-        <DevIcon width="75%" height="75%" className="hvr-grow" />
-      </a>
-    </DevIconContainer>
-  )
-}
+const DevIconColumn = ({ className, DevIcon, style }: Props) => (
+  <DevIconContainer style={style} className={className || ''}>
+    <a href={DevIcon.href}>
+      <DevIcon width="75%" height="75%" className="hvr-grow" />
+    </a>
+  </DevIconContainer>
+)
 
-const DevIconContainer: React.SFC<
-  Props & { className?: string }
-> = styled.div.attrs({
-  className: 'pa3 pa4-l flex justify-center items-center',
+const DevIconContainer = ({ className }) => styled.div.attrs({
+  className: `pa3 pa4-l flex justify-center items-center ${className}`,
 })`
   grid-row: auto;
   svg {

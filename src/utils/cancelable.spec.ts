@@ -25,7 +25,7 @@ test('Create Cancelable and cancel, then ensure no side effects.', async () => {
   )
   expect(cancelable).toBeDefined()
   cancelable.cancel()
-  await cancelable.then(() => {
+  cancelable.then(() => {
     expect(foo).toBe('bar')
     expect(cancelable.cancelled).toBeFalsy()
   })
