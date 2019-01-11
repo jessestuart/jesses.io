@@ -10249,7 +10249,12 @@ ltcdr@^2.2.1:
   resolved "https://registry.yarnpkg.com/ltcdr/-/ltcdr-2.2.1.tgz#5ab87ad1d4c1dab8e8c08bbf037ee0c1902287cf"
   integrity sha1-Wrh60dTB2rjowIu/A37gwZAih88=
 
-luxon@1.9.0, luxon@^1.0.0:
+luxon@1.10.0:
+  version "1.10.0"
+  resolved "https://registry.yarnpkg.com/luxon/-/luxon-1.10.0.tgz#335b55e2fed50e09f869aee828897a3f67c7044e"
+  integrity sha512-ry3GKh//v3isD6oJN5pFWmdh+3GiScwv9q8VgG6fZ2j1guGOol2vVVdo4GBAWCrcq5RHOqSeipqHBnOu/u024Q==
+
+luxon@^1.0.0:
   version "1.9.0"
   resolved "https://registry.yarnpkg.com/luxon/-/luxon-1.9.0.tgz#0a1d56a14cfe71a71024463498933da1a4796420"
   integrity sha512-N1kSwtIEhM/gIRGASXPgi1CwfQZX5VTjndYFjOsZdEEtWij2uSoRrgDGWwViZCUNY9Rwh4UVG/TLcUinHM20cA==
