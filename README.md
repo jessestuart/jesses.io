@@ -6,6 +6,7 @@
 [![Codacy Badge][codacy]][codacy 2]
 [![Language grade: JavaScript][shields]][lgtm]
 [![Total alerts][shields 2]][lgtm 2]
+[![Netlify Status][netlify]][netlify 2]
 
 [circleci-badge]: https://circleci.com/gh/jessestuart/jesses.io.svg?style=shield&circle-token=95a9c23b2b0ed15a71639a318c98eea3b09a03b7
 [circleci-url]: https://circleci.com/gh/jessestuart/jessestuart.com
@@ -21,6 +22,8 @@
 [greenkeeper-url]: https://greenkeeper.io/
 [lgtm]: https://lgtm.com/projects/g/jessestuart/jesses.io/context:javascript
 [lgtm 2]: https://lgtm.com/projects/g/jessestuart/jesses.io/alerts/
+[netlify]: https://api.netlify.com/api/v1/badges/7ef4ccf6-bf97-4780-8c2b-014fa44d879c/deploy-status
+[netlify 2]: https://app.netlify.com/sites/jessestuart/deploys
 [quay-badge]: https://quay.io/repository/jessestuart/jessestuart.com/status
 [quay-url]: https://quay.io/repository/jessestuart/jessestuart.com
 [semaphoreci-badge]: https://semaphoreci.com/api/v1/projects/2c39a37c-7b37-462a-be9d-a9cf3fdb54a0/1696206/badge.svg
