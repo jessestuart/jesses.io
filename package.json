@@ -128,7 +128,7 @@
     "flow:install": "flow-typed -o -l ./flow-libs/ install",
     "format": "prettier 'src/**/*.js' 'src/**/*.md'",
     "lint": "concurrently 'yarn lint:js' 'yarn lint:style'",
-    "lint:js": "eslint --format 'node_modules/eslint-friendly-formatter' --quiet --ext .js .",
+    "lint:js": "eslint --format 'node_modules/eslint-friendly-formatter' --ext .js .",
     "lint:style": "stylelint 'src/**/*.css'",
     "lint:stylefix": "stylelint --fix 'src/**/*.css'",
     "lint:text": "textlint src/pages/**/index.md",

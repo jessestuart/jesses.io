@@ -13,8 +13,14 @@ const ImageZoomGridElement = styled.div`
   }
 `
 
+type Props = {
+  aspectRatio: *,
+  children: *,
+  onClick: *,
+}
+
 // eslint-disable-next-line react/display-name
-export default ({ aspectRatio, children, onClick }) => (
+export default ({ aspectRatio, children, onClick }: Props) => (
   <ImageZoomGridElement aspectRatio={aspectRatio} onClick={onClick}>
     {children}
   </ImageZoomGridElement>

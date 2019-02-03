@@ -17,15 +17,6 @@ workflows:
       - test:
           requires:
             - install_dependencies
-      - push_image:
-          requires:
-            - build
-            - lint
-            - test
-          filters:
-            branches:
-              only:
-                - master
       - semantic_release:
           requires:
             - build
