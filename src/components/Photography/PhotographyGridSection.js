@@ -1,17 +1,16 @@
 /* @flow */
-import React, { Component } from 'react'
-import Img from 'gatsby-image'
-import _ from 'lodash'
 import { DateTime } from 'luxon'
+import Img from 'gatsby-image'
+import React, { Component } from 'react'
+import _ from 'lodash'
 
 import type { GatsbyImage } from '../../types/gatsby-image'
-import StyledPanel from '../StyledPanel/StyledPanel'
-
 import {
   ImageZoomGrid,
   ImageZoomGridElement,
   PhotographySectionHeader,
 } from '.'
+import StyledPanel from '../StyledPanel/StyledPanel'
 
 let Lightbox
 if (typeof window !== 'undefined') {
@@ -66,7 +65,7 @@ class PhotographyGridSection extends Component<Props, State> {
   render() {
     const { datetime, images, slug } = this.props
     if (_.isEmpty(images)) {
-      return
+      return null
     }
 
     const sortedImages = _.sortBy(images, 'EXIF.DateTimeOriginal')

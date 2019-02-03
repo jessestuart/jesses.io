@@ -28,7 +28,10 @@ const PhotographyIndex = ({ data }: Props) => {
   const imageNodes =
     // Collect all of the image nodes for each S3ImageAsset resorce into a
     // single array.
-    _.flow(fp.get('allS3ImageAsset.edges'), fp.map('node'))(data)
+    _.flow(
+      fp.get('allS3ImageAsset.edges'),
+      fp.map('node')
+    )(data)
 
   const sortedArrayOfGroupedImages = _.flow(
     // Group by *date* created... (string value)

@@ -15,10 +15,12 @@ const ContactInfoList = () => (
   <Fragment>
     <StyledLink className="b" href="mailto:hi@jessestuart.com">
       Email
-    </StyledLink>,&nbsp;
+    </StyledLink>
+    ,&nbsp;
     <StyledLink className="b" href="https://twitter.com/jesse_stuart/">
       Twitter
-    </StyledLink>,&nbsp;
+    </StyledLink>
+    ,&nbsp;
     <StyledLink className="b" href="https://github.com/jessestuart">
       Github
     </StyledLink>
@@ -53,8 +55,8 @@ const About = () => (
         C.V. to learn more about what I've been up to.
       </p>
       <p className="lato f4 fw4">
-        Feel free to hit me up via whichever communication platform you prefer (<ContactInfoList />,
-        etc.) if you'd like to chat.
+        Feel free to hit me up via whichever communication platform you prefer (
+        <ContactInfoList />, etc.) if you'd like to chat.
       </p>
       <PortfolioItemsList />
     </StyledPanel>

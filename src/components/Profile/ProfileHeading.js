@@ -13,7 +13,8 @@ const ProfileHeading = () => (
         I contain&nbsp;
         <ProfileStyledLink className="dib" href={WHITMAN_URL}>
           multitudes
-        </ProfileStyledLink>.
+        </ProfileStyledLink>
+        .
       </span>
     </h2>
   </Fragment>

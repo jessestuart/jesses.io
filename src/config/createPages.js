@@ -8,11 +8,10 @@ const log = require('../utils/log')
 
 const processGraphQL = ({ graphql, query, createPostsFn, resultPath }) => {
   graphql(query)
-    .then(
-      result =>
-        _.isNil(result.errors)
-          ? _.get(result, resultPath)
-          : Promise.reject(result.errors)
+    .then(result =>
+      _.isNil(result.errors)
+        ? _.get(result, resultPath)
+        : Promise.reject(result.errors)
     )
     .then(createPostsFn)
     .catch(log.error)

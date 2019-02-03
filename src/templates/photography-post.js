@@ -9,9 +9,10 @@ import { PhotographyGridSection } from '../components/Photography'
 class PhotographyPostTemplate extends Component {
   render() {
     const { props } = this
-    const images = _.flow(fp.get('data.allS3ImageAsset.edges'), fp.map('node'))(
-      props
-    )
+    const images = _.flow(
+      fp.get('data.allS3ImageAsset.edges'),
+      fp.map('node')
+    )(props)
     const pathname = _.get(props, 'location.pathname')
     const siteTitle = _.get(props, 'data.site.siteMetadata.title')
     const date = _.get(props, 'pathContext.name')

@@ -74,8 +74,10 @@ export default class ProfileFooter extends Component<Props, State> {
     return (
       <ProfileFooterSection>
         <h4 className="f4 fira-mono fw4 lh-title tc white-80">
-          I build software<br />
-          on the pull requests<br />
+          I build software
+          <br />
+          on the pull requests
+          <br />
           of giants.
         </h4>
         <div className="flex justify-center mt2 w-100">

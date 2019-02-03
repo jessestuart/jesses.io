@@ -1,9 +1,9 @@
 module.exports = {
   extends: [
-    'standard',
-    'standard-react',
+    'eslint:recommended',
     'plugin:react/recommended',
-    'prettier',
+    'plugin:prettier/recommended',
+    'standard',
   ],
   parser: 'babel-eslint',
   env: {
@@ -12,7 +12,7 @@ module.exports = {
     jest: true,
     node: true,
   },
-  plugins: ['import'],
+  plugins: ['import', 'prettier', 'react'],
   globals: {
     __PATH_PREFIX__: true,
     graphql: false,
@@ -25,9 +25,10 @@ module.exports = {
     },
   },
   rules: {
+    'comma-dangle': 'off',
     'no-console': 'warn',
-    'no-debugger': 'off',
     'react/prop-types': 'warn',
     'react/no-unescaped-entities': 'off',
+    'space-before-function-paren': 'off',
   },
 }
