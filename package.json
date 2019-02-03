@@ -1,6 +1,6 @@
 {
   "name": "jessestuart",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "author": "Jesse Stuart <hi@jessestuart.com>",
   "dependencies": {
     "bluebird": "3.5.3",
