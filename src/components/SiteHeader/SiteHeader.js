@@ -1,11 +1,12 @@
-import React, { Component } from 'react'
-import PropTypes from 'prop-types'
+import '../../styles/base.css'
+
 import Headroom from 'react-headroom'
+import React, { Component } from 'react'
 import _ from 'lodash'
 
-import HeaderLink from './HeaderLink'
+import PropTypes from 'prop-types'
 
-import '../../styles/base.css'
+import HeaderLink from './HeaderLink'
 
 const initialState = { isHamburgerMenuEnabled: false }
 

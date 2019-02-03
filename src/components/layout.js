@@ -11,12 +11,19 @@ import config from '../../gatsby-config'
 
 const { title, url }: { title: string, url: string } = config.siteMetadata
 
+type Props = {
+  children: *,
+  location: {
+    pathname: String,
+  },
+}
+
 const Layout = ({ children, location }: Props) => (
   <Fragment>
     <Helmet
       title={title}
       meta={[
-        { name: 'description', content: 'jessestuart.com' },
+        { name: 'description', content: 'jesses.io' },
         {
           name: 'viewport',
           content:
@@ -40,12 +47,5 @@ const Layout = ({ children, location }: Props) => (
     <SiteFooter />
   </Fragment>
 )
-
-type Props = {
-  children: any,
-  location: {
-    pathname: String,
-  },
-}
 
 export default Layout
