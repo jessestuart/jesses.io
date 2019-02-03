@@ -17,6 +17,15 @@ workflows:
       - test:
           requires:
             - install_dependencies
+      - push_image:
+          requires:
+            - build
+            - lint
+            - test
+          filters:
+            branches:
+              only:
+                - master
       - semantic_release:
           requires:
             - build
@@ -41,7 +50,7 @@ defaults: &defaults
 restore_cache: &restore_cache
   restore_cache:
     keys:
-      - v1-dependencies-{{ checksum "package.json" }}
+      - v1-dependencies-{{ checksum "yarn.lock" }}
       - v1-dependencies-
 
 restore_public_dir_cache: &restore_public_dir_cache
@@ -57,7 +66,7 @@ save_cache: &save_cache
   save_cache:
     paths:
       - node_modules/
-    key: v1-dependencies-{{ checksum "package.json" }}
+    key: v1-dependencies-{{ checksum "yarn.lock" }}
 
 save_public_dir_cache: &save_public_dir_cache
   save_cache:
@@ -168,14 +177,14 @@ jobs:
 
   capture_screenshots:
     docker:
-      - image: circleci/node:10-browsers
+      - image: circleci/node:11-browsers
 
     steps:
       - checkout
 
       - restore_cache:
           keys:
-            - dependencies-{{ checksum "package.json" }}
+            - dependencies-{{ checksum "yarn.lock" }}
             - dependencies-
 
       - restore_cache:

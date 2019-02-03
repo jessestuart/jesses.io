@@ -1,8 +1,8 @@
-import React, { Component } from 'react'
+import { DateTime } from 'luxon'
 import Helmet from 'react-helmet'
+import React, { Component } from 'react'
 import _ from 'lodash'
 import fp from 'lodash/fp'
-import { DateTime } from 'luxon'
 
 import { PhotographyGridSection } from '../components/Photography'
 
@@ -15,7 +15,7 @@ class PhotographyPostTemplate extends Component {
     )(props)
     const pathname = _.get(props, 'location.pathname')
     const siteTitle = _.get(props, 'data.site.siteMetadata.title')
-    const date = _.get(props, 'pathContext.name')
+    const date = _.get(props, 'pageContext.name')
     const datetime = date ? DateTime.fromISO(date.replace(/\//g, '')) : null
 
     const title = `Photography | ${date} | ${siteTitle}`
@@ -36,41 +36,42 @@ class PhotographyPostTemplate extends Component {
 
 export default PhotographyPostTemplate
 
-export const pageQuery = graphql`
-  query PhotographyImagesBySlug($name: String) {
-    site {
-      siteMetadata {
-        title
-      }
-    }
-    allS3ImageAsset(filter: { EXIF: { DateCreatedISO: { eq: $name } } }) {
-      edges {
-        node {
-          id
-          EXIF {
-            DateCreatedISO
-            DateTimeOriginal
-          }
-          childImageSharp {
-            original {
-              height
-              width
-            }
-            thumbnailSizes: sizes(maxWidth: 512) {
-              aspectRatio
-              src
-              srcSet
-              sizes
-            }
-            largeSizes: sizes(maxWidth: 1024, quality: 75) {
-              aspectRatio
-              src
-              srcSet
-              sizes
-            }
-          }
-        }
-      }
-    }
-  }
-`
+// export const pageQuery = graphql`
+//   {
+//     site {
+//       siteMetadata {
+//         title
+//       }
+//     }
+//   }
+// `
+
+// allS3ImageAsset(filter: { EXIF: { DateCreatedISO: { eq: $name } } }) {
+//   edges {
+//     node {
+//       id
+//       EXIF {
+//         DateCreatedISO
+//         DateTimeOriginal
+//       }
+//       childImageSharp {
+//         original {
+//           height
+//           width
+//         }
+//         thumbnailSizes: sizes(maxWidth: 512) {
+//           aspectRatio
+//           src
+//           srcSet
+//           sizes
+//         }
+//         largeSizes: sizes(maxWidth: 1024, quality: 75) {
+//           aspectRatio
+//           src
+//           srcSet
+//           sizes
+//         }
+//       }
+//     }
+//   }
+// }

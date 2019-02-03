@@ -1,9 +1,22 @@
+/* @flow */
+import { Link } from 'gatsby'
 import React from 'react'
-import PropTypes from 'prop-types'
-import classNames from 'classnames'
-import Link from 'gatsby-link'
 
-const HeaderLink = ({ children, className, href, isActive }) => {
+import classNames from 'classnames'
+
+type Props = {
+  children: *,
+  className: *,
+  href: *,
+  isActive: *,
+}
+
+const HeaderLink = ({
+  children,
+  className,
+  href = '/',
+  isActive = false,
+}: Props) => {
   const headerClassNames: string = classNames(
     'lato f4 ph3 mv2 pv2 flex-auto',
     className,
@@ -19,13 +32,6 @@ const HeaderLink = ({ children, className, href, isActive }) => {
       </Link>
     </ul>
   )
-}
-
-HeaderLink.propTypes = {
-  children: PropTypes.any,
-  className: PropTypes.string,
-  href: PropTypes.string.isRequired,
-  isActive: PropTypes.bool.isRequired,
 }
 
 HeaderLink.defaultProps = {

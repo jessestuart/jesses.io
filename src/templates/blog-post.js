@@ -1,12 +1,12 @@
-import React, { Component } from 'react'
+import './blog-post.css'
+
+import { graphql } from 'gatsby'
 import Helmet from 'react-helmet'
+import React, { Component } from 'react'
 import _ from 'lodash'
 
 import { BlogHeader } from '../components/Blog'
-
 import config from '../../gatsby-config'
-
-import './blog-post.css'
 
 class BlogPostTemplate extends Component {
   render() {

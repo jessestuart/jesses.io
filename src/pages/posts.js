@@ -1,9 +1,10 @@
 /* @flow */
+import { graphql } from 'gatsby'
 import React, { Component } from 'react'
 import _ from 'lodash'
 
-import StyledPanel from '../components/StyledPanel/StyledPanel'
 import { BlogHeader } from '../components/Blog'
+import StyledPanel from '../components/StyledPanel/StyledPanel'
 
 type MarkdownRemarkNode = {
   excerpt: string,

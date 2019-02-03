@@ -1,6 +1,9 @@
 /* @flow */
+import 'react-image-lightbox/style.css'
+
 import { DateTime } from 'luxon'
 import Img from 'gatsby-image'
+import Lightbox from 'react-image-lightbox'
 import React, { Component } from 'react'
 import _ from 'lodash'
 
@@ -12,11 +15,11 @@ import {
 } from '.'
 import StyledPanel from '../StyledPanel/StyledPanel'
 
-let Lightbox
-if (typeof window !== 'undefined') {
-  require('react-image-lightbox/style.css')
-  Lightbox = require('react-image-lightbox').default
-}
+// let Lightbox
+// if (typeof window !== 'undefined') {
+//   require('react-image-lightbox/style.css')
+//   Lightbox = require('react-image-lightbox').default
+// }
 
 type Props = {
   datetime: DateTime,
@@ -81,7 +84,7 @@ class PhotographyGridSection extends Component<Props, State> {
               'childImageSharp.thumbnailSizes'
             )
             if (_.isEmpty(thumbnailSizes)) {
-              return
+              return null
             }
 
             return (

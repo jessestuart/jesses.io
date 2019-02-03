@@ -3,6 +3,7 @@ module.exports = {
     'eslint:recommended',
     'plugin:react/recommended',
     'plugin:prettier/recommended',
+    'plugin:flowtype/recommended',
     'standard',
   ],
   parser: 'babel-eslint',
@@ -12,7 +13,7 @@ module.exports = {
     jest: true,
     node: true,
   },
-  plugins: ['import', 'prettier', 'react'],
+  plugins: ['import', 'prettier', 'react', 'flowtype'],
   globals: {
     __PATH_PREFIX__: true,
     graphql: false,

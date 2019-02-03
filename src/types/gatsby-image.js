@@ -1,3 +1,4 @@
+/* @flow */
 export type GatsbyImage = {
   sizes: {
     aspectRatio: Number,

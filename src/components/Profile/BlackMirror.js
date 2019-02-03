@@ -1,20 +1,26 @@
+/* @flow */
+import { GitHub, Instagram, Linkedin, Twitter } from 'react-feather'
 import React from 'react'
 import styled from 'styled-components'
 
-import { Github, Linkedin, Instagram, Twitter } from 'react-feather'
-
-const GITHUB_URL = 'https://github.com/jessestuart/'
 const GITHUB_COLOR = '#333333'
-const LINKEDIN_URL = 'https://www.linkedin.com/in/jessedstuart/'
-const LINKEDIN_COLOR = '#0077B5'
-const INSTAGRAM_URL = 'https://instagram.com/jaystu/'
+const GITHUB_URL = 'https://github.com/jessestuart/'
 const INSTAGRAM_COLOR = '#C74861'
-const TWITTER_URL = 'https://twitter.com/jesse_stuart/'
+const INSTAGRAM_URL = 'https://instagram.com/jaystu/'
+const LINKEDIN_COLOR = '#0077B5'
+const LINKEDIN_URL = 'https://www.linkedin.com/in/jessedstuart/'
 const TWITTER_COLOR = '#1DA1F2'
+const TWITTER_URL = 'https://twitter.com/jesse_stuart/'
 
-const Icons = [
+type Icon = $ReadOnly<{
+  color: string,
+  Image: *,
+  url: string,
+}>
+
+const Icons: Array<Icon> = Object.freeze([
   {
-    Image: Github,
+    Image: GitHub,
     url: GITHUB_URL,
     color: GITHUB_COLOR,
   },
@@ -33,25 +39,7 @@ const Icons = [
     url: TWITTER_URL,
     color: TWITTER_COLOR,
   },
-]
-
-const BlackMirror = () => (
-  <BlackMirrorDiv>
-    {Icons.map(icon => {
-      const { Image } = icon
-      return (
-        <a key={icon.url} href={icon.url} className="ma1">
-          <Image
-            fill={icon.color}
-            strokeWidth="1px"
-            className="b--light-gray hvr-grow"
-            size="35px"
-          />
-        </a>
-      )
-    })}
-  </BlackMirrorDiv>
-)
+])
 
 const BlackMirrorDiv = styled.div.attrs({
   className: 'flex justify-around mv4',
@@ -61,4 +49,19 @@ const BlackMirrorDiv = styled.div.attrs({
   }
 `
 
-export default BlackMirror
+export default function BlackMirror() {
+  return (
+    <BlackMirrorDiv>
+      {Icons.map(({ color, Image, url }) => (
+        <a key={url} href={url} className="ma1">
+          <Image
+            fill={color}
+            strokeWidth="1px"
+            className="b--light-gray hvr-grow"
+            size="35px"
+          />
+        </a>
+      ))}
+    </BlackMirrorDiv>
+  )
+}

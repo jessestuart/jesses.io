@@ -1,8 +1,8 @@
 const { createFilePath } = require('gatsby-source-filesystem')
 const _ = require('lodash')
 
-const onCreateNode = ({ node, boundActionCreators, getNode }) => {
-  const { createNodeField, createParentChildLink } = boundActionCreators
+const onCreateNode = ({ node, actions, getNode }) => {
+  const { createNodeField, createParentChildLink } = actions
   const type = _.get(node, 'internal.type')
 
   if (type === 'Directory') {

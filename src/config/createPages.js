@@ -1,7 +1,7 @@
-const _ = require('lodash')
-const path = require('path')
 const Promise = require('bluebird')
-const DateTime = require('luxon').DateTime
+const _ = require('lodash')
+
+const path = require('path')
 
 const PageType = require('../utils/enums/page-type')
 const log = require('../utils/log')
@@ -30,64 +30,65 @@ const mdQuery = `
   }
 }`
 
-const imagePostQuery = `
-{
-  allS3ImageAsset {
-    edges {
-      node {
-        ETag
-        EXIF {
-          DateCreatedISO
-        }
-      }
-    }
-  }
-}`
+// const imagePostQuery = `
+// {
+//   allS3ImageAsset {
+//     edges {
+//       node {
+//         ETag
+//         EXIF {
+//           DateCreatedISO
+//         }
+//       }
+//     }
+//   }
+// }`
 
-const createPages = ({ graphql, boundActionCreators }) => {
-  const { createPage } = boundActionCreators
+const createPages = ({ graphql, actions }) => {
+  const { createPage } = actions
   const blogTemplate = path.resolve('./src/templates/blog-post.js')
-  const photographyTemplate = path.resolve(
-    './src/templates/photography-post.js'
-  )
 
-  const createPhotographyPosts = edges => {
-    // First, create the photography "album" pages -- these are a collection
-    // of photos grouped by date.
-    const imagesGroupedByDate = _.groupBy(edges, 'node.EXIF.DateCreatedISO')
-    _.each(imagesGroupedByDate, (images, date) => {
-      createPage({
-        path: `/photography/${date}`,
-        component: photographyTemplate,
-        context: {
-          name: date,
-          datetime: DateTime.fromISO(date),
-          type: PageType.Photography,
-        },
-      })
-    })
-    // Next create an individual page for each photo.
-    _.each(_.map(edges, 'node'), image => {
-      const date = _.get(image, 'EXIF.DateCreatedISO')
-      const ETag = _.get(image, 'ETag')
-      createPage({
-        path: `/photography/${date}/${ETag}`,
-        component: photographyTemplate,
-        context: {
-          name: date,
-          datetime: DateTime.fromISO(date),
-          type: PageType.Photography,
-        },
-      })
-    })
-  }
+  // const photographyTemplate = path.resolve(
+  //   './src/templates/photography-post.js'
+  // )
 
-  processGraphQL({
-    graphql,
-    query: imagePostQuery,
-    resultPath: 'data.allS3ImageAsset.edges',
-    createPostsFn: createPhotographyPosts,
-  })
+  // const createPhotographyPosts = edges => {
+  //   // First, create the photography "album" pages -- these are a collection
+  //   // of photos grouped by date.
+  //   const imagesGroupedByDate = _.groupBy(edges, 'node.EXIF.DateCreatedISO')
+  //   _.each(imagesGroupedByDate, (images, date) => {
+  //     createPage({
+  //       path: `/photography/${date}`,
+  //       component: photographyTemplate,
+  //       context: {
+  //         name: date,
+  //         datetime: DateTime.fromISO(date),
+  //         type: PageType.Photography,
+  //       },
+  //     })
+  //   })
+  //   // Next create an individual page for each photo.
+  //   _.each(_.map(edges, 'node'), image => {
+  //     const date = _.get(image, 'EXIF.DateCreatedISO')
+  //     const ETag = _.get(image, 'ETag')
+  //     createPage({
+  //       path: `/photography/${date}/${ETag}`,
+  //       component: photographyTemplate,
+  //       context: {
+  //         name: date,
+  //         datetime: DateTime.fromISO(date),
+  //         type: PageType.Photography,
+  //       },
+  //     })
+  //   })
+  // }
+
+  // processGraphQL({
+  //   graphql,
+  //   query: imagePostQuery,
+  //   resultPath: 'data.allS3ImageAsset.edges',
+  //   createPostsFn: createPhotographyPosts,
+  // })
 
   const createBlogPosts = edges => {
     edges.forEach(edge => {

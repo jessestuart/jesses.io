@@ -1,7 +1,7 @@
 /* @flow */
-import React from 'react'
-import Link from 'gatsby-link'
 import { DateTime } from 'luxon'
+import { Link } from 'gatsby'
+import React from 'react'
 
 import StyledLink from '../StyledLink/StyledLink'
 
