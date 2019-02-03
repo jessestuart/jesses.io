@@ -1,0 +1,13 @@
+[ver:1,total:2580]
+.gtm/terminal.app:1101,1549195200:600,1549224000:501,r
+src/components/layout.js:420,1549224000:420,m
+src/components/SiteHeader/SiteHeader.js:270,1549224000:270,m
+package.json:259,1549224000:259,m
+src/components/index.js:219,1549224000:219,m
+src/pages/index.js:142,1549224000:142,m
+src/layouts/index.js:72,1549224000:72,d
+src/layouts/index.js.bak:30,1549224000:30,r
+src/pages/about.js:20,1549224000:20,r
+src/components/layout.css.bak:20,1549224000:20,r
+src/components/header.js:15,1549224000:15,r
+release.config.js:12,1549224000:12,r
