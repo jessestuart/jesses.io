@@ -9247,10 +9247,10 @@ js-base64@^2.1.9:
   resolved "https://registry.yarnpkg.com/js-base64/-/js-base64-2.5.0.tgz#42255ba183ab67ce59a0dee640afdc00ab5ae93e"
   integrity sha512-wlEBIZ5LP8usDylWbDNhKPEFVFdI5hCHpnVoT/Ysvoi/PRhJENm/Rlh9TvjYB38HFfKZN7OzEbRjmjvLkFw11g==
 
-js-tachyons@1.1.4:
-  version "1.1.4"
-  resolved "https://registry.yarnpkg.com/js-tachyons/-/js-tachyons-1.1.4.tgz#b8b5be5d1bb28870ce69dd545e1fb54c85949e3e"
-  integrity sha1-uLW+XRuyiHDOad1UXh+1TIWUnj4=
+js-tachyons@1.2.0:
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/js-tachyons/-/js-tachyons-1.2.0.tgz#2ae0ff388806a1f154eeca9eb01d29bf94b46326"
+  integrity sha512-i117JYzGHefm7u+v9e7M5+YGzUDkvr317gN4A/Vkk+9g2VfDX7kkqmRway7vBzO28j7B3FJRKm73Sa7C4RdUfw==
 
 js-tokens@^3.0.0, js-tokens@^3.0.2:
   version "3.0.2"
