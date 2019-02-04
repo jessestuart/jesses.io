@@ -84,8 +84,7 @@ a {
  * ======================
  */
 
-body,
-#___gatsby {
+#___gatsby > * {
   display: flex;
   flex-direction: column;
   flex: 1 0 auto;
