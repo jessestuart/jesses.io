@@ -47,6 +47,7 @@ const mdQuery = `
 const createPages = ({ graphql, actions }) => {
   const { createPage } = actions
   const blogTemplate = path.resolve('./src/templates/blog-post.js')
+  console.log({ blogTemplate })
 
   // const photographyTemplate = path.resolve(
   //   './src/templates/photography-post.js'

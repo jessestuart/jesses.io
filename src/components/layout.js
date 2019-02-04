@@ -40,10 +40,8 @@ const Layout = ({ children, location }: Props) => (
         },
       ]}
     />
-    <div className="flex-body-expand">
-      <SiteHeader location={location} />
-      <main className="flex flex-auto">{children}</main>
-    </div>
+    <SiteHeader location={location} />
+    <main className="flex flex-auto">{children}</main>
     <SiteFooter />
   </Fragment>
 )

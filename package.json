@@ -119,6 +119,7 @@
     "react"
   ],
   "license": "MIT",
+  "main": "src/pages/index.js",
   "repository": {
     "type": "git",
     "url": "https://github.com/gatsbyjs/gatsby-starter-default"
