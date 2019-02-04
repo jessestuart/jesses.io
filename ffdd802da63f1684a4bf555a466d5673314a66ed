@@ -1,0 +1,16 @@
+[ver:1,total:3720]
+.gtm/terminal.app:1989,1549252800:1255,1549256400:194,1549263600:540,r
+src/components/SiteHeader/SiteHeader.js:825,1549252800:735,1549256400:60,1549263600:30,m
+src/components/SiteFooter/SiteFooter.js:342,1549256400:312,1549263600:30,m
+src/styles/base.css:200,1549252800:60,1549256400:140,m
+src/pages/about.js:100,1549252800:100,r
+src/pages/posts.js:60,1549252800:60,r
+src/components/layout.js:50,1549252800:50,m
+src/components/StyledPanel/StyledPanel.js:45,1549252800:45,m
+src/components/SiteHeader/HeaderLink.js:20,1549252800:20,m
+src/templates/blog-post.css:20,1549256400:20,r
+node_modules/gatsby-source-s3-image/types/s3-image-asset-node.js:15,1549256400:15,d
+node_modules/gatsby-source-s3-image/types/exif-data.js:15,1549256400:15,d
+src/config/createPages.js:15,1549252800:15,m
+package.json:12,1549256400:12,r
+src/types/s3-image-asset.js:12,1549256400:12,m
