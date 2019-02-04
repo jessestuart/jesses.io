@@ -1,15 +1,16 @@
+import { DateTime } from 'luxon'
+import { Heart } from 'react-feather'
 import React from 'react'
+
 import PropTypes from 'prop-types'
 import classNames from 'classnames'
-import { Heart } from 'react-feather'
-import { DateTime } from 'luxon'
 
 import colors from '../../utils/colors'
 
 const SiteFooter = ({ theme }) => (
   <footer
     className={classNames(
-      'b--hot-pink bb bottom-0 bw2 f5-ns f6 flex flex-column fw4 lh-title pa4 w-100 black-80',
+      'b--hot-pink bb black-80 bottom-0 bw2 f5-ns f6 flex flex-column fw4 lh-title pa4 w-100',
       {
         'bg-gray-primary moon-gray': theme === SiteFooter.Theme.Dark,
         'bg-light-gray': theme === SiteFooter.Theme.Light,

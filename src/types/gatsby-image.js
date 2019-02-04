@@ -1,10 +1,10 @@
 /* @flow */
 export type GatsbyImage = {
   sizes: {
-    aspectRatio: Number,
-    base64: String,
-    sizes: String,
-    src: String,
-    srcSet: String,
+    aspectRatio: number,
+    base64: string,
+    sizes: string,
+    src: string,
+    srcSet: string,
   },
 }

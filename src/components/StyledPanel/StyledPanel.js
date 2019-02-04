@@ -1,5 +1,6 @@
-import colors from '../../utils/colors'
 import styled from 'styled-components'
+
+import colors from '../../utils/colors'
 
 export default styled.section.attrs({
   className: 'br2 center mv5-ns mw7 mw8-ns pa5-ns',

@@ -6,7 +6,7 @@ import classNames from 'classnames'
 
 type Props = {
   children: *,
-  className: *,
+  className?: *,
   href: *,
   isActive: *,
 }

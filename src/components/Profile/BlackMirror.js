@@ -49,19 +49,19 @@ const BlackMirrorDiv = styled.div.attrs({
   }
 `
 
-export default function BlackMirror() {
-  return (
-    <BlackMirrorDiv>
-      {Icons.map(({ color, Image, url }) => (
-        <a key={url} href={url} className="ma1">
-          <Image
-            fill={color}
-            strokeWidth="1px"
-            className="b--light-gray hvr-grow"
-            size="35px"
-          />
-        </a>
-      ))}
-    </BlackMirrorDiv>
-  )
-}
+const BlackMirror = () => (
+  <BlackMirrorDiv>
+    {Icons.map(({ color, Image, url }) => (
+      <a key={url} href={url} className="ma1">
+        <Image
+          fill={color}
+          strokeWidth="1px"
+          className="b--light-gray hvr-grow"
+          size="35px"
+        />
+      </a>
+    ))}
+  </BlackMirrorDiv>
+)
+
+export default BlackMirror

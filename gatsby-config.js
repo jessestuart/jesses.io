@@ -7,7 +7,7 @@ const version = require('./package.json').version
 // high-resolution photos displayed in production. This is simply to
 // save on AWS costs :)
 const GATSBY_ENV = process.env.GATSBY_ENV
-// const IS_DEV = GATSBY_ENV !== 'Production'
+const IS_DEV = GATSBY_ENV !== 'Production'
 
 // We use `NODE_ENV` to disable Sentry logging in development.
 const IS_PROD = process.env.NODE_ENV === 'production'
@@ -66,14 +66,16 @@ const googleAnalyticsPlugin = {
   },
 }
 
-// const sourceS3 = {
-//   resolve: 'gatsby-source-s3-image',
-//   options: {
-//     bucketName: IS_DEV ? 'js-photos-dev' : 'jesse.pics',
-//     domain: IS_DEV ? null : 'jesse.pics.s3.amazonaws.com',
-//     protocol: 'http',
-//   },
-// }
+const sourceS3 = {
+  resolve: 'gatsby-source-s3-image',
+  options: {
+    bucketName: IS_DEV ? 'js-photos-dev' : 'jesse.pics',
+    domain: IS_DEV ? null : 'jesse.pics.s3.amazonaws.com',
+    protocol: 'http',
+  },
+}
+
+console.log({ sourceS3 })
 
 const sentryPlugin = {
   resolve: 'gatsby-plugin-sentry',
@@ -90,7 +92,7 @@ const plugins = _.compact([
   // ====================================
   sourceFilesystem,
   sourceFilesystemImages,
-  // sourceS3,
+  sourceS3,
   // =======================================================================
   // Add in React Helmet and React 16 support until Gatsby v2 is released.
   // =======================================================================

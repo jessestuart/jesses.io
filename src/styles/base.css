@@ -97,3 +97,7 @@ a {
   flex-direction: column;
   flex: 1 0 auto;
 }
+
+.headroom-wrapper {
+  height: auto !important;
+}

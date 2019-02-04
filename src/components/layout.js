@@ -1,6 +1,11 @@
 /* @flow */
 import 'js-tachyons'
 
+import 'typeface-alegreya'
+import 'typeface-alegreya-sans'
+import 'typeface-lato'
+import 'typeface-spectral'
+
 import '../styles/base.css'
 
 import Helmet from 'react-helmet'
@@ -14,7 +19,7 @@ const { title, url }: { title: string, url: string } = config.siteMetadata
 type Props = {
   children: *,
   location: {
-    pathname: String,
+    pathname: string,
   },
 }
 

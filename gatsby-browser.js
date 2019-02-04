@@ -4,4 +4,8 @@
  * See: https://www.gatsbyjs.org/docs/browser-apis/
  */
 
-// You can delete this file if you're not using it
+import * as Sentry from '@sentry/browser'
+
+Sentry.init({
+  dsn: 'https://5f7a25ceef2148bf946ffd3b8cd781c3@sentry.io/1340322',
+})

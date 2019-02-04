@@ -1,4 +1,6 @@
+/* @flow */
 import { DateTime } from 'luxon'
+import { graphql } from 'gatsby'
 import Helmet from 'react-helmet'
 import React, { Component } from 'react'
 import _ from 'lodash'
@@ -6,7 +8,24 @@ import fp from 'lodash/fp'
 
 import { PhotographyGridSection } from '../components/Photography'
 
-class PhotographyPostTemplate extends Component {
+type Props = {
+  data: {
+    site: {
+      siteMetadata: {
+        title: string,
+      },
+    },
+  },
+  location: {
+    pathname: string,
+  },
+  node: any,
+  pageContext: {
+    name: string,
+  },
+}
+
+class PhotographyPostTemplate extends Component<Props> {
   render() {
     const { props } = this
     const images = _.flow(
@@ -36,42 +55,41 @@ class PhotographyPostTemplate extends Component {
 
 export default PhotographyPostTemplate
 
-// export const pageQuery = graphql`
-//   {
-//     site {
-//       siteMetadata {
-//         title
-//       }
-//     }
-//   }
-// `
-
-// allS3ImageAsset(filter: { EXIF: { DateCreatedISO: { eq: $name } } }) {
-//   edges {
-//     node {
-//       id
-//       EXIF {
-//         DateCreatedISO
-//         DateTimeOriginal
-//       }
-//       childImageSharp {
-//         original {
-//           height
-//           width
-//         }
-//         thumbnailSizes: sizes(maxWidth: 512) {
-//           aspectRatio
-//           src
-//           srcSet
-//           sizes
-//         }
-//         largeSizes: sizes(maxWidth: 1024, quality: 75) {
-//           aspectRatio
-//           src
-//           srcSet
-//           sizes
-//         }
-//       }
-//     }
-//   }
-// }
+export const pageQuery = graphql`
+  query($name: String) {
+    site {
+      siteMetadata {
+        title
+      }
+    }
+    allS3ImageAsset(filter: { EXIF: { DateCreatedISO: { eq: $name } } }) {
+      edges {
+        node {
+          id
+          EXIF {
+            DateCreatedISO
+            DateTimeOriginal
+          }
+          childImageSharp {
+            original {
+              height
+              width
+            }
+            thumbnailSizes: sizes(maxWidth: 512) {
+              aspectRatio
+              src
+              srcSet
+              sizes
+            }
+            largeSizes: sizes(maxWidth: 1024, quality: 75) {
+              aspectRatio
+              src
+              srcSet
+              sizes
+            }
+          }
+        }
+      }
+    }
+  }
+`
