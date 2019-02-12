@@ -1,0 +1,11 @@
+[ver:1,total:5040]
+.gtm/terminal.app:2950,1549263600:360,1549342800:840,1549346400:240,1549368000:180,1549429200:120,1549432800:480,1549443600:180,1549951200:150,1549954800:400,r
+src/templates/blog-post.js:610,1549954800:610,m
+gatsby-browser.js:600,1549951200:140,1549954800:460,m
+src/config/createPages.js:410,1549954800:410,m
+src/components/Profile/BlackMirror.js:295,1549951200:120,1549954800:175,m
+src/pages/posts.js:90,1549954800:90,r
+.cache/app.js:30,1549951200:30,r
+src/components/SiteFooter/SiteFooter.js:20,1549951200:20,r
+src/components/Profile/Avatar.js:20,1549951200:20,r
+src/components/Blog/BlogHeader.js:15,1549954800:15,r
