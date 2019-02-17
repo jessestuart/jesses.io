@@ -85,7 +85,7 @@
     "rimraf": "2.6.3",
     "scrollprogress": "3.0.2",
     "semantic-release": "15.13.3",
-    "snyk": "1.130.0",
+    "snyk": "1.132.0",
     "stylelint": "9.10.1",
     "stylelint-config-standard": "18.2.0",
     "trashable": "1.0.7",
