@@ -1,13 +1,17 @@
+/* @flow */
 import { DateTime } from 'luxon'
 import { Heart } from 'react-feather'
 import React from 'react'
 
-import PropTypes from 'prop-types'
 import classNames from 'classnames'
 
 import colors from '../../utils/colors'
 
-const SiteFooter = ({ theme }) => (
+type Props = {
+  theme: 'Light' | 'Dark',
+}
+
+const SiteFooter = ({ theme }: Props) => (
   <footer
     className={classNames(
       'b--hot-pink bb black-80 bottom-0 bw2 f5-ns f6 flex flex-column fw4 lh-title pa4 w-100',
@@ -39,17 +43,10 @@ const SiteFooter = ({ theme }) => (
   </footer>
 )
 
+// TODO Replace w/ TS enum.
 SiteFooter.Theme = {
   Light: 'Light',
   Dark: 'Dark',
-}
-
-SiteFooter.propTypes = {
-  theme: PropTypes.oneOf(Object.keys(SiteFooter.Theme)).isRequired,
-}
-
-SiteFooter.defaultProps = {
-  theme: SiteFooter.Theme.Light,
 }
 
 export default SiteFooter
