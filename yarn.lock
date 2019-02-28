@@ -17448,10 +17448,10 @@ typeface-lato@0.0.54:
   resolved "https://registry.yarnpkg.com/typeface-lato/-/typeface-lato-0.0.54.tgz#6ea56309a8b0cfdb7e8246e05de4b58b8272b47c"
   integrity sha512-2/oP5YrXCBSLg+N2ZdWnMbJ0PRIidrJVFHgRoLxo5MNsdu9eE4aBwsoEY/K/+9rKdktGO8zpiXBYPRn9F6U/Sw==
 
-typeface-spectral@0.0.54:
-  version "0.0.54"
-  resolved "https://registry.yarnpkg.com/typeface-spectral/-/typeface-spectral-0.0.54.tgz#1b851ad6e3e6da6a6a37e5ae54059a46f54a80b7"
-  integrity sha512-BrKVz17oNzVsOOWymgn4ZTIzRL6i63buodIN08bjmeYK+nQXltsPw3nvdxP86zJwmpHX7wPw+A0lKku1zxy9IA==
+typeface-spectral@0.0.72:
+  version "0.0.72"
+  resolved "https://registry.yarnpkg.com/typeface-spectral/-/typeface-spectral-0.0.72.tgz#2504c164f034186724ed8674e2d991e7bae7281c"
+  integrity sha512-LT2lTLHv2IjftFdMdlYsMctoETXPj9bAHX6DtAd1iHfxoRO7jS/XU63uNdX6L2Bdz1B+T6iE3+hf3BIDR0XwiA==
 
 typography-normalize@^0.16.18:
   version "0.16.18"
