@@ -17430,10 +17430,10 @@ typeface-alegreya@0.0.69:
   resolved "https://registry.yarnpkg.com/typeface-alegreya/-/typeface-alegreya-0.0.69.tgz#92d82f3e68360d5d5cee01be812f5aeb19ade8a7"
   integrity sha512-02wj0QZEaxnDH37ZX3fsCu6vlKdaH8f1bzJxuymXNCoEcN3tFKMLC9omAtx8G+EbChb1gm5Nw+9XmPIYzi93fA==
 
-typeface-fira-mono@0.0.54:
-  version "0.0.54"
-  resolved "https://registry.yarnpkg.com/typeface-fira-mono/-/typeface-fira-mono-0.0.54.tgz#753743d60c003e1fe94a644fd4e040e6461c1b1b"
-  integrity sha512-7gYfedZOHP9OIyHkH04OCUccmPJcH94kbtEVKVwPpp5YDfwF5to3CwIh4DeIfpx18BBWQdYwRvo55XP6n1cr1A==
+typeface-fira-mono@0.0.72:
+  version "0.0.72"
+  resolved "https://registry.yarnpkg.com/typeface-fira-mono/-/typeface-fira-mono-0.0.72.tgz#b396d2a08814bb3a32d94ef71c74d37883c3475b"
+  integrity sha512-bouzjtniGMrakhazipUl6mskswe7UvH3qynU5Wsl0O7NMuL178VtZ0pOqUGsjBJ42l64GZo9nUMI1eSK4kvJbQ==
 
 typeface-lato@0.0.54:
   version "0.0.54"
