@@ -4513,10 +4513,10 @@ delegates@^1.0.0:
   resolved "https://registry.yarnpkg.com/delegates/-/delegates-1.0.0.tgz#84c6e159b81904fdca59a0ef44cd870d31250f9a"
   integrity sha1-hMbhWbgZBP3KWaDvRM2HDTElD5o=
 
-depcheck@0.7.1:
-  version "0.7.1"
-  resolved "https://registry.yarnpkg.com/depcheck/-/depcheck-0.7.1.tgz#d4ef8511620fc5c783dafe27887cfdab533b1215"
-  integrity sha512-apCWM7uXYt7LZa5StGLY5UwNba0f6qMHA+gskcxti3PhcEfTMgqJMPW3CSSnRbVZb70QzbjLTESBCvZ+T00V2g==
+depcheck@0.7.2:
+  version "0.7.2"
+  resolved "https://registry.yarnpkg.com/depcheck/-/depcheck-0.7.2.tgz#beb2914f218b5d0902d5d0d292f3109486e4f78f"
+  integrity sha512-KzwYzptnHrm093lYLKKIlBZ0VBvt135Hh1ADUPo8FhIeAkY/Xmo5NxSgHMXczzx5b3qX+qc2UB73VKaW0YbgZA==
   dependencies:
     "@babel/parser" "^7.3.1"
     "@babel/traverse" "^7.2.3"
@@ -4526,6 +4526,7 @@ depcheck@0.7.1:
     js-yaml "^3.4.2"
     lodash "^4.17.11"
     minimatch "^3.0.2"
+    node-sass-tilde-importer "^1.0.2"
     please-upgrade-node "^3.1.1"
     require-package-name "^2.0.1"
     resolve "^1.10.0"
@@ -11271,6 +11272,13 @@ node-releases@^1.1.1:
   integrity sha512-6VrvH7z6jqqNFY200kdB6HdzkgM96Oaj9v3dqGfgp6mF+cHmU4wyQKZ2/WPDRVoR0Jz9KqbamaBN0ZhdUaysUQ==
   dependencies:
     semver "^5.3.0"
+
+node-sass-tilde-importer@^1.0.2:
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/node-sass-tilde-importer/-/node-sass-tilde-importer-1.0.2.tgz#1a15105c153f648323b4347693fdb0f331bad1ce"
+  integrity sha512-Swcmr38Y7uB78itQeBm3mThjxBy9/Ah/ykPIaURY/L6Nec9AyRoL/jJ7ECfMR+oZeCTVQNxVMu/aHU+TLRVbdg==
+  dependencies:
+    find-parent-dir "^0.3.0"
 
 node-status-codes@^1.0.0:
   version "1.0.0"
