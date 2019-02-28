@@ -75,8 +75,6 @@ const sourceS3 = {
   },
 }
 
-console.log({ sourceS3 })
-
 const sentryPlugin = {
   resolve: 'gatsby-plugin-sentry',
   options: {
@@ -97,6 +95,7 @@ const plugins = _.compact([
   // Add in React Helmet and React 16 support until Gatsby v2 is released.
   // =======================================================================
   'gatsby-plugin-react-helmet',
+  'gatsby-plugin-flow',
   // ========================
   // Styling-related plugins.
   // ========================
@@ -117,8 +116,9 @@ const plugins = _.compact([
   // Miscellany.
   // ===========
   'gatsby-plugin-remove-trailing-slashes',
-  'gatsby-plugin-feed',
+  // 'gatsby-plugin-feed',
   'gatsby-plugin-lodash',
+  // 'gatsby-plugin-offline',
   // 'gatbsy-plugin-postcss',
   // This ostensibly has to go at the end of the plugins declaration array.
   'gatsby-plugin-netlify',

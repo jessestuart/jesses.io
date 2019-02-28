@@ -8,7 +8,7 @@ const PageType = require('../utils/enums/page-type')
 const log = require('../utils/log')
 
 const processGraphQL = ({ graphql, query, createPostsFn, resultPath }) => {
-  graphql(query)
+  return graphql(query)
     .then(result =>
       _.isNil(result.errors)
         ? _.get(result, resultPath)
@@ -54,38 +54,46 @@ const createPages = ({ graphql, actions }) => {
   )
 
   const createPhotographyPosts = edges => {
+    let photographyPages = []
     // First, create the photography "album" pages -- these are a collection
     // of photos grouped by date.
     const imagesGroupedByDate = _.groupBy(edges, 'node.EXIF.DateCreatedISO')
-    _.each(imagesGroupedByDate, (images, date) => {
-      createPage({
-        path: `/photography/${date}`,
-        component: photographyTemplate,
-        context: {
-          name: date,
-          datetime: DateTime.fromISO(date),
-          type: PageType.Photography,
-        },
+    photographyPages = _.concat(
+      photographyPages,
+      _.map(imagesGroupedByDate, async (images, date) => {
+        await createPage({
+          path: `/photography/${date}`,
+          component: photographyTemplate,
+          context: {
+            name: date,
+            datetime: DateTime.fromISO(date),
+            type: PageType.Photography,
+          },
+        })
       })
-    })
+    )
 
     // Next create an individual page for each photo.
-    _.each(_.map(edges, 'node'), image => {
-      const date = _.get(image, 'EXIF.DateCreatedISO')
-      const ETag = _.get(image, 'ETag')
-      createPage({
-        path: `/photography/${date}/${ETag}`,
-        component: photographyTemplate,
-        context: {
-          name: date,
-          datetime: DateTime.fromISO(date),
-          type: PageType.Photography,
-        },
+    photographyPages = _.concat(
+      _.map(_.map(edges, 'node'), async image => {
+        const date = _.get(image, 'EXIF.DateCreatedISO')
+        const ETag = _.get(image, 'ETag')
+        await createPage({
+          path: `/photography/${date}/${ETag}`,
+          component: photographyTemplate,
+          context: {
+            name: date,
+            datetime: DateTime.fromISO(date),
+            type: PageType.Photography,
+          },
+        })
       })
-    })
+    )
+
+    return photographyPages
   }
 
-  processGraphQL({
+  const photographyPostsProcessor = processGraphQL({
     graphql,
     query: imagePostQuery,
     resultPath: 'data.allS3ImageAsset.edges',
@@ -93,9 +101,9 @@ const createPages = ({ graphql, actions }) => {
   })
 
   const createBlogPosts = edges => {
-    edges.forEach(edge => {
+    return edges.map(async edge => {
       const { slug } = edge.node.fields
-      createPage({
+      return createPage({
         path: slug,
         component: blogTemplate,
         context: {
@@ -106,12 +114,14 @@ const createPages = ({ graphql, actions }) => {
     })
   }
 
-  processGraphQL({
+  const blogPostsProcessor = processGraphQL({
     graphql,
     query: mdQuery,
     resultPath: 'data.allMarkdownRemark.edges',
     createPostsFn: createBlogPosts,
   })
+
+  return Promise.all(blogPostsProcessor, photographyPostsProcessor)
 }
 
 module.exports = createPages

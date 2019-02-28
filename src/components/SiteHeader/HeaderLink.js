@@ -11,12 +11,7 @@ type Props = {
   isActive: *,
 }
 
-const HeaderLink = ({
-  children,
-  className,
-  href = '/',
-  isActive = false,
-}: Props) => {
+const HeaderLink = ({ children, className, href, isActive = false }: Props) => {
   const headerClassNames: string = classNames(
     'lato f4 ph3 mv2 pv2 flex-auto',
     className,
@@ -32,11 +27,6 @@ const HeaderLink = ({
       </Link>
     </ul>
   )
-}
-
-HeaderLink.defaultProps = {
-  href: '/',
-  isActive: false,
 }
 
 export default HeaderLink

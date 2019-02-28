@@ -1,8 +1,13 @@
 /* @flow */
+import { Link } from 'gatsby'
+import React, { Component } from 'react'
+import _ from 'lodash'
 import styled from 'styled-components'
+
 import colors from '../../utils/colors'
 
 type Props = {
+  children: *,
   linkColor?: string,
   hoverColor?: string,
   href?: string,
@@ -31,6 +36,26 @@ const generateUnderlineStyles = ({ hoverColor, linkColor }) => `
   }
 `
 
-export default styled.a`
+const StyledLinkWrapper = styled.span`
   ${(props: Props) => generateUnderlineStyles(props)};
 `
+
+const StyledAnchorWrapper = styled.a`
+  ${(props: Props) => generateUnderlineStyles(props)};
+`
+
+export default class StyledLink extends Component<Props> {
+  render() {
+    const { children, href } = this.props
+    if (_.startsWith(href, 'http') || _.startsWith(href, 'mailto')) {
+      return (
+        <StyledAnchorWrapper {...this.props}>{children}</StyledAnchorWrapper>
+      )
+    }
+    return (
+      <Link to={href}>
+        <StyledLinkWrapper {...this.props}>{children}</StyledLinkWrapper>
+      </Link>
+    )
+  }
+}

@@ -12,11 +12,12 @@ type Props = {
       childImageSharp: GatsbyImage,
     },
   },
+  location: *,
 }
 
-const Home = ({ data }: Props) => {
+const Home = ({ data, location }: Props) => {
   return (
-    <Layout>
+    <Layout location={location}>
       <div className="moon-gray bg-gray-primary w-100">
         <Profile avatar={_.get(data, 'file.childImageSharp.fluid')} />
         <ProfileDevIcons />

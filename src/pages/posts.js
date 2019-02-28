@@ -37,7 +37,7 @@ class BlogIndex extends Component<Props> {
     const posts = _.get(props, 'data.allMarkdownRemark.edges')
 
     return (
-      <Layout>
+      <Layout location={location}>
         <div className="bg-near-white lh-copy pa3-ns pv4 w-100">
           {posts.map(({ node }) => {
             const { excerpt, fields, frontmatter } = node

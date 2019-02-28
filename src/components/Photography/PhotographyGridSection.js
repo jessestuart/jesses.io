@@ -1,4 +1,5 @@
 /* @flow */
+
 import 'react-image-lightbox/style.css'
 
 import { DateTime } from 'luxon'
@@ -6,6 +7,7 @@ import Img from 'gatsby-image'
 import Lightbox from 'react-image-lightbox'
 import React, { Component } from 'react'
 import _ from 'lodash'
+import fp from 'lodash/fp'
 
 import type { GatsbyImage } from '../../types/gatsby-image'
 import {
@@ -24,7 +26,7 @@ import StyledPanel from '../StyledPanel/StyledPanel'
 type Props = {
   datetime: DateTime,
   images: Array<GatsbyImage>,
-  slug: string,
+  slug?: string,
 }
 
 type State = {
@@ -52,27 +54,37 @@ class PhotographyGridSection extends Component<Props, State> {
   toggleLightbox({
     index,
     isLightboxOpen,
-    lightboxImages,
+    lightboxImages = this.state.lightboxImages,
   }: ToggleLightboxOptions) {
-    const images: Array<string> = lightboxImages || this.state.lightboxImages
+    // const images: Array<string> = lightboxImages || this.state.lightboxImages
     this.setState({
       index,
       isLightboxOpen,
-      lightboxImages: images,
-      lightboxSrc: images[index],
-      nextImageSrc: images[(index + 1) % images.length],
-      prevImageSrc: images[(index - 1) % images.length],
+      lightboxImages,
+      lightboxSrc: lightboxImages[index],
+      nextImageSrc: lightboxImages[(index + 1) % lightboxImages.length],
+      prevImageSrc: lightboxImages[(index - 1) % lightboxImages.length],
     })
   }
 
   render() {
     const { datetime, images, slug } = this.props
+    const { isLightboxOpen, index } = this.state
     if (_.isEmpty(images)) {
       return null
     }
 
-    const sortedImages = _.sortBy(images, 'EXIF.DateTimeOriginal')
-    const lightboxImages = _.map(sortedImages, 'childImageSharp.largeSizes.src')
+    const sortedImages = _.flow(
+      fp.sortBy('EXIF.DateTimeOriginal'),
+      fp.reverse
+    )(images)
+    const lightboxImages = _.map(
+      sortedImages,
+      'childrenFile[0].childImageSharp.largeSizes.src'
+    )
+    if (!lightboxImages) {
+      return null
+    }
 
     return (
       <StyledPanel>
@@ -81,7 +93,7 @@ class PhotographyGridSection extends Component<Props, State> {
           {sortedImages.map((image, index) => {
             const thumbnailSizes = _.get(
               image,
-              'childImageSharp.thumbnailSizes'
+              'childrenFile[0].childImageSharp.thumbnailSizes'
             )
             if (_.isEmpty(thumbnailSizes)) {
               return null
@@ -93,7 +105,7 @@ class PhotographyGridSection extends Component<Props, State> {
                 onClick={() =>
                   this.toggleLightbox({
                     index,
-                    isLightboxOpen: !this.state.isLightboxOpen,
+                    isLightboxOpen: !isLightboxOpen,
                     lightboxImages,
                   })
                 }
@@ -107,19 +119,19 @@ class PhotographyGridSection extends Component<Props, State> {
         {this.state.isLightboxOpen ? (
           <Lightbox
             enableZoom={false}
-            mainSrc={this.state.lightboxSrc || ''}
+            mainSrc={this.state.lightboxSrc}
             nextSrc={this.state.nextImageSrc}
             prevSrc={this.state.prevImageSrc}
             onCloseRequest={() => this.setState({ isLightboxOpen: false })}
             onMovePrevRequest={() =>
               this.toggleLightbox({
-                index: this.state.index - 1,
+                index: index - 1,
                 isLightboxOpen: true,
               })
             }
             onMoveNextRequest={() =>
               this.toggleLightbox({
-                index: this.state.index + 1,
+                index: index + 1,
                 isLightboxOpen: true,
               })
             }

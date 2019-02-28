@@ -1,9 +1,10 @@
 /* @flow */
+import { Calendar } from 'react-feather'
 import React, { Fragment } from 'react'
 import _ from 'lodash'
+
 import classNames from 'classnames'
 import voca from 'voca'
-import { Calendar } from 'react-feather'
 
 import StyledLink from '../StyledLink/StyledLink'
 
@@ -22,7 +23,7 @@ const BlogHeader = ({ children, className, date, link, location }: Props) => {
   // `/path#section-header`-style ID for e.g., linking to section headers.
   const pathname = _.get(location, 'pathname')
   const headerID = _.isEmpty(link) ? voca.slugify(children) : ''
-  const headerLink = _.isEmpty(pathname) ? `${pathname}#${headerID}` : link
+  const headerLink = _.isEmpty(pathname) ? `/#${headerID}` : link
 
   return (
     <Fragment>

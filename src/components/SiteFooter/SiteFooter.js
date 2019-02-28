@@ -11,7 +11,7 @@ type Props = {
   theme: 'Light' | 'Dark',
 }
 
-const SiteFooter = ({ theme }: Props) => (
+const SiteFooter = ({ theme = 'Light' }: Props) => (
   <footer
     className={classNames(
       'b--hot-pink bb black-80 bottom-0 bw2 f5-ns f6 flex flex-column fw4 lh-title pa4 w-100',

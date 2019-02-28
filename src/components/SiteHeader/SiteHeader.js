@@ -14,10 +14,17 @@ type Props = {
 }
 
 const SiteHeader = (props: Props) => {
-  const pathname = _.get(this, 'props.location.pathname', '/')
+  const pathname = _.get(props, 'location.pathname', '/')
   const isRoot = _.isNil(pathname) || _.eq(pathname, '/')
   return (
-    <Headroom>
+    <Headroom
+      style={{
+        MozTransition: 'all 0.7s ease-in-out',
+        OTransaction: 'all 0.7s ease-in-out',
+        Transition: 'all 0.7s ease-in-out',
+        WebkitTranstion: 'all 0.7s ease-in-out',
+      }}
+    >
       <header
         className={`bb b--hot-pink center site-header flex ${
           !isRoot ? 'bw1' : ''

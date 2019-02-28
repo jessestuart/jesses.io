@@ -10,14 +10,15 @@ import config from '../../gatsby-config'
 
 class BlogPostTemplate extends Component {
   render() {
-    const { props } = this
-    const post = _.get(props, 'data.markdownRemark')
+    const { data, location } = this.props
+    const { pathname } = location
+    const post = _.get(data, 'markdownRemark')
     if (!post) {
-      return <div />
+      return null
     }
 
-    const pathname = _.get(props, 'location.pathname')
-    const siteTitle = _.get(props, 'data.site.siteMetadata.title')
+    // const pathname = _.get(location, 'pathname')
+    const siteTitle = _.get(data, 'site.siteMetadata.title')
     const { excerpt } = post
     const { date, title } = post.frontmatter
     const pageURL = `${config.siteMetadata.siteUrl}${pathname}`
@@ -25,7 +26,7 @@ class BlogPostTemplate extends Component {
     const comboTitle = `${title || 'Posts'} | ${siteTitle}`
 
     return (
-      <Layout>
+      <Layout location={location}>
         <div
           className="black-80 lh-copy pa4 w-100"
           style={{ background: '#FBFAFC' }}
@@ -42,7 +43,7 @@ class BlogPostTemplate extends Component {
             />
           </Helmet>
           <div className="center mw7-ns">
-            <BlogHeader date={date} slug={pathname}>
+            <BlogHeader date={date} link={pathname} location={location}>
               {title}
             </BlogHeader>
             <article

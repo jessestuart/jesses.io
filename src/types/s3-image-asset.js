@@ -5,5 +5,7 @@ import type { GatsbyImage } from './gatsby-image'
 
 export type S3ImageAsset = {
   EXIF?: ExifData,
-  childImageSharp: GatsbyImage,
+  childFile: {
+    childImageSharp: GatsbyImage,
+  },
 }

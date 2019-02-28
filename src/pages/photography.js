@@ -6,10 +6,14 @@ import React from 'react'
 import _ from 'lodash'
 import fp from 'lodash/fp'
 
+import { Layout } from '../components'
 import { PhotographyGridSection } from '../components/Photography'
 import type { S3ImageAsset } from '../types/s3-image-asset'
 
 type Props = {
+  location: {
+    pathname: string,
+  },
   data: {
     site: {
       metadata: {
@@ -22,7 +26,7 @@ type Props = {
   },
 }
 
-const PhotographyIndex = ({ data }: Props) => {
+const PhotographyIndex = ({ data, location }: Props) => {
   const pageTitle = `Photography | ${_.get(data, 'site.siteMetadata.title')}`
 
   // Collect all of the image nodes for each S3ImageAsset resorce into a
@@ -42,7 +46,7 @@ const PhotographyIndex = ({ data }: Props) => {
   )(imageNodes)
 
   return (
-    <>
+    <Layout location={location}>
       <Helmet title={pageTitle} />
       <div
         className="bg-near-white black-80 pv4 pa3-ns"
@@ -75,11 +79,9 @@ const PhotographyIndex = ({ data }: Props) => {
           })
         )}
       </div>
-    </>
+    </Layout>
   )
 }
-
-export default PhotographyIndex
 
 export const pageQuery = graphql`
   {
@@ -88,6 +90,7 @@ export const pageQuery = graphql`
         title
       }
     }
+
     allS3ImageAsset {
       edges {
         node {
@@ -96,8 +99,30 @@ export const pageQuery = graphql`
             DateCreatedISO
             DateTimeOriginal
           }
+          childrenFile {
+            childImageSharp {
+              original {
+                height
+                width
+              }
+              thumbnailSizes: fluid(maxWidth: 512) {
+                aspectRatio
+                src
+                srcSet
+                sizes
+              }
+              largeSizes: fluid(maxWidth: 1536) {
+                aspectRatio
+                src
+                srcSet
+                sizes
+              }
+            }
+          }
         }
       }
     }
   }
 `
+
+export default PhotographyIndex

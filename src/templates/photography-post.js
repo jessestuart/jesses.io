@@ -6,10 +6,16 @@ import React, { Component } from 'react'
 import _ from 'lodash'
 import fp from 'lodash/fp'
 
-import { PhotographyGridSection } from '../components/Photography'
+import { Layout } from '../components'
+import PhotographyGridSection from '../components/Photography/PhotographyGridSection'
 
 type Props = {
   data: {
+    allS3ImageAsset: {
+      edges: {
+        node: *,
+      },
+    },
     site: {
       siteMetadata: {
         title: string,
@@ -19,15 +25,15 @@ type Props = {
   location: {
     pathname: string,
   },
-  node: any,
   pageContext: {
     name: string,
   },
 }
 
-class PhotographyPostTemplate extends Component<Props> {
+export class PhotographyPostTemplate extends Component<Props> {
   render() {
     const { props } = this
+    const { location } = props
     const images = _.flow(
       fp.get('data.allS3ImageAsset.edges'),
       fp.map('node')
@@ -35,25 +41,33 @@ class PhotographyPostTemplate extends Component<Props> {
     const pathname = _.get(props, 'location.pathname')
     const siteTitle = _.get(props, 'data.site.siteMetadata.title')
     const date = _.get(props, 'pageContext.name')
-    const datetime = date ? DateTime.fromISO(date.replace(/\//g, '')) : null
+    if (!date) {
+      console.trace('Unable to render Photography Post page.')
+      return null
+    }
+
+    const datetime = DateTime.fromISO(date.replace(/\//g, ''))
 
     const title = `Photography | ${date} | ${siteTitle}`
 
     return (
-      <div className="bg-near-white black-80 pa3-ns pv4 w-100">
-        <Helmet title={title} />
-        <PhotographyGridSection
-          datetime={datetime}
-          images={images}
-          isPreview={false}
-          key={pathname}
-        />
-      </div>
+      <Layout location={location}>
+        <div
+          className="bg-near-white black-80 pv4 pa3-ns"
+          style={{ flex: '1 0' }}
+        >
+          <Helmet title={title} />
+          <PhotographyGridSection
+            datetime={datetime}
+            images={images}
+            isPreview={false}
+            key={pathname}
+          />
+        </div>
+      </Layout>
     )
   }
 }
-
-export default PhotographyPostTemplate
 
 export const pageQuery = graphql`
   query($name: String) {
@@ -70,22 +84,24 @@ export const pageQuery = graphql`
             DateCreatedISO
             DateTimeOriginal
           }
-          childImageSharp {
-            original {
-              height
-              width
-            }
-            thumbnailSizes: sizes(maxWidth: 512) {
-              aspectRatio
-              src
-              srcSet
-              sizes
-            }
-            largeSizes: sizes(maxWidth: 1024, quality: 75) {
-              aspectRatio
-              src
-              srcSet
-              sizes
+          childrenFile {
+            childImageSharp {
+              original {
+                height
+                width
+              }
+              thumbnailSizes: fluid(maxWidth: 512) {
+                aspectRatio
+                src
+                srcSet
+                sizes
+              }
+              largeSizes: fluid(maxWidth: 1024) {
+                aspectRatio
+                src
+                srcSet
+                sizes
+              }
             }
           }
         }
@@ -93,3 +109,5 @@ export const pageQuery = graphql`
     }
   }
 `
+
+export default PhotographyPostTemplate

@@ -142,7 +142,7 @@ exports[`Render Profile component. Render Profile component. 1`] = `
       >
         I contain 
         <a
-          className="StyledLink-sc-1ft1soa-0 hydKki"
+          className="StyledLink__StyledAnchorWrapper-sc-1ft1soa-1 jodvyF"
           href="http://jstu.art/ojNe"
         >
           multitudes
@@ -284,7 +284,7 @@ exports[`Render Profile component. Render Profile component. 1`] = `
           Published
            
           <a
-            className="StyledLink-sc-1ft1soa-0 hydKki"
+            className="StyledLink__StyledAnchorWrapper-sc-1ft1soa-1 jodvyF"
             href="http://jstu.art/oijk"
           >
             NLP researcher
@@ -292,7 +292,7 @@ exports[`Render Profile component. Render Profile component. 1`] = `
           , and
         </span>
         <a
-          className="StyledLink-sc-1ft1soa-0 hydKki"
+          className="StyledLink__StyledAnchorWrapper-sc-1ft1soa-1 jodvyF"
           href="http://jstu.art/oj1g"
         >
           USPO Patent holder
@@ -510,7 +510,7 @@ exports[`Render Profile component. Render Profile component. 1`] = `
         className="f4 fw3 dib tr lh-copy"
       >
         <a
-          className="StyledLink-sc-1ft1soa-0 hydKki"
+          className="StyledLink__StyledAnchorWrapper-sc-1ft1soa-1 jodvyF"
           href="http://jstu.art/ojVB"
         >
           French translator
