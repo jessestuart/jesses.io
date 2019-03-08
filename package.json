@@ -94,8 +94,8 @@
     "typeface-fira-mono": "0.0.72",
     "typeface-lato": "0.0.54",
     "typeface-spectral": "0.0.72",
-    "typography": "0.16.18",
-    "typography-plugin-code": "0.16.18",
+    "typography": "0.16.19",
+    "typography-plugin-code": "0.16.19",
     "voca": "1.4.0",
     "winston": "3.2.1"
   },
