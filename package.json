@@ -80,7 +80,7 @@
     "postcss-nested": "4.1.1",
     "prettier": "1.16.1",
     "prop-types": "15.7.1",
-    "purgecss": "1.1.0",
+    "purgecss": "1.2.0",
     "react-test-renderer": "16.7.0",
     "rimraf": "2.6.3",
     "scrollprogress": "3.0.2",
