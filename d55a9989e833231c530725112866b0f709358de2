@@ -1,0 +1,5 @@
+[ver:1,total:1800]
+.gtm/terminal.app:1220,1554764400:560,1554768000:510,1554818400:30,1554919200:120,r
+src/components/Photography/PhotographyGridSection.js:330,1554764400:180,1554768000:150,m
+src/pages/photography.js:230,1554764400:80,1554818400:150,r
+src/types/s3-image-asset.js:20,1554764400:20,m
