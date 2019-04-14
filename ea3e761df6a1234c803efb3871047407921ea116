@@ -1,0 +1,14 @@
+[ver:1,total:3240]
+.gtm/terminal.app:856,1555210800:440,1555214400:416,r
+src/components/StyledLink/StyledLink.js:552,1555214400:552,m
+src/components/SiteHeader/SiteHeader.js:350,1555210800:320,1555214400:30,m
+src/components/Photography/PhotographySectionHeader.js:280,1555214400:280,m
+src/components/Blog/BlogHeader.js:280,1555214400:280,m
+src/components/layout.js:225,1555210800:95,1555214400:130,m
+src/templates/photography-post.js:200,1555210800:155,1555214400:45,m
+src/components/SiteFooter/SiteFooter.js:140,1555214400:140,m
+src/components/Photography/PhotographyGridSection.js:120,1555210800:50,1555214400:70,m
+src/styles/base.css:107,1555214400:107,r
+src/components/SiteHeader/HeaderLink.js:90,1555210800:60,1555214400:30,m
+src/components/StyledLink/index.js:20,1555214400:20,r
+TODO.md:20,1555210800:20,r
