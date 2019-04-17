@@ -105,13 +105,13 @@ export const pageQuery = graphql`
                 height
                 width
               }
-              thumbnailSizes: fluid(maxWidth: 512) {
+              thumbnailSizes: fluid(maxWidth: 256) {
                 aspectRatio
                 src
                 srcSet
                 sizes
               }
-              largeSizes: fluid(maxWidth: 2048) {
+              largeSizes: fluid(maxWidth: 2048, quality: 100) {
                 aspectRatio
                 src
                 srcSet
