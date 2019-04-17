@@ -27,7 +27,7 @@ const SiteHeader = (props: Props) => {
       }}
     >
       <header
-        className={`bb b--hot-pink center site-header flex w-80 ${
+        className={`bb b--hot-pink center site-header flex w-100 bg-gray-primary ${
           !isRoot ? 'bw1' : ''
         }`}
       >
