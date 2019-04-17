@@ -2,6 +2,7 @@
 
 exports[`Render SiteHeader component as not-root. 1`] = `
 <Headroom
+  className="bg-gray-primary"
   style={
     Object {
       "MozTransition": "all 0.7s ease-in-out",
@@ -12,12 +13,7 @@ exports[`Render SiteHeader component as not-root. 1`] = `
   }
 >
   <header
-    className="bb b--hot-pink center site-header flex bw1"
-    style={
-      Object {
-        "background": "#282C34",
-      }
-    }
+    className="bb b--hot-pink center site-header flex w-80 bw1"
   >
     <div
       className="w-35-ns flex flex-row center source-sans fw3"
@@ -69,6 +65,7 @@ exports[`Render SiteHeader component as not-root. 1`] = `
 
 exports[`Render SiteHeader component. 1`] = `
 <Headroom
+  className="bg-gray-primary"
   style={
     Object {
       "MozTransition": "all 0.7s ease-in-out",
@@ -79,12 +76,7 @@ exports[`Render SiteHeader component. 1`] = `
   }
 >
   <header
-    className="bb b--hot-pink center site-header flex "
-    style={
-      Object {
-        "background": "#282C34",
-      }
-    }
+    className="bb b--hot-pink center site-header flex w-80 "
   >
     <div
       className="w-35-ns flex flex-row center source-sans fw3"

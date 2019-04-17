@@ -18,6 +18,7 @@ const SiteHeader = (props: Props) => {
   const isRoot = _.isNil(pathname) || _.eq(pathname, '/')
   return (
     <Headroom
+      className="bg-gray-primary"
       style={{
         MozTransition: 'all 0.7s ease-in-out',
         OTransaction: 'all 0.7s ease-in-out',
@@ -26,10 +27,9 @@ const SiteHeader = (props: Props) => {
       }}
     >
       <header
-        className={`bb b--hot-pink center site-header flex ${
+        className={`bb b--hot-pink center site-header flex w-80 ${
           !isRoot ? 'bw1' : ''
         }`}
-        style={{ background: '#282C34' }}
       >
         <div className="w-35-ns flex flex-row center source-sans fw3">
           <HeaderLink className="br b--mid-gray" href={'/'} isActive={isRoot}>
