@@ -1,3 +1,4 @@
+/* @flow */
 import './blog-post.css'
 
 import { graphql } from 'gatsby'
@@ -8,7 +9,12 @@ import _ from 'lodash'
 import { BlogHeader, Layout } from '../components'
 import config from '../../gatsby-config'
 
-class BlogPostTemplate extends Component {
+type Props = {
+  data: *,
+  location: *,
+}
+
+class BlogPostTemplate extends Component<Props> {
   render() {
     const { data, location } = this.props
     const { pathname } = location
@@ -58,8 +64,6 @@ class BlogPostTemplate extends Component {
   }
 }
 
-export default BlogPostTemplate
-
 export const pageQuery = graphql`
   query($slug: String!) {
     site {
@@ -78,3 +82,5 @@ export const pageQuery = graphql`
     }
   }
 `
+
+export default BlogPostTemplate
