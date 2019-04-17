@@ -97,13 +97,7 @@ jobs:
       - checkout
       - *restore_cache
       - *install_dependencies
-      - run:
-          name: Run Greenkeeper to update lockfile.
-          command: yarn run greenkeeper-lockfile-update
       - *save_cache
-      - run:
-          name: Upload Greenkeeper lockfile.
-          command: yarn run greenkeeper-lockfile-upload
 
   lint:
     <<: *defaults
