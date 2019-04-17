@@ -1,9 +1,10 @@
 /* @flow */
+import { graphql } from 'gatsby'
 import React, { Component } from 'react'
 import _ from 'lodash'
 
+import { BlogHeader, Layout } from '../components'
 import StyledPanel from '../components/StyledPanel/StyledPanel'
-import { BlogHeader } from '../components/Blog'
 
 type MarkdownRemarkNode = {
   excerpt: string,
@@ -36,32 +37,34 @@ class BlogIndex extends Component<Props> {
     const posts = _.get(props, 'data.allMarkdownRemark.edges')
 
     return (
-      <div className="bg-near-white lh-copy pa3-ns pv4 w-100">
-        {posts.map(({ node }) => {
-          const { excerpt, fields, frontmatter } = node
-          const date = _.get(frontmatter, 'date')
-          const slug = _.get(fields, 'slug')
-          const title = _.get(frontmatter, 'title')
-          return (
-            <StyledPanel key={slug}>
-              <article>
-                <BlogHeader
-                  link={slug}
-                  location={location}
-                  date={date}
-                  title={title || slug}
-                >
-                  {title}
-                </BlogHeader>
-                <p
-                  className="f4"
-                  dangerouslySetInnerHTML={{ __html: excerpt }}
-                />
-              </article>
-            </StyledPanel>
-          )
-        })}
-      </div>
+      <Layout location={location}>
+        <div className="bg-near-white lh-copy pa3-ns pv4 w-100">
+          {posts.map(({ node }) => {
+            const { excerpt, fields, frontmatter } = node
+            const date = _.get(frontmatter, 'date')
+            const slug = _.get(fields, 'slug')
+            const title = _.get(frontmatter, 'title')
+            return (
+              <StyledPanel key={slug}>
+                <article>
+                  <BlogHeader
+                    link={slug}
+                    location={location}
+                    date={date}
+                    title={title || slug}
+                  >
+                    {title}
+                  </BlogHeader>
+                  <p
+                    className="f4"
+                    dangerouslySetInnerHTML={{ __html: excerpt }}
+                  />
+                </article>
+              </StyledPanel>
+            )
+          })}
+        </div>
+      </Layout>
     )
   }
 }
@@ -69,7 +72,7 @@ class BlogIndex extends Component<Props> {
 export default BlogIndex
 
 export const pageQuery = graphql`
-  query IndexQuery {
+  {
     site {
       siteMetadata {
         title

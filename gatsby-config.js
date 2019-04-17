@@ -1,6 +1,13 @@
 const _ = require('lodash')
 
-const { version } = require('./package.json')
+const AWS = require('aws-sdk')
+
+const version = require('./package.json').version
+
+AWS.config.update({
+  accessKeyId: process.env.AWS_ACCESS_KEY,
+  secretAccessKey: process.env.AWS_SECRET_KEY,
+})
 
 // If we detect if we're running in a CI environment, only a few sample
 // photos will be downloaded from a test bucket, rather the the full
@@ -14,8 +21,8 @@ const IS_PROD = process.env.NODE_ENV === 'production'
 
 const siteMetadata = {
   author: 'Jesse Stuart',
-  description: '',
-  siteUrl: 'https://jessestuart.com',
+  description: 'I build things and thoughts.',
+  siteUrl: 'https://jesses.io',
   title: 'Jesse Stuart',
 }
 
@@ -95,7 +102,7 @@ const plugins = _.compact([
   // Add in React Helmet and React 16 support until Gatsby v2 is released.
   // =======================================================================
   'gatsby-plugin-react-helmet',
-  'gatsby-plugin-react-next',
+  'gatsby-plugin-flow',
   // ========================
   // Styling-related plugins.
   // ========================
@@ -116,8 +123,11 @@ const plugins = _.compact([
   // Miscellany.
   // ===========
   'gatsby-plugin-remove-trailing-slashes',
-  'gatsby-plugin-feed',
+  // 'gatsby-plugin-feed',
   'gatsby-plugin-lodash',
+  // 'gatsby-plugin-offline',
+  // 'gatbsy-plugin-postcss',
+  'gatsby-plugin-netlify-cache',
   // This ostensibly has to go at the end of the plugins declaration array.
   'gatsby-plugin-netlify',
 ])

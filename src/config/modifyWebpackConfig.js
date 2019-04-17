@@ -1,16 +1,24 @@
-const atImport = require('postcss-import')
-const cssnested = require('postcss-nested')
-const cssnext = require('postcss-cssnext')
+// const atImport = require('postcss-import')
+// const cssnested = require('postcss-nested')
+// const cssnext = require('postcss-cssnext')
 const path = require('path')
 
-const modifyWebpackConfig = ({ config }, stage) => {
-  config.merge({
-    postcss: () => [atImport(), cssnested, cssnext()],
-    resolve: {
-      root: [path.resolve('./src')],
-    },
-  })
-  return config
-}
+module.exports = ({ actions, getConfig, stage }) => {
+  const config = getConfig()
+  switch (stage) {
+    case 'build-javascript':
+      actions.setWebpackConfig({
+        // postcss: () => [atImport(), cssnested, cssnext()],
+        resolve: {
+          modules: [path.resolve('./src'), 'node_modules'],
+        },
+      })
+  }
 
-module.exports = modifyWebpackConfig
+  if (stage.startsWith('develop') && config.resolve) {
+    config.resolve.alias = {
+      ...config.resolve.alias,
+      'react-dom': '@hot-loader/react-dom',
+    }
+  }
+}

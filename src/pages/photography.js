@@ -1,15 +1,19 @@
 /* @flow */
-import React, { Fragment } from 'react'
-import Helmet from 'react-helmet'
+import { DateTime } from 'luxon'
+import { Helmet } from 'react-helmet'
+import { graphql } from 'gatsby'
+import React from 'react'
 import _ from 'lodash'
 import fp from 'lodash/fp'
-import { DateTime } from 'luxon'
 
+import { Layout } from '../components'
 import { PhotographyGridSection } from '../components/Photography'
-
 import type { S3ImageAsset } from '../types/s3-image-asset'
 
 type Props = {
+  location: {
+    pathname: string,
+  },
   data: {
     site: {
       metadata: {
@@ -22,16 +26,15 @@ type Props = {
   },
 }
 
-const PhotographyIndex = ({ data }: Props) => {
+const PhotographyIndex = ({ data, location }: Props) => {
   const pageTitle = `Photography | ${_.get(data, 'site.siteMetadata.title')}`
 
-  const imageNodes =
-    // Collect all of the image nodes for each S3ImageAsset resorce into a
-    // single array.
-    _.flow(
-      fp.get('allS3ImageAsset.edges'),
-      fp.map('node')
-    )(data)
+  // Collect all of the image nodes for each S3ImageAsset resorce into a
+  // single array.
+  const imageNodes = _.flow(
+    fp.get('allS3ImageAsset.edges'),
+    fp.map('node')
+  )(data)
 
   const sortedArrayOfGroupedImages = _.flow(
     // Group by *date* created... (string value)
@@ -43,7 +46,7 @@ const PhotographyIndex = ({ data }: Props) => {
   )(imageNodes)
 
   return (
-    <Fragment>
+    <Layout location={location}>
       <Helmet title={pageTitle} />
       <div
         className="bg-near-white black-80 pv4 pa3-ns"
@@ -76,19 +79,18 @@ const PhotographyIndex = ({ data }: Props) => {
           })
         )}
       </div>
-    </Fragment>
+    </Layout>
   )
 }
 
-export default PhotographyIndex
-
 export const pageQuery = graphql`
-  query PhotographyPostsQuery {
+  {
     site {
       siteMetadata {
         title
       }
     }
+
     allS3ImageAsset {
       edges {
         node {
@@ -97,22 +99,24 @@ export const pageQuery = graphql`
             DateCreatedISO
             DateTimeOriginal
           }
-          childImageSharp {
-            original {
-              height
-              width
-            }
-            thumbnailSizes: sizes(maxWidth: 512) {
-              aspectRatio
-              src
-              srcSet
-              sizes
-            }
-            largeSizes: sizes(maxWidth: 1536, quality: 90) {
-              aspectRatio
-              src
-              srcSet
-              sizes
+          childrenFile {
+            childImageSharp {
+              original {
+                height
+                width
+              }
+              thumbnailSizes: fluid(maxWidth: 256) {
+                aspectRatio
+                src
+                srcSet
+                sizes
+              }
+              largeSizes: fluid(maxWidth: 2048, quality: 100) {
+                aspectRatio
+                src
+                srcSet
+                sizes
+              }
             }
           }
         }
@@ -120,3 +124,5 @@ export const pageQuery = graphql`
     }
   }
 `
+
+export default PhotographyIndex

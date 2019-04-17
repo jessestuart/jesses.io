@@ -1,5 +1,6 @@
 .cache/
 flow-libs/
+flow-typed/
 node_modules/
 public/
 test/coverage/

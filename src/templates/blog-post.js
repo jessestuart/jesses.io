@@ -1,23 +1,30 @@
-import React, { Component } from 'react'
-import Helmet from 'react-helmet'
-import _ from 'lodash'
-
-import { BlogHeader } from '../components/Blog'
-
-import config from '../../gatsby-config'
-
+/* @flow */
 import './blog-post.css'
 
-class BlogPostTemplate extends Component {
+import { graphql } from 'gatsby'
+import Helmet from 'react-helmet'
+import React, { Component } from 'react'
+import _ from 'lodash'
+
+import { BlogHeader, Layout } from '../components'
+import config from '../../gatsby-config'
+
+type Props = {
+  data: *,
+  location: *,
+}
+
+class BlogPostTemplate extends Component<Props> {
   render() {
-    const { props } = this
-    const post = _.get(props, 'data.markdownRemark')
+    const { data, location } = this.props
+    const { pathname } = location
+    const post = _.get(data, 'markdownRemark')
     if (!post) {
-      return <div />
+      return null
     }
 
-    const pathname = _.get(props, 'location.pathname')
-    const siteTitle = _.get(props, 'data.site.siteMetadata.title')
+    // const pathname = _.get(location, 'pathname')
+    const siteTitle = _.get(data, 'site.siteMetadata.title')
     const { excerpt } = post
     const { date, title } = post.frontmatter
     const pageURL = `${config.siteMetadata.siteUrl}${pathname}`
@@ -25,40 +32,40 @@ class BlogPostTemplate extends Component {
     const comboTitle = `${title || 'Posts'} | ${siteTitle}`
 
     return (
-      <div
-        className="black-80 lh-copy pa4 w-100"
-        style={{ background: '#FBFAFC' }}
-      >
-        <Helmet title={comboTitle}>
-          <meta itemProp="name" content={comboTitle} />
-          <meta name="twitter:title" content={comboTitle} />
-          <meta name="twitter:description" content={excerpt} />
-          <meta property="og:title" content={comboTitle} />
-          <meta property="og:url" content={pageURL} />
-          <meta
-            property="article:published_time"
-            content={new Date(date).toISOString()}
-          />
-        </Helmet>
-        <div className="center mw7-ns">
-          <BlogHeader date={date} slug={pathname}>
-            {title}
-          </BlogHeader>
-          <article
-            className="center f4 fw5 justify mw-100"
-            id="remark-post"
-            dangerouslySetInnerHTML={{ __html: post.html }}
-          />
+      <Layout location={location}>
+        <div
+          className="black-80 lh-copy pa4 w-100"
+          style={{ background: '#FBFAFC' }}
+        >
+          <Helmet title={comboTitle}>
+            <meta itemProp="name" content={comboTitle} />
+            <meta name="twitter:title" content={comboTitle} />
+            <meta name="twitter:description" content={excerpt} />
+            <meta property="og:title" content={comboTitle} />
+            <meta property="og:url" content={pageURL} />
+            <meta
+              property="article:published_time"
+              content={new Date(date).toISOString()}
+            />
+          </Helmet>
+          <div className="center mw7-ns">
+            <BlogHeader date={date} link={pathname} location={location}>
+              {title}
+            </BlogHeader>
+            <article
+              className="center f4 fw5 justify mw-100"
+              id="remark-post"
+              dangerouslySetInnerHTML={{ __html: post.html }}
+            />
+          </div>
         </div>
-      </div>
+      </Layout>
     )
   }
 }
 
-export default BlogPostTemplate
-
 export const pageQuery = graphql`
-  query BlogPostBySlug($slug: String!) {
+  query($slug: String!) {
     site {
       siteMetadata {
         title
@@ -75,3 +82,5 @@ export const pageQuery = graphql`
     }
   }
 `
+
+export default BlogPostTemplate

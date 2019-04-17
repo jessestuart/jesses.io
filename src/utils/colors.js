@@ -1,5 +1,6 @@
-import gray from 'gray-percentage'
 import color from 'onecolor'
+
+import gray from 'gray-percentage'
 
 const colors = {
   accent: 'rgba(50, 0, 50, 0.8)',
@@ -62,6 +63,7 @@ const colors = {
     blend8: '#ee3a66',
   },
   bgDark: 'rgb(55, 59, 70)',
+  // headerDark: '#282C34',
   ui: {
     bright: '#FFC9D2',
     light: '#f5f3f7',

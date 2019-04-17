@@ -1,3 +1,4 @@
+/* @flow */
 import React from 'react'
 import styled from 'styled-components'
 
@@ -13,14 +14,16 @@ const ImageZoomGridElement = styled.div`
   }
 `
 
-type Props = {
+// eslint-disable-next-line react/display-name
+export default ({
+  aspectRatio,
+  children,
+  onClick,
+}: {
   aspectRatio: *,
   children: *,
   onClick: *,
-}
-
-// eslint-disable-next-line react/display-name
-export default ({ aspectRatio, children, onClick }: Props) => (
+}) => (
   <ImageZoomGridElement aspectRatio={aspectRatio} onClick={onClick}>
     {children}
   </ImageZoomGridElement>

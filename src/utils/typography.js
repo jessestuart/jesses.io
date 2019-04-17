@@ -1,15 +1,15 @@
 /* @flow */
-import _ from 'lodash'
-import color from 'onecolor'
-import fp from 'lodash/fp'
-import Typography from 'typography'
-
 import 'typeface-alegreya-sans'
 import 'typeface-fira-mono'
 import 'typeface-lato'
 import 'typeface-spectral'
 
+import _ from 'lodash'
+import color from 'onecolor'
+import fp from 'lodash/fp'
+
 import CodePlugin from 'typography-plugin-code'
+import Typography from 'typography'
 
 import colors from './colors'
 
@@ -71,8 +71,8 @@ const options = {
   headerFontFamily: _.concat(['Alegreya Sans'], sansSerifFontFamilies),
   monospaceFontFamily: monospaceFontFamilies,
   baseFontSize: '16px',
-  baseLineHeight: 1.75,
-  headerLineHeight: 1.3,
+  baseLineHeight: 1.9,
+  headerLineHeight: 1.7,
   headerColor: colors.gray.dark,
   bodyColor: colors.gray.copy,
   blockMarginBottom: 0.75,
