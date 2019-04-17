@@ -42,7 +42,6 @@ export class PhotographyPostTemplate extends Component<Props> {
     const siteTitle = _.get(props, 'data.site.siteMetadata.title')
     const date = _.get(props, 'pageContext.name')
     if (!date) {
-      console.trace('Unable to render Photography Post page.')
       return null
     }
 

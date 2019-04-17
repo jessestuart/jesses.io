@@ -46,7 +46,7 @@ const PortfolioItemsList = () => (
   </ul>
 )
 
-const About = ({ location }) => (
+const About = ({ location }: { location: * }) => (
   <Layout location={location}>
     <div className="bg-near-white lh-copy pa3-ns pv4 w-100">
       <Helmet title={`About | ${config.siteMetadata.title}`} />

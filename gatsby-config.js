@@ -1,6 +1,13 @@
 const _ = require('lodash')
 
+const AWS = require('aws-sdk')
+
 const version = require('./package.json').version
+
+AWS.config.update({
+  accessKeyId: process.env.AWS_ACCESS_KEY,
+  secretAccessKey: process.env.AWS_SECRET_KEY,
+})
 
 // If we detect if we're running in a CI environment, only a few sample
 // photos will be downloaded from a test bucket, rather the the full
