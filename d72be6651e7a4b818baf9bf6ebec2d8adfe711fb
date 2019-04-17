@@ -1,0 +1,7 @@
+[ver:1,total:1500]
+.gtm/terminal.app:1220,1555516800:900,1555520400:320,r
+gatsby-config.js:160,1555520400:160,m
+src/components/Photography/ImageZoomGridElement.js:60,1555520400:60,m
+src/templates/photography-post.js:20,1555520400:20,m
+src/pages/about.js:20,1555520400:20,m
+gatsby-node.js:20,1555520400:20,r
