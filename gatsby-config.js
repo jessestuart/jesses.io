@@ -127,6 +127,7 @@ const plugins = _.compact([
   'gatsby-plugin-lodash',
   // 'gatsby-plugin-offline',
   // 'gatbsy-plugin-postcss',
+  'gatsby-plugin-netlify-cache',
   // This ostensibly has to go at the end of the plugins declaration array.
   'gatsby-plugin-netlify',
 ])

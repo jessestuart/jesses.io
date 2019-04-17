@@ -1,5 +1,5 @@
 /* @flow */
-import { DateTime } from 'luxon'
+import { type DateTime } from 'luxon'
 import React from 'react'
 
 import StyledLink from '../StyledLink/StyledLink'
