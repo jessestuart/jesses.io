@@ -1,0 +1,12 @@
+[ver:1,total:8220]
+src/components/SiteHeader/SiteHeader.js:3293,1555527600:938,1555531200:660,1555534800:1183,1555538400:512,m
+.gtm/terminal.app:2683,1555527600:622,1555531200:420,1555534800:992,1555538400:649,r
+src/styles/base.css:532,1555538400:532,r
+src/components/layout.js:442,1555534800:225,1555538400:217,r
+src/templates/blog-post.css:440,1555538400:440,r
+src/components/SiteFooter/SiteFooter.js:315,1555538400:315,m
+src/utils/typography.js:230,1555538400:230,m
+src/templates/photography-post.js:150,1555527600:150,r
+src/templates/blog-post.js:90,1555538400:90,r
+README.md:30,1555527600:30,r
+src/components/Profile/ProfileFooter.js:15,1555538400:15,r
