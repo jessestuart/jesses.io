@@ -115,9 +115,14 @@
   ],
   "license": "MIT",
   "main": "src/pages/index.js",
+  "private": true,
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org",
+    "access": "private"
+  },
   "repository": {
     "type": "git",
-    "url": "https://github.com/gatsbyjs/gatsby-starter-default"
+    "url": "https://github.com/jessestuart/jesses.io"
   },
   "scripts": {
     "build": "GATSBY_ENV=Production gatsby build",
