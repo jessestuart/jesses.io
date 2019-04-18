@@ -7,7 +7,10 @@ import classNames from 'classnames'
 
 import colors from '../../utils/colors'
 
-type FooterTheme = 'Light' | 'Dark'
+enum FooterTheme {
+  Light: 'Light',
+    Dark: 'Dark',
+}
 
 type Props = {
   theme: FooterTheme,
