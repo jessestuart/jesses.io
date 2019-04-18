@@ -1,0 +1,11 @@
+[ver:1,total:3360]
+.gtm/terminal.app:2951,1555549200:300,1555556400:360,1555560000:600,1555563600:960,1555567200:731,r
+package.json:150,1555567200:150,r
+src/components/SiteFooter/SiteFooter.js:84,1555567200:84,m
+.eslintrc.js:70,1555567200:70,m
+src/components/SiteFooter/SiteFooterTheme.js:20,1555567200:20,d
+tsconfig.json:20,1555567200:20,d
+src/components/Photography/PhotographyGridSection.ts:20,1555567200:20,d
+.git/rebase-merge/git-rebase-todo:15,1555567200:15,d
+src/templates/photography-post.tsx:15,1555567200:15,d
+src/templates/photography-post.ts:15,1555567200:15,d
