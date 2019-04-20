@@ -1,6 +1,5 @@
-/* @flow */
 import { DateTime } from 'luxon'
-import React from 'react'
+import * as React from 'react'
 
 import classNames from 'classnames'
 import { Heart } from 'react-feather'

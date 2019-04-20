@@ -1,20 +1,21 @@
 import './blog-post.css'
 
 import { graphql } from 'gatsby'
-import React, { Component } from 'react'
+import * as React from 'react'
 import Helmet from 'react-helmet'
 
 import _ from 'lodash'
 
 import config from '../../gatsby-config'
-import { BlogHeader, Layout } from '../components'
+import BlogHeader from '../components/Blog/BlogHeader'
+import Layout from '../components/layout'
 
 interface Props {
   data: any
   location: any
 }
 
-class BlogPostTemplate extends Component<Props> {
+class BlogPostTemplate extends React.Component<Props> {
   public render() {
     const { data, location } = this.props
     const { pathname } = location
