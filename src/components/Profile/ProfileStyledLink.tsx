@@ -1,24 +1,21 @@
 import React from 'react'
-import { Node } from 'react'
-import color from 'onecolor'
-import { colors } from '../../utils/colors'
-import { StyledLink } from '../StyledLink/StyledLink'
 
-const linkColor: string = color(colors.secondary.light7)
-  .alpha(0.8)
-  .cssa()
-
-const hoverColor: string = color(colors.primary.main)
-  .alpha(0.8)
-  .cssa()
+import { StyledLink } from '../'
+import colors from '../../utils/colors'
 
 interface Props {
-  children: Node
+  children: any
+  className?: string
   href: string
 }
 
-const ProfileStyledLink = ({ children, href }: Props) => (
-  <StyledLink linkColor={linkColor} hoverColor={hoverColor} href={href}>
+const ProfileStyledLink = ({ children, className, href }: Props) => (
+  <StyledLink
+    className={className}
+    linkColor={colors.defaultLink}
+    hoverColor={colors.defaultHover}
+    href={href}
+  >
     {children}
   </StyledLink>
 )

@@ -1,4 +1,3 @@
-import { graphql } from 'gatsby'
 import { DateTime } from 'luxon'
 import React, { Component } from 'react'
 import Helmet from 'react-helmet'
@@ -39,7 +38,7 @@ export class PhotographyPostTemplate extends Component<Props> {
     const { location } = props
     const images = _.flow(
       fp.get('data.allS3ImageAsset.edges'),
-      fp.map('node')
+      fp.map('node'),
     )(props)
     const pathname = _.get(props, 'location.pathname')
     const siteTitle = _.get(props, 'data.site.siteMetadata.title')
@@ -70,46 +69,5 @@ export class PhotographyPostTemplate extends Component<Props> {
     )
   }
 }
-
-export const pageQuery = graphql`
-  query($name: String) {
-    site {
-      siteMetadata {
-        title
-      }
-    }
-    allS3ImageAsset(filter: { EXIF: { DateCreatedISO: { eq: $name } } }) {
-      edges {
-        node {
-          id
-          EXIF {
-            DateCreatedISO
-            DateTimeOriginal
-          }
-          childrenFile {
-            childImageSharp {
-              original {
-                height
-                width
-              }
-              thumbnailSizes: fluid(maxWidth: 512) {
-                aspectRatio
-                src
-                srcSet
-                sizes
-              }
-              largeSizes: fluid(maxWidth: 2048, quality: 100) {
-                aspectRatio
-                src
-                srcSet
-                sizes
-              }
-            }
-          }
-        }
-      }
-    }
-  }
-`
 
 export default PhotographyPostTemplate

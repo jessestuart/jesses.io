@@ -1,9 +1,11 @@
 import React from 'react'
+
 import styled from 'styled-components'
-import { Avatar } from './Avatar'
-import { BlackMirror } from './BlackMirror'
-import { ProfileBlurb } from './ProfileBlurb'
-import { ProfileFooter } from './ProfileFooter'
+
+import Avatar from './Avatar'
+import BlackMirror from './BlackMirror'
+import ProfileBlurb from './ProfileBlurb'
+import ProfileFooter from './ProfileFooter'
 
 const IntroWrapper = styled.div.attrs({
   className: 'items-center justify-center pv4',

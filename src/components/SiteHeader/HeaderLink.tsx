@@ -17,7 +17,7 @@ const HeaderLink = ({ children, className, href, isActive = false }: Props) => {
     {
       'white-90 fw4': isActive,
       'light-silver fw3': !isActive,
-    }
+    },
   )
 
   return (

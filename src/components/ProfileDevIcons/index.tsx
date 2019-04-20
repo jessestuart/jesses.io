@@ -1,12 +1,14 @@
-import React, { Fragment } from 'react'
-import classNames from 'classnames'
-import styled from 'styled-components'
-import { DevIconColumn } from './DevIconColumn'
-import { DevIconSkills } from './DevIconSkills'
-import { colors } from '../../utils/colors'
-
 import '../../styles/base.css'
 import '../../styles/hvr-animations.css'
+
+import React, { Fragment } from 'react'
+
+import classNames from 'classnames'
+import styled from 'styled-components'
+
+import colors from '../../utils/colors'
+import DevIconColumn from './DevIconColumn'
+import DevIconSkills from './DevIconSkills'
 
 const ProfileDevIcons = () => {
   return (

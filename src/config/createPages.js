@@ -1,13 +1,16 @@
-import { DateTime } from 'luxon'
+const path = require('path')
 
-import Promise from 'bluebird'
-import _ from 'lodash'
-import path from 'path'
+const { DateTime } = require('luxon')
 
-import { PageType } from '../utils/enums/page-type'
-import log from '../utils/log'
+const Promise = require('bluebird')
+const _ = require('lodash')
+
+const { PageType } = require('../utils/enums/page-type')
+const log = require('../utils/log')
 
 const processGraphQL = ({ graphql, query, createPostsFn, resultPath }) => {
+  console.log('processGraphQL')
+  console.log(graphql)
   return graphql(query)
     .then(result =>
       _.isNil(result.errors)
@@ -46,11 +49,12 @@ const imagePostQuery = `
 }`
 
 const createPages = ({ graphql, actions }) => {
+  console.log('create pages')
   const { createPage } = actions
-  const blogTemplate = path.resolve('./src/templates/blog-post.js')
+  const blogTemplate = path.resolve('./src/templates/blog-post.tsx')
 
   const photographyTemplate = path.resolve(
-    './src/templates/photography-post.js',
+    './src/templates/photography-post.tsx',
   )
 
   const createPhotographyPosts = edges => {
@@ -60,7 +64,7 @@ const createPages = ({ graphql, actions }) => {
     const imagesGroupedByDate = _.groupBy(edges, 'node.EXIF.DateCreatedISO')
     photographyPages = _.concat(
       photographyPages,
-      _.map(imagesGroupedByDate, async (images, date) => {
+      _.map(imagesGroupedByDate, async (_images, date) => {
         await createPage({
           path: `/photography/${date}`,
           component: photographyTemplate,
@@ -100,9 +104,9 @@ const createPages = ({ graphql, actions }) => {
     createPostsFn: createPhotographyPosts,
   })
 
-  const createBlogPosts = edges => {
-    return edges.map(async edge => {
-      const { slug } = edge.node.fields
+  const createBlogPosts = edges =>
+    edges.map(async edge => {
+      const slug = _.get(edge, 'node.fields')
       return createPage({
         path: slug,
         component: blogTemplate,
@@ -112,7 +116,6 @@ const createPages = ({ graphql, actions }) => {
         },
       })
     })
-  }
 
   const blogPostsProcessor = processGraphQL({
     graphql,
@@ -124,4 +127,4 @@ const createPages = ({ graphql, actions }) => {
   return Promise.all(blogPostsProcessor, photographyPostsProcessor)
 }
 
-export default createPages
+module.exports = createPages

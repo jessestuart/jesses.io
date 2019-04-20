@@ -1,7 +1,7 @@
-import * as React from 'react'
+import React from 'react'
 
-import * as classNames from 'classnames'
-import * as _ from 'lodash'
+import classNames from 'classnames'
+import _ from 'lodash'
 import { Calendar } from 'react-feather'
 import voca from 'voca'
 
@@ -12,9 +12,10 @@ interface Props {
   date?: string
   children: string
   link?: string
-  location: {
+  location?: {
     pathname: string
   }
+  slug?: string
 }
 
 const BlogHeader = ({ children, className, date, link, location }: Props) => {

@@ -1,7 +1,9 @@
 import gray from 'gray-percentage'
 import color from 'onecolor'
 
-type ColorMap = { [colorname: string]: string }
+interface ColorMap {
+  [colorname: string]: string
+}
 
 interface Colors {
   accent: string
@@ -64,7 +66,7 @@ const secondaryColors = {
   dark1: '#0a0512',
 }
 
-const colors: Colors = {
+export const colors: Colors = {
   accent: 'rgba(50, 0, 50, 0.8)',
   primary: primaryColors,
   secondary: secondaryColors,

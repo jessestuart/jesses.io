@@ -9,9 +9,6 @@ import StyledPanel from '../components/StyledPanel/StyledPanel'
 
 interface MarkdownRemarkNode {
   excerpt: string
-  fields: {
-    slug: string
-  }
 
   frontmatter: {
     date: string
@@ -43,14 +40,13 @@ class BlogIndex extends React.Component<Props> {
       <Layout location={location}>
         <div className="bg-near-white lh-copy pa3-ns pv4 w-100">
           {posts.map(({ node }) => {
-            const { excerpt, fields, frontmatter } = node
+            const { excerpt, frontmatter } = node
             const date = _.get(frontmatter, 'date')
-            const slug = _.get(fields, 'slug')
             const title = _.get(frontmatter, 'title')
             return (
-              <StyledPanel key={slug}>
+              <StyledPanel key={title}>
                 <article>
-                  <BlogHeader link={slug} location={location} date={date}>
+                  <BlogHeader link={title} location={location} date={date}>
                     {title}
                   </BlogHeader>
                   <p
@@ -67,8 +63,6 @@ class BlogIndex extends React.Component<Props> {
   }
 }
 
-export default BlogIndex
-
 export const pageQuery = graphql`
   {
     site {
@@ -76,10 +70,7 @@ export const pageQuery = graphql`
         title
       }
     }
-    allMarkdownRemark(
-      sort: { fields: [frontmatter___date], order: DESC }
-      filter: { frontmatter: { draft: { ne: true } } }
-    ) {
+    allMarkdownRemark(filter: { frontmatter: { draft: { ne: true } } }) {
       edges {
         node {
           excerpt
@@ -92,3 +83,5 @@ export const pageQuery = graphql`
     }
   }
 `
+
+export default BlogIndex

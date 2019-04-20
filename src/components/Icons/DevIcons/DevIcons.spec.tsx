@@ -1,6 +1,6 @@
 import React from 'react'
-import DevIcons from '.'
 import renderer from 'react-test-renderer'
+import DevIcons from '.'
 
 test('Render DevIcons component.', () => {
   Object.keys(DevIcons).forEach(key => {

@@ -1,8 +1,9 @@
-const { createFilePath } = require('gatsby-source-filesystem')
-const _ = require('lodash')
+import { createFilePath } from 'gatsby-source-filesystem'
 
-// $FlowFixMe
-const onCreateNode = ({ node, actions, getNode }) => {
+import _ from 'lodash'
+
+export default ({ node, actions, getNode }) => {
+  console.log('on create node')
   const { createNodeField } = actions
   const type = _.get(node, 'internal.type')
 
@@ -16,7 +17,9 @@ const onCreateNode = ({ node, actions, getNode }) => {
   }
 
   if (type === 'MarkdownRemark') {
+    console.log('create MarkdownRemark node')
     const value = createFilePath({ node, getNode })
+    console.log({ value })
     createNodeField({
       name: 'slug',
       node,
@@ -40,5 +43,3 @@ const onCreateNode = ({ node, actions, getNode }) => {
   //   createParentChildLink({ parent: node, child: imageSharp })
   // }
 }
-
-module.exports = onCreateNode

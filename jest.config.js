@@ -1,4 +1,6 @@
 module.exports = {
+  preset: 'ts-jest',
+  testEnvironment: 'node',
   coverageDirectory: './test/coverage',
   moduleDirectories: ['node_modules', 'src', 'static'],
   transform: {

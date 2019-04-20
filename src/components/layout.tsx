@@ -13,8 +13,7 @@ import Helmet from 'react-helmet'
 import _ from 'lodash'
 
 import config from '../../gatsby-config'
-import SiteFooter from '../components/SiteFooter'
-import SiteHeader from '../components/SiteHeader'
+import { SiteFooter, SiteHeader } from '../components'
 
 const title: string = _.get(config, 'siteMetadata.title')
 const url: string = _.get(config, 'siteMetadata.url')

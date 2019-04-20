@@ -8,7 +8,6 @@ import fp from 'lodash/fp'
 import Typography from 'typography'
 import CodePlugin from 'typography-plugin-code'
 
-import { process } from '../../test/utils/file-transformer'
 import colors from './colors'
 
 const pseudoUnderline = {

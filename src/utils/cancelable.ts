@@ -2,9 +2,9 @@ import Promise from 'bluebird'
 
 export class Cancelable {
   public cancelled: boolean
-  public promise: Promise
+  public promise: Promise<any>
 
-  constructor(promise) {
+  constructor(promise: Promise<any>) {
     this.cancelled = false
     this.promise = new Promise((resolve, reject) => {
       promise.then(
@@ -13,11 +13,10 @@ export class Cancelable {
         error => reject(error),
       )
     })
-    return this.promise
   }
 
-  public async then() {
-    await this.promise.then()
+  public async then(cb: () => any) {
+    return this.promise.then(cb)
   }
 
   public cancel() {

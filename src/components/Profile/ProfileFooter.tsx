@@ -1,18 +1,18 @@
 import React, { Component } from 'react'
-import _ from 'lodash'
-import classNames from 'classnames'
+
 import Promise from 'bluebird'
-import styled from 'styled-components'
+import classNames from 'classnames'
+import _ from 'lodash'
 import { ChevronDown } from 'react-feather'
-import { colors } from '../../utils/colors'
-import { Cancelable } from '../../utils/cancelable.js'
+import styled from 'styled-components'
+
+import { Cancelable } from '../../utils/cancelable'
+import colors from '../../utils/colors'
 
 // Configure Bluebird's Promise lib to be cancelable -- we use this to cancel
 // the bouncing chevron animation when the component is unmounted (e.g.,
 // because the user has navigated away from the Home page).
 Promise.config({ cancellation: true })
-
-interface Props {}
 
 interface State {
   isAnimatingChevron: boolean
@@ -20,12 +20,12 @@ interface State {
 
 const initialState = { isAnimatingChevron: false }
 
-export class ProfileFooter extends Component<Props, State> {
-  public readonly cancelable: Cancelable<any>
-  public readonly interval: any
+export default class ProfileFooter extends Component<{}, State> {
+  public cancelable: Cancelable
+  public interval: any
 
-  constructor() {
-    super()
+  constructor(props) {
+    super(props)
     this.state = { ...initialState }
   }
 
@@ -61,7 +61,7 @@ export class ProfileFooter extends Component<Props, State> {
               })
             }
           }),
-        4000
+        4000,
       )
     })
   }
