@@ -8,6 +8,7 @@ import fp from 'lodash/fp'
 import Typography from 'typography'
 import CodePlugin from 'typography-plugin-code'
 
+import { process } from '../../test/utils/file-transformer'
 import colors from './colors'
 
 const pseudoUnderline = {
@@ -67,7 +68,7 @@ const options = {
   blockMarginBottom: 0.75,
   scaleRatio: 2,
   plugins: [new CodePlugin()],
-  overrideStyles: ({ rhythm, scale }, options) => ({
+  overrideStyles: (_typographyOptions, overrideStyleOptions) => ({
     blockquote: {
       fontStyle: 'inherit',
       textAlign: 'justify',
@@ -110,7 +111,7 @@ const options = {
 
     '.pseudo-underline': {
       ...pseudoUnderline,
-      fontFamily: options.headerFontFamily.join(','),
+      fontFamily: overrideStyleOptions.headerFontFamily.join(','),
     },
 
     'article a.anchor': {

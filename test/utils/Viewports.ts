@@ -1,12 +1,10 @@
-/* @flow */
-
-type Viewport = {
-  width: number,
-  height: number,
-  deviceScaleFactor?: number,
-  isMobile?: boolean,
-  hasTouch?: boolean,
-  isLandscape?: boolean,
+interface Viewport {
+  width: number
+  height: number
+  deviceScaleFactor?: number
+  isMobile?: boolean
+  hasTouch?: boolean
+  isLandscape?: boolean
 }
 
 export const iPhone: Viewport = {
