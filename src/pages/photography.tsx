@@ -57,7 +57,7 @@ const PhotographyIndex = ({ data, location }: Props) => {
         {_.compact(
           sortedArrayOfGroupedImages.map(imageNodeList => {
             if (_.isEmpty(imageNodeList)) {
-              return
+              return null
             }
             const title = _.get(_.head(imageNodeList), 'EXIF.DateCreatedISO')
             const datetime = DateTime.fromISO(title)

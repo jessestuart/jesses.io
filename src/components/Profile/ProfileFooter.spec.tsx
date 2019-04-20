@@ -1,36 +1,38 @@
 import React from 'react'
-import { ProfileFooter } from './ProfileFooter'
+
 import renderer from 'react-test-renderer'
+
+import ProfileFooter from './ProfileFooter'
 
 jest.useFakeTimers()
 
-test('Render ProfileFooter component.', async () => {
-  const component = await renderer.create(<ProfileFooter />)
-  let tree = component.toJSON()
+test('Render ProfileFooter component.', () => {
+  const component = renderer.create(<ProfileFooter />)
+  const tree = component.toJSON()
   expect(tree).toMatchSnapshot()
 })
 
-test('Render ProfileFooter component after 10s.', async () => {
-  const component = await renderer.create(<ProfileFooter />)
+test('Render ProfileFooter component after 10s.', () => {
+  const component = renderer.create(<ProfileFooter />)
 
-  let tree = component.toJSON()
-  await jest.runTimersToTime(10000)
+  const tree = component.toJSON()
+  jest.runTimersToTime(10000)
   expect(setInterval).toHaveBeenCalledTimes(2)
   expect(tree).toMatchSnapshot()
 })
 
-test('Render ProfileFooter component.', async () => {
-  const component = await renderer.create(<ProfileFooter />)
+test('Render ProfileFooter component.', () => {
+  const component = renderer.create(<ProfileFooter />)
   component.unmount()
-  let tree = component.toJSON()
+  const tree = component.toJSON()
   expect(tree).toMatchSnapshot()
 })
 
-test('Render ProfileFooter component (cancelled) after 10s.', async () => {
-  const component = await renderer.create(<ProfileFooter />)
-  await jest.runTimersToTime(5000)
-  await component.unmount()
+test('Render ProfileFooter component (cancelled) after 10s.', () => {
+  const component = renderer.create(<ProfileFooter />)
+  jest.runTimersToTime(5000)
+  component.unmount()
 
-  let tree = component.toJSON()
+  const tree = component.toJSON()
   expect(tree).toMatchSnapshot()
 })

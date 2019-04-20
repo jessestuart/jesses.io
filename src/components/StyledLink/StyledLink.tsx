@@ -1,11 +1,14 @@
 import { Link } from 'gatsby'
 import React, { Component } from 'react'
+
 import _ from 'lodash'
 import styled from 'styled-components'
-import { colors } from '../../utils/colors'
+
+import colors from '../../utils/colors'
 
 interface Props {
-  children: any
+  className?: string
+  children?: any
   linkColor?: string
   hoverColor?: string
   href?: string
@@ -35,11 +38,19 @@ const generateUnderlineStyles = ({ hoverColor, linkColor }) => `
 `
 
 const StyledLinkWrapper = styled.span`
-  ${(props: Props) => generateUnderlineStyles(props)};
+  ${(props: Props) =>
+    generateUnderlineStyles({
+      hoverColor: props.hoverColor,
+      linkColor: props.linkColor,
+    })};
 `
 
 const StyledAnchorWrapper = styled.a`
-  ${(props: Props) => generateUnderlineStyles(props)};
+  ${(props: Props) =>
+    generateUnderlineStyles({
+      hoverColor: props.hoverColor,
+      linkColor: props.linkColor,
+    })};
 `
 
 export class StyledLink extends Component<Props> {
@@ -57,3 +68,5 @@ export class StyledLink extends Component<Props> {
     )
   }
 }
+
+export default StyledLink

@@ -9,7 +9,7 @@ import colors from '../../utils/colors'
 type FooterTheme = 'Light' | 'Dark'
 
 interface Props {
-  theme: FooterTheme
+  theme?: FooterTheme
 }
 
 const SiteFooter = ({ theme = 'Light' }: Props) => (

@@ -1,14 +1,10 @@
 {
   "include": ["**/*.ts", "**/*.tsx", "**/*.js"],
-  "exclude": ["node_modules/*", "public/*", ".cache/*"],
+  "exclude": ["node_modules/*", "public/*"],
   "compilerOptions": {
-    "allowJs": true,
     "allowSyntheticDefaultImports": true,
-    "allowSyntheticDefaultImports": true,
-    "checkJs": false,
     "declaration": false,
     "emitDecoratorMetadata": true,
-    "esModuleInterop": true,
     "esModuleInterop": true,
     "experimentalDecorators": true,
     "inlineSources": true,

@@ -1,10 +1,14 @@
-const path = require('path')
+// const atImport = require('postcss-import')
+// const cssnested = require('postcss-nested')
+// const cssnext = require('postcss-cssnext')
+import path from 'path'
 
-module.exports = ({ actions, getConfig, stage }) => {
+export default ({ actions, getConfig, stage }) => {
   const config = getConfig()
   switch (stage) {
     case 'build-javascript':
       actions.setWebpackConfig({
+        // postcss: () => [atImport(), cssnested, cssnext()],
         resolve: {
           modules: [path.resolve('./src'), 'node_modules'],
         },

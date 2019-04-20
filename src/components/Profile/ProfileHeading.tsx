@@ -1,5 +1,6 @@
 import React, { Fragment } from 'react'
-import { ProfileStyledLink } from './ProfileStyledLink'
+
+import ProfileStyledLink from './ProfileStyledLink'
 
 const WHITMAN_URL = 'http://jstu.art/ojNe'
 

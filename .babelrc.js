@@ -1,13 +1,9 @@
 module.exports = {
   presets: [
+    '@babel/preset-typescript',
     '@babel/preset-env',
     '@babel/preset-react',
-    '@babel/preset-typescript',
     'babel-preset-gatsby',
   ],
-  plugins: [
-    '@babel/plugin-proposal-export-default-from',
-    'babel-plugin-styled-components',
-    'lodash',
-  ],
+  plugins: ['babel-plugin-styled-components', 'lodash'],
 }

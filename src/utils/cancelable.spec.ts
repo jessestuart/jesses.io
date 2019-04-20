@@ -1,9 +1,11 @@
+import Promise from 'bluebird'
+
 import { Cancelable } from './cancelable'
 
 test('Create Cancelable, without canceling.', () => {
   let foo = 'bar'
   const cancelable = new Cancelable(
-    new Promise((resolve, reject) => {
+    new Promise((_resolve, _reject) => {
       setTimeout(() => {
         foo = 'baz'
       }, 1000)
@@ -17,7 +19,7 @@ test('Create Cancelable, without canceling.', () => {
 test('Create Cancelable and cancel, then ensure no side effects.', async () => {
   let foo = 'bar'
   const cancelable = new Cancelable(
-    new Promise((resolve, reject) => {
+    new Promise((resolve, _reject) => {
       setTimeout(() => {
         foo = 'baz'
       }, 1000)
@@ -36,7 +38,7 @@ test('Create Cancelable and cancel, then ensure no side effects.', async () => {
 test('Create Cancelable and ensure errors are gracefully handled.', async () => {
   const foo = 'bar'
   const cancelable = new Cancelable(
-    new Promise((resolve, reject) => {
+    new Promise((_resolve, reject) => {
       // eslint-disable-next-line
       reject()
     }),

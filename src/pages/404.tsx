@@ -1,6 +1,7 @@
-import Helmet from 'react-helmet'
 import React from 'react'
-import { config } from '../../gatsby-config'
+import Helmet from 'react-helmet'
+
+import config from '../../gatsby-config'
 import { StyledPanel } from '../components/StyledPanel/StyledPanel'
 
 /**

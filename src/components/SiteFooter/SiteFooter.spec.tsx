@@ -1,6 +1,8 @@
 import React from 'react'
-import { SiteFooter } from './SiteFooter'
+
 import renderer from 'react-test-renderer'
+
+import SiteFooter from './SiteFooter'
 
 test('Render SiteFooter component.', () => {
   const tree = renderer.create(<SiteFooter />).toJSON()

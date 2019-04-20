@@ -1,8 +1,11 @@
 import '../../styles/base.css'
-import Headroom from 'react-headroom'
+
 import React from 'react'
+
 import _ from 'lodash'
-import { HeaderLink } from './HeaderLink'
+import Headroom from 'react-headroom'
+
+import HeaderLink from './HeaderLink'
 
 interface Props {
   location: {
@@ -29,24 +32,24 @@ const SiteHeader = (props: Props) => {
         }`}
       >
         <div className="w-35-ns flex flex-row center source-sans fw3">
-          <HeaderLink className="br b--mid-gray" href={'/'} isActive={isRoot}>
+          <HeaderLink className="br b--mid-gray" href="/" isActive={isRoot}>
             home
           </HeaderLink>
           <HeaderLink
             className="br b--mid-gray"
-            href={'/posts'}
+            href="/posts"
             isActive={pathname.startsWith('/posts')}
           >
             words
           </HeaderLink>
           <HeaderLink
             className="br b--mid-gray"
-            href={'/photography'}
+            href="/photography"
             isActive={pathname.startsWith('/photography')}
           >
             pictures
           </HeaderLink>
-          <HeaderLink href={'/about'} isActive={pathname.startsWith('/about')}>
+          <HeaderLink href="/about" isActive={pathname.startsWith('/about')}>
             about
           </HeaderLink>
         </div>

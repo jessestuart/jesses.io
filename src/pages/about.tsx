@@ -1,15 +1,16 @@
 import { withPrefix } from 'gatsby'
-import Helmet from 'react-helmet'
 import React from 'react'
+import Helmet from 'react-helmet'
+
+import config from '../../gatsby-config'
 import {
   BlogHeader,
+  Layout,
   PortfolioItem,
   StyledLink,
   StyledPanel,
-  Layout,
 } from '../components'
 import { Logo } from '../components/Icons/logo_dark.svg'
-import { config } from '../../gatsby-config'
 
 const ContactInfoList = () => (
   <>

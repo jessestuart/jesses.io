@@ -1,4 +1,5 @@
 import React from 'react'
+
 import styled from 'styled-components'
 
 interface Props {
@@ -8,6 +9,7 @@ interface Props {
 }
 
 const DevIconColumn = ({ className, DevIcon, style }: Props) => (
+  // @ts-ignore
   <DevIconContainer style={style} className={className}>
     <a href={DevIcon.href}>
       <DevIcon width="75%" height="75%" className="hvr-grow" />

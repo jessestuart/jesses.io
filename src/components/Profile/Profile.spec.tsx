@@ -1,13 +1,15 @@
 import React from 'react'
-import { Profile } from './Profile'
+
 import renderer from 'react-test-renderer'
+
+import Profile from './Profile'
 
 jest.mock('gatsby-image')
 
 describe('Render Profile component.', () => {
   test('Render Profile component.', () => {
     const component = renderer.create(<Profile avatar={{}} />)
-    let tree = component.toJSON()
+    const tree = component.toJSON()
     expect(tree).toMatchSnapshot()
   })
 })

@@ -1,5 +1,6 @@
-import { GitHub, Instagram, Linkedin, Twitter } from 'react-feather'
 import React from 'react'
+
+import { GitHub, Instagram, Linkedin, Twitter } from 'react-feather'
 import styled from 'styled-components'
 
 const GITHUB_COLOR = '#333333'
@@ -10,13 +11,14 @@ const LINKEDIN_COLOR = '#0077B5'
 const LINKEDIN_URL = 'https://www.linkedin.com/in/jessedstuart/'
 const TWITTER_COLOR = '#1DA1F2'
 const TWITTER_URL = 'https://twitter.com/jesse_stuart/'
-type Icon = Readonly<{
+
+interface Icon {
   color: string
   Image: any
   url: string
-}>
+}
 
-const Icons: Icon[] = Object.freeze([
+const Icons: Icon[] = [
   {
     Image: GitHub,
     url: GITHUB_URL,
@@ -40,7 +42,7 @@ const Icons: Icon[] = Object.freeze([
     url: TWITTER_URL,
     color: TWITTER_COLOR,
   },
-])
+]
 
 const BlackMirrorDiv = styled.div.attrs({
   className: 'flex justify-around mv4',

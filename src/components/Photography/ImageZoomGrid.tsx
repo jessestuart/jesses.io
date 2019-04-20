@@ -1,5 +1,5 @@
 import React from 'react'
-import { Node } from 'react'
+
 import styled from 'styled-components'
 
 const StyledImageZoomGrid = styled.div`
@@ -15,7 +15,7 @@ const StyledImageZoomGrid = styled.div`
 `
 
 interface Props {
-  children?: Node
+  children?: any
 }
 
 const ImageZoomGrid = ({ children }: Props) => (

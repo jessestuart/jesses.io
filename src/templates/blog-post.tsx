@@ -1,6 +1,5 @@
 import './blog-post.css'
 
-import { graphql } from 'gatsby'
 import * as React from 'react'
 import Helmet from 'react-helmet'
 
@@ -18,13 +17,13 @@ interface Props {
 class BlogPostTemplate extends React.Component<Props> {
   public render() {
     const { data, location } = this.props
-    const { pathname } = location
+    console.log({ data, location })
     const post = _.get(data, 'markdownRemark')
     if (!post) {
       return null
     }
 
-    // const pathname = _.get(location, 'pathname')
+    const pathname = _.get(location, 'pathname')
     const siteTitle = _.get(data, 'site.siteMetadata.title')
     const { excerpt } = post
     const { date, title } = post.frontmatter
@@ -55,8 +54,8 @@ class BlogPostTemplate extends React.Component<Props> {
             </BlogHeader>
             <article
               className="center f4 fw5 justify mw-100"
-              id="remark-post"
               dangerouslySetInnerHTML={{ __html: post.html }}
+              id="remark-post"
             />
           </div>
         </div>
@@ -65,23 +64,23 @@ class BlogPostTemplate extends React.Component<Props> {
   }
 }
 
-export const pageQuery = graphql`
-  query($slug: String!) {
-    site {
-      siteMetadata {
-        title
-      }
-    }
-    markdownRemark(fields: { slug: { eq: $slug } }) {
-      id
-      html
-      excerpt
-      frontmatter {
-        title
-        date(formatString: "D MMMM YYYY")
-      }
-    }
-  }
-`
+// export const pageQuery = graphql`
+// query($slug: String!) {
+// site {
+// siteMetadata {
+// title
+// }
+// }
+// markdownRemark {
+// id
+// html
+// excerpt
+// frontmatter {
+// title
+// date(formatString: "D MMMM YYYY")
+// }
+// }
+// }
+// `
 
 export default BlogPostTemplate

@@ -1,7 +1,8 @@
-import React, { Fragment } from 'react'
-import { ProfileHeading } from './ProfileHeading'
-import { ProfileStyledLink } from './ProfileStyledLink'
-import { Twemoji } from '../Icons/Twemoji'
+import React from 'react'
+
+import Twemoji from '../Icons/Twemoji'
+import ProfileHeading from './ProfileHeading'
+import ProfileStyledLink from './ProfileStyledLink'
 
 const BEIGBEDER_URL = 'http://jstu.art/ojVB'
 const COLING_URL = 'http://jstu.art/oijk'
@@ -35,7 +36,7 @@ const SubBlurb = ({ Emoji1, Emoji2, children }: Props) => (
 )
 
 const ProfileBlurb = () => (
-  <Fragment>
+  <>
     <ProfileHeading />
     <SubBlurb Emoji1={PersonalComputer} Emoji2={ThinkingFace}>
       NYC-based software engineer.
@@ -57,7 +58,7 @@ const ProfileBlurb = () => (
       </ProfileStyledLink>{' '}
       by night.
     </SubBlurb>
-  </Fragment>
+  </>
 )
 
 export default ProfileBlurb
