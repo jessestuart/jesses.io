@@ -1,0 +1,6 @@
+[ver:1,total:120]
+gatsby-browser.js:60,1556125200:60,r
+.gtm/terminal.app:24,1556125200:24,r
+src/config/modifyWebpackConfig.ts:12,1556125200:12,m
+src/config/modifyWebpackConfig.js:12,1556125200:12,d
+.git/COMMIT_EDITMSG:12,1556125200:12,r
