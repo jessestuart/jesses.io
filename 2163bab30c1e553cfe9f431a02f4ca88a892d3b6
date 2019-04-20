@@ -1,0 +1,11 @@
+[ver:1,total:5100]
+.gtm/terminal.app:2874,1556175600:330,1556179200:360,1556182800:360,1556186400:180,1556200800:90,1556204400:960,1556215200:594,r
+src/components/StyledPanel/StyledPanel.tsx:1025,1556175600:995,1556179200:30,m
+src/components/Blog/BlogHeader.tsx:470,1556175600:320,1556179200:150,m
+src/pages/about.tsx:320,1556175600:320,m
+package.json:204,1556175600:180,1556215200:24,m
+src/templates/blog-post.tsx:105,1556175600:105,m
+.git/COMMIT_EDITMSG:30,1556215200:30,r
+Dockerfile:30,1556200800:30,r
+.babelrc.js:30,1556175600:30,m
+.git/rebase-merge/git-rebase-todo:12,1556215200:12,r
