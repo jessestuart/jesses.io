@@ -1,0 +1,12 @@
+[ver:1,total:1200]
+.gtm/terminal.app:585,1555740000:525,1555743600:60,r
+tsconfig.json:255,1555740000:255,m
+src/templates/blog-post.tsx:140,1555740000:140,m
+src/utils/typography.ts:80,1555740000:80,m
+package.json:30,1555740000:30,m
+test/utils/Viewports.ts:20,1555740000:20,m
+src/config/modifyWebpackConfig.ts:20,1555740000:20,d
+src/pages/posts.tsx:20,1555740000:20,m
+test/utils/Viewports.js:20,1555740000:20,d
+src/components/SiteFooter/SiteFooter.tsx:15,1555740000:15,m
+test/setup.js:15,1555740000:15,d
