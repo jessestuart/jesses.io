@@ -1,0 +1,16 @@
+[ver:1,total:8280]
+src/pages/about.js:2475,1520085600:180,1520089200:900,1520092800:355,1520096400:270,1520100000:770,m
+src/components/Portfolio/PortfolioItem.js:1755,1520096400:1385,1520100000:370,m
+src/components/Blog/BlogHeader.js:1320,1520092800:1280,1520096400:40,m
+src/pages/posts/20180303-new-blog-who-dis/index.md:1273,1520089200:305,1520092800:915,1520096400:53,m
+src/pages/posts.js:480,1520092800:200,1520096400:270,1520100000:10,m
+package.json:270,1520085600:180,1520089200:30,1520092800:60,m
+src/components/StyledLink/StyledLink.js:266,1520096400:176,1520100000:90,m
+src/templates/blog-post.js:130,1520092800:130,m
+src/utils/colors.js:110,1520096400:100,1520100000:10,m
+src/components/StyledLink/index.js:56,1520096400:46,1520100000:10,r
+src/pages/posts/20180201-image-managment-s3/index.md:35,1520089200:35,r
+src/pages/posts/20180117-on-homemaker/index.md:32,1520089200:32,m
+src/pages/tags/index.js:30,1520089200:30,r
+src/pages/posts/20180116-on-building-jessestuart/index.md:24,1520089200:24,r
+src/pages/posts/20180116-dotfiles-a-love-story/index.md:24,1520089200:24,r

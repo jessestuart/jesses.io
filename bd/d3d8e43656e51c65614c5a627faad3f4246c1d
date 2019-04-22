@@ -1,0 +1,9 @@
+[ver:1,total:2700]
+package.json:1260,1528873200:480,1528970400:600,1529744400:180,m
+src/templates/photography-post.js:420,1528916400:420,r
+src/components/Blog/BlogHeader.spec.js:360,1529082000:180,1529085600:180,r
+.circleci/config.yml:360,1528826400:360,r
+.git/PULLREQ_EDITMSG:180,1528448400:180,d
+kube.xml:120,1530511200:60,1530514800:60,d
+
+[ver:1,total:0]

@@ -1,0 +1,7 @@
+[ver:1,total:60]
+.cirrus.yml:20,1518908400:20,m
+.circleci/config.yml:20,1518908400:20,r
+.drone.yml:20,1518908400:20,r
+
+[ver:1,total:420]
+gatsby-config.js:420,1518908400:420,m

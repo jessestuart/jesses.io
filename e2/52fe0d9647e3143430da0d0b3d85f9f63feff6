@@ -1,0 +1,11 @@
+[ver:1,total:2940]
+src/pages/posts.js:1358,1518955200:720,1518958800:638,m
+src/components/StyledPanel/StyledPanel.js:610,1518958800:610,m
+src/templates/blog-post.js:262,1518958800:262,m
+src/utils/typography.js:180,1518955200:180,r
+src/layouts/index.js:180,1518958800:180,m
+src/pages/photography.js:180,1518958800:180,m
+src/components/Photography/PhotographySectionHeader.js:60,1518958800:60,m
+src/types/s3-image-asset.js:50,1518958800:50,r
+src/components/Photography/ImageZoomGrid.js:40,1518958800:40,r
+src/utils/colors.js:20,1518958800:20,m

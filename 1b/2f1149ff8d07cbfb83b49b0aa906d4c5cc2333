@@ -1,0 +1,17 @@
+[ver:1,total:420]
+src/templates/photography-post.js:180,1520834400:180,m
+.git/PULLREQ_EDITMSG:180,1520834400:180,d
+src/pages/index.js:60,1520838000:60,m
+
+[ver:1,total:3480]
+src/templates/blog-post.js:1000,1520830800:760,1520834400:240,m
+src/templates/photography-post.js:645,1520830800:360,1520834400:285,m
+src/styles/base.css:540,1520830800:300,1520834400:240,m
+src/layouts/index.js:410,1520830800:80,1520834400:330,m
+src/pages/posts.js:390,1520834400:390,m
+src/components/SiteFooter/SiteFooter.js:210,1520830800:90,1520834400:120,r
+src/pages/about.js:120,1520834400:120,m
+src/components/Blog/BlogHeader.js:60,1520834400:60,r
+src/components/Blog/BlogHeader.spec.js:45,1520834400:45,r
+src/pages/photography.js:30,1520834400:30,r
+src/utils/typography.js:30,1520830800:30,r

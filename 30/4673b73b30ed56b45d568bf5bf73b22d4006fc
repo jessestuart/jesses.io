@@ -1,0 +1,15 @@
+[ver:1,total:3300]
+gatsby-config.js:1255,1528444800:60,1528448400:1195,m
+package.json:825,1528394400:240,1528444800:300,1528448400:285,m
+plugins/gatsby-source-s3/src/source-nodes.js:290,1528448400:290,d
+plugins.bak/gatsby-source-s3/src/source-nodes.js:220,1528444800:180,1528448400:40,r
+yarn.lock:180,1528444800:180,m
+jest.config.js:150,1528398000:150,r
+src/components/Profile/Profile.spec.js:120,1528394400:120,r
+plugins/gatsby-source-s3/src/extend-node-type.js:60,1528448400:60,d
+.eslintrc.js:60,1528394400:60,r
+plugins/gatsby-source-s3/package.json:30,1528448400:30,d
+test/puppeteer-environment.js:30,1528398000:30,r
+plugins.bak/gatsby-source-s3/src/extend-node-type.js:30,1528444800:30,r
+src/pages/photography.js:30,1528444800:30,r
+plugins/gatsby-source-s3/src/gatsby-node.js:20,1528448400:20,d

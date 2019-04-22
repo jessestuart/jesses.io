@@ -1,0 +1,5 @@
+[ver:1,total:480]
+.cirrus.yml:180,1527184800:180,r
+.git/PULLREQ_EDITMSG:180,1527163200:180,d
+dependencyci.yml:60,1527184800:60,d
+.circleci/config.yml:60,1527184800:60,r

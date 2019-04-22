@@ -1,0 +1,7 @@
+[ver:1,total:1680]
+src/components/Blog/BlogHeader.js:798,1520136000:738,1520146800:60,m
+src/components/Blog/BlogSection.js:327,1520136000:327,r
+plugins/gatsby-source-s3/src/source-nodes.js:240,1520139600:240,r
+src/components/Profile/Avatar.spec.js:240,1520139600:240,r
+src/components/Profile/ProfileStyledLink.js:60,1520136000:60,m
+src/components/Icons/DevIcons/Icon.js:15,1520136000:15,d

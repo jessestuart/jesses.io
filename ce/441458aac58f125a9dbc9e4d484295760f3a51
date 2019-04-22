@@ -1,0 +1,15 @@
+[ver:1,total:8160]
+src/pages/about.js:4452,1520056800:720,1520060400:1523,1520064000:1565,1520067600:594,1520082000:30,1520085600:20,m
+src/components/Blog/BlogHeader.js:929,1520060400:242,1520064000:640,1520067600:27,1520085600:20,m
+src/components/Photography/PhotographyGridSection.js:794,1520056800:782,1520060400:12,m
+package.json:448,1520056800:268,1520060400:180,m
+src/pages/404.js:432,1520060400:432,m
+src/pages/posts.js:371,1520060400:92,1520064000:85,1520067600:24,1520082000:150,1520085600:20,r
+src/pages/photography.js:265,1520056800:265,r
+src/components/StyledGrid/grid.js:180,1520049600:180,r
+src/components/Photography/ImageZoomGrid.js:122,1520056800:110,1520060400:12,m
+src/templates/blog-post.js:90,1520056800:15,1520060400:40,1520064000:35,r
+gatsby-config.js:27,1520060400:27,r
+src/components/Portfolio/PortfolioItem.js:20,1520060400:20,r
+src/components/Blog/BlogSection.js:15,1520064000:15,r
+src/components/StyledPanel/StyledPanel.js:15,1520067600:15,r
