@@ -7,7 +7,6 @@ import Img from 'gatsby-image'
 import Lightbox from 'react-image-lightbox'
 import React, { Component } from 'react'
 import _ from 'lodash'
-import fp from 'lodash/fp'
 
 import type { GatsbyImage } from '../../types/gatsby-image'
 import {
@@ -74,10 +73,7 @@ class PhotographyGridSection extends Component<Props, State> {
       return null
     }
 
-    const sortedImages = _.flow(
-      fp.sortBy('EXIF.DateTimeOriginal'),
-      fp.reverse
-    )(images)
+    const sortedImages = _.sortBy(images, 'EXIF.DateTimeOriginal')
     const lightboxImages = _.map(
       sortedImages,
       'childrenFile[0].childImageSharp.largeSizes.src'
