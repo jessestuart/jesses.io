@@ -2,8 +2,6 @@ const _ = require('lodash')
 
 const AWS = require('aws-sdk')
 
-const version = require('./package.json').version
-
 AWS.config.update({
   accessKeyId: process.env.AWS_ACCESS_KEY,
   secretAccessKey: process.env.AWS_SECRET_KEY,
@@ -15,9 +13,6 @@ AWS.config.update({
 // save on AWS costs :)
 const GATSBY_ENV = process.env.GATSBY_ENV
 const IS_DEV = GATSBY_ENV !== 'Production'
-
-// We use `NODE_ENV` to disable Sentry logging in development.
-const IS_PROD = process.env.NODE_ENV === 'production'
 
 const siteMetadata = {
   author: 'Jesse Stuart',
@@ -82,15 +77,6 @@ const sourceS3 = {
   },
 }
 
-const sentryPlugin = {
-  resolve: 'gatsby-plugin-sentry',
-  options: {
-    dsn: 'https://5f7a25ceef2148bf946ffd3b8cd781c3@sentry.io/1340322',
-    environment: GATSBY_ENV,
-    version,
-  },
-}
-
 const plugins = _.compact([
   // ====================================
   // Gotta load those sweet, sweet files.
@@ -118,7 +104,6 @@ const plugins = _.compact([
   // Analytics.
   // ==========
   googleAnalyticsPlugin,
-  IS_PROD ? sentryPlugin : null,
   // ===========
   // Miscellany.
   // ===========
