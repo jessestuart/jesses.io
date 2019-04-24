@@ -11,9 +11,6 @@ const createPages = require('./src/config/createPages')
 // Create slugs for files.
 // Slug will used for blog page path.
 exports.onCreateNode = ({ node, actions, getNode }) => {
-  console.log('================================================')
-  console.log('onCreateNode')
-  console.log('================================================')
   const { createNodeField } = actions
   switch (node.internal.type) {
     case `MarkdownRemark`:

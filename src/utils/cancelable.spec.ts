@@ -1,4 +1,5 @@
 import Promise from 'bluebird'
+import _ from 'lodash'
 
 import { Cancelable } from './cancelable'
 
@@ -31,19 +32,19 @@ test('Create Cancelable and cancel, then ensure no side effects.', async () => {
   await cancelable.cancel()
   await cancelable.then(() => {
     expect(foo).toBe('bar')
-    expect(cancelable.cancelled).toBeFalsy()
+    expect(cancelable.cancelled).toBe(true)
   })
+  expect(foo).toBe('bar')
 })
 
 test('Create Cancelable and ensure errors are gracefully handled.', async () => {
-  const foo = 'bar'
+  const errMessage = 'Rejected promise in test!'
   const cancelable = new Cancelable(
-    new Promise((_resolve, reject) => {
-      // eslint-disable-next-line
-      reject()
-    }),
+    new Promise((_resolve, reject) => reject(errMessage)),
   )
 
   expect(cancelable).toBeDefined()
-  cancelable.then(() => expect(foo).toBe('bar'))
+  cancelable.then(_.noop).catch(err => {
+    expect(err).toEqual('Rejected promise in test!')
+  })
 })

@@ -9,8 +9,6 @@ const { PageType } = require('../utils/enums/page-type')
 const log = require('../utils/log')
 
 const processGraphQL = ({ graphql, query, createPostsFn, resultPath }) => {
-  console.log('processGraphQL')
-  console.log(graphql)
   return graphql(query)
     .then(result =>
       _.isNil(result.errors)
@@ -49,7 +47,6 @@ const imagePostQuery = `
 }`
 
 const createPages = ({ graphql, actions }) => {
-  console.log('create pages')
   const { createPage } = actions
   const blogTemplate = path.resolve('./src/templates/blog-post.tsx')
 

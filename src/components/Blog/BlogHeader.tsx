@@ -1,7 +1,6 @@
-import React from 'react'
-
 import classNames from 'classnames'
 import _ from 'lodash'
+import React from 'react'
 import { Calendar } from 'react-feather'
 import voca from 'voca'
 
@@ -12,17 +11,17 @@ interface Props {
   date?: string
   children: string
   link?: string
+  // @Deprecated (?)
   location?: {
     pathname: string
   }
-  slug?: string
 }
 
 const BlogHeader = ({ children, className, date, link, location }: Props) => {
   // If we pass in a link, just href to that. Otherwise generate a
   // `/path#section-header`-style ID for e.g., linking to section headers.
   const pathname = _.get(location, 'pathname')
-  const headerID = _.isEmpty(link) ? voca.slugify(children) : ''
+  const headerID = _.isEmpty(link) ? voca.slugify(children) : voca.slugify(link)
   const headerLink = _.isEmpty(pathname) ? `/#${headerID}` : link
 
   return (
@@ -36,7 +35,7 @@ const BlogHeader = ({ children, className, date, link, location }: Props) => {
       >
         <StyledLink href={headerLink}>{children}</StyledLink>
       </h2>
-      {_.isNil(date) ? null : (
+      {date && (
         <p className="f6 mv2 flex items-center">
           <Calendar
             className="header-primary mr2"

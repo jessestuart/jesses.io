@@ -1,5 +1,4 @@
 import 'js-tachyons'
-
 import 'typeface-alegreya'
 import 'typeface-alegreya-sans'
 import 'typeface-lato'
@@ -7,10 +6,9 @@ import 'typeface-spectral'
 
 import '../styles/base.css'
 
+import _ from 'lodash'
 import React from 'react'
 import Helmet from 'react-helmet'
-
-import _ from 'lodash'
 
 import config from '../../gatsby-config'
 import { SiteFooter, SiteHeader } from '../components'
@@ -18,7 +16,7 @@ import { SiteFooter, SiteHeader } from '../components'
 const title: string = _.get(config, 'siteMetadata.title')
 const url: string = _.get(config, 'siteMetadata.url')
 
-const HELMET_META = Object.freeze([
+const HELMET_META = [
   { name: 'description', content: 'jesses.io' },
   {
     name: 'viewport',
@@ -35,7 +33,7 @@ const HELMET_META = Object.freeze([
     content:
       'width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no',
   },
-])
+]
 
 interface Props {
   children: any

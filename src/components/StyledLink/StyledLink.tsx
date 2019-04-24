@@ -1,7 +1,6 @@
 import { Link } from 'gatsby'
-import React, { Component } from 'react'
-
 import _ from 'lodash'
+import React, { Component } from 'react'
 import styled from 'styled-components'
 
 import colors from '../../utils/colors'
@@ -55,15 +54,13 @@ const StyledAnchorWrapper = styled.a`
 
 export class StyledLink extends Component<Props> {
   public render() {
-    const { children, href } = this.props
+    const { children, href, ...rest } = this.props
     if (_.startsWith(href, 'http') || _.startsWith(href, 'mailto')) {
-      return (
-        <StyledAnchorWrapper {...this.props}>{children}</StyledAnchorWrapper>
-      )
+      return <StyledAnchorWrapper {...rest}>{children}</StyledAnchorWrapper>
     }
     return (
       <Link to={href}>
-        <StyledLinkWrapper {...this.props}>{children}</StyledLinkWrapper>
+        <StyledLinkWrapper {...rest}>{children}</StyledLinkWrapper>
       </Link>
     )
   }

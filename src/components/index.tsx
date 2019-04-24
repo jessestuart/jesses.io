@@ -1,5 +1,5 @@
 import BlogHeader from './Blog/BlogHeader'
-import Layout from './layout'
+// import Layout from './layout'
 import {
   ImageZoomGrid,
   PhotographyGridSection,
@@ -28,7 +28,7 @@ export {
   BlogHeader,
   HeaderLink,
   ImageZoomGrid,
-  Layout,
+  // Layout,
   PhotographyGridSection,
   PhotographySectionHeader,
   PortfolioItem,
