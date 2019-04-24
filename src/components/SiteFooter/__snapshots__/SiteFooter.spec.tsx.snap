@@ -1,0 +1,83 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Render SiteFooter component with dark theme. 1`] = `
+<footer
+  className="b--hot-pink bb bottom-0 bw2 f5-ns f6 flex flex-column fw4 lh-title pa4 w-100 bg-gray-primary moon-gray"
+  style={
+    Object {
+      "borderTop": "3px solid #b39cdb",
+    }
+  }
+>
+  <div
+    className="flex justify-center items-center"
+  >
+    © 2013–
+    2019
+     Jesse Stuart
+  </div>
+  <div
+    className="dib center tc flex-ns justify-center items-center"
+  >
+    Pixels, bits and bytes hand-crafted with
+    <svg
+      className="hot-pink mh1"
+      fill="#FF3A5C"
+      height="15"
+      stroke="currentColor"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      strokeWidth="2"
+      viewBox="0 0 24 24"
+      width="15"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"
+      />
+    </svg>
+    in NYC.
+  </div>
+</footer>
+`;
+
+exports[`Render SiteFooter component. 1`] = `
+<footer
+  className="b--hot-pink bb bottom-0 bw2 f5-ns f6 flex flex-column fw4 lh-title pa4 w-100 bg-near-white black-80"
+  style={
+    Object {
+      "borderTop": "1px solid #b39cdb",
+    }
+  }
+>
+  <div
+    className="flex justify-center items-center"
+  >
+    © 2013–
+    2019
+     Jesse Stuart
+  </div>
+  <div
+    className="dib center tc flex-ns justify-center items-center"
+  >
+    Pixels, bits and bytes hand-crafted with
+    <svg
+      className="hot-pink mh1"
+      fill="#FF3A5C"
+      height="15"
+      stroke="currentColor"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      strokeWidth="2"
+      viewBox="0 0 24 24"
+      width="15"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"
+      />
+    </svg>
+    in NYC.
+  </div>
+</footer>
+`;

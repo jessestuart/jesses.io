@@ -7,20 +7,23 @@ export class Cancelable {
   constructor(promise: Promise<any>) {
     this.cancelled = false
     this.promise = new Promise((resolve, reject) => {
-      promise.then(
-        // eslint-disable-next-line prefer-promise-reject-errors
-        val => (this.cancelled ? reject() : resolve(val)),
-        error => reject(error),
-      )
+      if (!this.cancelled) {
+        return promise.then(
+          val => (this.cancelled ? resolve() : resolve(val)),
+          error => reject(error),
+        )
+      }
+      return Promise.resolve()
     })
   }
 
   public async then(cb: () => any) {
-    return this.promise.then(cb)
+    if (!this.cancelled) {
+      return this.promise.then(cb)
+    }
   }
 
   public cancel() {
     this.cancelled = true
-    this.promise.cancel()
   }
 }

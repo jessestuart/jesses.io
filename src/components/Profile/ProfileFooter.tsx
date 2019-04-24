@@ -1,8 +1,7 @@
-import React, { Component } from 'react'
-
 import Promise from 'bluebird'
 import classNames from 'classnames'
 import _ from 'lodash'
+import React, { Component } from 'react'
 import { ChevronDown } from 'react-feather'
 import styled from 'styled-components'
 
@@ -24,7 +23,7 @@ export default class ProfileFooter extends Component<{}, State> {
   public cancelable: Cancelable
   public interval: any
 
-  constructor(props) {
+  constructor(props: any) {
     super(props)
     this.state = { ...initialState }
   }

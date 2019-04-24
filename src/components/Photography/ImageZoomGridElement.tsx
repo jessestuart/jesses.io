@@ -5,6 +5,7 @@ const ImageZoomGridElement = styled.div`
   display: flex;
   flex-direction: column;
   grid-column-start: auto;
+  // @ts-ignore
   grid-row: ${props => (props.aspectRatio > 1 ? 'span 1' : 'span 2')};
   overflow: hidden;
   position: relative;
@@ -23,6 +24,7 @@ export default ({
   children: any
   onClick: any
 }) => (
+  // @ts-ignore
   <ImageZoomGridElement aspectRatio={aspectRatio} onClick={onClick}>
     {children}
   </ImageZoomGridElement>

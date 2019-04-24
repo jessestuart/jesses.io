@@ -3,7 +3,6 @@ import { createFilePath } from 'gatsby-source-filesystem'
 import _ from 'lodash'
 
 export default ({ node, actions, getNode }) => {
-  console.log('on create node')
   const { createNodeField } = actions
   const type = _.get(node, 'internal.type')
 
@@ -17,9 +16,7 @@ export default ({ node, actions, getNode }) => {
   }
 
   if (type === 'MarkdownRemark') {
-    console.log('create MarkdownRemark node')
     const value = createFilePath({ node, getNode })
-    console.log({ value })
     createNodeField({
       name: 'slug',
       node,

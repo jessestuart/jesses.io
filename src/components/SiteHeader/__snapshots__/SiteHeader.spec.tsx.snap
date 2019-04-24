@@ -1,0 +1,143 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Render SiteHeader component as not-root. 1`] = `
+<Headroom
+  className="bg-gray-primary"
+  style={
+    Object {
+      "MozTransition": "all 0.7s ease-in-out",
+      "OTransaction": "all 0.7s ease-in-out",
+      "Transition": "all 0.7s ease-in-out",
+      "WebkitTranstion": "all 0.7s ease-in-out",
+    }
+  }
+>
+  <header
+    className="bb b--hot-pink center site-header flex w-100 bg-gray-primary bw1"
+  >
+    <div
+      className="w-35-ns flex flex-row center source-sans fw3"
+    >
+      <ul
+        className="lato f4 ph3 mv2 pv2 flex-auto br b--mid-gray light-silver fw3"
+      >
+        <a
+          className="shadow-none flex justify-center items-center"
+          href="/true"
+          onClick={[Function]}
+          onMouseEnter={[Function]}
+        >
+          home
+        </a>
+      </ul>
+      <ul
+        className="lato f4 ph3 mv2 pv2 flex-auto br b--mid-gray light-silver fw3"
+      >
+        <a
+          className="shadow-none flex justify-center items-center"
+          href="/true/posts"
+          onClick={[Function]}
+          onMouseEnter={[Function]}
+        >
+          words
+        </a>
+      </ul>
+      <ul
+        className="lato f4 ph3 mv2 pv2 flex-auto br b--mid-gray light-silver fw3"
+      >
+        <a
+          className="shadow-none flex justify-center items-center"
+          href="/true/photography"
+          onClick={[Function]}
+          onMouseEnter={[Function]}
+        >
+          pictures
+        </a>
+      </ul>
+      <ul
+        className="lato f4 ph3 mv2 pv2 flex-auto light-silver fw3"
+      >
+        <a
+          className="shadow-none flex justify-center items-center"
+          href="/true/about"
+          onClick={[Function]}
+          onMouseEnter={[Function]}
+        >
+          about
+        </a>
+      </ul>
+    </div>
+  </header>
+</Headroom>
+`;
+
+exports[`Render SiteHeader component. 1`] = `
+<Headroom
+  className="bg-gray-primary"
+  style={
+    Object {
+      "MozTransition": "all 0.7s ease-in-out",
+      "OTransaction": "all 0.7s ease-in-out",
+      "Transition": "all 0.7s ease-in-out",
+      "WebkitTranstion": "all 0.7s ease-in-out",
+    }
+  }
+>
+  <header
+    className="bb b--hot-pink center site-header flex w-100 bg-gray-primary "
+  >
+    <div
+      className="w-35-ns flex flex-row center source-sans fw3"
+    >
+      <ul
+        className="lato f4 ph3 mv2 pv2 flex-auto br b--mid-gray white-90 fw4"
+      >
+        <a
+          className="shadow-none flex justify-center items-center"
+          href="/true"
+          onClick={[Function]}
+          onMouseEnter={[Function]}
+        >
+          home
+        </a>
+      </ul>
+      <ul
+        className="lato f4 ph3 mv2 pv2 flex-auto br b--mid-gray light-silver fw3"
+      >
+        <a
+          className="shadow-none flex justify-center items-center"
+          href="/true/posts"
+          onClick={[Function]}
+          onMouseEnter={[Function]}
+        >
+          words
+        </a>
+      </ul>
+      <ul
+        className="lato f4 ph3 mv2 pv2 flex-auto br b--mid-gray light-silver fw3"
+      >
+        <a
+          className="shadow-none flex justify-center items-center"
+          href="/true/photography"
+          onClick={[Function]}
+          onMouseEnter={[Function]}
+        >
+          pictures
+        </a>
+      </ul>
+      <ul
+        className="lato f4 ph3 mv2 pv2 flex-auto light-silver fw3"
+      >
+        <a
+          className="shadow-none flex justify-center items-center"
+          href="/true/about"
+          onClick={[Function]}
+          onMouseEnter={[Function]}
+        >
+          about
+        </a>
+      </ul>
+    </div>
+  </header>
+</Headroom>
+`;

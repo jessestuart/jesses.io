@@ -17,7 +17,6 @@ interface Props {
 class BlogPostTemplate extends React.Component<Props> {
   public render() {
     const { data, location } = this.props
-    console.log({ data, location })
     const post = _.get(data, 'markdownRemark')
     if (!post) {
       return null
