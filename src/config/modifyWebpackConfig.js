@@ -1,9 +1,10 @@
 // const atImport = require('postcss-import')
 // const cssnested = require('postcss-nested')
 // const cssnext = require('postcss-cssnext')
-import path from 'path'
+// import path from 'path'
+const path = require('path')
 
-export default ({ actions, getConfig, stage }) => {
+module.exports = ({ actions, getConfig, stage }) => {
   const config = getConfig()
   switch (stage) {
     case 'build-javascript':

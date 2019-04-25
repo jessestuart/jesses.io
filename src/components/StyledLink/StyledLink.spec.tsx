@@ -1,6 +1,6 @@
 import React from 'react'
 import renderer from 'react-test-renderer'
-import { StyledLink } from './StyledLink'
+import StyledLink from './StyledLink'
 
 test('Render StyledLink component with default colors.', () => {
   const tree = renderer.create(<StyledLink href="/" />).toJSON()

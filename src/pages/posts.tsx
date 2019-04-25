@@ -1,18 +1,20 @@
 import { graphql } from 'gatsby'
-import * as React from 'react'
-
 import * as _ from 'lodash'
+import * as React from 'react'
 
 import BlogHeader from '../components/Blog/BlogHeader'
 import Layout from '../components/layout'
 import StyledPanel from '../components/StyledPanel/StyledPanel'
 
 interface MarkdownRemarkNode {
+  fields: {
+    slug: string
+  }
+
   excerpt: string
 
   frontmatter: {
     date: string
-    title: string
   }
 }
 
@@ -40,13 +42,17 @@ class BlogIndex extends React.Component<Props> {
       <Layout location={location}>
         <div className="bg-near-white lh-copy pa3-ns pv4 w-100">
           {posts.map(({ node }) => {
-            const { excerpt, frontmatter } = node
+            const { excerpt, frontmatter, fields } = node
             const date = _.get(frontmatter, 'date')
             const title = _.get(frontmatter, 'title')
             return (
               <StyledPanel key={title}>
                 <article>
-                  <BlogHeader link={title} location={location} date={date}>
+                  <BlogHeader
+                    link={fields.slug}
+                    location={location}
+                    date={date}
+                  >
                     {title}
                   </BlogHeader>
                   <p
@@ -73,6 +79,9 @@ export const pageQuery = graphql`
     allMarkdownRemark(filter: { frontmatter: { draft: { ne: true } } }) {
       edges {
         node {
+          fields {
+            slug
+          }
           excerpt
           frontmatter {
             date(formatString: "D MMMM YYYY")
