@@ -59,7 +59,11 @@ class BlogPostTemplate extends React.Component<Props> {
           style={{ background: colors.secondary.light0 }}
         >
           <div className="center mw7-ns">
-            <BlogHeader date={date} link={pathname} location={location}>
+            <BlogHeader
+              date={date}
+              link={`posts/${pathname}`}
+              location={location}
+            >
               {title}
             </BlogHeader>
             <article

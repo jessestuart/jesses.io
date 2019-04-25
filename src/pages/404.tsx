@@ -2,7 +2,7 @@ import React from 'react'
 import Helmet from 'react-helmet'
 
 import config from '../../gatsby-config'
-import { StyledPanel } from '../components/StyledPanel/StyledPanel'
+import { StyledPanel } from '../components'
 
 /**
  * TODO: Replace this.

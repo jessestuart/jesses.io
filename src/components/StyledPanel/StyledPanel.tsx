@@ -2,7 +2,7 @@ import styled from 'styled-components'
 
 import colors from '../../utils/colors'
 
-const StyledPanel = styled.section.attrs({
+export default styled.section.attrs({
   className: 'br2 center mv5-ns mw7 mw8-ns pa5-ns',
 })`
   background-color: ${colors.secondary.light0};
@@ -12,7 +12,3 @@ const StyledPanel = styled.section.attrs({
     padding: 1rem 2rem !important;
   }
 `
-
-export { StyledPanel }
-
-export default StyledPanel

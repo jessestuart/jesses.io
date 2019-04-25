@@ -19,18 +19,18 @@ interface Props {
 }
 
 const BlogHeader = ({
-  title,
   children,
   className,
   date,
   link,
+  title,
   location,
 }: Props) => {
   // If we pass in a link, just href to that. Otherwise generate a
   // `/path#section-header`-style ID for e.g., linking to section headers.
   // const pathname = _.get(location, 'pathname')
   const headerID = _.isEmpty(link) ? voca.slugify(title) : link
-  const headerLink = _.isEmpty(link) ? `/posts/${headerID}` : link
+  const headerLink = link || `/${location.pathname}#${headerID}`
 
   return (
     <>
@@ -49,7 +49,6 @@ const BlogHeader = ({
             className="header-primary mr2"
             style={{ maxWidth: '15px' }}
           />
-
           {date}
         </p>
       )}
