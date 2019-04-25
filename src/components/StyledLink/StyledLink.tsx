@@ -52,7 +52,7 @@ const StyledAnchorWrapper = styled.a`
 
 export default class StyledLink extends Component<Props> {
   public render() {
-    const { children, href } = this.props
+    const { children, href, ...rest } = this.props
     if (
       _.startsWith(href, 'http') ||
       _.startsWith(href, 'mailto') ||
@@ -62,10 +62,9 @@ export default class StyledLink extends Component<Props> {
         <StyledAnchorWrapper {...this.props}>{children}</StyledAnchorWrapper>
       )
     }
-    console.warn('generating link!', { href })
     return (
       <Link to={href}>
-        <StyledLinkWrapper {...this.props}>{children}</StyledLinkWrapper>
+        <StyledLinkWrapper {...rest}>{children}</StyledLinkWrapper>
       </Link>
     )
   }

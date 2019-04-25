@@ -6056,8 +6056,10 @@ gatsby-source-filesystem@2.0.32:
     valid-url "^1.0.9"
     xstate "^3.1.0"
 
-"gatsby-source-s3-image@file:.yalc/gatsby-source-s3-image":
-  version "1.2.2-382aec33"
+gatsby-source-s3-image@1.2.2:
+  version "1.2.2"
+  resolved "https://registry.yarnpkg.com/gatsby-source-s3-image/-/gatsby-source-s3-image-1.2.2.tgz#9f5356a292c414154de77d5cf92ca97b0344937d"
+  integrity sha512-ZY6j5ypJLaQJ1b4NPnY6nAd/xTVN8vruZplGQ6A8gH/qc4ZBSafUti/EN5sRcZPZvUIS4i92dGwt8+dbWunEjw==
   dependencies:
     aws-sdk "2.442.0"
     bluebird "3.5.4"

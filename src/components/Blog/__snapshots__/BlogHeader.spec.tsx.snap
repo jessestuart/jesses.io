@@ -7,7 +7,7 @@ Array [
     id="2018-01-01"
   >
     <a
-      href="/true/#2018-01-01"
+      href="/true/2018-01-01"
       onClick={[Function]}
       onMouseEnter={[Function]}
     >

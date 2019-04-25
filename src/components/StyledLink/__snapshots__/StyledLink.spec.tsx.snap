@@ -8,7 +8,9 @@ exports[`Render StyledLink component with custom colors. 1`] = `
 >
   <span
     className="sc-bdVaJa kOnrXn"
-  />
+  >
+    My Styled Link
+  </span>
 </a>
 `;
 
@@ -20,6 +22,8 @@ exports[`Render StyledLink component with default colors. 1`] = `
 >
   <span
     className="sc-bdVaJa iwQflW"
-  />
+  >
+    My Styled Link
+  </span>
 </a>
 `;

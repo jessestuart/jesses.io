@@ -8,6 +8,7 @@ import Helmet from 'react-helmet'
 import config from '../../gatsby-config'
 import BlogHeader from '../components/Blog/BlogHeader'
 import Layout from '../components/layout'
+import colors from '../utils/colors'
 
 interface Props {
   data: any
@@ -55,7 +56,7 @@ class BlogPostTemplate extends React.Component<Props> {
         />
         <div
           className="black-80 lh-copy pa4 w-100"
-          style={{ background: '#FBFAFC' }}
+          style={{ background: colors.secondary.light0 }}
         >
           <div className="center mw7-ns">
             <BlogHeader date={date} link={pathname} location={location}>
