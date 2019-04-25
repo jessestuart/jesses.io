@@ -1,0 +1,8 @@
+[ver:1,total:1860]
+src/components/Blog/BlogHeader.tsx:710,1556215200:110,1556218800:600,m
+src/components/StyledLink/StyledLink.tsx:570,1556218800:570,m
+.gtm/terminal.app:230,1556215200:90,1556218800:140,r
+src/components/Profile/ProfileStyledLink.tsx:175,1556218800:175,m
+src/templates/blog-post.tsx:80,1556215200:80,m
+src/components/Profile/ProfileBlurb.tsx:55,1556218800:55,r
+node_modules/js-tachyons/dist/tachyons.css:40,1556215200:20,1556218800:20,r
