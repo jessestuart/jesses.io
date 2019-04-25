@@ -66,7 +66,7 @@ const secondaryColors = {
   dark1: '#0a0512',
 }
 
-export const colors: Colors = {
+const colors: Colors = {
   accent: 'rgba(50, 0, 50, 0.8)',
   primary: primaryColors,
   secondary: secondaryColors,

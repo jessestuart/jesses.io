@@ -5,12 +5,12 @@ import Helmet from 'react-helmet'
 import config from '../../gatsby-config'
 import {
   BlogHeader,
-  Layout,
   PortfolioItem,
   StyledLink,
   StyledPanel,
 } from '../components'
 import { Logo } from '../components/Icons/logo_dark.svg'
+import Layout from '../components/layout'
 
 const ContactInfoList = () => (
   <>

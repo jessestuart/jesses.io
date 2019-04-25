@@ -1,8 +1,9 @@
 import React from 'react'
 import { Download } from 'react-feather'
 import styled from 'styled-components'
-import { StyledLink } from '../../components/StyledLink/StyledLink'
-import { colors } from '../../utils/colors'
+
+import StyledLink from '../../components/StyledLink/StyledLink'
+import colors from '../../utils/colors'
 
 interface Props {
   link: string

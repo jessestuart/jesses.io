@@ -3,6 +3,6 @@
  *
  * See: https://www.gatsbyjs.org/docs/browser-apis/
  */
-import { initSentry } from './src/services/sentry'
+const { initSentry } = require('./src/services/sentry')
 
 initSentry({ environment: process.env.GATSBY_ENV })

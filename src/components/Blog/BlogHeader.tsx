@@ -4,7 +4,7 @@ import React from 'react'
 import { Calendar } from 'react-feather'
 import voca from 'voca'
 
-import { StyledLink } from '../StyledLink/StyledLink'
+import StyledLink from '../StyledLink/StyledLink'
 
 interface Props {
   className?: string
@@ -15,14 +15,23 @@ interface Props {
   location?: {
     pathname: string
   }
+  title?: string
 }
 
-const BlogHeader = ({ children, className, date, link, location }: Props) => {
+const BlogHeader = ({
+  title,
+  children,
+  className,
+  date,
+  link,
+  location,
+}: Props) => {
   // If we pass in a link, just href to that. Otherwise generate a
   // `/path#section-header`-style ID for e.g., linking to section headers.
-  const pathname = _.get(location, 'pathname')
-  const headerID = _.isEmpty(link) ? voca.slugify(children) : voca.slugify(link)
-  const headerLink = _.isEmpty(pathname) ? `/#${headerID}` : link
+  console.log({ link, location, title })
+  // const pathname = _.get(location, 'pathname')
+  const headerID = _.isEmpty(link) ? voca.slugify(title) : link
+  const headerLink = _.isEmpty(link) ? `/posts/${headerID}` : link
 
   return (
     <>

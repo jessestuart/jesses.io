@@ -1,9 +1,9 @@
 import { graphql } from 'gatsby'
+import _ from 'lodash'
 import React from 'react'
 
-import _ from 'lodash'
-
-import { Layout, Profile, ProfileDevIcons } from '../components'
+import { Profile, ProfileDevIcons } from '../components'
+import Layout from '../components/layout'
 import { GatsbyImage } from '../types/gatsby-image'
 
 interface Props {
