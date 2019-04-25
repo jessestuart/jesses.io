@@ -68,7 +68,6 @@ const PhotographyIndex = ({ data, location }: Props) => {
               fp.sortBy('EXIF.DateTimeOriginal'),
               fp.take(6),
             )(imageNodeList)
-            console.log(linkImages)
 
             return (
               <PhotographyGridSection

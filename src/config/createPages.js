@@ -18,7 +18,6 @@ const log = winston.createLogger({
   ],
 })
 
-console.log('creating pages')
 
 // =====================================================================
 // If we're not in production then log to the `console` with the format:
@@ -59,7 +58,6 @@ const processGraphQL = ({ graphql, query, createPostsFn, resultPath }) => {
     )
     .then(createPostsFn)
     .catch(err => {
-      console.log('ERROR', err)
     })
 }
 
@@ -147,11 +145,8 @@ const createPages = ({ graphql, actions }) => {
 
   const createBlogPosts = edges => {
     if (edges) {
-      console.log({ edges: JSON.stringify(edges) })
-      console.log({ node: edges.node })
       edges.map(edge => {
         const slug = _.get(edge, 'node.fields.slug')
-        console.log({ slug })
         return createPage({
           path: slug,
           component: blogTemplate,
