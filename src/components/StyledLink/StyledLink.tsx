@@ -13,7 +13,13 @@ interface Props {
   href?: string
 }
 
-const generateUnderlineStyles = ({ hoverColor, linkColor }) => `
+const generateUnderlineStyles = ({
+  hoverColor,
+  linkColor,
+}: {
+  hoverColor?: string
+  linkColor?: string
+}) => `
   border-bottom: 2px solid ${linkColor || colors.defaultLink};
   position: relative;
   text-decoration: none;
@@ -47,11 +53,16 @@ const StyledAnchorWrapper = styled.a`
 export default class StyledLink extends Component<Props> {
   public render() {
     const { children, href } = this.props
-    if (_.startsWith(href, 'http') || _.startsWith(href, 'mailto')) {
+    if (
+      _.startsWith(href, 'http') ||
+      _.startsWith(href, 'mailto') ||
+      _.endsWith(href, 'pdf')
+    ) {
       return (
         <StyledAnchorWrapper {...this.props}>{children}</StyledAnchorWrapper>
       )
     }
+    console.warn('generating link!', { href })
     return (
       <Link to={href}>
         <StyledLinkWrapper {...this.props}>{children}</StyledLinkWrapper>

@@ -1,10 +1,9 @@
 import { graphql } from 'gatsby'
+import _ from 'lodash'
+import fp from 'lodash/fp'
 import { DateTime } from 'luxon'
 import React from 'react'
 import { Helmet } from 'react-helmet'
-
-import _ from 'lodash'
-import fp from 'lodash/fp'
 
 import Layout from '../components/layout'
 import { PhotographyGridSection } from '../components/Photography'
@@ -69,6 +68,7 @@ const PhotographyIndex = ({ data, location }: Props) => {
               fp.sortBy('EXIF.DateTimeOriginal'),
               fp.take(6),
             )(imageNodeList)
+            console.log(linkImages)
 
             return (
               <PhotographyGridSection
