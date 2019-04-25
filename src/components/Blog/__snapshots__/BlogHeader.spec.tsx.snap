@@ -4,7 +4,7 @@ exports[`Render BlogHeader component. 1`] = `
 Array [
   <h2
     className="alegreya-sans f2 fw5 header-primary mt4"
-    id="2018-01-01"
+    id="/2018-01-01"
   >
     <a
       href="/true/2018-01-01"
@@ -65,7 +65,11 @@ Array [
         y2="10"
       />
     </svg>
-    2018-01-01
+    <span
+      className="silver"
+    >
+      2018-01-01
+    </span>
   </p>,
 ]
 `;
