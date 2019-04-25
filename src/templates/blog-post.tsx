@@ -1,9 +1,9 @@
 import './blog-post.css'
 
+import { graphql } from 'gatsby'
+import _ from 'lodash'
 import * as React from 'react'
 import Helmet from 'react-helmet'
-
-import _ from 'lodash'
 
 import config from '../../gatsby-config'
 import BlogHeader from '../components/Blog/BlogHeader'
@@ -13,6 +13,21 @@ interface Props {
   data: any
   location: any
 }
+
+// eslint-disable-next-line
+const BlogPostHelmet = ({ comboTitle, pageURL, excerpt, date }) => (
+  <Helmet title={comboTitle}>
+    <meta itemProp="name" content={comboTitle} />
+    <meta name="twitter:title" content={comboTitle} />
+    <meta name="twitter:description" content={excerpt} />
+    <meta property="og:title" content={comboTitle} />
+    <meta property="og:url" content={pageURL} />
+    <meta
+      property="article:published_time"
+      content={new Date(date).toISOString()}
+    />
+  </Helmet>
+)
 
 class BlogPostTemplate extends React.Component<Props> {
   public render() {
@@ -32,21 +47,16 @@ class BlogPostTemplate extends React.Component<Props> {
 
     return (
       <Layout location={location}>
+        <BlogPostHelmet
+          comboTitle={comboTitle}
+          date={date}
+          pageURL={pageURL}
+          excerpt={excerpt}
+        />
         <div
           className="black-80 lh-copy pa4 w-100"
           style={{ background: '#FBFAFC' }}
         >
-          <Helmet title={comboTitle}>
-            <meta itemProp="name" content={comboTitle} />
-            <meta name="twitter:title" content={comboTitle} />
-            <meta name="twitter:description" content={excerpt} />
-            <meta property="og:title" content={comboTitle} />
-            <meta property="og:url" content={pageURL} />
-            <meta
-              property="article:published_time"
-              content={new Date(date).toISOString()}
-            />
-          </Helmet>
           <div className="center mw7-ns">
             <BlogHeader date={date} link={pathname} location={location}>
               {title}
@@ -63,23 +73,23 @@ class BlogPostTemplate extends React.Component<Props> {
   }
 }
 
-// export const pageQuery = graphql`
-// query($slug: String!) {
-// site {
-// siteMetadata {
-// title
-// }
-// }
-// markdownRemark {
-// id
-// html
-// excerpt
-// frontmatter {
-// title
-// date(formatString: "D MMMM YYYY")
-// }
-// }
-// }
-// `
+export const pageQuery = graphql`
+  query($slug: String!) {
+    site {
+      siteMetadata {
+        title
+      }
+    }
+    markdownRemark(fields: { slug: { eq: $slug } }) {
+      id
+      html
+      excerpt
+      frontmatter {
+        title
+        date(formatString: "D MMMM YYYY")
+      }
+    }
+  }
+`
 
 export default BlogPostTemplate

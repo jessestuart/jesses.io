@@ -1,9 +1,9 @@
-import { graphql } from 'gatsby'
-import _ from 'lodash'
-import fp from 'lodash/fp'
 import { DateTime } from 'luxon'
 import React, { Component } from 'react'
 import Helmet from 'react-helmet'
+
+import _ from 'lodash'
+import fp from 'lodash/fp'
 
 import Layout from '../components/layout'
 import PhotographyGridSection from '../components/Photography/PhotographyGridSection'
@@ -69,46 +69,5 @@ export class PhotographyPostTemplate extends Component<Props> {
     )
   }
 }
-
-export const pageQuery = graphql`
-  query($name: String) {
-    site {
-      siteMetadata {
-        title
-      }
-    }
-    allS3ImageAsset(filter: { EXIF: { DateCreatedISO: { eq: $name } } }) {
-      edges {
-        node {
-          id
-          EXIF {
-            DateCreatedISO
-            DateTimeOriginal
-          }
-          childrenFile {
-            childImageSharp {
-              original {
-                height
-                width
-              }
-              thumbnailSizes: fluid(maxWidth: 512) {
-                aspectRatio
-                src
-                srcSet
-                sizes
-              }
-              largeSizes: fluid(maxWidth: 2048, quality: 100) {
-                aspectRatio
-                src
-                srcSet
-                sizes
-              }
-            }
-          }
-        }
-      }
-    }
-  }
-`
 
 export default PhotographyPostTemplate
