@@ -23,7 +23,7 @@ import StyledPanel from '../StyledPanel/StyledPanel'
 
 interface Props {
   datetime: DateTime
-  images: any[]
+  images: GatsbyImage[]
   isPreview?: boolean
   slug?: string
 }

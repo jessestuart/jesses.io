@@ -143,6 +143,7 @@ exports[`Render Profile component. Render Profile component. 1`] = `
         I contain 
         <a
           className="dib sc-htpNat jTVbtr"
+          href="http://jstu.art/ojNe"
         >
           multitudes
         </a>
@@ -284,6 +285,7 @@ exports[`Render Profile component. Render Profile component. 1`] = `
            
           <a
             className="sc-htpNat jTVbtr"
+            href="http://jstu.art/oijk"
           >
             NLP researcher
           </a>
@@ -291,6 +293,7 @@ exports[`Render Profile component. Render Profile component. 1`] = `
         </span>
         <a
           className="sc-htpNat jTVbtr"
+          href="http://jstu.art/oj1g"
         >
           USPO Patent holder
         </a>
@@ -508,6 +511,7 @@ exports[`Render Profile component. Render Profile component. 1`] = `
       >
         <a
           className="sc-htpNat jTVbtr"
+          href="http://jstu.art/ojVB"
         >
           French translator
         </a>
