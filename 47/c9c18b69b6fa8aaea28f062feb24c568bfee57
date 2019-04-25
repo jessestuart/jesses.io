@@ -1,0 +1,15 @@
+[ver:1,total:3900]
+.gtm/terminal.app:1325,1556150400:150,1556154000:825,1556157600:320,1556161200:30,r
+src/templates/blog-post.tsx:1010,1556150400:180,1556154000:360,1556157600:440,1556161200:30,m
+src/components/StyledLink/StyledLink.tsx:690,1556150400:690,m
+src/templates/photography-post.tsx:320,1556154000:320,m
+src/pages/photography.tsx:260,1556154000:260,m
+src/components/Portfolio/PortfolioItem.tsx:70,1556150400:70,r
+src/pages/about.tsx:60,1556150400:60,r
+src/components/Blog/BlogHeader.tsx:40,1556150400:40,r
+gatsby-config.js:30,1556150400:30,r
+src/components/Photography/PhotographyGridSection.tsx:20,1556154000:20,m
+src/templates/blog-post.js:20,1556157600:20,d
+gatsby-node.js:20,1556150400:20,m
+node_modules/react-feather/dist/index.d.ts:20,1556150400:20,r
+src/templates/photography-post.js:15,1556154000:15,d
