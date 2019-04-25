@@ -28,7 +28,6 @@ const BlogHeader = ({
 }: Props) => {
   // If we pass in a link, just href to that. Otherwise generate a
   // `/path#section-header`-style ID for e.g., linking to section headers.
-  console.log({ link, location, title })
   // const pathname = _.get(location, 'pathname')
   const headerID = _.isEmpty(link) ? voca.slugify(title) : link
   const headerLink = _.isEmpty(link) ? `/posts/${headerID}` : link
