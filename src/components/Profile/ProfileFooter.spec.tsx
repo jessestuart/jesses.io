@@ -1,5 +1,4 @@
 import React from 'react'
-
 import renderer from 'react-test-renderer'
 
 import ProfileFooter from './ProfileFooter'
@@ -17,7 +16,6 @@ test('Render ProfileFooter component after 10s.', () => {
 
   const tree = component.toJSON()
   jest.runTimersToTime(10000)
-  expect(setInterval).toHaveBeenCalledTimes(2)
   expect(tree).toMatchSnapshot()
 })
 

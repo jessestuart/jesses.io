@@ -1,37 +1,29 @@
 import 'react-image-lightbox/style.css'
 
 import Img from 'gatsby-image'
+import _ from 'lodash'
 import { DateTime } from 'luxon'
 import React, { Component } from 'react'
 import Lightbox from 'react-image-lightbox'
-
-import _ from 'lodash'
 
 import {
   ImageZoomGrid,
   ImageZoomGridElement,
   PhotographySectionHeader,
 } from '.'
-import { GatsbyImage } from '../../types/gatsby-image'
 import StyledPanel from '../StyledPanel/StyledPanel'
-
-// let Lightbox
-// if (typeof window !== 'undefined') {
-//   require('react-image-lightbox/style.css')
-//   Lightbox = require('react-image-lightbox').default
-// }
 
 interface Props {
   datetime: DateTime
-  images: GatsbyImage[]
+  images: any[]
   isPreview?: boolean
   slug?: string
 }
 
 interface State {
+  index: number
   isLightboxOpen: boolean
   lightboxImages: string[]
-  index: number
   lightboxSrc?: string
   nextImageSrc?: string
   prevImageSrc?: string
@@ -55,7 +47,6 @@ class PhotographyGridSection extends Component<Props, State> {
     isLightboxOpen,
     lightboxImages = this.state.lightboxImages,
   }: ToggleLightboxOptions) {
-    // const images: Array<string> = lightboxImages || this.state.lightboxImages
     this.setState({
       index,
       isLightboxOpen,
@@ -67,8 +58,14 @@ class PhotographyGridSection extends Component<Props, State> {
   }
 
   public render() {
-    const { datetime, images, slug = '' } = this.props
-    const { isLightboxOpen, index } = this.state
+    const { datetime, images, slug } = this.props
+    const {
+      index,
+      isLightboxOpen,
+      lightboxSrc,
+      nextImageSrc,
+      prevImageSrc,
+    } = this.state
     if (_.isEmpty(images)) {
       return null
     }
@@ -114,27 +111,21 @@ class PhotographyGridSection extends Component<Props, State> {
             )
           })}
         </ImageZoomGrid>
-        {this.state.isLightboxOpen ? (
+        {isLightboxOpen && lightboxSrc && (
           <Lightbox
             enableZoom={false}
-            mainSrc={this.state.lightboxSrc}
-            nextSrc={this.state.nextImageSrc}
-            prevSrc={this.state.prevImageSrc}
+            mainSrc={lightboxSrc}
+            nextSrc={nextImageSrc}
+            prevSrc={prevImageSrc}
             onCloseRequest={() => this.setState({ isLightboxOpen: false })}
             onMovePrevRequest={() =>
-              this.toggleLightbox({
-                index: index - 1,
-                isLightboxOpen: true,
-              })
+              this.toggleLightbox({ index: index - 1, isLightboxOpen: true })
             }
             onMoveNextRequest={() =>
-              this.toggleLightbox({
-                index: index + 1,
-                isLightboxOpen: true,
-              })
+              this.toggleLightbox({ index: index + 1, isLightboxOpen: true })
             }
           />
-        ) : null}
+        )}
       </StyledPanel>
     )
   }

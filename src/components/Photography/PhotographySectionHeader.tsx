@@ -5,7 +5,7 @@ import StyledLink from '../StyledLink/StyledLink'
 
 interface Props {
   datetime: DateTime
-  href: string
+  href?: string
 }
 
 const PhotographySectionHeader = ({ datetime, href }: Props) => (

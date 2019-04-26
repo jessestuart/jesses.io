@@ -17,7 +17,7 @@ test('Create Cancelable, without canceling.', () => {
   cancelable.then(() => expect(foo).toBe('baz'))
 })
 
-test('Create Cancelable and cancel, then ensure no side effects.', async () => {
+test('Create Cancelable and cancel, then ensure no side effects.', () => {
   let foo = 'bar'
   const cancelable = new Cancelable(
     new Promise((resolve, _reject) => {
@@ -29,15 +29,15 @@ test('Create Cancelable and cancel, then ensure no side effects.', async () => {
   )
 
   expect(cancelable).toBeDefined()
-  await cancelable.cancel()
-  await cancelable.then(() => {
+  cancelable.cancel()
+  cancelable.then(() => {
     expect(foo).toBe('bar')
     expect(cancelable.cancelled).toBe(true)
   })
   expect(foo).toBe('bar')
 })
 
-test('Create Cancelable and ensure errors are gracefully handled.', async () => {
+test('Create Cancelable and ensure errors are gracefully handled.', () => {
   const errMessage = 'Rejected promise in test!'
   const cancelable = new Cancelable(
     new Promise((_resolve, reject) => reject(errMessage)),

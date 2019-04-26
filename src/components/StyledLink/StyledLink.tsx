@@ -13,19 +13,21 @@ interface Props {
   href?: string
 }
 
-const generateUnderlineStyles = ({
-  hoverColor,
-  linkColor,
-}: {
+interface StyledLinkProps {
   hoverColor?: string
   linkColor?: string
-}) => `
-  border-bottom: 2px solid ${linkColor || colors.defaultLink};
+}
+
+const generateUnderlineStyles = ({
+  hoverColor = colors.defaultHover,
+  linkColor = colors.defaultLink,
+}: StyledLinkProps) => `
+  border-bottom: 2px solid ${linkColor};
   position: relative;
   text-decoration: none;
 
   &::before {
-    background-color: ${hoverColor || colors.defaultHover};
+    background-color: ${hoverColor};
     bottom: -2px;
     content: '';
     height: 2px;
@@ -66,10 +68,12 @@ export default class StyledLink extends Component<Props> {
         <StyledAnchorWrapper {...this.props}>{children}</StyledAnchorWrapper>
       )
     }
-    return (
+    return href ? (
       <Link to={href}>
         <StyledLinkWrapper {...rest}>{children}</StyledLinkWrapper>
       </Link>
+    ) : (
+      <StyledLinkWrapper {...rest}>{children}</StyledLinkWrapper>
     )
   }
 }

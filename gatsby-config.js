@@ -110,7 +110,7 @@ const plugins = _.compact([
   'gatsby-plugin-remove-trailing-slashes',
   // 'gatsby-plugin-feed',
   'gatsby-plugin-lodash',
-  // 'gatsby-plugin-offline',
+  'gatsby-plugin-offline',
   'gatsby-plugin-netlify-cache',
   // This ostensibly has to go at the end of the plugins declaration array.
   'gatsby-plugin-netlify',
