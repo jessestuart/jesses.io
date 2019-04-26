@@ -2,28 +2,24 @@
 
 exports[`Render StyledLink component with custom colors. 1`] = `
 <a
+  className="sc-bdVaJa eMZNEL"
+  hoverColor="#555555"
   href="/true"
+  linkColor="#333333"
   onClick={[Function]}
   onMouseEnter={[Function]}
 >
-  <span
-    className="sc-bdVaJa kOnrXn"
-  >
-    My Styled Link
-  </span>
+  My Styled Link
 </a>
 `;
 
 exports[`Render StyledLink component with default colors. 1`] = `
 <a
+  className="sc-bdVaJa bXWskY"
   href="/true"
   onClick={[Function]}
   onMouseEnter={[Function]}
 >
-  <span
-    className="sc-bdVaJa iwQflW"
-  >
-    My Styled Link
-  </span>
+  My Styled Link
 </a>
 `;
