@@ -1,2 +1,4 @@
-export { Grid as default } from './flex.js'
-export { GridItem } from './item.js'
+import Grid from './grid'
+import GridItem from './item'
+
+export { Grid, GridItem }

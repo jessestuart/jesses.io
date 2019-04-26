@@ -8,19 +8,17 @@ export class Cancelable {
     this.cancelled = false
     this.promise = new Promise((resolve, reject) => {
       if (!this.cancelled) {
-        return promise.then(
-          val => (this.cancelled ? resolve() : resolve(val)),
-          error => reject(error),
-        )
+        return promise.then(resolve, reject)
       }
       return Promise.resolve()
     })
   }
 
-  public async then(cb: () => any) {
+  public then(cb: () => any) {
     if (!this.cancelled) {
-      return this.promise.then(cb)
+      return Promise.resolve(this.promise.then(cb))
     }
+    return Promise.resolve()
   }
 
   public cancel() {

@@ -49,7 +49,7 @@ export class PhotographyPostTemplate extends Component<Props> {
 
     const datetime = DateTime.fromISO(date.replace(/\//g, ''))
 
-    const title = `Photography | ${date} | ${siteTitle}`
+    const title = `${siteTitle} | Photography | ${date}`
 
     return (
       <Layout location={location}>
@@ -63,6 +63,7 @@ export class PhotographyPostTemplate extends Component<Props> {
             images={images}
             isPreview={false}
             key={pathname}
+            slug={pathname}
           />
         </div>
       </Layout>

@@ -11,7 +11,6 @@ interface Props {
   date?: string
   children: string
   link?: string
-  // @Deprecated (?)
   location?: {
     pathname: string
   }
@@ -28,9 +27,9 @@ const BlogHeader = ({
 }: Props) => {
   // If we pass in a link, just href to that. Otherwise generate a
   // `/path#section-header`-style ID for e.g., linking to section headers.
-  const pathname: string | undefined = _.get(location, 'pathname')
+  const pathname: string = _.get(location, 'pathname', '')
   const headerID: string = link || voca.slugify(title)
-  const headerLink: string = link || `/${pathname}#${headerID}`
+  const headerLink: string = link || `${pathname || ''}#${headerID}`
 
   return (
     <>

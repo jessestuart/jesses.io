@@ -72,7 +72,7 @@ const PhotographyIndex = ({ data, location }: Props) => {
             return (
               <PhotographyGridSection
                 datetime={datetime}
-                images={linkImages}
+                images={linkImages || []}
                 key={title}
                 slug={linkSlug}
               />
