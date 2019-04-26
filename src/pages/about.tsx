@@ -52,9 +52,7 @@ const About = ({ location }: { location: any }) => (
     <div className="bg-near-white lh-copy pa3-ns pv4 w-100">
       <Helmet title={`About | ${config.siteMetadata.title}`} />
       <StyledPanel className="mt2">
-        <BlogHeader location={location} className="w-100 flex flex-column">
-          Get in touch
-        </BlogHeader>
+        <BlogHeader location={location}>Get in touch</BlogHeader>
         <div className="center flex items-center justify-center">
           <img src={Logo} style={{ maxHeight: 200, marginBottom: 0 }} />
         </div>

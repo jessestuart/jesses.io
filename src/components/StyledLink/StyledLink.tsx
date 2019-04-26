@@ -8,26 +8,44 @@ import colors from '../../utils/colors'
 interface Props {
   children: any
   className?: string
-  linkColor?: string
   hoverColor?: string
   href?: string
-}
-
-interface StyledLinkProps {
-  hoverColor?: string
   linkColor?: string
 }
 
-const generateUnderlineStyles = ({
-  hoverColor = colors.defaultHover,
-  linkColor = colors.defaultLink,
-}: StyledLinkProps) => `
-  border-bottom: 2px solid ${linkColor};
+class StyledLink extends Component<Props> {
+  public render() {
+    const { children, href, ...rest } = this.props
+    // Slightly janky hack to prevent gatsby from complaining
+    // about `<Link>`'ing to external resources.
+    // TODO: There must be a way to programmatically branch on
+    //       this... right?
+    const isExternalLink =
+      _.startsWith(href, 'http') ||
+      _.startsWith(href, 'mailto') ||
+      _.endsWith(href, 'pdf')
+
+    if (isExternalLink) {
+      return <a {..._.pick(this.props, ['href', 'className'])}>{children}</a>
+    }
+
+    return href ? (
+      <Link to={href} {...rest}>
+        {children}
+      </Link>
+    ) : (
+      <span {...rest}>{children}</span>
+    )
+  }
+}
+
+export default styled(StyledLink)`
+  border-bottom: 2px solid ${props => props.linkColor || colors.defaultLink};
   position: relative;
   text-decoration: none;
 
   &::before {
-    background-color: ${hoverColor};
+    background-color: ${props => props.hoverColor || colors.defaultHover};
     bottom: -2px;
     content: '';
     height: 2px;
@@ -43,37 +61,3 @@ const generateUnderlineStyles = ({
     visibility: visible;
   }
 `
-
-const StyledLinkWrapper = styled.span`
-  ${(props: Props) => generateUnderlineStyles(props)};
-`
-
-const StyledAnchorWrapper = styled.a`
-  ${(props: Props) => generateUnderlineStyles(props)};
-`
-
-export default class StyledLink extends Component<Props> {
-  public render() {
-    const { children, href, ...rest } = this.props
-    // Slightly janky hack to prevent gatsby from complaining
-    // about `<Link>`'ing to external resources.
-    // TODO: There must be a way to programmatically branch on
-    //       this... right?
-    if (
-      _.startsWith(href, 'http') ||
-      _.startsWith(href, 'mailto') ||
-      _.endsWith(href, 'pdf')
-    ) {
-      return (
-        <StyledAnchorWrapper {...this.props}>{children}</StyledAnchorWrapper>
-      )
-    }
-    return href ? (
-      <Link to={href}>
-        <StyledLinkWrapper {...rest}>{children}</StyledLinkWrapper>
-      </Link>
-    ) : (
-      <StyledLinkWrapper {...rest}>{children}</StyledLinkWrapper>
-    )
-  }
-}

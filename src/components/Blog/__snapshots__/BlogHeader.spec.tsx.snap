@@ -7,19 +7,16 @@ Array [
     id="/2018-01-01"
   >
     <a
+      className="sc-bdVaJa bXWskY"
       href="/true/2018-01-01"
       onClick={[Function]}
       onMouseEnter={[Function]}
     >
-      <span
-        className="sc-bdVaJa iwQflW"
-      >
-        FooBar
-      </span>
+      FooBar
     </a>
   </h2>,
   <p
-    className="f6 mv2 flex items-center"
+    className="f6 flex items-center mv2"
   >
     <svg
       className="header-primary mr2"

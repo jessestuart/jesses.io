@@ -43,7 +43,7 @@ const BlogHeader = ({
         <StyledLink href={headerLink}>{children}</StyledLink>
       </h2>
       {date && (
-        <p className="f6 mv2 flex items-center">
+        <p className="f6 flex items-center mv2">
           <Calendar
             className="header-primary mr2"
             style={{ maxWidth: '15px' }}
