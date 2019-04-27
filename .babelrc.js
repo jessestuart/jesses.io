@@ -1,13 +1,21 @@
 module.exports = {
   presets: [
     '@babel/preset-env',
-    '@babel/preset-flow',
     '@babel/preset-react',
+    '@babel/preset-typescript',
     'babel-preset-gatsby',
   ],
   plugins: [
-    '@babel/plugin-proposal-export-default-from',
     'babel-plugin-styled-components',
+    '@babel/plugin-proposal-optional-chaining',
+    '@babel/plugin-transform-runtime',
     'lodash',
+    [
+      'module-resolver',
+      {
+        root: ['./src'],
+        extensions: ['.ts', '.tsx', '.js'],
+      },
+    ],
   ],
 }

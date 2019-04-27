@@ -1,3 +1,7 @@
+// const atImport = require('postcss-import')
+// const cssnested = require('postcss-nested')
+// const cssnext = require('postcss-cssnext')
+// import path from 'path'
 const path = require('path')
 
 module.exports = ({ actions, getConfig, stage }) => {
@@ -5,6 +9,7 @@ module.exports = ({ actions, getConfig, stage }) => {
   switch (stage) {
     case 'build-javascript':
       actions.setWebpackConfig({
+        // postcss: () => [atImport(), cssnested, cssnext()],
         resolve: {
           modules: [path.resolve('./src'), 'node_modules'],
         },

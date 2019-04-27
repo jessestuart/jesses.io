@@ -1,0 +1,25 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Render StyledLink component with custom colors. 1`] = `
+<a
+  className="sc-bdVaJa eMZNEL"
+  hoverColor="#555555"
+  href="/true"
+  linkColor="#333333"
+  onClick={[Function]}
+  onMouseEnter={[Function]}
+>
+  My Styled Link
+</a>
+`;
+
+exports[`Render StyledLink component with default colors. 1`] = `
+<a
+  className="sc-bdVaJa bXWskY"
+  href="/true"
+  onClick={[Function]}
+  onMouseEnter={[Function]}
+>
+  My Styled Link
+</a>
+`;

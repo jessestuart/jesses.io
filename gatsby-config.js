@@ -78,6 +78,7 @@ const sourceS3 = {
 }
 
 const plugins = _.compact([
+  'gatsby-plugin-typescript',
   // ====================================
   // Gotta load those sweet, sweet files.
   // ====================================
@@ -88,7 +89,6 @@ const plugins = _.compact([
   // Add in React Helmet and React 16 support until Gatsby v2 is released.
   // =======================================================================
   'gatsby-plugin-react-helmet',
-  'gatsby-plugin-flow',
   // ========================
   // Styling-related plugins.
   // ========================
@@ -110,7 +110,7 @@ const plugins = _.compact([
   'gatsby-plugin-remove-trailing-slashes',
   // 'gatsby-plugin-feed',
   'gatsby-plugin-lodash',
-  // 'gatsby-plugin-offline',
+  'gatsby-plugin-offline',
   'gatsby-plugin-netlify-cache',
   // This ostensibly has to go at the end of the plugins declaration array.
   'gatsby-plugin-netlify',
