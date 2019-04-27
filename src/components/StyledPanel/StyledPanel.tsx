@@ -2,7 +2,7 @@ import classNames from 'classnames'
 import React from 'react'
 import styled from 'styled-components'
 
-import colors from '../../utils/colors'
+import colors from 'utils/colors'
 
 const StyledPanelContainer = styled.section`
   background-color: ${colors.secondary.light0};

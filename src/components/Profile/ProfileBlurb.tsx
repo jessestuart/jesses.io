@@ -1,6 +1,7 @@
 import React from 'react'
 
-import Twemoji from '../Icons/Twemoji'
+import Twemoji from 'components/Icons/Twemoji'
+
 import ProfileHeading from './ProfileHeading'
 import ProfileStyledLink from './ProfileStyledLink'
 

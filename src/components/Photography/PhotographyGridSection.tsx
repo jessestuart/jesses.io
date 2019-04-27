@@ -6,12 +6,13 @@ import { DateTime } from 'luxon'
 import React, { Component } from 'react'
 import Lightbox from 'react-image-lightbox'
 
+import StyledPanel from 'components/StyledPanel/StyledPanel'
+
 import {
   ImageZoomGrid,
   ImageZoomGridElement,
   PhotographySectionHeader,
 } from '.'
-import StyledPanel from '../StyledPanel/StyledPanel'
 
 interface Props {
   datetime: DateTime
@@ -55,6 +56,7 @@ class PhotographyGridSection extends Component<Props, State> {
       nextImageSrc: lightboxImages[(index + 1) % lightboxImages.length],
       prevImageSrc: lightboxImages[(index - 1) % lightboxImages.length],
     })
+    // lgtm [js/react/inconsistent-state-update]
   }
 
   public render() {

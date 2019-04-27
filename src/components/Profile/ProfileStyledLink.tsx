@@ -1,9 +1,8 @@
 import React from 'react'
 
+import { StyledLink } from 'components'
 import color from 'onecolor'
-
-import { StyledLink } from '../'
-import colors from '../../utils/colors'
+import colors from 'utils/colors'
 
 const linkColor: string = color(colors.secondary.light7)
   .alpha(0.8)

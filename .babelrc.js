@@ -5,5 +5,17 @@ module.exports = {
     '@babel/preset-typescript',
     'babel-preset-gatsby',
   ],
-  plugins: ['babel-plugin-styled-components', 'lodash'],
+  plugins: [
+    'babel-plugin-styled-components',
+    '@babel/plugin-proposal-optional-chaining',
+    '@babel/plugin-transform-runtime',
+    'lodash',
+    [
+      'module-resolver',
+      {
+        root: ['./src'],
+        extensions: ['.ts', '.tsx', '.js'],
+      },
+    ],
+  ],
 }
