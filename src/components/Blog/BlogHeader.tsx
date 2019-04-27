@@ -4,7 +4,7 @@ import React from 'react'
 import { Calendar } from 'react-feather'
 import voca from 'voca'
 
-import StyledLink from '../StyledLink/StyledLink'
+import StyledLink from 'components/StyledLink/StyledLink'
 
 interface Props {
   className?: string

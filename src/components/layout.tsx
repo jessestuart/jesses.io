@@ -4,14 +4,14 @@ import 'typeface-alegreya-sans'
 import 'typeface-lato'
 import 'typeface-spectral'
 
-import '../styles/base.css'
+import 'styles/base.css'
 
 import _ from 'lodash'
 import React from 'react'
 import Helmet from 'react-helmet'
 
+import { SiteFooter, SiteHeader } from 'components'
 import config from '../../gatsby-config'
-import { SiteFooter, SiteHeader } from '../components'
 
 const title: string = _.get(config, 'siteMetadata.title')
 const url: string = _.get(config, 'siteMetadata.url')

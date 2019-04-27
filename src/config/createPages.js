@@ -18,7 +18,6 @@ const log = winston.createLogger({
   ],
 })
 
-
 // =====================================================================
 // If we're not in production then log to the `console` with the format:
 // `${info.level}: ${info.message} JSON.stringify({ ...rest }) `
@@ -31,23 +30,10 @@ if (process.env.NODE_ENV !== 'production') {
   )
 }
 
-// const { PageType } = require('../utils/enums/page-type')
 const PageType = {
   Photography: 'Photography',
   Blog: 'Blog',
 }
-// import path from 'path'
-
-// import Promise from 'bluebird'
-// import _ from 'lodash'
-// import { DateTime } from 'luxon'
-
-// import log from '../utils/log'
-
-// export enum PageType {
-//   Blog = 'Blog',
-//   Photography = 'Photography',
-// }
 
 const processGraphQL = ({ graphql, query, createPostsFn, resultPath }) => {
   return graphql(query)
@@ -57,8 +43,7 @@ const processGraphQL = ({ graphql, query, createPostsFn, resultPath }) => {
         : Promise.reject(result.errors),
     )
     .then(createPostsFn)
-    .catch(err => {
-    })
+    .catch(log.error)
 }
 
 const mdQuery = `
@@ -97,43 +82,34 @@ const createPages = ({ graphql, actions }) => {
   )
 
   const createPhotographyPosts = edges => {
-    let photographyPages = []
     // First, create the photography "album" pages -- these are a collection
     // of photos grouped by date.
     const imagesGroupedByDate = _.groupBy(edges, 'node.EXIF.DateCreatedISO')
-    photographyPages = _.concat(
-      photographyPages,
-      _.map(imagesGroupedByDate, async (_images, date) => {
-        await createPage({
-          path: `/photography/${date}`,
-          component: photographyTemplate,
-          context: {
-            name: date,
-            datetime: DateTime.fromISO(date),
-            type: PageType.Photography,
-          },
-        })
-      }),
-    )
-
+    _.each(imagesGroupedByDate, async (_images, date) => {
+      await createPage({
+        path: `/photography/${date}`,
+        component: photographyTemplate,
+        context: {
+          name: date,
+          datetime: DateTime.fromISO(date),
+          type: PageType.Photography,
+        },
+      })
+    })
     // Next create an individual page for each photo.
-    photographyPages = _.concat(
-      _.map(_.map(edges, 'node'), async image => {
-        const date = _.get(image, 'EXIF.DateCreatedISO')
-        const ETag = _.get(image, 'ETag')
-        await createPage({
-          path: `/photography/${date}/${ETag}`,
-          component: photographyTemplate,
-          context: {
-            name: date,
-            datetime: DateTime.fromISO(date),
-            type: PageType.Photography,
-          },
-        })
-      }),
-    )
-
-    return photographyPages
+    _.each(_.map(edges, 'node'), async image => {
+      const date = _.get(image, 'EXIF.DateCreatedISO')
+      const ETag = _.get(image, 'ETag')
+      await createPage({
+        path: `/photography/${date}/${ETag}`,
+        component: photographyTemplate,
+        context: {
+          name: date,
+          datetime: DateTime.fromISO(date),
+          type: PageType.Photography,
+        },
+      })
+    })
   }
 
   const photographyPostsProcessor = processGraphQL({

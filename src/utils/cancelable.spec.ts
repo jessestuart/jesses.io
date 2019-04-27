@@ -1,50 +1,71 @@
 import Promise from 'bluebird'
 import _ from 'lodash'
 
-import { Cancelable } from './cancelable'
+import log from 'utils/log'
 
-test('Create Cancelable, without canceling.', () => {
-  let foo = 'bar'
-  const cancelable = new Cancelable(
-    new Promise((_resolve, _reject) => {
-      setTimeout(() => {
-        foo = 'baz'
-      }, 1000)
-    }),
-  )
+import Cancelable from './cancelable'
 
-  expect(cancelable).toBeDefined()
-  cancelable.then(() => expect(foo).toBe('baz'))
-})
-
-test('Create Cancelable and cancel, then ensure no side effects.', () => {
-  let foo = 'bar'
-  const cancelable = new Cancelable(
-    new Promise((resolve, _reject) => {
-      setTimeout(() => {
-        foo = 'baz'
-      }, 1000)
-      resolve()
-    }),
-  )
-
-  expect(cancelable).toBeDefined()
-  cancelable.cancel()
-  cancelable.then(() => {
-    expect(foo).toBe('bar')
-    expect(cancelable.cancelled).toBe(true)
+describe('Cancelable', () => {
+  beforeAll(() => {
+    log.error = jest.fn()
   })
-  expect(foo).toBe('bar')
-})
 
-test('Create Cancelable and ensure errors are gracefully handled.', () => {
-  const errMessage = 'Rejected promise in test!'
-  const cancelable = new Cancelable(
-    new Promise((_resolve, reject) => reject(errMessage)),
-  )
+  test('Create Cancelable, without canceling.', () => {
+    let foo = 'bar'
+    const cancelable = new Cancelable(
+      new Promise(() => {
+        setTimeout(() => {
+          foo = 'baz'
+        })
+      }),
+    )
+    cancelable.cancel()
 
-  expect(cancelable).toBeDefined()
-  cancelable.then(_.noop).catch(err => {
-    expect(err).toEqual('Rejected promise in test!')
+    expect(cancelable).toBeDefined()
+    cancelable.then(_.noop).catch(log.error)
+    expect(foo).toEqual('bar')
+    expect(log.error).not.toHaveBeenCalled()
+  })
+
+  test('Create Cancelable and cancel, then ensure no side effects.', () => {
+    let foo = 'bar'
+    const cancelable = new Cancelable(
+      new Promise(() => {
+        setTimeout(() => {
+          foo = 'baz'
+        }, 1000)
+      }),
+    )
+
+    expect(foo).toBe('bar')
+    cancelable.cancel()
+    cancelable
+      .then(() => {
+        expect(foo).toBe('bar')
+        expect(cancelable.cancelled).toBe(true)
+        return Promise.resolve()
+      })
+      .catch(log.error)
+
+    expect(log.error).not.toHaveBeenCalled()
+    expect(foo).toBe('bar')
+  })
+
+  test('Create Cancelable and ensure errors are gracefully handled.', () => {
+    const errMessage = 'Rejected promise in test!'
+    const cancelable = new Cancelable(
+      new Promise(() => {
+        throw new Error(errMessage)
+      }),
+    )
+
+    expect(cancelable).toBeDefined()
+    cancelable
+      .then(() => {
+        expect(log.error).toHaveBeenCalledTimes(1)
+        expect(log.error).toHaveBeenCalledWith(new Error(errMessage))
+        return
+      })
+      .catch(log.error)
   })
 })

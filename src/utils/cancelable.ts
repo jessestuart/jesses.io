@@ -1,6 +1,7 @@
 import Promise from 'bluebird'
+import _ from 'lodash'
 
-export class Cancelable {
+export default class Cancelable {
   public cancelled: boolean
   public promise: Promise<any>
 
@@ -14,14 +15,8 @@ export class Cancelable {
     })
   }
 
-  public then(cb: () => any) {
-    if (!this.cancelled) {
-      return Promise.resolve(this.promise.then(cb))
-    }
-    return Promise.resolve()
-  }
+  public then = (cb: () => any) =>
+    this.cancelled ? Promise.resolve() : Promise.resolve(this.promise.then(cb))
 
-  public cancel() {
-    this.cancelled = true
-  }
+  public cancel = () => _.set(this, 'cancelled', true)
 }

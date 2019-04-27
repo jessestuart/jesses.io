@@ -4,8 +4,8 @@ import _ from 'lodash'
 import React, { Component } from 'react'
 import { ChevronDown } from 'react-feather'
 
-import { Cancelable } from '../../utils/cancelable'
-import colors from '../../utils/colors'
+import Cancelable from 'utils/cancelable'
+import colors from 'utils/colors'
 
 // Configure Bluebird's Promise lib to be cancelable -- we use this to cancel
 // the bouncing chevron animation when the component is unmounted (e.g.,
