@@ -2,7 +2,7 @@ import 'react-image-lightbox/style.css'
 
 import Img from 'gatsby-image'
 import _ from 'lodash'
-import { DateTime } from 'luxon'
+import { DateTime } from 'luxon' // lgtm [js/unused-local-variable]
 import React, { Component } from 'react'
 import Lightbox from 'react-image-lightbox'
 
@@ -55,8 +55,7 @@ class PhotographyGridSection extends Component<Props, State> {
       lightboxSrc: lightboxImages[index],
       nextImageSrc: lightboxImages[(index + 1) % lightboxImages.length],
       prevImageSrc: lightboxImages[(index - 1) % lightboxImages.length],
-    })
-    // lgtm [js/react/inconsistent-state-update]
+    }) // lgtm [js/react/inconsistent-state-update]
   }
 
   public render() {

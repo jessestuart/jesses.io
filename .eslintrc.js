@@ -50,7 +50,6 @@ module.exports = {
     '@typescript-eslint/explicit-member-accessibility': 'off',
     '@typescript-eslint/indent': 'off',
     '@typescript-eslint/interface-name-prefix': 'off',
-    '@typescript-eslint/interface-name-prefix': 'warn',
     '@typescript-eslint/member-delimiter-style': ['off'],
     '@typescript-eslint/no-empty-interface': 'off',
     '@typescript-eslint/no-explicit-any': 'off',
