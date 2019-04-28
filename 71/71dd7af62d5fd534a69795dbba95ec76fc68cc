@@ -1,0 +1,5 @@
+[ver:1,total:300]
+.gtm/terminal.app:170,1556492400:170,r
+src/utils/cancelable.ts:90,1556492400:90,r
+src/components/Profile/ProfileFooter.tsx:20,1556492400:20,m
+src/components/Profile/Profile.spec.tsx:20,1556492400:20,r
