@@ -105,8 +105,11 @@ jobs:
       - checkout
       - *restore_cache
       - run:
-          name: Run Jest tests & upload coverage to Codecov.
-          command: yarn test:coverage && yarn codecov
+          name: Run Jest tests & upload coverage.
+          command: |
+            yarn jest --coverage
+            cat ./test/coverage/lcov.info | yarn codacy-coverage
+            yarn codecov
 
   build:
     <<: *defaults

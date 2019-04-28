@@ -1,4 +1,4 @@
-import Promise from 'bluebird'
+import Bluebird from 'bluebird'
 import classNames from 'classnames'
 import _ from 'lodash'
 import React, { Component } from 'react'
@@ -7,10 +7,10 @@ import { ChevronDown } from 'react-feather'
 import Cancelable from 'utils/cancelable'
 import colors from 'utils/colors'
 
-// Configure Bluebird's Promise lib to be cancelable -- we use this to cancel
+// Configure Bluebird's Bluebird lib to be cancelable -- we use this to cancel
 // the bouncing chevron animation when the component is unmounted (e.g.,
 // because the user has navigated away from the Home page).
-Promise.config({ cancellation: true })
+Bluebird.config({ cancellation: true })
 
 interface State {
   isAnimatingChevron: boolean
@@ -27,8 +27,8 @@ export default class ProfileFooter extends Component<{}, State> {
     this.state = { ...initialState }
   }
 
-  public shouldComponentUpdate() {
-    return !_.get(this.cancelable, 'cancelled')
+  public shouldComponentUpdate(): boolean {
+    return _.isNil(this.cancelable) || this.cancelable.cancelled
   }
 
   public componentDidMount() {
@@ -44,9 +44,7 @@ export default class ProfileFooter extends Component<{}, State> {
     return (
       <div
         className="b--hot-pink bb bg-purple bw2 mb1 pb3 pt4"
-        style={{
-          gridColumn: '1 / 13',
-        }}
+        style={{ gridColumn: '1 / 13' }}
       >
         <h4 className="f4 fira-mono fw4 lh-title tc white-80">
           I build software
@@ -72,26 +70,22 @@ export default class ProfileFooter extends Component<{}, State> {
     )
   }
 
-  private animateChevron(): Promise<void> {
-    return Promise.delay(1500).then(() => {
-      const isAnimationCanceled = _.get(this.cancelable, 'cancelled')
-      if (isAnimationCanceled) {
-        return this.cancelChevronAnimation()
+  private async animateChevron(): Bluebird<void> {
+    if (_.get(this.cancelable, 'cancelled')) {
+      return this.cancelChevronAnimation()
+    }
+    return Bluebird.delay(2000).then(() => {
+      if (_.isNil(this.cancelable) || this.cancelable.cancelled) {
+        return Bluebird.resolve()
       }
-      return Promise.delay(1500).then(() => {
-        if (_.isNil(this.cancelable) || this.cancelable.cancelled) {
-          return Promise.resolve()
-        }
-        this.setState({
-          isAnimatingChevron: !this.state.isAnimatingChevron,
-        })
-        return this.animateChevron()
+      this.setState({
+        isAnimatingChevron: !this.state.isAnimatingChevron,
       })
+      return Bluebird.resolve(this.animateChevron())
     })
   }
 
-  private cancelChevronAnimation() {
+  private cancelChevronAnimation(): void {
     this.cancelable && this.cancelable.cancel()
-    delete this.cancelable
   }
 }

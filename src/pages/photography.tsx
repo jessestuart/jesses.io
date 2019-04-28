@@ -75,6 +75,7 @@ const PhotographyIndex = ({ data, location }: Props) => {
                 images={linkImages || []}
                 key={title}
                 slug={linkSlug}
+                isPreview={true}
               />
             )
           }),
@@ -107,16 +108,10 @@ export const pageQuery = graphql`
                 width
               }
               thumbnailSizes: fluid(maxWidth: 512) {
-                aspectRatio
-                src
-                srcSet
-                sizes
+                ...GatsbyImageSharpFluid
               }
               largeSizes: fluid(maxWidth: 2048, quality: 100) {
-                aspectRatio
-                src
-                srcSet
-                sizes
+                ...GatsbyImageSharpFluid
               }
             }
           }

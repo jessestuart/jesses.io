@@ -1,5 +1,5 @@
 {
-  "include": ["**/*.ts", "**/*.tsx", "**/*.js"],
+  "include": ["./src/**/*.tsx", "./src/**/*.ts", "**/*.js"],
   "exclude": ["node_modules/*", "public/*"],
   "compilerOptions": {
     "allowSyntheticDefaultImports": true,
@@ -10,7 +10,7 @@
     "experimentalDecorators": true,
     "inlineSources": true,
     "jsx": "react",
-    "lib": ["dom", "esnext", "es2015"],
+    "lib": ["dom", "esnext", "es5"],
     "module": "commonjs",
     "moduleResolution": "node",
     "noEmit": true,
@@ -24,6 +24,6 @@
     "sourceMap": true,
     "strict": true,
     "strictNullChecks": true,
-    "target": "esnext"
+    "target": "es5"
   }
 }

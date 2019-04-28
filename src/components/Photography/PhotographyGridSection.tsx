@@ -2,11 +2,12 @@ import 'react-image-lightbox/style.css'
 
 import Img from 'gatsby-image'
 import _ from 'lodash'
-import { DateTime } from 'luxon' // lgtm [js/unused-local-variable]
+import { DateTime } from 'luxon'
 import React, { Component } from 'react'
 import Lightbox from 'react-image-lightbox'
 
 import StyledPanel from 'components/StyledPanel/StyledPanel'
+import md5 from 'md5'
 
 import {
   ImageZoomGrid,
@@ -48,6 +49,7 @@ class PhotographyGridSection extends Component<Props, State> {
     isLightboxOpen,
     lightboxImages = this.state.lightboxImages,
   }: ToggleLightboxOptions) {
+    // lgtm [js/react/inconsistent-state-update]
     this.setState({
       index,
       isLightboxOpen,
@@ -55,7 +57,7 @@ class PhotographyGridSection extends Component<Props, State> {
       lightboxSrc: lightboxImages[index],
       nextImageSrc: lightboxImages[(index + 1) % lightboxImages.length],
       prevImageSrc: lightboxImages[(index - 1) % lightboxImages.length],
-    }) // lgtm [js/react/inconsistent-state-update]
+    })
   }
 
   public render() {
@@ -81,6 +83,10 @@ class PhotographyGridSection extends Component<Props, State> {
       return null
     }
 
+    {
+      /* const Wrapper = this.props.isPreview ? StyledPanel : Fragment */
+    }
+
     return (
       <StyledPanel>
         <PhotographySectionHeader datetime={datetime} href={slug} />
@@ -97,7 +103,7 @@ class PhotographyGridSection extends Component<Props, State> {
 
             return (
               <ImageZoomGridElement
-                key={thumbnailSizes.src}
+                key={md5(thumbnailSizes.src)}
                 onClick={() =>
                   this.toggleLightbox({
                     index: imageIndex,
@@ -107,7 +113,7 @@ class PhotographyGridSection extends Component<Props, State> {
                 }
                 aspectRatio={thumbnailSizes.aspectRatio}
               >
-                <Img sizes={thumbnailSizes} className="pointer" />
+                <Img fluid={thumbnailSizes} className="pointer" />
               </ImageZoomGridElement>
             )
           })}
