@@ -7,7 +7,7 @@ import { ChevronDown } from 'react-feather'
 import Cancelable from 'utils/cancelable'
 import colors from 'utils/colors'
 
-// Configure Bluebird's Bluebird lib to be cancelable -- we use this to cancel
+// Configure Bluebird's Promise lib to be cancelable -- we use this to cancel
 // the bouncing chevron animation when the component is unmounted (e.g.,
 // because the user has navigated away from the Home page).
 Bluebird.config({ cancellation: true })

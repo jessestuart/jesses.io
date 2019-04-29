@@ -1,17 +1,12 @@
 import React from 'react'
 import styled from 'styled-components'
 
-interface Props {
-  aspectRatio: number
-}
-
-const ImageZoomGridElement = styled.div(
-  (props: Props) => `
+const StyledImageZoomGridElement = styled.div(
+  ({ aspectRatio }: { aspectRatio: number }) => `
     display: flex;
     flex-direction: column;
     grid-column-start: auto;
-    // @ts-ignore
-    grid-row: ${props.aspectRatio > 1 ? 'span 1' : 'span 2'};
+    grid-row: ${aspectRatio > 1 ? 'span 1' : 'span 2'};
     overflow: hidden;
     position: relative;
     img {
@@ -20,17 +15,17 @@ const ImageZoomGridElement = styled.div(
 `,
 )
 
-// eslint-disable-next-line react/display-name
-export default ({
-  aspectRatio,
-  children,
-  onClick,
-}: {
-  aspectRatio: any
+interface Props {
+  aspectRatio: number
   children: any
-  onClick: any
-}) => (
-  <ImageZoomGridElement aspectRatio={aspectRatio} onClick={onClick}>
+  onClick: React.MouseEventHandler<HTMLDivElement>
+}
+
+// eslint-disable-next-line react/display-name
+const ImageZoomGridElement = ({ aspectRatio, children, onClick }: Props) => (
+  <StyledImageZoomGridElement aspectRatio={aspectRatio} onClick={onClick}>
     {children}
-  </ImageZoomGridElement>
+  </StyledImageZoomGridElement>
 )
+
+export default ImageZoomGridElement
