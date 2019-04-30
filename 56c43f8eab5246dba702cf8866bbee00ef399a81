@@ -1,0 +1,8 @@
+[ver:1,total:3530]
+.gtm/terminal.app:3230,1556532000:1140,1556539200:600,1556586000:240,1556604000:1020,1556607600:230,r
+gatsby-node.js:180,1556604000:180,m
+src/components/Photography/ImageZoomGridElement.tsx:60,1556532000:60,r
+yarn-error.log:20,1556604000:20,d
+combined.log:20,1556604000:20,r
+src/config/modifyWebpackConfig.js:10,1556604000:10,r
+gatsby-config.js:10,1556604000:10,r
