@@ -110,6 +110,20 @@ const plugins = _.compact([
   'gatsby-plugin-remove-trailing-slashes',
   // 'gatsby-plugin-feed',
   'gatsby-plugin-lodash',
+  /* eslint-disable @typescript-eslint/camelcase */
+  {
+    resolve: 'gatsby-plugin-manifest',
+    options: {
+      name: 'Jesse Stuart',
+      short_name: 'jesses.io',
+      start_url: '/',
+      background_color: '#373b46',
+      theme_color: '#673ab7',
+      display: 'standalone',
+      icon: './src/components/Icons/logo_dark.svg',
+    },
+  },
+  /* eslint-enable @typescript-eslint/camelcase */
   'gatsby-plugin-offline',
   'gatsby-plugin-netlify-cache',
   // This ostensibly has to go at the end of the plugins declaration array.

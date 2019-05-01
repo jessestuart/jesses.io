@@ -21,7 +21,6 @@ interface Props {
   onClick: React.MouseEventHandler<HTMLDivElement>
 }
 
-// eslint-disable-next-line react/display-name
 const ImageZoomGridElement = ({ aspectRatio, children, onClick }: Props) => (
   <StyledImageZoomGridElement aspectRatio={aspectRatio} onClick={onClick}>
     {children}

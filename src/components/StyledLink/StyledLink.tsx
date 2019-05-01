@@ -20,9 +20,12 @@ class StyledLink extends Component<Props> {
     // about `<Link>`'ing to external resources.
     // TODO: There must be a way to programmatically branch on
     //       this... right?
+    // prettier-ignore
     const isExternalLink =
+      !_.isNil(href) &&
       _.startsWith(href, 'http') ||
       _.startsWith(href, 'mailto') ||
+      _.startsWith(href, '#') ||
       _.endsWith(href, 'pdf')
 
     if (isExternalLink) {

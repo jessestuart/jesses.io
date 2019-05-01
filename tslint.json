@@ -6,8 +6,7 @@
   ],
   "defaultSeverity": "error",
   "linterOptions": {
-    "include": ["src/**/*.{ts,tsx}"],
-    "exclude": ["node_modules"]
+    "include": ["src/**/*.{ts,tsx}"]
   },
   "rules": {
     "interface-name": false,

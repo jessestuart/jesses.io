@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Render StyledLink component with default colors. 1`] = `
+<a
+  className="alegreya-sans db f2 fw5 header-primary mb3 tr w-100 sc-bdVaJa bXWskY"
+  href="/true/photography"
+  onClick={[Function]}
+  onMouseEnter={[Function]}
+>
+  30 April 2019
+</a>
+`;

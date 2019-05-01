@@ -3,21 +3,21 @@ import 'react-image-lightbox/style.css'
 import Img from 'gatsby-image'
 import _ from 'lodash'
 import { DateTime } from 'luxon'
+import md5 from 'md5'
 import React, { Component } from 'react'
 import Lightbox from 'react-image-lightbox'
 
 import StyledPanel from 'components/StyledPanel/StyledPanel'
-import md5 from 'md5'
-
 import {
   ImageZoomGrid,
   ImageZoomGridElement,
   PhotographySectionHeader,
 } from '.'
+import { GatsbyImage } from '../../types/gatsby-image'
 
 interface Props {
   datetime: DateTime
-  images: any[]
+  images: GatsbyImage[]
   isPreview?: boolean
   slug?: string
 }
@@ -69,9 +69,6 @@ class PhotographyGridSection extends Component<Props, State> {
       nextImageSrc,
       prevImageSrc,
     } = this.state
-    if (_.isEmpty(images)) {
-      return null
-    }
 
     const sortedImages = _.sortBy(images, 'EXIF.DateTimeOriginal')
     const lightboxImages = _.map(
@@ -79,12 +76,8 @@ class PhotographyGridSection extends Component<Props, State> {
       'childrenFile[0].childImageSharp.largeSizes.src',
     )
 
-    if (!lightboxImages) {
+    if (_.isEmpty(images) || _.isEmpty(lightboxImages)) {
       return null
-    }
-
-    {
-      /* const Wrapper = this.props.isPreview ? StyledPanel : Fragment */
     }
 
     return (
@@ -101,9 +94,11 @@ class PhotographyGridSection extends Component<Props, State> {
               return null
             }
 
+            const { aspectRatio, src } = thumbnailSizes
+
             return (
               <ImageZoomGridElement
-                key={md5(thumbnailSizes.src)}
+                key={md5(src)}
                 onClick={() =>
                   this.toggleLightbox({
                     index: imageIndex,
@@ -111,7 +106,7 @@ class PhotographyGridSection extends Component<Props, State> {
                     lightboxImages,
                   })
                 }
-                aspectRatio={thumbnailSizes.aspectRatio}
+                aspectRatio={aspectRatio}
               >
                 <Img fluid={thumbnailSizes} className="pointer" />
               </ImageZoomGridElement>

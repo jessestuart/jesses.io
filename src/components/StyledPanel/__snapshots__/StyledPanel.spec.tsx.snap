@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Render StyledPanel component. 1`] = `
+<section
+  className="br2 center mv5-ns mw7 mw8-ns pa5-ns sc-bdVaJa eDZJdd"
+>
+  Basic Styled Panel
+</section>
+`;
+
+exports[`Render StyledPanel with custom styling. 1`] = `
+<section
+  className="br2 center mv5-ns mw7 mw8-ns pa5-ns w-100 sc-bdVaJa eDZJdd"
+>
+  Custom Styled Panel
+</section>
+`;
