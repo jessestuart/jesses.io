@@ -116,7 +116,7 @@
     "identity-obj-proxy": "3.0.0",
     "jest": "24.7.1",
     "jest-styled-components": "6.3.1",
-    "lint-staged": "8.1.5",
+    "lint-staged": "8.1.6",
     "onecolor": "3.1.0",
     "prettier": "1.17.0",
     "purgecss": "1.3.0",
