@@ -9885,6 +9885,11 @@ luxon@1.12.1:
   resolved "https://registry.yarnpkg.com/luxon/-/luxon-1.12.1.tgz#924bd61404f70b0cc5168918cb0ac108e52aacc4"
   integrity sha512-Zv/qJb2X1ESTrlniAViWx2aqGwi2cVpeoZFTbPdPiCu4EsadKsmb/QCH8HQjMUpDZKKJIHKHsJxV5Rwpq47HKQ==
 
+luxon@1.13.0:
+  version "1.13.0"
+  resolved "https://registry.yarnpkg.com/luxon/-/luxon-1.13.0.tgz#95840d8d77ea43f4501d525f378f2105e34d1dc2"
+  integrity sha512-j/t5wLTDCUbJgJ6MDp1VFNmeE/j7jmOhk3yKnZ972laS1ofpXVbOOVr9+7abyclAcG8FrPv8T2mg4A39V26vEQ==
+
 macos-release@^2.2.0:
   version "2.2.0"
   resolved "https://registry.yarnpkg.com/macos-release/-/macos-release-2.2.0.tgz#ab58d55dd4714f0a05ad4b0e90f4370fef5cdea8"
