@@ -1,0 +1,10 @@
+[ver:1,total:1020]
+.gtm/terminal.app:595,1557036000:190,1557039600:405,r
+src/utils/cancelable.spec.ts:120,1557036000:30,1557039600:90,r
+src/components/Profile/ProfileFooter.spec.tsx:95,1557039600:95,d
+src/components/Photography/PhotographyGridSection.spec.tsx:90,1557036000:20,1557039600:70,r
+.circleci/config.yml:30,1557036000:30,m
+.gitignore:30,1557036000:30,m
+src/components/Profile/Profile.spec.tsx:30,1557039600:30,d
+src/components/Profile/ProfileFooter.tsx:15,1557039600:15,r
+reports/junit/js-test-results.xml:15,1557039600:15,r
