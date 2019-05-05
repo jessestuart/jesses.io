@@ -68,5 +68,9 @@ yarn-error.log
 # Yarn Integrity file
 .yarn-integrity
 
+# Yalc
 .yalc
 yalc.lock
+
+# Jest
+reports/

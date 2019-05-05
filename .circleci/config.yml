@@ -107,7 +107,13 @@ jobs:
       - run:
           name: Run Jest tests & collect coverage.
           command: |
-            yarn jest --coverage
+            yarn jest --coverage --runInBand --ci
+          environment:
+            JEST_JUNIT_OUTPUT: 'reports/junit/js-test-results.xml'
+      - store_test_results:
+          path: reports/junit
+      - store_artifacts:
+          path: reports/junit
       - run:
           name: Upload results to Codacy.
           command: |
