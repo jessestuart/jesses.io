@@ -125,13 +125,6 @@ jobs:
       - *save_cache
       - *save_public_dir_cache
 
-      - run:
-          name: Compress and package static resources into a tarball.
-          command: tar czf jessestuart.tar.gz public/
-
-      - store_artifacts:
-          path: jessestuart.tar.gz
-
   # ---------------------------------------------------------------------------
 
   push_image:
