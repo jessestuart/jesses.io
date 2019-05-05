@@ -44,8 +44,8 @@ interface ToggleLightboxOptions {
 const MaximizeLink = styled(Link)`
   bottom: 0;
   color: ${colors.accent};
-  cursor: 'pointer';
-  position: 'absolute';
+  cursor: pointer;
+  position: absolute;
   right: 0;
   transition: all 0.5s;
   &:hover {
