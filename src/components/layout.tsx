@@ -7,36 +7,30 @@ import 'typeface-spectral'
 import 'styles/base.css'
 
 import _ from 'lodash'
-import React from 'react'
+import React, { ReactNode } from 'react'
 import Helmet from 'react-helmet'
 
 import { SiteFooter, SiteHeader } from 'components'
+
 import config from '../../gatsby-config'
 
 const title: string = _.get(config, 'siteMetadata.title')
 const url: string = _.get(config, 'siteMetadata.url')
 
-const HELMET_META = [
-  { name: 'description', content: 'jesses.io' },
-  {
-    name: 'viewport',
-    content:
-      'width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no',
-  },
+const viewportContent =
+  'width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no'
 
+const HELMET_META = [
+  { content: viewportContent, name: 'viewport' },
   { itemProp: 'name', content: title },
+  { name: 'description', content: 'jesses.io' },
   { name: 'twitter:title', content: title },
   { property: 'og:title', content: title },
   { property: 'og:url', content: url },
-  {
-    name: 'viewport',
-    content:
-      'width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no',
-  },
 ]
 
 interface Props {
-  children: any
+  children: ReactNode
   location: {
     pathname: string
   }

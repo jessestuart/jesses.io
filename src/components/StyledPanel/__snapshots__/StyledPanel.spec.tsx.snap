@@ -2,7 +2,7 @@
 
 exports[`Render StyledPanel component. 1`] = `
 <section
-  className="br2 center mv5-ns mw7 mw8-ns pa5-ns sc-bdVaJa eDZJdd"
+  className="br2 center mv5-ns mw7 mw8-ns pa5-ns sc-bdVaJa diWlBr"
 >
   Basic Styled Panel
 </section>
@@ -10,7 +10,7 @@ exports[`Render StyledPanel component. 1`] = `
 
 exports[`Render StyledPanel with custom styling. 1`] = `
 <section
-  className="br2 center mv5-ns mw7 mw8-ns pa5-ns w-100 sc-bdVaJa eDZJdd"
+  className="br2 center mv5-ns mw7 mw8-ns pa5-ns w-100 sc-bdVaJa diWlBr"
 >
   Custom Styled Panel
 </section>

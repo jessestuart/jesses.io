@@ -2,7 +2,7 @@
 
 exports[`Render PhotographyGridSection component w/ images. 1`] = `
 <section
-  className="br2 center mv5-ns mw7 mw8-ns pa5-ns sc-bdVaJa eDZJdd"
+  className="br2 center mv5-ns mw7 mw8-ns pa5-ns sc-bdVaJa diWlBr"
 >
   <a
     className="alegreya-sans db f2 fw5 header-primary mb3 tr w-100 sc-bxivhb iSybDT"

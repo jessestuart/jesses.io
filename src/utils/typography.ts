@@ -8,12 +8,12 @@ import fp from 'lodash/fp'
 import Typography from 'typography'
 import CodePlugin from 'typography-plugin-code'
 
-import colors from './colors'
+import colors from 'utils/colors'
 
 const pseudoUnderline = {
-  textDecoration: 'none',
   borderBottom: `2px solid ${colors.defaultLink}`,
   position: 'relative',
+  textDecoration: 'none',
 }
 
 const sansSerifFontFamilies = [
@@ -54,20 +54,24 @@ const baseFontFamilyList = _.concat(['Lato'], sansSerifFontFamilies)
 
 const mapFontFamilyListToString = fp.join(',')
 
+// tslint:disable
 const options = {
-  fontFamily: baseFontFamilyList,
-  bodyFontFamily: baseFontFamilyList,
-  headerFontFamily: _.concat(['Alegreya Sans'], sansSerifFontFamilies),
-  monospaceFontFamily: monospaceFontFamilies,
   baseFontSize: '16px',
   baseLineHeight: 1.9,
-  headerLineHeight: 1.7,
-  headerColor: colors.gray.dark,
-  bodyColor: colors.gray.copy,
   blockMarginBottom: 0.75,
-  scaleRatio: 2,
+  bodyColor: colors.gray.copy,
+  bodyFontFamily: baseFontFamilyList,
+  fontFamily: baseFontFamilyList,
+  headerColor: colors.gray.dark,
+  headerFontFamily: _.concat(['Alegreya Sans'], sansSerifFontFamilies),
+  headerLineHeight: 1.7,
+  monospaceFontFamily: monospaceFontFamilies,
   plugins: [new CodePlugin()],
-  overrideStyles: (_typographyOptions, overrideStyleOptions) => ({
+  scaleRatio: 2,
+  overrideStyles: (
+    _typographyOptions: never,
+    overrideStyleOptions: { headerFontFamily: string[] },
+  ) => ({
     blockquote: {
       fontStyle: 'inherit',
       textAlign: 'justify',

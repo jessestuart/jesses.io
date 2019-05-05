@@ -39,9 +39,9 @@ interface ToggleLightboxOptions {
 
 class PhotographyGridSection extends Component<Props, State> {
   public readonly state: State = {
+    index: 0,
     isLightboxOpen: false,
     lightboxImages: [],
-    index: 0,
   }
 
   public render() {

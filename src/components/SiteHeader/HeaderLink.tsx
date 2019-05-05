@@ -12,8 +12,8 @@ interface Props {
 const HeaderLink = ({ children, className, href, isActive = false }: Props) => (
   <ul
     className={classNames('lato f4 ph3 mv2 pv2 flex-auto', className, {
-      'white-90 fw4': isActive,
       'light-silver fw3': !isActive,
+      'white-90 fw4': isActive,
     })}
   >
     <Link className="shadow-none flex justify-center items-center" to={href}>

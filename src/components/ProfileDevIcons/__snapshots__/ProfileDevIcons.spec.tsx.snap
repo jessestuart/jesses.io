@@ -41,7 +41,7 @@ Array [
     className="sc-htpNat center code w-90 eoiAQL"
   >
     <div
-      className="sc-bwzfXH fira-mono moon-gray flex items-center justify-start hnYDiE"
+      className="sc-bwzfXH fira-mono moon-gray flex items-center justify-start fOTItM"
     >
       infra
     </div>
@@ -206,7 +206,7 @@ Array [
       </a>
     </div>
     <div
-      className="sc-bwzfXH fira-mono moon-gray flex items-center justify-start hnYDiE"
+      className="sc-bwzfXH fira-mono moon-gray flex items-center justify-start fOTItM"
     >
       backend
     </div>
@@ -404,7 +404,7 @@ Array [
       </a>
     </div>
     <div
-      className="sc-bwzfXH fira-mono moon-gray flex items-center justify-start hnYDiE"
+      className="sc-bwzfXH fira-mono moon-gray flex items-center justify-start fOTItM"
     >
       frontend
     </div>
