@@ -1,0 +1,8 @@
+[ver:1,total:420]
+.circleci/config.yml:170,1557039600:170,m
+.gtm/terminal.app:167,1557039600:167,r
+src/components/Profile/Profile.spec.tsx:24,1557039600:24,m
+.git/COMMIT_EDITMSG:20,1557039600:20,r
+reports/junit/js-test-results.xml:15,1557039600:15,r
+src/components/Profile/Profile.tsx:12,1557039600:12,r
+src/components/Profile/ProfileFooter.tsx:12,1557039600:12,r
