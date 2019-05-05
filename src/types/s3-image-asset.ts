@@ -1,8 +1,18 @@
 import { ExifData } from 'gatsby-source-s3-image'
-import { GatsbyImage } from './gatsby-image'
+
+import { GatsbyImage } from 'types/gatsby-image'
+
 export interface S3ImageAsset {
+  id: string
   EXIF?: ExifData
-  childFile: {
-    childImageSharp: GatsbyImage
+  childrenFile: {
+    childImageSharp: {
+      original: {
+        height: number
+        width: number
+      }
+      thumbnailSizes: GatsbyImage[]
+      largeSizes: GatsbyImage[]
+    }
   }
 }

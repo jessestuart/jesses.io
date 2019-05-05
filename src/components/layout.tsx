@@ -36,15 +36,13 @@ interface Props {
   }
 }
 
-const Layout = ({ children, location }: Props) => {
-  return (
-    <>
-      <Helmet title={title} meta={HELMET_META} />
-      <SiteHeader location={location} />
-      <main className="flex flex-auto">{children}</main>
-      <SiteFooter />
-    </>
-  )
-}
+const Layout = ({ children, location }: Props) => (
+  <>
+    <Helmet title={title} meta={HELMET_META} />
+    <SiteHeader location={location} />
+    <main className="flex flex-auto">{children}</main>
+    <SiteFooter />
+  </>
+)
 
 export default Layout

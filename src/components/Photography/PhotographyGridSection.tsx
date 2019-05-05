@@ -1,13 +1,17 @@
 import 'react-image-lightbox/style.css'
 
+import { Link } from 'gatsby'
 import Img from 'gatsby-image'
 import _ from 'lodash'
 import { DateTime } from 'luxon'
 import React, { Component } from 'react'
+import { Maximize2 } from 'react-feather'
 import Lightbox from 'react-image-lightbox'
+import styled from 'styled-components'
 
 import StyledPanel from 'components/StyledPanel/StyledPanel'
 import md5 from 'md5'
+import colors from 'utils/colors'
 
 import {
   ImageZoomGrid,
@@ -37,6 +41,18 @@ interface ToggleLightboxOptions {
   lightboxImages?: string[]
 }
 
+const MaximizeLink = styled(Link)`
+  bottom: 0;
+  color: ${colors.accent};
+  cursor: 'pointer';
+  position: 'absolute';
+  right: 0;
+  transition: all 0.5s;
+  &:hover {
+    color: ${colors.primary.main} !important;
+  }
+`
+
 class PhotographyGridSection extends Component<Props, State> {
   public readonly state: State = {
     index: 0,
@@ -45,7 +61,7 @@ class PhotographyGridSection extends Component<Props, State> {
   }
 
   public render() {
-    const { datetime, images, slug } = this.props
+    const { datetime, images, isPreview, slug = '/#' } = this.props
     const {
       index,
       isLightboxOpen,
@@ -63,6 +79,8 @@ class PhotographyGridSection extends Component<Props, State> {
     if (_.isEmpty(images) || _.isEmpty(lightboxImages)) {
       return null
     }
+
+    const shouldShowMaximizeLink = isPreview && _.size(sortedImages) >= 6
 
     return (
       <StyledPanel>
@@ -96,6 +114,11 @@ class PhotographyGridSection extends Component<Props, State> {
               </ImageZoomGridElement>
             )
           })}
+          {shouldShowMaximizeLink && (
+            <MaximizeLink to={slug}>
+              <Maximize2 size={32} />
+            </MaximizeLink>
+          )}
         </ImageZoomGrid>
         {isLightboxOpen && lightboxSrc && (
           <Lightbox

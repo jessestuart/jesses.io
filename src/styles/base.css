@@ -102,3 +102,8 @@ a {
 .headroom-wrapper {
   height: auto !important;
 }
+
+.ril__caption,
+.ril__toolbar {
+  background-color: unset !important;
+}

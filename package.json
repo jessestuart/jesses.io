@@ -174,10 +174,10 @@
     "lint:stylefix": "stylelint --fix 'src/**/*.css'",
     "lint:text": "textlint src/pages/**/index.md",
     "lint:textfix": "textlint --fix src/pages/**/index.md",
-    "test": "jest",
-    "test:coverage": "jest --coverage",
-    "test:update-snapshots": "jest --updateSnapshot",
-    "test:watch": "jest --watch",
+    "test": "JEST_JUNIT_OUTPUT=reports/junit/js-test-results.xml jest",
+    "test:coverage": "yarn test --coverage",
+    "test:update-snapshots": "yarn test --updateSnapshot",
+    "test:watch": "yarn test --watch",
     "update": "ncu -u && yarn -s",
     "willitpass": "concurrently 'yarn lint' 'yarn test'"
   }

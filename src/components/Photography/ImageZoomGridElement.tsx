@@ -1,5 +1,5 @@
 import _ from 'lodash'
-import React from 'react'
+import React, { MouseEventHandler, ReactNode } from 'react'
 import styled from 'styled-components'
 
 const StyledImageZoomGridElement = styled.div(
@@ -18,8 +18,8 @@ const StyledImageZoomGridElement = styled.div(
 
 interface Props {
   aspectRatio: number
-  children: any
-  onClick: React.MouseEventHandler<HTMLDivElement>
+  children: ReactNode
+  onClick: MouseEventHandler<HTMLDivElement>
 }
 
 const ImageZoomGridElement = ({
