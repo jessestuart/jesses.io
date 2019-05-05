@@ -1,0 +1,14 @@
+[ver:1,total:2100]
+src/components/layout.tsx:503,1557032400:373,1557036000:130,m
+.gtm/terminal.app:403,1557032400:293,1557036000:110,r
+src/utils/typography.ts:390,1557032400:390,m
+src/utils/presets.ts:215,1557032400:215,m
+src/utils/colors.ts:164,1557032400:164,m
+gatsby-config.d.ts:103,1557032400:103,d
+src/components/Profile/BlackMirror.tsx:92,1557032400:92,m
+src/components/Icons/DevIcons/index.tsx:75,1557032400:75,m
+src/components/SiteHeader/HeaderLink.tsx:60,1557036000:60,m
+src/components/SiteFooter/SiteFooter.tsx:35,1557032400:35,m
+tslint.json:30,1557032400:30,m
+src/components/Photography/PhotographyGridSection.tsx:15,1557032400:15,m
+src/utils/log.ts:15,1557032400:15,m
