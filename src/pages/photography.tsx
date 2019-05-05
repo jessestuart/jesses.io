@@ -110,7 +110,7 @@ export const pageQuery = graphql`
               thumbnailSizes: fluid(maxWidth: 512) {
                 ...GatsbyImageSharpFluid
               }
-              largeSizes: fluid(maxWidth: 2048, quality: 100) {
+              largeSizes: fluid(maxWidth: 2048) {
                 ...GatsbyImageSharpFluid
               }
             }

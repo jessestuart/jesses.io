@@ -47,11 +47,11 @@ restore_cache: &restore_cache
 restore_public_dir_cache: &restore_public_dir_cache
   restore_cache:
     paths:
-      - v1-public/
+      - v2-public/
     keys:
-      - v1-public-dir-{{ .Revision }}
-      - v1-public-dir-{{ .Branch }}
-      - v1-public-dir-
+      - v2-public-dir-{{ .Branch }}-{{ .Revision }}
+      - v2-public-dir-{{ .Branch }}
+      - v2-public-dir-
 
 save_cache: &save_cache
   save_cache:
@@ -63,7 +63,7 @@ save_public_dir_cache: &save_public_dir_cache
   save_cache:
     paths:
       - public/
-    key: v1-public-dir-{{ .Branch }}
+    key: v2-public-dir-{{ .Branch }}-{{ .Revision }}
 
 install_dependencies: &install_dependencies
   run:
@@ -105,10 +105,16 @@ jobs:
       - checkout
       - *restore_cache
       - run:
-          name: Run Jest tests & upload coverage.
+          name: Run Jest tests & collect coverage.
           command: |
             yarn jest --coverage
+      - run:
+          name: Upload results to Codacy.
+          command: |
             cat ./test/coverage/lcov.info | yarn codacy-coverage
+      - run:
+          name: Upload results to Codecov.
+          command: |
             yarn codecov
 
   build:
