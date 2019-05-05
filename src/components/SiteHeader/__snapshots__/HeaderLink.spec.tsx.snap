@@ -1,0 +1,16 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Render HeaderLink component w/ default values. 1`] = `
+<ul
+  className="lato f4 ph3 mv2 pv2 flex-auto light-silver fw3"
+>
+  <a
+    className="shadow-none flex justify-center items-center"
+    href="/true"
+    onClick={[Function]}
+    onMouseEnter={[Function]}
+  >
+    Header Link
+  </a>
+</ul>
+`;

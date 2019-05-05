@@ -27,10 +27,6 @@ export default class ProfileFooter extends Component<{}, State> {
     this.state = { ...initialState }
   }
 
-  public shouldComponentUpdate(): boolean {
-    return _.isNil(this.cancelable) || this.cancelable.cancelled
-  }
-
   public componentDidMount() {
     this.cancelable = new Cancelable(this.animateChevron())
   }

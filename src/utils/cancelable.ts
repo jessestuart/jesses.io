@@ -7,12 +7,14 @@ export default class Cancelable {
 
   constructor(promise: Promise<any>) {
     this.cancelled = false
-    this.promise = new Promise((resolve, reject) => {
-      if (!this.cancelled) {
+    this.promise = new Promise(
+      (resolve: (val: any) => any, reject: (val: any) => any) => {
+        if (this.cancelled) {
+          return Promise.resolve()
+        }
         return promise.then(resolve, reject)
-      }
-      return Promise.resolve()
-    })
+      },
+    )
   }
 
   public then = (cb: () => any) =>

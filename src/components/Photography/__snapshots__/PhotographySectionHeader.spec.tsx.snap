@@ -7,6 +7,6 @@ exports[`Render StyledLink component with default colors. 1`] = `
   onClick={[Function]}
   onMouseEnter={[Function]}
 >
-  30 April 2019
+  01 May 2019
 </a>
 `;

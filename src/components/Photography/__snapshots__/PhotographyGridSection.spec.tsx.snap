@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Render PhotographyGridSection component w/ images. 1`] = `
+<section
+  className="br2 center mv5-ns mw7 mw8-ns pa5-ns sc-bdVaJa eDZJdd"
+>
+  <a
+    className="alegreya-sans db f2 fw5 header-primary mb3 tr w-100 sc-bxivhb iSybDT"
+    href="/true/photography"
+    onClick={[Function]}
+    onMouseEnter={[Function]}
+  >
+    01 May 2019
+  </a>
+  <div
+    className="sc-bwzfXH gWTgTt"
+  />
+</section>
+`;
+
+exports[`Render PhotographyGridSection component. 1`] = `null`;

@@ -3,21 +3,21 @@ import 'react-image-lightbox/style.css'
 import Img from 'gatsby-image'
 import _ from 'lodash'
 import { DateTime } from 'luxon'
-import md5 from 'md5'
 import React, { Component } from 'react'
 import Lightbox from 'react-image-lightbox'
 
 import StyledPanel from 'components/StyledPanel/StyledPanel'
+import md5 from 'md5'
+
 import {
   ImageZoomGrid,
   ImageZoomGridElement,
   PhotographySectionHeader,
 } from '.'
-import { GatsbyImage } from '../../types/gatsby-image'
 
 interface Props {
   datetime: DateTime
-  images: GatsbyImage[]
+  images: any[]
   isPreview?: boolean
   slug?: string
 }
@@ -42,22 +42,6 @@ class PhotographyGridSection extends Component<Props, State> {
     isLightboxOpen: false,
     lightboxImages: [],
     index: 0,
-  }
-
-  public toggleLightbox({
-    index,
-    isLightboxOpen,
-    lightboxImages = this.state.lightboxImages,
-  }: ToggleLightboxOptions) {
-    // lgtm [js/react/inconsistent-state-update]
-    this.setState({
-      index,
-      isLightboxOpen,
-      lightboxImages,
-      lightboxSrc: lightboxImages[index],
-      nextImageSrc: lightboxImages[(index + 1) % lightboxImages.length],
-      prevImageSrc: lightboxImages[(index - 1) % lightboxImages.length],
-    })
   }
 
   public render() {
@@ -130,6 +114,22 @@ class PhotographyGridSection extends Component<Props, State> {
         )}
       </StyledPanel>
     )
+  }
+
+  private toggleLightbox({
+    index,
+    isLightboxOpen,
+    lightboxImages = this.state.lightboxImages,
+  }: ToggleLightboxOptions) {
+    // lgtm [js/react/inconsistent-state-update]
+    this.setState({
+      index,
+      isLightboxOpen,
+      lightboxImages,
+      lightboxSrc: lightboxImages[index],
+      nextImageSrc: lightboxImages[(index + 1) % lightboxImages.length],
+      prevImageSrc: lightboxImages[(index - 1) % lightboxImages.length],
+    })
   }
 }
 
