@@ -73,7 +73,7 @@ install_dependencies: &install_dependencies
 sentry_release: &sentry_release
   run:
     name: Update release @ sentry.io
-    command: sh ../scripts/update-sentry-release.sh
+    command: sh ./scripts/update-sentry-release.sh
 
 semantic_release: &semantic_release
   <<: *defaults
