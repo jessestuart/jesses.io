@@ -80,7 +80,12 @@ class PhotographyGridSection extends Component<Props, State> {
       return null
     }
 
-    const shouldShowMaximizeLink = isPreview && _.size(sortedImages) >= 6
+    // The value of the comparator here needs to match that of
+    // `PHOTOGRAPHY_INDEX_NUM_PREVIEWS` in `pages/photography.tsx` (currently,
+    // six).  Unfortunately importing that directly seems to cause circular
+    // dependency issues with tests that I haven't had the time to debug,
+    // so... yay magic numbers.
+    const shouldShowMaximizeLink = isPreview && _.size(images) > 6
 
     return (
       <StyledPanel>
