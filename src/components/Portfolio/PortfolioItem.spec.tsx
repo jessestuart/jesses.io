@@ -2,7 +2,7 @@ import React from 'react'
 import renderer from 'react-test-renderer'
 import PortfolioItem from './PortfolioItem'
 
-test('Render StyledLink component with default colors.', () => {
+test('Render PortfolioItem component.', () => {
   const tree = renderer
     .create(<PortfolioItem link="/" title="Portfolio Item" />)
     .toJSON()

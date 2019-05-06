@@ -5,7 +5,7 @@ import PhotographySectionHeader from './PhotographySectionHeader'
 
 const datetime = DateTime.utc(2019, 5, 1, 1, 1, 1)
 
-test('Render StyledLink component with default colors.', () => {
+test('Render PhotographySectionHeader.', () => {
   const tree = renderer
     .create(<PhotographySectionHeader datetime={datetime} />)
     .toJSON()

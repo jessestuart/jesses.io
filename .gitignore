@@ -74,3 +74,4 @@ yalc.lock
 
 # Jest
 reports/
+junit.xml

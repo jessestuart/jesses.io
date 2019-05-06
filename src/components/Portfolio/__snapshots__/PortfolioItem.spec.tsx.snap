@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Render StyledLink component with default colors. 1`] = `
+exports[`Render PortfolioItem component. 1`] = `
 <li
   className="f4 portfolio-item flex items-center mb2"
 >

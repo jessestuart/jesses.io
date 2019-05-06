@@ -10,11 +10,7 @@ const datetime = DateTime.utc(2019, 5, 1, 1, 1, 1)
 
 test('Render PhotographyGridSection component.', () => {
   const tree = renderer
-    .create(
-      <PhotographyGridSection datetime={datetime} images={[]}>
-        PhotographyGridSection
-      </PhotographyGridSection>,
-    )
+    .create(<PhotographyGridSection datetime={datetime} images={[]} />)
     .toJSON()
   expect(tree).toMatchSnapshot()
 })
@@ -22,9 +18,7 @@ test('Render PhotographyGridSection component.', () => {
 test('Render PhotographyGridSection component w/ images.', () => {
   const tree = renderer
     .create(
-      <PhotographyGridSection datetime={datetime} images={[image1, image2]}>
-        PhotographyGridSection
-      </PhotographyGridSection>,
+      <PhotographyGridSection datetime={datetime} images={[image1, image2]} />,
     )
     .toJSON()
   expect(tree).toMatchSnapshot()
