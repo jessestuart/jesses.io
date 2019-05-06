@@ -16,11 +16,16 @@ const StyledPanelContainer = styled.section`
 interface Props {
   children: any
   className?: string
+  maxWidth?: number
 }
 
-const StyledPanel = ({ children, className }: Props) => (
+const StyledPanel = ({ children, className, maxWidth = 8 }: Props) => (
   <StyledPanelContainer
-    className={classNames('br2 center mv5-ns mw7 mw8-ns pa5-ns', className)}
+    className={classNames(
+      `br2 center mv5-ns mw7 mw${maxWidth}-ns pa5-ns`,
+      className,
+    )}
+    style={{ transition: 'all 0.5s' }}
   >
     {children}
   </StyledPanelContainer>

@@ -7,6 +7,7 @@ import Cancelable from './cancelable'
 
 describe('Cancelable', () => {
   beforeAll(() => {
+    jest.useFakeTimers()
     log.error = jest.fn()
   })
 
@@ -19,7 +20,6 @@ describe('Cancelable', () => {
         })
       }),
     )
-    cancelable.cancel()
 
     expect(cancelable).toBeDefined()
     cancelable.then(_.noop).catch(log.error)
@@ -53,7 +53,7 @@ describe('Cancelable', () => {
 
   test('Create Cancelable and ensure errors are gracefully handled.', () => {
     const errMessage = 'Rejected promise in test!'
-    const cancelable = new Cancelable(
+    const cancelable: Cancelable = new Cancelable(
       new Promise(() => {
         throw new Error(errMessage)
       }),

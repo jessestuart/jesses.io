@@ -14,3 +14,15 @@ test('Render BlogHeader component.', () => {
     .toJSON()
   expect(tree).toMatchSnapshot()
 })
+
+test('Render BlogHeader component w/ null link.', () => {
+  const dateISO = '2018-01-01'
+  const tree = renderer
+    .create(
+      <BlogHeader date={dateISO} title="About">
+        FooBar
+      </BlogHeader>,
+    )
+    .toJSON()
+  expect(tree).toMatchSnapshot()
+})

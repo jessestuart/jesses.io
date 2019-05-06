@@ -16,6 +16,11 @@
   --hot-pink: #ff3a5c;
 }
 
+html,
+body {
+  background: var(--gray-primary);
+}
+
 .spectral {
   font-family: 'Spectral', serif;
 }
@@ -26,10 +31,6 @@
 
 .source-sans {
   font-family: 'Source Sans Serif Pro', sans-serif;
-}
-
-.open-sans {
-  font-family: 'Open Sans', sans-serif;
 }
 
 .alegreya-sans {
@@ -79,20 +80,6 @@ a {
   border-color: var(--header-primary);
 }
 
-/*
- * ======================
- * Sticky footer support.
- * ======================
- */
-
-#___gatsby > * {
-  display: flex;
-  flex-direction: column;
-  flex: 1 0 auto;
-  min-height: 100vh;
-  width: 100%;
-}
-
 .flex-body-expand {
   display: flex;
   flex-direction: column;
@@ -101,4 +88,22 @@ a {
 
 .headroom-wrapper {
   height: auto !important;
+}
+
+.ril__caption,
+.ril__toolbar {
+  background-color: unset !important;
+}
+
+/*
+ * ======================
+ * Sticky footer support.
+ * ======================
+ */
+#___gatsby > * {
+  display: flex;
+  flex-direction: column;
+  flex: 1 0 auto;
+  min-height: 100vh;
+  width: 100%;
 }

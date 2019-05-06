@@ -38,10 +38,10 @@ import Vim from './Vim'
 import Webpack from './Webpack'
 
 export const DevIcons = {
+  AWS,
   AngularJS,
   Ansible,
   Atom,
-  AWS,
   Babel,
   Clojure,
   D3js,

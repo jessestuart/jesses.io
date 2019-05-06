@@ -5,27 +5,29 @@ import { DateTime } from 'luxon'
 import React from 'react'
 import { Helmet } from 'react-helmet'
 
-import Layout from '../components/layout'
-import { PhotographyGridSection } from '../components/Photography'
-import { S3ImageAsset } from '../types/s3-image-asset'
+import Layout from 'components/layout'
+import { PhotographyGridSection } from 'components/Photography'
+import { S3ImageAsset } from 'types/s3-image-asset'
 
 interface Props {
   location: {
     pathname: string
   }
-
   data: {
     site: {
       metadata: {
         title: string
       }
     }
-
     allS3ImageAssets: {
-      edges: S3ImageAsset[]
+      edges: {
+        node: S3ImageAsset[]
+      }
     }
   }
 }
+
+export const PHOTOGRAPHY_INDEX_NUM_PREVIEWS = 6
 
 const PhotographyIndex = ({ data, location }: Props) => {
   const pageTitle = `Photography | ${_.get(data, 'site.siteMetadata.title')}`
@@ -66,13 +68,14 @@ const PhotographyIndex = ({ data, location }: Props) => {
             // first six to display as previews.
             const linkImages = _.flow(
               fp.sortBy('EXIF.DateTimeOriginal'),
-              fp.take(6),
+              fp.take(PHOTOGRAPHY_INDEX_NUM_PREVIEWS),
             )(imageNodeList)
 
             return (
               <PhotographyGridSection
                 datetime={datetime}
                 images={linkImages || []}
+                isPreview={true}
                 key={title}
                 slug={linkSlug}
               />
@@ -107,16 +110,10 @@ export const pageQuery = graphql`
                 width
               }
               thumbnailSizes: fluid(maxWidth: 512) {
-                aspectRatio
-                src
-                srcSet
-                sizes
+                ...GatsbyImageSharpFluid
               }
-              largeSizes: fluid(maxWidth: 2048, quality: 100) {
-                aspectRatio
-                src
-                srcSet
-                sizes
+              largeSizes: fluid(maxWidth: 2048) {
+                ...GatsbyImageSharpFluid
               }
             }
           }

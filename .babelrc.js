@@ -14,7 +14,7 @@ module.exports = {
       'module-resolver',
       {
         root: ['./src'],
-        extensions: ['.ts', '.tsx', '.js'],
+        extensions: ['.js', '.json', '.ts', '.tsx'],
       },
     ],
   ],

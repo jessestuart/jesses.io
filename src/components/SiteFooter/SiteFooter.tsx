@@ -46,11 +46,4 @@ const SiteFooter = ({ theme = FooterTheme.Light }: Props) => (
   </footer>
 )
 
-// TODO Replace w/ TS enum.
-// @Deprecated
-SiteFooter.Theme = {
-  Light: 'Light',
-  Dark: 'Dark',
-}
-
 export default SiteFooter

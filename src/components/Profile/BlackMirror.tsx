@@ -13,34 +13,34 @@ const TWITTER_COLOR = '#1DA1F2'
 const TWITTER_URL = 'https://twitter.com/jesse_stuart/'
 
 interface Icon {
-  color: string
   Image: any
+  color: string
   url: string
 }
 
 const Icons: Icon[] = [
   {
     Image: GitHub,
-    url: GITHUB_URL,
     color: GITHUB_COLOR,
+    url: GITHUB_URL,
   },
 
   {
     Image: Linkedin,
-    url: LINKEDIN_URL,
     color: LINKEDIN_COLOR,
+    url: LINKEDIN_URL,
   },
 
   {
     Image: Instagram,
-    url: INSTAGRAM_URL,
     color: INSTAGRAM_COLOR,
+    url: INSTAGRAM_URL,
   },
 
   {
     Image: Twitter,
-    url: TWITTER_URL,
     color: TWITTER_COLOR,
+    url: TWITTER_URL,
   },
 ]
 

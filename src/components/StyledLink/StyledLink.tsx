@@ -1,9 +1,9 @@
 import { Link } from 'gatsby'
 import _ from 'lodash'
-import React, { Component } from 'react'
+import React from 'react'
 import styled from 'styled-components'
 
-import colors from '../../utils/colors'
+import colors from 'utils/colors'
 
 interface Props {
   children: any
@@ -13,30 +13,32 @@ interface Props {
   linkColor?: string
 }
 
-class StyledLink extends Component<Props> {
-  public render() {
-    const { children, href, ...rest } = this.props
-    // Slightly janky hack to prevent gatsby from complaining
-    // about `<Link>`'ing to external resources.
-    // TODO: There must be a way to programmatically branch on
-    //       this... right?
-    const isExternalLink =
-      _.startsWith(href, 'http') ||
-      _.startsWith(href, 'mailto') ||
-      _.endsWith(href, 'pdf')
-
-    if (isExternalLink) {
-      return <a {..._.pick(this.props, ['href', 'className'])}>{children}</a>
-    }
-
-    return href ? (
-      <Link to={href} {...rest}>
-        {children}
-      </Link>
-    ) : (
-      <span {...rest}>{children}</span>
-    )
+const StyledLink = (props: Props) => {
+  const { href, children, ...rest } = props
+  if (!href) {
+    return <span {...rest}>{children}</span>
   }
+
+  // Slightly janky hack to prevent Gatsby from complaining
+  // about `<Link>`'ing to external resources.
+  // TODO: There must be a way to programmatically branch on
+  //       this... right?
+  const isExternalLink = _.some([
+    _.startsWith(href, 'http') ||
+      _.startsWith(href, 'mailto') ||
+      _.startsWith(href, '#') ||
+      _.endsWith(href, 'pdf'),
+  ])
+
+  if (isExternalLink) {
+    return <a {..._.pick(props, ['href', 'className'])}>{children}</a>
+  }
+
+  return (
+    <Link to={href} {...rest}>
+      {children}
+    </Link>
+  )
 }
 
 export default styled(StyledLink)`

@@ -8,7 +8,7 @@ module.exports = {
     'prettier/@typescript-eslint', // Uses eslint-config-prettier to disable ESLint rules from @typescript-eslint/eslint-plugin that would conflict with prettier
   ],
   parser: '@typescript-eslint/parser',
-  plugins: ['@typescript-eslint', 'prettier', 'promise', 'react'],
+  plugins: ['@typescript-eslint', 'cypress', 'prettier', 'promise', 'react'],
   parserOptions: {
     ecmaVersion: 8,
     ecmaFeatures: {
@@ -21,8 +21,9 @@ module.exports = {
   },
   env: {
     browser: true,
-    node: true,
+    'cypress/globals': true,
     jest: true,
+    node: true,
   },
   rules: {
     'comma-dangle': ['error', 'always-multiline'],

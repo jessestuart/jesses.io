@@ -1,12 +1,17 @@
 import 'react-image-lightbox/style.css'
 
+import { Link } from 'gatsby'
 import Img from 'gatsby-image'
 import _ from 'lodash'
-import { DateTime } from 'luxon' // lgtm [js/unused-local-variable]
+import { DateTime } from 'luxon'
 import React, { Component } from 'react'
+import { Maximize2 } from 'react-feather'
 import Lightbox from 'react-image-lightbox'
+import styled from 'styled-components'
 
 import StyledPanel from 'components/StyledPanel/StyledPanel'
+import md5 from 'md5'
+import colors from 'utils/colors'
 
 import {
   ImageZoomGrid,
@@ -36,30 +41,27 @@ interface ToggleLightboxOptions {
   lightboxImages?: string[]
 }
 
+const MaximizeLink = styled(Link)`
+  bottom: 0;
+  color: ${colors.accent};
+  cursor: pointer;
+  position: absolute;
+  right: 0;
+  transition: all 0.5s;
+  &:hover {
+    color: ${colors.primary.main} !important;
+  }
+`
+
 class PhotographyGridSection extends Component<Props, State> {
   public readonly state: State = {
+    index: 0,
     isLightboxOpen: false,
     lightboxImages: [],
-    index: 0,
-  }
-
-  public toggleLightbox({
-    index,
-    isLightboxOpen,
-    lightboxImages = this.state.lightboxImages,
-  }: ToggleLightboxOptions) {
-    this.setState({
-      index,
-      isLightboxOpen,
-      lightboxImages,
-      lightboxSrc: lightboxImages[index],
-      nextImageSrc: lightboxImages[(index + 1) % lightboxImages.length],
-      prevImageSrc: lightboxImages[(index - 1) % lightboxImages.length],
-    }) // lgtm [js/react/inconsistent-state-update]
   }
 
   public render() {
-    const { datetime, images, slug } = this.props
+    const { datetime, images, isPreview, slug = '/#' } = this.props
     const {
       index,
       isLightboxOpen,
@@ -67,9 +69,6 @@ class PhotographyGridSection extends Component<Props, State> {
       nextImageSrc,
       prevImageSrc,
     } = this.state
-    if (_.isEmpty(images)) {
-      return null
-    }
 
     const sortedImages = _.sortBy(images, 'EXIF.DateTimeOriginal')
     const lightboxImages = _.map(
@@ -77,9 +76,11 @@ class PhotographyGridSection extends Component<Props, State> {
       'childrenFile[0].childImageSharp.largeSizes.src',
     )
 
-    if (!lightboxImages) {
+    if (_.isEmpty(images) || _.isEmpty(lightboxImages)) {
       return null
     }
+
+    const shouldShowMaximizeLink = isPreview && _.size(sortedImages) >= 6
 
     return (
       <StyledPanel>
@@ -95,9 +96,11 @@ class PhotographyGridSection extends Component<Props, State> {
               return null
             }
 
+            const { aspectRatio, src } = thumbnailSizes
+
             return (
               <ImageZoomGridElement
-                key={thumbnailSizes.src}
+                key={md5(src)}
                 onClick={() =>
                   this.toggleLightbox({
                     index: imageIndex,
@@ -105,12 +108,17 @@ class PhotographyGridSection extends Component<Props, State> {
                     lightboxImages,
                   })
                 }
-                aspectRatio={thumbnailSizes.aspectRatio}
+                aspectRatio={aspectRatio}
               >
-                <Img sizes={thumbnailSizes} className="pointer" />
+                <Img fluid={thumbnailSizes} className="pointer" />
               </ImageZoomGridElement>
             )
           })}
+          {shouldShowMaximizeLink && (
+            <MaximizeLink to={slug}>
+              <Maximize2 size={32} />
+            </MaximizeLink>
+          )}
         </ImageZoomGrid>
         {isLightboxOpen && lightboxSrc && (
           <Lightbox
@@ -129,6 +137,22 @@ class PhotographyGridSection extends Component<Props, State> {
         )}
       </StyledPanel>
     )
+  }
+
+  private toggleLightbox({
+    index,
+    isLightboxOpen,
+    lightboxImages = this.state.lightboxImages,
+  }: ToggleLightboxOptions) {
+    // prettier-ignore
+    this.setState({ // lgtm [js/react/inconsistent-state-update]
+      index,
+      isLightboxOpen,
+      lightboxImages,
+      lightboxSrc: lightboxImages[index],
+      nextImageSrc: lightboxImages[(index + 1) % lightboxImages.length],
+      prevImageSrc: lightboxImages[(index - 1) % lightboxImages.length],
+    })
   }
 }
 

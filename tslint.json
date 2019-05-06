@@ -6,13 +6,12 @@
   ],
   "defaultSeverity": "error",
   "linterOptions": {
-    "include": ["src/**/*.{ts,tsx}"],
-    "exclude": ["node_modules"]
+    "include": ["src/**/*.{ts,tsx}"]
   },
   "rules": {
     "interface-name": false,
     "no-use-before-declare": false,
-    "object-literal-sort-keys": false,
+    "object-literal-sort-keys": true,
     "trailing-comma": [true, "es5"]
   }
 }

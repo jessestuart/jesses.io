@@ -2,10 +2,10 @@
 
 exports[`Render Profile component. Render Profile component. 1`] = `
 <div
-  className="sc-dnqmqq items-center justify-center pv4 dySFDt"
+  className="sc-iwsKbI items-center justify-center pv4 ieOyzb"
 >
   <div
-    className="sc-iwsKbI center w-100-ns w-50 hOqydo"
+    className="sc-gZMcBi center w-100-ns w-50 iVKUTE"
   >
     <div
       className="sc-bdVaJa flex justify-around mv4 cDifEl"
@@ -122,7 +122,7 @@ exports[`Render Profile component. Render Profile component. 1`] = `
     </div>
   </div>
   <div
-    className="sc-gZMcBi tc tr-ns ph2 ddEsaJ"
+    className="sc-gqjmRU tc tr-ns ph2 czwFG"
   >
     <h2
       className="f3 fw5 lh-title white-80 spectral"
@@ -594,7 +594,7 @@ exports[`Render Profile component. Render Profile component. 1`] = `
     </p>
   </div>
   <div
-    className="sc-gqjmRU bt b--light-silver gUujYY"
+    className="sc-VigVT bt b--light-silver BKAoe"
   >
     <div
       className="b--hot-pink bb bg-purple bw2 mb1 pb3 pt4"
@@ -623,7 +623,7 @@ exports[`Render Profile component. Render Profile component. 1`] = `
             className="mw-5"
             fill="none"
             height="30px"
-            stroke="#FF3A5C"
+            stroke="#ff3a5c"
             strokeLinecap="round"
             strokeLinejoin="round"
             strokeWidth="2"
