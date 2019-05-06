@@ -1,0 +1,9 @@
+[ver:1,total:1380]
+.gtm/terminal.app:875,1557158400:120,1557162000:755,r
+src/components/Photography/PhotographyGridSection.tsx:244,1557162000:244,m
+.circleci/config.yml:180,1557158400:120,1557162000:60,r
+src/pages/photography.tsx:45,1557162000:45,r
+.gitignore:15,1557162000:15,r
+src/components/Photography/ImageZoomGridElement.tsx:9,1557162000:9,r
+src/components/Photography/ImageZoomGrid.tsx:6,1557162000:6,r
+src/components/layout.tsx:6,1557162000:6,r
