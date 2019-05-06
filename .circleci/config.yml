@@ -70,6 +70,11 @@ install_dependencies: &install_dependencies
     name: Install dependencies.
     command: yarn --silent --no-progress --frozen-lockfile --prefer-offline
 
+sentry_release: &sentry_release
+  run:
+    name: Update release @ sentry.io
+    command: sh ../scripts/update-sentry-release.sh
+
 semantic_release: &semantic_release
   <<: *defaults
   steps:
@@ -77,6 +82,7 @@ semantic_release: &semantic_release
     - *restore_cache
     - *install_dependencies
     - run: yarn semantic-release
+    - *sentry_release
 
 # ================
 # JOB DECLARATIONS
