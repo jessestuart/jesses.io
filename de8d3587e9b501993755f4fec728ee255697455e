@@ -1,0 +1,17 @@
+[ver:1,total:8040]
+.gtm/terminal.app:3842,1557162000:420,1557165600:1171,1557169200:1131,1557172800:1120,r
+scripts/update-sentry-release.ts:2941,1557165600:677,1557169200:2254,1557172800:10,d
+package.json:297,1557165600:245,1557169200:12,1557172800:40,r
+.circleci/config.yml:260,1557165600:210,1557172800:50,m
+.sentryclirc:200,1557172800:200,d
+scripts/get-version.ts:120,1557165600:120,d
+node_modules/@types/got/index.d.ts:92,1557169200:92,d
+scripts/update-sentry-release.sh:80,1557172800:80,m
+tsconfig.json:42,1557165600:42,r
+node_modules/@types/node/globals.d.ts:40,1557169200:40,r
+src/services/sentry.js:40,1557165600:20,1557169200:20,r
+node_modules/@types/node/url.d.ts:26,1557169200:26,r
+gatsby-browser.js:20,1557165600:20,r
+.babelrc.js:15,1557165600:15,r
+node_modules/@types/node/https.d.ts:15,1557169200:15,r
+node_modules/typescript/lib/lib.es2015.symbol.wellknown.d.ts:10,1557169200:10,r
