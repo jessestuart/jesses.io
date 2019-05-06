@@ -26,6 +26,13 @@ workflows:
             branches:
               only:
                 - master
+      - sentry_release:
+          requires:
+            - semantic_release
+          filters:
+            branches:
+              only:
+                - master
 
 # ===================
 # Shared definitions.
@@ -70,19 +77,25 @@ install_dependencies: &install_dependencies
     name: Install dependencies.
     command: yarn --silent --no-progress --frozen-lockfile --prefer-offline
 
-sentry_release: &sentry_release
-  run:
-    name: Update release @ sentry.io
-    command: sh ./scripts/update-sentry-release.sh
+# sentry_release: &sentry_release
+#   run:
+#     name: Update release @ sentry.io
+#     command: sh ./scripts/update-sentry-release.sh
 
 semantic_release: &semantic_release
   <<: *defaults
   steps:
     - checkout
     - *restore_cache
-    - *install_dependencies
     - run: yarn semantic-release
-    - *sentry_release
+
+sentry_release: &sentry_release
+  <<: *defaults
+  steps:
+    - checkout
+    - *restore_cache
+    - run: curl -sL https://sentry.io/get-cli/ | bash
+    - run: sh ./scripts/update-sentry-release.sh
 
 # ================
 # JOB DECLARATIONS
@@ -173,6 +186,8 @@ jobs:
             fi
 
   semantic_release: *semantic_release
+
+  sentry_release: *sentry_release
 
   capture_screenshots:
     docker:
