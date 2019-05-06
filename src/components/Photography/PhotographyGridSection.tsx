@@ -144,8 +144,8 @@ class PhotographyGridSection extends Component<Props, State> {
     isLightboxOpen,
     lightboxImages = this.state.lightboxImages,
   }: ToggleLightboxOptions) {
-    // lgtm [js/react/inconsistent-state-update]
-    this.setState({
+    // prettier-ignore
+    this.setState({ // lgtm [js/react/inconsistent-state-update]
       index,
       isLightboxOpen,
       lightboxImages,

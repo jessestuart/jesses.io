@@ -23,3 +23,11 @@ exports[`Render StyledLink component with default colors. 1`] = `
   My Styled Link
 </a>
 `;
+
+exports[`StyledLink component w/out href renders as <span>. 1`] = `
+<span
+  className="sc-bdVaJa bXWskY"
+>
+  Styled Link as span
+</span>
+`;

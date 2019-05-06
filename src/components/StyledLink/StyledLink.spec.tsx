@@ -1,5 +1,6 @@
 import React from 'react'
 import renderer from 'react-test-renderer'
+
 import StyledLink from './StyledLink'
 
 test('Render StyledLink component with default colors.', () => {
@@ -16,6 +17,13 @@ test('Render StyledLink component with custom colors.', () => {
         My Styled Link
       </StyledLink>,
     )
+    .toJSON()
+  expect(tree).toMatchSnapshot()
+})
+
+test('StyledLink component w/out href renders as <span>.', () => {
+  const tree = renderer
+    .create(<StyledLink>Styled Link as span</StyledLink>)
     .toJSON()
   expect(tree).toMatchSnapshot()
 })
