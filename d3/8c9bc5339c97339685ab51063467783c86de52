@@ -1,0 +1,5 @@
+[ver:1,total:360]
+.gtm/terminal.app:290,1558227600:180,1558231200:110,r
+.git/COMMIT_EDITMSG:30,1558231200:30,r
+scripts/update-sentry-release.sh:20,1558231200:20,m
+.git/rebase-merge/git-rebase-todo:20,1558231200:20,r
