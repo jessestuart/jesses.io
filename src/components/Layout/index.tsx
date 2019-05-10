@@ -11,8 +11,9 @@ import React, { ReactNode } from 'react'
 import Helmet from 'react-helmet'
 
 import { SiteFooter, SiteHeader } from 'components'
+import GatsbyLocation from 'types/GatsbyLocation'
 
-import config from '../../gatsby-config'
+import config from '../../../gatsby-config'
 
 const title: string = _.get(config, 'siteMetadata.title')
 const url: string = _.get(config, 'siteMetadata.url')
@@ -31,9 +32,7 @@ const HELMET_META = [
 
 interface Props {
   children: ReactNode
-  location: {
-    pathname: string
-  }
+  location: GatsbyLocation
 }
 
 const Layout = ({ children, location }: Props) => (

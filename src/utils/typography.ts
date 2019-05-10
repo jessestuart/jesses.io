@@ -10,12 +10,6 @@ import CodePlugin from 'typography-plugin-code'
 
 import colors from 'utils/colors'
 
-const pseudoUnderline = {
-  borderBottom: `2px solid ${colors.defaultLink}`,
-  position: 'relative',
-  textDecoration: 'none',
-}
-
 const sansSerifFontFamilies = [
   '-apple-system',
   'BlinkMacSystemFont',
@@ -69,14 +63,14 @@ const options = {
   plugins: [new CodePlugin()],
   scaleRatio: 2,
   overrideStyles: (
-    _typographyOptions: never,
+    _typographyOptions: any,
     overrideStyleOptions: { headerFontFamily: string[] },
   ) => ({
-    blockquote: {
-      fontStyle: 'inherit',
-      textAlign: 'justify',
-      textIndent: '2em',
-    },
+    // blockquote: {
+    //   fontStyle: 'inherit',
+    //   textAlign: 'justify',
+    //   textIndent: '2em',
+    // },
 
     '.spectral': {
       fontFamily: mapFontFamilyListToString(serifFontFamilies),
@@ -89,7 +83,6 @@ const options = {
     '.code': {
       fontFamily: mapFontFamilyListToString(monospaceFontFamilies),
     },
-
     '.fira-mono': {
       fontFamily: mapFontFamilyListToString(monospaceFontFamilies),
     },
@@ -113,7 +106,9 @@ const options = {
     },
 
     '.pseudo-underline': {
-      ...pseudoUnderline,
+      borderBottom: `2px solid ${colors.defaultLink}`,
+      position: 'relative',
+      textDecoration: 'none',
       fontFamily: overrideStyleOptions.headerFontFamily.join(','),
     },
 
@@ -124,17 +119,12 @@ const options = {
       fill: colors.primary.main,
       textDecoration: 'none',
     },
-
-    button: {
-      outline: 'none',
-    },
   }),
 }
 
 const typography = new Typography(options)
 
 // Hot reload typography in development.
-// @ts-ignore
 if (process.env.NODE_ENV !== 'production') {
   typography.injectStyles()
 }

@@ -1,16 +1,16 @@
 import 'react-image-lightbox/style.css'
 
-import { Link } from 'gatsby'
-import Img from 'gatsby-image'
 import _ from 'lodash'
 import { DateTime } from 'luxon'
-import React, { Component } from 'react'
+import { Link } from 'gatsby'
 import { Maximize2 } from 'react-feather'
+import Img from 'gatsby-image'
 import Lightbox from 'react-image-lightbox'
+import md5 from 'md5'
+import React, { Component } from 'react'
 import styled from 'styled-components'
 
 import StyledPanel from 'components/StyledPanel/StyledPanel'
-import md5 from 'md5'
 import colors from 'utils/colors'
 
 import {

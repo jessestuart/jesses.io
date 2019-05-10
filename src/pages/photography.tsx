@@ -5,14 +5,13 @@ import { DateTime } from 'luxon'
 import React from 'react'
 import { Helmet } from 'react-helmet'
 
-import Layout from 'components/layout'
-import { PhotographyGridSection } from 'components/Photography'
+import { PhotographyGridSection } from 'components'
+import Layout from 'components/Layout'
+import GatsbyLocation from 'types/GatsbyLocation'
 import { S3ImageAsset } from 'types/s3-image-asset'
 
 interface Props {
-  location: {
-    pathname: string
-  }
+  location: GatsbyLocation
   data: {
     site: {
       metadata: {

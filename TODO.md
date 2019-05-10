@@ -1,28 +1,28 @@
 ### Need-to-do
 
-* Add anchor tags to SVG icons
+- Add anchor tags to SVG icons
 
 ### Ideas
 
-* Integrate `react-calendar-heatmap` to highlight GH contributions.
-* Consolidate vendor stylesheets in `styles` directory.
-* Set up SonarQube
+- Integrate `react-calendar-heatmap` to highlight GH contributions.
+- Consolidate vendor stylesheets in `styles` directory.
+- Set up SonarQube
 
-- Code block style: http://jstu.art/pRnP
+* Code block style: http://jstu.art/pRnP
 
 ### Icons to add
 
-* Swagger
+- Swagger
 
 ### Nice-to-haves
 
-* Better logging
-* Sentry
-  * https://github.com/octalmage/gatsby-plugin-sentry
+- Better logging
+- Sentry
+  - https://github.com/octalmage/gatsby-plugin-sentry
 
 ### Photography
 
-* Add exif plugin?
+- Add exif plugin?
 
 ```
 const exifImage = exif.ExifImage(
@@ -39,19 +39,26 @@ const exifImage = exif.ExifImage(
 
 ### Blog Post Ideas
 
-* Gatsby + Docker + CircleCI pipeline
+- Gatsby + Docker + CircleCI pipeline
 
-* Homemaker
-  * Add CLI (?)
+- Homemaker
+  - Add CLI (?)
 
 ### 20180217
 
-* Replace `react-medium-image-zoom` component. It has a number of problems:
-  * The 'zoom' effect is actually a CSS scale transform, so the srcset isn't
+- Replace `react-medium-image-zoom` component. It has a number of problems:
+  - The 'zoom' effect is actually a CSS scale transform, so the srcset isn't
     actually serving the proper resolution image.
-  * It's got serious UI stutter issues on mobile safari.
-* Fix R/L padding for blog template
-* Center avatar on home page
+  - It's got serious UI stutter issues on mobile safari.
+- Fix R/L padding for blog template
+- Center avatar on home page
 
-- https://www.npmjs.com/package/scrollprogress
+* https://www.npmjs.com/package/scrollprogress
 
+==================================================
+
+- Idea: if `gatsby-source-s3-images`, when used with "real" S3, was just
+  passed a collection of references to objects, and do all the heavy
+  lifting remotely... ah shit, but we'd still need the images locally
+  for gatsby-image, and pulling down dozens of 10MB+ images is the main
+  bottleneck anyway.

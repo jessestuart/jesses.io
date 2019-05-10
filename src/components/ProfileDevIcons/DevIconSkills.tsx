@@ -21,9 +21,9 @@ const {
   Vagrant,
 } = DevIcons
 
-const infra = [Docker, Kubernetes, Ansible, Vagrant, Packer, Terraform]
+const infra = [Kubernetes, Docker, Terraform, Ansible, Packer, Vagrant]
 
-const backend = [Java, Grails, Go, Nodejs, Python, Clojure]
+const backend = [Nodejs, Go, Java, Grails, Python, Clojure]
 
 const frontend = [React, Redux, GraphQL, Jest, GatsbyJS, AngularJS]
 

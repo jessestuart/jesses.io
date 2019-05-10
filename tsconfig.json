@@ -1,8 +1,7 @@
 {
-  "include": ["./src/**/*.tsx", "./src/**/*.ts", "**/*.js"],
-  "exclude": ["node_modules/*", "public/*"],
   "compilerOptions": {
     "allowSyntheticDefaultImports": true,
+    "allowJs": true,
     "baseUrl": ".",
     "declaration": false,
     "emitDecoratorMetadata": true,
@@ -25,5 +24,7 @@
     "strict": true,
     "strictNullChecks": true,
     "target": "es5"
-  }
+  },
+  "exclude": ["node_modules/*", "public/*"],
+  "include": ["./src/**/*.tsx", "./src/**/*.ts", "**/*.js"]
 }

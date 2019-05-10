@@ -2,15 +2,11 @@ import { withPrefix } from 'gatsby'
 import React from 'react'
 import Helmet from 'react-helmet'
 
+import { PortfolioItem, StyledLink, StyledPanel } from 'components'
+import Logo from 'components/Icons/logo_dark.svg'
+import Layout from 'components/Layout'
+
 import config from '../../gatsby-config'
-import {
-  BlogHeader,
-  PortfolioItem,
-  StyledLink,
-  StyledPanel,
-} from '../components'
-import Logo from '../components/Icons/logo_dark.svg'
-import Layout from '../components/layout'
 
 const ContactInfoList = () => (
   <>
@@ -52,7 +48,7 @@ const About = ({ location }: { location: any }) => (
     <div className="bg-near-white lh-copy pa3-ns pv4 w-100">
       <Helmet title={`About | ${config.siteMetadata.title}`} />
       <StyledPanel className="mt2">
-        <BlogHeader location={location}>Get in touch</BlogHeader>
+        <StyledLink>Get in touch</StyledLink>
         <div className="center flex items-center justify-center">
           <img src={Logo} style={{ maxHeight: 200, marginBottom: 0 }} />
         </div>

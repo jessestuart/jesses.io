@@ -2,9 +2,10 @@ import { graphql } from 'gatsby'
 import _ from 'lodash'
 import React from 'react'
 
-import { Profile, ProfileDevIcons } from '../components'
-import Layout from '../components/layout'
-import { GatsbyImage } from '../types/gatsby-image'
+import { Profile, ProfileDevIcons } from 'components'
+import Layout from 'components/Layout'
+import GatsbyImage from 'types/gatsby-image'
+import GatsbyLocation from 'types/GatsbyLocation'
 
 interface Props {
   data: {
@@ -12,8 +13,7 @@ interface Props {
       childImageSharp: GatsbyImage
     }
   }
-
-  location: any
+  location: GatsbyLocation
 }
 
 const Home = ({ data, location }: Props) => {

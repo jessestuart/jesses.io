@@ -11,14 +11,23 @@ AWS.config.update({
 // photos will be downloaded from a test bucket, rather the the full
 // high-resolution photos displayed in production. This is simply to
 // save on AWS costs :)
-const GATSBY_ENV = process.env.GATSBY_ENV
+const GatsbyEnv = {
+  Development: 'Deveopment',
+  Production: 'Production',
+  Staging: 'Staging',
+}
+
+const GATSBY_ENV = GatsbyEnv[process.env.GATSBY_ENV]
+const AUTHOR_NAME = 'Jesse Stuart'
+const SITE_NAME = 'jesses.io'
+
 const IS_DEV = GATSBY_ENV !== 'Production'
 
 const siteMetadata = {
-  author: 'Jesse Stuart',
+  author: AUTHOR_NAME,
   description: 'I build things and thoughts.',
-  siteUrl: 'https://jesses.io',
-  title: 'Jesse Stuart',
+  siteUrl: `https://${SITE_NAME}`,
+  title: AUTHOR_NAME,
 }
 
 const sourceFilesystem = {
@@ -28,6 +37,7 @@ const sourceFilesystem = {
     name: 'pages',
   },
 }
+
 const sourceFilesystemImages = {
   resolve: 'gatsby-source-filesystem',
   options: {
@@ -77,6 +87,21 @@ const sourceS3 = {
   },
 }
 
+/* eslint-disable @typescript-eslint/camelcase */
+const manifestPlugin = {
+  resolve: 'gatsby-plugin-manifest',
+  options: {
+    name: 'Jesse Stuart',
+    short_name: 'jesses.io',
+    start_url: '/',
+    background_color: '#373b46',
+    theme_color: '#673ab7',
+    display: 'standalone',
+    icon: './src/components/Icons/logo_dark.svg',
+  },
+}
+/* eslint-enable @typescript-eslint/camelcase */
+
 const plugins = _.compact([
   'gatsby-plugin-typescript',
   // ====================================
@@ -110,20 +135,6 @@ const plugins = _.compact([
   'gatsby-plugin-remove-trailing-slashes',
   // 'gatsby-plugin-feed',
   'gatsby-plugin-lodash',
-  /* eslint-disable @typescript-eslint/camelcase */
-  {
-    resolve: 'gatsby-plugin-manifest',
-    options: {
-      name: 'Jesse Stuart',
-      short_name: 'jesses.io',
-      start_url: '/',
-      background_color: '#373b46',
-      theme_color: '#673ab7',
-      display: 'standalone',
-      icon: './src/components/Icons/logo_dark.svg',
-    },
-  },
-  /* eslint-enable @typescript-eslint/camelcase */
   'gatsby-plugin-offline',
   'gatsby-plugin-netlify-cache',
   // This ostensibly has to go at the end of the plugins declaration array.

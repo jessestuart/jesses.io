@@ -1,4 +1,4 @@
-export interface GatsbyImage {
+export default interface GatsbyImage {
   sizes: {
     aspectRatio: number
     base64: string

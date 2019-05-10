@@ -1,4 +1,5 @@
 #!/bin/sh
+export SENTRY_AUTH_TOKEN=$SENTRY_AUTH_TOKEN
 export SENTRY_ORG=jesses
 
 VERSION=$(sentry-cli releases propose-version)

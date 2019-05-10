@@ -5,8 +5,9 @@ import { DateTime } from 'luxon'
 import React, { Component } from 'react'
 import Helmet from 'react-helmet'
 
-import Layout from '../components/layout'
-import PhotographyGridSection from '../components/Photography/PhotographyGridSection'
+import Layout from 'components/layout'
+import PhotographyGridSection from 'components/Photography/PhotographyGridSection'
+import GatsbyLocation from 'types/GatsbyLocation'
 
 interface Props {
   data: {
@@ -15,18 +16,13 @@ interface Props {
         node: any
       }
     }
-
     site: {
       siteMetadata: {
         title: string
       }
     }
   }
-
-  location: {
-    pathname: string
-  }
-
+  location: GatsbyLocation
   pageContext: {
     name: string
   }
@@ -93,16 +89,10 @@ export const pageQuery = graphql`
                 width
               }
               thumbnailSizes: fluid(maxWidth: 512) {
-                aspectRatio
-                src
-                srcSet
-                sizes
+                ...GatsbyImageSharpFluid
               }
               largeSizes: fluid(maxWidth: 2048) {
-                aspectRatio
-                src
-                srcSet
-                sizes
+                ...GatsbyImageSharpFluid
               }
             }
           }

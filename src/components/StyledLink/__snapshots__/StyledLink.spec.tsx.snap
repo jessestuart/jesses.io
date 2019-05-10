@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Render StyledLink component with custom colors. 1`] = `
+exports[`StyledLink component. Render StyledLink component with custom colors. 1`] = `
 <a
   className="sc-bdVaJa eMZNEL"
   hoverColor="#555555"
@@ -13,7 +13,7 @@ exports[`Render StyledLink component with custom colors. 1`] = `
 </a>
 `;
 
-exports[`Render StyledLink component with default colors. 1`] = `
+exports[`StyledLink component. Render StyledLink component with default colors. 1`] = `
 <a
   className="sc-bdVaJa bXWskY"
   href="/true"
@@ -24,7 +24,7 @@ exports[`Render StyledLink component with default colors. 1`] = `
 </a>
 `;
 
-exports[`StyledLink component w/out href renders as <span>. 1`] = `
+exports[`StyledLink component. StyledLink component w/out href renders as <span>. 1`] = `
 <span
   className="sc-bdVaJa bXWskY"
 >

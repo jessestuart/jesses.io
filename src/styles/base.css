@@ -65,9 +65,20 @@ a {
   text-decoration: none;
 }
 
+blockquote {
+  font-style: inherit;
+  text-align: justify;
+  text-indent: 2em;
+}
+
+button {
+  outline: none;
+}
+
 .bg-gray-primary {
   background-color: var(--gray-primary);
 }
+
 .bg-gray-primary-darker {
   background-color: var(--gray-primary-darker);
 }
