@@ -1,0 +1,15 @@
+[ver:1,total:12240]
+.gtm/terminal.app:6237,1557511200:480,1557550800:180,1557554400:1560,1557579600:180,1557590400:175,1557594000:769,1557597600:1260,1557601200:1063,1557604800:450,1557608400:120,r
+src/components/SiteHeader/HeaderLink.tsx:2721,1557594000:545,1557601200:166,1557604800:2010,m
+src/components/SiteHeader/SiteHeader.tsx:1864,1557590400:270,1557594000:313,1557601200:1281,m
+src/context/LocationContext.tsx:857,1557594000:837,1557601200:20,d
+src/components/StyledLink/StyledLink.tsx:185,1557594000:155,1557601200:30,m
+src/components/ProfileDevIcons/DevIconSkills.tsx:150,1557604800:150,m
+tsconfig.json:90,1557608400:90,m
+src/components/ProfileDevIcons/index.tsx:30,1557604800:30,r
+src/templates/blog-post.tsx:21,1557594000:21,r
+.prettierrc.js:20,1557590400:20,d
+package.json:20,1557601200:20,r
+prettier.config.js:15,1557608400:15,r
+.prettierrc:15,1557590400:15,d
+gatsby-config.js:15,1557608400:15,m
