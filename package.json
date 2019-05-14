@@ -116,7 +116,7 @@
     "gatsby-cypress": "0.1.9",
     "gray-percentage": "2.0.0",
     "greenkeeper-lockfile": "1.15.1",
-    "husky": "2.2.0",
+    "husky": "2.3.0",
     "identity-obj-proxy": "3.0.0",
     "jest": "24.8.0",
     "jest-junit": "6.4.0",
