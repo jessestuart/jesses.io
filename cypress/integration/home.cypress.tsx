@@ -1,14 +1,15 @@
 context('Homepage', () => {
-  beforeEach(() => {
-    cy.visit(`http://localhost:8000`)
+  it('can render Homepage.', () => {
+    cy.visit('/')
+    cy.contains("Hi — I'm Jesse.")
   })
 
-  it('Navigates to home page.', () => {
-    cy.get('').click()
+  it('can navigate to About page.', () => {
+    cy.get('.site-header')
+      .find('a')
+      .last()
+      .should('contain', 'about')
+      .click()
+    cy.url().should('eq', 'http://localhost:8000/about')
   })
-
-  // it('has focusable buttons', () => {
-  //   cy.getByText('click me').focus()
-  //   cy.focused().should('have.text', 'click me')
-  // })
 })

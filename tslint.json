@@ -1,12 +1,14 @@
 {
   "extends": [
     "tslint:recommended",
+    "tslint-react",
     "tslint-config-standard",
     "tslint-config-prettier"
   ],
   "defaultSeverity": "error",
   "linterOptions": {
-    "include": ["src/**/*.{ts,tsx}"]
+    "include": ["src/**/*.ts", "src/**/*.tsx"],
+    "exclude": ["test/coverage/**"]
   },
   "rules": {
     "interface-name": false,

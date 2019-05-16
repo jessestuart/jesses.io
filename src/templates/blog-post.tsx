@@ -2,17 +2,35 @@ import './blog-post.css'
 
 import { graphql } from 'gatsby'
 import _ from 'lodash'
-import * as React from 'react'
+import { DateTime } from 'luxon'
+import React, { ReactNode } from 'react'
 import Helmet from 'react-helmet'
 
+import BlogHeader from 'components/Blog/BlogHeader'
+import Layout from 'components/Layout'
+import GatsbyLocation from 'types/GatsbyLocation'
+import colors from 'utils/colors'
 import config from '../../gatsby-config'
-import BlogHeader from '../components/Blog/BlogHeader'
-import Layout from '../components/layout'
-import colors from '../utils/colors'
 
 interface Props {
-  data: any
-  location: any
+  children: ReactNode
+  data: {
+    site: {
+      siteMetadata: {
+        title: string
+      }
+    }
+    markdownRemark: {
+      id: any
+      excerpt: string
+      frontmatter: {
+        title: string
+        date: string
+      }
+      html: any
+    }
+  }
+  location: GatsbyLocation
 }
 
 // eslint-disable-next-line
@@ -25,53 +43,51 @@ const BlogPostHelmet = ({ comboTitle, pageURL, excerpt, date }) => (
     <meta property="og:url" content={pageURL} />
     <meta
       property="article:published_time"
-      content={new Date(date).toISOString()}
+      content={DateTime.fromJSDate(date).toISODate()}
     />
   </Helmet>
 )
 
-class BlogPostTemplate extends React.Component<Props> {
-  public render() {
-    const { data, location } = this.props
-    const post = _.get(data, 'markdownRemark')
-    if (!post) {
-      return null
-    }
-
-    const pathname = _.get(location, 'pathname')
-    const siteTitle = _.get(data, 'site.siteMetadata.title')
-    const { excerpt } = post
-    const { date, title } = post.frontmatter
-    const pageURL = `${config.siteMetadata.siteUrl}${pathname}`
-
-    const comboTitle = `${title || 'Posts'} | ${siteTitle}`
-
-    return (
-      <Layout location={location}>
-        <BlogPostHelmet
-          comboTitle={comboTitle}
-          date={date}
-          pageURL={pageURL}
-          excerpt={excerpt}
-        />
-        <div
-          className="black-80 lh-copy pa4 w-100"
-          style={{ background: colors.secondary.light0 }}
-        >
-          <div className="center mw7-ns">
-            <BlogHeader date={date} link={`${pathname}`} location={location}>
-              {title}
-            </BlogHeader>
-            <article
-              className="center f4 fw5 justify mw-100"
-              dangerouslySetInnerHTML={{ __html: post.html }}
-              id="remark-post"
-            />
-          </div>
-        </div>
-      </Layout>
-    )
+const BlogPostTemplate = (props: Props) => {
+  const { data, location } = props
+  const post = _.get(data, 'markdownRemark')
+  if (!post) {
+    return null
   }
+
+  const pathname = _.get(location, 'pathname')
+  const siteTitle = _.get(data, 'site.siteMetadata.title')
+  const { excerpt } = post
+  const { date, title } = post.frontmatter
+  const pageURL = `${config.siteMetadata.siteUrl}${pathname}`
+
+  const comboTitle = `${title || 'Posts'} | ${siteTitle}`
+
+  return (
+    <Layout location={location}>
+      <BlogPostHelmet
+        comboTitle={comboTitle}
+        date={new Date(date)}
+        pageURL={pageURL}
+        excerpt={excerpt}
+      />
+      <div
+        className="black-80 lh-copy pa4 w-100"
+        style={{ background: colors.secondary.light0 }}
+      >
+        <div className="center mw7-ns">
+          <BlogHeader date={date} link={pathname} location={location}>
+            {title}
+          </BlogHeader>
+          <article
+            className="center f4 fw5 justify mw-100"
+            dangerouslySetInnerHTML={{ __html: post.html }}
+            id="remark-post"
+          />
+        </div>
+      </div>
+    </Layout>
+  )
 }
 
 export const pageQuery = graphql`

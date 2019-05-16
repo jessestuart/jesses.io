@@ -42,6 +42,15 @@ defaults: &defaults
   docker:
     - image: node:11
 
+cypress_defaults: &cypress_defaults
+  working_directory: ~/jesses.io
+  docker:
+    # the Docker image with Cypress dependencies
+    - image: cypress/base:12
+      environment:
+        ## this enables colors in the output
+        TERM: xterm
+
 # ====================
 # SHARED JOBS POINTERS
 # ====================

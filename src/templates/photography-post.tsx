@@ -5,7 +5,7 @@ import { DateTime } from 'luxon'
 import React, { Component } from 'react'
 import Helmet from 'react-helmet'
 
-import Layout from 'components/layout'
+import Layout from 'components/Layout'
 import PhotographyGridSection from 'components/Photography/PhotographyGridSection'
 import GatsbyLocation from 'types/GatsbyLocation'
 
