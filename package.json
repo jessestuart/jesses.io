@@ -103,7 +103,7 @@
     "cosmiconfig": "5.2.1",
     "cypress": "3.2.0",
     "eslint": "5.16.0",
-    "eslint-config-prettier": "4.2.0",
+    "eslint-config-prettier": "4.3.0",
     "eslint-config-standard": "12.0.0",
     "eslint-config-standard-react": "7.0.2",
     "eslint-friendly-formatter": "4.0.1",
