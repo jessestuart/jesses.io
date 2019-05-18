@@ -74,6 +74,7 @@ const PhotographyIndex = ({ data, location }: Props) => {
               <PhotographyGridSection
                 datetime={datetime}
                 images={linkImages || []}
+                imageCount={_.size(imageNodeList)}
                 isPreview={true}
                 key={title}
                 slug={linkSlug}

@@ -12,6 +12,8 @@
   },
   "rules": {
     "interface-name": false,
+    "jsx-no-lambda": false,
+    "no-namespace": false,
     "no-use-before-declare": false,
     "object-literal-sort-keys": true,
     "trailing-comma": [true, "es5"]

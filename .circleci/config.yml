@@ -138,6 +138,10 @@ jobs:
             yarn jest --coverage --runInBand --ci
           environment:
             JEST_JUNIT_OUTPUT: 'reports/junit/js-test-results.xml'
+      - run:
+          name: Run E2E tests.
+          command: |
+            yarn percy exec cypress run
       - store_test_results:
           path: reports/junit
       - store_artifacts:

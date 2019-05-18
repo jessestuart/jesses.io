@@ -1,7 +1,7 @@
 {
   "compilerOptions": {
-    "allowSyntheticDefaultImports": true,
     "allowJs": true,
+    "allowSyntheticDefaultImports": true,
     "baseUrl": ".",
     "declaration": false,
     "emitDecoratorMetadata": true,
@@ -24,8 +24,8 @@
     "strict": true,
     "strictNullChecks": true,
     "target": "es5",
-    "types": ["cypress"]
+    "types": ["cypress", "@percy/cypress", "node"]
   },
   "exclude": ["node_modules/*", "public/*"],
-  "include": ["./src/**/*.tsx", "./src/**/*.ts", "**/*.js"]
+  "include": ["./src/**/*.tsx", "./src/**/*.ts", "./test/**/*.ts", "**/*.js"]
 }

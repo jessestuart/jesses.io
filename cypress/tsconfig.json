@@ -1,0 +1,10 @@
+{
+  "compilerOptions": {
+    "baseUrl": "../node_modules",
+    "lib": ["es5", "dom"],
+    "strict": true,
+    "target": "es5",
+    "types": ["@percy/cypress", "cypress"]
+  },
+  "include": ["**/*.ts", "**/*.js"]
+}

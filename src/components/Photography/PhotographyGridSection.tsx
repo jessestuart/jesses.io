@@ -22,12 +22,18 @@ import {
 
 interface Props {
   datetime: DateTime
+  // The images to be *currently* displayed for this section.
   images: any[]
+  // The *total* number of images available for this section, even those that
+  // are currently hidden.
+  imageCount: number
+  // True if on `/photography` page; false if on one of the photo details pages.
   isPreview?: boolean
   slug?: string
 }
 
 interface State {
+  imageSources: any[]
   index: number
   isLightboxOpen: boolean
   lightboxImages: string[]
@@ -43,11 +49,11 @@ interface ToggleLightboxOptions {
 }
 
 const MaximizeLink = styled(Link)`
-  bottom: 0;
+  bottom: -40px;
   color: ${colors.accent};
   cursor: pointer;
   position: absolute;
-  right: 0;
+  right: -40px;
   transition: all 0.5s;
   &:hover {
     color: ${colors.primary.main} !important;
@@ -56,25 +62,28 @@ const MaximizeLink = styled(Link)`
 
 class PhotographyGridSection extends Component<Props, State> {
   public readonly state: State = {
+    imageSources: [],
     index: 0,
     isLightboxOpen: false,
     lightboxImages: [],
   }
 
   public componentWillMount() {
-    console.log({ props: this.props })
+    this.setState({ imageSources: this.getImageState() })
     this.setState({ lightboxImages: this.getLightboxImagesFromProps() })
   }
 
   public render() {
-    const { datetime, images, isPreview, slug = '/#' } = this.props
+    const { datetime, images, imageCount, isPreview, slug = '/#' } = this.props
     const {
       isLightboxOpen,
+      imageSources,
       lightboxSrc,
       nextImageSrc,
       prevImageSrc,
     } = this.state
 
+    // const lightboxImages = _.get(imageSources, 'largeSizes.src')
     const sortedImages = _.sortBy(images, 'EXIF.DateTimeOriginal')
     const lightboxImages = _.map(
       sortedImages,
@@ -90,7 +99,7 @@ class PhotographyGridSection extends Component<Props, State> {
     // six).  Unfortunately importing that directly seems to cause circular
     // dependency issues with tests that I haven't had the time to debug,
     // so... yay magic numbers.
-    const shouldShowMaximizeLink = isPreview && _.size(images) > 6
+    const shouldShowMaximizeLink = isPreview && imageCount > 6
 
     return (
       <StyledPanel>
@@ -102,7 +111,7 @@ class PhotographyGridSection extends Component<Props, State> {
               'childrenFile[0].childImageSharp.thumbnailSizes',
             )
 
-            if (_.isEmpty(thumbnailSizes)) {
+            if (!thumbnailSizes) {
               return null
             }
 
@@ -110,10 +119,9 @@ class PhotographyGridSection extends Component<Props, State> {
 
             return (
               <ImageZoomGridElement
-                key={md5(src)}
-                // tslint:disable
-                onClick={() => this.clickImageElement(imageIndex)}
                 aspectRatio={aspectRatio}
+                key={md5(src)}
+                onClick={() => this.clickImageElement(imageIndex)}
               >
                 <Img fluid={thumbnailSizes} className="pointer" />
               </ImageZoomGridElement>
@@ -189,6 +197,12 @@ class PhotographyGridSection extends Component<Props, State> {
       'childrenFile[0].childImageSharp.largeSizes.src',
     )
     return lightboxImages
+  }
+
+  private getImageState(): any[] {
+    const { images } = this.props
+    const sortedImages = _.sortBy(images, 'EXIF.DateTimeOriginal')
+    return _.map(sortedImages, 'childrenFile[0].childImageSharp')
   }
 }
 
