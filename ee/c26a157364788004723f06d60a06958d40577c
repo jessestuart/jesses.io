@@ -1,0 +1,4 @@
+[ver:1,total:540]
+.gtm/terminal.app:240,1558227600:240,r
+scripts/update-sentry-release.sh:150,1558227600:150,m
+.git/PULLREQ_EDITMSG:150,1558227600:150,d
