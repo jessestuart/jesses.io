@@ -5,7 +5,7 @@
     "group:definitelyTyped",
     "group:linters",
     "group:jsTest",
-    "group:babel",
+    "group:babelMonorepo",
     ":automergeBranchPush",
     ":semanticCommits",
     ":rebaseStalePrs"
