@@ -1,15 +1,17 @@
 {
   "automerge": true,
-  "extends": [":base"],
+  "extends": [
+    "config:base",
+    "group:definitelyTyped",
+    "group:linters",
+    "group:jsTest",
+    "group:babel",
+    ":automergeBranchPush",
+    ":semanticCommits",
+    ":rebaseStalePrs"
+  ],
   "gitAuthor": "jesse-b0t",
   "labels": ["renovate"],
   "major": { "automerge": false },
-  "packageRules": [
-    {
-      "enabled": false,
-      "groupName": "gatsby",
-      "packagePatterns": ["^gatsby"]
-    }
-  ],
   "prHourlyLimit": 0
 }
