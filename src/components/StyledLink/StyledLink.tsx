@@ -2,7 +2,6 @@ import { Link } from 'gatsby'
 import _ from 'lodash'
 import React, { ReactNode } from 'react'
 import styled from 'styled-components'
-
 import colors from 'utils/colors'
 
 /**

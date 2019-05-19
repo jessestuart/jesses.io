@@ -17,6 +17,13 @@ workflows:
       - test:
           requires:
             - install_dependencies
+      - cypress_job:
+          requires:
+            - install_dependencies
+        # requires:
+        #   - build
+        #   - lint
+        #   - test
       - semantic_release:
           requires:
             - build
@@ -40,16 +47,7 @@ workflows:
 defaults: &defaults
   working_directory: ~/jesses.io
   docker:
-    - image: node:11
-
-cypress_defaults: &cypress_defaults
-  working_directory: ~/jesses.io
-  docker:
-    # the Docker image with Cypress dependencies
-    - image: cypress/base:12
-      environment:
-        ## this enables colors in the output
-        TERM: xterm
+    - image: node:12
 
 # ====================
 # SHARED JOBS POINTERS
@@ -57,8 +55,8 @@ cypress_defaults: &cypress_defaults
 restore_cache: &restore_cache
   restore_cache:
     keys:
-      - v2-dependencies-{{ checksum "yarn.lock" }}
-      - v2-dependencies-
+      - v4-dependencies-{{ checksum "yarn.lock" }}
+      - v4-dependencies-
 
 restore_public_dir_cache: &restore_public_dir_cache
   restore_cache:
@@ -73,7 +71,7 @@ save_cache: &save_cache
   save_cache:
     paths:
       - node_modules/
-    key: v2-dependencies-{{ checksum "yarn.lock" }}
+    key: v4-dependencies-{{ checksum "yarn.lock" }}
 
 save_public_dir_cache: &save_public_dir_cache
   save_cache:
@@ -86,10 +84,14 @@ install_dependencies: &install_dependencies
     name: Install dependencies.
     command: yarn --silent --no-progress --frozen-lockfile --prefer-offline
 
-# sentry_release: &sentry_release
-#   run:
-#     name: Update release @ sentry.io
-#     command: sh ./scripts/update-sentry-release.sh
+load_aws_credentials: &load_aws_credentials
+  run: |
+    mkdir -p ~/.aws
+    cat > ~/.aws/credentials \<<EOF
+    [default]
+    aws_access_key_id = ${AWS_ACCESS_KEY_ID}
+    aws_secret_access_key = ${AWS_SECRET_ACCESS_KEY}
+    EOF
 
 semantic_release: &semantic_release
   <<: *defaults
@@ -105,6 +107,25 @@ sentry_release: &sentry_release
     - *restore_cache
     - run: curl -sL https://sentry.io/get-cli/ | bash
     - run: sh ./scripts/update-sentry-release.sh
+
+cypress_job: &cypress_job
+  working_directory: ~/jesses.io
+  docker:
+    # the Docker image with Cypress dependencies
+    - image: cypress/base:12.1.0
+      environment:
+        ## this enables colors in the output
+        TERM: xterm
+  steps:
+    - checkout
+    - *restore_cache
+    - *load_aws_credentials
+    - run:
+        command: yarn dev
+        background: true
+    - run: sleep 60s
+    - run: yarn cypress install
+    - run: yarn cypress run
 
 # ================
 # JOB DECLARATIONS
@@ -138,10 +159,6 @@ jobs:
             yarn jest --coverage --runInBand --ci
           environment:
             JEST_JUNIT_OUTPUT: 'reports/junit/js-test-results.xml'
-      - run:
-          name: Run E2E tests.
-          command: |
-            yarn percy exec cypress run
       - store_test_results:
           path: reports/junit
       - store_artifacts:
@@ -161,11 +178,11 @@ jobs:
       - checkout
       - *restore_cache
       - *restore_public_dir_cache
-
+      - *install_dependencies
+      - *load_aws_credentials
       - run:
-          name: Build static site.
+          name: Build static site. (with limited assets)
           command: yarn build:ci
-
       - *save_cache
       - *save_public_dir_cache
 
@@ -202,38 +219,29 @@ jobs:
 
   sentry_release: *sentry_release
 
-  capture_screenshots:
-    docker:
-      - image: circleci/node:11-browsers
-
-    steps:
-      - checkout
-
-      - restore_cache:
-          keys:
-            - dependencies-{{ checksum "yarn.lock" }}
-            - dependencies-
-
-      - restore_cache:
-          key: public-dir-{{ .Revision }}
-
-      - run:
-          name: Workaround for GoogleChrome/puppeteer#290
-          command: |
-            chmod +x .circleci/setup-puppeteer.sh
-            .circleci/setup-puppeteer.sh
-
-      - run:
-          command: yarn install --no-progress
-
-      - run:
-          command: yarn dev
-          background: true
-
-      - run:
-          command: |
-            sleep 20
-            yarn test
-
-      - store_artifacts:
-          path: test/__snapshots__
+  cypress_job: *cypress_job
+  # capture_screenshots:
+  #   docker:
+  #     - image: circleci/node:12-browsers
+  #   steps:
+  #     - checkout
+  #     - restore_cache:
+  #         keys:
+  #           - dependencies-{{ checksum "yarn.lock" }}
+  #           - dependencies-
+  #     - restore_cache:
+  #         key: public-dir-{{ .Revision }}
+  #     - run:
+  #         name: Workaround for GoogleChrome/puppeteer#290
+  #         command: |
+  #           chmod +x .circleci/setup-puppeteer.sh
+  #           .circleci/setup-puppeteer.sh
+  #     - run:
+  #         command: yarn install --no-progress
+  #     - run:
+  #         command: yarn dev
+  #         background: true
+  #     - run:
+  #         command: yarn test
+  #     - store_artifacts:
+  #         path: test/__snapshots__

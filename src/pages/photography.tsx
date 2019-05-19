@@ -1,35 +1,56 @@
-import { graphql } from 'gatsby'
+import { PhotographyGridSection } from 'components'
+import Layout from 'components/Layout'
+import { graphql, useStaticQuery } from 'gatsby'
 import _ from 'lodash'
 import fp from 'lodash/fp'
 import { DateTime } from 'luxon'
 import React from 'react'
 import { Helmet } from 'react-helmet'
-
-import { PhotographyGridSection } from 'components'
-import Layout from 'components/Layout'
 import GatsbyLocation from 'types/GatsbyLocation'
 import { S3ImageAsset } from 'types/s3-image-asset'
+import { useSiteMetadata } from 'utils/hooks'
 
 interface Props {
-  location: GatsbyLocation
-  data: {
-    site: {
-      metadata: {
-        title: string
-      }
-    }
-    allS3ImageAssets: {
-      edges: {
-        node: S3ImageAsset[]
-      }
+  allS3ImageAssets: {
+    edges: {
+      node: S3ImageAsset[]
     }
   }
 }
 
 export const PHOTOGRAPHY_INDEX_NUM_PREVIEWS = 6
 
-const PhotographyIndex = ({ data, location }: Props) => {
-  const pageTitle = `Photography | ${_.get(data, 'site.siteMetadata.title')}`
+const PhotographyIndex = ({ location }: { location: GatsbyLocation }) => {
+  const { title } = useSiteMetadata()
+  const data: Props = useStaticQuery(graphql`
+    query {
+      allS3ImageAsset {
+        edges {
+          node {
+            id
+            EXIF {
+              DateCreatedISO
+              DateTimeOriginal
+            }
+            childImageSharp {
+              original {
+                height
+                width
+              }
+              thumbnailSizes: fluid(maxWidth: 512) {
+                ...GatsbyImageSharpFluid
+              }
+              largeSizes: fluid(maxWidth: 2048) {
+                ...GatsbyImageSharpFluid
+              }
+            }
+          }
+        }
+      }
+    }
+  `)
+
+  const pageTitle = `Photography | ${title}`
 
   // Collect all of the image nodes for each S3ImageAsset resorce into a
   // single array.
@@ -59,9 +80,12 @@ const PhotographyIndex = ({ data, location }: Props) => {
             if (_.isEmpty(imageNodeList)) {
               return null
             }
-            const title = _.get(_.head(imageNodeList), 'EXIF.DateCreatedISO')
-            const datetime = DateTime.fromISO(title)
-            const linkSlug = `/photography/${title}`
+            const sectionTitle = _.get(
+              _.head(imageNodeList),
+              'EXIF.DateCreatedISO',
+            )
+            const datetime = DateTime.fromISO(sectionTitle)
+            const linkSlug = `/photography/${sectionTitle}`
 
             // From each array of images, sort by date created and take the
             // first six to display as previews.
@@ -76,7 +100,7 @@ const PhotographyIndex = ({ data, location }: Props) => {
                 images={linkImages || []}
                 imageCount={_.size(imageNodeList)}
                 isPreview={true}
-                key={title}
+                key={sectionTitle}
                 slug={linkSlug}
               />
             )
@@ -103,18 +127,16 @@ export const pageQuery = graphql`
             DateCreatedISO
             DateTimeOriginal
           }
-          childrenFile {
-            childImageSharp {
-              original {
-                height
-                width
-              }
-              thumbnailSizes: fluid(maxWidth: 512) {
-                ...GatsbyImageSharpFluid
-              }
-              largeSizes: fluid(maxWidth: 2048) {
-                ...GatsbyImageSharpFluid
-              }
+          childImageSharp {
+            original {
+              height
+              width
+            }
+            thumbnailSizes: fluid(maxWidth: 512) {
+              ...GatsbyImageSharpFluid
+            }
+            largeSizes: fluid(maxWidth: 2048) {
+              ...GatsbyImageSharpFluid
             }
           }
         }

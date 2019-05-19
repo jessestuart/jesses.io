@@ -1,6 +1,7 @@
 {
+  "include": ["./src/**/*.tsx", "./src/**/*.ts", "**/*.js"],
+  "exclude": ["node_modules/*", "public/*"],
   "compilerOptions": {
-    "allowJs": true,
     "allowSyntheticDefaultImports": true,
     "baseUrl": ".",
     "declaration": false,
@@ -23,9 +24,6 @@
     "sourceMap": true,
     "strict": true,
     "strictNullChecks": true,
-    "target": "es5",
-    "types": ["cypress", "@percy/cypress", "node"]
-  },
-  "exclude": ["node_modules/*", "public/*"],
-  "include": ["./src/**/*.tsx", "./src/**/*.ts", "./test/**/*.ts", "**/*.js"]
+    "target": "es5"
+  }
 }

@@ -1,16 +1,13 @@
-import './blog-post.css'
-
+import BlogHeader from 'components/Blog/BlogHeader'
+import Layout from 'components/Layout'
 import { graphql } from 'gatsby'
 import _ from 'lodash'
 import { DateTime } from 'luxon'
 import React, { ReactNode } from 'react'
 import Helmet from 'react-helmet'
-
-import BlogHeader from 'components/Blog/BlogHeader'
-import Layout from 'components/Layout'
 import GatsbyLocation from 'types/GatsbyLocation'
 import colors from 'utils/colors'
-import config from '../../gatsby-config'
+import './blog-post.css'
 
 interface Props {
   children: ReactNode
@@ -59,7 +56,7 @@ const BlogPostTemplate = (props: Props) => {
   const siteTitle = _.get(data, 'site.siteMetadata.title')
   const { excerpt } = post
   const { date, title } = post.frontmatter
-  const pageURL = `${config.siteMetadata.siteUrl}${pathname}`
+  const pageURL = `jesses.io/${pathname}`
 
   const comboTitle = `${title || 'Posts'} | ${siteTitle}`
 

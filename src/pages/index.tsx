@@ -4,7 +4,7 @@ import React from 'react'
 
 import { Profile, ProfileDevIcons } from 'components'
 import Layout from 'components/Layout'
-import GatsbyImage from 'types/gatsby-image'
+import GatsbyImage from 'types/GatsbyImage'
 import GatsbyLocation from 'types/GatsbyLocation'
 
 interface Props {

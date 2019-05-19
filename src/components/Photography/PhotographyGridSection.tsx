@@ -1,5 +1,9 @@
-import 'react-image-lightbox/style.css'
-
+import { StyledPanel } from 'components'
+import {
+  ImageZoomGrid,
+  ImageZoomGridElement,
+  PhotographySectionHeader,
+} from 'components/Photography'
 import { Link } from 'gatsby'
 import Img from 'gatsby-image'
 import _ from 'lodash'
@@ -8,17 +12,10 @@ import md5 from 'md5'
 import React, { Component } from 'react'
 import { Maximize2 } from 'react-feather'
 import Lightbox from 'react-image-lightbox'
+import 'react-image-lightbox/style.css'
 import styled from 'styled-components'
-
-import StyledPanel from 'components/StyledPanel/StyledPanel'
 import GatsbyImage from 'types/GatsbyImage'
 import colors from 'utils/colors'
-
-import {
-  ImageZoomGrid,
-  ImageZoomGridElement,
-  PhotographySectionHeader,
-} from 'components/Photography'
 
 interface Props {
   datetime: DateTime
@@ -33,7 +30,6 @@ interface Props {
 }
 
 interface State {
-  imageSources: any[]
   index: number
   isLightboxOpen: boolean
   lightboxImages: string[]
@@ -62,14 +58,12 @@ const MaximizeLink = styled(Link)`
 
 class PhotographyGridSection extends Component<Props, State> {
   public readonly state: State = {
-    imageSources: [],
     index: 0,
     isLightboxOpen: false,
     lightboxImages: [],
   }
 
   public componentWillMount() {
-    this.setState({ imageSources: this.getImageState() })
     this.setState({ lightboxImages: this.getLightboxImagesFromProps() })
   }
 
@@ -77,7 +71,6 @@ class PhotographyGridSection extends Component<Props, State> {
     const { datetime, images, imageCount, isPreview, slug = '/#' } = this.props
     const {
       isLightboxOpen,
-      imageSources,
       lightboxSrc,
       nextImageSrc,
       prevImageSrc,
@@ -85,10 +78,7 @@ class PhotographyGridSection extends Component<Props, State> {
 
     // const lightboxImages = _.get(imageSources, 'largeSizes.src')
     const sortedImages = _.sortBy(images, 'EXIF.DateTimeOriginal')
-    const lightboxImages = _.map(
-      sortedImages,
-      'childrenFile[0].childImageSharp.largeSizes.src',
-    )
+    const lightboxImages = _.map(sortedImages, 'childImageSharp.largeSizes.src')
 
     if (_.isEmpty(images) || _.isEmpty(lightboxImages)) {
       return null
@@ -106,26 +96,7 @@ class PhotographyGridSection extends Component<Props, State> {
         <PhotographySectionHeader datetime={datetime} href={slug} />
         <ImageZoomGrid>
           {sortedImages.map((image: any, imageIndex: number) => {
-            const thumbnailSizes: GatsbyImage = _.get(
-              image,
-              'childrenFile[0].childImageSharp.thumbnailSizes',
-            )
-
-            if (!thumbnailSizes) {
-              return null
-            }
-
-            const { aspectRatio, src } = thumbnailSizes
-
-            return (
-              <ImageZoomGridElement
-                aspectRatio={aspectRatio}
-                key={md5(src)}
-                onClick={() => this.clickImageElement(imageIndex)}
-              >
-                <Img fluid={thumbnailSizes} className="pointer" />
-              </ImageZoomGridElement>
-            )
+            return this.renderImagePreview(image, imageIndex)
           })}
           {shouldShowMaximizeLink && (
             <MaximizeLink to={slug}>
@@ -192,17 +163,31 @@ class PhotographyGridSection extends Component<Props, State> {
   private getLightboxImagesFromProps = (): string[] => {
     const { images } = this.props
     const sortedImages = _.sortBy(images, 'EXIF.DateTimeOriginal')
-    const lightboxImages = _.map(
-      sortedImages,
-      'childrenFile[0].childImageSharp.largeSizes.src',
-    )
+    const lightboxImages = _.map(sortedImages, 'childImageSharp.largeSizes.src')
     return lightboxImages
   }
 
-  private getImageState(): any[] {
-    const { images } = this.props
-    const sortedImages = _.sortBy(images, 'EXIF.DateTimeOriginal')
-    return _.map(sortedImages, 'childrenFile[0].childImageSharp')
+  private renderImagePreview = (image, imageIndex) => {
+    const thumbnailSizes: GatsbyImage = _.get(
+      image,
+      'childImageSharp.thumbnailSizes',
+    )
+
+    if (_.isEmpty(thumbnailSizes)) {
+      return null
+    }
+
+    const { aspectRatio, src } = thumbnailSizes
+
+    return (
+      <ImageZoomGridElement
+        aspectRatio={aspectRatio}
+        key={md5(src)}
+        onClick={() => this.clickImageElement(imageIndex)}
+      >
+        <Img fluid={thumbnailSizes} className="pointer" />
+      </ImageZoomGridElement>
+    )
   }
 }
 

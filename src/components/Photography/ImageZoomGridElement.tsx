@@ -1,20 +1,22 @@
-import _ from 'lodash'
-import React, { MouseEventHandler, ReactNode } from 'react'
+import { MouseEventHandler, ReactNode } from 'react'
 import styled from 'styled-components'
+import { withProps } from 'utils/styled-components'
 
-const StyledImageZoomGridElement = styled.div(
-  ({ aspectRatio }: { aspectRatio: number }) => `
-    display: flex;
-    flex-direction: column;
-    grid-column-start: auto;
-    grid-row: ${aspectRatio > 1 ? 'span 1' : 'span 2'};
-    overflow: hidden;
-    position: relative;
-    img {
-      box-shadow: 3px 3px 4px 2px rgba(125, 125, 125, 0.9);
-    }
-`,
-)
+const StyledImageZoomGridElement = styled.div`
+  display: flex;
+  flex-direction: column;
+  grid-column-start: auto;
+  overflow: hidden;
+  position: relative;
+  transition: all 0.4s;
+  // Throw in some drop shadow to make it pretty (extra on hover) — and just a
+  // smidge of border radius, too:
+  filter: drop-shadow(0 0 2px rgba(0, 0, 0, 0.75));
+  &:hover {
+    filter: drop-shadow(0 0 5px rgba(0, 0, 0, 0.9));
+  }
+  border-radius: 2px;
+`
 
 interface Props {
   aspectRatio: number
@@ -22,14 +24,26 @@ interface Props {
   onClick: MouseEventHandler<HTMLDivElement>
 }
 
-const ImageZoomGridElement = ({
-  aspectRatio,
-  children,
-  onClick = _.noop,
-}: Props) => (
-  <StyledImageZoomGridElement aspectRatio={aspectRatio} onClick={onClick}>
-    {children}
-  </StyledImageZoomGridElement>
-)
+export default withProps<Props>()(styled(StyledImageZoomGridElement))`
+  grid-row: ${props => (props.aspectRatio > 1 ? 'span 1' : 'span 2')};
+`
 
-export default ImageZoomGridElement
+// export default styled(StyledImageZoomGridElement)`
+//   gridRow: aspectRatio > 1 ? 'span 1' : 'span 2',
+// `
+// const ImageZoomGridElement: FunctionComponent<Props> = ({
+//   aspectRatio,
+//   children,
+//   onClick = () => null,
+// }: Props) => (
+//   <StyledImageZoomGridElement
+//     onClick={onClick}
+//     style={{
+//       gridRow: aspectRatio > 1 ? 'span 1' : 'span 2',
+//     }}
+//   >
+//     {children}
+//   </StyledImageZoomGridElement>
+// )
+
+// export default ImageZoomGridElement

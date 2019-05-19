@@ -1,10 +1,6 @@
 const Sentry = require('@sentry/browser')
 const _ = require('lodash')
 
-// import _ from 'lodash'
-
-// import * as Sentry from '@sentry/browser'
-
 // Just use the package.json version number as the Sentry release param.
 // Keep in mind this auto-incremented by semantic-release on deploys, so
 // is a pretty good stand-in here.

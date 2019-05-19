@@ -2,10 +2,28 @@ const _ = require('lodash')
 
 const AWS = require('aws-sdk')
 
-AWS.config.update({
-  accessKeyId: process.env.AWS_ACCESS_KEY,
-  secretAccessKey: process.env.AWS_SECRET_KEY,
-})
+require('dotenv').config()
+
+const getSourceS3ConfigForEnvironment = env => {
+  switch (env) {
+    case GatsbyEnv.Development: {
+      return {
+        bucketName: 'js-photos-dev',
+        domain: 'minio.jesses.io',
+        protocol: 'https',
+      }
+    }
+    // case GatsbyEnv.Development: {
+    //   return { bucketName: 'js-photos-dev' }
+    // }
+    case GatsbyEnv.Staging: {
+      return { bucketName: 'js-photos-dev' }
+    }
+    case GatsbyEnv.Production: {
+      return { bucketName: 'jesse.pics' }
+    }
+  }
+}
 
 // If we detect if we're running in a CI environment, only a few sample
 // photos will be downloaded from a test bucket, rather the the full
@@ -21,7 +39,8 @@ const GATSBY_ENV = GatsbyEnv[process.env.GATSBY_ENV]
 const AUTHOR_NAME = 'Jesse Stuart'
 const SITE_NAME = 'jesses.io'
 
-const IS_DEV = GATSBY_ENV !== 'Production'
+const IS_LOCAL = GATSBY_ENV === GatsbyEnv.Development
+const IS_DEV = GATSBY_ENV !== GatsbyEnv.Production
 
 const siteMetadata = {
   author: AUTHOR_NAME,
@@ -78,13 +97,17 @@ const googleAnalyticsPlugin = {
   },
 }
 
+const ACCESS_KEY_ID = IS_LOCAL ? process.env.MINIO_ACCESS_KEY : process.env.AWS_ACCESS_KEY
+const SECRET_KEY_ID = IS_LOCAL ? process.env.MINIO_SECRET_KEY : process.env.AWS_SECRET_KEY
+// const ACCESS_KEY_ID = process.env.AWS_ACCESS_KEY
+// const SECRET_KEY_ID = process.env.AWS_SECRET_KEY
+AWS.config.update({
+  accessKeyId: ACCESS_KEY_ID,
+  secretAccessKey: SECRET_KEY_ID,
+})
 const sourceS3 = {
   resolve: 'gatsby-source-s3-image',
-  options: {
-    bucketName: IS_DEV ? 'js-photos-dev' : 'jesse.pics',
-    domain: IS_DEV ? null : 'jesse.pics.s3.amazonaws.com',
-    protocol: 'http',
-  },
+  options: getSourceS3ConfigForEnvironment(GATSBY_ENV),
 }
 
 /* eslint-disable @typescript-eslint/camelcase */
@@ -137,6 +160,7 @@ const plugins = _.compact([
   'gatsby-plugin-lodash',
   'gatsby-plugin-offline',
   'gatsby-plugin-netlify-cache',
+  !IS_LOCAL && manifestPlugin,
   // This ostensibly has to go at the end of the plugins declaration array.
   'gatsby-plugin-netlify',
 ])

@@ -12,10 +12,7 @@ module.exports = {
     'lodash',
     [
       'module-resolver',
-      {
-        root: ['./src'],
-        extensions: ['.js', '.json', '.ts', '.tsx'],
-      },
+      { root: ['./src'], extensions: ['.js', '.json', '.ts', '.tsx'] },
     ],
   ],
 }
