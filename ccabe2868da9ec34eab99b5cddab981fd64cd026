@@ -1,0 +1,4 @@
+[ver:1,total:1440]
+.gtm/terminal.app:1380,1558382400:1320,1558386000:60,r
+.circleci/config.yml:30,1558386000:30,m
+src/pages/posts.tsx:30,1558386000:30,r
