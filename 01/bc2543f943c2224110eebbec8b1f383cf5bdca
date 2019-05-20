@@ -1,0 +1,17 @@
+[ver:1,total:6600]
+.gtm/terminal.app:3753,1558458000:390,1558476000:460,1558479600:140,1558483200:1272,1558486800:546,1558490400:945,r
+src/components/Blog/BlogHeader.tsx:1214,1558476000:380,1558479600:787,1558483200:32,1558490400:15,r
+src/pages/about.tsx:410,1558476000:340,1558479600:70,r
+gatsby-config.js:391,1558483200:184,1558486800:162,1558490400:45,m
+.circleci/config.yml:357,1558458000:300,1558486800:12,1558490400:45,m
+src/components/StyledLink/StyledLink.tsx:133,1558479600:103,1558490400:30,r
+src/pages/posts.tsx:105,1558479600:105,r
+package.json:45,1558458000:30,1558490400:15,r
+.git/rebase-merge/git-rebase-todo:45,1558490400:45,d
+cypress/integration/home.cypress.tsx:30,1558490400:30,d
+src/templates/blog-post.tsx:27,1558479600:15,1558483200:12,r
+node_modules/csstype/index.d.ts:20,1558479600:20,r
+node_modules/@types/react/index.d.ts:20,1558479600:20,r
+src/components/Blog/BlogHeader.spec.tsx:20,1558476000:20,r
+cypress/integration/home.cypress.ts:15,1558490400:15,r
+gatsby-node.js:15,1558490400:15,r
