@@ -1,0 +1,7 @@
+[ver:1,total:780]
+.gtm/terminal.app:405,1558767600:350,1558771200:55,r
+src/components/Photography/PhotographySectionHeader.tsx:200,1558767600:174,1558771200:26,r
+src/components/SiteFooter/SiteFooter.tsx:93,1558767600:80,1558771200:13,r
+src/utils/colors.ts:39,1558767600:26,1558771200:13,r
+src/components/Photography/PhotographySectionHeader.spec.tsx:30,1558767600:30,r
+src/components/Photography/PhotographyGridSection.tsx:13,1558771200:13,m
