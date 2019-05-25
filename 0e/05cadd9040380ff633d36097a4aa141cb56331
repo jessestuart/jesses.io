@@ -1,0 +1,14 @@
+[ver:1,total:8825]
+.gtm/terminal.app:7274,1558681200:100,1558699200:240,1558702800:1640,1558706400:900,1558713600:180,1558724400:204,1558728000:720,1558753200:660,1558756800:180,1558760400:420,1558764000:920,1558767600:1110,r
+src/config/onCreateNode.js:485,1558670400:225,1558674000:260,m
+package.json:386,1558681200:200,1558702800:40,1558724400:96,1558767600:50,m
+src/components/Photography/PhotographyGridSection.tsx:265,1558764000:20,1558767600:245,m
+src/components/Photography/ImageZoomGridElement.tsx:75,1558767600:75,m
+src/components/Photography/PhotographySectionHeader.tsx:70,1558767600:70,m
+src/pages/photography.tsx:70,1558764000:70,m
+src/templates/photography-post.tsx:60,1558764000:60,m
+src/types/s3-image-asset.ts:40,1558764000:40,m
+gatsby-config.js:30,1558764000:30,m
+prettier.config.js:30,1558767600:30,r
+src/utils/colors.ts:20,1558767600:20,r
+.eslintrc.js:20,1558767600:20,r
