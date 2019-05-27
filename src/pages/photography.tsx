@@ -31,6 +31,13 @@ const PhotographyIndex = ({ location }: { location: GatsbyLocation }) => {
             EXIF {
               DateCreatedISO
               DateTimeOriginal
+              ExposureTime
+              FNumber
+              FocalLength
+              ISO
+              LensModel
+              Model
+              ShutterSpeedValue
             }
             childImageSharp {
               original {
@@ -98,7 +105,6 @@ const PhotographyIndex = ({ location }: { location: GatsbyLocation }) => {
               <PhotographyGridSection
                 datetime={datetime}
                 images={linkImages || []}
-                imageCount={_.size(imageNodeList)}
                 isPreview={true}
                 key={sectionTitle}
                 slug={linkSlug}
@@ -110,39 +116,5 @@ const PhotographyIndex = ({ location }: { location: GatsbyLocation }) => {
     </Layout>
   )
 }
-
-export const pageQuery = graphql`
-  {
-    site {
-      siteMetadata {
-        title
-      }
-    }
-
-    allS3ImageAsset {
-      edges {
-        node {
-          id
-          EXIF {
-            DateCreatedISO
-            DateTimeOriginal
-          }
-          childImageSharp {
-            original {
-              height
-              width
-            }
-            thumbnailSizes: fluid(maxWidth: 512) {
-              ...GatsbyImageSharpFluid
-            }
-            largeSizes: fluid(maxWidth: 2048) {
-              ...GatsbyImageSharpFluid
-            }
-          }
-        }
-      }
-    }
-  }
-`
 
 export default PhotographyIndex

@@ -1,7 +1,5 @@
 const _ = require('lodash')
-
 const AWS = require('aws-sdk')
-
 require('dotenv').config()
 
 const getSourceS3ConfigForEnvironment = env => {
@@ -13,9 +11,6 @@ const getSourceS3ConfigForEnvironment = env => {
         protocol: 'https',
       }
     }
-    // case GatsbyEnv.Development: {
-    //   return { bucketName: 'js-photos-dev' }
-    // }
     case GatsbyEnv.Staging: {
       return { bucketName: 'js-photos-dev' }
     }
@@ -97,10 +92,12 @@ const googleAnalyticsPlugin = {
   },
 }
 
-const ACCESS_KEY_ID = IS_LOCAL ? process.env.MINIO_ACCESS_KEY : process.env.AWS_ACCESS_KEY
-const SECRET_KEY_ID = IS_LOCAL ? process.env.MINIO_SECRET_KEY : process.env.AWS_SECRET_KEY
-// const ACCESS_KEY_ID = process.env.AWS_ACCESS_KEY
-// const SECRET_KEY_ID = process.env.AWS_SECRET_KEY
+const ACCESS_KEY_ID = IS_LOCAL
+  ? process.env.MINIO_ACCESS_KEY
+  : process.env.AWS_ACCESS_KEY
+const SECRET_KEY_ID = IS_LOCAL
+  ? process.env.MINIO_SECRET_KEY
+  : process.env.AWS_SECRET_KEY
 AWS.config.update({
   accessKeyId: ACCESS_KEY_ID,
   secretAccessKey: SECRET_KEY_ID,
@@ -156,13 +153,13 @@ const plugins = _.compact([
   // Miscellany.
   // ===========
   'gatsby-plugin-remove-trailing-slashes',
-  // 'gatsby-plugin-feed',
   'gatsby-plugin-lodash',
-  'gatsby-plugin-offline',
-  'gatsby-plugin-netlify-cache',
+  !IS_LOCAL && 'gatsby-plugin-offline',
+  !IS_LOCAL && 'gatsby-plugin-netlify-cache',
+  !IS_LOCAL && 'gatsby-plugin-feed',
   !IS_LOCAL && manifestPlugin,
   // This ostensibly has to go at the end of the plugins declaration array.
-  'gatsby-plugin-netlify',
+  !IS_LOCAL && 'gatsby-plugin-netlify',
 ])
 
 module.exports = {
