@@ -1,27 +1,24 @@
-import 'react-image-lightbox/style.css'
-
-import { Link } from 'gatsby'
-import Img from 'gatsby-image'
-import _ from 'lodash'
-import { DateTime } from 'luxon'
-import React, { Component } from 'react'
-import { Maximize2 } from 'react-feather'
-import Lightbox from 'react-image-lightbox'
-import styled from 'styled-components'
-
-import StyledPanel from 'components/StyledPanel/StyledPanel'
-import md5 from 'md5'
-import colors from 'utils/colors'
-
+import { StyledPanel } from 'components'
 import {
   ImageZoomGrid,
   ImageZoomGridElement,
   PhotographySectionHeader,
-} from '.'
+} from 'components/Photography'
+import _ from 'lodash'
+import fp from 'lodash/fp'
+import { DateTime } from 'luxon'
+import React, { Component } from 'react'
+import Lightbox from 'react-image-lightbox'
+import 'react-image-lightbox/style.css'
 
 interface Props {
   datetime: DateTime
+  // The images to be *currently* displayed for this section.
   images: any[]
+  // The *total* number of images available for this section, even those that
+  // are currently hidden.
+  // imageCount: number
+  // True if on `/photography` page; false if on one of the photo details pages.
   isPreview?: boolean
   slug?: string
 }
@@ -41,18 +38,6 @@ interface ToggleLightboxOptions {
   lightboxImages?: string[]
 }
 
-const MaximizeLink = styled(Link)`
-  bottom: 0;
-  color: ${colors.accent};
-  cursor: pointer;
-  position: absolute;
-  right: 0;
-  transition: all 0.5s;
-  &:hover {
-    color: ${colors.primary.main} !important;
-  }
-`
-
 class PhotographyGridSection extends Component<Props, State> {
   public readonly state: State = {
     index: 0,
@@ -60,70 +45,53 @@ class PhotographyGridSection extends Component<Props, State> {
     lightboxImages: [],
   }
 
+  /**
+   * Lightbox images are just the scaled up version of the thumbnails.
+   * Here we extract the absolute source path for all Lightbox images
+   * for the current gallery.
+   */
+  private getLightboxImagesFromProps: (props: Props) => string[] = _.memoize(
+    _.flow(
+      fp.get('images'),
+      fp.sortBy('EXIF.DateTimeOriginal'),
+      fp.map('childImageSharp.largeSizes.src'),
+    ),
+  )
+
+  public componentWillMount() {
+    this.setState({
+      lightboxImages: this.getLightboxImagesFromProps(this.props),
+    })
+  }
+
   public render() {
-    const { datetime, images, isPreview, slug = '/#' } = this.props
+    const { datetime, images, slug = '/#' } = this.props
     const {
-      index,
       isLightboxOpen,
       lightboxSrc,
       nextImageSrc,
       prevImageSrc,
     } = this.state
-
     const sortedImages = _.sortBy(images, 'EXIF.DateTimeOriginal')
-    const lightboxImages = _.map(
-      sortedImages,
-      'childrenFile[0].childImageSharp.largeSizes.src',
-    )
+    const lightboxImages = _.map(sortedImages, 'childImageSharp.largeSizes.src')
 
     if (_.isEmpty(images) || _.isEmpty(lightboxImages)) {
       return null
     }
-
-    // The value of the comparator here needs to match that of
-    // `PHOTOGRAPHY_INDEX_NUM_PREVIEWS` in `pages/photography.tsx` (currently,
-    // six).  Unfortunately importing that directly seems to cause circular
-    // dependency issues with tests that I haven't had the time to debug,
-    // so... yay magic numbers.
-    const shouldShowMaximizeLink = isPreview && _.size(images) > 6
 
     return (
       <StyledPanel>
         <PhotographySectionHeader datetime={datetime} href={slug} />
         <ImageZoomGrid>
           {sortedImages.map((image: any, imageIndex: number) => {
-            const thumbnailSizes = _.get(
-              image,
-              'childrenFile[0].childImageSharp.thumbnailSizes',
-            )
-
-            if (_.isEmpty(thumbnailSizes)) {
-              return null
-            }
-
-            const { aspectRatio, src } = thumbnailSizes
-
             return (
               <ImageZoomGridElement
-                key={md5(src)}
-                onClick={() =>
-                  this.toggleLightbox({
-                    index: imageIndex,
-                    isLightboxOpen: !isLightboxOpen,
-                    lightboxImages,
-                  })
-                }
-                aspectRatio={aspectRatio}
-              >
-                <Img fluid={thumbnailSizes} className="pointer" />
-              </ImageZoomGridElement>
+                key={image.id}
+                image={image}
+                onClick={() => this.clickImageElement(imageIndex)}
+              />
             )
           })}
-          {shouldShowMaximizeLink && (
-            <MaximizeLink to={slug}>
-              <Maximize2 size={32} />
-            </MaximizeLink>
-          )}
         </ImageZoomGrid>
         {isLightboxOpen && lightboxSrc && (
           <Lightbox
@@ -131,24 +99,40 @@ class PhotographyGridSection extends Component<Props, State> {
             mainSrc={lightboxSrc}
             nextSrc={nextImageSrc}
             prevSrc={prevImageSrc}
-            onCloseRequest={() => this.setState({ isLightboxOpen: false })}
-            onMovePrevRequest={() =>
-              this.toggleLightbox({ index: index - 1, isLightboxOpen: true })
-            }
-            onMoveNextRequest={() =>
-              this.toggleLightbox({ index: index + 1, isLightboxOpen: true })
-            }
+            onCloseRequest={this.closeLightbox}
+            onMovePrevRequest={this.decrementLightboxIndex}
+            onMoveNextRequest={this.incrementLightboxIndex}
           />
         )}
       </StyledPanel>
     )
   }
 
-  private toggleLightbox({
-    index,
-    isLightboxOpen,
+  private decrementLightboxIndex = () => {
+    this.toggleLightbox({ index: this.state.index - 1, isLightboxOpen: true })
+  }
+
+  private incrementLightboxIndex = () => {
+    this.toggleLightbox({ index: this.state.index + 1, isLightboxOpen: true })
+  }
+
+  private closeLightbox = () => {
+    this.toggleLightbox({ ...this.state, isLightboxOpen: false })
+  }
+
+  private clickImageElement = (imageIndex: number) => {
+    this.toggleLightbox({
+      index: imageIndex,
+      isLightboxOpen: !this.state.isLightboxOpen,
+      lightboxImages: this.state.lightboxImages,
+    })
+  }
+
+  private toggleLightbox = ({
+    index = this.state.index,
+    isLightboxOpen = this.state.isLightboxOpen,
     lightboxImages = this.state.lightboxImages,
-  }: ToggleLightboxOptions) {
+  }: ToggleLightboxOptions) => {
     // prettier-ignore
     this.setState({ // lgtm [js/react/inconsistent-state-update]
       index,

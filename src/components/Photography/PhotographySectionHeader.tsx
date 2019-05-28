@@ -1,7 +1,6 @@
+import StyledLink from 'components/StyledLink'
 import { DateTime } from 'luxon'
 import React from 'react'
-
-import StyledLink from 'components/StyledLink/StyledLink'
 
 interface Props {
   datetime: DateTime

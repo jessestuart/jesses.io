@@ -5,15 +5,14 @@ import { Calendar } from 'react-feather'
 import voca from 'voca'
 
 import StyledLink from 'components/StyledLink/StyledLink'
+import GatsbyLocation from 'types/GatsbyLocation'
 
 interface Props {
+  children: string
   className?: string
   date?: string
-  children: string
   link?: string
-  location?: {
-    pathname: string
-  }
+  location?: GatsbyLocation
   title?: string
 }
 

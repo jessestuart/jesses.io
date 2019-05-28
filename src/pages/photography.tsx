@@ -1,36 +1,63 @@
-import { graphql } from 'gatsby'
+import { PhotographyGridSection } from 'components'
+import Layout from 'components/Layout'
+import { graphql, useStaticQuery } from 'gatsby'
 import _ from 'lodash'
 import fp from 'lodash/fp'
 import { DateTime } from 'luxon'
 import React from 'react'
 import { Helmet } from 'react-helmet'
-
-import Layout from 'components/layout'
-import { PhotographyGridSection } from 'components/Photography'
+import GatsbyLocation from 'types/GatsbyLocation'
 import { S3ImageAsset } from 'types/s3-image-asset'
+import { useSiteMetadata } from 'utils/hooks'
 
 interface Props {
-  location: {
-    pathname: string
-  }
-  data: {
-    site: {
-      metadata: {
-        title: string
-      }
-    }
-    allS3ImageAssets: {
-      edges: {
-        node: S3ImageAsset[]
-      }
+  allS3ImageAssets: {
+    edges: {
+      node: S3ImageAsset[]
     }
   }
 }
 
 export const PHOTOGRAPHY_INDEX_NUM_PREVIEWS = 6
 
-const PhotographyIndex = ({ data, location }: Props) => {
-  const pageTitle = `Photography | ${_.get(data, 'site.siteMetadata.title')}`
+const PhotographyIndex = ({ location }: { location: GatsbyLocation }) => {
+  const { title } = useSiteMetadata()
+  const data: Props = useStaticQuery(graphql`
+    query {
+      allS3ImageAsset {
+        edges {
+          node {
+            id
+            EXIF {
+              DateCreatedISO
+              DateTimeOriginal
+              ExposureTime
+              FNumber
+              FocalLength
+              ISO
+              LensModel
+              Model
+              ShutterSpeedValue
+            }
+            childImageSharp {
+              original {
+                height
+                width
+              }
+              thumbnailSizes: fluid(maxWidth: 512) {
+                ...GatsbyImageSharpFluid
+              }
+              largeSizes: fluid(maxWidth: 2048) {
+                ...GatsbyImageSharpFluid
+              }
+            }
+          }
+        }
+      }
+    }
+  `)
+
+  const pageTitle = `Photography | ${title}`
 
   // Collect all of the image nodes for each S3ImageAsset resorce into a
   // single array.
@@ -60,9 +87,12 @@ const PhotographyIndex = ({ data, location }: Props) => {
             if (_.isEmpty(imageNodeList)) {
               return null
             }
-            const title = _.get(_.head(imageNodeList), 'EXIF.DateCreatedISO')
-            const datetime = DateTime.fromISO(title)
-            const linkSlug = `/photography/${title}`
+            const sectionTitle = _.get(
+              _.head(imageNodeList),
+              'EXIF.DateCreatedISO',
+            )
+            const datetime = DateTime.fromISO(sectionTitle)
+            const linkSlug = `/photography/${sectionTitle}`
 
             // From each array of images, sort by date created and take the
             // first six to display as previews.
@@ -76,7 +106,7 @@ const PhotographyIndex = ({ data, location }: Props) => {
                 datetime={datetime}
                 images={linkImages || []}
                 isPreview={true}
-                key={title}
+                key={sectionTitle}
                 slug={linkSlug}
               />
             )
@@ -86,41 +116,5 @@ const PhotographyIndex = ({ data, location }: Props) => {
     </Layout>
   )
 }
-
-export const pageQuery = graphql`
-  {
-    site {
-      siteMetadata {
-        title
-      }
-    }
-
-    allS3ImageAsset {
-      edges {
-        node {
-          id
-          EXIF {
-            DateCreatedISO
-            DateTimeOriginal
-          }
-          childrenFile {
-            childImageSharp {
-              original {
-                height
-                width
-              }
-              thumbnailSizes: fluid(maxWidth: 512) {
-                ...GatsbyImageSharpFluid
-              }
-              largeSizes: fluid(maxWidth: 2048) {
-                ...GatsbyImageSharpFluid
-              }
-            }
-          }
-        }
-      }
-    }
-  }
-`
 
 export default PhotographyIndex

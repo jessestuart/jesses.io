@@ -2,7 +2,7 @@
 
 exports[`Render PhotographyGridSection component w/ images. 1`] = `
 <section
-  className="br2 center mv5-ns mw7 mw8-ns pa5-ns sc-bdVaJa diWlBr"
+  className="br2 center mv5-ns mw7 mw9-ns pa5-ns sc-VigVT fprHhC"
   style={
     Object {
       "transition": "all 0.5s",
@@ -10,7 +10,7 @@ exports[`Render PhotographyGridSection component w/ images. 1`] = `
   }
 >
   <a
-    className="alegreya-sans db f2 fw5 header-primary mb3 tr w-100 sc-bxivhb iSybDT"
+    className="alegreya-sans db f2 fw5 header-primary mb3 tr w-100 sc-bdVaJa bXWskY"
     href="/true/#"
     onClick={[Function]}
     onMouseEnter={[Function]}
@@ -18,7 +18,7 @@ exports[`Render PhotographyGridSection component w/ images. 1`] = `
     01 May 2019
   </a>
   <div
-    className="sc-bwzfXH gYHWiw"
+    className="sc-bwzfXH kQkvfa"
   />
 </section>
 `;

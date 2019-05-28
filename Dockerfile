@@ -1,11 +1,11 @@
-FROM node:11 as builder
+FROM node:12 as builder
 
 WORKDIR /app
 COPY package.json yarn.lock /app/
 RUN yarn -s
 
 COPY . /app
-RUN yarn build
+RUN yarn build:ci
 
 FROM nginx:alpine
 COPY --from=builder /app/public /usr/share/nginx/html

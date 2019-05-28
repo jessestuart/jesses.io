@@ -1,24 +1,46 @@
 const _ = require('lodash')
-
 const AWS = require('aws-sdk')
+require('dotenv').config()
 
-AWS.config.update({
-  accessKeyId: process.env.AWS_ACCESS_KEY,
-  secretAccessKey: process.env.AWS_SECRET_KEY,
-})
+const getSourceS3ConfigForEnvironment = env => {
+  switch (env) {
+    case GatsbyEnv.Development: {
+      return {
+        bucketName: 'js-photos-dev',
+        domain: 'minio.jesses.io',
+        protocol: 'https',
+      }
+    }
+    case GatsbyEnv.Staging: {
+      return { bucketName: 'js-photos-dev' }
+    }
+    case GatsbyEnv.Production: {
+      return { bucketName: 'jesse.pics' }
+    }
+  }
+}
 
 // If we detect if we're running in a CI environment, only a few sample
 // photos will be downloaded from a test bucket, rather the the full
 // high-resolution photos displayed in production. This is simply to
 // save on AWS costs :)
-const GATSBY_ENV = process.env.GATSBY_ENV
-const IS_DEV = GATSBY_ENV !== 'Production'
+const GatsbyEnv = {
+  Development: 'Deveopment',
+  Production: 'Production',
+  Staging: 'Staging',
+}
+
+const GATSBY_ENV = GatsbyEnv[process.env.GATSBY_ENV]
+const AUTHOR_NAME = 'Jesse Stuart'
+const SITE_NAME = 'jesses.io'
+
+const IS_LOCAL = GATSBY_ENV === GatsbyEnv.Development
 
 const siteMetadata = {
-  author: 'Jesse Stuart',
+  author: AUTHOR_NAME,
   description: 'I build things and thoughts.',
-  siteUrl: 'https://jesses.io',
-  title: 'Jesse Stuart',
+  siteUrl: `https://${SITE_NAME}`,
+  title: AUTHOR_NAME,
 }
 
 const sourceFilesystem = {
@@ -28,6 +50,7 @@ const sourceFilesystem = {
     name: 'pages',
   },
 }
+
 const sourceFilesystemImages = {
   resolve: 'gatsby-source-filesystem',
   options: {
@@ -68,16 +91,37 @@ const googleAnalyticsPlugin = {
   },
 }
 
+const ACCESS_KEY_ID = IS_LOCAL
+  ? process.env.MINIO_ACCESS_KEY
+  : process.env.AWS_ACCESS_KEY
+const SECRET_KEY_ID = IS_LOCAL
+  ? process.env.MINIO_SECRET_KEY
+  : process.env.AWS_SECRET_KEY
+AWS.config.update({
+  accessKeyId: ACCESS_KEY_ID,
+  secretAccessKey: SECRET_KEY_ID,
+})
 const sourceS3 = {
   resolve: 'gatsby-source-s3-image',
-  options: {
-    bucketName: IS_DEV ? 'js-photos-dev' : 'jesse.pics',
-    domain: IS_DEV ? null : 'jesse.pics.s3.amazonaws.com',
-    protocol: 'http',
-  },
+  options: getSourceS3ConfigForEnvironment(GATSBY_ENV),
 }
 
-const plugins = _.compact([
+/* eslint-disable @typescript-eslint/camelcase */
+const manifestPlugin = {
+  resolve: 'gatsby-plugin-manifest',
+  options: {
+    name: 'Jesse Stuart',
+    short_name: 'jesses.io',
+    start_url: '/',
+    background_color: '#373b46',
+    theme_color: '#673ab7',
+    display: 'standalone',
+    icon: './src/components/Icons/logo_dark.svg',
+  },
+}
+/* eslint-enable @typescript-eslint/camelcase */
+
+let plugins = _.compact([
   'gatsby-plugin-typescript',
   // ====================================
   // Gotta load those sweet, sweet files.
@@ -108,27 +152,21 @@ const plugins = _.compact([
   // Miscellany.
   // ===========
   'gatsby-plugin-remove-trailing-slashes',
-  // 'gatsby-plugin-feed',
   'gatsby-plugin-lodash',
-  /* eslint-disable @typescript-eslint/camelcase */
-  {
-    resolve: 'gatsby-plugin-manifest',
-    options: {
-      name: 'Jesse Stuart',
-      short_name: 'jesses.io',
-      start_url: '/',
-      background_color: '#373b46',
-      theme_color: '#673ab7',
-      display: 'standalone',
-      icon: './src/components/Icons/logo_dark.svg',
-    },
-  },
-  /* eslint-enable @typescript-eslint/camelcase */
-  'gatsby-plugin-offline',
-  'gatsby-plugin-netlify-cache',
-  // This ostensibly has to go at the end of the plugins declaration array.
-  'gatsby-plugin-netlify',
 ])
+
+if (!IS_LOCAL) {
+  //=================================
+  // Production/Staging-only plugins.
+  //=================================
+  plugins = _.concat(plugins, [
+    'gatsby-plugin-offline',
+    'gatsby-plugin-netlify-cache',
+    'gatsby-plugin-feed',
+    manifestPlugin,
+    'gatsby-plugin-netlify',
+  ])
+}
 
 module.exports = {
   siteMetadata,

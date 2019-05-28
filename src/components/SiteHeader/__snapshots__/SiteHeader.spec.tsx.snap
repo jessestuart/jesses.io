@@ -13,13 +13,13 @@ exports[`Render SiteHeader component as not-root. 1`] = `
   }
 >
   <header
-    className="bb b--hot-pink center site-header flex w-100 bg-gray-primary bw1"
+    className="bb b--hot-pink center site-header flex w-100 bg-gray-primary "
   >
     <div
       className="w-35-ns flex flex-row center source-sans fw3"
     >
       <ul
-        className="lato f4 ph3 mv2 pv2 flex-auto br b--mid-gray light-silver fw3"
+        className="lato f4 ph3 mv2 pv2 flex-auto br b--mid-gray white-90 fw4"
       >
         <a
           className="shadow-none flex justify-center items-center"

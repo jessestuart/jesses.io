@@ -32,6 +32,7 @@ export {
   PortfolioItem,
   Profile,
   ProfileBlurb,
+  ProfileDevIcons,
   ProfileFooter,
   ProfileHeading,
   ProfileStyledLink,
@@ -39,5 +40,4 @@ export {
   SiteHeader,
   StyledLink,
   StyledPanel,
-  ProfileDevIcons,
 }

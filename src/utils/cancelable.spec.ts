@@ -1,13 +1,18 @@
 import Promise from 'bluebird'
 import _ from 'lodash'
+import { Logger } from 'winston'
 
-import log from 'utils/log'
+import Cancelable from 'utils/cancelable'
+import LogFactory from 'utils/log'
 
-import Cancelable from './cancelable'
-
-describe('Cancelable', () => {
+describe('Cancelable module', () => {
+  let log: Logger
   beforeAll(() => {
     jest.useFakeTimers()
+  })
+
+  beforeEach(() => {
+    log = LogFactory.createLogger()
     log.error = jest.fn()
   })
 
@@ -17,13 +22,14 @@ describe('Cancelable', () => {
       new Promise(() => {
         setTimeout(() => {
           foo = 'baz'
-        })
+        }, 1000)
       }),
     )
 
-    expect(cancelable).toBeDefined()
+    jest.runTimersToTime(1000)
+
     cancelable.then(_.noop).catch(log.error)
-    expect(foo).toEqual('bar')
+    expect(foo).toBe('baz')
     expect(log.error).not.toHaveBeenCalled()
   })
 

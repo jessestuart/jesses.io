@@ -1,28 +1,23 @@
 import { graphql } from 'gatsby'
-import * as _ from 'lodash'
-import * as React from 'react'
+import _ from 'lodash'
+import React, { Component } from 'react'
 
-import BlogHeader from '../components/Blog/BlogHeader'
-import Layout from '../components/layout'
-import StyledPanel from '../components/StyledPanel/StyledPanel'
+import BlogHeader from 'components/Blog/BlogHeader'
+import Layout from 'components/Layout'
+import StyledPanel from 'components/StyledPanel/StyledPanel'
+import GatsbyLocation from 'types/GatsbyLocation'
 
 interface MarkdownRemarkNode {
+  excerpt: string
   fields: {
     slug: string
   }
-
-  excerpt: string
-
   frontmatter: {
     date: string
   }
 }
 
 interface Props {
-  location: {
-    pathname: string
-  }
-
   data: {
     allMarkdownRemark: {
       edges: {
@@ -30,9 +25,10 @@ interface Props {
       }
     }
   }
+  location: GatsbyLocation
 }
 
-class BlogIndex extends React.Component<Props> {
+class BlogIndex extends Component<Props> {
   public render() {
     const { props } = this
     const { location } = props
@@ -43,16 +39,13 @@ class BlogIndex extends React.Component<Props> {
         <div className="bg-near-white lh-copy pa3-ns pv4 w-100">
           {posts.map(({ node }) => {
             const { excerpt, frontmatter, fields } = node
+            const { slug } = fields
             const date = _.get(frontmatter, 'date')
             const title = _.get(frontmatter, 'title')
             return (
               <StyledPanel key={title}>
                 <article>
-                  <BlogHeader
-                    link={fields.slug}
-                    location={location}
-                    date={date}
-                  >
+                  <BlogHeader link={slug} location={location} date={date}>
                     {title}
                   </BlogHeader>
                   <p
