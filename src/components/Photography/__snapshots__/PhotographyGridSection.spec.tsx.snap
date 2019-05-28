@@ -2,7 +2,7 @@
 
 exports[`Render PhotographyGridSection component w/ images. 1`] = `
 <section
-  className="br2 center mv5-ns mw7 mw8-ns pa5-ns sc-VigVT fprHhC"
+  className="br2 center mv5-ns mw7 mw9-ns pa5-ns sc-VigVT fprHhC"
   style={
     Object {
       "transition": "all 0.5s",

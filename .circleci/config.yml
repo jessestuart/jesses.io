@@ -20,10 +20,6 @@ workflows:
       - cypress_job:
           requires:
             - install_dependencies
-        # requires:
-        #   - build
-        #   - lint
-        #   - test
       - semantic_release:
           requires:
             - build
@@ -121,7 +117,7 @@ cypress_job: &cypress_job
     - *restore_cache
     - *load_aws_credentials
     - run:
-        command: yarn dev
+        command: GATSBY_ENV=Staging yarn gatsby develop
         background: true
     - run: sleep 60s
     - run: yarn cypress install

@@ -35,7 +35,6 @@ const AUTHOR_NAME = 'Jesse Stuart'
 const SITE_NAME = 'jesses.io'
 
 const IS_LOCAL = GATSBY_ENV === GatsbyEnv.Development
-const IS_DEV = GATSBY_ENV !== GatsbyEnv.Production
 
 const siteMetadata = {
   author: AUTHOR_NAME,
@@ -122,7 +121,7 @@ const manifestPlugin = {
 }
 /* eslint-enable @typescript-eslint/camelcase */
 
-const plugins = _.compact([
+let plugins = _.compact([
   'gatsby-plugin-typescript',
   // ====================================
   // Gotta load those sweet, sweet files.
@@ -154,13 +153,20 @@ const plugins = _.compact([
   // ===========
   'gatsby-plugin-remove-trailing-slashes',
   'gatsby-plugin-lodash',
-  !IS_LOCAL && 'gatsby-plugin-offline',
-  !IS_LOCAL && 'gatsby-plugin-netlify-cache',
-  !IS_LOCAL && 'gatsby-plugin-feed',
-  !IS_LOCAL && manifestPlugin,
-  // This ostensibly has to go at the end of the plugins declaration array.
-  !IS_LOCAL && 'gatsby-plugin-netlify',
 ])
+
+if (!IS_LOCAL) {
+  //=================================
+  // Production/Staging-only plugins.
+  //=================================
+  plugins = _.concat(plugins, [
+    'gatsby-plugin-offline',
+    'gatsby-plugin-netlify-cache',
+    'gatsby-plugin-feed',
+    manifestPlugin,
+    'gatsby-plugin-netlify',
+  ])
+}
 
 module.exports = {
   siteMetadata,

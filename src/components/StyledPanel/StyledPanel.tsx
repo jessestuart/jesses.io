@@ -19,7 +19,7 @@ interface Props {
   maxWidth?: number
 }
 
-const StyledPanel = ({ children, className, maxWidth = 8 }: Props) => (
+const StyledPanel = ({ children, className, maxWidth = 9 }: Props) => (
   <StyledPanelContainer
     className={classNames(
       `br2 center mv5-ns mw7 mw${maxWidth}-ns pa5-ns`,

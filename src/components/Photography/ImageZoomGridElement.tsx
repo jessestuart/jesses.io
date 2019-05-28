@@ -17,11 +17,12 @@ const StyledImageZoomGridElement = styled.div(
     overflow: hidden;
     position: relative;
     transition: all 0.4s;
+    justify-content: flex-end;
     // Throw in some drop shadow to make it pretty (extra on hover) — and just a
     // smidge of border radius, too:
     filter: drop-shadow(0 0 2px rgba(0, 0, 0, 0.75));
     &:hover {
-      filter: drop-shadow(0 0 5px rgba(0, 0, 0, 0.9));
+      filter: drop-shadow(0 0 6px rgba(0, 0, 0, 0.9));
     }
 `,
 )
@@ -30,7 +31,7 @@ const ExifOverlay = styled.div`
   background: linear-gradient(
     0,
     rgba(0, 0, 0, 1) 0%,
-    rgba(255, 255, 255, 0) 100%
+    rgba(200, 200, 200, 0) 100%
   );
   bottom: 0;
   color: white;

@@ -2,7 +2,7 @@
 
 exports[`Render StyledPanel component. 1`] = `
 <section
-  className="br2 center mv5-ns mw7 mw8-ns pa5-ns sc-bdVaJa diWlBr"
+  className="br2 center mv5-ns mw7 mw9-ns pa5-ns sc-bdVaJa diWlBr"
   style={
     Object {
       "transition": "all 0.5s",
@@ -15,7 +15,7 @@ exports[`Render StyledPanel component. 1`] = `
 
 exports[`Render StyledPanel with custom styling. 1`] = `
 <section
-  className="br2 center mv5-ns mw7 mw8-ns pa5-ns w-100 sc-bdVaJa diWlBr"
+  className="br2 center mv5-ns mw7 mw9-ns pa5-ns w-100 sc-bdVaJa diWlBr"
   style={
     Object {
       "transition": "all 0.5s",
