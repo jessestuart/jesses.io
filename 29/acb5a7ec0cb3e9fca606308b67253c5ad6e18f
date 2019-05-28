@@ -1,0 +1,11 @@
+[ver:1,total:3900]
+.gtm/terminal.app:2134,1559008800:330,1559019600:180,1559048400:150,1559052000:240,1559070000:180,1559077200:480,1559080800:454,1559084400:120,r
+src/components/Photography/ImageZoomGridElement.tsx:420,1559080800:420,m
+src/components/Photography/PhotographySectionHeader.tsx:400,1559048400:190,1559080800:30,1559084400:180,r
+src/components/StyledLink/StyledLink.tsx:240,1559084400:240,r
+src/pages/photography.tsx:230,1559008800:210,1559048400:20,r
+tsconfig.json:225,1559080800:225,r
+src/components/Photography/PhotographyGridSection.tsx:132,1559008800:120,1559080800:12,r
+src/types/s3-image-asset.ts:77,1559080800:77,r
+src/components/Photography/PhotographyGridSection.spec.tsx:30,1559080800:30,r
+node_modules/gatsby-source-s3-image/index.d.ts:12,1559080800:12,r
