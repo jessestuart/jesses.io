@@ -16899,10 +16899,10 @@ typeface-spectral@0.0.72:
   resolved "https://registry.yarnpkg.com/typeface-spectral/-/typeface-spectral-0.0.72.tgz#2504c164f034186724ed8674e2d991e7bae7281c"
   integrity sha512-LT2lTLHv2IjftFdMdlYsMctoETXPj9bAHX6DtAd1iHfxoRO7jS/XU63uNdX6L2Bdz1B+T6iE3+hf3BIDR0XwiA==
 
-typescript@3.4.5:
-  version "3.4.5"
-  resolved "https://registry.yarnpkg.com/typescript/-/typescript-3.4.5.tgz#2d2618d10bb566572b8d7aad5180d84257d70a99"
-  integrity sha512-YycBxUb49UUhdNMU5aJ7z5Ej2XGmaIBL0x34vZ82fn3hGvD+bgrMrVDpatgz2f7YxUMJxMkbWxJZeAvDxVe7Vw==
+typescript@3.5.1:
+  version "3.5.1"
+  resolved "https://registry.yarnpkg.com/typescript/-/typescript-3.5.1.tgz#ba72a6a600b2158139c5dd8850f700e231464202"
+  integrity sha512-64HkdiRv1yYZsSe4xC1WVgamNigVYjlssIoaH2HcZF0+ijsk5YK2g0G34w9wJkze8+5ow4STd22AynfO6ZYYLw==
 
 typography-normalize@^0.16.19:
   version "0.16.19"
