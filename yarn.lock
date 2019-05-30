@@ -1440,10 +1440,10 @@
     "@types/connect" "*"
     "@types/node" "*"
 
-"@types/classnames@2.2.7":
-  version "2.2.7"
-  resolved "https://registry.yarnpkg.com/@types/classnames/-/classnames-2.2.7.tgz#fb68cc9be8487e6ea5b13700e759bfbab7e0fefd"
-  integrity sha512-rzOhiQ55WzAiFgXRtitP/ZUT8iVNyllEpylJ5zHzR4vArUvMB39GTk+Zon/uAM0JxEFAWnwsxC2gH8s+tZ3Myg==
+"@types/classnames@2.2.8":
+  version "2.2.8"
+  resolved "https://registry.yarnpkg.com/@types/classnames/-/classnames-2.2.8.tgz#17139e1e1104203572caa4368f6796f6225b70b4"
+  integrity sha512-3UrLzPnz8u+MMXuJTF++389IfLSQUbl5F3ry9WCxva0BKG5H/oo5NuPRXk+HrpPU1+5pVHSWhnVWRzIaFQ7QuQ==
 
 "@types/configstore@^2.1.1":
   version "2.1.1"
@@ -1562,10 +1562,10 @@
   resolved "https://registry.yarnpkg.com/@types/lodash/-/lodash-4.14.132.tgz#8ce45ca8745ff2e004fac0de0ab46f61e390ffa0"
   integrity sha512-RNUU1rrh85NgUJcjOOr96YXr+RHwInGbaQCZmlitqOaCKXffj8bh+Zxwuq5rjDy5OgzFldDVoqk4pyLEDiwxIw==
 
-"@types/luxon@1.15.0":
-  version "1.15.0"
-  resolved "https://registry.yarnpkg.com/@types/luxon/-/luxon-1.15.0.tgz#30219caf634bf8084118f94ed878fbce5b3c9458"
-  integrity sha512-eDzc9ByxV8oeRFoJEWEKlMkNiOD17tQFhIsjEqgsh0cCzUQXAM77RvdekaQeuIlvdqdq0xvqH1WcLZYSfAd6Ug==
+"@types/luxon@1.15.1":
+  version "1.15.1"
+  resolved "https://registry.yarnpkg.com/@types/luxon/-/luxon-1.15.1.tgz#2ce9143cc28ec236397833be416d4ca30fc9b79c"
+  integrity sha512-SOGSpxsAoR+pHLev7oFGbQ4mZCmfcmYY2xsv2+/UeEG2rcJA30k5NVux3cW9rgTe2EVtrqFG+KtMs6ERZsTGKA==
 
 "@types/md5@2.1.33":
   version "2.1.33"
@@ -1594,10 +1594,10 @@
   resolved "https://registry.yarnpkg.com/@types/node/-/node-12.0.2.tgz#3452a24edf9fea138b48fad4a0a028a683da1e40"
   integrity sha512-5tabW/i+9mhrfEOUcLDu2xBPsHJ+X5Orqy9FKpale3SjDA17j5AEpYq5vfy3oAeAHGcvANRCO3NV3d2D6q3NiA==
 
-"@types/node@12.0.3":
-  version "12.0.3"
-  resolved "https://registry.yarnpkg.com/@types/node/-/node-12.0.3.tgz#5d8d24e0033fc6393efadc85cb59c1f638095c9a"
-  integrity sha512-zkOxCS/fA+3SsdA+9Yun0iANxzhQRiNwTvJSr6N95JhuJ/x27z9G2URx1Jpt3zYFfCGUXZGL5UDxt5eyLE7wgw==
+"@types/node@12.0.4":
+  version "12.0.4"
+  resolved "https://registry.yarnpkg.com/@types/node/-/node-12.0.4.tgz#46832183115c904410c275e34cf9403992999c32"
+  integrity sha512-j8YL2C0fXq7IONwl/Ud5Kt0PeXw22zGERt+HSSnwbKOJVsAGkEz3sFCYwaF9IOuoG1HOtE0vKCj6sXF7Q0+Vaw==
 
 "@types/node@^7.0.11":
   version "7.10.6"
