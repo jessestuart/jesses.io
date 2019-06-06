@@ -1,9 +1,8 @@
 import React from 'react'
-
 import renderer from 'react-test-renderer'
 
-import img from '../../../static/img/avatar_square.jpg'
-import Avatar from './Avatar'
+import Avatar from 'components/Profile/Avatar'
+import img from 'img/avatar_square.jpg'
 
 jest.mock('gatsby-image')
 

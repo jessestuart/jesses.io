@@ -1,9 +1,10 @@
 import classNames from 'classnames'
 import Img from 'gatsby-image'
 import React from 'react'
+import GatsbyImage from 'types/GatsbyImage'
 
-const Avatar = ({ image }: { image?: any }) =>
-  image ? (
+const Avatar = ({ image }: { image?: GatsbyImage | any }) =>
+  !image ? null : (
     <Img
       className={classNames('br-100 justify-center mv2 pa0')}
       style={{
@@ -11,6 +12,6 @@ const Avatar = ({ image }: { image?: any }) =>
       }}
       fluid={image}
     />
-  ) : null
+  )
 
 export default Avatar

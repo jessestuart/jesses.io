@@ -6,13 +6,16 @@ module.exports = {
     'babel-preset-gatsby',
   ],
   plugins: [
-    'babel-plugin-styled-components',
     '@babel/plugin-proposal-optional-chaining',
     '@babel/plugin-transform-runtime',
+    'babel-plugin-styled-components',
     'lodash',
     [
       'module-resolver',
-      { root: ['./src'], extensions: ['.js', '.json', '.ts', '.tsx'] },
+      {
+        root: ['./src', './static'],
+        extensions: ['.js', '.json', '.png', '.ts', '.tsx'],
+      },
     ],
   ],
 }
