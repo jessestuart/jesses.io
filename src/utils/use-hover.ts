@@ -4,7 +4,7 @@ import { useState } from 'react'
  * A simple React Hook that responds to `hover` events.
  */
 const useHover = () => {
-  const [hovered, setHovered] = useState(false)
+  const [hovered, setHovered] = useState<boolean>(false)
   return [
     hovered,
     {

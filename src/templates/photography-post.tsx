@@ -81,13 +81,12 @@ export const pageQuery = graphql`
           EXIF {
             DateCreatedISO
             DateTimeOriginal
-            ExposureTime
             FNumber
             FocalLength
             ISO
             LensModel
             Model
-            ShutterSpeedValue
+            ShutterSpeedFraction
           }
           childImageSharp {
             original {

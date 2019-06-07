@@ -13,7 +13,7 @@ const ExifOverlay = styled.div`
   font-size: 0.9rem;
   font-variant: small-caps;
   justify-content: flex-end;
-  opacity: 0;
+  opacity: ${({ isActive }: { isActive: boolean }) => (isActive ? 1 : 0)};
   padding: 10px;
   position: absolute;
   text-align: right;

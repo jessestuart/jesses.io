@@ -31,13 +31,12 @@ const PhotographyIndex = ({ location }: { location: GatsbyLocation }) => {
             EXIF {
               DateCreatedISO
               DateTimeOriginal
-              ExposureTime
               FNumber
               FocalLength
               ISO
               LensModel
               Model
-              ShutterSpeedValue
+              ShutterSpeedFraction
             }
             childImageSharp {
               original {

@@ -50,16 +50,22 @@ const ImageZoomGridElement = (props: Props) => {
   }
 
   const { aspectRatio } = thumbnailSizes
-  const style = aspectRatio > 1 ? { gridRow: 'span 1' } : { gridRow: 'span 2' }
 
-  const lensModel = mapLensModelExif(image.EXIF.LensModel)
-  const { FNumber, ISO, FocalLength } = image.EXIF
+  const lensModel = mapLensModelExif(_.get(image, 'EXIF.LensModel'))
+  const { FNumber, ISO, FocalLength, ShutterSpeedFraction } = image.EXIF
 
   return (
-    <StyledImageZoomGridElement {...props} {...setIsActive} {...style}>
+    <StyledImageZoomGridElement
+      {...props}
+      {...setIsActive}
+      style={aspectRatio > 1 ? { gridRow: 'span 1' } : { gridRow: 'span 2' }}
+    >
       <Img fluid={thumbnailSizes} />
-      <ExifOverlay style={isActive ? { opacity: 1 } : { opacity: 0 }}>
-        {FocalLength}mm, ƒ{FNumber}, ISO {ISO}
+      <ExifOverlay isActive={isActive as boolean}>
+        {FocalLength ? `${FocalLength}mm, ` : null}
+        {ShutterSpeedFraction ? `${ShutterSpeedFraction}s, ` : null}
+        {FNumber ? `ƒ${FNumber}, ` : null}
+        {ISO ? `ISO ${ISO}` : null}
         <br />
         {lensModel}
       </ExifOverlay>

@@ -6,7 +6,6 @@ module.exports = {
     'plugin:promise/recommended',
     'plugin:cypress/recommended',
     'plugin:react/recommended',
-    'prettier/@typescript-eslint', // Uses eslint-config-prettier to disable ESLint rules from @typescript-eslint/eslint-plugin that would conflict with prettier
   ],
   parser: '@typescript-eslint/parser',
   plugins: ['@typescript-eslint', 'cypress', 'prettier', 'promise', 'react'],
