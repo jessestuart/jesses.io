@@ -1,5 +1,5 @@
 {
-  "include": ["./src/**/*.tsx", "./src/**/*.ts", "**/*.js"],
+  "include": ["./src/**/*.tsx", "**/*.spec.tsx", "./src/**/*.ts", "**/*.js"],
   "exclude": ["node_modules/*", "public/*"],
   "compilerOptions": {
     "allowSyntheticDefaultImports": true,
@@ -18,7 +18,7 @@
     "noImplicitReturns": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
-    "paths": { "*": ["src/*"] },
+    "paths": { "*": ["src/*", "static/*"] },
     "resolveJsonModule": true,
     "skipLibCheck": true,
     "sourceMap": true,

@@ -1,0 +1,23 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Render valid active ExifOverlay component. 1`] = `
+<div
+  className="sc-bdVaJa hChdkv"
+>
+  Shot with a camera
+</div>
+`;
+
+exports[`Render valid inactive ExifOverlay component. 1`] = `
+<div
+  className="sc-bdVaJa hQVqai"
+>
+  Shot with a camera
+</div>
+`;
+
+exports[`Rendering ExifOverlay w/out any text is empty div. 1`] = `
+<div
+  className="sc-bdVaJa hQVqai"
+/>
+`;

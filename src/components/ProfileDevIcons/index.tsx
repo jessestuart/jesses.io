@@ -1,18 +1,18 @@
 import '../../styles/base.css'
 import '../../styles/hvr-animations.css'
 
-import React, { Fragment } from 'react'
-
 import classNames from 'classnames'
+import React, { Fragment } from 'react'
 import styled from 'styled-components'
 
-import colors from '../../utils/colors'
+import colors from 'utils/colors'
+
 import DevIconColumn from './DevIconColumn'
 import DevIconSkills from './DevIconSkills'
 
 const ProfileDevIcons = () => {
   return (
-    <Fragment>
+    <>
       <div className="flex justify-center align-center">
         <p
           className="spectral fw3 lh-copy center pv3 tc w-75"
@@ -29,10 +29,12 @@ const ProfileDevIcons = () => {
           Here are some of the technologies I've enjoyed hacking on lately:
         </p>
       </div>
-      <DevIconsSection>
+      <DevIconsSection className="center code w-90">
         {DevIconSkills.map((devIcon, index) => (
           <Fragment key={devIcon.label}>
-            <DevIconLabel>{devIcon.label}</DevIconLabel>
+            <DevIconLabel className="fira-mono moon-gray flex items-center justify-start">
+              {devIcon.label}
+            </DevIconLabel>
             {devIcon.icons.map((DevIcon, innerIndex) => (
               <DevIconColumn
                 key={innerIndex}
@@ -48,13 +50,11 @@ const ProfileDevIcons = () => {
           </Fragment>
         ))}
       </DevIconsSection>
-    </Fragment>
+    </>
   )
 }
 
-const DevIconLabel = styled.div.attrs({
-  className: 'fira-mono moon-gray flex items-center justify-start',
-})`
+const DevIconLabel = styled.div`
   font-size: 1.5rem;
   grid-column: span 9;
   grid-row: span 2;
@@ -68,7 +68,7 @@ const DevIconLabel = styled.div.attrs({
   }
 `
 
-const DevIconsSection = styled.div.attrs({ className: 'center code w-90' })`
+const DevIconsSection = styled.div`
   display: grid;
   @media (max-width: 45em) {
     grid-template-columns: repeat(9, 1fr);

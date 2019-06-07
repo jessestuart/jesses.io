@@ -2473,10 +2473,10 @@ autoprefixer@^9.6.0:
     postcss "^7.0.16"
     postcss-value-parser "^3.3.1"
 
-aws-sdk@2.462.0:
-  version "2.462.0"
-  resolved "https://registry.yarnpkg.com/aws-sdk/-/aws-sdk-2.462.0.tgz#786606c4787cfa602a0539bf6bd573c3d995961c"
-  integrity sha512-CSN6wiFKlAqtafKR7EzM31s6GxLAXKv4wBhuXiFvCjc0txYdXEhIsXMRZSOh6daTAjgPOps2IMTK9/adCSe+9g==
+aws-sdk@2.470.0:
+  version "2.470.0"
+  resolved "https://registry.yarnpkg.com/aws-sdk/-/aws-sdk-2.470.0.tgz#33cbf793b4ab6a08770e8af90fbf45d517526e7e"
+  integrity sha512-XCMLSNiYaUUc3wxH3NxFxPPmYAF95IHhDwc0o6pOIY30om83ZYJwuPizgheRWXuOGjrXQxWgT6W3EfyfeuAISA==
   dependencies:
     buffer "4.9.1"
     events "1.1.1"
@@ -2949,11 +2949,6 @@ bluebird@3.5.0:
   version "3.5.0"
   resolved "https://registry.yarnpkg.com/bluebird/-/bluebird-3.5.0.tgz#791420d7f551eea2897453a8a77653f96606d67c"
   integrity sha1-eRQg1/VR7qKJdFOop3ZT+WYG1nw=
-
-bluebird@3.5.4:
-  version "3.5.4"
-  resolved "https://registry.yarnpkg.com/bluebird/-/bluebird-3.5.4.tgz#d6cc661595de30d5b3af5fcedd3c0b3ef6ec5714"
-  integrity sha512-FG+nFEZChJrbQ9tIccIfZJBz3J7mLrAhxakAbnrJWn8d7aKOC+LWifa0G+p4ZqKp4y13T7juYvdhq9NzKdsrjw==
 
 bluebird@3.5.5, bluebird@^3.5.0, bluebird@^3.5.1, bluebird@^3.5.3, bluebird@^3.5.x:
   version "3.5.5"
@@ -4588,7 +4583,12 @@ css-what@2.1, css-what@^2.1.2:
   resolved "https://registry.yarnpkg.com/css-what/-/css-what-2.1.3.tgz#a6d7604573365fe74686c3f311c56513d88285f2"
   integrity sha512-a+EPoD+uZiNfh+5fxw2nO9QwFa6nJe2Or35fGY6Ipw1R3R4AGz1d1TEZrCegvw2YTmZ0jXirGYlzxxpYSHwpEg==
 
-css@2.2.4, css@^2.2.4:
+css.escape@^1.5.1:
+  version "1.5.1"
+  resolved "https://registry.yarnpkg.com/css.escape/-/css.escape-1.5.1.tgz#42e27d4fa04ae32f931a4b4d4191fa9cddee97cb"
+  integrity sha1-QuJ9T6BK4y+TGktNQZH6nN3ul8s=
+
+css@2.2.4, css@^2.2.3, css@^2.2.4:
   version "2.2.4"
   resolved "https://registry.yarnpkg.com/css/-/css-2.2.4.tgz#c646755c73971f2bba6a601e2cf2fd71b1298929"
   integrity sha512-oUnjmWpy0niI3x/mPL8dVEI1l7MnG3+HHyRPHf+YFSbK+svOhXpmSOcDURUh2aOCgl2grzrOPt1nHLuCVFULLw==
@@ -6673,6 +6673,11 @@ forwarded@~0.1.2:
   resolved "https://registry.yarnpkg.com/forwarded/-/forwarded-0.1.2.tgz#98c23dab1175657b8c0573e8ceccd91b0ff18c84"
   integrity sha1-mMI9qxF1ZXuMBXPozszZGw/xjIQ=
 
+fracty@1.0.8:
+  version "1.0.8"
+  resolved "https://registry.yarnpkg.com/fracty/-/fracty-1.0.8.tgz#321cfe3dec10cd49feed020b1711ec8d93a461c1"
+  integrity sha512-w/UltVbTuDehQ7CUZ+ZLiz7eOTdfADBzJApJbqadFg34c5Xa8YinL+gMsOoghZBkFuwTFG4/tlBgpNs7l5A5NQ==
+
 fragment-cache@^0.2.1:
   version "0.2.1"
   resolved "https://registry.yarnpkg.com/fragment-cache/-/fragment-cache-0.2.1.tgz#4290fad27f13e89be7f33799c6bc5a0abfff0d19"
@@ -7133,15 +7138,16 @@ gatsby-source-filesystem@2.0.38:
     valid-url "^1.0.9"
     xstate "^3.1.0"
 
-gatsby-source-s3-image@2.1.0:
-  version "2.1.0"
-  resolved "https://registry.yarnpkg.com/gatsby-source-s3-image/-/gatsby-source-s3-image-2.1.0.tgz#5da5fd6546e9b493899ce7436079a2270091abe6"
-  integrity sha512-zz/uD9Q2cOIuK4FLQUb1BDovESsIJlAXnbsU8Nh0dfePvgd5xKy8ZnvSHymwhy8Yx9JiBNz4TrFD9AjCgqH4ow==
+gatsby-source-s3-image@1.4.1:
+  version "1.4.1"
+  resolved "https://registry.yarnpkg.com/gatsby-source-s3-image/-/gatsby-source-s3-image-1.4.1.tgz#3f7ce6ea1ee883e70831f984ce4c37b5084c8d28"
+  integrity sha512-lcnthQf6trlAao2ydL8pwpaKZhL620C1+asmr557wudw41EA4TB9EaExM44hm5f1F9LTVzLvP7zByn9hLHe1DQ==
   dependencies:
-    aws-sdk "2.462.0"
-    bluebird "3.5.4"
+    aws-sdk "2.470.0"
+    bluebird "3.5.5"
+    fracty "1.0.8"
     lodash "4.17.11"
-    luxon "1.15.0"
+    luxon "1.16.0"
     mime-types "2.1.24"
     ts-exif-parser "0.1.4"
 
@@ -9401,7 +9407,7 @@ jest-config@^24.8.0:
     pretty-format "^24.8.0"
     realpath-native "^1.1.0"
 
-jest-diff@^24.8.0:
+jest-diff@^24.0.0, jest-diff@^24.8.0:
   version "24.8.0"
   resolved "https://registry.yarnpkg.com/jest-diff/-/jest-diff-24.8.0.tgz#146435e7d1e3ffdf293d53ff97e193f1d1546172"
   integrity sha512-wxetCEl49zUpJ/bvUmIFjd/o52J+yWcoc5ZyPq4/W1LUKGEhRYDIbP1KcF6t+PvqNrGAFk4/JhtxDq/Nnzs66g==
@@ -9422,6 +9428,20 @@ jest-docblock@^24.3.0:
   integrity sha512-nlANmF9Yq1dufhFlKG9rasfQlrY7wINJbo3q01tu56Jv5eBU5jirylhF2O5ZBnLxzOVBGRDz/9NAwNyBtG4Nyg==
   dependencies:
     detect-newline "^2.1.0"
+
+jest-dom@3.4.0:
+  version "3.4.0"
+  resolved "https://registry.yarnpkg.com/jest-dom/-/jest-dom-3.4.0.tgz#46c21984a73a4841dc57bc8fc09ccd1d971a8447"
+  integrity sha512-fQR5ESaxTfNbZE02y+gtaQH7+sMwzrQtJo5OE0E3BNArjTL9GWNI+uPFr1yS24eodH1X62L+qncv106M/O98gQ==
+  dependencies:
+    chalk "^2.4.1"
+    css "^2.2.3"
+    css.escape "^1.5.1"
+    jest-diff "^24.0.0"
+    jest-matcher-utils "^24.0.0"
+    lodash "^4.17.11"
+    pretty-format "^24.0.0"
+    redent "^2.0.0"
 
 jest-each@^24.8.0:
   version "24.8.0"
@@ -9533,7 +9553,7 @@ jest-leak-detector@^24.8.0:
   dependencies:
     pretty-format "^24.8.0"
 
-jest-matcher-utils@^24.8.0:
+jest-matcher-utils@^24.0.0, jest-matcher-utils@^24.8.0:
   version "24.8.0"
   resolved "https://registry.yarnpkg.com/jest-matcher-utils/-/jest-matcher-utils-24.8.0.tgz#2bce42204c9af12bde46f83dc839efe8be832495"
   integrity sha512-lex1yASY51FvUuHgm0GOVj7DCYEouWSlIYmCW7APSqB9v8mXmKSn5+sWVF0MhuASG0bnYY106/49JU1FZNl5hw==
@@ -10807,11 +10827,6 @@ ltcdr@^2.2.1:
   version "2.2.1"
   resolved "https://registry.yarnpkg.com/ltcdr/-/ltcdr-2.2.1.tgz#5ab87ad1d4c1dab8e8c08bbf037ee0c1902287cf"
   integrity sha1-Wrh60dTB2rjowIu/A37gwZAih88=
-
-luxon@1.15.0:
-  version "1.15.0"
-  resolved "https://registry.yarnpkg.com/luxon/-/luxon-1.15.0.tgz#d06643c437982332a3feff4ee7c718bdbbae09fd"
-  integrity sha512-HIpK4zIonObWHj9UC80ElykmM/0jTuuXcbPYBYbDGZ3Cq2bL9rACcmppoc6zm5JnmHpnK5bRMIp8/+ei4O0y2Q==
 
 luxon@1.16.0:
   version "1.16.0"
@@ -13460,10 +13475,10 @@ prettier-linter-helpers@^1.0.0:
   dependencies:
     fast-diff "^1.1.2"
 
-prettier@1.17.1:
-  version "1.17.1"
-  resolved "https://registry.yarnpkg.com/prettier/-/prettier-1.17.1.tgz#ed64b4e93e370cb8a25b9ef7fef3e4fd1c0995db"
-  integrity sha512-TzGRNvuUSmPgwivDqkZ9tM/qTGW9hqDKWOE9YHiyQdixlKbv7kvEqsmDPrcHJTKwthU774TQwZXVtaQ/mMsvjg==
+prettier@1.18.2:
+  version "1.18.2"
+  resolved "https://registry.yarnpkg.com/prettier/-/prettier-1.18.2.tgz#6823e7c5900017b4bd3acf46fe9ac4b4d7bda9ea"
+  integrity sha512-OeHeMc0JhFE9idD4ZdtNibzY0+TPHSpSSb9h8FqtP+YnoZZ1sl8Vc9b1sasjfymH3SonAF4QcA2+mzHPhMvIiw==
 
 pretty-bytes@^4.0.2:
   version "4.0.2"
@@ -13478,7 +13493,7 @@ pretty-error@^2.1.1:
     renderkid "^2.0.1"
     utila "~0.4"
 
-pretty-format@^24.8.0:
+pretty-format@^24.0.0, pretty-format@^24.8.0:
   version "24.8.0"
   resolved "https://registry.yarnpkg.com/pretty-format/-/pretty-format-24.8.0.tgz#8dae7044f58db7cb8be245383b565a963e3c27f2"
   integrity sha512-P952T7dkrDEplsR+TuY7q3VXDae5Sr7zmQb12JU/NDQa/3CH7/QW0yvqLcGN6jL+zQFKaoJcPc+yJxMTGmosqw==

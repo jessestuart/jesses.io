@@ -75,3 +75,6 @@ yalc.lock
 # Jest
 reports/
 junit.xml
+
+cypress/screenshots/
+cypress/videos/
