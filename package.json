@@ -124,7 +124,7 @@
     "husky": "2.4.0",
     "identity-obj-proxy": "3.0.0",
     "jest": "24.8.0",
-    "jest-dom": "3.4.0",
+    "jest-dom": "3.5.0",
     "jest-image-snapshot": "2.8.2",
     "jest-junit": "6.4.0",
     "jest-styled-components": "6.3.1",
