@@ -13,19 +13,26 @@ const {
   Jest,
   Kubernetes,
   Nodejs,
-  Packer,
   Python,
   React,
   Redux,
   Terraform,
-  Vagrant,
+  Elasticsearch,
+  Prometheus,
 } = DevIcons
 
-const infra = [Kubernetes, Docker, Terraform, Ansible, Packer, Vagrant]
+const infra = [
+  Kubernetes,
+  Docker,
+  Prometheus,
+  Elasticsearch,
+  Terraform,
+  Ansible,
+]
 
 const backend = [Nodejs, Go, Java, Grails, Python, Clojure]
 
-const frontend = [React, Redux, GraphQL, Jest, GatsbyJS, AngularJS]
+const frontend = [React, Redux, GatsbyJS, GraphQL, Jest, AngularJS]
 
 const DevIconSkills = [
   { icons: infra, label: 'infra' },

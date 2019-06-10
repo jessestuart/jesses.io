@@ -8,7 +8,14 @@ module.exports = {
     'plugin:react/recommended',
   ],
   parser: '@typescript-eslint/parser',
-  plugins: ['@typescript-eslint', 'cypress', 'prettier', 'promise', 'react'],
+  plugins: [
+    '@typescript-eslint',
+    'cypress',
+    'prettier',
+    'promise',
+    'react-hooks',
+    'react',
+  ],
   parserOptions: {
     ecmaVersion: 8,
     ecmaFeatures: {
