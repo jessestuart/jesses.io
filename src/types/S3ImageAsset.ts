@@ -1,7 +1,7 @@
+import { FluidObject } from 'gatsby-image'
 import { ExifData } from 'gatsby-source-s3-image'
-import GatsbyImage from 'types/GatsbyImage'
 
-export interface S3ImageAsset {
+export default interface S3ImageAsset {
   id: string
   EXIF?: ExifData
   childImageSharp: {
@@ -9,7 +9,7 @@ export interface S3ImageAsset {
       height: number
       width: number
     }
-    thumbnailSizes: GatsbyImage[]
-    largeSizes: GatsbyImage[]
+    thumbnailSizes: FluidObject[]
+    largeSizes: FluidObject[]
   }
 }

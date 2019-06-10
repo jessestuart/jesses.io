@@ -12,7 +12,7 @@ const DevIconColumn = ({ className, DevIcon, style }: Props) => (
   <DevIconContainer
     style={style}
     className={classNames(
-      'pa3 pa4-l flex justify-center items-center',
+      'flex items-center justify-center pa3 pa4-l',
       className,
     )}
   >
@@ -28,7 +28,7 @@ const DevIconContainer = styled.div`
     max-width: 100px;
     filter: drop-shadow(0 0 3px rgba(0, 0, 0, 0.75));
     &:hover {
-      filter: drop-shadow(0 0 4px rgba(0, 0, 0, 0.8));
+      filter: drop-shadow(0 0 4px rgba(0, 0, 0, 0.85));
     }
   }
   @media (min-width: 45em) {

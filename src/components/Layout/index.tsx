@@ -1,14 +1,17 @@
-import { SiteFooter, SiteHeader } from 'components'
-import config from 'gatsby-plugin-config'
 import 'js-tachyons'
-import _ from 'lodash'
-import React, { ReactNode } from 'react'
-import Helmet from 'react-helmet'
-import 'styles/base.css'
 import 'typeface-alegreya'
 import 'typeface-alegreya-sans'
 import 'typeface-lato'
 import 'typeface-spectral'
+
+import 'styles/base.css'
+
+import config from 'gatsby-plugin-config'
+import _ from 'lodash'
+import React, { ReactNode } from 'react'
+import Helmet from 'react-helmet'
+
+import { SiteFooter, SiteHeader } from 'components'
 import GatsbyLocation from 'types/GatsbyLocation'
 
 const title: string = _.get(config, 'siteMetadata.title')
