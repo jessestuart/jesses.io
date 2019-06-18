@@ -17,10 +17,11 @@ interface Props {
 }
 
 const Home = ({ data, location }: Props) => {
+  const avatar = _.get(data, 'file.childImageSharp.fluid')
   return (
     <Layout location={location}>
       <div className="moon-gray bg-gray-primary w-100">
-        <Profile avatar={_.get(data, 'file.childImageSharp.fluid')} />
+        <Profile avatar={avatar} />
         <ProfileDevIcons />
       </div>
     </Layout>
@@ -32,7 +33,7 @@ export const query = graphql`
     file(relativePath: { regex: "/avatar-square.jpg/" }) {
       childImageSharp {
         fluid {
-          ...GatsbyImageSharpFluid
+          ...GatsbyImageSharpFluid_tracedSVG
         }
       }
     }

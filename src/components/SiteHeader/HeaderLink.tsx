@@ -18,16 +18,19 @@ const getIsActive = ({ href, pathname }): boolean =>
 const HeaderLink = ({ children, className, href, pathname }: Props) => {
   const isActive = getIsActive({ href, pathname })
   return (
-    <ul
-      className={classNames('lato f4 ph3 mv2 pv2 flex-auto', className, {
-        'light-silver fw3': !isActive,
-        'white-90 fw4': isActive,
-      })}
+    <Link
+      className={classNames(
+        'shadow-none flex justify-center items-center lato f4 ph3 mv2 pv2 flex-auto light-silver fw3',
+        className,
+        {
+          'light-silver fw3': !isActive,
+          'white-90 fw4': isActive,
+        },
+      )}
+      to={href}
     >
-      <Link className="shadow-none flex justify-center items-center" to={href}>
-        {children}
-      </Link>
-    </ul>
+      <ul>{children}</ul>
+    </Link>
   )
 }
 

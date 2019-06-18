@@ -27,10 +27,10 @@ interface Props {
   }
 }
 
-const BlogIndex = (location: GatsbyLocation) => {
+const BlogIndex = ({ location }: { location: GatsbyLocation }) => {
   const data: Props = useStaticQuery(graphql`
     {
-      allMarkdownRemark(filter: { frontmatter: { draft: { ne: true } } }) {
+      allMarkdownRemark {
         edges {
           node {
             fields {

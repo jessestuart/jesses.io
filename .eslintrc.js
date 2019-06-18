@@ -13,8 +13,8 @@ module.exports = {
     'cypress',
     'prettier',
     'promise',
-    'react-hooks',
     'react',
+    'react-hooks',
   ],
   parserOptions: {
     ecmaVersion: 8,
@@ -51,6 +51,8 @@ module.exports = {
     ],
     'promise/no-callback-in-promise': 'off',
     'react/no-unescaped-entities': 'off',
+    'react-hooks/rules-of-hooks': 'error', // Checks rules of Hooks
+    'react-hooks/exhaustive-deps': 'warn', // Checks effect dependencies
     '@typescript-eslint/array-type': 'warn',
     '@typescript-eslint/ban-types': 'warn',
     '@typescript-eslint/camelcase': 'warn',
