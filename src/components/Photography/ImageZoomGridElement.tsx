@@ -29,6 +29,7 @@ const StyledImageZoomGridElement = styled.div`
 
 interface Props {
   image: {
+    id: any
     childImageSharp: GatsbyImage
     EXIF: ExifData
   }
