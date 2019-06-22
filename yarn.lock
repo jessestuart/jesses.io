@@ -16812,11 +16812,6 @@ tr46@^1.0.1:
   dependencies:
     punycode "^2.1.0"
 
-trashable@1.0.7:
-  version "1.0.7"
-  resolved "https://registry.yarnpkg.com/trashable/-/trashable-1.0.7.tgz#0a3f6882af397aa39f8de93b8bb2118e295cdfe7"
-  integrity sha512-yDEVYO8VPqaWZg2yulq6xoUYB9XPdWeWCXepDSTp4yAfS8++mOcHXhlvzxP4/aG4MMfbIc5FV1k86KquqQuGwg==
-
 traverse@~0.6.6:
   version "0.6.6"
   resolved "https://registry.yarnpkg.com/traverse/-/traverse-0.6.6.tgz#cbdf560fd7b9af632502fed40f918c157ea97137"

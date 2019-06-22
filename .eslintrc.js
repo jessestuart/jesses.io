@@ -1,11 +1,15 @@
 module.exports = {
   extends: [
-    'plugin:@typescript-eslint/recommended', // Uses the recommended rules from the @typescript-eslint/eslint-plugin
+    'eslint:recommended',
+    'plugin:@typescript-eslint/recommended',
     'plugin:import/typescript',
-    'plugin:prettier/recommended', // Enables eslint-plugin-prettier and displays prettier errors as ESLint errors. Make sure this is always the last configuration in the extends array.
     'plugin:promise/recommended',
     'plugin:cypress/recommended',
     'plugin:react/recommended',
+    // Enables eslint-plugin-prettier and displays prettier errors as ESLint
+    // errors. Make sure this is always the last configuration in the extends
+    // array.
+    'plugin:prettier/recommended',
   ],
   parser: '@typescript-eslint/parser',
   plugins: [
