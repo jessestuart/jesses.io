@@ -1,4 +1,4 @@
-import '../../styles/base.css'
+import 'styles/base.css'
 
 import _ from 'lodash'
 import React from 'react'
@@ -14,46 +14,48 @@ interface Props {
 
 interface Header {
   title: string
-  href?: string
+  href: string
 }
 
 const Headers: Header[] = [
   { href: '/', title: 'home' },
   { href: '/posts', title: 'words' },
   { href: '/photography', title: 'pictures' },
-  { title: 'about' },
+  { href: '/about', title: 'about' },
 ]
 
 const SiteHeader = (props: Props) => {
   const pathname: string = _.get(props, 'location.pathname', '/')
-  const isRoot: boolean = _.isNil(pathname) || _.eq(pathname, '/')
+  const isRoot: boolean = _.eq(pathname, '/')
   return (
     <Headroom
       className="bg-gray-primary"
       style={{
         MozTransition: 'all 0.7s ease-in-out',
-        OTransaction: 'all 0.7s ease-in-out',
-        Transition: 'all 0.7s ease-in-out',
-        WebkitTranstion: 'all 0.7s ease-in-out',
+        OTransition: 'all 0.7s ease-in-out',
+        WebkitTransition: 'all 0.7s ease-in-out',
+        transition: 'all 0.7s ease-in-out',
       }}
     >
       <header
-        className={`bb b--hot-pink center site-header flex w-100 bg-gray-primary ${
+        id="site-header"
+        className={`b--hot-pink bb bg-gray-primary center flex pb1 site-header w-100 ${
           !isRoot ? 'bw1' : ''
         }`}
       >
-        <div className="w-35-ns flex flex-row center source-sans fw3">
+        <ul className="center flex flex-row fw3 mb1 source-sans w-35-ns">
           {Headers.map((header: Header, index: number) => (
-            <HeaderLink
-              className={index === Headers.length - 1 ? '' : 'br b--mid-gray'}
-              key={header.title}
-              href={header.href || `/${header.title}`}
-              pathname={pathname}
-            >
-              {header.title}
-            </HeaderLink>
+            <li key={header.title}>
+              <HeaderLink
+                className={index === Headers.length - 1 ? '' : 'br b--mid-gray'}
+                href={header.href || `/${header.title}`}
+                pathname={pathname}
+              >
+                {header.title}
+              </HeaderLink>
+            </li>
           ))}
-        </div>
+        </ul>
       </header>
     </Headroom>
   )
