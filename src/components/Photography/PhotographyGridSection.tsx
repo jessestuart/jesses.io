@@ -1,15 +1,17 @@
+import 'react-image-lightbox/style.css'
+
+import _ from 'lodash'
+import fp from 'lodash/fp'
+import { DateTime } from 'luxon'
+import React, { Component } from 'react'
+import Lightbox from 'react-image-lightbox'
+
 import { StyledPanel } from 'components'
 import {
   ImageZoomGrid,
   ImageZoomGridElement,
   PhotographySectionHeader,
 } from 'components/Photography'
-import _ from 'lodash'
-import fp from 'lodash/fp'
-import { DateTime } from 'luxon'
-import React, { Component } from 'react'
-import Lightbox from 'react-image-lightbox'
-import 'react-image-lightbox/style.css'
 
 interface Props {
   datetime: DateTime
@@ -54,7 +56,7 @@ class PhotographyGridSection extends Component<Props, State> {
     _.flow(
       fp.get('images'),
       fp.sortBy('EXIF.DateTimeOriginal'),
-      fp.map('childImageSharp.largeSizes.src'),
+      fp.map('childImageSharp.sizes.src'),
     ),
   )
 
@@ -73,7 +75,7 @@ class PhotographyGridSection extends Component<Props, State> {
       prevImageSrc,
     } = this.state
     const sortedImages = _.sortBy(images, 'EXIF.DateTimeOriginal')
-    const lightboxImages = _.map(sortedImages, 'childImageSharp.largeSizes.src')
+    const lightboxImages = _.map(sortedImages, 'childImageSharp.sizes.src')
 
     if (_.isEmpty(images) || _.isEmpty(lightboxImages)) {
       return null

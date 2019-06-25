@@ -107,7 +107,9 @@ button {
 }
 
 ul,
-ul > li {
+ol,
+ul > li,
+ol > li {
   list-style: none;
 }
 
