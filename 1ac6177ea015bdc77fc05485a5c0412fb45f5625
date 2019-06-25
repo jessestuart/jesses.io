@@ -1,0 +1,13 @@
+[ver:1,total:3180]
+.gtm/terminal.app:1649,1561485600:1009,1561489200:640,r
+src/config/createPages.ts:567,1561485600:527,1561489200:40,d
+gatsby-node.js:345,1561485600:205,1561489200:140,r
+.eslintrc.js:115,1561485600:115,r
+src/pages/posts.tsx:107,1561485600:107,r
+src/config/onCreateNode.ts:82,1561485600:62,1561489200:20,d
+src/templates/blog-post.tsx:75,1561485600:75,r
+tsconfig.json:70,1561485600:70,r
+package.json:60,1561485600:30,1561489200:30,m
+src/config/onCreateNode.js:60,1561485600:60,r
+.git/PULLREQ_EDITMSG:30,1561489200:30,d
+.git/rebase-merge/git-rebase-todo:20,1561485600:20,d
