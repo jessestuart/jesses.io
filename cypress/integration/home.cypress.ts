@@ -1,6 +1,5 @@
 /**
  *
- *
  */
 context('Homepage', () => {
   afterEach(() => {
@@ -16,7 +15,7 @@ context('Homepage', () => {
   })
 
   it('can navigate to About page.', () => {
-    cy.get('.site-header')
+    cy.get('#site-header')
       .find('a')
       .last()
       .should('contain', 'about')

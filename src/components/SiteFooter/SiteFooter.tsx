@@ -1,9 +1,9 @@
 import classNames from 'classnames'
 import { DateTime } from 'luxon'
-import * as React from 'react'
+import React from 'react'
 import { Heart } from 'react-feather'
 
-import colors from '../../utils/colors'
+import colors from 'utils/colors'
 
 export enum FooterTheme {
   Light = 'Light',
@@ -36,10 +36,10 @@ const SiteFooter = ({ theme = FooterTheme.Light }: Props) => (
     <div className="dib center tc flex-ns justify-center items-center">
       Pixels, bits and bytes hand-crafted with
       <Heart
-        className="hot-pink mh1"
-        width="15"
-        height="15"
+        className="hot-pink mh1 hvr-grow"
         fill={colors.primary.main}
+        height="15"
+        width="15"
       />
       in NYC.
     </div>

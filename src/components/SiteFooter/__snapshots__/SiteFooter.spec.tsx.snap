@@ -21,7 +21,7 @@ exports[`Render SiteFooter component with dark theme. 1`] = `
   >
     Pixels, bits and bytes hand-crafted with
     <svg
-      className="hot-pink mh1"
+      className="hot-pink mh1 hvr-grow"
       fill="#ff3a5c"
       height="15"
       stroke="currentColor"
@@ -62,7 +62,7 @@ exports[`Render SiteFooter component. 1`] = `
   >
     Pixels, bits and bytes hand-crafted with
     <svg
-      className="hot-pink mh1"
+      className="hot-pink mh1 hvr-grow"
       fill="#ff3a5c"
       height="15"
       stroke="currentColor"

@@ -7,8 +7,6 @@ exports[`Render HeaderLink component w/ default values. 1`] = `
   onClick={[Function]}
   onMouseEnter={[Function]}
 >
-  <ul>
-    Header Link
-  </ul>
+  Header Link
 </a>
 `;

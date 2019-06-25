@@ -29,7 +29,7 @@ const HeaderLink = ({ children, className, href, pathname }: Props) => {
       )}
       to={href}
     >
-      <ul>{children}</ul>
+      {children}
     </Link>
   )
 }
