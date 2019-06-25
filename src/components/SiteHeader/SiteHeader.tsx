@@ -43,7 +43,7 @@ const SiteHeader = (props: Props) => {
           !isRoot ? 'bw1' : ''
         }`}
       >
-        <ul className="center flex flex-row fw3 mb1 source-sans w-35-ns">
+        <ol className="center flex flex-row fw3 mb1 source-sans w-35-ns">
           {Headers.map((header: Header, index: number) => (
             <li key={header.title}>
               <HeaderLink
@@ -55,7 +55,7 @@ const SiteHeader = (props: Props) => {
               </HeaderLink>
             </li>
           ))}
-        </ul>
+        </ol>
       </header>
     </Headroom>
   )

@@ -77,29 +77,7 @@ export const pageQuery = graphql`
     allS3ImageAsset(filter: { EXIF: { DateCreatedISO: { eq: $name } } }) {
       edges {
         node {
-          id
-          EXIF {
-            DateCreatedISO
-            DateTimeOriginal
-            FNumber
-            FocalLength
-            ISO
-            LensModel
-            Model
-            ShutterSpeedFraction
-          }
-          childImageSharp {
-            original {
-              height
-              width
-            }
-            thumbnailSizes: fluid(maxWidth: 512) {
-              ...GatsbyImageSharpFluid
-            }
-            largeSizes: fluid(maxWidth: 2048) {
-              ...GatsbyImageSharpFluid
-            }
-          }
+          ...S3ImageAssetData
         }
       }
     }

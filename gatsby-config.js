@@ -1,5 +1,7 @@
 const _ = require('lodash')
+
 const AWS = require('aws-sdk')
+
 require('dotenv').config()
 
 const getSourceS3ConfigForEnvironment = env => {
@@ -161,10 +163,9 @@ if (!IS_LOCAL) {
   //=================================
   plugins = _.concat(plugins, [
     'gatsby-plugin-offline',
-    'gatsby-plugin-netlify-cache',
-    'gatsby-plugin-feed',
     manifestPlugin,
     'gatsby-plugin-netlify',
+    'gatsby-plugin-netlify-cache',
   ])
 }
 

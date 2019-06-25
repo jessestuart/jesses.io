@@ -18,13 +18,7 @@ export const s3ImageAssetFragment = graphql`
         height
         width
       }
-      defaultSizes: fluid {
-        ...GatsbyImageSharpFluid
-      }
-      thumbnailSizes: fluid(maxWidth: 512) {
-        ...GatsbyImageSharpFluid
-      }
-      largeSizes: fluid(maxWidth: 2048) {
+      sizes: fluid(maxWidth: 2048) {
         ...GatsbyImageSharpFluid
       }
     }

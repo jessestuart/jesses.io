@@ -16,7 +16,7 @@ exports[`Render SiteHeader component as not-root. 1`] = `
     className="b--hot-pink bb bg-gray-primary center flex pb1 site-header w-100 "
     id="site-header"
   >
-    <ul
+    <ol
       className="center flex flex-row fw3 mb1 source-sans w-35-ns"
     >
       <li>
@@ -59,7 +59,7 @@ exports[`Render SiteHeader component as not-root. 1`] = `
           about
         </a>
       </li>
-    </ul>
+    </ol>
   </header>
 </Headroom>
 `;
@@ -80,7 +80,7 @@ exports[`Render SiteHeader component. 1`] = `
     className="b--hot-pink bb bg-gray-primary center flex pb1 site-header w-100 "
     id="site-header"
   >
-    <ul
+    <ol
       className="center flex flex-row fw3 mb1 source-sans w-35-ns"
     >
       <li>
@@ -123,7 +123,7 @@ exports[`Render SiteHeader component. 1`] = `
           about
         </a>
       </li>
-    </ul>
+    </ol>
   </header>
 </Headroom>
 `;

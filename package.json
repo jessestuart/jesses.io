@@ -153,7 +153,12 @@
     "typescript": "3.5.2"
   },
   "homepage": ".",
-  "keywords": ["blog", "gatsby", "photography", "react"],
+  "keywords": [
+    "blog",
+    "gatsby",
+    "photography",
+    "react"
+  ],
   "license": "MIT",
   "main": "src/pages/index.tsx",
   "private": true,
