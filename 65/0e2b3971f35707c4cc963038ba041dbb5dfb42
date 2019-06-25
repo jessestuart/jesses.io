@@ -1,0 +1,11 @@
+[ver:1,total:6480]
+.gtm/terminal.app:4478,1561186800:280,1561197600:180,1561201200:180,1561212000:600,1561215600:360,1561305600:180,1561334400:480,1561413600:540,1561446000:600,1561449600:544,1561453200:534,r
+src/components/SiteHeader/SiteHeader.tsx:1079,1561186800:410,1561449600:315,1561453200:354,m
+src/components/SiteFooter/SiteFooter.tsx:340,1561453200:340,m
+node_modules/csstype/index.d.ts:166,1561449600:134,1561453200:32,r
+cypress.json:140,1561186800:140,r
+src/styles/base.css:110,1561186800:110,m
+node_modules/@types/react-headroom/index.d.ts:75,1561449600:35,1561453200:40,r
+src/components/SiteHeader/HeaderLink.tsx:40,1561186800:20,1561453200:20,m
+cypress/integration/home.cypress.ts:32,1561449600:32,m
+node_modules/@types/reach__router/node_modules/@types/react/index.d.ts:20,1561449600:20,r
