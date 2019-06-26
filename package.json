@@ -1,7 +1,7 @@
 {
   "name": "jessestuart",
   "description": "This is where my words and pictures live.",
-  "version": "1.9.1",
+  "version": "1.9.2",
   "author": "Jesse Stuart <hi@jessestuart.com>",
   "dependencies": {
     "@babel/runtime": "7.4.5",
