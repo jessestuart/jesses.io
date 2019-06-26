@@ -1,7 +1,7 @@
 import React from 'react'
 import renderer from 'react-test-renderer'
 
-import { act } from 'react-hooks-testing-library'
+import { act } from '@testing-library/react-hooks'
 
 import ProfileFooter from './ProfileFooter'
 

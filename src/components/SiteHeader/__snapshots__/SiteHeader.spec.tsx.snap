@@ -6,67 +6,60 @@ exports[`Render SiteHeader component as not-root. 1`] = `
   style={
     Object {
       "MozTransition": "all 0.7s ease-in-out",
-      "OTransaction": "all 0.7s ease-in-out",
-      "Transition": "all 0.7s ease-in-out",
-      "WebkitTranstion": "all 0.7s ease-in-out",
+      "OTransition": "all 0.7s ease-in-out",
+      "WebkitTransition": "all 0.7s ease-in-out",
+      "transition": "all 0.7s ease-in-out",
     }
   }
 >
   <header
-    className="bb b--hot-pink center site-header flex w-100 bg-gray-primary "
+    className="b--hot-pink bb bg-gray-primary center flex pb1 site-header w-100 "
+    id="site-header"
   >
-    <div
-      className="w-35-ns flex flex-row center source-sans fw3"
+    <ol
+      className="center flex flex-row fw3 mb1 source-sans w-35-ns"
     >
-      <ul
-        className="lato f4 ph3 mv2 pv2 flex-auto br b--mid-gray white-90 fw4"
-      >
+      <li>
         <a
-          className="shadow-none flex justify-center items-center"
+          className="shadow-none flex justify-center items-center lato f4 ph3 mv2 pv2 flex-auto light-silver fw3 br b--mid-gray white-90 fw4"
           href="/true"
           onClick={[Function]}
           onMouseEnter={[Function]}
         >
           home
         </a>
-      </ul>
-      <ul
-        className="lato f4 ph3 mv2 pv2 flex-auto br b--mid-gray light-silver fw3"
-      >
+      </li>
+      <li>
         <a
-          className="shadow-none flex justify-center items-center"
+          className="shadow-none flex justify-center items-center lato f4 ph3 mv2 pv2 flex-auto light-silver fw3 br b--mid-gray light-silver fw3"
           href="/true/posts"
           onClick={[Function]}
           onMouseEnter={[Function]}
         >
           words
         </a>
-      </ul>
-      <ul
-        className="lato f4 ph3 mv2 pv2 flex-auto br b--mid-gray light-silver fw3"
-      >
+      </li>
+      <li>
         <a
-          className="shadow-none flex justify-center items-center"
+          className="shadow-none flex justify-center items-center lato f4 ph3 mv2 pv2 flex-auto light-silver fw3 br b--mid-gray light-silver fw3"
           href="/true/photography"
           onClick={[Function]}
           onMouseEnter={[Function]}
         >
           pictures
         </a>
-      </ul>
-      <ul
-        className="lato f4 ph3 mv2 pv2 flex-auto light-silver fw3"
-      >
+      </li>
+      <li>
         <a
-          className="shadow-none flex justify-center items-center"
+          className="shadow-none flex justify-center items-center lato f4 ph3 mv2 pv2 flex-auto light-silver fw3 light-silver fw3"
           href="/true/about"
           onClick={[Function]}
           onMouseEnter={[Function]}
         >
           about
         </a>
-      </ul>
-    </div>
+      </li>
+    </ol>
   </header>
 </Headroom>
 `;
@@ -77,67 +70,60 @@ exports[`Render SiteHeader component. 1`] = `
   style={
     Object {
       "MozTransition": "all 0.7s ease-in-out",
-      "OTransaction": "all 0.7s ease-in-out",
-      "Transition": "all 0.7s ease-in-out",
-      "WebkitTranstion": "all 0.7s ease-in-out",
+      "OTransition": "all 0.7s ease-in-out",
+      "WebkitTransition": "all 0.7s ease-in-out",
+      "transition": "all 0.7s ease-in-out",
     }
   }
 >
   <header
-    className="bb b--hot-pink center site-header flex w-100 bg-gray-primary "
+    className="b--hot-pink bb bg-gray-primary center flex pb1 site-header w-100 "
+    id="site-header"
   >
-    <div
-      className="w-35-ns flex flex-row center source-sans fw3"
+    <ol
+      className="center flex flex-row fw3 mb1 source-sans w-35-ns"
     >
-      <ul
-        className="lato f4 ph3 mv2 pv2 flex-auto br b--mid-gray white-90 fw4"
-      >
+      <li>
         <a
-          className="shadow-none flex justify-center items-center"
+          className="shadow-none flex justify-center items-center lato f4 ph3 mv2 pv2 flex-auto light-silver fw3 br b--mid-gray white-90 fw4"
           href="/true"
           onClick={[Function]}
           onMouseEnter={[Function]}
         >
           home
         </a>
-      </ul>
-      <ul
-        className="lato f4 ph3 mv2 pv2 flex-auto br b--mid-gray light-silver fw3"
-      >
+      </li>
+      <li>
         <a
-          className="shadow-none flex justify-center items-center"
+          className="shadow-none flex justify-center items-center lato f4 ph3 mv2 pv2 flex-auto light-silver fw3 br b--mid-gray light-silver fw3"
           href="/true/posts"
           onClick={[Function]}
           onMouseEnter={[Function]}
         >
           words
         </a>
-      </ul>
-      <ul
-        className="lato f4 ph3 mv2 pv2 flex-auto br b--mid-gray light-silver fw3"
-      >
+      </li>
+      <li>
         <a
-          className="shadow-none flex justify-center items-center"
+          className="shadow-none flex justify-center items-center lato f4 ph3 mv2 pv2 flex-auto light-silver fw3 br b--mid-gray light-silver fw3"
           href="/true/photography"
           onClick={[Function]}
           onMouseEnter={[Function]}
         >
           pictures
         </a>
-      </ul>
-      <ul
-        className="lato f4 ph3 mv2 pv2 flex-auto light-silver fw3"
-      >
+      </li>
+      <li>
         <a
-          className="shadow-none flex justify-center items-center"
+          className="shadow-none flex justify-center items-center lato f4 ph3 mv2 pv2 flex-auto light-silver fw3 light-silver fw3"
           href="/true/about"
           onClick={[Function]}
           onMouseEnter={[Function]}
         >
           about
         </a>
-      </ul>
-    </div>
+      </li>
+    </ol>
   </header>
 </Headroom>
 `;

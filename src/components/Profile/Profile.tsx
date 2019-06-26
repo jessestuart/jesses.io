@@ -1,5 +1,4 @@
 import React from 'react'
-
 import styled from 'styled-components'
 
 import Avatar from './Avatar'
@@ -7,9 +6,7 @@ import BlackMirror from './BlackMirror'
 import ProfileBlurb from './ProfileBlurb'
 import ProfileFooter from './ProfileFooter'
 
-const IntroWrapper = styled.div.attrs({
-  className: 'items-center justify-center pv4',
-})`
+const IntroWrapper = styled.div`
   display: grid;
   grid-template-columns: repeat(12, 1fr);
   min-height: calc(100vh - 23px);
@@ -19,9 +16,7 @@ const IntroWrapper = styled.div.attrs({
   }
 `
 
-const AvatarContainer = styled.div.attrs({
-  className: 'center w-100-ns w-50',
-})`
+const AvatarContainer = styled.div`
   grid-column: 1 / 13;
 
   @media (min-width: 45em) and (max-width: 60em) {
@@ -34,9 +29,7 @@ const AvatarContainer = styled.div.attrs({
   }
 `
 
-const BlurbContainer = styled.div.attrs({
-  className: 'tc tr-ns ph2',
-})`
+const BlurbContainer = styled.div`
   grid-column: 1 / 13;
 
   @media (min-width: 45em) and (max-width: 60em) {
@@ -49,23 +42,21 @@ const BlurbContainer = styled.div.attrs({
   }
 `
 
-const FooterContainer = styled.div.attrs({
-  className: 'bt b--light-silver',
-})`
+const FooterContainer = styled.div`
   grid-column: 1 / 13;
   grid-row: 5 / 7;
 `
 
 const Profile = ({ avatar }: any) => (
-  <IntroWrapper>
-    <AvatarContainer>
+  <IntroWrapper className="items-center justify-center pv4">
+    <AvatarContainer className="center w-100-ns w-50">
       <Avatar image={avatar} />
       <BlackMirror />
     </AvatarContainer>
-    <BlurbContainer>
+    <BlurbContainer className="tc tr-ns ph2">
       <ProfileBlurb />
     </BlurbContainer>
-    <FooterContainer>
+    <FooterContainer className="bt b--light-silver">
       <ProfileFooter />
     </FooterContainer>
   </IntroWrapper>

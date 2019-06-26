@@ -1,11 +1,15 @@
 module.exports = {
   extends: [
-    'plugin:@typescript-eslint/recommended', // Uses the recommended rules from the @typescript-eslint/eslint-plugin
+    'eslint:recommended',
+    'plugin:@typescript-eslint/recommended',
     'plugin:import/typescript',
-    'plugin:prettier/recommended', // Enables eslint-plugin-prettier and displays prettier errors as ESLint errors. Make sure this is always the last configuration in the extends array.
     'plugin:promise/recommended',
     'plugin:cypress/recommended',
     'plugin:react/recommended',
+    // Enables eslint-plugin-prettier and displays prettier errors as ESLint
+    // errors. Make sure this is always the last configuration in the extends
+    // array.
+    'plugin:prettier/recommended',
   ],
   parser: '@typescript-eslint/parser',
   plugins: [
@@ -13,8 +17,8 @@ module.exports = {
     'cypress',
     'prettier',
     'promise',
-    'react-hooks',
     'react',
+    'react-hooks',
   ],
   parserOptions: {
     ecmaVersion: 8,
@@ -51,6 +55,8 @@ module.exports = {
     ],
     'promise/no-callback-in-promise': 'off',
     'react/no-unescaped-entities': 'off',
+    'react-hooks/rules-of-hooks': 'error', // Checks rules of Hooks
+    'react-hooks/exhaustive-deps': 'warn', // Checks effect dependencies
     '@typescript-eslint/array-type': 'warn',
     '@typescript-eslint/ban-types': 'warn',
     '@typescript-eslint/camelcase': 'warn',

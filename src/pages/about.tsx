@@ -1,9 +1,10 @@
-import { PortfolioItem, StyledLink, StyledPanel } from 'components'
-import Logo from 'components/Icons/logo_dark.svg'
-import Layout from 'components/Layout'
 import { withPrefix } from 'gatsby'
 import React from 'react'
 import Helmet from 'react-helmet'
+
+import { PortfolioItem, StyledLink, StyledPanel } from 'components'
+import Logo from 'components/Icons/logo_dark.svg'
+import Layout from 'components/Layout'
 
 const ContactInfoList = () => (
   <>
@@ -44,7 +45,7 @@ const About = ({ location }: { location: any }) => (
   <Layout location={location}>
     <div className="bg-near-white lh-copy pa3-ns pv4 w-100">
       <Helmet title={`About | jesses.io}`} />
-      <StyledPanel className="mt2">
+      <StyledPanel className="mt2 f3">
         <StyledLink>Get in touch</StyledLink>
         <div className="center flex items-center justify-center">
           <img src={Logo} style={{ maxHeight: 200, marginBottom: 0 }} />

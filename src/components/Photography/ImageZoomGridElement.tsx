@@ -29,6 +29,7 @@ const StyledImageZoomGridElement = styled.div`
 
 interface Props {
   image: {
+    id: any
     childImageSharp: GatsbyImage
     EXIF: ExifData
   }
@@ -40,10 +41,7 @@ const ImageZoomGridElement = (props: Props) => {
 
   const [isActive, setIsActive] = useHover()
 
-  const thumbnailSizes: GatsbyImage = _.get(
-    image,
-    'childImageSharp.thumbnailSizes',
-  )
+  const thumbnailSizes: GatsbyImage = _.get(image, 'childImageSharp.sizes')
 
   if (_.isEmpty(thumbnailSizes)) {
     return null

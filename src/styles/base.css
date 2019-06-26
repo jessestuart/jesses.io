@@ -106,6 +106,13 @@ button {
   background-color: unset !important;
 }
 
+ul,
+ol,
+ul > li,
+ol > li {
+  list-style: none;
+}
+
 /*
  * ======================
  * Sticky footer support.
