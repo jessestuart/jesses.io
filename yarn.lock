@@ -2520,10 +2520,10 @@ autoprefixer@^9.6.0:
     postcss "^7.0.16"
     postcss-value-parser "^3.3.1"
 
-aws-sdk@2.484.0:
-  version "2.484.0"
-  resolved "https://registry.yarnpkg.com/aws-sdk/-/aws-sdk-2.484.0.tgz#ec1039f0fae688eb120729ca35f0c686043199df"
-  integrity sha512-zGWbN9okRRSXvJDYXLdPGuSri+w6X7Fp5MxztlkXWsS6GCm7Lya8Iiti1cYa3/S4PgprmScHSCk+sFcwGRLBfw==
+aws-sdk@2.488.0:
+  version "2.488.0"
+  resolved "https://registry.yarnpkg.com/aws-sdk/-/aws-sdk-2.488.0.tgz#1664e14743d93793d2ffc4b2e70b7ce19c008d84"
+  integrity sha512-9AP48tyF1E5+x1CKeiRlj0Sv1YF7KI0BdSW9JP8x3ClhPWNUHjDYNH2OwsALuG1BloeY2ZigYqfI2fB7g3rNHQ==
   dependencies:
     buffer "4.9.1"
     events "1.1.1"
@@ -7314,16 +7314,16 @@ gatsby-source-filesystem@2.1.1:
     valid-url "^1.0.9"
     xstate "^3.1.0"
 
-gatsby-source-s3-image@1.4.15:
-  version "1.4.15"
-  resolved "https://registry.yarnpkg.com/gatsby-source-s3-image/-/gatsby-source-s3-image-1.4.15.tgz#b6afdbd715780c74318e1a8bf05e445f63f3c1d0"
-  integrity sha512-6uI8IYUrWYjXyc+XhvMJLjV8hfeOMHxLWFHwfngm44p7htMPLUEIl9qJAL8EpCD1o1FLb3Ad/NzyXAQLB5TPaw==
+gatsby-source-s3-image@1.4.20:
+  version "1.4.20"
+  resolved "https://registry.yarnpkg.com/gatsby-source-s3-image/-/gatsby-source-s3-image-1.4.20.tgz#8ad860ea938dd567061c360c76290d9732e709ca"
+  integrity sha512-rjhefjPLA6VJnazs+EkpAfOdh1XKdA8dRjWqVdEaL7L3wxE4YD5IfXz7lfCK2lfkMirSqmglloAUyYbYPSPvUA==
   dependencies:
-    aws-sdk "2.484.0"
+    aws-sdk "2.488.0"
     bluebird "3.5.5"
     fracty "1.0.8"
     lodash "4.17.11"
-    luxon "1.16.0"
+    luxon "1.16.1"
     mime-types "2.1.24"
     ts-exif-parser "0.1.4"
 
@@ -11006,6 +11006,11 @@ luxon@1.16.0:
   version "1.16.0"
   resolved "https://registry.yarnpkg.com/luxon/-/luxon-1.16.0.tgz#93c915cfc3dff4bb806656595018fddc47cc96ec"
   integrity sha512-qaqB+JwpGwtl7UbIXng3A/l4W/ySBr8drQvwtMLZBMiLD2V+0fEnPWMrs+UjnIy9PsktazQaKvwDUCLzoWz0Hw==
+
+luxon@1.16.1:
+  version "1.16.1"
+  resolved "https://registry.yarnpkg.com/luxon/-/luxon-1.16.1.tgz#62568d483989fa108f5c87178a05bcc707f7698b"
+  integrity sha512-3aYYMFpIRdEQJl00ki+NDr2zx/Ulf7ZgohBUb6ifZQuVkP8/KCYJluISl0YNbvZXBdzCbVhpQnS4M6Svjpn7EA==
 
 macos-release@^2.2.0:
   version "2.2.0"
