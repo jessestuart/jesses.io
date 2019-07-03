@@ -1,26 +1,30 @@
 # Global default container.
 container:
-  image: node:latest
+  image: node:slim
 
-lint_task:
+install_task:
   node_modules_cache:
     folder: node_modules
     fingerprint_script: cat yarn.lock
     populate_script: yarn -s
 
+lint_task:
+  node_modules_cache:
+    folder: node_modules
+    fingerprint_script: cat yarn.lock
   test_script: yarn lint
 
 test_task:
   node_modules_cache:
     folder: node_modules
     fingerprint_script: cat yarn.lock
-    populate_script: yarn -s
-
-  test_script: yarn test
+  test_script: yarn jest --coverage --runInBand --ci
 
 build_task:
+  environment:
+    AWS_ACCESS_KEY: ENCRYPTED[76b7a76898aea8640a7f4d4a745c29912984decf6806ddf976026bbe54a3577b9bb09e456c79f9508bc59cdec53e301b]
+    AWS_SECRET_KEY: ENCRYPTED[b8d22a46a6b00bf5f8fecc4c051d3088dfdc30dd7244ded020e8f088285ca8bde7c479f94e90798c77470a886dc43bf9]
   node_modules_cache:
     folder: node_modules
     fingerprint_script: cat yarn.lock
-    populate_script: yarn -s
   build_script: yarn build:ci
