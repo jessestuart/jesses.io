@@ -12,12 +12,14 @@ lint_task:
   node_modules_cache:
     folder: node_modules
     fingerprint_script: cat yarn.lock
+    populate_script: yarn -s
   test_script: yarn lint
 
 test_task:
   node_modules_cache:
     folder: node_modules
     fingerprint_script: cat yarn.lock
+    populate_script: yarn -s
   test_script: yarn jest --coverage --runInBand --ci
 
 build_task:
@@ -27,4 +29,5 @@ build_task:
   node_modules_cache:
     folder: node_modules
     fingerprint_script: cat yarn.lock
+    populate_script: yarn -s
   build_script: yarn build:ci
