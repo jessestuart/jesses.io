@@ -57,7 +57,7 @@ restore_cache: &restore_cache
 restore_public_dir_cache: &restore_public_dir_cache
   restore_cache:
     paths:
-      - v2-public/
+      - public/
     keys:
       - v2-public-dir-{{ .Branch }}-{{ .Revision }}
       - v2-public-dir-{{ .Branch }}
@@ -108,7 +108,7 @@ cypress_job: &cypress_job
   working_directory: ~/jesses.io
   docker:
     # the Docker image with Cypress dependencies
-    - image: cypress/base:12.1.0
+    - image: cypress/base:centos7-12.4.0
       environment:
         ## this enables colors in the output
         TERM: xterm
@@ -116,6 +116,7 @@ cypress_job: &cypress_job
     - checkout
     - *restore_cache
     - *load_aws_credentials
+    - run: yarn -s
     - run:
         command: GATSBY_ENV=Staging yarn gatsby develop
         background: true
