@@ -42,7 +42,7 @@
     "react": "16.8.6",
     "react-calendar-heatmap": "1.8.0",
     "react-dom": "16.8.6",
-    "react-feather": "1.1.6",
+    "react-feather": "2.0.3",
     "react-headroom": "2.2.8",
     "react-helmet": "5.2.1",
     "react-image-lightbox": "5.1.0",
