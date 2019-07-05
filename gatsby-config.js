@@ -17,7 +17,7 @@ const getSourceS3ConfigForEnvironment = env => {
       return { bucketName: 'js-photos-dev' }
     }
     case GatsbyEnv.Production: {
-      return { bucketName: 'jesse.pics' }
+      return { bucketName: 'jesse.pics', protocol: 'http' }
     }
   }
 }

@@ -3,8 +3,12 @@ const path = require('path')
 const { DateTime } = require('luxon')
 const Promise = require('bluebird')
 const _ = require('lodash')
+const fp = require('lodash/fp')
 const winston = require('winston')
 
+// ===============
+// Set up logging.
+// ===============
 const log = winston.createLogger({
   level: 'info',
   format: winston.format.json(),
@@ -35,15 +39,31 @@ const PageType = {
   Blog: 'Blog',
 }
 
+const BlogTemplate = path.resolve('./src/templates/blog-post.tsx')
+const PhotographyTemplate = path.resolve('./src/templates/photography-post.tsx')
+
+const createBlogPosts = ({ createPage }) =>
+  fp.map(edge => {
+    const slug = _.get(edge, 'node.fields.slug')
+    return createPage({
+      path: slug,
+      component: BlogTemplate,
+      context: {
+        slug,
+        type: PageType.Blog,
+      },
+    })
+  })
+
 const processGraphQL = ({ graphql, query, createPostsFn, resultPath }) => {
   return graphql(query)
     .then(result =>
-      _.isNil(result.errors)
+      _.isEmpty(result.errors)
         ? _.get(result, resultPath)
         : Promise.reject(result.errors),
     )
     .then(createPostsFn)
-    .catch(log.error)
+    .catch(console.error)
 }
 
 const mdQuery = `
@@ -73,43 +93,46 @@ const imagePostQuery = `
   }
 }`
 
+const createPhotographyPagePromises = ({ imagesGroupedByDate, createPage }) =>
+  _.flatMap(imagesGroupedByDate, (_images, date) => {
+    return createPage({
+      path: `/photography/${date}`,
+      component: PhotographyTemplate,
+      context: {
+        name: date,
+        datetime: DateTime.fromISO(date),
+        type: PageType.Photography,
+      },
+    })
+  })
+
+// Next create an individual page for each photo.
+const createPhotographyPostPromises = ({ edges, createPage }) =>
+  _.flatMap(edges, 'node', image => {
+    const date = _.get(image, 'EXIF.DateCreatedISO')
+    const ETag = _.get(image, 'ETag')
+    return createPage({
+      path: `/photography/${date}/${ETag}`,
+      component: PhotographyTemplate,
+      context: {
+        name: date,
+        datetime: DateTime.fromISO(date),
+        type: PageType.Photography,
+      },
+    })
+  })
+
 const createPages = ({ graphql, actions }) => {
   const { createPage } = actions
-  const blogTemplate = path.resolve('./src/templates/blog-post.tsx')
-
-  const photographyTemplate = path.resolve(
-    './src/templates/photography-post.tsx',
-  )
 
   const createPhotographyPosts = edges => {
     // First, create the photography "album" pages -- these are a collection
     // of photos grouped by date.
     const imagesGroupedByDate = _.groupBy(edges, 'node.EXIF.DateCreatedISO')
-    _.each(imagesGroupedByDate, async (_images, date) => {
-      await createPage({
-        path: `/photography/${date}`,
-        component: photographyTemplate,
-        context: {
-          name: date,
-          datetime: DateTime.fromISO(date),
-          type: PageType.Photography,
-        },
-      })
-    })
-    // Next create an individual page for each photo.
-    _.each(_.map(edges, 'node'), async image => {
-      const date = _.get(image, 'EXIF.DateCreatedISO')
-      const ETag = _.get(image, 'ETag')
-      await createPage({
-        path: `/photography/${date}/${ETag}`,
-        component: photographyTemplate,
-        context: {
-          name: date,
-          datetime: DateTime.fromISO(date),
-          type: PageType.Photography,
-        },
-      })
-    })
+    return Promise.all([
+      createPhotographyPagePromises({ imagesGroupedByDate, createPage }),
+      createPhotographyPostPromises({ edges, createPage }),
+    ])
   }
 
   const photographyPostsProcessor = processGraphQL({
@@ -119,27 +142,11 @@ const createPages = ({ graphql, actions }) => {
     createPostsFn: createPhotographyPosts,
   })
 
-  const createBlogPosts = edges => {
-    if (edges) {
-      edges.map(edge => {
-        const slug = _.get(edge, 'node.fields.slug')
-        return createPage({
-          path: slug,
-          component: blogTemplate,
-          context: {
-            slug,
-            type: PageType.Blog,
-          },
-        })
-      })
-    }
-  }
-
   const blogPostsProcessor = processGraphQL({
     graphql,
     query: mdQuery,
     resultPath: 'data.allMarkdownRemark.edges',
-    createPostsFn: createBlogPosts,
+    createPostsFn: createBlogPosts({ createPage }),
   })
 
   return Promise.all([blogPostsProcessor, photographyPostsProcessor])

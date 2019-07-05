@@ -6,8 +6,9 @@ module.exports = {
     'babel-preset-gatsby',
   ],
   plugins: [
-    '@babel/plugin-proposal-optional-chaining',
     '@babel/plugin-transform-runtime',
+    '@babel/plugin-proposal-optional-chaining',
+    '@babel/plugin-proposal-object-rest-spread',
     'babel-plugin-styled-components',
     'lodash',
     [

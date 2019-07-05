@@ -19,7 +19,7 @@ workflows:
             - install_dependencies
       - cypress_job:
           requires:
-            - install_dependencies
+            - build
       - semantic_release:
           requires:
             - build
@@ -110,16 +110,17 @@ cypress_job: &cypress_job
     # the Docker image with Cypress dependencies
     - image: cypress/base:12.1.0
       environment:
+        GATSBY_CPU_COUNT: 2
         ## this enables colors in the output
         TERM: xterm
   steps:
     - checkout
     - *restore_cache
-    - *load_aws_credentials
+    - *restore_public_dir_cache
+    # - *load_aws_credentials
     - run:
-        command: GATSBY_ENV=Staging yarn gatsby develop
+        command: npx serve public/
         background: true
-    - run: sleep 60s
     - run: yarn cypress install
     - run: yarn cypress run
 
