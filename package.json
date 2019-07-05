@@ -5,7 +5,7 @@
   "author": "Jesse Stuart <hi@jessestuart.com>",
   "dependencies": {
     "@babel/runtime": "7.4.5",
-    "@sentry/browser": "5.4.3",
+    "@sentry/browser": "5.5.0",
     "bluebird": "3.5.5",
     "classnames": "2.2.6",
     "dotenv": "8.0.0",
