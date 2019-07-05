@@ -1,0 +1,5 @@
+[ver:1,total:1800]
+.gtm/terminal.app:1365,1562277600:810,1562284800:105,1562288400:450,r
+.circleci/config.yml:375,1562284800:315,1562288400:60,m
+test/e2e/run-percy-cypress.js:30,1562277600:30,r
+public/index.html:30,1562288400:30,r
