@@ -1,0 +1,13 @@
+[ver:1,total:4620]
+.gtm/terminal.app:3275,1562673600:60,1562677200:120,1562702400:1870,1562706000:430,1562713200:795,r
+package.json:400,1562702400:230,1562713200:170,m
+babel.config.js:323,1562702400:130,1562706000:30,1562713200:163,r
+renovate.json:180,1562713200:180,m
+.cache/socketIo.js:170,1562702400:170,r
+gatsby-browser.js:80,1562706000:80,r
+src/pages/photography.tsx:55,1562713200:55,r
+src/fragments/S3ImageAssetData.ts:40,1562713200:40,r
+src/templates/photography-post.tsx:32,1562713200:32,r
+src/config/createPages.js:25,1562713200:25,r
+src/types/S3ImageAsset.ts:20,1562713200:20,r
+gatsby-config.js:20,1562713200:20,r
