@@ -17,9 +17,6 @@ workflows:
       - test:
           requires:
             - install_dependencies
-      - cypress_job:
-          requires:
-            - build
       - semantic_release:
           requires:
             - build
@@ -110,14 +107,12 @@ cypress_job: &cypress_job
     # the Docker image with Cypress dependencies
     - image: cypress/base:12.1.0
       environment:
-        GATSBY_CPU_COUNT: 2
-        ## this enables colors in the output
+        # this enables colors in the output
         TERM: xterm
   steps:
     - checkout
     - *restore_cache
     - *restore_public_dir_cache
-    # - *load_aws_credentials
     - run:
         command: npx serve public/ -l 8000
         background: true
@@ -180,6 +175,11 @@ jobs:
       - run:
           name: Build static site. (with limited assets)
           command: yarn build:ci
+      - run:
+          command: npx serve public/ -l 8000
+          background: true
+      - run: yarn cypress install
+      - run: yarn cypress run
       - *save_cache
       - *save_public_dir_cache
 
