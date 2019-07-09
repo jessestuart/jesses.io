@@ -1,0 +1,10 @@
+[ver:1,total:900]
+.gtm/terminal.app:516,1562670000:516,r
+.circleci/config.yml:270,1562670000:270,m
+babel.config.js:30,1562670000:30,r
+cypress/plugins/index.js:24,1562670000:24,r
+cypress/integration/home.cypress.ts:15,1562670000:15,m
+cypress/tsconfig.json:13,1562670000:13,r
+cypress/support/commands.js:13,1562670000:13,r
+cypress/.snapshot-report:13,1562670000:13,r
+cypress/support/index.js:6,1562670000:6,r
