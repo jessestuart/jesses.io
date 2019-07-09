@@ -27,11 +27,7 @@ const log = winston.createLogger({
 // `${info.level}: ${info.message} JSON.stringify({ ...rest }) `
 // =====================================================================
 if (process.env.NODE_ENV !== 'production') {
-  log.add(
-    new winston.transports.Console({
-      format: winston.format.simple(),
-    }),
-  )
+  log.add(new winston.transports.Console({ format: winston.format.simple() }))
 }
 
 const PageType = {
@@ -63,7 +59,7 @@ const processGraphQL = ({ graphql, query, createPostsFn, resultPath }) => {
         : Promise.reject(result.errors),
     )
     .then(createPostsFn)
-    .catch(console.error)
+    .catch(log.error)
 }
 
 const mdQuery = `
@@ -94,8 +90,8 @@ const imagePostQuery = `
 }`
 
 const createPhotographyPagePromises = ({ imagesGroupedByDate, createPage }) =>
-  _.flatMap(imagesGroupedByDate, (_images, date) => {
-    return createPage({
+  _.flatMap(imagesGroupedByDate, (_images, date) =>
+    createPage({
       path: `/photography/${date}`,
       component: PhotographyTemplate,
       context: {
@@ -103,8 +99,8 @@ const createPhotographyPagePromises = ({ imagesGroupedByDate, createPage }) =>
         datetime: DateTime.fromISO(date),
         type: PageType.Photography,
       },
-    })
-  })
+    }),
+  )
 
 // Next create an individual page for each photo.
 const createPhotographyPostPromises = ({ edges, createPage }) =>

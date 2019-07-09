@@ -119,7 +119,7 @@ cypress_job: &cypress_job
     - *restore_public_dir_cache
     # - *load_aws_credentials
     - run:
-        command: npx serve public/
+        command: npx serve public/ -l 8000
         background: true
     - run: yarn cypress install
     - run: yarn cypress run

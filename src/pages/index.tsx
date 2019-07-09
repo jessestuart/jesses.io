@@ -1,4 +1,5 @@
 import { graphql } from 'gatsby'
+import _ from 'lodash'
 import React from 'react'
 
 import { Profile, ProfileDevIcons } from 'components'
@@ -16,8 +17,7 @@ interface Props {
 }
 
 const Home = ({ data, location }: Props) => {
-  const avatar = data?.file?.childImageSharp?.fluid
-  // const avatar = _.get(data, 'file.childImageSharp.fluid')
+  const avatar = _.get(data, 'file.childImageSharp.fluid')
   return (
     <Layout location={location}>
       <div className="moon-gray bg-gray-primary w-100">
