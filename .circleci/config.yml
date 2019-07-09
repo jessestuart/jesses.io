@@ -17,9 +17,9 @@ workflows:
       - test:
           requires:
             - install_dependencies
-      - cypress_job:
-          requires:
-            - install_dependencies
+      # - cypress_job:
+      #     requires:
+      #       - build
       - semantic_release:
           requires:
             - build
@@ -107,19 +107,18 @@ sentry_release: &sentry_release
 cypress_job: &cypress_job
   working_directory: ~/jesses.io
   docker:
-    # the Docker image with Cypress dependencies
+    # Docker image with Cypress dependencies:
     - image: cypress/base:12.1.0
       environment:
-        ## this enables colors in the output
+        # (This enables colors in the output)
         TERM: xterm
   steps:
     - checkout
     - *restore_cache
-    - *load_aws_credentials
+    - *restore_public_dir_cache
     - run:
-        command: GATSBY_ENV=Staging yarn gatsby develop
+        command: npx serve public/ -l 8000
         background: true
-    - run: sleep 60s
     - run: yarn cypress install
     - run: yarn cypress run
 

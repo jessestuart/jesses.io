@@ -1,6 +1,3 @@
-/**
- *
- */
 context('Homepage', () => {
   afterEach(() => {
     cy.screenshot()
