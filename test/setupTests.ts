@@ -1,4 +1,4 @@
-import 'jest-dom/extend-expect'
+import '@testing-library/jest-dom/extend-expect'
 
 // Gatsby's `<Link>` overrides:
 // Gatsby defines a global called ___loader to prevent its method calls from
