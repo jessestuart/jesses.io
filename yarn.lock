@@ -7502,16 +7502,16 @@ gatsby-source-filesystem@2.1.2:
     valid-url "^1.0.9"
     xstate "^3.1.0"
 
-gatsby-source-s3-image@1.5.3:
-  version "1.5.3"
-  resolved "https://registry.yarnpkg.com/gatsby-source-s3-image/-/gatsby-source-s3-image-1.5.3.tgz#6b20df799b1a138b7050331c3f2898aae9a7183e"
-  integrity sha512-md+E53AwIDwHSJq4osr7HFgYXhO0V0LrapAcwIi5ZvCIb5+UhmqLGVPwIxsjL9ZLg64weO8eaKiNT5OqL+gdAA==
+gatsby-source-s3-image@1.5.4:
+  version "1.5.4"
+  resolved "https://registry.yarnpkg.com/gatsby-source-s3-image/-/gatsby-source-s3-image-1.5.4.tgz#8b666670d356e63de41ff348f83a1e9aa4b53a39"
+  integrity sha512-Sr98hCjfGXuJ2uAPVLnkGMJLRJpDgPd0NdwGdBfSR58HNS4Q8BNN+KMlN6Q43PicQTIp/+ISZuiRJYJIoAtTlg==
   dependencies:
     aws-sdk "2.490.0"
     bluebird "3.5.5"
     fracty "1.0.8"
     invariant "2.2.4"
-    lodash "4.17.13"
+    lodash "4.17.14"
     luxon "1.16.1"
     mime-types "2.1.24"
     ts-exif-parser "0.1.4"
@@ -11084,15 +11084,15 @@ lodash@4.17.11:
   resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.11.tgz#b39ea6229ef607ecd89e2c8df12536891cac9b8d"
   integrity sha512-cQKh8igo5QUhZ7lg38DYWAxMvjSAKG0A8wGSVimP07SIUEK2UO+arSRKbRZWtelMtN5V0Hkwh5ryOto/SshYIg==
 
-lodash@4.17.13, lodash@^4.11.1, lodash@^4.13.1, lodash@^4.15.0, lodash@^4.17.10, lodash@^4.17.11, lodash@^4.17.4, lodash@^4.17.5, lodash@^4.2.1, lodash@^4.3.0:
-  version "4.17.13"
-  resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.13.tgz#0bdc3a6adc873d2f4e0c4bac285df91b64fc7b93"
-  integrity sha512-vm3/XWXfWtRua0FkUyEHBZy8kCPjErNBT9fJx8Zvs+U6zjqPbTUOpkaoum3O5uiA8sm+yNMHXfYkTUHFoMxFNA==
-
 lodash@4.17.14:
   version "4.17.14"
   resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.14.tgz#9ce487ae66c96254fe20b599f21b6816028078ba"
   integrity sha512-mmKYbW3GLuJeX+iGP+Y7Gp1AiGHGbXHCOh/jZmrawMmsE7MS4znI3RL2FsjbqOyMayHInjOeykW7PEajUk1/xw==
+
+lodash@^4.11.1, lodash@^4.13.1, lodash@^4.15.0, lodash@^4.17.10, lodash@^4.17.11, lodash@^4.17.4, lodash@^4.17.5, lodash@^4.2.1, lodash@^4.3.0:
+  version "4.17.13"
+  resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.13.tgz#0bdc3a6adc873d2f4e0c4bac285df91b64fc7b93"
+  integrity sha512-vm3/XWXfWtRua0FkUyEHBZy8kCPjErNBT9fJx8Zvs+U6zjqPbTUOpkaoum3O5uiA8sm+yNMHXfYkTUHFoMxFNA==
 
 log-driver@^1.x:
   version "1.2.7"
