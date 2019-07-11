@@ -7502,17 +7502,17 @@ gatsby-source-filesystem@2.1.3:
     valid-url "^1.0.9"
     xstate "^3.1.0"
 
-gatsby-source-s3-image@1.5.5:
-  version "1.5.5"
-  resolved "https://registry.yarnpkg.com/gatsby-source-s3-image/-/gatsby-source-s3-image-1.5.5.tgz#ed098498c83a03c185ca38670ff6ffd00377f021"
-  integrity sha512-10zmZJ8fhUd3sn2Tzp0XEQrClQzAMRnDHtj4X//HVzrhoaM72FR/S7R3++hJ/JI9GhVfUNr7bgrZRDPFqEG/Zg==
+gatsby-source-s3-image@1.5.7:
+  version "1.5.7"
+  resolved "https://registry.yarnpkg.com/gatsby-source-s3-image/-/gatsby-source-s3-image-1.5.7.tgz#ec5f4eaa1f41ca5a23b8c788ab7b9121d01ff023"
+  integrity sha512-xJCBvdosbv5WSt+LOOOKY9cI6oL+bdOT3ti4fp6JSQE+LqDrCfwG0igXuofPex3xEBj9iXGNYEP435WG/V7toA==
   dependencies:
     aws-sdk "2.491.0"
     bluebird "3.5.5"
     fracty "1.0.8"
     invariant "2.2.4"
     lodash "4.17.14"
-    luxon "1.16.1"
+    luxon "1.17.1"
     mime-types "2.1.24"
     ts-exif-parser "0.1.4"
 
@@ -11242,11 +11242,6 @@ ltcdr@^2.2.1:
   version "2.2.1"
   resolved "https://registry.yarnpkg.com/ltcdr/-/ltcdr-2.2.1.tgz#5ab87ad1d4c1dab8e8c08bbf037ee0c1902287cf"
   integrity sha1-Wrh60dTB2rjowIu/A37gwZAih88=
-
-luxon@1.16.1:
-  version "1.16.1"
-  resolved "https://registry.yarnpkg.com/luxon/-/luxon-1.16.1.tgz#62568d483989fa108f5c87178a05bcc707f7698b"
-  integrity sha512-3aYYMFpIRdEQJl00ki+NDr2zx/Ulf7ZgohBUb6ifZQuVkP8/KCYJluISl0YNbvZXBdzCbVhpQnS4M6Svjpn7EA==
 
 luxon@1.17.1:
   version "1.17.1"
