@@ -1,37 +1,48 @@
----
-pipeline:
+kind: pipeline
+name: default
 
-  restore-cache:
+steps:
+  - name: restore-cache
     image: drillster/drone-volume-cache
-    restore: true
-    mount:
-      - ./node_modules
-      - ./public
-      - ./.cache
+    settings:
+      restore: true
+      mount:
+        - ./node_modules
     volumes:
-      - /tmp/cache:/cache
+      - name: cache
+        path: /cache
 
-  install-dependencies:
-    image: node:latest
+  - name: install-dependencies
+    image: node:12-alpine
     commands:
-      - yarn install
+      - yarn -s --frozen-lockfile
 
-  lint:
-    image: node:latest
+  - name: rebuild-cache
+    image: drillster/drone-volume-cache
+    settings:
+      rebuild: true
+      mount:
+        - ./node_modules
+    volumes:
+      - name: cache
+        path: /cache
+
+  - name: lint
+    image: node:12-alpine
     commands:
       - yarn lint
 
-  build-site:
-    image: node:latest
+  - name: test
+    image: node:12-alpine
     commands:
-      - yarn build:ci
+      - yarn test
 
-  rebuild-cache:
-    image: drillster/drone-volume-cache
-    rebuild: true
-    mount:
-      - ./node_modules
-      - ./public
-      - ./.cache
-    volumes:
-      - /tmp/cache:/cache
+  - name: build
+    image: node:12-alpine
+    commands:
+      - GATSBY_ENV=Development yarn gatsby build
+
+volumes:
+  - name: cache
+    host:
+      path: /tmp/drone/cache
