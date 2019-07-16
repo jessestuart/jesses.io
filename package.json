@@ -140,6 +140,7 @@
     "rimraf": "2.6.3",
     "scrollprogress": "3.0.2",
     "semantic-release": "15.13.18",
+    "source-map-support": "0.5.12",
     "start-server-and-test": "1.9.1",
     "stylelint": "10.1.0",
     "stylelint-config-standard": "18.3.0",

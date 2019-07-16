@@ -1,37 +1,84 @@
 ---
-pipeline:
+kind: pipeline
+name: default
 
-  restore-cache:
+steps:
+  - name: restore-cache
     image: drillster/drone-volume-cache
-    restore: true
-    mount:
-      - ./node_modules
-      - ./public
-      - ./.cache
+    settings:
+      restore: true
+      mount:
+        - ./node_modules
     volumes:
-      - /tmp/cache:/cache
+      - name: cache
+        path: /cache
 
-  install-dependencies:
-    image: node:latest
+  - name: install-dependencies
+    image: node:1.12-alpine
     commands:
-      - yarn install
+      - yarn -s --frozen-lockfile
 
-  lint:
-    image: node:latest
+  - name: lint
+    image: node:1.12-alpine
     commands:
       - yarn lint
 
-  build-site:
-    image: node:latest
+  - name: test
+    image: node:1.12-alpine
     commands:
-      - yarn build:ci
+      - yarn test
 
-  rebuild-cache:
+  - name: build
+    image: node:1.12-alpine
+    commands:
+      - GATSBY_ENV=Development yarn gatsby build
+
+  - name: rebuild-cache
     image: drillster/drone-volume-cache
-    rebuild: true
-    mount:
-      - ./node_modules
-      - ./public
-      - ./.cache
+    settings:
+      rebuild: true
+      mount:
+        - ./node_modules
     volumes:
-      - /tmp/cache:/cache
+      - name: cache
+        path: /cache
+
+volumes:
+  - name: cache
+    host:
+      path: /tmp/drone/cache
+# pipeline:
+#   restore-cache:
+#     image: drillster/drone-volume-cache
+#     restore: true
+#     mount:
+#       - ./node_modules
+#       - ./public
+#       - ./.cache
+#     volumes:
+#       - /tmp/cache:/cache
+
+#   install-dependencies:
+#     image: node:latest
+#     commands:
+#       - yarn install
+
+#   lint:
+#     image: node:latest
+#     commands:
+#       - yarn lint
+
+#   build-site:
+#     image: node:latest
+#     commands:
+#       - yarn build:ci
+
+#   rebuild-cache:
+#     image: drillster/drone-volume-cache
+#     rebuild: true
+#     mount:
+#       - ./node_modules
+#       - ./public
+#       - ./.cache
+#     volumes:
+#       - /tmp/cache:/cache
