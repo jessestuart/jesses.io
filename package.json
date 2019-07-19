@@ -115,7 +115,7 @@
     "eslint-config-standard-react": "8.0.0",
     "eslint-friendly-formatter": "4.0.1",
     "eslint-plugin-cypress": "2.6.0",
-    "eslint-plugin-import": "2.18.0",
+    "eslint-plugin-import": "2.18.1",
     "eslint-plugin-prettier": "3.1.0",
     "eslint-plugin-promise": "4.2.1",
     "eslint-plugin-react": "7.14.2",
