@@ -25,18 +25,16 @@ const ContactInfoList = () => (
 const PortfolioItemsList = () => (
   <ul className="list ma0">
     <PortfolioItem
-      title="Curriculum Vitae"
-      link={withPrefix('cv/JS_Resume_2018.pdf')}
+      title="Curriculum Vitæ"
+      link={withPrefix('cv/JS_Resume_2019.pdf')}
     />
-
     <PortfolioItem
       title="Biber Redux: Reconsidering Dimensions of Variation in American English"
-      link="publications/genre-variation.pdf"
+      link={withPrefix('publications/genre-variation.pdf')}
     />
-
     <PortfolioItem
       title="Systems and methods for determining packages of licensable assets"
-      link="http://jstu.art/ooQi"
+      link="https://jstu.art/ooQi"
     />
   </ul>
 )
@@ -44,9 +42,11 @@ const PortfolioItemsList = () => (
 const About = ({ location }: { location: any }) => (
   <Layout location={location}>
     <div className="bg-near-white lh-copy pa3-ns pv4 w-100">
-      <Helmet title={`About | jesses.io}`} />
+      <Helmet title={`About | jesses.io`} />
       <StyledPanel className="mt2 f3">
-        <StyledLink>Get in touch</StyledLink>
+        <StyledLink className="alegreya-sans f2 fw5 w-100">
+          Get in touch
+        </StyledLink>
         <div className="center flex items-center justify-center">
           <img src={Logo} style={{ maxHeight: 200, marginBottom: 0 }} />
         </div>
