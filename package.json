@@ -107,7 +107,7 @@
     "concurrently": "4.1.1",
     "core-js": "3.1.4",
     "cosmiconfig": "5.2.1",
-    "cypress": "3.4.0",
+    "cypress": "3.4.1",
     "cypress-image-snapshot": "3.1.1",
     "eslint": "6.1.0",
     "eslint-config-prettier": "6.0.0",
