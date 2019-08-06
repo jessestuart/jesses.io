@@ -56,8 +56,6 @@ restore_cache: &restore_cache
 
 restore_public_dir_cache: &restore_public_dir_cache
   restore_cache:
-    paths:
-      - v2-public/
     keys:
       - v2-public-dir-{{ .Branch }}-{{ .Revision }}
       - v2-public-dir-{{ .Branch }}
