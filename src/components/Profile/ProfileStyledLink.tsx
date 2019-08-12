@@ -1,16 +1,16 @@
 import React from 'react'
 
+import Color from 'color'
 import { StyledLink } from 'components'
-import color from 'onecolor'
 import colors from 'utils/colors'
 
-const linkColor: string = color(colors.secondary.light7)
+const linkColor: string = Color(colors.secondary.light7)
   .alpha(0.8)
-  .cssa()
+  .string()
 
-const hoverColor: string = color(colors.primary.main)
+const hoverColor: string = Color(colors.primary.main)
   .alpha(0.8)
-  .cssa()
+  .string()
 
 interface Props {
   children: any
