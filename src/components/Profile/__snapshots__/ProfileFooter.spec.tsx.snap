@@ -24,7 +24,7 @@ exports[`Render ProfileFooter component (cancelled) after 10s. 2`] = `
     className="flex justify-center mt2 w-100"
   >
     <div
-      className=""
+      className="hvr-wobble-vertical hvr-wobble-vertical-animating"
     >
       <svg
         className="mw-5"
