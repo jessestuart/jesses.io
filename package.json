@@ -104,7 +104,7 @@
     "chalk": "2.4.2",
     "codacy-coverage": "3.4.0",
     "codecov": "3.5.0",
-    "concurrently": "4.1.1",
+    "concurrently": "4.1.2",
     "core-js": "3.2.1",
     "cosmiconfig": "5.2.1",
     "cypress": "3.4.1",
