@@ -75,7 +75,7 @@
     "@hot-loader/react-dom": "16.9.0",
     "@percy/cypress": "2.0.0",
     "@semantic-release/git": "7.0.16",
-    "@testing-library/jest-dom": "4.0.0",
+    "@testing-library/jest-dom": "4.0.1",
     "@testing-library/react-hooks": "2.0.1",
     "@types/bluebird": "3.5.27",
     "@types/classnames": "2.2.9",
