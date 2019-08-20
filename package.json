@@ -109,7 +109,7 @@
     "cosmiconfig": "5.2.1",
     "cypress": "3.4.1",
     "cypress-image-snapshot": "3.1.1",
-    "eslint": "6.2.0",
+    "eslint": "6.2.1",
     "eslint-config-prettier": "6.1.0",
     "eslint-config-standard": "13.0.1",
     "eslint-config-standard-react": "8.0.0",
