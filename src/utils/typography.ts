@@ -1,4 +1,5 @@
 import 'typeface-alegreya-sans'
+import 'typeface-alegreya-sans-sc'
 import 'typeface-fira-mono'
 import 'typeface-lato'
 import 'typeface-spectral'
@@ -11,6 +12,7 @@ import CodePlugin from 'typography-plugin-code'
 import colors from 'utils/colors'
 
 const sansSerifFontFamilies = [
+  'Lato',
   '-apple-system',
   'BlinkMacSystemFont',
   'Segoe UI',
@@ -44,7 +46,7 @@ const monospaceFontFamilies = [
   'monospace',
 ]
 
-const baseFontFamilyList = _.concat(['Lato'], sansSerifFontFamilies)
+const baseFontFamilyList = sansSerifFontFamilies
 
 const mapFontFamilyListToString = fp.join(',')
 
@@ -59,7 +61,6 @@ const options = {
   headerColor: colors.gray.dark,
   headerFontFamily: _.concat(['Alegreya Sans'], sansSerifFontFamilies),
   headerLineHeight: 1.7,
-  monospaceFontFamily: monospaceFontFamilies,
   plugins: [new CodePlugin()],
   scaleRatio: 2,
   overrideStyles: (
@@ -83,6 +84,7 @@ const options = {
     '.code': {
       fontFamily: mapFontFamilyListToString(monospaceFontFamilies),
     },
+
     '.fira-mono': {
       fontFamily: mapFontFamilyListToString(monospaceFontFamilies),
     },

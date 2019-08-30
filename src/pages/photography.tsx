@@ -7,8 +7,6 @@ import React from 'react'
 import { Helmet } from 'react-helmet'
 
 import { PhotographyGridSection } from 'components'
-import Layout from 'components/Layout'
-import GatsbyLocation from 'types/GatsbyLocation'
 import { useSiteMetadata } from 'utils/hooks'
 
 interface Props {
@@ -33,7 +31,7 @@ const createSortedArrayOfGroupedImages = _.flow(
   fp.reverse,
 )
 
-const PhotographyIndex = ({ location }: { location: GatsbyLocation }) => {
+const PhotographyIndex = () => {
   const { title } = useSiteMetadata()
   const data: Props = useStaticQuery(graphql`
     query {
@@ -51,7 +49,7 @@ const PhotographyIndex = ({ location }: { location: GatsbyLocation }) => {
   const sortedArrayOfGroupedImages = createSortedArrayOfGroupedImages(data)
 
   return (
-    <Layout location={location}>
+    <>
       <Helmet title={pageTitle} />
       <div
         className="bg-near-white black-80 pv4 pa3-ns"
@@ -90,7 +88,7 @@ const PhotographyIndex = ({ location }: { location: GatsbyLocation }) => {
           ),
         )}
       </div>
-    </Layout>
+    </>
   )
 }
 

@@ -17,8 +17,8 @@ module.exports = {
     'cypress',
     'prettier',
     'promise',
-    'react',
     'react-hooks',
+    'react',
   ],
   parserOptions: {
     ecmaVersion: 8,

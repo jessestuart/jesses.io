@@ -2,10 +2,10 @@
 
 exports[`Render Profile component. Render Profile component. 1`] = `
 <div
-  className="items-center justify-center pv4 sc-iwsKbI ieOyzb"
+  className="items-center justify-center pv4 sc-gqjmRU gfZosU"
 >
   <div
-    className="center w-100-ns w-50 sc-gZMcBi iVKUTE"
+    className="center w-100-ns w-50 sc-VigVT jXOzmO"
   >
     <div
       className="sc-bdVaJa flex justify-around mv4 cDifEl"
@@ -122,34 +122,40 @@ exports[`Render Profile component. Render Profile component. 1`] = `
     </div>
   </div>
   <div
-    className="tc tr-ns ph2 sc-gqjmRU czwFG"
+    className="tc tr-ns ph2 sc-jTzLTM bdEVfG"
   >
-    <h2
-      className="f3 fw5 lh-title white-80 spectral"
+    <style
+      dangerouslySetInnerHTML={
+        Object {
+          "__html": ".css-l3rx45{box-sizing:border-box;margin:0;min-width:0;-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;}",
+        }
+      }
+      data-emotion-css="l3rx45"
+    />
+    <div
+      className="f3 fw5 lh-title white-80 mv3 css-l3rx45"
     >
-      Hi — I'm Jesse.
-    </h2>
-    <h2
-      className="f3 fw5 lh-title white-80 mv3 spectral"
-    >
-      <span
-        className="dib nowrap"
+      <div
+        className="justify-end pb3 sc-bwzfXH gakLRw"
+        fontFamily="serif"
       >
-        I contradict myself.
-      </span>
-      <span
-        className="dib nowrap ml2"
+        Hi — I'm Jesse.
+      </div>
+      <div
+        className="justify-end pb3 flex-wrap sc-bwzfXH gakLRw"
+        fontFamily="serif"
       >
-        I contain 
+        I contradict myself. I contain
+         
         <a
-          className="dib sc-bwzfXH gekeSr"
+          className="sc-bxivhb emsfTZ"
           href="http://jstu.art/ojNe"
         >
           multitudes
         </a>
         .
-      </span>
-    </h2>
+      </div>
+    </div>
     <p
       className="flex justify-center justify-end-ns items-center"
     >
@@ -284,7 +290,7 @@ exports[`Render Profile component. Render Profile component. 1`] = `
           Published
            
           <a
-            className="sc-bwzfXH gekeSr"
+            className="sc-bxivhb emsfTZ"
             href="http://jstu.art/oijk"
           >
             NLP researcher
@@ -292,7 +298,7 @@ exports[`Render Profile component. Render Profile component. 1`] = `
           , and
         </span>
         <a
-          className="sc-bwzfXH gekeSr"
+          className="sc-bxivhb emsfTZ"
           href="http://jstu.art/oj1g"
         >
           USPO Patent holder
@@ -510,7 +516,7 @@ exports[`Render Profile component. Render Profile component. 1`] = `
         className="f4 fw3 dib tr lh-copy"
       >
         <a
-          className="sc-bwzfXH gekeSr"
+          className="sc-bxivhb emsfTZ"
           href="http://jstu.art/ojVB"
         >
           French translator
@@ -594,7 +600,7 @@ exports[`Render Profile component. Render Profile component. 1`] = `
     </p>
   </div>
   <div
-    className="bt b--light-silver sc-VigVT BKAoe"
+    className="bt b--light-silver sc-fjdhpX eQshgI"
   >
     <div
       className="b--hot-pink bb bg-purple bw2 mb1 pb3 pt4"

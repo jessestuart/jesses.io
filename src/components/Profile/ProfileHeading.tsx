@@ -1,23 +1,33 @@
-import React, { Fragment } from 'react'
+import classNames from 'classnames'
+import _ from 'lodash'
+import React, { ReactNode } from 'react'
+import { Text } from 'rebass/styled-components'
+import { Flex } from 'reflexbox'
 
 import ProfileStyledLink from './ProfileStyledLink'
 
 const WHITMAN_URL = 'http://jstu.art/ojNe'
 
+const ProfileHeadingText = ({
+  className,
+  children,
+}: {
+  className?: string
+  children: ReactNode
+}) => (
+  <Text fontFamily="serif" className={classNames('justify-end pb3', className)}>
+    {children}
+  </Text>
+)
+
 const ProfileHeading = () => (
-  <Fragment>
-    <h2 className="f3 fw5 lh-title white-80 spectral">Hi — I'm Jesse.</h2>
-    <h2 className="f3 fw5 lh-title white-80 mv3 spectral">
-      <span className="dib nowrap">I contradict myself.</span>
-      <span className="dib nowrap ml2">
-        I contain&nbsp;
-        <ProfileStyledLink className="dib" href={WHITMAN_URL}>
-          multitudes
-        </ProfileStyledLink>
-        .
-      </span>
-    </h2>
-  </Fragment>
+  <Flex className="f3 fw5 lh-title white-80 mv3" flexDirection="column">
+    <ProfileHeadingText>Hi — I'm Jesse.</ProfileHeadingText>
+    <ProfileHeadingText className="flex-wrap">
+      I contradict myself. I contain{' '}
+      <ProfileStyledLink href={WHITMAN_URL}>multitudes</ProfileStyledLink>.
+    </ProfileHeadingText>
+  </Flex>
 )
 
 export default ProfileHeading

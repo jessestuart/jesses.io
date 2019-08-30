@@ -27,7 +27,6 @@ interface Props {
       html: any
     }
   }
-  location: GatsbyLocation
 }
 
 // eslint-disable-next-line
@@ -61,7 +60,7 @@ const BlogPostTemplate = (props: Props) => {
   const comboTitle = `${title || 'Posts'} | ${siteTitle}`
 
   return (
-    <Layout location={location}>
+    <>
       <BlogPostHelmet
         comboTitle={comboTitle}
         date={new Date(date)}
@@ -83,7 +82,7 @@ const BlogPostTemplate = (props: Props) => {
           />
         </div>
       </div>
-    </Layout>
+    </>
   )
 }
 

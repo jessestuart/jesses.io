@@ -5,7 +5,6 @@ import { DateTime } from 'luxon'
 import React, { Component } from 'react'
 import Helmet from 'react-helmet'
 
-import Layout from 'components/Layout'
 import PhotographyGridSection from 'components/Photography/PhotographyGridSection'
 import GatsbyLocation from 'types/GatsbyLocation'
 
@@ -30,8 +29,8 @@ interface Props {
 
 export class PhotographyPostTemplate extends Component<Props> {
   public render() {
+
     const { props } = this
-    const { location } = props
     const images = _.flow(
       fp.get('data.allS3ImageAsset.edges'),
       fp.map('node'),
@@ -48,21 +47,19 @@ export class PhotographyPostTemplate extends Component<Props> {
     const title = `${siteTitle} | Photography | ${date}`
 
     return (
-      <Layout location={location}>
-        <div
-          className="bg-near-white black-80 pv4 pa3-ns"
-          style={{ flex: '1 0' }}
-        >
-          <Helmet title={title} />
-          <PhotographyGridSection
-            datetime={datetime}
-            images={images}
-            isPreview={false}
-            key={pathname}
-            slug={pathname}
-          />
-        </div>
-      </Layout>
+      <div
+        className="bg-near-white black-80 pv4 pa3-ns"
+        style={{ flex: '1 0' }}
+      >
+        <Helmet title={title} />
+        <PhotographyGridSection
+          datetime={datetime}
+          images={images}
+          isPreview={false}
+          key={pathname}
+          slug={pathname}
+        />
+      </div>
     )
   }
 }

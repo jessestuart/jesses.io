@@ -6,20 +6,17 @@ import { DateTime } from 'luxon'
 import React, { Component } from 'react'
 import Lightbox from 'react-image-lightbox'
 
-import { StyledPanel } from 'components'
 import {
   ImageZoomGrid,
   ImageZoomGridElement,
   PhotographySectionHeader,
 } from 'components/Photography'
+import StyledPanel from 'components/StyledPanel/StyledPanel'
 
 interface Props {
   datetime: DateTime
   // The images to be *currently* displayed for this section.
   images: any[]
-  // The *total* number of images available for this section, even those that
-  // are currently hidden.
-  // imageCount: number
   // True if on `/photography` page; false if on one of the photo details pages.
   isPreview?: boolean
   slug?: string
@@ -60,7 +57,7 @@ class PhotographyGridSection extends Component<Props, State> {
     ),
   )
 
-  public componentWillMount() {
+  public UNSAFE_componentWillMount() {
     this.setState({
       lightboxImages: this.getLightboxImagesFromProps(this.props),
     })
@@ -135,8 +132,7 @@ class PhotographyGridSection extends Component<Props, State> {
     isLightboxOpen = this.state.isLightboxOpen,
     lightboxImages = this.state.lightboxImages,
   }: ToggleLightboxOptions) => {
-    // prettier-ignore
-    this.setState({ // lgtm [js/react/inconsistent-state-update]
+    this.setState({
       index,
       isLightboxOpen,
       lightboxImages,

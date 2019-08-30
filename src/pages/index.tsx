@@ -19,12 +19,12 @@ interface Props {
 const Home = ({ data, location }: Props) => {
   const avatar = _.get(data, 'file.childImageSharp.fluid')
   return (
-    <Layout location={location}>
-      <div className="moon-gray bg-gray-primary w-100">
-        <Profile avatar={avatar} />
-        <ProfileDevIcons />
-      </div>
-    </Layout>
+    // <Layout location={location}>
+    <div className="moon-gray bg-gray-primary w-100">
+      <Profile avatar={avatar} />
+      <ProfileDevIcons />
+    </div>
+    // </Layout>
   )
 }
 
