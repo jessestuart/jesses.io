@@ -1,16 +1,18 @@
 import BlogHeader from 'components/Blog/BlogHeader'
-import Layout from 'components/Layout'
 import { graphql } from 'gatsby'
 import _ from 'lodash'
 import { DateTime } from 'luxon'
 import React, { ReactNode } from 'react'
 import Helmet from 'react-helmet'
 import GatsbyLocation from 'types/GatsbyLocation'
-import colors from 'utils/colors'
+
 import './blog-post.css'
+
+import colors from 'utils/colors'
 
 interface Props {
   children: ReactNode
+  location: GatsbyLocation
   data: {
     site: {
       siteMetadata: {
@@ -27,7 +29,6 @@ interface Props {
       html: any
     }
   }
-  location: GatsbyLocation
 }
 
 // eslint-disable-next-line
@@ -61,7 +62,7 @@ const BlogPostTemplate = (props: Props) => {
   const comboTitle = `${title || 'Posts'} | ${siteTitle}`
 
   return (
-    <Layout location={location}>
+    <>
       <BlogPostHelmet
         comboTitle={comboTitle}
         date={new Date(date)}
@@ -83,7 +84,7 @@ const BlogPostTemplate = (props: Props) => {
           />
         </div>
       </div>
-    </Layout>
+    </>
   )
 }
 

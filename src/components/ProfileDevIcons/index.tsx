@@ -1,9 +1,9 @@
-import '../../styles/base.css'
-import '../../styles/hvr-animations.css'
-
 import classNames from 'classnames'
 import React, { Fragment } from 'react'
 import styled from 'styled-components'
+
+import 'styles/base.css'
+import 'styles/hvr-animations.css'
 
 import colors from 'utils/colors'
 
@@ -16,9 +16,7 @@ const ProfileDevIcons = () => {
       <div className="flex justify-center align-center">
         <p
           className="spectral fw3 lh-copy center pv3 tc w-75"
-          style={{
-            fontSize: '1.3rem',
-          }}
+          style={{ fontSize: '1.3rem' }}
         >
           Tackling novel problems —
           <span style={{ whiteSpace: 'nowrap' }}>

@@ -7,7 +7,7 @@ const Grid = styled.div`
     grid-template-columns: ${props => props.templateColumns};
   `};
   ${is('gap')`
-    grid-gap: ${props => props.gap};
+    gap: ${props => props.gap};
   `};
   ${is('rowGap')`
     grid-row-gap: ${props => props.rowGap};

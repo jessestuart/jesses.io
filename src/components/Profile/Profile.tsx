@@ -24,7 +24,7 @@ const AvatarContainer = styled.div`
     grid-row: 1 / 5;
   }
   @media (min-width: 60em) {
-    grid-column: 3 / 5;
+    grid-column: 4 / 6;
     grid-row: 1 / 5;
   }
 `

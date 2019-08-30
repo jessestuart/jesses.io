@@ -1,93 +1,150 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Render PhotographyGridSection component w/ images. 1`] = `
-.c1 {
-  border-bottom: 2px solid rgba(255,58,92,0.8);
-  position: relative;
-  -webkit-text-decoration: none;
-  text-decoration: none;
-}
-
-.c1::before {
-  background-color: rgba(148,117,204,0.8);
-  bottom: -2px;
-  content: '';
-  height: 2px;
-  left: 0;
-  position: absolute;
-  -webkit-transform: scaleX(0);
-  -ms-transform: scaleX(0);
-  transform: scaleX(0);
-  -webkit-transition: all 0.25s ease-in-out 0s;
-  transition: all 0.25s ease-in-out 0s;
-  visibility: hidden;
-  width: 100%;
-}
-
-.c1:hover:before {
-  -webkit-transform: scaleX(1);
-  -ms-transform: scaleX(1);
-  transform: scaleX(1);
-  visibility: visible;
-}
-
-.c2 {
-  position: relative;
-  display: grid;
-  grid-gap: 1em;
-  grid-auto-rows: minmax(4em,auto);
-}
-
-.c0 {
-  background-color: #fbfafc;
-  box-shadow: rgba(25,17,34,0.1) 0px 3px 10px;
-}
-
-@media (min-width:60em) {
-  .c2 {
-    grid-template-columns: repeat(auto-fill,minmax(20vw,1fr));
-  }
-}
-
-@media (max-width:60em) and (min-width:45em) {
-  .c2 {
-    grid-template-columns: repeat(auto-fill,minmax(18em,1fr));
-  }
-}
-
-@media (max-width:45em) {
-  .c2 {
-    grid-template-columns: repeat(auto-fill,minmax(50vw,1fr));
-  }
-}
-
-@media (max-width:45em) {
+Array [
   .c0 {
-    margin: 1rem !important;
-    padding: 1rem 2rem !important;
-  }
+  box-sizing: border-box;
+  margin: 0;
+  min-width: 0;
+  margin-bottom: 8px;
+  color: rgba(0,0,0,0.7);
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  font-family: Alegreya Sans SC;
+  font-size: 48px;
 }
 
-<section
-  className="c0 br2 center mv5-ns mw7 mw9-ns pa5-ns"
-  style={
-    Object {
-      "transition": "all 0.5s",
-    }
-  }
->
-  <a
-    className="c1 alegreya-sans db f2 fw5 header-primary mb3 tr w-100"
-    href="/true/#"
-    onClick={[Function]}
-    onMouseEnter={[Function]}
+<h2
+    className="c0 flex fw5 justify-end w-100"
+    color="textMediumMuted"
+    fontFamily="smallcaps"
+    fontSize="6"
   >
-    01 May 2019
-  </a>
-  <div
-    className="c2"
-  />
-</section>
+    <a
+      href="/true/#"
+      onClick={[Function]}
+      onMouseEnter={[Function]}
+    >
+      01 May 2019
+    </a>
+  </h2>,
+  .c0 {
+  box-sizing: border-box;
+  margin: 0;
+  min-width: 0;
+}
+
+<div
+    className="c0 mb4 w-100"
+    style={
+      Object {
+        "height": NaN,
+      }
+    }
+  >
+    <div
+      style={
+        Object {
+          "height": NaN,
+          "position": "absolute",
+          "transform": "translate3d(0px,NaNpx,0)",
+          "width": 0,
+        }
+      }
+    />
+    <div
+      style={
+        Object {
+          "height": NaN,
+          "position": "absolute",
+          "transform": "translate3d(0px,NaNpx,0)",
+          "width": 0,
+        }
+      }
+    />
+  </div>,
+  .c0 {
+  box-sizing: border-box;
+  margin: 0;
+  min-width: 0;
+  margin-bottom: 8px;
+  margin-top: 32px;
+}
+
+<div
+    className="c0"
+    style={
+      Object {
+        "borderTop": "1px solid rgb(221, 221, 221)",
+      }
+    }
+  >
+     
+  </div>,
+]
 `;
 
-exports[`Render PhotographyGridSection component. 1`] = `null`;
+exports[`Render PhotographyGridSection component. 1`] = `
+Array [
+  .c0 {
+  box-sizing: border-box;
+  margin: 0;
+  min-width: 0;
+  margin-bottom: 8px;
+  color: rgba(0,0,0,0.7);
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  font-family: Alegreya Sans SC;
+  font-size: 48px;
+}
+
+<h2
+    className="c0 flex fw5 justify-end w-100"
+    color="textMediumMuted"
+    fontFamily="smallcaps"
+    fontSize="6"
+  >
+    <a
+      href="/true/#"
+      onClick={[Function]}
+      onMouseEnter={[Function]}
+    >
+      01 May 2019
+    </a>
+  </h2>,
+  .c0 {
+  box-sizing: border-box;
+  margin: 0;
+  min-width: 0;
+}
+
+<div
+    className="c0 mb4 w-100"
+    style={
+      Object {
+        "height": 0,
+      }
+    }
+  />,
+  .c0 {
+  box-sizing: border-box;
+  margin: 0;
+  min-width: 0;
+  margin-bottom: 8px;
+  margin-top: 32px;
+}
+
+<div
+    className="c0"
+    style={
+      Object {
+        "borderTop": "1px solid rgb(221, 221, 221)",
+      }
+    }
+  >
+     
+  </div>,
+]
+`;

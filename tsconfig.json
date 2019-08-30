@@ -1,6 +1,6 @@
 {
   "include": ["./src/**/*.tsx", "**/*.spec.tsx", "./src/**/*.ts", "**/*.js"],
-  "exclude": ["node_modules/*", "public/*"],
+  "exclude": ["node_modules/*", "public/*", "cypress/*"],
   "compilerOptions": {
     "allowSyntheticDefaultImports": true,
     "baseUrl": ".",

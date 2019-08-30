@@ -45,14 +45,14 @@ exports[`StyledLink component. Render StyledLink component with custom colors. 1
 
 exports[`StyledLink component. Render StyledLink component with default colors. 1`] = `
 .c0 {
-  border-bottom: 2px solid rgba(255,58,92,0.8);
+  border-bottom: 2px solid [object Object];
   position: relative;
   -webkit-text-decoration: none;
   text-decoration: none;
 }
 
 .c0::before {
-  background-color: rgba(148,117,204,0.8);
+  background-color: [object Object];
   bottom: -2px;
   content: '';
   height: 2px;
@@ -86,14 +86,14 @@ exports[`StyledLink component. Render StyledLink component with default colors. 
 
 exports[`StyledLink component. StyledLink component w/out href renders as <span>. 1`] = `
 .c0 {
-  border-bottom: 2px solid rgba(255,58,92,0.8);
+  border-bottom: 2px solid [object Object];
   position: relative;
   -webkit-text-decoration: none;
   text-decoration: none;
 }
 
 .c0::before {
-  background-color: rgba(148,117,204,0.8);
+  background-color: [object Object];
   bottom: -2px;
   content: '';
   height: 2px;

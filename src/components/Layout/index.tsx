@@ -1,6 +1,7 @@
 import 'js-tachyons'
-import 'typeface-alegreya'
+
 import 'typeface-alegreya-sans'
+import 'typeface-alegreya-sans-sc'
 import 'typeface-lato'
 import 'typeface-spectral'
 

@@ -10,18 +10,16 @@ import { mapLensModelExif } from 'utils/exif'
 import useHover from 'utils/use-hover'
 
 const StyledImageZoomGridElement = styled.div`
-  border-radius: 2px;
+  border-radius: 4px;
   cursor: pointer;
-  display: flex;
-  flex-direction: column;
+  display: grid;
   grid-column-start: auto;
   overflow: hidden;
   position: relative;
   transition: all 0.4s;
-  justify-content: flex-end;
   // Throw in some drop shadow to make it pretty (extra on hover) — and just a
   // smidge of border radius, too:
-  filter: drop-shadow(0 0 2px rgba(0, 0, 0, 0.75));
+  filter: drop-shadow(0 0 2px rgba(0, 0, 0, 0.5));
   &:hover {
     filter: drop-shadow(0 0 6px rgba(0, 0, 0, 0.9));
   }
@@ -41,24 +39,27 @@ const ImageZoomGridElement = (props: Props) => {
 
   const [isActive, setIsActive] = useHover()
 
-  const thumbnailSizes: GatsbyImage = _.get(image, 'childImageSharp.sizes')
+  const thumbnailImage: GatsbyImage = _.get(image, 'childImageSharp.sizes')
 
-  if (_.isEmpty(thumbnailSizes)) {
+  if (_.isEmpty(thumbnailImage)) {
     return null
   }
 
-  const { aspectRatio } = thumbnailSizes
+  const { aspectRatio } = thumbnailImage
 
   const lensModel = mapLensModelExif(_.get(image, 'EXIF.LensModel'))
-  const { FNumber, ISO, FocalLength, ShutterSpeedFraction } = image.EXIF
-
+  const { FNumber, FocalLength, ISO, ShutterSpeedFraction } = image.EXIF
+  const cssGridRowSpan =
+    aspectRatio > 1
+      ? { gridRow: 'span 1 / auto' }
+      : { gridRow: 'span 2 / auto' }
   return (
     <StyledImageZoomGridElement
       {...props}
       {...setIsActive}
-      style={aspectRatio > 1 ? { gridRow: 'span 1' } : { gridRow: 'span 2' }}
+      aspectRatio={cssGridRowSpan}
     >
-      <Img fluid={thumbnailSizes} />
+      <Img fluid={thumbnailImage} />
       <ExifOverlay isActive={isActive as boolean}>
         {FocalLength ? `${FocalLength}mm, ` : null}
         {ShutterSpeedFraction ? `${ShutterSpeedFraction}s, ` : null}

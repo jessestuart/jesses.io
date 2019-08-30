@@ -1,7 +1,8 @@
-import PhotographyGridSection from 'components/Photography/PhotographyGridSection'
 import { DateTime } from 'luxon'
 import React from 'react'
 import renderer from 'react-test-renderer'
+
+import PhotographyGridSection from 'components/Photography/PhotographyGridSection'
 
 const datetime = DateTime.utc(2019, 5, 1, 1, 1, 1)
 

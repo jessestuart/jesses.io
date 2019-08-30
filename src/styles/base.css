@@ -29,12 +29,12 @@ body {
   font-family: 'Lato', sans-serif;
 }
 
-.source-sans {
-  font-family: 'Source Sans Serif Pro', sans-serif;
-}
-
 .alegreya-sans {
   font-family: 'Alegreya Sans', sans-serif;
+}
+
+.alegreya-sans-sc {
+  font-family: 'Alegreya Sans SC', sans-serif;
 }
 
 .grid {
