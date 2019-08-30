@@ -3,3 +3,10 @@ package.json:240,1570352400:240,m
 .gtm/terminal.app:75,1570352400:75,r
 .eslintrc.js:30,1570352400:30,r
 .git/COMMIT_EDITMSG:15,1570352400:15,r
+
+[ver:1,total:1140]
+.gtm/terminal.app:940,1570348800:90,1570352400:850,r
+package.json:60,1570352400:60,m
+.eslintrc.js:60,1570352400:60,r
+.git/rebase-merge/git-rebase-todo:50,1570348800:30,1570352400:20,r
+.git/COMMIT_EDITMSG:30,1570352400:30,r
