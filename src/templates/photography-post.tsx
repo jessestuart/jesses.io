@@ -29,7 +29,6 @@ interface Props {
 
 export class PhotographyPostTemplate extends Component<Props> {
   public render() {
-
     const { props } = this
     const images = _.flow(
       fp.get('data.allS3ImageAsset.edges'),

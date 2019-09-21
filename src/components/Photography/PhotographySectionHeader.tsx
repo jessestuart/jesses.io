@@ -1,6 +1,6 @@
 import { DateTime } from 'luxon'
 import React from 'react'
-import { Link } from 'rebass'
+import { Link, Text } from 'rebass'
 
 interface Props {
   datetime: DateTime
@@ -11,8 +11,8 @@ const PhotographySectionHeader = ({
   datetime,
   href = '/photography',
 }: Props) => (
-  <Link fontFamily="smallCaps" className="db f2 fw5 mb3 tr w-100" href={href}>
-    {datetime.toFormat('dd LLLL yyyy')}
+  <Link className="db f2 fw5 mb3 tr w-100" href={href}>
+    <Text fontFamily="smallCaps">{datetime.toFormat('dd LLLL yyyy')}</Text>
   </Link>
 )
 

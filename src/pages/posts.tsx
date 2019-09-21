@@ -57,7 +57,7 @@ const BlogIndex = () => {
         return (
           <StyledPanel key={title}>
             <article>
-              <BlogHeader link={slug} location={location} date={date}>
+              <BlogHeader link={slug} location={{ location }} date={date}>
                 {title}
               </BlogHeader>
               <p className="f4" dangerouslySetInnerHTML={{ __html: excerpt }} />

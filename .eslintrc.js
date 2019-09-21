@@ -1,38 +1,25 @@
 module.exports = {
   extends: [
     'eslint:recommended',
-    'plugin:@typescript-eslint/recommended',
     'plugin:import/typescript',
     'plugin:promise/recommended',
-    'plugin:cypress/recommended',
     'plugin:react/recommended',
-    // Enables eslint-plugin-prettier and displays prettier errors as ESLint
-    // errors. Make sure this is always the last configuration in the extends
-    // array.
+    'plugin:@typescript-eslint/eslint-recommended',
+    'plugin:@typescript-eslint/recommended',
+    'plugin:@typescript-eslint/recommended-requiring-type-checking',
+    'plugin:import/typescript',
+    'plugin:cypress/recommended',
     'plugin:prettier/recommended',
+    'prettier/@typescript-eslint',
   ],
   parser: '@typescript-eslint/parser',
-  plugins: [
-    '@typescript-eslint',
-    'cypress',
-    'prettier',
-    'promise',
-    'react-hooks',
-    'react',
-  ],
+  plugins: ['react-hooks', 'jest'],
   parserOptions: {
-    ecmaVersion: 8,
-    ecmaFeatures: {
-      jsx: true,
-    },
-    sourceType: 'module',
-    useJSXTextNode: true,
     project: './tsconfig.json',
     tsconfigRootDir: './',
   },
   env: {
     browser: true,
-    'cypress/globals': true,
     jest: true,
     node: true,
   },
@@ -44,16 +31,6 @@ module.exports = {
     'no-console': 'warn',
     'no-undef': 'error',
     'object-curly-spacing': ['error', 'always'],
-    'prettier/prettier': [
-      'error',
-      {
-        singleQuote: true,
-        trailingComma: 'all',
-        printWidth: 80,
-        parser: 'typescript',
-      },
-    ],
-    'promise/no-callback-in-promise': 'off',
     'react/no-unescaped-entities': 'off',
     'react-hooks/rules-of-hooks': 'error', // Checks rules of Hooks
     'react-hooks/exhaustive-deps': 'warn', // Checks effect dependencies
@@ -70,7 +47,7 @@ module.exports = {
     '@typescript-eslint/no-unused-vars': ['warn', { argsIgnorePattern: '^_' }],
     '@typescript-eslint/no-use-before-define': 'off',
     '@typescript-eslint/no-var-requires': 'off',
-    '@typescript-eslint/prefer-interface': 'warn',
+    '@typescript-eslint/ban-ts-ignore': ['off'],
   },
   settings: {
     react: {

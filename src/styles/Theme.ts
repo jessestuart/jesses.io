@@ -4,17 +4,12 @@ import 'typeface-fira-mono'
 import 'typeface-lato'
 import 'typeface-spectral'
 
-import jst from 'js-tachyons'
+import 'js-tachyons'
 
 export const breakpoints = ['40em', '52em', '64em']
 
-console.log({ jst })
-
 export const colors = {
-  // hotPink:
   neutral: 'rgba( 0, 0, 0, 0.1)',
-  // primary: '#68465b',
-  // secondary: '#e5f4ee',
   text: 'rgba(0, 0, 0, 0.8)',
   textMuted: 'rgba(0, 0, 0, 0.6)',
 }
