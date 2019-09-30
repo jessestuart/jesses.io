@@ -19,10 +19,14 @@ interface Props {
 
 export const PHOTOGRAPHY_INDEX_NUM_PREVIEWS = 6
 
-const createSortedArrayOfGroupedImages = _.flow(
+const getS3ImageAssetNodes = _.flow(
   // Collect all of the image nodes for each S3ImageAsset into a single array...
   fp.get('allS3ImageAsset.edges'),
   fp.map('node'),
+)
+
+const createSortedArrayOfGroupedImages = _.flow(
+  getS3ImageAssetNodes,
   // Group by *date* created... (string value)
   fp.groupBy('EXIF.DateCreatedISO'),
   // Then sort by *datetime* created... (numeric value)
@@ -81,6 +85,7 @@ const PhotographyIndex = () => {
                   images={linkImages || []}
                   isPreview={true}
                   key={sectionTitle}
+                  totalNumImages={_.size(imageNodeList)}
                   slug={linkSlug}
                 />
               )

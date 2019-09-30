@@ -2,37 +2,31 @@
 
 exports[`Render PhotographyGridSection component w/ images. 1`] = `
 <section
-  className="br2 center mv5-ns mw7 mw9-ns pa5-ns sc-bxivhb ivIfMY"
+  className="sc-ifAKCX beEaFV br2 center mv5-ns mw7 mw9-ns pa5-ns"
   style={
     Object {
       "transition": "all 0.5s",
     }
   }
 >
-  <style
-    dangerouslySetInnerHTML={
-      Object {
-        "__html": ".css-vurnku{box-sizing:border-box;margin:0;min-width:0;}",
-      }
-    }
-    data-emotion-css="vurnku"
-  />
   <a
-    className="db f2 fw5 mb3 tr w-100 css-vurnku"
-    href="/#"
+    className="sc-bxivhb cFCxbQ sans-serif db f2 fw5 header-primary mb3 tr w-100"
+    href="/true/#"
+    onClick={[Function]}
+    onMouseEnter={[Function]}
   >
     <style
       dangerouslySetInnerHTML={
         Object {
-          "__html": ".css-1ctbtr8{box-sizing:border-box;margin:0;min-width:0;font-family:smallCaps;}",
+          "__html": ".css-g6k601{box-sizing:border-box;margin:0;min-width:0;font-family:Alegreya Sans SC;}",
         }
       }
-      data-emotion-css="1ctbtr8"
+      data-emotion-css="g6k601"
     />
     <div
-      className="css-1ctbtr8"
+      className="css-g6k601"
     >
-      01 May 2019
+      01 may 2019
     </div>
   </a>
   <div

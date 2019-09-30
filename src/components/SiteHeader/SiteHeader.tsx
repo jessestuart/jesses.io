@@ -39,23 +39,22 @@ const SiteHeader = (props: Props) => {
     >
       <header
         id="site-header"
-        className={`b--hot-pink bb bg-gray-primary center flex pb1 site-header w-100 ${
+        className={`b--hot-pink bb bg-gray-primary center flex site-header w-100 ${
           !isRoot ? 'bw1' : ''
         }`}
       >
-        <ol className="center flex flex-row fw3 mb1 source-sans w-35-ns">
+        <div className="center flex flex-row fw3 source-sans w-35-ns">
           {Headers.map((header: Header, index: number) => (
-            <li key={header.title}>
-              <HeaderLink
-                className={index === Headers.length - 1 ? '' : 'br b--mid-gray'}
-                href={header.href || `/${header.title}`}
-                pathname={pathname}
-              >
-                {header.title}
-              </HeaderLink>
-            </li>
+            <HeaderLink
+              key={header.href}
+              className={index === Headers.length - 1 ? '' : 'br b--mid-gray'}
+              href={header.href || `/${header.title}`}
+              pathname={pathname}
+            >
+              {header.title}
+            </HeaderLink>
           ))}
-        </ol>
+        </div>
       </header>
     </Headroom>
   )

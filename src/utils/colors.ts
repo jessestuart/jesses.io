@@ -1,5 +1,5 @@
 /* tslint:disable */
-import color from 'onecolor'
+import Color from 'color'
 import gray from 'gray-percentage'
 
 interface ColorMap {
@@ -89,13 +89,15 @@ const colors: Colors = Object.freeze({
     calm: gray(46, 270),
   },
 
-  defaultHover: color(secondaryColors.light7)
+  defaultHover: Color(secondaryColors.light7)
     .alpha(0.8)
-    .cssa(),
+    .rgb()
+    .toString(),
 
-  defaultLink: color(primaryColors.main)
+  defaultLink: Color(primaryColors.main)
     .alpha(0.8)
-    .cssa(),
+    .rgb()
+    .toString(),
 })
 
 export default colors

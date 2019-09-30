@@ -38,7 +38,7 @@ exports[`Render PortfolioItem component. 1`] = `
     </div>
   </a>
   <a
-    className="fw7 f4 sc-bdVaJa bXWskY"
+    className="sc-bdVaJa gxsSIV fw7 f4"
     href="/true"
     onClick={[Function]}
     onMouseEnter={[Function]}

@@ -5,6 +5,9 @@ import fp from 'lodash/fp'
 import { DateTime } from 'luxon'
 import React, { Component } from 'react'
 import Lightbox from 'react-image-lightbox'
+import { Flex } from 'rebass'
+
+import Colors from 'utils/colors'
 
 import {
   ImageZoomGrid,
@@ -20,6 +23,7 @@ interface Props {
   // True if on `/photography` page; false if on one of the photo details pages.
   isPreview?: boolean
   slug?: string
+  totalNumImages?: number
 }
 
 interface State {
@@ -49,7 +53,9 @@ class PhotographyGridSection extends Component<Props, State> {
    * Here we extract the absolute source path for all Lightbox images
    * for the current gallery.
    */
-  private getLightboxImagesFromProps: (props: Props) => string[] = _.memoize(
+  private static getLightboxImagesFromProps: (
+    props: Props,
+  ) => string[] = _.memoize(
     _.flow(
       fp.get('images'),
       fp.sortBy('EXIF.DateTimeOriginal'),
@@ -57,14 +63,17 @@ class PhotographyGridSection extends Component<Props, State> {
     ),
   )
 
-  public UNSAFE_componentWillMount() {
-    this.setState({
-      lightboxImages: this.getLightboxImagesFromProps(this.props),
-    })
+  public static getDerivedStateFromProps(props: Props) {
+    return {
+      lightboxImages: PhotographyGridSection.getLightboxImagesFromProps(props),
+    }
   }
 
   public render() {
-    const { datetime, images, slug = '/#' } = this.props
+    const { datetime, images, slug = '/#', totalNumImages = 0 } = this.props
+    if (!images || _.isEmpty(images)) {
+      return null
+    }
     const {
       isLightboxOpen,
       lightboxSrc,
@@ -72,26 +81,40 @@ class PhotographyGridSection extends Component<Props, State> {
       prevImageSrc,
     } = this.state
     const sortedImages = _.sortBy(images, 'EXIF.DateTimeOriginal')
-    const lightboxImages = _.map(sortedImages, 'childImageSharp.sizes.src')
 
-    if (_.isEmpty(images) || _.isEmpty(lightboxImages)) {
-      return null
-    }
+    console.log({ totalNumImages })
+
+    // const lightboxImages = _.map(sortedImages, 'childImageSharp.sizes.src')
+    // if (_.isEmpty(images) || _.isEmpty(lightboxImages)) {
+    //   return null
+    // }
 
     return (
       <StyledPanel>
         <PhotographySectionHeader datetime={datetime} href={slug} />
-        <ImageZoomGrid>
-          {sortedImages.map((image: any, imageIndex: number) => {
-            return (
-              <ImageZoomGridElement
-                key={image.id}
-                image={image}
-                onClick={() => this.clickImageElement(imageIndex)}
-              />
-            )
-          })}
+        <ImageZoomGrid className={totalNumImages > 6 ? 'pb4' : undefined}>
+          {sortedImages.map((image: any, imageIndex: number) => (
+            <ImageZoomGridElement
+              key={image.id}
+              image={image}
+              onClick={() => this.clickImageElement(imageIndex)}
+            />
+          ))}
         </ImageZoomGrid>
+        {totalNumImages > 6 ? (
+          <Flex
+            backgroundColor={Colors.bgDark}
+            className="bt b--moon-gray pa2 br2 justify-end items-center align-center"
+            color="white"
+            style={{
+              marginLeft: '-2.5rem',
+              marginRight: '-2.5rem',
+              marginBottom: '-2.5rem',
+            }}
+          >
+            see more...
+          </Flex>
+        ) : null}
         {isLightboxOpen && lightboxSrc && (
           <Lightbox
             enableZoom={false}

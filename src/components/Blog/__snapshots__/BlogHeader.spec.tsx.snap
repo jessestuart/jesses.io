@@ -7,7 +7,7 @@ Array [
     id="about"
   >
     <a
-      className="sc-bdVaJa bXWskY"
+      className="sc-bdVaJa gxsSIV"
       href="#about"
     >
       FooBar
@@ -76,7 +76,7 @@ Array [
     id="/2018-01-01"
   >
     <a
-      className="sc-bdVaJa bXWskY"
+      className="sc-bdVaJa gxsSIV"
       href="/true/2018-01-01"
       onClick={[Function]}
       onMouseEnter={[Function]}

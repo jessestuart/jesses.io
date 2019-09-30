@@ -79,12 +79,12 @@ const transformerRemark = {
   },
 }
 
-const typographyPlugin = {
-  resolve: 'gatsby-plugin-typography',
-  options: {
-    pathToConfigModule: 'src/utils/typography',
-  },
-}
+// const typographyPlugin = {
+//   resolve: 'gatsby-plugin-typography',
+//   options: {
+//     pathToConfigModule: 'src/utils/typography',
+//   },
+// }
 
 const googleAnalyticsPlugin = {
   resolve: 'gatsby-plugin-google-analytics',
@@ -141,7 +141,7 @@ let plugins = _.compact([
   // Styling-related plugins.
   // ========================
   'gatsby-plugin-styled-components',
-  typographyPlugin,
+  // typographyPlugin,
   // ==========================================
   // Transformers for Markdown and image files.
   // ==========================================

@@ -48,7 +48,7 @@ const ImageZoomGridElement = (props: Props) => {
   const { aspectRatio } = thumbnailImage
 
   const lensModel = mapLensModelExif(_.get(image, 'EXIF.LensModel'))
-  const { FNumber, ISO, FocalLength, ShutterSpeedFraction } = image.EXIF
+  const { FNumber, FocalLength, ISO, ShutterSpeedFraction } = image.EXIF
   const cssGridRowSpan =
     aspectRatio > 1
       ? { gridRow: 'span 1 / auto' }

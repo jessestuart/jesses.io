@@ -4,6 +4,7 @@ import fp from 'lodash/fp'
 import { DateTime } from 'luxon'
 import React, { Component } from 'react'
 import Helmet from 'react-helmet'
+import { Box } from 'rebass'
 
 import PhotographyGridSection from 'components/Photography/PhotographyGridSection'
 import GatsbyLocation from 'types/GatsbyLocation'
@@ -46,10 +47,7 @@ export class PhotographyPostTemplate extends Component<Props> {
     const title = `${siteTitle} | Photography | ${date}`
 
     return (
-      <div
-        className="bg-near-white black-80 pv4 pa3-ns"
-        style={{ flex: '1 0' }}
-      >
+      <Box flex="1 0" className="bg-near-white black-80 pv4 pa3-ns">
         <Helmet title={title} />
         <PhotographyGridSection
           datetime={datetime}
@@ -58,7 +56,7 @@ export class PhotographyPostTemplate extends Component<Props> {
           key={pathname}
           slug={pathname}
         />
-      </div>
+      </Box>
     )
   }
 }

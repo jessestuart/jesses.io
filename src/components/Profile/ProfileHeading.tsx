@@ -1,8 +1,7 @@
 import classNames from 'classnames'
 import _ from 'lodash'
 import React, { ReactNode } from 'react'
-import { Text } from 'rebass/styled-components'
-import { Flex } from 'reflexbox'
+import { Flex, Text } from 'rebass'
 
 import ProfileStyledLink from './ProfileStyledLink'
 
@@ -15,16 +14,24 @@ const ProfileHeadingText = ({
   className?: string
   children: ReactNode
 }) => (
-  <Text fontFamily="serif" className={classNames('justify-end pb3', className)}>
+  <Text
+    as="span"
+    fontFamily="spectral"
+    color="textLight"
+    className={classNames('justify-end fw5 f3 lh-title', className)}
+  >
     {children}
   </Text>
 )
 
 const ProfileHeading = () => (
-  <Flex className="f3 fw5 lh-title white-80 mv3" flexDirection="column">
-    <ProfileHeadingText>Hi — I'm Jesse.</ProfileHeadingText>
+  <Flex className="mv3" flexDirection="column">
+    <ProfileHeadingText className="pb3">Hi — I'm Jesse.</ProfileHeadingText>
     <ProfileHeadingText className="flex-wrap">
-      I contradict myself. I contain{' '}
+      I contradict myself.
+    </ProfileHeadingText>
+    <ProfileHeadingText className="flex-wrap">
+      I contain{' '}
       <ProfileStyledLink href={WHITMAN_URL}>multitudes</ProfileStyledLink>.
     </ProfileHeadingText>
   </Flex>

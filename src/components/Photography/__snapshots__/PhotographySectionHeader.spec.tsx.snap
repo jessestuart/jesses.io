@@ -1,32 +1,24 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Render PhotographySectionHeader. 1`] = `
-Array [
+<a
+  className="sc-bdVaJa gxsSIV sans-serif db f2 fw5 header-primary mb3 tr w-100"
+  href="/true/photography"
+  onClick={[Function]}
+  onMouseEnter={[Function]}
+>
   <style
     dangerouslySetInnerHTML={
       Object {
-        "__html": ".css-vurnku{box-sizing:border-box;margin:0;min-width:0;}",
+        "__html": ".css-g6k601{box-sizing:border-box;margin:0;min-width:0;font-family:Alegreya Sans SC;}",
       }
     }
-    data-emotion-css="vurnku"
-  />,
-  <a
-    className="db f2 fw5 mb3 tr w-100 css-vurnku"
-    href="/photography"
+    data-emotion-css="g6k601"
+  />
+  <div
+    className="css-g6k601"
   >
-    <style
-      dangerouslySetInnerHTML={
-        Object {
-          "__html": ".css-1ctbtr8{box-sizing:border-box;margin:0;min-width:0;font-family:smallCaps;}",
-        }
-      }
-      data-emotion-css="1ctbtr8"
-    />
-    <div
-      className="css-1ctbtr8"
-    >
-      01 May 2019
-    </div>
-  </a>,
-]
+    01 may 2019
+  </div>
+</a>
 `;

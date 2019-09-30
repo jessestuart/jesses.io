@@ -2,13 +2,13 @@
 
 exports[`Render Profile component. Render Profile component. 1`] = `
 <div
-  className="items-center justify-center pv4 sc-gqjmRU gfZosU"
+  className="sc-iwsKbI ieOyzb items-center justify-center pv4"
 >
   <div
-    className="center w-100-ns w-50 sc-VigVT jXOzmO"
+    className="sc-gZMcBi iuprSx center w-100-ns w-50"
   >
     <div
-      className="sc-bdVaJa flex justify-around mv4 cDifEl"
+      className="sc-bdVaJa cDifEl flex justify-around mv4"
     >
       <a
         className="ma1"
@@ -122,7 +122,7 @@ exports[`Render Profile component. Render Profile component. 1`] = `
     </div>
   </div>
   <div
-    className="tc tr-ns ph2 sc-jTzLTM bdEVfG"
+    className="sc-gqjmRU czwFG tc tr-ns ph2"
   >
     <style
       dangerouslySetInnerHTML={
@@ -133,39 +133,66 @@ exports[`Render Profile component. Render Profile component. 1`] = `
       data-emotion-css="l3rx45"
     />
     <div
-      className="f3 fw5 lh-title white-80 mv3 css-l3rx45"
+      className="mv3 css-l3rx45"
     >
-      <div
-        className="justify-end pb3 sc-bwzfXH gakLRw"
-        fontFamily="serif"
+      <style
+        dangerouslySetInnerHTML={
+          Object {
+            "__html": ".css-lja60x{box-sizing:border-box;margin:0;min-width:0;font-family:spectral;color:textLight;}",
+          }
+        }
+        data-emotion-css="lja60x"
+      />
+      <span
+        className="justify-end fw5 f3 lh-title pb3 css-lja60x"
       >
         Hi — I'm Jesse.
-      </div>
-      <div
-        className="justify-end pb3 flex-wrap sc-bwzfXH gakLRw"
-        fontFamily="serif"
+      </span>
+      <span
+        className="justify-end fw5 f3 lh-title flex-wrap css-lja60x"
       >
-        I contradict myself. I contain
+        I contradict myself.
+      </span>
+      <span
+        className="justify-end fw5 f3 lh-title flex-wrap css-lja60x"
+      >
+        I contain
          
         <a
-          className="sc-bxivhb emsfTZ"
+          className="sc-bwzfXH cKiVlm"
           href="http://jstu.art/ojNe"
         >
           multitudes
         </a>
         .
-      </div>
+      </span>
     </div>
     <p
       className="flex justify-center justify-end-ns items-center"
     >
-      <span
-        className="f4 fw3 dib tr lh-copy"
+      <style
+        dangerouslySetInnerHTML={
+          Object {
+            "__html": ".css-vurnku{box-sizing:border-box;margin:0;min-width:0;}",
+          }
+        }
+        data-emotion-css="vurnku"
+      />
+      <div
+        className="f4 fw3 dib tr lh-copy css-vurnku"
       >
         NYC-based software engineer.
-      </span>
-      <span
-        className="f6 dib"
+      </div>
+      <style
+        dangerouslySetInnerHTML={
+          Object {
+            "__html": ".css-4cffwv{box-sizing:border-box;margin:0;min-width:0;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;}",
+          }
+        }
+        data-emotion-css="4cffwv"
+      />
+      <div
+        className="f6 dib css-4cffwv"
       >
         <svg
           className="mh2"
@@ -276,37 +303,53 @@ exports[`Render Profile component. Render Profile component. 1`] = `
             />
           </g>
         </svg>
-      </span>
+      </div>
     </p>
     <p
       className="flex justify-center justify-end-ns items-center"
     >
-      <span
-        className="f4 fw3 dib tr lh-copy"
+      <style
+        dangerouslySetInnerHTML={
+          Object {
+            "__html": ".css-vurnku{box-sizing:border-box;margin:0;min-width:0;}",
+          }
+        }
+        data-emotion-css="vurnku"
+      />
+      <div
+        className="f4 fw3 dib tr lh-copy css-vurnku"
       >
-        <span
-          className="db"
+        <div
+          className="db css-vurnku"
         >
           Published
            
           <a
-            className="sc-bxivhb emsfTZ"
+            className="sc-bwzfXH cKiVlm"
             href="http://jstu.art/oijk"
           >
             NLP researcher
           </a>
           , and
-        </span>
+        </div>
         <a
-          className="sc-bxivhb emsfTZ"
+          className="sc-bwzfXH cKiVlm"
           href="http://jstu.art/oj1g"
         >
           USPO Patent holder
         </a>
         .
-      </span>
-      <span
-        className="f6 dib"
+      </div>
+      <style
+        dangerouslySetInnerHTML={
+          Object {
+            "__html": ".css-4cffwv{box-sizing:border-box;margin:0;min-width:0;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;}",
+          }
+        }
+        data-emotion-css="4cffwv"
+      />
+      <div
+        className="f6 dib css-4cffwv"
       >
         <svg
           className="mh2"
@@ -397,18 +440,34 @@ exports[`Render Profile component. Render Profile component. 1`] = `
             />
           </g>
         </svg>
-      </span>
+      </div>
     </p>
     <p
       className="flex justify-center justify-end-ns items-center"
     >
-      <span
-        className="f4 fw3 dib tr lh-copy"
+      <style
+        dangerouslySetInnerHTML={
+          Object {
+            "__html": ".css-vurnku{box-sizing:border-box;margin:0;min-width:0;}",
+          }
+        }
+        data-emotion-css="vurnku"
+      />
+      <div
+        className="f4 fw3 dib tr lh-copy css-vurnku"
       >
         Neuroscientist by degree.
-      </span>
-      <span
-        className="f6 dib"
+      </div>
+      <style
+        dangerouslySetInnerHTML={
+          Object {
+            "__html": ".css-4cffwv{box-sizing:border-box;margin:0;min-width:0;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;}",
+          }
+        }
+        data-emotion-css="4cffwv"
+      />
+      <div
+        className="f6 dib css-4cffwv"
       >
         <svg
           className="mh2"
@@ -507,25 +566,41 @@ exports[`Render Profile component. Render Profile component. 1`] = `
             />
           </g>
         </svg>
-      </span>
+      </div>
     </p>
     <p
       className="flex justify-center justify-end-ns items-center"
     >
-      <span
-        className="f4 fw3 dib tr lh-copy"
+      <style
+        dangerouslySetInnerHTML={
+          Object {
+            "__html": ".css-vurnku{box-sizing:border-box;margin:0;min-width:0;}",
+          }
+        }
+        data-emotion-css="vurnku"
+      />
+      <div
+        className="f4 fw3 dib tr lh-copy css-vurnku"
       >
         <a
-          className="sc-bxivhb emsfTZ"
+          className="sc-bwzfXH cKiVlm"
           href="http://jstu.art/ojVB"
         >
           French translator
+           
         </a>
-         
         by night.
-      </span>
-      <span
-        className="f6 dib"
+      </div>
+      <style
+        dangerouslySetInnerHTML={
+          Object {
+            "__html": ".css-4cffwv{box-sizing:border-box;margin:0;min-width:0;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;}",
+          }
+        }
+        data-emotion-css="4cffwv"
+      />
+      <div
+        className="f6 dib css-4cffwv"
       >
         <svg
           className="mh2"
@@ -596,22 +671,38 @@ exports[`Render Profile component. Render Profile component. 1`] = `
             />
           </g>
         </svg>
-      </span>
+      </div>
     </p>
   </div>
   <div
-    className="bt b--light-silver sc-fjdhpX eQshgI"
+    className="sc-VigVT BKAoe bt b--light-silver"
   >
+    <style
+      dangerouslySetInnerHTML={
+        Object {
+          "__html": ".css-vurnku{box-sizing:border-box;margin:0;min-width:0;}",
+        }
+      }
+      data-emotion-css="vurnku"
+    />
     <div
-      className="b--hot-pink bb bg-purple bw2 mb1 pb3 pt4"
+      className="b--hot-pink bb bg-purple bw2 mb1 pb3 pt4 css-vurnku"
       style={
         Object {
           "gridColumn": "1 / 13",
         }
       }
     >
+      <style
+        dangerouslySetInnerHTML={
+          Object {
+            "__html": ".css-7nafme{box-sizing:border-box;margin:0;min-width:0;font-family:Fira Mono;}",
+          }
+        }
+        data-emotion-css="7nafme"
+      />
       <h4
-        className="f4 fira-mono fw4 lh-title tc white-80"
+        className="f4 fira-mono fw4 lh-title tc white-80 css-7nafme"
       >
         I build software
         <br />
@@ -619,29 +710,33 @@ exports[`Render Profile component. Render Profile component. 1`] = `
         <br />
         of giants.
       </h4>
+      <style
+        dangerouslySetInnerHTML={
+          Object {
+            "__html": ".css-4cffwv{box-sizing:border-box;margin:0;min-width:0;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;}",
+          }
+        }
+        data-emotion-css="4cffwv"
+      />
       <div
-        className="flex justify-center mt2 w-100"
+        className="justify-center mt2 css-4cffwv"
       >
-        <div
-          className=""
+        <svg
+          className="mw-5"
+          fill="none"
+          height="30px"
+          stroke="#ff3a5c"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          strokeWidth="2"
+          viewBox="0 0 24 24"
+          width="30px"
+          xmlns="http://www.w3.org/2000/svg"
         >
-          <svg
-            className="mw-5"
-            fill="none"
-            height="30px"
-            stroke="#ff3a5c"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth="2"
-            viewBox="0 0 24 24"
-            width="30px"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <polyline
-              points="6 9 12 15 18 9"
-            />
-          </svg>
-        </div>
+          <polyline
+            points="6 9 12 15 18 9"
+          />
+        </svg>
       </div>
     </div>
   </div>

@@ -15,7 +15,7 @@ exports[`StyledLink component. Render StyledLink component with custom colors. 1
 
 exports[`StyledLink component. Render StyledLink component with default colors. 1`] = `
 <a
-  className="sc-bdVaJa bXWskY"
+  className="sc-bdVaJa gxsSIV"
   href="/true"
   onClick={[Function]}
   onMouseEnter={[Function]}
@@ -26,7 +26,7 @@ exports[`StyledLink component. Render StyledLink component with default colors. 
 
 exports[`StyledLink component. StyledLink component w/out href renders as <span>. 1`] = `
 <span
-  className="sc-bdVaJa bXWskY"
+  className="sc-bdVaJa gxsSIV"
 >
   Styled Link as span
 </span>
