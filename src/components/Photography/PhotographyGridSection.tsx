@@ -103,8 +103,8 @@ class PhotographyGridSection extends Component<Props, State> {
         </ImageZoomGrid>
         {totalNumImages > 6 ? (
           <Flex
-            backgroundColor={Colors.bgDark}
-            className="bt b--moon-gray pa2 br2 justify-end items-center align-center"
+            backgroundColor={Colors.gray.calm}
+            className="bt b--moon-gray mt2 pt2 br2 justify-end items-center"
             color="white"
             style={{
               marginLeft: '-2.5rem',
