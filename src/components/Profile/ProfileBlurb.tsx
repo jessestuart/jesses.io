@@ -28,13 +28,13 @@ interface Props {
 }
 
 const SubBlurb = ({ Emoji1, Emoji2, children }: Props) => (
-  <p className="flex justify-center justify-end-ns items-center">
+  <Flex className="pt4 justify-center justify-end-ns items-center">
     <Text className="f4 fw3 dib tr lh-copy">{children}</Text>
     <Flex className="f6 dib">
       <Emoji1 className="mh2" style={{ height: '1.25rem', width: '1.25rem' }} />
       <Emoji2 style={{ height: '1.25rem', width: '1.25rem' }} />
     </Flex>
-  </p>
+  </Flex>
 )
 
 const ProfileBlurb = () => (
@@ -59,6 +59,9 @@ const ProfileBlurb = () => (
         French translator{' '}
       </ProfileStyledLink>
       by night.
+    </SubBlurb>
+    <SubBlurb Emoji1={France} Emoji2={CrescentMoon}>
+      I also take a lot of photographs.
     </SubBlurb>
   </>
 )

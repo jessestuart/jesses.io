@@ -28,10 +28,7 @@ const ProfileHeading = () => (
   <Flex className="mv3" flexDirection="column">
     <ProfileHeadingText className="pb3">Hi — I'm Jesse.</ProfileHeadingText>
     <ProfileHeadingText className="flex-wrap">
-      I contradict myself.
-    </ProfileHeadingText>
-    <ProfileHeadingText className="flex-wrap">
-      I contain{' '}
+      I contradict myself. I contain{' '}
       <ProfileStyledLink href={WHITMAN_URL}>multitudes</ProfileStyledLink>.
     </ProfileHeadingText>
   </Flex>

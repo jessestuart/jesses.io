@@ -6,12 +6,18 @@ interface ColorMap {
   [colorName: string]: string
 }
 
+interface GrayColorMap extends ColorMap {
+  dark: string
+  copy: string
+  calm: string
+}
+
 interface Colors {
   accent: string
   bgDark: string
   defaultHover: string
   defaultLink: string
-  gray: ColorMap
+  gray: GrayColorMap
   primary: ColorMap
   secondary: ColorMap
   ui: ColorMap
