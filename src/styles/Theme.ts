@@ -11,6 +11,7 @@ import Colors from 'utils/colors'
 export const breakpoints = ['40em', '52em', '64em']
 
 export const colors = {
+  ...Colors,
   bgDark: Colors.bgDark,
   neutral: 'rgba( 0, 0, 0, 0.1)',
   textDark: 'rgba(0, 0, 0, 0.8)',

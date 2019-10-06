@@ -142,7 +142,7 @@ class PhotographyGridSection extends Component<Props, State> {
     // }
 
     return (
-      <StyledPanel>
+      <>
         <PhotographySectionHeader datetime={datetime} href={slug} />
         <ImageZoomGrid className={totalNumImages > 6 ? 'pb4' : undefined}>
           {sortedImages.map((image: any, imageIndex: number) => (
@@ -165,7 +165,7 @@ class PhotographyGridSection extends Component<Props, State> {
             onMoveNextRequest={this.incrementLightboxIndex}
           />
         )}
-      </StyledPanel>
+      </>
     )
   }
 
