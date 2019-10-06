@@ -1,8 +1,75 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Render PhotographyGridSection component w/ images. 1`] = `
+.c1 {
+  border-bottom: 2px solid rgba(255,58,92,0.8);
+  position: relative;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+}
+
+.c1::before {
+  background-color: rgba(148,117,204,0.8);
+  bottom: -2px;
+  content: '';
+  height: 2px;
+  left: 0;
+  position: absolute;
+  -webkit-transform: scaleX(0);
+  -ms-transform: scaleX(0);
+  transform: scaleX(0);
+  -webkit-transition: all 0.25s ease-in-out 0s;
+  transition: all 0.25s ease-in-out 0s;
+  visibility: hidden;
+  width: 100%;
+}
+
+.c1:hover:before {
+  -webkit-transform: scaleX(1);
+  -ms-transform: scaleX(1);
+  transform: scaleX(1);
+  visibility: visible;
+}
+
+.c2 {
+  position: relative;
+  display: grid;
+  grid-gap: 1em;
+  grid-auto-rows: minmax(4em,auto);
+}
+
+.c0 {
+  background-color: #fbfafc;
+  box-shadow: rgba(25,17,34,0.1) 0px 3px 10px;
+}
+
+@media (min-width:60em) {
+  .c2 {
+    grid-template-columns: repeat(auto-fill,minmax(20vw,1fr));
+  }
+}
+
+@media (max-width:60em) and (min-width:45em) {
+  .c2 {
+    grid-template-columns: repeat(auto-fill,minmax(18em,1fr));
+  }
+}
+
+@media (max-width:45em) {
+  .c2 {
+    grid-template-columns: repeat(auto-fill,minmax(50vw,1fr));
+  }
+}
+
+@media (max-width:45em) {
+  .c0 {
+    margin: 1rem !important;
+    padding: 1rem 2rem !important;
+  }
+}
+
 <section
-  className="sc-ifAKCX beEaFV br2 center mv5-ns mw7 mw9-ns pa5-ns"
+  className="c0 br2 center mv5-ns mw7 mw9-ns pa5-ns"
   style={
     Object {
       "transition": "all 0.5s",
@@ -10,27 +77,15 @@ exports[`Render PhotographyGridSection component w/ images. 1`] = `
   }
 >
   <a
-    className="sc-bxivhb cFCxbQ sans-serif db f2 fw5 header-primary mb3 tr w-100"
+    className="c1 alegreya-sans db f2 fw5 header-primary mb3 tr w-100"
     href="/true/#"
     onClick={[Function]}
     onMouseEnter={[Function]}
   >
-    <style
-      dangerouslySetInnerHTML={
-        Object {
-          "__html": ".css-g6k601{box-sizing:border-box;margin:0;min-width:0;font-family:Alegreya Sans SC;}",
-        }
-      }
-      data-emotion-css="g6k601"
-    />
-    <div
-      className="css-g6k601"
-    >
-      01 may 2019
-    </div>
+    01 May 2019
   </a>
   <div
-    className="sc-bdVaJa fEoawH"
+    className="c2"
   />
 </section>
 `;

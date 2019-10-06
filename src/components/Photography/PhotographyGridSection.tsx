@@ -96,24 +96,24 @@ class PhotographyGridSection extends Component<Props, State> {
    * Lightbox images are just the scaled up version of the thumbnails.
    * Here we extract the absolute source path for all Lightbox images
    * for the current gallery.
-   * @Decreated
+   * @Deprecated
    */
-  private static getLightboxImagesFromProps: (
-    props: Props,
-  ) => string[] = _.memoize(
-    _.flow(
-      fp.get('images'),
-      fp.sortBy('EXIF.DateTimeOriginal'),
-      fp.map('childImageSharp.sizes.src'),
-    ),
-  )
+  // private static getLightboxImagesFromProps: (
+  //   props: Props,
+  // ) => string[] = _.memoize(
+  //   _.flow(
+  //     fp.get('images'),
+  //     fp.sortBy('EXIF.DateTimeOriginal'),
+  //     fp.map('childImageSharp.sizes.src'),
+  //   ),
+  // )
 
   /**
    * Lightbox images are just the scaled up version of the thumbnails.
    * Here we extract the absolute source path for all Lightbox images
    * for the current gallery.
    */
-  public static getDerivedStateFromProps = (props: Props) => ({
+  public static getDerivedStateFromProps = (_props: Props) => ({
     lightboxImages: _.memoize(
       _.flow(
         fp.get('images'),

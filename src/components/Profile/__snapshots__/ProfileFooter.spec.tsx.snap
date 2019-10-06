@@ -4,7 +4,7 @@ exports[`Render ProfileFooter component (cancelled) after 10s. 1`] = `null`;
 
 exports[`Render ProfileFooter component (cancelled) after 10s. 2`] = `
 <div
-  className="b--hot-pink bb bg-purple bw2 mb1 pb3 pt4 css-vurnku"
+  className="b--hot-pink bb bg-purple bw2 mb1 pb3 pt4"
   style={
     Object {
       "gridColumn": "1 / 13",
@@ -12,7 +12,7 @@ exports[`Render ProfileFooter component (cancelled) after 10s. 2`] = `
   }
 >
   <h4
-    className="f4 fira-mono fw4 lh-title tc white-80 css-7nafme"
+    className="f4 fira-mono fw4 lh-title tc white-80"
   >
     I build software
     <br />
@@ -21,114 +21,10 @@ exports[`Render ProfileFooter component (cancelled) after 10s. 2`] = `
     of giants.
   </h4>
   <div
-    className="justify-center mt2 hvr-wobble-vertical hvr-wobble-vertical-animating css-4cffwv"
+    className="flex justify-center mt2 w-100"
   >
-    <svg
-      className="mw-5"
-      fill="none"
-      height="30px"
-      stroke="#ff3a5c"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      strokeWidth="2"
-      viewBox="0 0 24 24"
-      width="30px"
-      xmlns="http://www.w3.org/2000/svg"
-    >
-      <polyline
-        points="6 9 12 15 18 9"
-      />
-    </svg>
-  </div>
-</div>
-`;
-
-exports[`Render ProfileFooter component after 10s. 1`] = `
-<div
-  className="b--hot-pink bb bg-purple bw2 mb1 pb3 pt4 css-vurnku"
-  style={
-    Object {
-      "gridColumn": "1 / 13",
-    }
-  }
->
-  <h4
-    className="f4 fira-mono fw4 lh-title tc white-80 css-7nafme"
-  >
-    I build software
-    <br />
-    on the pull requests
-    <br />
-    of giants.
-  </h4>
-  <div
-    className="justify-center mt2 hvr-wobble-vertical hvr-wobble-vertical-animating css-4cffwv"
-  >
-    <svg
-      className="mw-5"
-      fill="none"
-      height="30px"
-      stroke="#ff3a5c"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      strokeWidth="2"
-      viewBox="0 0 24 24"
-      width="30px"
-      xmlns="http://www.w3.org/2000/svg"
-    >
-      <polyline
-        points="6 9 12 15 18 9"
-      />
-    </svg>
-  </div>
-</div>
-`;
-
-exports[`Render ProfileFooter component. 1`] = `
-Array [
-  <style
-    dangerouslySetInnerHTML={
-      Object {
-        "__html": ".css-vurnku{box-sizing:border-box;margin:0;min-width:0;}",
-      }
-    }
-    data-emotion-css="vurnku"
-  />,
-  <div
-    className="b--hot-pink bb bg-purple bw2 mb1 pb3 pt4 css-vurnku"
-    style={
-      Object {
-        "gridColumn": "1 / 13",
-      }
-    }
-  >
-    <style
-      dangerouslySetInnerHTML={
-        Object {
-          "__html": ".css-7nafme{box-sizing:border-box;margin:0;min-width:0;font-family:Fira Mono;}",
-        }
-      }
-      data-emotion-css="7nafme"
-    />
-    <h4
-      className="f4 fira-mono fw4 lh-title tc white-80 css-7nafme"
-    >
-      I build software
-      <br />
-      on the pull requests
-      <br />
-      of giants.
-    </h4>
-    <style
-      dangerouslySetInnerHTML={
-        Object {
-          "__html": ".css-4cffwv{box-sizing:border-box;margin:0;min-width:0;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;}",
-        }
-      }
-      data-emotion-css="4cffwv"
-    />
     <div
-      className="justify-center mt2 css-4cffwv"
+      className="hvr-wobble-vertical hvr-wobble-vertical-animating"
     >
       <svg
         className="mw-5"
@@ -147,8 +43,98 @@ Array [
         />
       </svg>
     </div>
-  </div>,
-]
+  </div>
+</div>
+`;
+
+exports[`Render ProfileFooter component after 10s. 1`] = `
+<div
+  className="b--hot-pink bb bg-purple bw2 mb1 pb3 pt4"
+  style={
+    Object {
+      "gridColumn": "1 / 13",
+    }
+  }
+>
+  <h4
+    className="f4 fira-mono fw4 lh-title tc white-80"
+  >
+    I build software
+    <br />
+    on the pull requests
+    <br />
+    of giants.
+  </h4>
+  <div
+    className="flex justify-center mt2 w-100"
+  >
+    <div
+      className="hvr-wobble-vertical hvr-wobble-vertical-animating"
+    >
+      <svg
+        className="mw-5"
+        fill="none"
+        height="30px"
+        stroke="#ff3a5c"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="2"
+        viewBox="0 0 24 24"
+        width="30px"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <polyline
+          points="6 9 12 15 18 9"
+        />
+      </svg>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Render ProfileFooter component. 1`] = `
+<div
+  className="b--hot-pink bb bg-purple bw2 mb1 pb3 pt4"
+  style={
+    Object {
+      "gridColumn": "1 / 13",
+    }
+  }
+>
+  <h4
+    className="f4 fira-mono fw4 lh-title tc white-80"
+  >
+    I build software
+    <br />
+    on the pull requests
+    <br />
+    of giants.
+  </h4>
+  <div
+    className="flex justify-center mt2 w-100"
+  >
+    <div
+      className=""
+    >
+      <svg
+        className="mw-5"
+        fill="none"
+        height="30px"
+        stroke="#ff3a5c"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="2"
+        viewBox="0 0 24 24"
+        width="30px"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <polyline
+          points="6 9 12 15 18 9"
+        />
+      </svg>
+    </div>
+  </div>
+</div>
 `;
 
 exports[`Render ProfileFooter component. 2`] = `null`;

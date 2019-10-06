@@ -1,8 +1,20 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Render StyledPanel component. 1`] = `
+.c0 {
+  background-color: #fbfafc;
+  box-shadow: rgba(25,17,34,0.1) 0px 3px 10px;
+}
+
+@media (max-width:45em) {
+  .c0 {
+    margin: 1rem !important;
+    padding: 1rem 2rem !important;
+  }
+}
+
 <section
-  className="sc-bdVaJa diWlBr br2 center mv5-ns mw7 mw9-ns pa5-ns"
+  className="c0 br2 center mv5-ns mw7 mw9-ns pa5-ns"
   style={
     Object {
       "transition": "all 0.5s",
@@ -14,8 +26,20 @@ exports[`Render StyledPanel component. 1`] = `
 `;
 
 exports[`Render StyledPanel with custom styling. 1`] = `
+.c0 {
+  background-color: #fbfafc;
+  box-shadow: rgba(25,17,34,0.1) 0px 3px 10px;
+}
+
+@media (max-width:45em) {
+  .c0 {
+    margin: 1rem !important;
+    padding: 1rem 2rem !important;
+  }
+}
+
 <section
-  className="sc-bdVaJa diWlBr br2 center mv5-ns mw7 mw9-ns pa5-ns w-100"
+  className="c0 br2 center mv5-ns mw7 mw9-ns pa5-ns w-100"
   style={
     Object {
       "transition": "all 0.5s",

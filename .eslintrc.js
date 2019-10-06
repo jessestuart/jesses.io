@@ -1,20 +1,25 @@
 module.exports = {
   extends: [
     'eslint:recommended',
+    'plugin:@typescript-eslint/recommended',
     'plugin:import/typescript',
     'plugin:promise/recommended',
-    'plugin:react/recommended',
-    'plugin:@typescript-eslint/eslint-recommended',
-    'plugin:@typescript-eslint/recommended',
-    'plugin:@typescript-eslint/recommended-requiring-type-checking',
-    'plugin:import/typescript',
     'plugin:cypress/recommended',
+    'plugin:react/recommended',
+    // Enables eslint-plugin-prettier and displays prettier errors as ESLint
+    // errors. Make sure this is always the last configuration in the extends
+    // array.
     'plugin:prettier/recommended',
-    'prettier/@typescript-eslint',
   ],
+  plugins: ['react-hooks'],
   parser: '@typescript-eslint/parser',
-  plugins: ['react-hooks', 'jest'],
   parserOptions: {
+    ecmaVersion: 8,
+    ecmaFeatures: {
+      jsx: true,
+    },
+    sourceType: 'module',
+    useJSXTextNode: true,
     project: './tsconfig.json',
     tsconfigRootDir: './',
   },
@@ -28,26 +33,23 @@ module.exports = {
     semi: ['error', 'never'],
     'key-spacing': 'error',
     'keyword-spacing': 'error',
-    'no-console': 'warn',
+    'no-console': ['off'],
     'no-undef': 'error',
     'object-curly-spacing': ['error', 'always'],
+    'promise/no-callback-in-promise': 'off',
     'react/no-unescaped-entities': 'off',
     'react-hooks/rules-of-hooks': 'error', // Checks rules of Hooks
     'react-hooks/exhaustive-deps': 'warn', // Checks effect dependencies
     '@typescript-eslint/array-type': 'warn',
+    '@typescript-eslint/ban-ts-ignore': ['off'],
     '@typescript-eslint/ban-types': 'warn',
     '@typescript-eslint/camelcase': 'warn',
     '@typescript-eslint/explicit-function-return-type': 'off',
-    '@typescript-eslint/explicit-member-accessibility': 'off',
-    '@typescript-eslint/indent': 'off',
-    '@typescript-eslint/interface-name-prefix': 'off',
     '@typescript-eslint/member-delimiter-style': ['off'],
-    '@typescript-eslint/no-empty-interface': 'off',
     '@typescript-eslint/no-explicit-any': 'off',
     '@typescript-eslint/no-unused-vars': ['warn', { argsIgnorePattern: '^_' }],
     '@typescript-eslint/no-use-before-define': 'off',
     '@typescript-eslint/no-var-requires': 'off',
-    '@typescript-eslint/ban-ts-ignore': ['off'],
   },
   settings: {
     react: {
@@ -56,5 +58,6 @@ module.exports = {
   },
   globals: {
     __DEV__: true,
+    process: true,
   },
 }
