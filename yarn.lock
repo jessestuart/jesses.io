@@ -3300,14 +3300,14 @@ autoprefixer@^9.5.1, autoprefixer@^9.6.1:
     postcss "^7.0.17"
     postcss-value-parser "^4.0.0"
 
-aws-sdk@2.530.0:
-  version "2.530.0"
-  resolved "https://registry.yarnpkg.com/aws-sdk/-/aws-sdk-2.530.0.tgz#c1c6603a6fa6aa73462c42f8e94483cd18416adc"
-  integrity sha512-Q5CxrnvqsyK05FPaCV/46XU5nxEx0mhyO+AS4Jjr0bL4N7eAUecGToLxiiQlzUWraFKf5C9NceGM7LfLkjZtcQ==
+aws-sdk@2.543.0:
+  version "2.543.0"
+  resolved "https://registry.yarnpkg.com/aws-sdk/-/aws-sdk-2.543.0.tgz#08b69a6fab9b3ab08e329888d06a8c4ee583f26d"
+  integrity sha512-ABHsA4W7LLYnTBCgtbTt0NF7+66nMCtdcJuAn30+RGzF0bOw3lCguqzootFrMlIOXklddQFJ9kKTXd+p/+uCVQ==
   dependencies:
     buffer "4.9.1"
     events "1.1.1"
-    ieee754 "1.1.8"
+    ieee754 "1.1.13"
     jmespath "0.15.0"
     querystring "0.2.0"
     sax "1.2.1"
@@ -3793,6 +3793,11 @@ bluebird@3.5.5, bluebird@^3.5.0, bluebird@^3.5.1, bluebird@^3.5.3, bluebird@^3.5
   version "3.5.5"
   resolved "https://registry.yarnpkg.com/bluebird/-/bluebird-3.5.5.tgz#a8d0afd73251effbbd5fe384a77d73003c17a71f"
   integrity sha512-5am6HnnfN+urzt4yfg7IgTbotDjIT/u8AJpEt0sIU9FtXfVeezXAPKswrG+xKUCOYAINpSdgZVDU6QFh+cuH3w==
+
+bluebird@3.7.0:
+  version "3.7.0"
+  resolved "https://registry.yarnpkg.com/bluebird/-/bluebird-3.7.0.tgz#56a6a886e03f6ae577cffedeb524f8f2450293cf"
+  integrity sha512-aBQ1FxIa7kSWCcmKHlcHFlT2jt6J/l4FzC7KcPELkOJOsPOb/bccdhmIrKDfXhwFrmc7vDoDrrepFvGqjyXGJg==
 
 bmp-js@^0.1.0:
   version "0.1.0"
@@ -8142,17 +8147,17 @@ gatsby-source-filesystem@2.1.22:
     valid-url "^1.0.9"
     xstate "^4.6.7"
 
-gatsby-source-s3-image@1.6.41:
-  version "1.6.41"
-  resolved "https://registry.yarnpkg.com/gatsby-source-s3-image/-/gatsby-source-s3-image-1.6.41.tgz#e70ea80df8bfd0bd9d67504a133ebb209f0473dd"
-  integrity sha512-nJXq+z4YMnbhzKvAkQqEEFvJjIKzTn3egy6dvv6W+4KN0xfxOICVof/3pLQzbr7WKqeKRzBBlvyWpjCcInp3gQ==
+gatsby-source-s3-image@1.6.62:
+  version "1.6.62"
+  resolved "https://registry.yarnpkg.com/gatsby-source-s3-image/-/gatsby-source-s3-image-1.6.62.tgz#c9782c7c71b512257b168868c822c266a9c1c360"
+  integrity sha512-41cRkKLklCpi+RlUrScA5Wp1FPWsnh+zh0NKE/EvExzUcFfQGM1gxXbU+6yK5KqI+JlpKky0lGqh+ADblJ+gkg==
   dependencies:
-    aws-sdk "2.530.0"
-    bluebird "3.5.5"
+    aws-sdk "2.543.0"
+    bluebird "3.7.0"
     fracty "1.0.8"
     invariant "2.2.4"
     lodash "4.17.15"
-    luxon "1.17.3"
+    luxon "1.19.3"
     mime-types "2.1.24"
     ts-exif-parser "0.1.4"
 
@@ -9409,12 +9414,7 @@ identity-obj-proxy@3.0.0:
   dependencies:
     harmony-reflect "^1.4.6"
 
-ieee754@1.1.8:
-  version "1.1.8"
-  resolved "https://registry.yarnpkg.com/ieee754/-/ieee754-1.1.8.tgz#be33d40ac10ef1926701f6f08a2d86fbfd1ad3e4"
-  integrity sha1-vjPUCsEO8ZJnAfbwii2G+/0a0+Q=
-
-ieee754@^1.1.4:
+ieee754@1.1.13, ieee754@^1.1.4:
   version "1.1.13"
   resolved "https://registry.yarnpkg.com/ieee754/-/ieee754-1.1.13.tgz#ec168558e95aa181fd87d37f55c32bbcb6708b84"
   integrity sha512-4vf7I2LYV/HaWerSo3XmlMkp5eZ83i+/CDluXi/IGTs/O1sejBNhTtnxzmRZfvOUqj7lZjqHkeTvpgSFDlWZTg==
@@ -11962,11 +11962,6 @@ ltcdr@^2.2.1:
   version "2.2.1"
   resolved "https://registry.yarnpkg.com/ltcdr/-/ltcdr-2.2.1.tgz#5ab87ad1d4c1dab8e8c08bbf037ee0c1902287cf"
   integrity sha1-Wrh60dTB2rjowIu/A37gwZAih88=
-
-luxon@1.17.3:
-  version "1.17.3"
-  resolved "https://registry.yarnpkg.com/luxon/-/luxon-1.17.3.tgz#12ed5157a7e8f705759ce2f4d840410643081409"
-  integrity sha512-gG894ALYdWB3izyTGDypF6ffablXs5oleJLRNboL/xxYa0Dm5apXihaCnHecMXNqQ3vW1qjCCZ+fXAX5Azgx3Q==
 
 luxon@1.19.3:
   version "1.19.3"
