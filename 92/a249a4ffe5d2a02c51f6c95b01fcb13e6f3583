@@ -1,0 +1,7 @@
+[ver:1,total:2880]
+.gtm/terminal.app:2705,1570341600:240,1570345200:495,1570348800:1970,r
+package.json:90,1570345200:60,1570348800:30,m
+cypress/plugins/index.js:40,1570348800:40,r
+test/e2e/run-percy-cypress.js:15,1570345200:15,r
+cypress/tsconfig.json:15,1570345200:15,r
+cypress/integration/home.cypress.ts:15,1570345200:15,r
