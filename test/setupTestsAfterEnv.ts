@@ -1,2 +1,1 @@
-jest.mock('js-tachyons')
-jest.mock('typeface-alegreya')
+import 'jest-styled-components'

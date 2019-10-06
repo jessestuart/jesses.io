@@ -1,6 +1,46 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Render PortfolioItem component. 1`] = `
+.c1 {
+  border-bottom: 2px solid rgba(255,58,92,0.8);
+  position: relative;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+}
+
+.c1::before {
+  background-color: rgba(148,117,204,0.8);
+  bottom: -2px;
+  content: '';
+  height: 2px;
+  left: 0;
+  position: absolute;
+  -webkit-transform: scaleX(0);
+  -ms-transform: scaleX(0);
+  transform: scaleX(0);
+  -webkit-transition: all 0.25s ease-in-out 0s;
+  transition: all 0.25s ease-in-out 0s;
+  visibility: hidden;
+  width: 100%;
+}
+
+.c1:hover:before {
+  -webkit-transform: scaleX(1);
+  -ms-transform: scaleX(1);
+  transform: scaleX(1);
+  visibility: visible;
+}
+
+.c0 {
+  -webkit-transition: all 500ms;
+  transition: all 500ms;
+  stroke: #331d5b;
+}
+
+.c0:hover {
+  stroke: #673ab7;
+}
+
 <li
   className="f4 portfolio-item flex items-center mb2"
 >
@@ -8,7 +48,7 @@ exports[`Render PortfolioItem component. 1`] = `
     href="/"
   >
     <div
-      className="sc-bwzfXH keXXTO"
+      className="c0"
     >
       <svg
         className="mr2"
@@ -38,7 +78,7 @@ exports[`Render PortfolioItem component. 1`] = `
     </div>
   </a>
   <a
-    className="fw7 f4 sc-bdVaJa bXWskY"
+    className="c1 fw7 f4"
     href="/true"
     onClick={[Function]}
     onMouseEnter={[Function]}

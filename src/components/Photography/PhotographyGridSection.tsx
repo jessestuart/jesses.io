@@ -60,7 +60,7 @@ class PhotographyGridSection extends Component<Props, State> {
     ),
   )
 
-  public componentWillMount() {
+  public UNSAFE_componentWillMount() {
     this.setState({
       lightboxImages: this.getLightboxImagesFromProps(this.props),
     })
