@@ -87,7 +87,7 @@
     "@types/react": "16.9.5",
     "@types/react-dom": "16.9.1",
     "@types/react-headroom": "2.2.1",
-    "@types/react-helmet": "5.0.10",
+    "@types/react-helmet": "5.0.11",
     "@types/react-redux": "7.1.4",
     "@types/react-test-renderer": "16.9.0",
     "@types/styled-components": "4.1.19",
@@ -171,7 +171,7 @@
     "url": "https://github.com/jessestuart/jesses.io"
   },
   "resolutions": {
-    "@types/react-helmet": "5.0.10"
+    "@types/react-helmet": "5.0.11"
   },
   "scripts": {
     "build": "GATSBY_ENV=Production gatsby build",
