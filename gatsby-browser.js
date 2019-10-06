@@ -7,6 +7,13 @@
 const React = require('react')
 const { initSentry } = require('./src/services/sentry')
 
+require('typeface-alegreya-sans')
+require('typeface-alegreya-sans-sc')
+require('typeface-fira-mono')
+require('typeface-lato')
+require('typeface-spectral')
+require('js-tachyons')
+
 const { GATSBY_ENV } = process.env
 
 initSentry({ environment: GATSBY_ENV })

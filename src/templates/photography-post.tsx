@@ -52,7 +52,6 @@ export class PhotographyPostTemplate extends Component<Props> {
         <PhotographyGridSection
           datetime={datetime}
           images={images}
-          isPreview={false}
           key={pathname}
           slug={pathname}
         />

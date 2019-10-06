@@ -1,16 +1,17 @@
-import 'typeface-alegreya-sans'
-import 'typeface-alegreya-sans-sc'
-import 'typeface-fira-mono'
-import 'typeface-lato'
-import 'typeface-spectral'
+// import 'typeface-alegreya-sans'
+// import 'typeface-alegreya-sans-sc'
+// import 'typeface-fira-mono'
+// import 'typeface-lato'
+// import 'typeface-spectral'
 
-import 'js-tachyons'
+// import 'js-tachyons'
 
 import Colors from 'utils/colors'
 
 export const breakpoints = ['40em', '52em', '64em']
 
 export const colors = {
+  ...Colors,
   bgDark: Colors.bgDark,
   neutral: 'rgba( 0, 0, 0, 0.1)',
   textDark: 'rgba(0, 0, 0, 0.8)',

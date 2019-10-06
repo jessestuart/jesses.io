@@ -3,27 +3,25 @@ import 'react-image-lightbox/style.css'
 import _ from 'lodash'
 import fp from 'lodash/fp'
 import { DateTime } from 'luxon'
-import React, { Component } from 'react'
+import React, { PureComponent } from 'react'
 import Lightbox from 'react-image-lightbox'
-import { Flex, Text } from 'rebass'
+import { Flex, Text } from 'rebass/styled-components'
 import Link from 'gatsby-link'
+import color from 'color'
 
 import Colors from 'utils/colors'
-import color from 'color'
 
 import {
   ImageZoomGrid,
   ImageZoomGridElement,
   PhotographySectionHeader,
 } from 'components/Photography'
-import StyledPanel from 'components/StyledPanel/StyledPanel'
+// import StyledPanel from 'components/StyledPanel/StyledPanel'
 
 interface Props {
   datetime: DateTime
   // The images to be *currently* displayed for this section.
   images: any[]
-  // True if on `/photography` page; false if on one of the photo details pages.
-  isPreview?: boolean
   slug?: string
   totalNumImages?: number
 }
@@ -54,8 +52,6 @@ const SeeMoreLink = ({
     return null
   }
 
-  console.log('href: ', { href })
-
   const seeMoreBgColor = color(Colors.gray.calm)
     .fade(0.95)
     .toString()
@@ -63,29 +59,28 @@ const SeeMoreLink = ({
   return (
     <Flex
       bg={seeMoreBgColor}
-      className="bt b--moon-gray justify-end"
-      p={3}
-      marginLeft="-2.5rem"
-      marginRight="-2.5rem"
-      marginBottom="-2.5rem"
+      className="bt b--moon-gray"
+      justifyContent="justify-end"
       alignItems="items-center"
       color="moon-gray"
       style={{
-        // marginLeft: '-2.5rem',
-        // marginRight: '-2.5rem',
-        // marginBottom: '-2.5rem',
+        // marginLeft: '2.5rem',
+        // marginRight: '2.5rem',
+        // marginBottom: '2.5rem',
         borderBottomLeftRadius: '0.3rem',
         borderBottomRightRadius: '0.3rem',
       }}
     >
       <Link to={href}>
-        <Text fontFamily="Alegreya Sans SC">See More →</Text>
+        <Text marginBottom="-2.5rem" fontFamily="smallcaps">
+          See More →
+        </Text>
       </Link>
     </Flex>
   )
 }
 
-class PhotographyGridSection extends Component<Props, State> {
+class PhotographyGridSection extends PureComponent<Props, State> {
   public readonly state: State = {
     index: 0,
     isLightboxOpen: false,
@@ -113,6 +108,7 @@ class PhotographyGridSection extends Component<Props, State> {
    * Here we extract the absolute source path for all Lightbox images
    * for the current gallery.
    */
+<<<<<<< HEAD
   public static getDerivedStateFromProps = (props: Props) => ({
     lightboxImages: _.memoize(
       _.flow(
@@ -120,8 +116,15 @@ class PhotographyGridSection extends Component<Props, State> {
         fp.sortBy('EXIF.DateTimeOriginal'),
         fp.map('childImageSharp.sizes.src'),
       ),
-    ),
-  })
+=======
+  public static getDerivedStateFromProps = _.memoize((_props: Props) => ({
+    lightboxImages: _.flow(
+      fp.get('images'),
+      fp.sortBy('EXIF.DateTimeOriginal'),
+      fp.map('childImageSharp.sizes.src'),
+>>>>>>> 93a8c1d... [wip]
+    )(_props),
+  }))
 
   public render() {
     const { datetime, images, slug = '/#', totalNumImages = 0 } = this.props
@@ -142,7 +145,7 @@ class PhotographyGridSection extends Component<Props, State> {
     // }
 
     return (
-      <StyledPanel>
+      <>
         <PhotographySectionHeader datetime={datetime} href={slug} />
         <ImageZoomGrid className={totalNumImages > 6 ? 'pb4' : undefined}>
           {sortedImages.map((image: any, imageIndex: number) => (
@@ -165,7 +168,7 @@ class PhotographyGridSection extends Component<Props, State> {
             onMoveNextRequest={this.incrementLightboxIndex}
           />
         )}
-      </StyledPanel>
+      </>
     )
   }
 

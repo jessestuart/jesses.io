@@ -1,7 +1,7 @@
 import { DateTime } from 'luxon'
 import React from 'react'
 import _ from 'lodash'
-import { Text } from 'rebass'
+import { Text } from 'rebass/styled-components'
 
 // import StyledLink from 'components/StyledLink'
 import Link from 'gatsby-link'
@@ -15,13 +15,13 @@ const PhotographySectionHeader = ({
   datetime,
   href = '/photography',
 }: Props) => (
-  <Link
-    className="db f2 fw5 mb3 tr w-100"
-    style={{ fontFamily: 'Alegreya Sans SC' }}
-    to={href}
-  >
-    <Text fontFamily="smallCaps">{datetime.toFormat('dd LLLL yyyy')}</Text>
-  </Link>
+  <div>
+    <Link className="w-100" to={href}>
+      <Text fontFamily="smallcaps" color="bgDark" className="db f2 fw5 tr">
+        {datetime.toFormat('dd LLLL yyyy')}
+      </Text>
+    </Link>
+  </div>
 )
 
 // const PhotographySectionHeader = ({

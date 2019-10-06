@@ -19,6 +19,11 @@
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "paths": { "*": ["src/*", "static/*"] },
+    "plugins": [
+      {
+        "name": "typescript-styled-plugin"
+      }
+    ],
     "resolveJsonModule": true,
     "skipLibCheck": true,
     "sourceMap": true,
