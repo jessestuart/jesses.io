@@ -71,7 +71,7 @@ exports[`Render Profile component. Render Profile component. 1`] = `
 
 @media (min-width:60em) {
   .c1 {
-    grid-column: 3 / 5;
+    grid-column: 4 / 6;
     grid-row: 1 / 5;
   }
 }
@@ -213,42 +213,70 @@ exports[`Render Profile component. Render Profile component. 1`] = `
   <div
     className="c3 tc tr-ns ph2"
   >
-    <h2
-      className="f3 fw5 lh-title white-80 spectral"
+    <style
+      dangerouslySetInnerHTML={
+        Object {
+          "__html": ".css-l3rx45{box-sizing:border-box;margin:0;min-width:0;-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;}",
+        }
+      }
+      data-emotion-css="l3rx45"
+    />
+    <div
+      className="mv3 css-l3rx45"
     >
-      Hi — I'm Jesse.
-    </h2>
-    <h2
-      className="f3 fw5 lh-title white-80 mv3 spectral"
-    >
+      <style
+        dangerouslySetInnerHTML={
+          Object {
+            "__html": ".css-lja60x{box-sizing:border-box;margin:0;min-width:0;font-family:spectral;color:textLight;}",
+          }
+        }
+        data-emotion-css="lja60x"
+      />
       <span
-        className="dib nowrap"
+        className="justify-end fw5 f3 lh-title pb3 css-lja60x"
       >
-        I contradict myself.
+        Hi — I'm Jesse.
       </span>
       <span
-        className="dib nowrap ml2"
+        className="justify-end fw5 f3 lh-title flex-wrap css-lja60x"
       >
-        I contain 
+        I contradict myself. I contain
+         
         <a
-          className="c4 dib"
+          className="c4"
           href="http://jstu.art/ojNe"
         >
           multitudes
         </a>
         .
       </span>
-    </h2>
-    <p
-      className="flex justify-center justify-end-ns items-center"
+    </div>
+    <style
+      dangerouslySetInnerHTML={
+        Object {
+          "__html": ".css-4cffwv{box-sizing:border-box;margin:0;min-width:0;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;}",
+        }
+      }
+      data-emotion-css="4cffwv"
+    />
+    <div
+      className="pt4 justify-center justify-end-ns items-center css-4cffwv"
     >
-      <span
-        className="f4 fw3 dib tr lh-copy"
+      <style
+        dangerouslySetInnerHTML={
+          Object {
+            "__html": ".css-vurnku{box-sizing:border-box;margin:0;min-width:0;}",
+          }
+        }
+        data-emotion-css="vurnku"
+      />
+      <div
+        className="f4 fw3 dib tr lh-copy css-vurnku"
       >
         NYC-based software engineer.
-      </span>
-      <span
-        className="f6 dib"
+      </div>
+      <div
+        className="f6 dib css-4cffwv"
       >
         <svg
           className="mh2"
@@ -359,16 +387,32 @@ exports[`Render Profile component. Render Profile component. 1`] = `
             />
           </g>
         </svg>
-      </span>
-    </p>
-    <p
-      className="flex justify-center justify-end-ns items-center"
+      </div>
+    </div>
+    <style
+      dangerouslySetInnerHTML={
+        Object {
+          "__html": ".css-4cffwv{box-sizing:border-box;margin:0;min-width:0;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;}",
+        }
+      }
+      data-emotion-css="4cffwv"
+    />
+    <div
+      className="pt4 justify-center justify-end-ns items-center css-4cffwv"
     >
-      <span
-        className="f4 fw3 dib tr lh-copy"
+      <style
+        dangerouslySetInnerHTML={
+          Object {
+            "__html": ".css-vurnku{box-sizing:border-box;margin:0;min-width:0;}",
+          }
+        }
+        data-emotion-css="vurnku"
+      />
+      <div
+        className="f4 fw3 dib tr lh-copy css-vurnku"
       >
-        <span
-          className="db"
+        <div
+          className="db css-vurnku"
         >
           Published
            
@@ -379,7 +423,7 @@ exports[`Render Profile component. Render Profile component. 1`] = `
             NLP researcher
           </a>
           , and
-        </span>
+        </div>
         <a
           className="c4"
           href="http://jstu.art/oj1g"
@@ -387,9 +431,9 @@ exports[`Render Profile component. Render Profile component. 1`] = `
           USPO Patent holder
         </a>
         .
-      </span>
-      <span
-        className="f6 dib"
+      </div>
+      <div
+        className="f6 dib css-4cffwv"
       >
         <svg
           className="mh2"
@@ -480,18 +524,34 @@ exports[`Render Profile component. Render Profile component. 1`] = `
             />
           </g>
         </svg>
-      </span>
-    </p>
-    <p
-      className="flex justify-center justify-end-ns items-center"
+      </div>
+    </div>
+    <style
+      dangerouslySetInnerHTML={
+        Object {
+          "__html": ".css-4cffwv{box-sizing:border-box;margin:0;min-width:0;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;}",
+        }
+      }
+      data-emotion-css="4cffwv"
+    />
+    <div
+      className="pt4 justify-center justify-end-ns items-center css-4cffwv"
     >
-      <span
-        className="f4 fw3 dib tr lh-copy"
+      <style
+        dangerouslySetInnerHTML={
+          Object {
+            "__html": ".css-vurnku{box-sizing:border-box;margin:0;min-width:0;}",
+          }
+        }
+        data-emotion-css="vurnku"
+      />
+      <div
+        className="f4 fw3 dib tr lh-copy css-vurnku"
       >
         Neuroscientist by degree.
-      </span>
-      <span
-        className="f6 dib"
+      </div>
+      <div
+        className="f6 dib css-4cffwv"
       >
         <svg
           className="mh2"
@@ -590,25 +650,41 @@ exports[`Render Profile component. Render Profile component. 1`] = `
             />
           </g>
         </svg>
-      </span>
-    </p>
-    <p
-      className="flex justify-center justify-end-ns items-center"
+      </div>
+    </div>
+    <style
+      dangerouslySetInnerHTML={
+        Object {
+          "__html": ".css-4cffwv{box-sizing:border-box;margin:0;min-width:0;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;}",
+        }
+      }
+      data-emotion-css="4cffwv"
+    />
+    <div
+      className="pt4 justify-center justify-end-ns items-center css-4cffwv"
     >
-      <span
-        className="f4 fw3 dib tr lh-copy"
+      <style
+        dangerouslySetInnerHTML={
+          Object {
+            "__html": ".css-vurnku{box-sizing:border-box;margin:0;min-width:0;}",
+          }
+        }
+        data-emotion-css="vurnku"
+      />
+      <div
+        className="f4 fw3 dib tr lh-copy css-vurnku"
       >
         <a
           className="c4"
           href="http://jstu.art/ojVB"
         >
           French translator
+           
         </a>
-         
         by night.
-      </span>
-      <span
-        className="f6 dib"
+      </div>
+      <div
+        className="f6 dib css-4cffwv"
       >
         <svg
           className="mh2"
@@ -679,22 +755,136 @@ exports[`Render Profile component. Render Profile component. 1`] = `
             />
           </g>
         </svg>
-      </span>
-    </p>
+      </div>
+    </div>
+    <style
+      dangerouslySetInnerHTML={
+        Object {
+          "__html": ".css-4cffwv{box-sizing:border-box;margin:0;min-width:0;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;}",
+        }
+      }
+      data-emotion-css="4cffwv"
+    />
+    <div
+      className="pt4 justify-center justify-end-ns items-center css-4cffwv"
+    >
+      <style
+        dangerouslySetInnerHTML={
+          Object {
+            "__html": ".css-vurnku{box-sizing:border-box;margin:0;min-width:0;}",
+          }
+        }
+        data-emotion-css="vurnku"
+      />
+      <div
+        className="f4 fw3 dib tr lh-copy css-vurnku"
+      >
+        I also take a lot of photographs.
+      </div>
+      <div
+        className="f6 dib css-4cffwv"
+      >
+        <svg
+          className="mh2"
+          style={
+            Object {
+              "height": "1.25rem",
+              "width": "1.25rem",
+            }
+          }
+          viewBox="0 0 45 45"
+        >
+          <defs>
+            <clipPath
+              id="a"
+            >
+              <path
+                d="M0 36h36V0H0v36z"
+              />
+            </clipPath>
+          </defs>
+          <g
+            clipPath="url(#a)"
+            transform="matrix(1.25 0 0 -1.25 0 45)"
+          >
+            <path
+              d="M36 9a4 4 0 0 0-4-4h-8v26h8a4 4 0 0 0 4-4V9z"
+              fill="#ed2939"
+            />
+            <path
+              d="M4 31a4 4 0 0 1-4-4V9a4 4 0 0 1 4-4h8v26H4z"
+              fill="#002495"
+            />
+            <path
+              d="M24 5H12v26h12V5z"
+              fill="#eee"
+            />
+          </g>
+        </svg>
+        <svg
+          style={
+            Object {
+              "height": "1.25rem",
+              "width": "1.25rem",
+            }
+          }
+          viewBox="0 0 45 45"
+        >
+          <defs>
+            <clipPath
+              id="a"
+            >
+              <path
+                d="M0 36h36V0H0v36z"
+              />
+            </clipPath>
+          </defs>
+          <g
+            clipPath="url(#a)"
+            transform="matrix(1.25 0 0 -1.25 0 45)"
+          >
+            <path
+              d="M30.311 35.224C32 17 20 4 .776 5.688c8.2-7.717 21.091-7.588 29.107.429 8.018 8.016 8.148 20.909.428 29.107"
+              fill="#ccd6dd"
+            />
+            <path
+              d="M30.705 20.085a1.164 1.164 0 0 1 0-1.644 1.162 1.162 0 1 1 0 1.644M14.683 5.705a1.74 1.74 0 0 1 0-2.465 1.742 1.742 0 1 1 0 2.465m13.968 2.147a2.904 2.904 0 0 0-4.108 0 2.902 2.902 0 0 0 0 4.107 2.902 2.902 0 0 0 4.108 0 2.902 2.902 0 0 0 0-4.107"
+              fill="#b8c5cd"
+            />
+          </g>
+        </svg>
+      </div>
+    </div>
   </div>
   <div
     className="c5 bt b--light-silver"
   >
+    <style
+      dangerouslySetInnerHTML={
+        Object {
+          "__html": ".css-vurnku{box-sizing:border-box;margin:0;min-width:0;}",
+        }
+      }
+      data-emotion-css="vurnku"
+    />
     <div
-      className="b--hot-pink bb bg-purple bw2 mb1 pb3 pt4"
+      className="b--hot-pink bb bg-purple bw2 mb1 pb3 pt4 css-vurnku"
       style={
         Object {
           "gridColumn": "1 / 13",
         }
       }
     >
+      <style
+        dangerouslySetInnerHTML={
+          Object {
+            "__html": ".css-7nafme{box-sizing:border-box;margin:0;min-width:0;font-family:Fira Mono;}",
+          }
+        }
+        data-emotion-css="7nafme"
+      />
       <h4
-        className="f4 fira-mono fw4 lh-title tc white-80"
+        className="f4 fira-mono fw4 lh-title tc white-80 css-7nafme"
       >
         I build software
         <br />
@@ -702,29 +892,33 @@ exports[`Render Profile component. Render Profile component. 1`] = `
         <br />
         of giants.
       </h4>
+      <style
+        dangerouslySetInnerHTML={
+          Object {
+            "__html": ".css-4cffwv{box-sizing:border-box;margin:0;min-width:0;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;}",
+          }
+        }
+        data-emotion-css="4cffwv"
+      />
       <div
-        className="flex justify-center mt2 w-100"
+        className="justify-center mt2 css-4cffwv"
       >
-        <div
-          className=""
+        <svg
+          className="mw-5"
+          fill="none"
+          height="30px"
+          stroke="#ff3a5c"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          strokeWidth="2"
+          viewBox="0 0 24 24"
+          width="30px"
+          xmlns="http://www.w3.org/2000/svg"
         >
-          <svg
-            className="mw-5"
-            fill="none"
-            height="30px"
-            stroke="#ff3a5c"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth="2"
-            viewBox="0 0 24 24"
-            width="30px"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <polyline
-              points="6 9 12 15 18 9"
-            />
-          </svg>
-        </div>
+          <polyline
+            points="6 9 12 15 18 9"
+          />
+        </svg>
       </div>
     </div>
   </div>
