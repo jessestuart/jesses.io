@@ -5,18 +5,18 @@ import fp from 'lodash/fp'
 import { DateTime } from 'luxon'
 import React, { Component } from 'react'
 import Lightbox from 'react-image-lightbox'
-import { Flex, Text } from 'rebass'
+import { Flex, Text } from 'rebass/styled-components'
 import Link from 'gatsby-link'
+import color from 'color'
 
 import Colors from 'utils/colors'
-import color from 'color'
 
 import {
   ImageZoomGrid,
   ImageZoomGridElement,
   PhotographySectionHeader,
 } from 'components/Photography'
-import StyledPanel from 'components/StyledPanel/StyledPanel'
+// import StyledPanel from 'components/StyledPanel/StyledPanel'
 
 interface Props {
   datetime: DateTime
@@ -54,8 +54,6 @@ const SeeMoreLink = ({
     return null
   }
 
-  console.log('href: ', { href })
-
   const seeMoreBgColor = color(Colors.gray.calm)
     .fade(0.95)
     .toString()
@@ -63,23 +61,22 @@ const SeeMoreLink = ({
   return (
     <Flex
       bg={seeMoreBgColor}
-      className="bt b--moon-gray justify-end"
-      p={3}
-      marginLeft="-2.5rem"
-      marginRight="-2.5rem"
-      marginBottom="-2.5rem"
+      className="bt b--moon-gray"
+      justifyContent="justify-end"
       alignItems="items-center"
       color="moon-gray"
       style={{
-        // marginLeft: '-2.5rem',
-        // marginRight: '-2.5rem',
-        // marginBottom: '-2.5rem',
+        // marginLeft: '2.5rem',
+        // marginRight: '2.5rem',
+        // marginBottom: '2.5rem',
         borderBottomLeftRadius: '0.3rem',
         borderBottomRightRadius: '0.3rem',
       }}
     >
       <Link to={href}>
-        <Text fontFamily="Alegreya Sans SC">See More →</Text>
+        <Text marginBottom="-2.5rem" fontFamily="smallcaps">
+          See More →
+        </Text>
       </Link>
     </Flex>
   )
@@ -120,7 +117,7 @@ class PhotographyGridSection extends Component<Props, State> {
         fp.sortBy('EXIF.DateTimeOriginal'),
         fp.map('childImageSharp.sizes.src'),
       ),
-    ),
+    )(_props),
   })
 
   public render() {

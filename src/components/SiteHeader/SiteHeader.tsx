@@ -3,13 +3,16 @@ import 'styles/base.css'
 import _ from 'lodash'
 import React from 'react'
 import Headroom from 'react-headroom'
+import classNames from 'classnames'
+import { Box, Flex, Heading } from 'rebass/styled-components'
 
 import GatsbyLocation from 'types/GatsbyLocation'
 
 import HeaderLink from './HeaderLink'
 
-interface Props {
-  location: GatsbyLocation
+export enum HeaderTheme {
+  DARK,
+  LIGHT,
 }
 
 interface Header {
@@ -24,12 +27,16 @@ const Headers: Header[] = [
   { href: '/about', title: 'about' },
 ]
 
-const SiteHeader = (props: Props) => {
+const SiteHeader = (props: { location: GatsbyLocation }) => {
   const pathname: string = _.get(props, 'location.pathname', '/')
   const isRoot: boolean = _.eq(pathname, '/')
+
+  const theme = _.startsWith(pathname, '/photography')
+    ? HeaderTheme.LIGHT
+    : HeaderTheme.DARK
+
   return (
     <Headroom
-      className="bg-gray-primary"
       style={{
         MozTransition: 'all 0.7s ease-in-out',
         OTransition: 'all 0.7s ease-in-out',
@@ -37,25 +44,34 @@ const SiteHeader = (props: Props) => {
         transition: 'all 0.7s ease-in-out',
       }}
     >
-      <header
+      <Heading
+        as="header"
         id="site-header"
-        className={`b--hot-pink bb bg-gray-primary center flex site-header w-100 ${
-          !isRoot ? 'bw1' : ''
-        }`}
+        className={classNames(
+          'bb center flex justify-center items-center site-header w-100',
+          {
+            'bg-gray-primary b--moon-gray': theme === HeaderTheme.DARK,
+            'bg-near-white b--black-10': theme === HeaderTheme.LIGHT,
+            bw1: !isRoot,
+          },
+        )}
+        style={{
+          transition: 'all 0.5s ease-in-out',
+        }}
       >
-        <div className="center flex flex-row fw3 source-sans w-35-ns">
+        <Flex flexDirection="row" className="center gray-primary fw3 w-35-ns">
           {Headers.map((header: Header, index: number) => (
             <HeaderLink
               key={header.href}
-              className={index === Headers.length - 1 ? '' : 'br b--mid-gray'}
+              className={index === Headers.length - 1 ? '' : 'br b--moon-grey'}
               href={header.href || `/${header.title}`}
               pathname={pathname}
             >
               {header.title}
             </HeaderLink>
           ))}
-        </div>
-      </header>
+        </Flex>
+      </Heading>
     </Headroom>
   )
 }

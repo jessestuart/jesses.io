@@ -83,6 +83,7 @@
     "@testing-library/react-hooks": "2.0.3",
     "@types/bluebird": "3.5.27",
     "@types/classnames": "2.2.9",
+    "@types/color": "3.0.0",
     "@types/jest": "24.0.18",
     "@types/lodash": "4.14.141",
     "@types/luxon": "1.15.2",
@@ -155,7 +156,8 @@
     "tslint-config-standard": "8.0.1",
     "tslint-plugin-prettier": "2.0.1",
     "tslint-react": "4.1.0",
-    "typescript": "3.6.3"
+    "typescript": "3.6.3",
+    "typescript-styled-plugin": "0.14.0"
   },
   "homepage": ".",
   "keywords": [

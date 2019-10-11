@@ -14,7 +14,7 @@ const StyledPanelContainer = styled.section`
 `
 
 interface Props {
-  children: any
+  children: ReactNode
   className?: string
   maxWidth?: number
 }
@@ -25,7 +25,7 @@ const StyledPanel = ({ children, className, maxWidth = 9 }: Props) => (
       `br2 center mv5-ns mw7 mw${maxWidth}-ns pa5-ns`,
       className,
     )}
-    style={{ transition: 'all 0.5s' }}
+    style={{ transition: 'all 0.5s ease-in-out' }}
   >
     {children}
   </StyledPanelContainer>
