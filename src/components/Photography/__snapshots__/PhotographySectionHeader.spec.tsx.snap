@@ -1,29 +1,31 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Render PhotographySectionHeader. 1`] = `
-<a
-  className="db f2 fw5 mb3 tr w-100"
-  href="/true/photography"
-  onClick={[Function]}
-  onMouseEnter={[Function]}
-  style={
-    Object {
-      "fontFamily": "Alegreya Sans SC",
-    }
-  }
->
-  <style
-    dangerouslySetInnerHTML={
-      Object {
-        "__html": ".css-1ctbtr8{box-sizing:border-box;margin:0;min-width:0;font-family:smallCaps;}",
-      }
-    }
-    data-emotion-css="1ctbtr8"
-  />
-  <div
-    className="css-1ctbtr8"
-  >
-    01 May 2019
-  </div>
-</a>
+Array [
+  .c0 {
+  box-sizing: border-box;
+  margin: 0;
+  min-width: 0;
+  font-family: 'Alegreya Sans SC','Alegreya Sans',sans-serif;
+  color: rgb(55,59,70);
+}
+
+<div>
+    <a
+      className="w-100"
+      href="/true/photography"
+      onClick={[Function]}
+      onMouseEnter={[Function]}
+    >
+      <div
+        className="c0 db f2 fw5 tr"
+        color="bgDark"
+        fontFamily="smallcaps"
+      >
+        01 May 2019
+      </div>
+    </a>
+  </div>,
+  ",",
+]
 `;

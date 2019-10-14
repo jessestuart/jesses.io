@@ -25,7 +25,7 @@ const HeaderLink = ({ children, className, href, pathname }: Props) => {
   return (
     <Link
       className={classNames(
-        'shadow-none lato f4 ph3 mv2 pv2 light-silver fw3',
+        'shadow-none lato f4 ph3 mv2 pv2 light-silver fw3 b--light-silver',
         className,
         {
           'light-silver': !isActive && theme === HeaderTheme.LIGHT,

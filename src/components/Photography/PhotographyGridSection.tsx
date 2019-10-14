@@ -3,7 +3,7 @@ import 'react-image-lightbox/style.css'
 import _ from 'lodash'
 import fp from 'lodash/fp'
 import { DateTime } from 'luxon'
-import React, { Component } from 'react'
+import React, { PureComponent } from 'react'
 import Lightbox from 'react-image-lightbox'
 import { Flex, Text } from 'rebass/styled-components'
 import Link from 'gatsby-link'
@@ -22,8 +22,6 @@ interface Props {
   datetime: DateTime
   // The images to be *currently* displayed for this section.
   images: any[]
-  // True if on `/photography` page; false if on one of the photo details pages.
-  isPreview?: boolean
   slug?: string
   totalNumImages?: number
 }
@@ -82,7 +80,7 @@ const SeeMoreLink = ({
   )
 }
 
-class PhotographyGridSection extends Component<Props, State> {
+class PhotographyGridSection extends PureComponent<Props, State> {
   public readonly state: State = {
     index: 0,
     isLightboxOpen: false,
@@ -110,15 +108,13 @@ class PhotographyGridSection extends Component<Props, State> {
    * Here we extract the absolute source path for all Lightbox images
    * for the current gallery.
    */
-  public static getDerivedStateFromProps = (_props: Props) => ({
-    lightboxImages: _.memoize(
-      _.flow(
-        fp.get('images'),
-        fp.sortBy('EXIF.DateTimeOriginal'),
-        fp.map('childImageSharp.sizes.src'),
-      ),
+  public static getDerivedStateFromProps = _.memoize((_props: Props) => ({
+    lightboxImages: _.flow(
+      fp.get('images'),
+      fp.sortBy('EXIF.DateTimeOriginal'),
+      fp.map('childImageSharp.sizes.src'),
     )(_props),
-  })
+  }))
 
   public render() {
     const { datetime, images, slug = '/#', totalNumImages = 0 } = this.props

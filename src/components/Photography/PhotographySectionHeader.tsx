@@ -15,11 +15,13 @@ const PhotographySectionHeader = ({
   datetime,
   href = '/photography',
 }: Props) => (
-  <Link className="w-100" to={href}>
-    <Text fontFamily="smallcaps" color="bgDark" className="db f2 fw5 mb3 tr">
-      {datetime.toFormat('dd LLLL yyyy')}
-    </Text>
-  </Link>
+  <div>
+    <Link className="w-100" to={href}>
+      <Text fontFamily="smallcaps" color="bgDark" className="db f2 fw5 tr">
+        {datetime.toFormat('dd LLLL yyyy')}
+      </Text>
+    </Link>
+  </div>
 )
 
 // const PhotographySectionHeader = ({

@@ -1,74 +1,54 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Render PhotographyGridSection component w/ images. 1`] = `
-.c1 {
+Array [
+  .c0 {
+  box-sizing: border-box;
+  margin: 0;
+  min-width: 0;
+  font-family: 'Alegreya Sans SC','Alegreya Sans',sans-serif;
+  color: rgb(55,59,70);
+}
+
+<div>
+    <a
+      className="w-100"
+      href="/true/#"
+      onClick={[Function]}
+      onMouseEnter={[Function]}
+    >
+      <div
+        className="c0 db f2 fw5 tr"
+        color="bgDark"
+        fontFamily="smallcaps"
+      >
+        01 May 2019
+      </div>
+    </a>
+  </div>,
+  .c0 {
   position: relative;
   display: grid;
   gap: 0.25em;
   grid-auto-rows: auto;
 }
 
-.c0 {
-  background-color: #fbfafc;
-  box-shadow: rgba(25,17,34,0.1) 0px 3px 10px;
-}
-
 @media (min-width:46em) {
-  .c1 {
+  .c0 {
     grid-template-columns: repeat(3,1fr);
   }
 }
 
 @media (max-width:45em) {
-  .c1 {
+  .c0 {
     grid-template-columns: repeat(2,1fr);
   }
 }
 
-@media (max-width:45em) {
-  .c0 {
-    margin: 1rem !important;
-    padding: 1rem 2rem !important;
-  }
-}
-
-<section
-  className="c0 br2 center mv5-ns mw7 mw9-ns pa5-ns"
-  style={
-    Object {
-      "transition": "all 0.5s",
-    }
-  }
->
-  <a
-    className="db f2 fw5 mb3 tr w-100"
-    href="/true/#"
-    onClick={[Function]}
-    onMouseEnter={[Function]}
-    style={
-      Object {
-        "fontFamily": "Alegreya Sans SC",
-      }
-    }
-  >
-    <style
-      dangerouslySetInnerHTML={
-        Object {
-          "__html": ".css-1ctbtr8{box-sizing:border-box;margin:0;min-width:0;font-family:smallCaps;}",
-        }
-      }
-      data-emotion-css="1ctbtr8"
-    />
-    <div
-      className="css-1ctbtr8"
-    >
-      01 May 2019
-    </div>
-  </a>
-  <div
-    className="c1"
-  />
-</section>
+<div
+    className="c0"
+  />,
+]
 `;
 
 exports[`Render PhotographyGridSection component. 1`] = `null`;

@@ -1,10 +1,10 @@
-import 'typeface-alegreya-sans'
-import 'typeface-alegreya-sans-sc'
-import 'typeface-fira-mono'
-import 'typeface-lato'
-import 'typeface-spectral'
+// import 'typeface-alegreya-sans'
+// import 'typeface-alegreya-sans-sc'
+// import 'typeface-fira-mono'
+// import 'typeface-lato'
+// import 'typeface-spectral'
 
-import 'js-tachyons'
+// import 'js-tachyons'
 
 import Colors from 'utils/colors'
 

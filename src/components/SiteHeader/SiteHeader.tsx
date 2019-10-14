@@ -4,7 +4,7 @@ import _ from 'lodash'
 import React from 'react'
 import Headroom from 'react-headroom'
 import classNames from 'classnames'
-import { Box, Flex, Heading } from 'rebass/styled-components'
+import { Flex, Heading } from 'rebass/styled-components'
 
 import GatsbyLocation from 'types/GatsbyLocation'
 
