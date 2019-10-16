@@ -1,0 +1,12 @@
+[ver:1,total:2400]
+src/components/Layout/index.tsx:787,1571234400:775,1571238000:12,m
+.gtm/terminal.app:574,1571234400:330,1571238000:244,r
+src/templates/photography-post.tsx:552,1571234400:540,1571238000:12,m
+src/pages/posts.tsx:197,1571234400:45,1571238000:152,m
+src/components/Blog/BlogHeader.tsx:122,1571234400:110,1571238000:12,m
+src/templates/blog-post.tsx:72,1571234400:60,1571238000:12,m
+src/types/GatsbyLocation.ts:45,1571234400:45,r
+src/components/Profile/ProfileFooter.tsx:15,1571234400:15,r
+src/components/Photography/PhotographyGridSection.tsx:12,1571238000:12,m
+scripts/depcheck.ts:12,1571238000:12,r
+src/components/Blog/BlogHeader.spec.tsx:12,1571238000:12,r
