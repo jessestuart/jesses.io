@@ -2,3 +2,8 @@
 .git/COMMIT_EDITMSG:60,1572955200:60,r
 .gtm/terminal.app:30,1572955200:30,r
 src/components/Photography/PhotographyGridSection.tsx:30,1572955200:30,r
+
+[ver:1,total:60]
+.gtm/terminal.app:20,1572955200:20,r
+src/components/Photography/PhotographyGridSection.tsx:20,1572955200:20,r
+.git/COMMIT_EDITMSG:20,1572955200:20,r
