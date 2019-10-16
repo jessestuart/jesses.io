@@ -1,22 +1,16 @@
 import 'react-image-lightbox/style.css'
 
+import { Box } from 'rebass/styled-components'
+import { DateTime } from 'luxon'
+import { animated, useTransition } from 'react-spring'
+import Lightbox from 'react-image-lightbox'
+import React, { useState } from 'react'
 import _ from 'lodash'
 import fp from 'lodash/fp'
-import { DateTime } from 'luxon'
-import React, { PureComponent } from 'react'
-import Lightbox from 'react-image-lightbox'
-import { Flex, Text } from 'rebass/styled-components'
-import Link from 'gatsby-link'
-import color from 'color'
 
-import Colors from 'utils/colors'
+import { useDimensions, useMedia } from 'utils/hooks'
 
-import {
-  ImageZoomGrid,
-  ImageZoomGridElement,
-  PhotographySectionHeader,
-} from 'components/Photography'
-// import StyledPanel from 'components/StyledPanel/StyledPanel'
+import { ImageZoomGridElement, PhotographySectionHeader, SeeMoreLink } from '.'
 
 interface Props {
   datetime: DateTime
@@ -26,186 +20,124 @@ interface Props {
   totalNumImages?: number
 }
 
-interface State {
-  index: number
-  isLightboxOpen: boolean
-  lightboxImages: string[]
-  lightboxSrc?: string
-  nextImageSrc?: string
-  prevImageSrc?: string
-}
+const PhotographyGridSection = (props: Props) => {
+  const { datetime, images, slug = '/#', totalNumImages = 0 } = props
+  const [isLightboxOpen, setIsLightboxOpen] = useState(false)
+  const [index, setLightboxIndex] = useState(0)
 
-interface ToggleLightboxOptions {
-  index: number
-  isLightboxOpen: boolean
-  lightboxImages?: string[]
-}
+  const sortedImages = _.sortBy(images, 'EXIF.DateTimeOriginal')
+  const lightboxImages = _.map(sortedImages, 'childImageSharp.sizes.srcWebp')
 
-const SeeMoreLink = ({
-  href,
-  totalNumImages,
-}: {
-  href: string
-  totalNumImages: number
-}) => {
-  if (totalNumImages <= 6) {
-    return null
+  const decrementLightboxIndex = () => setLightboxIndex(index - 1)
+  const incrementLightboxIndex = () => setLightboxIndex(index + 1)
+  const closeLightbox = () => setIsLightboxOpen(false)
+  const openLightbox = (imageIndex: number) => {
+    setLightboxIndex(imageIndex)
+    setIsLightboxOpen(true)
   }
+  const getImageAtIndex = (imageIndex: number) =>
+    _.get(lightboxImages, imageIndex % lightboxImages.length)
 
-  const seeMoreBgColor = color(Colors.gray.calm)
-    .fade(0.95)
-    .toString()
+  const lightboxSrc = getImageAtIndex(index)
+  const nextImage = getImageAtIndex(index + 1)
+  const prevImage = getImageAtIndex(index - 1)
+
+  // Tie media queries to the number of columns.
+  const columns = useMedia(
+    ['(min-width: 1536px)', '(min-width: 1024px)', '(min-width: 512px)'],
+    [4, 3, 2],
+    1,
+  )
+  // Measure the width of the container element.
+  // @ts-ignore
+  const [ref, { width }] = useDimensions()
+
+  // Form a grid of stacked images, using the width & column calculations we got
+  // from the `useMedia` and `useDimensions` hooks above.
+  const heights: number[] = new Array(columns).fill(0) // Each column gets a height starting with zero
+  const gridItems = sortedImages.map((child, index) => {
+    const { childImageSharp } = child
+    const imageWidth = child.width || width / columns
+    const aspectRatio = _.get(childImageSharp, 'sizes.aspectRatio')
+    const height = _.isFinite(child.height)
+      ? child.height
+      : imageWidth * (2 / aspectRatio)
+    // Masonry-grid placing — positions each tile sequentially into the
+    // smallest column available.
+    const column = heights.indexOf(Math.min(...heights))
+
+    const xy = [
+      (width / columns) * column,
+      (heights[column] += height / 2) - height / 2,
+    ]
+    return {
+      ...child,
+      index,
+      xy,
+      columns,
+      width: width / columns,
+      height: height / 2,
+    }
+  })
+
+  const transitions = useTransition(gridItems, fp.get('id'), {
+    from: ({ xy, width, height }) => ({ xy, width, height }),
+    // enter: ({ xy, width, height }) => ({ xy, width, height }),
+    update: ({ xy, width, height }) => ({ xy, width, height }),
+    config: { mass: 5, tension: 500, friction: 100 },
+    trail: 25,
+  })
 
   return (
-    <Flex
-      bg={seeMoreBgColor}
-      className="bt b--moon-gray"
-      justifyContent="justify-end"
-      alignItems="items-center"
-      color="moon-gray"
-      style={{
-        // marginLeft: '2.5rem',
-        // marginRight: '2.5rem',
-        // marginBottom: '2.5rem',
-        borderBottomLeftRadius: '0.3rem',
-        borderBottomRightRadius: '0.3rem',
-      }}
-    >
-      <Link to={href}>
-        <Text marginBottom="-2.5rem" fontFamily="smallcaps">
-          See More →
-        </Text>
-      </Link>
-    </Flex>
+    <>
+      <PhotographySectionHeader datetime={datetime} href={slug} />
+      <Box
+        ref={ref}
+        className="mb4 w-100"
+        // Define height in `style` to avoid creating a new className on each
+        // resize / render.
+        style={{ height: Math.max(...heights) }}
+      >
+        {width != null &&
+          transitions.map(
+            // @ts-ignore
+            ({ item, props: { xy, width, height, ...rest }, key }) => {
+              return (
+                <animated.div
+                  key={key}
+                  style={{
+                    position: 'absolute',
+                    width,
+                    height,
+                    transform: xy.interpolate(
+                      (x: number, y: number) => `translate3d(${x}px,${y}px,0)`,
+                    ),
+                    ...rest,
+                  }}
+                >
+                  <ImageZoomGridElement
+                    image={item}
+                    onClick={() => openLightbox(item.index)}
+                  />
+                </animated.div>
+              )
+            },
+          )}
+      </Box>
+      <SeeMoreLink totalNumImages={totalNumImages} href={slug} />
+      {isLightboxOpen && (
+        <Lightbox
+          enableZoom={false}
+          mainSrc={lightboxSrc}
+          nextSrc={nextImage}
+          onCloseRequest={closeLightbox}
+          onMoveNextRequest={incrementLightboxIndex}
+          onMovePrevRequest={decrementLightboxIndex}
+          prevSrc={prevImage}
+        />
+      )}
+    </>
   )
-}
-
-class PhotographyGridSection extends PureComponent<Props, State> {
-  public readonly state: State = {
-    index: 0,
-    isLightboxOpen: false,
-    lightboxImages: [],
-  }
-
-  /**
-   * Lightbox images are just the scaled up version of the thumbnails.
-   * Here we extract the absolute source path for all Lightbox images
-   * for the current gallery.
-   * @Decreated
-   */
-  private static getLightboxImagesFromProps: (
-    props: Props,
-  ) => string[] = _.memoize(
-    _.flow(
-      fp.get('images'),
-      fp.sortBy('EXIF.DateTimeOriginal'),
-      fp.map('childImageSharp.sizes.src'),
-    ),
-  )
-
-  /**
-   * Lightbox images are just the scaled up version of the thumbnails.
-   * Here we extract the absolute source path for all Lightbox images
-   * for the current gallery.
-   */
-<<<<<<< HEAD
-  public static getDerivedStateFromProps = (props: Props) => ({
-    lightboxImages: _.memoize(
-      _.flow(
-        fp.get('images'),
-        fp.sortBy('EXIF.DateTimeOriginal'),
-        fp.map('childImageSharp.sizes.src'),
-      ),
-=======
-  public static getDerivedStateFromProps = _.memoize((_props: Props) => ({
-    lightboxImages: _.flow(
-      fp.get('images'),
-      fp.sortBy('EXIF.DateTimeOriginal'),
-      fp.map('childImageSharp.sizes.src'),
->>>>>>> 93a8c1d... [wip]
-    )(_props),
-  }))
-
-  public render() {
-    const { datetime, images, slug = '/#', totalNumImages = 0 } = this.props
-    if (!images || _.isEmpty(images)) {
-      return null
-    }
-    const {
-      isLightboxOpen,
-      lightboxSrc,
-      nextImageSrc,
-      prevImageSrc,
-    } = this.state
-    const sortedImages = _.sortBy(images, 'EXIF.DateTimeOriginal')
-
-    // const lightboxImages = _.map(sortedImages, 'childImageSharp.sizes.src')
-    // if (_.isEmpty(images) || _.isEmpty(lightboxImages)) {
-    //   return null
-    // }
-
-    return (
-      <>
-        <PhotographySectionHeader datetime={datetime} href={slug} />
-        <ImageZoomGrid className={totalNumImages > 6 ? 'pb4' : undefined}>
-          {sortedImages.map((image: any, imageIndex: number) => (
-            <ImageZoomGridElement
-              key={image.id}
-              image={image}
-              onClick={() => this.clickImageElement(imageIndex)}
-            />
-          ))}
-        </ImageZoomGrid>
-        <SeeMoreLink totalNumImages={totalNumImages} href={slug} />
-        {isLightboxOpen && lightboxSrc && (
-          <Lightbox
-            enableZoom={false}
-            mainSrc={lightboxSrc}
-            nextSrc={nextImageSrc}
-            prevSrc={prevImageSrc}
-            onCloseRequest={this.closeLightbox}
-            onMovePrevRequest={this.decrementLightboxIndex}
-            onMoveNextRequest={this.incrementLightboxIndex}
-          />
-        )}
-      </>
-    )
-  }
-
-  private decrementLightboxIndex = () => {
-    this.toggleLightbox({ index: this.state.index - 1, isLightboxOpen: true })
-  }
-
-  private incrementLightboxIndex = () => {
-    this.toggleLightbox({ index: this.state.index + 1, isLightboxOpen: true })
-  }
-
-  private closeLightbox = () => {
-    this.toggleLightbox({ ...this.state, isLightboxOpen: false })
-  }
-
-  private clickImageElement = (imageIndex: number) => {
-    this.toggleLightbox({
-      index: imageIndex,
-      isLightboxOpen: !this.state.isLightboxOpen,
-      lightboxImages: this.state.lightboxImages,
-    })
-  }
-
-  private toggleLightbox = ({
-    index = this.state.index,
-    isLightboxOpen = this.state.isLightboxOpen,
-    lightboxImages = this.state.lightboxImages,
-  }: ToggleLightboxOptions) => {
-    this.setState({
-      index,
-      isLightboxOpen,
-      lightboxImages,
-      lightboxSrc: lightboxImages[index],
-      nextImageSrc: lightboxImages[(index + 1) % lightboxImages.length],
-      prevImageSrc: lightboxImages[(index - 1) % lightboxImages.length],
-    })
-  }
 }
 
 export default PhotographyGridSection

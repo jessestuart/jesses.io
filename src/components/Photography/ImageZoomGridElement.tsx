@@ -17,6 +17,7 @@ const StyledImageZoomGridElement = styled.div`
   overflow: hidden;
   position: relative;
   transition: all 0.4s;
+
   // Throw in some drop shadow to make it pretty (extra on hover) — and just a
   // smidge of border radius, too:
   filter: drop-shadow(0 0 2px rgba(0, 0, 0, 0.5));
@@ -27,7 +28,7 @@ const StyledImageZoomGridElement = styled.div`
 
 interface Props {
   image: {
-    id: any
+    id: string
     childImageSharp: GatsbyImage
     EXIF: ExifData
   }
@@ -53,13 +54,14 @@ const ImageZoomGridElement = (props: Props) => {
     aspectRatio > 1
       ? { gridRow: 'span 1 / auto' }
       : { gridRow: 'span 2 / auto' }
+
   return (
     <StyledImageZoomGridElement
       {...props}
       {...setIsActive}
       aspectRatio={cssGridRowSpan}
     >
-      <Img fluid={thumbnailImage} />
+      <Img imgStyle={{ objectFit: 'contain' }} fluid={thumbnailImage} />
       <ExifOverlay isActive={isActive as boolean}>
         {FocalLength ? `${FocalLength}mm, ` : null}
         {ShutterSpeedFraction ? `${ShutterSpeedFraction}s, ` : null}
