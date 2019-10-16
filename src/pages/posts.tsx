@@ -26,7 +26,7 @@ interface Props {
   }
 }
 
-const BlogIndex = (location: GatsbyLocation) => {
+const BlogIndex = ({ location }: { location: GatsbyLocation }) => {
   const data: Props = useStaticQuery(graphql`
     {
       allMarkdownRemark {
@@ -58,7 +58,7 @@ const BlogIndex = (location: GatsbyLocation) => {
         return (
           <StyledPanel key={title}>
             <article>
-              <BlogHeader link={slug} location={{ location }} date={date}>
+              <BlogHeader link={slug} location={location} date={date}>
                 {title}
               </BlogHeader>
               <p className="f4" dangerouslySetInnerHTML={{ __html: excerpt }} />

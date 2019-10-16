@@ -2,7 +2,7 @@ import BlogHeader from 'components/Blog/BlogHeader'
 import { graphql } from 'gatsby'
 import _ from 'lodash'
 import { DateTime } from 'luxon'
-import React, { ReactNode } from 'react'
+import React from 'react'
 import Helmet from 'react-helmet'
 import GatsbyLocation from 'types/GatsbyLocation'
 
@@ -11,7 +11,6 @@ import './blog-post.css'
 import colors from 'utils/colors'
 
 interface Props {
-  children: ReactNode
   location: GatsbyLocation
   data: {
     site: {

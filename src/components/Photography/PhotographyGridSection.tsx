@@ -101,8 +101,6 @@ const PhotographyGridSection = (props: Props) => {
   const nextImage = _.get(lightboxImages, (index + 1) % lightboxImages.length)
   const prevImage = _.get(lightboxImages, (index - 1) % lightboxImages.length)
 
-  // console.log({ aspectRatios, nextImage, prevImage })
-
   return (
     <>
       <PhotographySectionHeader datetime={datetime} href={slug} />
