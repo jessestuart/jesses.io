@@ -1,10 +1,3 @@
-import 'js-tachyons'
-
-import 'typeface-alegreya-sans'
-import 'typeface-alegreya-sans-sc'
-import 'typeface-lato'
-import 'typeface-spectral'
-
 import 'styles/base.css'
 
 import _ from 'lodash'

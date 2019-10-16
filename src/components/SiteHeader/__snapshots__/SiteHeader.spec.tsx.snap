@@ -9,6 +9,11 @@ exports[`Render SiteHeader component as not-root. 1`] = `
   font-family: Alegreya Sans;
   font-weight: heading;
   line-height: heading;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: 100%;
 }
 
 .c1 {
@@ -35,16 +40,17 @@ exports[`Render SiteHeader component as not-root. 1`] = `
   }
 >
   <header
-    className="c0 bb center flex justify-center items-center site-header w-100 bg-gray-primary b--moon-gray"
+    className="c0 bb center flex justify-center  bg-gray-primary b--hot-pink"
     id="site-header"
     style={
       Object {
         "transition": "all 0.5s ease-in-out",
       }
     }
+    width="100%"
   >
     <div
-      className="c1 center gray-primary fw3 w-35-ns"
+      className="c1 gray-primary fw3 w-35-ns"
     >
       <a
         className="shadow-none lato f4 ph3 mv2 pv2 light-silver fw3 b--light-silver br b--moon-grey white-90 fw4"
@@ -92,6 +98,11 @@ exports[`Render SiteHeader component. 1`] = `
   font-family: Alegreya Sans;
   font-weight: heading;
   line-height: heading;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: 100%;
 }
 
 .c1 {
@@ -118,16 +129,17 @@ exports[`Render SiteHeader component. 1`] = `
   }
 >
   <header
-    className="c0 bb center flex justify-center items-center site-header w-100 bg-gray-primary b--moon-gray"
+    className="c0 bb center flex justify-center  bg-gray-primary b--hot-pink"
     id="site-header"
     style={
       Object {
         "transition": "all 0.5s ease-in-out",
       }
     }
+    width="100%"
   >
     <div
-      className="c1 center gray-primary fw3 w-35-ns"
+      className="c1 gray-primary fw3 w-35-ns"
     >
       <a
         className="shadow-none lato f4 ph3 mv2 pv2 light-silver fw3 b--light-silver br b--moon-grey white-90 fw4"

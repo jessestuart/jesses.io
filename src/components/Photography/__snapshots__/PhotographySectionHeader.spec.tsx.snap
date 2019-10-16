@@ -8,24 +8,24 @@ Array [
   min-width: 0;
   font-family: 'Alegreya Sans SC','Alegreya Sans',sans-serif;
   color: rgb(55,59,70);
+  font-size: 48px;
 }
 
-<div>
-    <a
-      className="w-100"
-      href="/true/photography"
-      onClick={[Function]}
-      onMouseEnter={[Function]}
+<a
+    className="w-100"
+    href="/true/photography"
+    onClick={[Function]}
+    onMouseEnter={[Function]}
+  >
+    <h2
+      className="c0 flex fw5 justify-end"
+      color="bgDark"
+      fontFamily="smallcaps"
+      fontSize="6"
     >
-      <div
-        className="c0 db f2 fw5 tr"
-        color="bgDark"
-        fontFamily="smallcaps"
-      >
-        01 May 2019
-      </div>
-    </a>
-  </div>,
+      01 May 2019
+    </h2>
+  </a>,
   ",",
 ]
 `;

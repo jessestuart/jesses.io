@@ -8,47 +8,110 @@ Array [
   min-width: 0;
   font-family: 'Alegreya Sans SC','Alegreya Sans',sans-serif;
   color: rgb(55,59,70);
+  font-size: 48px;
 }
 
-<div>
-    <a
-      className="w-100"
-      href="/true/#"
-      onClick={[Function]}
-      onMouseEnter={[Function]}
+<a
+    className="w-100"
+    href="/true/#"
+    onClick={[Function]}
+    onMouseEnter={[Function]}
+  >
+    <h2
+      className="c0 flex fw5 justify-end"
+      color="bgDark"
+      fontFamily="smallcaps"
+      fontSize="6"
     >
-      <div
-        className="c0 db f2 fw5 tr"
-        color="bgDark"
-        fontFamily="smallcaps"
-      >
-        01 May 2019
-      </div>
-    </a>
-  </div>,
+      01 May 2019
+    </h2>
+  </a>,
   .c0 {
   position: relative;
   display: grid;
-  gap: 0.25em;
-  grid-auto-rows: auto;
+  grid-gap: 1em;
+  grid-auto-rows: minmax(4em,auto);
 }
 
-@media (min-width:46em) {
+@media (min-width:60em) {
   .c0 {
-    grid-template-columns: repeat(3,1fr);
+    grid-template-columns: repeat(auto-fill,minmax(25vw,1fr));
+  }
+}
+
+@media (max-width:60em) and (min-width:45em) {
+  .c0 {
+    grid-template-columns: repeat(auto-fill,minmax(18em,1fr));
   }
 }
 
 @media (max-width:45em) {
   .c0 {
-    grid-template-columns: repeat(2,1fr);
+    grid-template-columns: repeat(auto-fill,minmax(50vw,1fr));
   }
 }
 
 <div
-    className="c0"
+    className="c0 pb4"
   />,
+  <hr />,
 ]
 `;
 
-exports[`Render PhotographyGridSection component. 1`] = `null`;
+exports[`Render PhotographyGridSection component. 1`] = `
+Array [
+  .c0 {
+  box-sizing: border-box;
+  margin: 0;
+  min-width: 0;
+  font-family: 'Alegreya Sans SC','Alegreya Sans',sans-serif;
+  color: rgb(55,59,70);
+  font-size: 48px;
+}
+
+<a
+    className="w-100"
+    href="/true/#"
+    onClick={[Function]}
+    onMouseEnter={[Function]}
+  >
+    <h2
+      className="c0 flex fw5 justify-end"
+      color="bgDark"
+      fontFamily="smallcaps"
+      fontSize="6"
+    >
+      01 May 2019
+    </h2>
+  </a>,
+  .c0 {
+  position: relative;
+  display: grid;
+  grid-gap: 1em;
+  grid-auto-rows: minmax(4em,auto);
+}
+
+@media (min-width:60em) {
+  .c0 {
+    grid-template-columns: repeat(auto-fill,minmax(25vw,1fr));
+  }
+}
+
+@media (max-width:60em) and (min-width:45em) {
+  .c0 {
+    grid-template-columns: repeat(auto-fill,minmax(18em,1fr));
+  }
+}
+
+@media (max-width:45em) {
+  .c0 {
+    grid-template-columns: repeat(auto-fill,minmax(50vw,1fr));
+  }
+}
+
+<div
+    className="c0 pb4"
+  />,
+  <hr />,
+]
+`;

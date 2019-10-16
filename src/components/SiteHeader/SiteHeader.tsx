@@ -47,19 +47,18 @@ const SiteHeader = (props: { location: GatsbyLocation }) => {
       <Heading
         as="header"
         id="site-header"
-        className={classNames(
-          'bb center flex justify-center items-center site-header w-100',
-          {
-            'bg-gray-primary b--moon-gray': theme === HeaderTheme.DARK,
-            'bg-near-white b--black-10': theme === HeaderTheme.LIGHT,
-            bw1: !isRoot,
-          },
-        )}
+        alignItems="center"
+        width="100%"
+        className={classNames('bb center flex justify-center ', {
+          'bg-gray-primary b--hot-pink': theme === HeaderTheme.DARK,
+          'bg-near-white b--black-10': theme === HeaderTheme.LIGHT,
+          bw1: !isRoot,
+        })}
         style={{
           transition: 'all 0.5s ease-in-out',
         }}
       >
-        <Flex flexDirection="row" className="center gray-primary fw3 w-35-ns">
+        <Flex flexDirection="row" className="gray-primary fw3 w-35-ns">
           {Headers.map((header: Header, index: number) => (
             <HeaderLink
               key={header.href}
