@@ -62,29 +62,27 @@ const BlogPostTemplate = (props: Props) => {
   const comboTitle = `${title || 'Posts'} | ${siteTitle}`
 
   return (
-    <>
+    <div
+      className="black-80 lh-copy pa4 w-100"
+      style={{ background: colors.secondary.light0 }}
+    >
       <BlogPostHelmet
         comboTitle={comboTitle}
         date={new Date(date)}
         pageURL={pageURL}
         excerpt={excerpt}
       />
-      <div
-        className="black-80 lh-copy pa4 w-100"
-        style={{ background: colors.secondary.light0 }}
-      >
-        <div className="center mw7-ns">
-          <BlogHeader date={date} link={pathname} location={location}>
-            {title}
-          </BlogHeader>
-          <article
-            className="center f4 fw5 justify mw-100"
-            dangerouslySetInnerHTML={{ __html: post.html }}
-            id="remark-post"
-          />
-        </div>
+      <div className="center mw7-ns">
+        <BlogHeader date={date} link={pathname} location={location}>
+          {title}
+        </BlogHeader>
+        <article
+          className="center f4 fw5 justify mw-100"
+          dangerouslySetInnerHTML={{ __html: post.html }}
+          id="remark-post"
+        />
       </div>
-    </>
+    </div>
   )
 }
 

@@ -1,3 +1,11 @@
+import { Box } from 'rebass/styled-components'
+import 'js-tachyons'
+
+import 'typeface-alegreya-sans'
+import 'typeface-alegreya-sans-sc'
+import 'typeface-lato'
+import 'typeface-spectral'
+
 import 'styles/base.css'
 
 import _ from 'lodash'
@@ -30,12 +38,12 @@ interface Props {
 const Layout = ({ children, location }: Props) => {
   const { title, url } = useSiteMetadata()
   return (
-    <>
+    <Box fontFamily="body">
       <Helmet title={title} meta={getHelmetMeta({ title, url })} />
       <SiteHeader location={location} />
       <main className="flex flex-auto">{children}</main>
       <SiteFooter />
-    </>
+    </Box>
   )
 }
 

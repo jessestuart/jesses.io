@@ -2,7 +2,7 @@ import 'react-image-lightbox/style.css'
 
 import _ from 'lodash'
 import { DateTime } from 'luxon'
-import React, { useState } from 'react'
+import React, { useMemo, useState } from 'react'
 import Lightbox from 'react-image-lightbox'
 import { Flex, Text } from 'rebass/styled-components'
 import Link from 'gatsby-link'
@@ -72,8 +72,14 @@ const PhotographyGridSection = (props: Props) => {
   const [isLightboxOpen, setIsLightboxOpen] = useState(false)
   const [index, setLightboxIndex] = useState(0)
 
-  const sortedImages = _.sortBy(images, 'EXIF.DateTimeOriginal')
-  const lightboxImages = _.map(sortedImages, 'childImageSharp.sizes.src')
+  const sortedImages = useMemo(
+    () => _.sortBy(images, 'EXIF.DateTimeOriginal'),
+    [images],
+  )
+  const lightboxImages = useMemo(
+    () => _.map(sortedImages, 'childImageSharp.sizes.src'),
+    [images],
+  )
 
   const decrementLightboxIndex = () => {
     setLightboxIndex(index - 1)
@@ -130,139 +136,5 @@ const PhotographyGridSection = (props: Props) => {
     </>
   )
 }
-
-// class PhotographyGridSection extends PureComponent<Props, State> {
-//   public readonly state: State = {
-//     index: 0,
-//     isLightboxOpen: false,
-//     lightboxImages: [],
-//   }
-
-//   /**
-//    * Lightbox images are just the scaled up version of the thumbnails.
-//    * Here we extract the absolute source path for all Lightbox images
-//    * for the current gallery.
-//    */
-//   public static getDerivedStateFromProps = _.memoize((props: Props) => {
-//     const lightboxImages = _.flow(
-//       fp.get('images'),
-//       fp.sortBy('EXIF.DateTimeOriginal'),
-//       fp.map('childImageSharp.sizes.src'),
-//     )(props)
-//     return {
-//       lightboxImages,
-//       lightboxSrc: _.first(lightboxImages),
-//     }
-//   })
-
-//   public render() {
-//     const { datetime, images, slug = '/#', totalNumImages = 0 } = this.props
-//     if (!images || _.isEmpty(images)) {
-//       return null
-//     }
-//     const [isLightboxOpen, setIsLightboxOpen] = useState(false)
-//     const [lightboxIndex, setLightboxIndex] = useState(0)
-
-//     const closeLightbox = () => setIsLightboxOpen(false)
-//     const openLightbox = (imageIndex: number) => {
-//       setLightboxIndex(imageIndex)
-//       setIsLightboxOpen(true)
-//     }
-
-//     const {
-//       // isLightboxOpen,
-//       lightboxSrc,
-//       nextImageSrc,
-//       prevImageSrc,
-//     } = this.state
-//     const sortedImages = _.sortBy(images, 'EXIF.DateTimeOriginal')
-
-//     const aspectRatios = _.map(images, 'childImageSharp.sizes.aspectRatio')
-//     console.log({ images })
-//     console.log({ aspectRatios })
-//     // const lightboxImages = _.map(sortedImages, 'childImageSharp.sizes.src')
-//     // if (_.isEmpty(images) || _.isEmpty(lightboxImages)) {
-//     //   return null
-//     // }
-
-//     return (
-//       <>
-//         <PhotographySectionHeader datetime={datetime} href={slug} />
-//         <ImageZoomGrid
-//           // className={classNames('bb b--moon-gray pb4', {
-//           className={classNames('pb4', {
-//             // pb4: totalNumImages > 6,
-//           })}
-//         >
-//           {sortedImages.map((image: any, imageIndex: number) => (
-//             <ImageZoomGridElement
-//               key={image.id}
-//               image={image}
-//               onClick={() => openLightbox(imageIndex)}
-//             />
-//           ))}
-//         </ImageZoomGrid>
-//         <SeeMoreLink totalNumImages={totalNumImages} href={slug} />
-//         <hr />
-//         {isLightboxOpen && lightboxSrc && (
-//           <Lightbox
-//             enableZoom={false}
-//             mainSrc={lightboxSrc}
-//             nextSrc={nextImageSrc}
-//             prevSrc={prevImageSrc}
-//             onCloseRequest={closeLightbox}
-//             onMovePrevRequest={this.decrementLightboxIndex}
-//             onMoveNextRequest={this.incrementLightboxIndex}
-//           />
-//         )}
-//       </>
-//     )
-//   }
-
-//   private decrementLightboxIndex = () => {
-//     this.toggleLightbox({
-//       index: this.state.index - 1,
-//       isLightboxOpen: true,
-//     })
-//   }
-
-//   private incrementLightboxIndex = () => {
-//     this.toggleLightbox({
-//       index: this.state.index + 1,
-//       isLightboxOpen: true,
-//     })
-//   }
-
-//   // private closeLightbox = () => {
-//   //   this.toggleLightbox({ ...this.state, isLightboxOpen: false })
-//   // }
-
-//   // private clickImageElement = (imageIndex: number) => {
-//   //   this.toggleLightbox({
-//   //     index: imageIndex,
-//   //     isLightboxOpen: !this.state.isLightboxOpen,
-//   //     lightboxImages: this.state.lightboxImages,
-//   //   })
-//   // }
-
-//   private toggleLightbox = (state?: State) => {
-//     if (!state) {
-//       return
-//     }
-//     const { index, lightboxImages } = state
-//     if (!index || !lightboxImages || _.isEmpty(lightboxImages)) {
-//       return
-//     }
-//     this.setState({
-//       ...state,
-//       // index,
-//       // isLightboxOpen,
-//       // lightboxImages,
-//       lightboxSrc: lightboxImages[index],
-//       nextImageSrc: _.get(lightboxImages, (index + 1) % lightboxImages.length),
-//       prevImageSrc: _.get(lightboxImages, (index - 1) % lightboxImages.length),
-//     })
-//   }
-// }
 
 export default PhotographyGridSection

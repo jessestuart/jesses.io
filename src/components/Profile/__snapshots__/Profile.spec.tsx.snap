@@ -1,14 +1,35 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Render Profile component. Render Profile component. 1`] = `
+.c5 {
+  box-sizing: border-box;
+  margin: 0;
+  min-width: 0;
+  font-family: Spectral,serif;
+  color: rgba(255,255,255,.8);
+}
+
 .c4 {
+  box-sizing: border-box;
+  margin: 0;
+  min-width: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.c6 {
   border-bottom: 2px solid rgba(148,117,204,0.8);
   position: relative;
   -webkit-text-decoration: none;
   text-decoration: none;
 }
 
-.c4::before {
+.c6::before {
   background-color: rgba(255,58,92,0.8);
   bottom: -2px;
   content: '';
@@ -24,7 +45,7 @@ exports[`Render Profile component. Render Profile component. 1`] = `
   width: 100%;
 }
 
-.c4:hover:before {
+.c6:hover:before {
   -webkit-transform: scaleX(1);
   -ms-transform: scaleX(1);
   transform: scaleX(1);
@@ -34,7 +55,8 @@ exports[`Render Profile component. Render Profile component. 1`] = `
 .c0 {
   display: grid;
   grid-template-columns: repeat(12,1fr);
-  min-height: calc(100vh - 23px);
+  min-height: calc(100vh - 53px);
+  background: linear-gradient( 180deg, rgba(55,59,70,1), rgba(103,58,183,0.1) 50%, rgba(103,58,183,0.5) 70%, rgba(103,58,183,1) 80%, rgba(103,58,183,1) 100% );
 }
 
 .c1 {
@@ -45,7 +67,7 @@ exports[`Render Profile component. Render Profile component. 1`] = `
   grid-column: 1 / 13;
 }
 
-.c5 {
+.c7 {
   grid-column: 1 / 13;
   grid-row: 5 / 7;
 }
@@ -91,7 +113,7 @@ exports[`Render Profile component. Render Profile component. 1`] = `
 }
 
 <div
-  className="c0 items-center justify-center pv4"
+  className="c0 items-center justify-center"
 >
   <div
     className="c1 center w-100-ns w-50"
@@ -213,37 +235,25 @@ exports[`Render Profile component. Render Profile component. 1`] = `
   <div
     className="c3 tc tr-ns ph2"
   >
-    <style
-      dangerouslySetInnerHTML={
-        Object {
-          "__html": ".css-l3rx45{box-sizing:border-box;margin:0;min-width:0;-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;}",
-        }
-      }
-      data-emotion-css="l3rx45"
-    />
     <div
-      className="mv3 css-l3rx45"
+      className="c4 mv3"
     >
-      <style
-        dangerouslySetInnerHTML={
-          Object {
-            "__html": ".css-lja60x{box-sizing:border-box;margin:0;min-width:0;font-family:spectral;color:textLight;}",
-          }
-        }
-        data-emotion-css="lja60x"
-      />
       <span
-        className="justify-end fw5 f3 lh-title pb3 css-lja60x"
+        className="c5 justify-end fw5 f3 lh-title pb3"
+        color="textLight"
+        fontFamily="serif"
       >
         Hi — I'm Jesse.
       </span>
       <span
-        className="justify-end fw5 f3 lh-title flex-wrap css-lja60x"
+        className="c5 justify-end fw5 f3 lh-title flex-wrap"
+        color="textLight"
+        fontFamily="serif"
       >
         I contradict myself. I contain
          
         <a
-          className="c4"
+          className="c6"
           href="http://jstu.art/ojNe"
         >
           multitudes
@@ -417,7 +427,7 @@ exports[`Render Profile component. Render Profile component. 1`] = `
           Published
            
           <a
-            className="c4"
+            className="c6"
             href="http://jstu.art/oijk"
           >
             NLP researcher
@@ -425,7 +435,7 @@ exports[`Render Profile component. Render Profile component. 1`] = `
           , and
         </div>
         <a
-          className="c4"
+          className="c6"
           href="http://jstu.art/oj1g"
         >
           USPO Patent holder
@@ -675,7 +685,7 @@ exports[`Render Profile component. Render Profile component. 1`] = `
         className="f4 fw3 dib tr lh-copy css-vurnku"
       >
         <a
-          className="c4"
+          className="c6"
           href="http://jstu.art/ojVB"
         >
           French translator
@@ -857,7 +867,7 @@ exports[`Render Profile component. Render Profile component. 1`] = `
     </div>
   </div>
   <div
-    className="c5 bt b--light-silver"
+    className="c7 bt b--light-silver"
   >
     <style
       dangerouslySetInnerHTML={

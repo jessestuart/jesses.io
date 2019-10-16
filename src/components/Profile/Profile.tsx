@@ -6,10 +6,26 @@ import BlackMirror from './BlackMirror'
 import ProfileBlurb from './ProfileBlurb'
 import ProfileFooter from './ProfileFooter'
 
+// const ProfileWrapper = styled.div`
+//   min-height: calc(100vh - 53px);
+//   display: flex;
+//   flex-direction: column;
+// `
+
 const IntroWrapper = styled.div`
   display: grid;
   grid-template-columns: repeat(12, 1fr);
-  min-height: calc(100vh - 23px);
+  // min-height: calc(100vh - 53px);
+  min-height: calc(100vh - 53px);
+
+  background: linear-gradient(
+    180deg,
+    rgba(55, 59, 70, 1),
+    rgba(103, 58, 183, 0.1) 50%,
+    rgba(103, 58, 183, 0.5) 70%,
+    rgba(103, 58, 183, 1) 80%,
+    rgba(103, 58, 183, 1) 100%
+  );
 
   @media (min-width: 45em) {
     grid-template-rows: repeat(2, 1fr);
@@ -48,7 +64,7 @@ const FooterContainer = styled.div`
 `
 
 const Profile = ({ avatar }: any) => (
-  <IntroWrapper className="items-center justify-center pv4">
+  <IntroWrapper className="items-center justify-center">
     <AvatarContainer className="center w-100-ns w-50">
       <Avatar image={avatar} />
       <BlackMirror />
