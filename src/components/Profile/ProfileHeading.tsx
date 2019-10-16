@@ -1,7 +1,7 @@
 import classNames from 'classnames'
 import _ from 'lodash'
 import React, { ReactNode } from 'react'
-import { Flex, Text } from 'rebass'
+import { Flex, Text } from 'rebass/styled-components'
 
 import ProfileStyledLink from './ProfileStyledLink'
 
@@ -16,7 +16,7 @@ const ProfileHeadingText = ({
 }) => (
   <Text
     as="span"
-    fontFamily="spectral"
+    fontFamily="serif"
     color="textLight"
     className={classNames('justify-end fw5 f3 lh-title', className)}
   >

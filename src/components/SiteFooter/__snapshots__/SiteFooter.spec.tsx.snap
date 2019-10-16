@@ -1,6 +1,19 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Render SiteFooter component with dark theme. 1`] = `
+.c0 {
+  box-sizing: border-box;
+  margin: 0;
+  min-width: 0;
+}
+
+.c1 {
+  box-sizing: border-box;
+  margin: 0;
+  min-width: 0;
+  font-family: Lato,system-ui,sans-serif;
+}
+
 <footer
   className="b--hot-pink bb bottom-0 bw2 f5-ns f6 flex flex-column fw4 lh-title pa4 w-100 bg-gray-primary moon-gray"
   style={
@@ -10,14 +23,15 @@ exports[`Render SiteFooter component with dark theme. 1`] = `
   }
 >
   <div
-    className="flex justify-center items-center"
+    className="c0 flex justify-center items-center"
   >
     © 2013–
     2019
      Jesse Stuart
   </div>
   <div
-    className="dib center tc flex-ns justify-center items-center"
+    className="c1 dib center tc flex-ns justify-center items-center"
+    fontFamily="body"
   >
     Pixels, bits and bytes hand-crafted with
     <svg
@@ -42,6 +56,19 @@ exports[`Render SiteFooter component with dark theme. 1`] = `
 `;
 
 exports[`Render SiteFooter component. 1`] = `
+.c0 {
+  box-sizing: border-box;
+  margin: 0;
+  min-width: 0;
+}
+
+.c1 {
+  box-sizing: border-box;
+  margin: 0;
+  min-width: 0;
+  font-family: Lato,system-ui,sans-serif;
+}
+
 <footer
   className="b--hot-pink bb bottom-0 bw2 f5-ns f6 flex flex-column fw4 lh-title pa4 w-100 bg-near-white black-80"
   style={
@@ -51,14 +78,15 @@ exports[`Render SiteFooter component. 1`] = `
   }
 >
   <div
-    className="flex justify-center items-center"
+    className="c0 flex justify-center items-center"
   >
     © 2013–
     2019
      Jesse Stuart
   </div>
   <div
-    className="dib center tc flex-ns justify-center items-center"
+    className="c1 dib center tc flex-ns justify-center items-center"
+    fontFamily="body"
   >
     Pixels, bits and bytes hand-crafted with
     <svg

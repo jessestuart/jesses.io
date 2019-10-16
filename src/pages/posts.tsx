@@ -1,9 +1,10 @@
 import { graphql, useStaticQuery } from 'gatsby'
-import _ from 'lodash'
 import React from 'react'
+import _ from 'lodash'
 
 import BlogHeader from 'components/Blog/BlogHeader'
 import StyledPanel from 'components/StyledPanel/StyledPanel'
+import GatsbyLocation from 'types/GatsbyLocation'
 
 interface MarkdownRemarkNode {
   excerpt: string
@@ -25,7 +26,7 @@ interface Props {
   }
 }
 
-const BlogIndex = () => {
+const BlogIndex = ({ location }: { location: GatsbyLocation }) => {
   const data: Props = useStaticQuery(graphql`
     {
       allMarkdownRemark {
@@ -57,7 +58,7 @@ const BlogIndex = () => {
         return (
           <StyledPanel key={title}>
             <article>
-              <BlogHeader link={slug} location={{ location }} date={date}>
+              <BlogHeader link={slug} location={location} date={date}>
                 {title}
               </BlogHeader>
               <p className="f4" dangerouslySetInnerHTML={{ __html: excerpt }} />
