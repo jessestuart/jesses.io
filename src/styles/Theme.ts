@@ -15,6 +15,7 @@ export const colors = {
   bgDark: Colors.bgDark,
   neutral: 'rgba( 0, 0, 0, 0.1)',
   textDark: 'rgba(0, 0, 0, 0.8)',
+  textMediumMuted: 'rgba(0, 0, 0, 0.7)',
   textDarkMuted: 'rgba(0, 0, 0, 0.6)',
   textLight: 'rgba(255, 255, 255, .8)',
   textLightMuted: 'rgba(220, 220, 220, .9)',

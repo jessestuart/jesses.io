@@ -91,8 +91,9 @@ const colors: Colors = Object.freeze({
 
   gray: {
     dark: gray(8, 270),
-    copy: gray(12, 270),
-    calm: gray(46, 270),
+    copy: gray(20, 'slate'),
+    // calm: gray(46, 'cool'),
+    calm: gray(80, 'cool'),
   },
 
   defaultHover: Color(secondaryColors.light7)

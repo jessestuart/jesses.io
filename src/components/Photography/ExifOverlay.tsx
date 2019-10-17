@@ -1,6 +1,12 @@
+import { Flex } from 'rebass/styled-components'
+import React from 'react'
+import _ from 'lodash'
 import styled from 'styled-components'
 
-const ExifOverlay = styled.div`
+import { mapLensModelExif } from 'utils/exif'
+import S3ImageAsset from 'types/S3ImageAsset'
+
+const StyledExifOverlay = styled(Flex)`
   background: linear-gradient(
     0,
     rgba(0, 0, 0, 1) 0%,
@@ -21,5 +27,30 @@ const ExifOverlay = styled.div`
   transition: all 0.5s;
   width: 100%;
 `
+
+const ExifOverlay = ({
+  image,
+  isActive,
+}: {
+  image: S3ImageAsset
+  isActive: boolean
+}) => {
+  const EXIF = _.get(image, 'EXIF')
+  if (!EXIF) {
+    return
+  }
+  const lensModel: string | undefined = mapLensModelExif(EXIF.LensModel || '')
+  const { FNumber, FocalLength, ISO, ShutterSpeedFraction } = EXIF
+  return (
+    <StyledExifOverlay isActive={isActive}>
+      {FocalLength ? `${FocalLength}mm, ` : null}
+      {ShutterSpeedFraction ? `${ShutterSpeedFraction}s, ` : null}
+      {FNumber ? `ƒ${FNumber}, ` : null}
+      {ISO ? `ISO ${ISO}` : null}
+      <br />
+      {lensModel}
+    </StyledExifOverlay>
+  )
+}
 
 export default ExifOverlay
