@@ -1,0 +1,13 @@
+[ver:1,total:4080]
+src/components/Photography/ImageZoomGrid.tsx:1170,1571346000:990,1571349600:180,m
+src/components/Photography/ImageZoomGridElement.tsx:1150,1571342400:810,1571346000:160,1571349600:180,m
+src/pages/photography.tsx:500,1571346000:500,m
+src/fragments/S3ImageAssetData.ts:430,1571342400:80,1571346000:350,m
+.gtm/terminal.app:260,1571342400:20,1571346000:60,1571349600:180,r
+src/templates/photography-post.tsx:250,1571346000:250,m
+src/components/Photography/PhotographyGridSection.tsx:170,1571346000:170,m
+node_modules/gatsby-image/index.d.ts:60,1571342400:60,r
+src/types/S3ImageAsset.ts:35,1571342400:35,r
+src/config/createPages.js:20,1571346000:20,r
+node_modules/gatsby-source-s3-image/types/S3ImageAssetNode.d.ts:20,1571346000:20,r
+src/types/GatsbyImage.ts:15,1571342400:15,r
