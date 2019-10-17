@@ -6,8 +6,12 @@ Array [
   box-sizing: border-box;
   margin: 0;
   min-width: 0;
+  margin-bottom: 8px;
+  color: rgba(0,0,0,0.7);
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
   font-family: 'Alegreya Sans SC','Alegreya Sans',sans-serif;
-  color: rgb(55,59,70);
   font-size: 48px;
 }
 
@@ -19,7 +23,7 @@ Array [
   >
     <h2
       className="c0 flex fw5 justify-end"
-      color="bgDark"
+      color="textMediumMuted"
       fontFamily="smallcaps"
       fontSize="6"
     >
@@ -29,13 +33,13 @@ Array [
   .c0 {
   position: relative;
   display: grid;
-  grid-gap: 1em;
-  grid-auto-rows: minmax(4em,auto);
+  grid-gap: 1rem;
+  grid-auto-rows: minmax(20vh,auto);
 }
 
 @media (min-width:60em) {
   .c0 {
-    grid-template-columns: repeat(auto-fill,minmax(25vw,1fr));
+    grid-template-columns: repeat(auto-fill,minmax(30vw,1fr));
   }
 }
 
@@ -54,7 +58,22 @@ Array [
 <div
     className="c0 pb4"
   />,
-  <hr />,
+  .c0 {
+  box-sizing: border-box;
+  margin: 0;
+  min-width: 0;
+}
+
+<div
+    className="c0"
+    style={
+      Object {
+        "borderTop": "1px solid rgb(221, 221, 221)",
+      }
+    }
+  >
+     
+  </div>,
 ]
 `;
 
@@ -64,8 +83,12 @@ Array [
   box-sizing: border-box;
   margin: 0;
   min-width: 0;
+  margin-bottom: 8px;
+  color: rgba(0,0,0,0.7);
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
   font-family: 'Alegreya Sans SC','Alegreya Sans',sans-serif;
-  color: rgb(55,59,70);
   font-size: 48px;
 }
 
@@ -77,7 +100,7 @@ Array [
   >
     <h2
       className="c0 flex fw5 justify-end"
-      color="bgDark"
+      color="textMediumMuted"
       fontFamily="smallcaps"
       fontSize="6"
     >
@@ -87,13 +110,13 @@ Array [
   .c0 {
   position: relative;
   display: grid;
-  grid-gap: 1em;
-  grid-auto-rows: minmax(4em,auto);
+  grid-gap: 1rem;
+  grid-auto-rows: minmax(20vh,auto);
 }
 
 @media (min-width:60em) {
   .c0 {
-    grid-template-columns: repeat(auto-fill,minmax(25vw,1fr));
+    grid-template-columns: repeat(auto-fill,minmax(30vw,1fr));
   }
 }
 
@@ -112,6 +135,21 @@ Array [
 <div
     className="c0 pb4"
   />,
-  <hr />,
+  .c0 {
+  box-sizing: border-box;
+  margin: 0;
+  min-width: 0;
+}
+
+<div
+    className="c0"
+    style={
+      Object {
+        "borderTop": "1px solid rgb(221, 221, 221)",
+      }
+    }
+  >
+     
+  </div>,
 ]
 `;

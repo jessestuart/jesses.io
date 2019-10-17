@@ -6,8 +6,12 @@ Array [
   box-sizing: border-box;
   margin: 0;
   min-width: 0;
+  margin-bottom: 8px;
+  color: rgba(0,0,0,0.7);
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
   font-family: 'Alegreya Sans SC','Alegreya Sans',sans-serif;
-  color: rgb(55,59,70);
   font-size: 48px;
 }
 
@@ -19,7 +23,7 @@ Array [
   >
     <h2
       className="c0 flex fw5 justify-end"
-      color="bgDark"
+      color="textMediumMuted"
       fontFamily="smallcaps"
       fontSize="6"
     >

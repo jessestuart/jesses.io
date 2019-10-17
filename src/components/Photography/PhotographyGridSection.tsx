@@ -1,12 +1,15 @@
 import 'react-image-lightbox/style.css'
 
 import _ from 'lodash'
-import { DateTime } from 'luxon'
-import React, { useMemo, useState } from 'react'
-import Lightbox from 'react-image-lightbox'
-import { Flex, Text } from 'rebass/styled-components'
-import Link from 'gatsby-link'
 import classNames from 'classnames'
+import Lightbox from 'react-image-lightbox'
+import Link from 'gatsby-link'
+import React, { useMemo, useState } from 'react'
+import styled from 'styled-components'
+import { Box, Flex, Text } from 'rebass/styled-components'
+import { DateTime } from 'luxon'
+
+import { colors } from 'styles/Theme'
 
 import {
   ImageZoomGrid,
@@ -22,6 +25,12 @@ interface Props {
   totalNumImages?: number
 }
 
+const SeeMoreText = styled(Text)`
+  :hover {
+    color: ${colors.textDark};
+  }
+`
+
 const SeeMoreLink = ({
   href,
   totalNumImages,
@@ -33,35 +42,22 @@ const SeeMoreLink = ({
     return null
   }
 
-  // const seeMoreBgColor = color(Colors.gray.calm)
-  //   .fade(0.95)
-  //   .toString()
-
   return (
     <Link to={href}>
       <Flex
-        // bg={seeMoreBgColor}
-        // className="bb b--moon-gray mb4"
-        // className="mb4"
         justifyContent="flex-end"
         alignItems="items-center"
         marginBottom="4"
-        style={{
-          // marginLeft: '2.5rem',
-          // marginRight: '2.5rem',
-          // marginBottom: '2.5rem',
-          borderBottomLeftRadius: '0.3rem',
-          borderBottomRightRadius: '0.3rem',
-        }}
       >
-        <Text
-          fontSize="4"
+        <SeeMoreText
+          fontSize="5"
           color="textDarkMuted"
-          // fontFamily="smallcaps"
-          paddingBottom="3"
+          fontFamily="smallcaps"
+          hoverColor="textDark"
+          style={{ transition: 'all 0.25s ease-in-out' }}
         >
-          see more →
-        </Text>
+          See More →
+        </SeeMoreText>
       </Flex>
     </Link>
   )
@@ -81,14 +77,11 @@ const PhotographyGridSection = (props: Props) => {
     [images],
   )
 
-  const decrementLightboxIndex = () => {
-    setLightboxIndex(index - 1)
-  }
+  const getImageAtIndex = (imageIndex: number) =>
+    _.get(lightboxImages, imageIndex % lightboxImages.length)
 
-  const incrementLightboxIndex = () => {
-    setLightboxIndex(index + 1)
-  }
-
+  const decrementLightboxIndex = () => setLightboxIndex(index - 1)
+  const incrementLightboxIndex = () => setLightboxIndex(index + 1)
   const closeLightbox = () => setIsLightboxOpen(false)
   const openLightbox = (imageIndex: number) => {
     setLightboxIndex(imageIndex)
@@ -97,9 +90,16 @@ const PhotographyGridSection = (props: Props) => {
 
   // const aspectRatios = _.map(images, 'childImageSharp.sizes.aspectRatio')
 
-  const lightboxSrc = _.get(lightboxImages, index)
-  const nextImage = _.get(lightboxImages, (index + 1) % lightboxImages.length)
-  const prevImage = _.get(lightboxImages, (index - 1) % lightboxImages.length)
+  const lightboxSrc = getImageAtIndex(index)
+  const nextImage = getImageAtIndex(index + 1)
+  const prevImage = getImageAtIndex(index - 1)
+
+  // const nextImage = _.get(lightboxImages, (index + 1) % lightboxImages.length)
+  // const prevImage = _.get(lightboxImages, (index - 1) % lightboxImages.length)
+
+  // const lightboxSrc = _.get(lightboxImages, index)
+  // const nextImage = _.get(lightboxImages, (index + 1) % lightboxImages.length)
+  // const prevImage = _.get(lightboxImages, (index - 1) % lightboxImages.length)
 
   return (
     <>
@@ -119,8 +119,8 @@ const PhotographyGridSection = (props: Props) => {
         ))}
       </ImageZoomGrid>
       <SeeMoreLink totalNumImages={totalNumImages} href={slug} />
-      <hr />
-      {isLightboxOpen && lightboxSrc && (
+      <Box style={{ borderTop: '1px solid rgb(221, 221, 221)' }}>&nbsp;</Box>
+      {isLightboxOpen && (
         <Lightbox
           enableZoom={false}
           mainSrc={lightboxSrc}

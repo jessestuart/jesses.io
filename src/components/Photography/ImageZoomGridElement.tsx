@@ -3,6 +3,7 @@ import { ExifData } from 'gatsby-source-s3-image'
 import _ from 'lodash'
 import React, { MouseEventHandler } from 'react'
 import styled from 'styled-components'
+import { Box, Flex } from 'rebass/styled-components'
 
 import ExifOverlay from 'components/Photography/ExifOverlay'
 import GatsbyImage from 'types/GatsbyImage'
@@ -10,13 +11,14 @@ import { mapLensModelExif } from 'utils/exif'
 import useHover from 'utils/use-hover'
 
 const StyledImageZoomGridElement = styled.div`
-  border-radius: 4px;
+  border-radius: 2px;
   cursor: pointer;
   display: grid;
   grid-column-start: auto;
   overflow: hidden;
   position: relative;
   transition: all 0.4s;
+  // height: min-content;
 
   // Throw in some drop shadow to make it pretty (extra on hover) — and just a
   // smidge of border radius, too:
@@ -40,7 +42,8 @@ const ImageZoomGridElement = (props: Props) => {
 
   const [isActive, setIsActive] = useHover()
 
-  const thumbnailImage: GatsbyImage = _.get(image, 'childImageSharp.sizes')
+  const thumbnailImage = _.get(image, 'childImageSharp.sizes')
+  console.log({ imageSharp: image.childImageSharp })
 
   if (_.isEmpty(thumbnailImage)) {
     return null
@@ -56,21 +59,23 @@ const ImageZoomGridElement = (props: Props) => {
       : { gridRow: 'span 2 / auto' }
 
   return (
-    <StyledImageZoomGridElement
-      {...props}
-      {...setIsActive}
-      aspectRatio={cssGridRowSpan}
-    >
-      <Img imgStyle={{ objectFit: 'contain' }} fluid={thumbnailImage} />
-      <ExifOverlay isActive={isActive as boolean}>
-        {FocalLength ? `${FocalLength}mm, ` : null}
-        {ShutterSpeedFraction ? `${ShutterSpeedFraction}s, ` : null}
-        {FNumber ? `ƒ${FNumber}, ` : null}
-        {ISO ? `ISO ${ISO}` : null}
-        <br />
-        {lensModel}
-      </ExifOverlay>
-    </StyledImageZoomGridElement>
+    <Box flex="1 1 auto" width="100%" height="100%">
+      <StyledImageZoomGridElement
+        {...props}
+        {...setIsActive}
+        style={cssGridRowSpan}
+      >
+        <Img imgStyle={{ objectFit: 'contain' }} fluid={thumbnailImage} />
+        <ExifOverlay isActive={isActive as boolean}>
+          {FocalLength ? `${FocalLength}mm, ` : null}
+          {ShutterSpeedFraction ? `${ShutterSpeedFraction}s, ` : null}
+          {FNumber ? `ƒ${FNumber}, ` : null}
+          {ISO ? `ISO ${ISO}` : null}
+          <br />
+          {lensModel}
+        </ExifOverlay>
+      </StyledImageZoomGridElement>
+    </Box>
   )
 }
 
