@@ -10,7 +10,7 @@ import GatsbyImage from 'types/GatsbyImage'
 import { mapLensModelExif } from 'utils/exif'
 import useHover from 'utils/use-hover'
 
-const StyledImageZoomGridElement = styled.div`
+const StyledImageZoomGridElement = styled(Box)`
   border-radius: 2px;
   cursor: pointer;
   display: grid;
@@ -18,7 +18,7 @@ const StyledImageZoomGridElement = styled.div`
   overflow: hidden;
   position: relative;
   transition: all 0.4s;
-  // height: min-content;
+  height: min-content;
 
   // Throw in some drop shadow to make it pretty (extra on hover) — and just a
   // smidge of border radius, too:
@@ -50,21 +50,22 @@ const ImageZoomGridElement = (props: Props) => {
   }
 
   const { aspectRatio } = thumbnailImage
-
   const lensModel = mapLensModelExif(_.get(image, 'EXIF.LensModel'))
   const { FNumber, FocalLength, ISO, ShutterSpeedFraction } = image.EXIF
-  const cssGridRowSpan =
-    aspectRatio > 1
-      ? { gridRow: 'span 1 / auto' }
-      : { gridRow: 'span 2 / auto' }
+  // const cssGridRowSpan =
+  //   aspectRatio > 1
+  //     ? { gridRow: 'span 1 / auto' }
+  //     : { gridRow: 'span 2 / auto' }
 
+  // <Box flex="1 1 auto" width="100%" height="100%">
   return (
-    <Box flex="1 1 auto" width="100%" height="100%">
-      <StyledImageZoomGridElement
-        {...props}
-        {...setIsActive}
-        style={cssGridRowSpan}
-      >
+    <StyledImageZoomGridElement
+      {...props}
+      {...setIsActive}
+      my="auto"
+      // style={cssGridRowSpan}
+    >
+      <Box>
         <Img imgStyle={{ objectFit: 'contain' }} fluid={thumbnailImage} />
         <ExifOverlay isActive={isActive as boolean}>
           {FocalLength ? `${FocalLength}mm, ` : null}
@@ -74,8 +75,8 @@ const ImageZoomGridElement = (props: Props) => {
           <br />
           {lensModel}
         </ExifOverlay>
-      </StyledImageZoomGridElement>
-    </Box>
+      </Box>
+    </StyledImageZoomGridElement>
   )
 }
 

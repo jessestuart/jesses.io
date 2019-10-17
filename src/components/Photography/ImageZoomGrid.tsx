@@ -4,7 +4,9 @@ export default styled.div`
   position: relative;
   display: grid;
   grid-gap: 1rem;
-  grid-auto-rows: minmax(20vh, auto);
+  // grid-auto-rows: minmax(5vh, auto);
+  grid-template-rows: repeat(auto-fill, minmax(5vh, 1fr));
+  // grid-template-columns: repeat(auto-fill, minmax(25%, 1fr));
   @media (min-width: 60em) {
     grid-template-columns: repeat(auto-fill, minmax(30vw, 1fr));
   }

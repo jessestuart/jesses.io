@@ -43,6 +43,7 @@ const PhotographyIndex = () => {
         edges {
           node {
             ...S3ImageAssetData
+            ...S3ImageExifData
           }
         }
       }

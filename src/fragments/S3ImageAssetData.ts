@@ -1,8 +1,7 @@
 import { graphql } from 'gatsby'
 
-export const s3ImageAssetFragment = graphql`
-  fragment S3ImageAssetData on S3ImageAsset {
-    id
+export const exifDataFragment = graphql`
+  fragment S3ImageExifData on S3ImageAsset {
     EXIF {
       DateCreatedISO
       DateTimeOriginal
@@ -13,11 +12,13 @@ export const s3ImageAssetFragment = graphql`
       Model
       ShutterSpeedFraction
     }
+  }
+`
+
+export const s3ImageAssetFragment = graphql`
+  fragment S3ImageAssetData on S3ImageAsset {
+    id
     childImageSharp {
-      original {
-        height
-        width
-      }
       sizes: fluid(maxWidth: 2048) {
         ...GatsbyImageSharpFluid
       }

@@ -68,6 +68,7 @@ export const pageQuery = graphql`
       edges {
         node {
           ...S3ImageAssetData
+          ...S3ImageExifData
         }
       }
     }

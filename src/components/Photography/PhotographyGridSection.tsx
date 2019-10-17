@@ -77,9 +77,6 @@ const PhotographyGridSection = (props: Props) => {
     [images],
   )
 
-  const getImageAtIndex = (imageIndex: number) =>
-    _.get(lightboxImages, imageIndex % lightboxImages.length)
-
   const decrementLightboxIndex = () => setLightboxIndex(index - 1)
   const incrementLightboxIndex = () => setLightboxIndex(index + 1)
   const closeLightbox = () => setIsLightboxOpen(false)
@@ -90,6 +87,8 @@ const PhotographyGridSection = (props: Props) => {
 
   // const aspectRatios = _.map(images, 'childImageSharp.sizes.aspectRatio')
 
+  const getImageAtIndex = (imageIndex: number) =>
+    _.get(lightboxImages, imageIndex % lightboxImages.length)
   const lightboxSrc = getImageAtIndex(index)
   const nextImage = getImageAtIndex(index + 1)
   const prevImage = getImageAtIndex(index - 1)
