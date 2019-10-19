@@ -19,6 +19,10 @@ export const s3ImageAssetFragment = graphql`
   fragment S3ImageAssetData on S3ImageAsset {
     id
     childImageSharp {
+      original {
+        width
+        height
+      }
       sizes: fluid(maxWidth: 2048) {
         ...GatsbyImageSharpFluid
       }

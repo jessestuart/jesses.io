@@ -1,27 +1,29 @@
-import Img from 'gatsby-image'
 import { ExifData } from 'gatsby-source-s3-image'
-import _ from 'lodash'
+import { Flex } from 'rebass/styled-components'
+import Img from 'gatsby-image'
 import React, { MouseEventHandler } from 'react'
+import _ from 'lodash'
 import styled from 'styled-components'
-import { Box, Flex } from 'rebass/styled-components'
 
+import { mapLensModelExif } from 'utils/exif'
 import ExifOverlay from 'components/Photography/ExifOverlay'
 import GatsbyImage from 'types/GatsbyImage'
-import { mapLensModelExif } from 'utils/exif'
 import useHover from 'utils/use-hover'
 
-const StyledImageZoomGridElement = styled(Box)`
+const StyledImageZoomGridElement = styled(Flex)`
   border-radius: 2px;
   cursor: pointer;
-  display: grid;
-  grid-column-start: auto;
+  display: flex;
+  flex: 1 0 auto;
+  // display: grid;
+  // grid-column-start: auto;
+  // height: min-content;
   overflow: hidden;
-  position: relative;
+  // position: relative;
   transition: all 0.4s;
-  height: min-content;
 
   // Throw in some drop shadow to make it pretty (extra on hover) — and just a
-  // smidge of border radius, too:
+  //a smidge of border radius, too:
   filter: drop-shadow(0 0 2px rgba(0, 0, 0, 0.5));
   &:hover {
     filter: drop-shadow(0 0 6px rgba(0, 0, 0, 0.9));
@@ -29,6 +31,7 @@ const StyledImageZoomGridElement = styled(Box)`
 `
 
 interface Props {
+  style?: any
   image: {
     id: string
     childImageSharp: GatsbyImage
@@ -38,7 +41,7 @@ interface Props {
 }
 
 const ImageZoomGridElement = (props: Props) => {
-  const { image } = props
+  const { image, style } = props
 
   const [isActive, setIsActive] = useHover()
 
@@ -60,22 +63,47 @@ const ImageZoomGridElement = (props: Props) => {
   // <Box flex="1 1 auto" width="100%" height="100%">
   return (
     <StyledImageZoomGridElement
-      {...props}
+      padding={1}
+      // style={{
+      //   width: style.width,
+      // }}
+      // {...props}
       {...setIsActive}
-      my="auto"
+      // style={style}
+      // my="auto"
       // style={cssGridRowSpan}
     >
-      <Box>
-        <Img imgStyle={{ objectFit: 'contain' }} fluid={thumbnailImage} />
-        <ExifOverlay isActive={isActive as boolean}>
-          {FocalLength ? `${FocalLength}mm, ` : null}
-          {ShutterSpeedFraction ? `${ShutterSpeedFraction}s, ` : null}
-          {FNumber ? `ƒ${FNumber}, ` : null}
-          {ISO ? `ISO ${ISO}` : null}
-          <br />
-          {lensModel}
-        </ExifOverlay>
-      </Box>
+      <Img
+        style={{
+          // display: 'flex',
+          // flexWrap: 'wrap',
+          // flex: 1,
+          // ...style,
+          // height: style.height,
+          // lineHeight: style.height / 6,
+          // lineHeight: `${style.height}px`,
+          // flex: '1 1 auto',
+          width: style.width,
+        }}
+        // width={[1 / 5, 1 / 4, 1 / 3]}
+        imgStyle={{
+          // display: 'flex',
+          // flex: 1,
+          objectFit: 'contain',
+          // height: style.height,
+          // lineHeight: `${style.height}px`,
+          // width: '33%',
+        }}
+        fluid={thumbnailImage}
+      />
+      <ExifOverlay isActive={isActive as boolean}>
+        {FocalLength ? `${FocalLength}mm, ` : null}
+        {ShutterSpeedFraction ? `${ShutterSpeedFraction}s, ` : null}
+        {FNumber ? `ƒ${FNumber}, ` : null}
+        {ISO ? `ISO ${ISO}` : null}
+        <br />
+        {lensModel}
+      </ExifOverlay>
     </StyledImageZoomGridElement>
   )
 }

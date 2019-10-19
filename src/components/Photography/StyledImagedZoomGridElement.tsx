@@ -1,6 +1,7 @@
+import { Box } from 'rebass/styled-components'
 import styled from 'styled-components'
 
-const StyledImageZoomGridElement = styled.div`
+const StyledImageZoomGridElement = styled(Box)`
   border-radius: 2px;
   cursor: pointer;
   display: inline-block;

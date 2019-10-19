@@ -9,9 +9,9 @@ import ProfileStyledLink from './ProfileStyledLink'
 export {
   Avatar,
   BlackMirror,
+  Profile,
   ProfileBlurb,
   ProfileFooter,
-  Profile,
   ProfileHeading,
   ProfileStyledLink,
 }

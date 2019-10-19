@@ -19,7 +19,7 @@ const ExifOverlay = styled.div`
   text-align: right;
   text-shadow: 0 0 4px #000;
   transition: all 0.5s;
-  width: 100%;
+  // width: 100%;
 `
 
 export default ExifOverlay

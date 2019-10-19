@@ -1,13 +1,13 @@
-import _ from 'lodash'
-import fp from 'lodash/fp'
-import Helmet from 'react-helmet'
-import React from 'react'
 import { Box } from 'rebass'
 import { DateTime } from 'luxon'
 import { graphql } from 'gatsby'
+import Helmet from 'react-helmet'
+import React from 'react'
+import _ from 'lodash'
+import fp from 'lodash/fp'
 
-import PhotographyGridSection from 'components/Photography/PhotographyGridSection'
 import GatsbyLocation from 'types/GatsbyLocation'
+import PhotographyGridSection from 'components/Photography/PhotographyGridSection'
 
 interface Props {
   data: {
@@ -44,8 +44,9 @@ export const PhotographyPostTemplate = (props: Props) => {
 
   const title = `${siteTitle} | Photography | ${date}`
 
+  // <Box flex="1 0" className="bg-near-white black-80 pv4 pa3-ns">
   return (
-    <Box flex="1 0" className="bg-near-white black-80 pv4 pa3-ns">
+    <Box className="bg-near-white black-80 pv4 pa3-ns w-100">
       <Helmet title={title} />
       <PhotographyGridSection
         datetime={datetime}

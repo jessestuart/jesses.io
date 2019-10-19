@@ -1,17 +1,40 @@
 import { graphql, useStaticQuery } from 'gatsby'
-import { useRef, useState, useEffect, RefObject } from 'react'
+import { useRef, useState, useEffect } from 'react'
 import ResizeObserver from 'resize-observer-polyfill'
 import _ from 'lodash'
 
-export const useMeasure = () => {
-  const ref: RefObject<any> = useRef(null)
+// interface MeasureState {
+//   height: number
+//   left: number
+//   top: number
+//   width: number
+// }
+
+export function useMeasure() {
+  const ref = useRef()
   const [bounds, set] = useState({ left: 0, top: 0, width: 0, height: 0 })
-  const [ro] = useState(
-    () => new ResizeObserver(([entry]) => set(entry.contentRect)),
-  )
+  const [ro] = useState(() => new ResizeObserver(([entry]) => set(entry.contentRect)))
+  // @ts-ignore
   useEffect(() => (ro.observe(ref.current), ro.disconnect), [])
   return [{ ref }, bounds]
 }
+// export function useMeasure() {
+//   const ref = useRef()
+//   const [bounds, set] = useState({ left: 0, top: 0, width: 0, height: 0 })
+//   const [ro] = useState(
+//     () => new ResizeObserver(([entry]) => set(entry.contentRect)),
+//   )
+//   console.log({ ro, ref})
+//   // @ts-ignore
+//   useEffect(() => {
+//     // if (!ref.current) {
+//     //   return
+//     // }
+//     // @ts-ignore
+//     return [ro.observe(ref.current), ro.disconnect]
+//   }, [ro])
+//   return [{ ref }, bounds]
+// }
 
 export const useMedia = (queries, values, defaultValue) => {
   const match = () =>
