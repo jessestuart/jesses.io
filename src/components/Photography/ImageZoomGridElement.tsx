@@ -1,5 +1,5 @@
 import { ExifData } from 'gatsby-source-s3-image'
-import { Flex } from 'rebass/styled-components'
+import { Box } from 'rebass/styled-components'
 import Img from 'gatsby-image'
 import React, { MouseEventHandler } from 'react'
 import _ from 'lodash'
@@ -10,11 +10,11 @@ import ExifOverlay from 'components/Photography/ExifOverlay'
 import GatsbyImage from 'types/GatsbyImage'
 import useHover from 'utils/use-hover'
 
-const StyledImageZoomGridElement = styled(Flex)`
+const StyledImageZoomGridElement = styled(Box)`
   border-radius: 2px;
   cursor: pointer;
-  display: flex;
-  flex: 1 0 auto;
+  // display: flex;
+  // flex: 1 0 auto;
   // display: grid;
   // grid-column-start: auto;
   // height: min-content;
@@ -69,22 +69,25 @@ const ImageZoomGridElement = (props: Props) => {
       // }}
       // {...props}
       {...setIsActive}
+      style={{ ...style }}
       // style={style}
       // my="auto"
       // style={cssGridRowSpan}
     >
       <Img
-        style={{
-          // display: 'flex',
-          // flexWrap: 'wrap',
-          // flex: 1,
-          // ...style,
-          // height: style.height,
-          // lineHeight: style.height / 6,
-          // lineHeight: `${style.height}px`,
-          // flex: '1 1 auto',
-          width: style.width,
-        }}
+        style={
+          {
+            // display: 'flex',
+            // flexWrap: 'wrap',
+            // flex: 1,
+            // ...style,
+            // height: style.height,
+            // lineHeight: style.height / 6,
+            // lineHeight: `${style.height}px`,
+            // flex: '1 1 auto',
+            // width: style.width,
+          }
+        }
         // width={[1 / 5, 1 / 4, 1 / 3]}
         imgStyle={{
           // display: 'flex',
