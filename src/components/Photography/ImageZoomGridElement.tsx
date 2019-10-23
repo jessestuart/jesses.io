@@ -6,7 +6,7 @@ import _ from 'lodash'
 import styled from 'styled-components'
 
 import ExifOverlay from 'components/Photography/ExifOverlay'
-import GatsbyImage from 'types/GatsbyImage'
+import S3ImageAsset from 'types/S3ImageAsset'
 import useHover from 'utils/use-hover'
 
 const StyledImageZoomGridElement = styled(Box)`
@@ -14,12 +14,6 @@ const StyledImageZoomGridElement = styled(Box)`
   cursor: pointer;
   overflow: hidden;
   transition: all 0.5s;
-  // display: flex;
-  // display: grid;
-  // flex: 1 0 auto;
-  // grid-column-start: auto;
-  // height: min-content;
-  // position: relative;
 
   // Throw in some drop shadow to make it pretty (extra on hover) — and just a
   //a smidge of border radius, too:
@@ -33,18 +27,22 @@ interface Props {
   style?: any
   image: {
     id: string
-    childImageSharp: GatsbyImage
+    childImageSharp: S3ImageAsset
     EXIF: ExifData
   }
   onClick: MouseEventHandler<HTMLDivElement>
 }
 
 const ImageZoomGridElement = (props: Props) => {
-  const { image, onClick, style } = props
+  // @ts-ignore
+  const { image }: { image: S3ImageAsset } = props
 
   const [isActive, setIsActive] = useHover()
 
-  const thumbnailImage = _.get(image, 'childImageSharp.sizes')
+  const thumbnailImage: S3ImageAsset = _.get(
+    image,
+    'childImageSharp.thumbnailSizes',
+  )
   console.log({ imageSharp: image.childImageSharp })
 
   if (_.isEmpty(thumbnailImage)) {

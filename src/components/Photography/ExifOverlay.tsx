@@ -19,7 +19,7 @@ const StyledExifOverlay = styled(Flex)`
   font-size: 0.9rem;
   font-variant: small-caps;
   justify-content: flex-end;
-  opacity: ${({ isActive }: { isActive: boolean }) => (isActive ? 1 : 0)};
+  opacity: ${({ isActive }) => (isActive ? 1 : 0)};
   padding: 10px;
   position: absolute;
   text-align: right;
@@ -28,13 +28,12 @@ const StyledExifOverlay = styled(Flex)`
   width: 100%;
 `
 
-const ExifOverlay = ({
-  image,
-  isActive,
-}: {
+interface Props {
   image: S3ImageAsset
   isActive: boolean
-}) => {
+}
+
+const ExifOverlay = ({ image, isActive }: Props) => {
   const EXIF = _.get(image, 'EXIF')
   if (!EXIF) {
     return

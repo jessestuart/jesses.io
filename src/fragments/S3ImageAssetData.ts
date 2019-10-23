@@ -23,6 +23,9 @@ export const s3ImageAssetFragment = graphql`
         width
         height
       }
+      thumbnailSizes: fluid(maxWidth: 256) {
+        ...GatsbyImageSharpFluid_withWebp
+      }
       sizes: fluid(maxWidth: 2048) {
         ...GatsbyImageSharpFluid_withWebp
       }
