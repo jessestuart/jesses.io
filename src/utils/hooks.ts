@@ -1,7 +1,6 @@
 import { graphql, useStaticQuery } from 'gatsby'
-import { useRef, useState, useEffect } from 'react'
+import { useRef, useState, useEffect, useCallback } from 'react'
 import ResizeObserver from 'resize-observer-polyfill'
-import _ from 'lodash'
 
 // interface MeasureState {
 //   height: number
@@ -13,9 +12,11 @@ import _ from 'lodash'
 export function useMeasure() {
   const ref = useRef()
   const [bounds, set] = useState({ left: 0, top: 0, width: 0, height: 0 })
-  const [ro] = useState(() => new ResizeObserver(([entry]) => set(entry.contentRect)))
+  const [ro] = useState(
+    () => new ResizeObserver(([entry]) => set(entry.contentRect)),
+  )
   // @ts-ignore
-  useEffect(() => (ro.observe(ref.current), ro.disconnect), [])
+  useEffect(() => (ro.observe(ref.current), ro.disconnect), [ro])
   return [{ ref }, bounds]
 }
 // export function useMeasure() {
@@ -37,15 +38,18 @@ export function useMeasure() {
 // }
 
 export const useMedia = (queries, values, defaultValue) => {
-  const match = () =>
-    values[queries.findIndex((q: any) => matchMedia(q).matches)] || defaultValue
+  const match = useCallback(
+    () =>
+      values[queries.findIndex((q: any) => matchMedia(q).matches)] ||
+      defaultValue,
+  )
   const [value, set] = useState(match)
   useEffect(() => {
     const handler = () => set(match)
     window.addEventListener('resize', handler)
     // @ts-ignore
     return () => window.removeEventListener(handler)
-  }, [])
+  }, [match])
   return value
 }
 

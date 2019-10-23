@@ -29,40 +29,40 @@ const SeeMoreText = styled(Text)`
   }
 `
 
-const SeeMoreLink = ({
-  href,
-  totalNumImages,
-}: {
-  href: string
-  totalNumImages: number
-}) => {
-  if (totalNumImages <= 6) {
-    return null
-  }
+// const SeeMoreLink = ({
+//   href,
+//   totalNumImages,
+// }: {
+//   href: string
+//   totalNumImages: number
+// }) => {
+//   if (totalNumImages <= 6) {
+//     return null
+//   }
 
-  return (
-    <Link to={href}>
-      <Flex
-        justifyContent="flex-end"
-        alignItems="items-center"
-        marginBottom="4"
-      >
-        <SeeMoreText
-          sx={{
-            ':hover': {},
-          }}
-          fontSize="5"
-          color="textDarkMuted"
-          fontFamily="smallcaps"
-          hoverColor="textDark"
-          style={{ transition: 'all 0.25s ease-in-out' }}
-        >
-          See More →
-        </SeeMoreText>
-      </Flex>
-    </Link>
-  )
-}
+//   return (
+//     <Link to={href}>
+//       <Flex
+//         justifyContent="flex-end"
+//         alignItems="items-center"
+//         marginBottom="4"
+//       >
+//         <SeeMoreText
+//           sx={{
+//             ':hover': {},
+//           }}
+//           fontSize="5"
+//           color="textDarkMuted"
+//           fontFamily="smallcaps"
+//           hoverColor="textDark"
+//           style={{ transition: 'all 0.25s ease-in-out' }}
+//         >
+//           See More →
+//         </SeeMoreText>
+//       </Flex>
+//     </Link>
+//   )
+// }
 
 const PhotographyGridSection = (props: Props) => {
   const { datetime, images, slug = '/#', totalNumImages = 0 } = props
@@ -116,7 +116,7 @@ const PhotographyGridSection = (props: Props) => {
     const imageWidth = child.width || width / columns
     // const originalHeight = _.get(childImageSharp, 'original.height')
     const aspectRatio = _.get(childImageSharp, 'sizes.aspectRatio')
-    console.log({ aspectRatio, imageWidth })
+    // console.log({ aspectRatio, imageWidth })
     const height = _.isFinite(child.height)
       ? child.height
       : imageWidth * (2 / aspectRatio)
@@ -133,9 +133,9 @@ const PhotographyGridSection = (props: Props) => {
       (width / columns) * column,
       (heights[column] += height / 2) - height / 2,
     ]
-    console.log({ heights, xy })
     return {
       ...child,
+      index,
       xy,
       columns,
       width: width / columns,
@@ -143,18 +143,17 @@ const PhotographyGridSection = (props: Props) => {
     }
   })
 
-  console.log({ gridItems })
-
   // Hook5: Turn the static grid values into animated transitions, any addition, removal or change will be animated
   const transitions = useTransition(gridItems, item => item.id, {
-    from: ({ xy, width, height }) => ({ xy, width, height, opacity: 1 }),
+    // initial: null,
+    initial: ({ xy, width, height }) => ({ xy, width, height, opacity: 1 }),
     enter: ({ xy, width, height }) => ({ xy, width, height, opacity: 1 }),
     update: ({ xy, width, height }) => ({ xy, width, height }),
-    leave: { height: 0, opacity: 0 },
+    unique: true,
+    // leave: { height: 0, opacity: 0 },
     // config: { mass: 5, tension: 500, friction: 100 },
     // trail: 25,
   })
-  console.log(transitions)
   // Render the grid
   // return (
   //   <div {...bind} className="list" style={{ height: Math.max(...heights) }}>
@@ -207,58 +206,53 @@ const PhotographyGridSection = (props: Props) => {
   //     // style={{ width: image.width, height: image.height }}
   //   />
   // ))}
+  //
+  //
+  //
+  // <SeeMoreLink totalNumImages={totalNumImages} href={slug} />
   return (
     <>
       <PhotographySectionHeader datetime={datetime} href={slug} />
       <Box
         {...bind}
         // className={classNames('bb b--moon-gray pb4', {
-        className={classNames('pb4 w-100', {
-          // pb4: totalNumImages > 6,
-        })}
-        // style={
-        //   {
-        //     // display: 'flex',
-        //     // flexDirection: 'column',
-        //     // flexWrap: 'wrap',
-        //     // maxHeight: '1000px',
-        //   }
-        // }
+        className={classNames('mb4 w-100')}
         height={_.max(heights)}
       >
-        {/* @ts-ignore */}
-        {transitions.map(({ item, props: { xy, ...rest }, key }) => (
-          <animated.div
-            key={key}
-            style={{
-              position: 'absolute',
-              transform: xy.interpolate(
-                (x: number, y: number) => `translate3d(${x}px,${y}px,0)`,
-              ),
-              ...rest,
-            }}
-          >
-            <ImageZoomGridElement
-              image={item}
-              style={{ ...rest }}
-              onClick={() => openLightbox(0)}
-              // style={{ width: image.width, height: image.height }}
-              // style={{ width: image.width, height: image.height }}
-            />
-          </animated.div>
-        ))}
+        {transitions.map(({ item, props, key }) => {
+          // @ts-ignore
+          const { xy, ...rest } = props
+          return (
+            <animated.div
+              key={key}
+              style={{
+                position: 'absolute',
+                transform: xy.interpolate(
+                  (x: number, y: number) => `translate3d(${x}px,${y}px,0)`,
+                ),
+                ...rest,
+              }}
+            >
+              <ImageZoomGridElement
+                image={item}
+                onClick={() => openLightbox(item.index)}
+              />
+            </animated.div>
+          )
+        })}
       </Box>
-      <SeeMoreLink totalNumImages={totalNumImages} href={slug} />
-      <Box style={{ borderTop: '1px solid rgb(221, 221, 221)' }}>&nbsp;</Box>
+      <Box marginTop={2} style={{ borderTop: '1px solid rgb(221, 221, 221)' }}>
+        &nbsp;
+      </Box>
       {isLightboxOpen && (
         <Lightbox
           enableZoom={false}
           mainSrc={lightboxSrc}
           nextSrc={nextImage}
-          prevSrc={prevImage}
           onCloseRequest={closeLightbox}
-          onMovePrevRequest={decrementLightboxIndex}
           onMoveNextRequest={incrementLightboxIndex}
+          onMovePrevRequest={decrementLightboxIndex}
+          prevSrc={prevImage}
         />
       )}
     </>

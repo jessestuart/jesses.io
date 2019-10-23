@@ -1,5 +1,5 @@
-import { ExifData } from 'gatsby-source-s3-image'
 import { Box } from 'rebass/styled-components'
+import { ExifData } from 'gatsby-source-s3-image'
 import Img from 'gatsby-image'
 import React, { MouseEventHandler } from 'react'
 import _ from 'lodash'
@@ -41,6 +41,7 @@ interface Props {
 }
 
 const ImageZoomGridElement = (props: Props) => {
+  console.log({ props })
   const { image, style } = props
 
   const [isActive, setIsActive] = useHover()
@@ -75,38 +76,12 @@ const ImageZoomGridElement = (props: Props) => {
       // style={cssGridRowSpan}
     >
       <Img
-        style={
-          {
-            // display: 'flex',
-            // flexWrap: 'wrap',
-            // flex: 1,
-            // ...style,
-            // height: style.height,
-            // lineHeight: style.height / 6,
-            // lineHeight: `${style.height}px`,
-            // flex: '1 1 auto',
-            // width: style.width,
-          }
-        }
-        // width={[1 / 5, 1 / 4, 1 / 3]}
         imgStyle={{
-          // display: 'flex',
-          // flex: 1,
           objectFit: 'contain',
-          // height: style.height,
-          // lineHeight: `${style.height}px`,
-          // width: '33%',
         }}
         fluid={thumbnailImage}
       />
-      <ExifOverlay isActive={isActive as boolean}>
-        {FocalLength ? `${FocalLength}mm, ` : null}
-        {ShutterSpeedFraction ? `${ShutterSpeedFraction}s, ` : null}
-        {FNumber ? `ƒ${FNumber}, ` : null}
-        {ISO ? `ISO ${ISO}` : null}
-        <br />
-        {lensModel}
-      </ExifOverlay>
+      <ExifOverlay isActive={isActive as boolean} image={image} />
     </StyledImageZoomGridElement>
   )
 }
