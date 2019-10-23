@@ -1,0 +1,16 @@
+[ver:1,total:11160]
+.gtm/terminal.app:5008,1571493600:32,1571497200:420,1571533200:480,1571554800:180,1571562000:870,1571576400:300,1571637600:600,1571648400:180,1571724000:436,1571738400:180,1571742000:240,1571745600:440,1571806800:330,1571810400:320,r
+src/components/Photography/PhotographyGridSection.tsx:3366,1571493600:1711,1571497200:165,1571745600:1090,1571810400:400,m
+src/components/Photography/ImageZoomGridElement.tsx:1193,1571493600:405,1571497200:580,1571724000:12,1571745600:166,1571806800:30,m
+src/components/Photography/ExifOverlay.tsx:956,1571493600:20,1571745600:324,1571806800:612,m
+src/utils/hooks.ts:240,1571810400:240,m
+node_modules/react-spring/renderprops-universal.d.ts:80,1571493600:80,r
+src/utils/exif.ts:64,1571806800:64,r
+src/types/S3ImageAsset.ts:44,1571806800:44,r
+node_modules/gatsby-image/index.d.ts:35,1571497200:35,r
+4:p:32,1571724000:32,d
+node_modules/react-spring/web.d.ts:32,1571493600:32,r
+node_modules/gatsby-source-s3-image/types/ExifData.d.ts:30,1571806800:30,r
+5:p:30,1571806800:30,r
+src/pages/photography.tsx:30,1571562000:30,r
+src/components/Photography/PhotographyGridSection.spec.tsx:20,1571745600:20,r
