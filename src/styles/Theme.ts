@@ -1,11 +1,3 @@
-// import 'typeface-alegreya-sans'
-// import 'typeface-alegreya-sans-sc'
-// import 'typeface-fira-mono'
-// import 'typeface-lato'
-// import 'typeface-spectral'
-
-// import 'js-tachyons'
-
 import Colors from 'utils/colors'
 
 export const breakpoints = ['40em', '52em', '64em']
@@ -24,16 +16,8 @@ export const colors = {
 export const fontSizes = [12, 14, 16, 20, 24, 32, 48, 64]
 
 export const fonts = {
-  monospace: [
-    'Fira Mono',
-    'SFMono-Regular',
-    'Menlo',
-    'Monaco',
-    'Consolas',
-    'Liberation Mono',
-    'Courier New',
-    'monospace',
-  ],
+  monospace:
+    "'Fira Mono', 'SFMono-Regular', 'Menlo', 'Courier New', 'monospace'",
   body: 'Lato, system-ui, sans-serif',
   heading: 'Alegreya Sans',
   serif: 'Spectral, serif',

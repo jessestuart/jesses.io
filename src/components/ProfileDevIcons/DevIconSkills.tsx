@@ -35,9 +35,9 @@ const backend = [Nodejs, Go, Java, Grails, Python, Clojure]
 const frontend = [React, Redux, GatsbyJS, GraphQL, Jest, AngularJS]
 
 const DevIconSkills = [
+  { icons: frontend, label: 'frontend' },
   { icons: infra, label: 'infra' },
   { icons: backend, label: 'backend' },
-  { icons: frontend, label: 'frontend' },
 ]
 
 export default DevIconSkills

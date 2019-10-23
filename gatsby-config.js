@@ -127,6 +127,7 @@ const manifestPlugin = {
 
 let plugins = _.compact([
   'gatsby-plugin-typescript',
+  'gatsby-plugin-theme-ui',
   // ====================================
   // Gotta load those sweet, sweet files.
   // ====================================

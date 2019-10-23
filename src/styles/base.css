@@ -18,7 +18,7 @@
 
 html,
 body {
-  background: var(--gray-primary);
+  background-color: var(--near-white);
 }
 
 .spectral {
@@ -26,6 +26,10 @@ body {
 }
 
 .lato {
+  font-family: 'Lato', sans-serif;
+}
+
+.source-sans {
   font-family: 'Lato', sans-serif;
 }
 
