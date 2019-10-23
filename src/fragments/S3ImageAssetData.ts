@@ -24,7 +24,7 @@ export const s3ImageAssetFragment = graphql`
         height
       }
       sizes: fluid(maxWidth: 2048) {
-        ...GatsbyImageSharpFluid
+        ...GatsbyImageSharpFluid_withWebp
       }
     }
   }

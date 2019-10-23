@@ -74,7 +74,7 @@ const PhotographyGridSection = (props: Props) => {
     [images],
   )
   const lightboxImages = useMemo(
-    () => _.map(sortedImages, 'childImageSharp.sizes.src'),
+    () => _.map(sortedImages, 'childImageSharp.sizes.srcWebp'),
     [sortedImages],
   )
 
@@ -82,6 +82,7 @@ const PhotographyGridSection = (props: Props) => {
   const incrementLightboxIndex = () => setLightboxIndex(index + 1)
   const closeLightbox = () => setIsLightboxOpen(false)
   const openLightbox = (imageIndex: number) => {
+    console.log('open lightbox', { imageIndex })
     setLightboxIndex(imageIndex)
     setIsLightboxOpen(true)
   }
@@ -129,14 +130,14 @@ const PhotographyGridSection = (props: Props) => {
     // X = container width / number of columns * column index, Y = it's just the height of the current column
     // }
 
-    const xy = [
-      (width / columns) * column,
-      (heights[column] += height / 2) - height / 2,
-    ]
+    const position = {
+      x: (width / columns) * column,
+      y: (heights[column] += height / 2) - height / 2,
+    }
     return {
       ...child,
       index,
-      xy,
+      position,
       columns,
       width: width / columns,
       height: height / 2,
@@ -144,16 +145,16 @@ const PhotographyGridSection = (props: Props) => {
   })
 
   // Hook5: Turn the static grid values into animated transitions, any addition, removal or change will be animated
-  const transitions = useTransition(gridItems, item => item.id, {
-    // initial: null,
-    initial: ({ xy, width, height }) => ({ xy, width, height, opacity: 1 }),
-    enter: ({ xy, width, height }) => ({ xy, width, height, opacity: 1 }),
-    update: ({ xy, width, height }) => ({ xy, width, height }),
-    unique: true,
-    // leave: { height: 0, opacity: 0 },
-    // config: { mass: 5, tension: 500, friction: 100 },
-    // trail: 25,
-  })
+  // const transitions = useTransition(gridItems, item => item.id, {
+  //   // initial: null,
+  //   initial: ({ xy, width, height }) => ({ xy, width, height, opacity: 1 }),
+  //   enter: ({ xy, width, height }) => ({ xy, width, height, opacity: 1 }),
+  //   update: ({ xy, width, height }) => ({ xy, width, height }),
+  //   unique: true,
+  //   // leave: { height: 0, opacity: 0 },
+  //   // config: { mass: 5, tension: 500, friction: 100 },
+  //   // trail: 25,
+  // })
   // Render the grid
   // return (
   //   <div {...bind} className="list" style={{ height: Math.max(...heights) }}>
@@ -210,6 +211,7 @@ const PhotographyGridSection = (props: Props) => {
   //
   //
   // <SeeMoreLink totalNumImages={totalNumImages} href={slug} />
+
   return (
     <>
       <PhotographySectionHeader datetime={datetime} href={slug} />
@@ -219,25 +221,25 @@ const PhotographyGridSection = (props: Props) => {
         className={classNames('mb4 w-100')}
         height={_.max(heights)}
       >
-        {transitions.map(({ item, props, key }) => {
+        {gridItems.map(item => {
+          console.log(item)
           // @ts-ignore
-          const { xy, ...rest } = props
+          const { position, width, height, ...rest } = item
           return (
-            <animated.div
-              key={key}
+            <Box
+              key={item.id}
               style={{
                 position: 'absolute',
-                transform: xy.interpolate(
-                  (x: number, y: number) => `translate3d(${x}px,${y}px,0)`,
-                ),
-                ...rest,
+                transform: `translate3d(${position.x}px,${position.y}px,0)`,
+                width,
+                height,
               }}
             >
               <ImageZoomGridElement
                 image={item}
                 onClick={() => openLightbox(item.index)}
               />
-            </animated.div>
+            </Box>
           )
         })}
       </Box>
@@ -257,6 +259,54 @@ const PhotographyGridSection = (props: Props) => {
       )}
     </>
   )
+
+  // return (
+  //   <>
+  //     <PhotographySectionHeader datetime={datetime} href={slug} />
+  //     <Box
+  //       {...bind}
+  //       // className={classNames('bb b--moon-gray pb4', {
+  //       className={classNames('mb4 w-100')}
+  //       height={_.max(heights)}
+  //     >
+  //       {transitions.map(({ item, props, key }) => {
+  //         // @ts-ignore
+  //         const { xy, ...rest } = props
+  //         return (
+  //           <animated.div
+  //             key={key}
+  //             style={{
+  //               position: 'absolute',
+  //               transform: xy.interpolate(
+  //                 (x: number, y: number) => `translate3d(${x}px,${y}px,0)`,
+  //               ),
+  //               ...rest,
+  //             }}
+  //           >
+  //             <ImageZoomGridElement
+  //               image={item}
+  //               onClick={() => openLightbox(item.index)}
+  //             />
+  //           </animated.div>
+  //         )
+  //       })}
+  //     </Box>
+  //     <Box marginTop={2} style={{ borderTop: '1px solid rgb(221, 221, 221)' }}>
+  //       &nbsp;
+  //     </Box>
+  //     {isLightboxOpen && (
+  //       <Lightbox
+  //         enableZoom={false}
+  //         mainSrc={lightboxSrc}
+  //         nextSrc={nextImage}
+  //         onCloseRequest={closeLightbox}
+  //         onMoveNextRequest={incrementLightboxIndex}
+  //         onMovePrevRequest={decrementLightboxIndex}
+  //         prevSrc={prevImage}
+  //       />
+  //     )}
+  //   </>
+  // )
 }
 
 // const PhotographyGridSection = (props: Props) => {

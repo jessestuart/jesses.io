@@ -28,7 +28,7 @@ export const query = graphql`
     file(relativePath: { regex: "/avatar-square.jpg/" }) {
       childImageSharp {
         fluid {
-          ...GatsbyImageSharpFluid_tracedSVG
+          ...GatsbyImageSharpFluid_withWebp_tracedSVG
         }
       }
     }
