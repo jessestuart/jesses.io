@@ -1,6 +1,6 @@
-import React, { useEffect, useState } from 'react'
-import { ChevronDown } from 'react-feather'
 import { Box, Flex, Text } from 'rebass'
+import { ChevronDown } from 'react-feather'
+import React, { useEffect, useState } from 'react'
 import classNames from 'classnames'
 
 import colors from 'utils/colors'
@@ -32,9 +32,9 @@ const ProfileFooter = () => {
       style={{ gridColumn: '1 / 13' }}
     >
       <Text
-        as="h4"
-        className="f4 fira-mono fw4 lh-title tc white-80"
-        fontFamily="Fira Mono"
+        as="h3"
+        className="f4 fw4 lh-title tc white-80"
+        fontFamily="monospace"
       >
         I build software
         <br />

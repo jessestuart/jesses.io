@@ -1,5 +1,4 @@
 import classNames from 'classnames'
-import _ from 'lodash'
 import React, { ReactNode } from 'react'
 import { Flex, Text } from 'rebass/styled-components'
 

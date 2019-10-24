@@ -1,15 +1,13 @@
-import { Flex } from 'rebass/styled-components'
-import 'js-tachyons'
-
 import 'styles/base.css'
 
-import _ from 'lodash'
-import React, { ReactNode } from 'react'
+import { Flex } from 'rebass/styled-components'
 import Helmet from 'react-helmet'
+import React, { ReactNode } from 'react'
+import _ from 'lodash'
 
 import { SiteFooter, SiteHeader } from 'components'
-import GatsbyLocation from 'types/GatsbyLocation'
 import { useSiteMetadata } from 'utils/hooks'
+import GatsbyLocation from 'types/GatsbyLocation'
 
 const viewportContent =
   'width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no'
@@ -33,7 +31,15 @@ interface Props {
 const Layout = ({ children, location }: Props) => {
   const { title, url } = useSiteMetadata()
   return (
-    <Flex fontFamily="body" flexDirection="column" flex="1">
+    <Flex
+      fontFamily="body"
+      flexDirection="column"
+      flex="1"
+      style={{
+        background: 'near-white',
+        // background: 'var(--gray-primary)',
+      }}
+    >
       <Helmet title={title} meta={getHelmetMeta({ title, url })} />
       <SiteHeader location={location} />
       <Flex as="main" flex="1">

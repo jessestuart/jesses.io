@@ -1,6 +1,5 @@
 import { DateTime } from 'luxon'
 import React from 'react'
-import _ from 'lodash'
 import { Text } from 'rebass/styled-components'
 
 import Colors from 'utils/colors'

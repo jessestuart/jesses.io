@@ -54,6 +54,9 @@ const SeeMoreLink = ({
           See More →
         </Text>
       </Flex>
+      <Box marginTop={2} style={{ borderTop: '1px solid rgb(221, 221, 221)' }}>
+        &nbsp;
+      </Box>
     </Link>
   )
 }
@@ -88,6 +91,11 @@ const PhotographyGridSection = (props: Props) => {
   const prevImage = getImageAtIndex(index - 1)
 
   // Hook1: Tie media queries to the number of columns
+  // const columns = useMedia(
+  //   ['(min-width: 1500px)', '(min-width: 1000px)', '(min-width: 600px)'],
+  //   [4, 3, 2],
+  //   1,
+  // )
   const columns = useMedia(
     ['(min-width: 1500px)', '(min-width: 1000px)', '(min-width: 600px)'],
     [4, 3, 2],
@@ -98,31 +106,17 @@ const PhotographyGridSection = (props: Props) => {
   const [bind, { width }] = useMeasure()
   console.log({ width })
 
-  // Hook3: Hold items
-  // const [items, set] = useState(data)
-  // // Hook4: shuffle data every 2 seconds
-  // useEffect(() => void setInterval(() => set(shuffle), 2000), [])
-
   // Form a grid of stacked items using width & columns we got from hooks 1 & 2
   const heights: number[] = new Array(columns).fill(0) // Each column gets a height starting with zero
   const gridItems = sortedImages.map((child, index) => {
-    // console.log({ child })
     const { childImageSharp } = child
     const imageWidth = child.width || width / columns
-    // const originalHeight = _.get(childImageSharp, 'original.height')
     const aspectRatio = _.get(childImageSharp, 'sizes.aspectRatio')
-    // console.log({ aspectRatio, imageWidth })
     const height = _.isFinite(child.height)
       ? child.height
       : imageWidth * (2 / aspectRatio)
-    // debugger
-    // console.log({ height })
     // Basic masonry-grid placing, puts tile into the smallest column using Math.min
     const column = heights.indexOf(Math.min(...heights))
-    console.log({ column, height })
-    // heights[column] = height
-    // X = container width / number of columns * column index, Y = it's just the height of the current column
-    // }
 
     const position = {
       x: (width / columns) * column,
@@ -143,12 +137,10 @@ const PhotographyGridSection = (props: Props) => {
       <PhotographySectionHeader datetime={datetime} href={slug} />
       <Box
         {...bind}
-        // className={classNames('bb b--moon-gray pb4', {
         className={classNames('mb4 w-100')}
         height={_.max(heights)}
       >
         {gridItems.map(item => {
-          console.log(item)
           const { position, width, height } = item
           return (
             <Box
@@ -169,9 +161,6 @@ const PhotographyGridSection = (props: Props) => {
         })}
       </Box>
       <SeeMoreLink totalNumImages={totalNumImages} href={slug} />
-      <Box marginTop={2} style={{ borderTop: '1px solid rgb(221, 221, 221)' }}>
-        &nbsp;
-      </Box>
       {isLightboxOpen && (
         <Lightbox
           enableZoom={false}

@@ -1,7 +1,6 @@
 import { graphql, useStaticQuery } from 'gatsby'
 import { useRef, useState, useEffect, useCallback } from 'react'
 import ResizeObserver from 'resize-observer-polyfill'
-import _ from 'lodash'
 
 // interface MeasureState {
 //   height: number
@@ -43,8 +42,9 @@ export const useMedia = (queries, values, defaultValue) => {
   const match = useCallback(
     () =>
       values[
-        queries.findIndex((q: any) =>
-          _.isNil(window) ? defaultValue : matchMedia(q).matches,
+        queries.findIndex(
+          (q: any) => defaultValue,
+          // typeof window === undefined ? defaultValue : matchMedia(q).matches,
         )
       ] || defaultValue,
   )

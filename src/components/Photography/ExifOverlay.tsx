@@ -29,7 +29,7 @@ const StyledExifOverlay = styled(Flex)`
 `
 
 interface Props {
-  image: S3ImageAsset
+  image: S3ImageAsset | any
   isActive: boolean
 }
 
