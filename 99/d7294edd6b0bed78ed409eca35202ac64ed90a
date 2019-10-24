@@ -1,0 +1,13 @@
+[ver:1,total:6300]
+.gtm/terminal.app:3381,1571853600:536,1571857200:785,1571860800:420,1571864400:60,1571868000:180,1571871600:440,1571875200:630,1571878800:330,r
+src/utils/hooks.ts:860,1571853600:650,1571857200:60,1571875200:120,1571878800:30,m
+src/components/Photography/PhotographyGridSection.tsx:600,1571853600:260,1571857200:340,m
+src/styles/Theme.ts:530,1571857200:270,1571871600:230,1571875200:30,m
+src/styles/base.css:440,1571857200:210,1571871600:230,m
+src/components/Profile/ProfileFooter.tsx:200,1571871600:200,m
+src/components/Layout/index.tsx:135,1571857200:135,m
+gatsby-config.js:60,1571857200:60,m
+src/components/ProfileDevIcons/DevIconSkills.tsx:40,1571871600:40,m
+src/components/Photography/ExifOverlay.tsx:30,1571853600:30,m
+src/components/Photography/PhotographySectionHeader.tsx:12,1571853600:12,m
+src/components/Profile/ProfileHeading.tsx:12,1571853600:12,m
