@@ -8,7 +8,6 @@ import React, { useMemo, useState } from 'react'
 import _ from 'lodash'
 import classNames from 'classnames'
 
-import { colors } from 'styles/Theme'
 import { useMeasure, useMedia } from 'utils/hooks'
 
 import { ImageZoomGridElement, PhotographySectionHeader } from '.'
@@ -28,24 +27,18 @@ const SeeMoreLink = ({
   href: string
   totalNumImages: number
 }) => {
-  if (totalNumImages <= 6) {
-    return null
-  }
+  // if (totalNumImages <= 6) {
+  //   return null
+  // }
 
   return (
     <Link to={href}>
       <Flex
         justifyContent="flex-end"
         alignItems="items-center"
-        marginBottom="4"
+        marginBottom="0"
       >
         <Text
-          sx={{
-            ':hover': {
-              color: colors.textDark,
-            },
-          }}
-          fontSize="5"
           color="textDarkMuted"
           fontFamily="smallcaps"
           hoverColor="textDark"
