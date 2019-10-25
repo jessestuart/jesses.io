@@ -8,7 +8,7 @@
     "bluebird": "3.7.1",
     "classnames": "2.2.6",
     "dotenv": "8.2.0",
-    "gatsby": "2.17.2",
+    "gatsby": "2.17.4",
     "gatsby-image": "2.2.29",
     "gatsby-link": "2.2.22",
     "gatsby-plugin-config": "1.0.7",
