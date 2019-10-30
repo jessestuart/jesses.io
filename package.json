@@ -1,7 +1,7 @@
 {
   "name": "jessestuart",
   "description": "This is where my words and pictures live.",
-  "version": "1.12.45",
+  "version": "1.12.46",
   "author": "Jesse Stuart <hi@jessestuart.com>",
   "dependencies": {
     "@sentry/browser": "5.7.1",
