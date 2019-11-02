@@ -7670,10 +7670,10 @@ forwarded@~0.1.2:
   resolved "https://registry.yarnpkg.com/forwarded/-/forwarded-0.1.2.tgz#98c23dab1175657b8c0573e8ceccd91b0ff18c84"
   integrity sha1-mMI9qxF1ZXuMBXPozszZGw/xjIQ=
 
-fracty@1.0.8:
-  version "1.0.8"
-  resolved "https://registry.yarnpkg.com/fracty/-/fracty-1.0.8.tgz#321cfe3dec10cd49feed020b1711ec8d93a461c1"
-  integrity sha512-w/UltVbTuDehQ7CUZ+ZLiz7eOTdfADBzJApJbqadFg34c5Xa8YinL+gMsOoghZBkFuwTFG4/tlBgpNs7l5A5NQ==
+fracty@1.0.9:
+  version "1.0.9"
+  resolved "https://registry.yarnpkg.com/fracty/-/fracty-1.0.9.tgz#0fd16864508afbd7c3248dd1b18a1f5824a66c7c"
+  integrity sha512-QPdUU/jsRDLwNvatHqVv6ksvein9JxBzQs1Yv/thrd+7woUbJ4y4K+yVVrqIl9IVOBjNqNRqRthdi72PswnINw==
 
 fragment-cache@^0.2.1:
   version "0.2.1"
@@ -8166,14 +8166,14 @@ gatsby-source-filesystem@2.1.35:
     valid-url "^1.0.9"
     xstate "^4.6.7"
 
-gatsby-source-s3-image@1.6.83:
-  version "1.6.83"
-  resolved "https://registry.yarnpkg.com/gatsby-source-s3-image/-/gatsby-source-s3-image-1.6.83.tgz#0d78de30cdb84d05994987b1968cfc5d7b7dbe53"
-  integrity sha512-xVGIRUijjk1TLt2U1gJgaRX91Jy4m9DmKsrH/Mh1L7iVGrIcxHua3JjzVbdFPQzF2uwvOJny1rvpBg5YmJeJdw==
+gatsby-source-s3-image@1.6.84:
+  version "1.6.84"
+  resolved "https://registry.yarnpkg.com/gatsby-source-s3-image/-/gatsby-source-s3-image-1.6.84.tgz#f6fc174913b772b8fd151ce1f812f42e3bb3c71a"
+  integrity sha512-rOT2CTwvwmVITybTTezf71HDbfUNeD2B3QKH1o0dg/af3moboA5FnvONSaUwFVsz7101yE2RpO/UgeX3LT9kbQ==
   dependencies:
     aws-sdk "2.562.0"
     bluebird "3.7.1"
-    fracty "1.0.8"
+    fracty "1.0.9"
     invariant "2.2.4"
     lodash "4.17.15"
     luxon "1.21.0"
