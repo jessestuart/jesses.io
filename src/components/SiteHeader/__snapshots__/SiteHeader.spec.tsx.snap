@@ -7,8 +7,11 @@ exports[`Render SiteHeader component as not-root. 1`] = `
   min-width: 0;
   font-size: 24px;
   font-family: Alegreya Sans;
-  font-weight: heading;
-  line-height: heading;
+  font-weight: 700;
+  line-height: 1.25;
+  font-family: Alegreya Sans;
+  line-height: 1.25;
+  font-weight: 700;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -96,8 +99,11 @@ exports[`Render SiteHeader component. 1`] = `
   min-width: 0;
   font-size: 24px;
   font-family: Alegreya Sans;
-  font-weight: heading;
-  line-height: heading;
+  font-weight: 700;
+  line-height: 1.25;
+  font-family: Alegreya Sans;
+  line-height: 1.25;
+  font-weight: 700;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
