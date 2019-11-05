@@ -13,7 +13,7 @@ const StyledImageZoomGridElement = styled(Box)`
   border-radius: 2px;
   cursor: pointer;
   overflow: hidden;
-  transition: all 0.5s;
+  transition: filter 0.5s;
 
   // Throw in some drop shadow to make it pretty (extra on hover) — and just a
   //a smidge of border radius, too:
@@ -53,6 +53,16 @@ const ImageZoomGridElement = (props: Props) => {
   //     : { gridRow: 'span 2 / auto' }
 
   // <Box flex="1 1 auto" width="100%" height="100%">
+
+  // return (
+  //   <div {...props}>
+  //     <Img
+  //       imgStyle={{ objectFit: 'contain', display: 'inline-block' }}
+  //       fluid={thumbnailImage}
+  //     />
+  //     <ExifOverlay isActive={isActive as boolean} image={image} />
+  //   </div>
+  // )
   return (
     <StyledImageZoomGridElement {...props} {...setIsActive} margin={2}>
       <Img imgStyle={{ objectFit: 'contain' }} fluid={thumbnailImage} />

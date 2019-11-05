@@ -2,13 +2,14 @@ import 'react-image-lightbox/style.css'
 
 import { Box, Flex, Text } from 'rebass/styled-components'
 import { DateTime } from 'luxon'
+import { animated, useTransition } from 'react-spring'
 import Lightbox from 'react-image-lightbox'
 import Link from 'gatsby-link'
 import React, { useMemo, useState } from 'react'
 import _ from 'lodash'
-import classNames from 'classnames'
+import fp from 'lodash/fp'
 
-import { useMeasure, useMedia } from 'utils/hooks'
+import { useDimensions, useMedia } from 'utils/hooks'
 
 import { ImageZoomGridElement, PhotographySectionHeader } from '.'
 
@@ -51,7 +52,6 @@ const SeeMoreLink = ({
               fontFamily="smallcaps"
               hoverColor="textDark"
               fontSize={4}
-              style={{ transition: 'all 0.25s ease-in-out' }}
             >
               See More →
             </Text>
@@ -78,6 +78,8 @@ const PhotographyGridSection = (props: Props) => {
     () => _.sortBy(images, 'EXIF.DateTimeOriginal'),
     [images],
   )
+  // const sortedImages = _.sortBy(images, 'EXIF.DateTimeOriginal')
+  // const lightboxImages = _.map(sortedImages, 'childImageSharp.sizes.srcWebp')
   const lightboxImages = useMemo(
     () => _.map(sortedImages, 'childImageSharp.sizes.srcWebp'),
     [sortedImages],
@@ -87,7 +89,6 @@ const PhotographyGridSection = (props: Props) => {
   const incrementLightboxIndex = () => setLightboxIndex(index + 1)
   const closeLightbox = () => setIsLightboxOpen(false)
   const openLightbox = (imageIndex: number) => {
-    console.log('open lightbox', { imageIndex })
     setLightboxIndex(imageIndex)
     setIsLightboxOpen(true)
   }
@@ -99,16 +100,13 @@ const PhotographyGridSection = (props: Props) => {
   const prevImage = getImageAtIndex(index - 1)
 
   // Tie media queries to the number of columns.
-
   const columns = useMedia(
     ['(min-width: 1536px)', '(min-width: 1024px)', '(min-width: 512px)'],
-    // ['(min-width: 1500px)', '(min-width: 1000px)', '(min-width: 600px)'],
     [4, 3, 2],
     1,
   )
   // Measure the width of the container element.
-  // @ts-ignore
-  const [bind, { width }] = useMeasure()
+  const [ref, { width }] = useDimensions()
 
   // Form a grid of stacked items using width & columns we got from hooks 1 & 2
   const heights: number[] = new Array(columns).fill(0) // Each column gets a height starting with zero
@@ -123,50 +121,64 @@ const PhotographyGridSection = (props: Props) => {
     // smallest column available.
     const column = heights.indexOf(Math.min(...heights))
 
-    const position = {
-      x: (width / columns) * column,
-      y: (heights[column] += height / 2) - height / 2,
-    }
+    const xy = [
+      (width / columns) * column,
+      (heights[column] += height / 2) - height / 2,
+    ]
     return {
       ...child,
       index,
-      position,
+      xy,
       columns,
       width: width / columns,
       height: height / 2,
     }
   })
 
+  const transitions = useTransition(gridItems, fp.get('id'), {
+    from: ({ xy, width, height }) => ({ xy, width, height }),
+    enter: ({ xy, width, height }) => ({ xy, width, height }),
+    update: ({ xy, width, height }) => ({ xy, width, height }),
+    config: { mass: 5, tension: 500, friction: 100 },
+    trail: 25,
+  })
+
   return (
     <>
       <PhotographySectionHeader datetime={datetime} href={slug} />
       <Box
-        {...bind}
-        className={classNames('mb4 w-100')}
+        ref={ref}
+        // {...bind}
+        className="mb4 w-100"
         // Define height in `style` to avoid creating a new className on each
         // resize / render.
-        style={{ height: _.max(heights) }}
+        style={{ height: Math.max(...heights) }}
       >
-        {gridItems.map(item => {
-          const { position, width, height } = item
-          return (
-            <Box
-              key={item.id}
-              style={{
-                position: 'absolute',
-                transform: `translate3d(${position.x}px,${position.y}px,0)`,
-                width,
-                height,
-                transition: 'transform 0.5s ease-in-out',
-              }}
-            >
-              <ImageZoomGridElement
-                image={item}
-                onClick={() => openLightbox(item.index)}
-              />
-            </Box>
-          )
-        })}
+        {width != null &&
+          transitions.map(
+            // @ts-ignore
+            ({ item, props: { xy, width, height, ...rest }, key }) => {
+              return (
+                <animated.div
+                  key={key}
+                  style={{
+                    position: 'absolute',
+                    width,
+                    height,
+                    transform: xy.interpolate(
+                      (x: number, y: number) => `translate3d(${x}px,${y}px,0)`,
+                    ),
+                    ...rest,
+                  }}
+                >
+                  <ImageZoomGridElement
+                    image={item}
+                    onClick={() => openLightbox(item.index)}
+                  />
+                </animated.div>
+              )
+            },
+          )}
       </Box>
       <SeeMoreLink totalNumImages={totalNumImages} href={slug} />
       {isLightboxOpen && (

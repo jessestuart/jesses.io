@@ -15,9 +15,9 @@ const StyledExifOverlay = styled(Flex)`
   bottom: 0;
   color: white;
   display: flex;
-  font-family: sans-serif;
-  font-size: 0.9rem;
-  font-variant: small-caps;
+  font-family: Alegreya Sans SC;
+  font-size: 1.3rem;
+  // font-variant: small-caps;
   justify-content: flex-end;
   opacity: ${({ isActive }) => (isActive ? 1 : 0)};
   padding: 10px;
