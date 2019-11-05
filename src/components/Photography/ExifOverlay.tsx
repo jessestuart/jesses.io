@@ -36,7 +36,7 @@ interface Props {
 const ExifOverlay = ({ image, isActive }: Props) => {
   const EXIF = _.get(image, 'EXIF')
   if (!EXIF) {
-    return
+    return null
   }
   const lensModel: string | undefined = mapLensModelExif(EXIF.LensModel || '')
   const { FNumber, FocalLength, ISO, ShutterSpeedFraction } = EXIF

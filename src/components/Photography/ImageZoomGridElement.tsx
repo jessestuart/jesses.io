@@ -34,16 +34,11 @@ interface Props {
 }
 
 const ImageZoomGridElement = (props: Props) => {
-  // @ts-ignore
-  const { image }: { image: S3ImageAsset } = props
+  const { image } = props
 
   const [isActive, setIsActive] = useHover()
 
-  const thumbnailImage: S3ImageAsset = _.get(
-    image,
-    'childImageSharp.thumbnailSizes',
-  )
-  console.log({ imageSharp: image.childImageSharp })
+  const thumbnailImage = _.get(image, 'childImageSharp.thumbnailSizes')
 
   if (_.isEmpty(thumbnailImage)) {
     return null
@@ -59,8 +54,7 @@ const ImageZoomGridElement = (props: Props) => {
 
   // <Box flex="1 1 auto" width="100%" height="100%">
   return (
-    // @ts-ignore
-    <StyledImageZoomGridElement {...props} margin={2} {...setIsActive}>
+    <StyledImageZoomGridElement {...props} {...setIsActive} margin={2}>
       <Img imgStyle={{ objectFit: 'contain' }} fluid={thumbnailImage} />
       <ExifOverlay isActive={isActive as boolean} image={image} />
     </StyledImageZoomGridElement>

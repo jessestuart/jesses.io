@@ -1,6 +1,9 @@
-import Colors from 'utils/colors'
+import _ from 'lodash'
 
-export const breakpoints = ['40em', '52em', '64em']
+import Colors from 'utils/colors'
+import preset from '@rebass/preset'
+
+// export const breakpoints = ['40em', '52em', '64em']
 
 export const colors = {
   ...Colors,
@@ -13,29 +16,32 @@ export const colors = {
   textLightMuted: 'rgba(220, 220, 220, .9)',
 }
 
-export const fontSizes = [12, 14, 16, 20, 24, 32, 48, 64]
+// export const fontSizes = [12, 14, 16, 20, 24, 32, 48, 64]
 
 export const fonts = {
-  monospace:
-    "'Fira Mono', 'SFMono-Regular', 'Menlo', 'Courier New', 'monospace'",
+  monospace: 'Fira Mono',
   body: 'Lato, system-ui, sans-serif',
   heading: 'Alegreya Sans',
   serif: 'Spectral, serif',
-  smallcaps: "'Alegreya Sans SC', 'Alegreya Sans', sans-serif",
+  smallcaps: 'Alegreya Sans SC',
+  // smallcaps: "'Alegreya Sans SC', 'Alegreya Sans', sans-serif",
 }
 
 export const shadows = {
-  large: '0 0 24px rgba(0, 0, 0, .125)',
-  small: '0 0 4px rgba(0, 0, 0, .125)',
+  large: '0 0 12px 12px rgba(40, 40, 40, 0.6)',
+  small: '0 0 4px 4px rgba(40, 40, 40, 0.6)',
 }
 
-export const space = [0, 4, 8, 16, 32, 64, 128, 256]
+// export const space = [0, 4, 8, 16, 32, 64, 128, 256]
 
-export default {
-  breakpoints,
+const Theme = _.merge(preset, {
+  // breakpoints,
   colors,
-  fontSizes,
   fonts,
   shadows,
-  space,
-}
+  // space,
+})
+
+console.log({ Theme })
+
+export default Theme

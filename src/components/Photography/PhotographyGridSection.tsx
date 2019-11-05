@@ -27,31 +27,46 @@ const SeeMoreLink = ({
   href: string
   totalNumImages: number
 }) => {
-  // if (totalNumImages <= 6) {
-  //   return null
-  // }
-
-  return (
-    <Link to={href}>
-      <Flex
-        justifyContent="flex-end"
-        alignItems="items-center"
-        marginBottom="0"
+  if (totalNumImages <= 6) {
+    return (
+      <Box
+        marginBottom={2}
+        marginTop={4}
+        style={{ borderTop: '1px solid rgb(221, 221, 221)' }}
       >
-        <Text
-          color="textDarkMuted"
-          fontFamily="smallcaps"
-          hoverColor="textDark"
-          style={{ transition: 'all 0.25s ease-in-out' }}
-        >
-          See More →
-        </Text>
-      </Flex>
-      <Box marginTop={2} style={{ borderTop: '1px solid rgb(221, 221, 221)' }}>
         &nbsp;
       </Box>
-    </Link>
-  )
+    )
+  } else {
+    return (
+      <>
+        <Flex
+          justifyContent="flex-end"
+          alignItems="items-center"
+          marginBottom="0"
+        >
+          <Link to={href}>
+            <Text
+              color="textDarkMuted"
+              fontFamily="smallcaps"
+              hoverColor="textDark"
+              fontSize={4}
+              style={{ transition: 'all 0.25s ease-in-out' }}
+            >
+              See More →
+            </Text>
+          </Link>
+        </Flex>
+        <Box
+          marginBottom={4}
+          marginTop={2}
+          style={{ borderTop: '1px solid rgb(221, 221, 221)' }}
+        >
+          &nbsp;
+        </Box>
+      </>
+    )
+  }
 }
 
 const PhotographyGridSection = (props: Props) => {
@@ -83,21 +98,17 @@ const PhotographyGridSection = (props: Props) => {
   const nextImage = getImageAtIndex(index + 1)
   const prevImage = getImageAtIndex(index - 1)
 
-  // Hook1: Tie media queries to the number of columns
-  // const columns = useMedia(
-  //   ['(min-width: 1500px)', '(min-width: 1000px)', '(min-width: 600px)'],
-  //   [4, 3, 2],
-  //   1,
-  // )
+  // Tie media queries to the number of columns.
+
   const columns = useMedia(
-    ['(min-width: 1500px)', '(min-width: 1000px)', '(min-width: 600px)'],
+    ['(min-width: 1536px)', '(min-width: 1024px)', '(min-width: 512px)'],
+    // ['(min-width: 1500px)', '(min-width: 1000px)', '(min-width: 600px)'],
     [4, 3, 2],
     1,
   )
-  // Hook2: Measure the width of the container element
+  // Measure the width of the container element.
   // @ts-ignore
   const [bind, { width }] = useMeasure()
-  console.log({ width })
 
   // Form a grid of stacked items using width & columns we got from hooks 1 & 2
   const heights: number[] = new Array(columns).fill(0) // Each column gets a height starting with zero
@@ -108,7 +119,8 @@ const PhotographyGridSection = (props: Props) => {
     const height = _.isFinite(child.height)
       ? child.height
       : imageWidth * (2 / aspectRatio)
-    // Basic masonry-grid placing, puts tile into the smallest column using Math.min
+    // Masonry-grid placing — positions each tile sequentially into the
+    // smallest column available.
     const column = heights.indexOf(Math.min(...heights))
 
     const position = {
@@ -131,7 +143,9 @@ const PhotographyGridSection = (props: Props) => {
       <Box
         {...bind}
         className={classNames('mb4 w-100')}
-        height={_.max(heights)}
+        // Define height in `style` to avoid creating a new className on each
+        // resize / render.
+        style={{ height: _.max(heights) }}
       >
         {gridItems.map(item => {
           const { position, width, height } = item
@@ -143,6 +157,7 @@ const PhotographyGridSection = (props: Props) => {
                 transform: `translate3d(${position.x}px,${position.y}px,0)`,
                 width,
                 height,
+                transition: 'transform 0.5s ease-in-out',
               }}
             >
               <ImageZoomGridElement
