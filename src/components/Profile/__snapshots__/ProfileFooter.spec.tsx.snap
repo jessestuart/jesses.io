@@ -11,15 +11,15 @@ exports[`Render ProfileFooter component (cancelled) after 10s. 2`] = `
     }
   }
 >
-  <h4
-    className="f4 fira-mono fw4 lh-title tc white-80 css-7nafme"
+  <div
+    className="fw4 lh-title tc white-80 css-seakmb"
   >
     I build software
     <br />
     on the pull requests
     <br />
     of giants.
-  </h4>
+  </div>
   <div
     className="justify-center mt2 hvr-wobble-vertical hvr-wobble-vertical-animating css-4cffwv"
   >
@@ -52,15 +52,15 @@ exports[`Render ProfileFooter component after 10s. 1`] = `
     }
   }
 >
-  <h4
-    className="f4 fira-mono fw4 lh-title tc white-80 css-7nafme"
+  <div
+    className="fw4 lh-title tc white-80 css-seakmb"
   >
     I build software
     <br />
     on the pull requests
     <br />
     of giants.
-  </h4>
+  </div>
   <div
     className="justify-center mt2 hvr-wobble-vertical hvr-wobble-vertical-animating css-4cffwv"
   >
@@ -105,20 +105,20 @@ Array [
     <style
       dangerouslySetInnerHTML={
         Object {
-          "__html": ".css-7nafme{box-sizing:border-box;margin:0;min-width:0;font-family:Fira Mono;}",
+          "__html": ".css-seakmb{box-sizing:border-box;margin:0;min-width:0;font-size:20px;font-family:monospace;}",
         }
       }
-      data-emotion-css="7nafme"
+      data-emotion-css="seakmb"
     />
-    <h4
-      className="f4 fira-mono fw4 lh-title tc white-80 css-7nafme"
+    <div
+      className="fw4 lh-title tc white-80 css-seakmb"
     >
       I build software
       <br />
       on the pull requests
       <br />
       of giants.
-    </h4>
+    </div>
     <style
       dangerouslySetInnerHTML={
         Object {

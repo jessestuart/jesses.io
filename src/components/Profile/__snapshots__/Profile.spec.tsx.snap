@@ -1,36 +1,15 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Render Profile component. Render Profile component. 1`] = `
-.c5 {
-  box-sizing: border-box;
-  margin: 0;
-  min-width: 0;
-  font-family: Spectral,serif;
-  color: rgba(255,255,255,.8);
-}
-
-.c4 {
-  box-sizing: border-box;
-  margin: 0;
-  min-width: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-}
-
 .c6 {
-  border-bottom: 2px solid rgba(148,117,204,0.8);
+  border-bottom: 2px solid [object Object];
   position: relative;
   -webkit-text-decoration: none;
   text-decoration: none;
 }
 
 .c6::before {
-  background-color: rgba(255,58,92,0.8);
+  background-color: [object Object];
   bottom: -2px;
   content: '';
   height: 2px;
@@ -52,10 +31,31 @@ exports[`Render Profile component. Render Profile component. 1`] = `
   visibility: visible;
 }
 
+.c5 {
+  box-sizing: border-box;
+  margin: 0;
+  min-width: 0;
+  font-family: Spectral,serif;
+  color: rgba(255,255,255,.8);
+}
+
+.c4 {
+  box-sizing: border-box;
+  margin: 0;
+  min-width: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
 .c0 {
   display: grid;
   grid-template-columns: repeat(12,1fr);
-  min-height: calc(100vh - 53px);
+  min-height: calc(100vh - 56px);
   background: linear-gradient( 180deg, rgba(55,59,70,1), rgba(103,58,183,0.1) 50%, rgba(103,58,183,0.5) 70%, rgba(103,58,183,1) 80%, rgba(103,58,183,1) 100% );
 }
 
@@ -292,8 +292,8 @@ exports[`Render Profile component. Render Profile component. 1`] = `
           className="mh2"
           style={
             Object {
-              "height": "1.25rem",
-              "width": "1.25rem",
+              "height": "1.5rem",
+              "width": "1.5rem",
             }
           }
           viewBox="0 0 45 45"
@@ -360,8 +360,8 @@ exports[`Render Profile component. Render Profile component. 1`] = `
         <svg
           style={
             Object {
-              "height": "1.25rem",
-              "width": "1.25rem",
+              "height": "1.5rem",
+              "width": "1.5rem",
             }
           }
           viewBox="0 0 45 45"
@@ -449,8 +449,8 @@ exports[`Render Profile component. Render Profile component. 1`] = `
           className="mh2"
           style={
             Object {
-              "height": "1.25rem",
-              "width": "1.25rem",
+              "height": "1.5rem",
+              "width": "1.5rem",
             }
           }
           viewBox="0 0 45 45"
@@ -497,8 +497,8 @@ exports[`Render Profile component. Render Profile component. 1`] = `
         <svg
           style={
             Object {
-              "height": "1.25rem",
-              "width": "1.25rem",
+              "height": "1.5rem",
+              "width": "1.5rem",
             }
           }
           viewBox="0 0 45 45"
@@ -567,8 +567,8 @@ exports[`Render Profile component. Render Profile component. 1`] = `
           className="mh2"
           style={
             Object {
-              "height": "1.25rem",
-              "width": "1.25rem",
+              "height": "1.5rem",
+              "width": "1.5rem",
             }
           }
           viewBox="0 0 45 45"
@@ -611,8 +611,8 @@ exports[`Render Profile component. Render Profile component. 1`] = `
         <svg
           style={
             Object {
-              "height": "1.25rem",
-              "width": "1.25rem",
+              "height": "1.5rem",
+              "width": "1.5rem",
             }
           }
           viewBox="0 0 45 45"
@@ -700,8 +700,8 @@ exports[`Render Profile component. Render Profile component. 1`] = `
           className="mh2"
           style={
             Object {
-              "height": "1.25rem",
-              "width": "1.25rem",
+              "height": "1.5rem",
+              "width": "1.5rem",
             }
           }
           viewBox="0 0 45 45"
@@ -736,8 +736,8 @@ exports[`Render Profile component. Render Profile component. 1`] = `
         <svg
           style={
             Object {
-              "height": "1.25rem",
-              "width": "1.25rem",
+              "height": "1.5rem",
+              "width": "1.5rem",
             }
           }
           viewBox="0 0 45 45"
@@ -798,44 +798,60 @@ exports[`Render Profile component. Render Profile component. 1`] = `
           className="mh2"
           style={
             Object {
-              "height": "1.25rem",
-              "width": "1.25rem",
+              "height": "1.5rem",
+              "width": "1.5rem",
             }
           }
-          viewBox="0 0 45 45"
+          viewBox="0 0 47.5 47.5"
         >
           <defs>
             <clipPath
-              id="a"
+              id="Twemoji_1f4f7_svg__a"
             >
               <path
-                d="M0 36h36V0H0v36z"
+                d="M0 38h38V0H0v38z"
               />
             </clipPath>
           </defs>
           <g
-            clipPath="url(#a)"
-            transform="matrix(1.25 0 0 -1.25 0 45)"
+            clipPath="url(#Twemoji_1f4f7_svg__a)"
+            transform="matrix(1.25 0 0 -1.25 0 47.5)"
           >
             <path
-              d="M36 9a4 4 0 0 0-4-4h-8v26h8a4 4 0 0 0 4-4V9z"
-              fill="#ed2939"
+              d="M1 27s0 4 4 4h28s4 0 4-4V9s0-4-4-4H5S1 5 1 9v18z"
+              fill="#292f33"
             />
             <path
-              d="M4 31a4 4 0 0 1-4-4V9a4 4 0 0 1 4-4h8v26H4z"
-              fill="#002495"
+              d="M12 18c0-5.523 4.477-10 10-10s10 4.477 10 10-4.477 10-10 10-10-4.477-10-10"
+              fill="#ccd6dd"
             />
             <path
-              d="M24 5H12v26h12V5z"
-              fill="#eee"
+              d="M30 18a8 8 0 00-8-8 8 8 0 100 16 8 8 0 008-8"
+              fill="#292f33"
+            />
+            <path
+              d="M27 18a5 5 0 00-5-5 5 5 0 00-5 5 5 5 0 005 5 5 5 0 005-5"
+              fill="#3b88c3"
+            />
+            <path
+              d="M35 27.5a1.5 1.5 0 10-3 0 1.5 1.5 0 003 0"
+              fill="#fff"
+            />
+            <path
+              d="M13 27.5a1.5 1.5 0 00-1.5-1.5h-5a1.5 1.5 0 100 3h5a1.5 1.5 0 001.5-1.5"
+              fill="#f5f8fa"
+            />
+            <path
+              d="M5 32s0 1 1 1h6s1 0 1-1v-1H5v1z"
+              fill="#66757f"
             />
           </g>
         </svg>
         <svg
           style={
             Object {
-              "height": "1.25rem",
-              "width": "1.25rem",
+              "height": "1.5rem",
+              "width": "1.5rem",
             }
           }
           viewBox="0 0 45 45"
@@ -888,20 +904,20 @@ exports[`Render Profile component. Render Profile component. 1`] = `
       <style
         dangerouslySetInnerHTML={
           Object {
-            "__html": ".css-7nafme{box-sizing:border-box;margin:0;min-width:0;font-family:Fira Mono;}",
+            "__html": ".css-seakmb{box-sizing:border-box;margin:0;min-width:0;font-size:20px;font-family:monospace;}",
           }
         }
-        data-emotion-css="7nafme"
+        data-emotion-css="seakmb"
       />
-      <h4
-        className="f4 fira-mono fw4 lh-title tc white-80 css-7nafme"
+      <div
+        className="fw4 lh-title tc white-80 css-seakmb"
       >
         I build software
         <br />
         on the pull requests
         <br />
         of giants.
-      </h4>
+      </div>
       <style
         dangerouslySetInnerHTML={
           Object {

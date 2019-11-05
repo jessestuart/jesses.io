@@ -11,57 +11,65 @@ Array [
   -webkit-flex: 1;
   -ms-flex: 1;
   flex: 1;
-  font-family: 'Alegreya Sans SC','Alegreya Sans',sans-serif;
+  font-family: Alegreya Sans SC;
   font-size: 48px;
 }
 
-<a
-    className="w-100"
-    href="/true/#"
-    onClick={[Function]}
-    onMouseEnter={[Function]}
+<h2
+    className="c0 flex fw5 justify-end w-100"
+    color="textMediumMuted"
+    fontFamily="smallcaps"
+    fontSize="6"
   >
-    <h2
-      className="c0 flex fw5 justify-end"
-      color="textMediumMuted"
-      fontFamily="smallcaps"
-      fontSize="6"
+    <a
+      href="/true/#"
+      onClick={[Function]}
+      onMouseEnter={[Function]}
     >
       01 May 2019
-    </h2>
-  </a>,
-  .c0 {
-  position: relative;
-  display: grid;
-  grid-gap: 1rem;
-  grid-auto-rows: minmax(20vh,auto);
-}
-
-@media (min-width:60em) {
-  .c0 {
-    grid-template-columns: repeat(auto-fill,minmax(30vw,1fr));
-  }
-}
-
-@media (max-width:60em) and (min-width:45em) {
-  .c0 {
-    grid-template-columns: repeat(auto-fill,minmax(18em,1fr));
-  }
-}
-
-@media (max-width:45em) {
-  .c0 {
-    grid-template-columns: repeat(auto-fill,minmax(50vw,1fr));
-  }
-}
-
-<div
-    className="c0 pb4"
-  />,
+    </a>
+  </h2>,
   .c0 {
   box-sizing: border-box;
   margin: 0;
   min-width: 0;
+}
+
+<div
+    className="c0 mb4 w-100"
+    style={
+      Object {
+        "height": NaN,
+      }
+    }
+  >
+    <div
+      style={
+        Object {
+          "height": NaN,
+          "position": "absolute",
+          "transform": "translate3d(0px,NaNpx,0)",
+          "width": 0,
+        }
+      }
+    />
+    <div
+      style={
+        Object {
+          "height": NaN,
+          "position": "absolute",
+          "transform": "translate3d(0px,NaNpx,0)",
+          "width": 0,
+        }
+      }
+    />
+  </div>,
+  .c0 {
+  box-sizing: border-box;
+  margin: 0;
+  min-width: 0;
+  margin-bottom: 8px;
+  margin-top: 32px;
 }
 
 <div
@@ -88,57 +96,44 @@ Array [
   -webkit-flex: 1;
   -ms-flex: 1;
   flex: 1;
-  font-family: 'Alegreya Sans SC','Alegreya Sans',sans-serif;
+  font-family: Alegreya Sans SC;
   font-size: 48px;
 }
 
-<a
-    className="w-100"
-    href="/true/#"
-    onClick={[Function]}
-    onMouseEnter={[Function]}
+<h2
+    className="c0 flex fw5 justify-end w-100"
+    color="textMediumMuted"
+    fontFamily="smallcaps"
+    fontSize="6"
   >
-    <h2
-      className="c0 flex fw5 justify-end"
-      color="textMediumMuted"
-      fontFamily="smallcaps"
-      fontSize="6"
+    <a
+      href="/true/#"
+      onClick={[Function]}
+      onMouseEnter={[Function]}
     >
       01 May 2019
-    </h2>
-  </a>,
+    </a>
+  </h2>,
   .c0 {
-  position: relative;
-  display: grid;
-  grid-gap: 1rem;
-  grid-auto-rows: minmax(20vh,auto);
-}
-
-@media (min-width:60em) {
-  .c0 {
-    grid-template-columns: repeat(auto-fill,minmax(30vw,1fr));
-  }
-}
-
-@media (max-width:60em) and (min-width:45em) {
-  .c0 {
-    grid-template-columns: repeat(auto-fill,minmax(18em,1fr));
-  }
-}
-
-@media (max-width:45em) {
-  .c0 {
-    grid-template-columns: repeat(auto-fill,minmax(50vw,1fr));
-  }
+  box-sizing: border-box;
+  margin: 0;
+  min-width: 0;
 }
 
 <div
-    className="c0 pb4"
+    className="c0 mb4 w-100"
+    style={
+      Object {
+        "height": 0,
+      }
+    }
   />,
   .c0 {
   box-sizing: border-box;
   margin: 0;
   min-width: 0;
+  margin-bottom: 8px;
+  margin-top: 32px;
 }
 
 <div
