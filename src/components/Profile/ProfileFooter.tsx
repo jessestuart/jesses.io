@@ -32,9 +32,13 @@ const ProfileFooter = () => {
       style={{ gridColumn: '1 / 13' }}
     >
       <Text
-        as="h3"
-        className="f4 fw4 lh-title tc white-80"
+        className="fw4 lh-title tc white-80"
+        fontSize={3}
         fontFamily="monospace"
+        // sx={{
+        //   fontSize: 3,
+        //   fontFamily: 'monospace',
+        // }}
       >
         I build software
         <br />

@@ -6,17 +6,10 @@ import BlackMirror from './BlackMirror'
 import ProfileBlurb from './ProfileBlurb'
 import ProfileFooter from './ProfileFooter'
 
-// const ProfileWrapper = styled.div`
-//   min-height: calc(100vh - 53px);
-//   display: flex;
-//   flex-direction: column;
-// `
-
 const IntroWrapper = styled.div`
   display: grid;
   grid-template-columns: repeat(12, 1fr);
-  // min-height: calc(100vh - 53px);
-  min-height: calc(100vh - 53px);
+  min-height: calc(100vh - 56px);
 
   background: linear-gradient(
     180deg,

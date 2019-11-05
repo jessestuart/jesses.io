@@ -1,3 +1,4 @@
+import Camera from './Camera'
 import CrescentMoon from './CrescentMoon'
 import France from './France'
 import Microscope from './Microscope'
@@ -8,6 +9,7 @@ import Scroll from './Scroll'
 import ThinkingFace from './ThinkingFace'
 
 const Twemoji = {
+  Camera,
   CrescentMoon,
   France,
   Microscope,

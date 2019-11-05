@@ -1,10 +1,9 @@
 import { DateTime } from 'luxon'
-import React from 'react'
 import { Text } from 'rebass/styled-components'
+import Link from 'gatsby-link'
+import React from 'react'
 
 import Colors from 'utils/colors'
-// import StyledLink from 'components/StyledLink'
-import Link from 'gatsby-link'
 
 interface Props {
   datetime: DateTime
@@ -15,21 +14,19 @@ const PhotographySectionHeader = ({
   datetime,
   href = '/photography',
 }: Props) => (
-  <Link className="w-100" to={href}>
-    <Text
-      as="h2"
-      borderBottom={`1px solid ${Colors.gray.calm}`}
-      marginBottom="2"
-      className="flex fw5 justify-end"
-      color="textMediumMuted"
-      flex="1"
-      fontFamily="smallcaps"
-      fontSize="6"
-      justfiyContent="flex-end"
-    >
-      {datetime.toFormat('dd LLLL yyyy')}
-    </Text>
-  </Link>
+  <Text
+    as="h2"
+    borderBottom={`1px solid ${Colors.gray.calm}`}
+    marginBottom="2"
+    className="flex fw5 justify-end w-100"
+    color="textMediumMuted"
+    flex="1"
+    fontFamily="smallcaps"
+    fontSize="6"
+    justfiyContent="flex-end"
+  >
+    <Link to={href}>{datetime.toFormat('dd LLLL yyyy')}</Link>
+  </Text>
 )
 
 // const PhotographySectionHeader = ({
