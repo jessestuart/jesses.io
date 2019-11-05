@@ -1,17 +1,16 @@
 import 'react-image-lightbox/style.css'
 
-import { Box, Flex, Text } from 'rebass/styled-components'
+import { Box } from 'rebass/styled-components'
 import { DateTime } from 'luxon'
 import { animated, useTransition } from 'react-spring'
 import Lightbox from 'react-image-lightbox'
-import Link from 'gatsby-link'
-import React, { useMemo, useState } from 'react'
+import React, { useState } from 'react'
 import _ from 'lodash'
 import fp from 'lodash/fp'
 
 import { useDimensions, useMedia } from 'utils/hooks'
 
-import { ImageZoomGridElement, PhotographySectionHeader } from '.'
+import { ImageZoomGridElement, PhotographySectionHeader, SeeMoreLink } from '.'
 
 interface Props {
   datetime: DateTime
@@ -21,69 +20,13 @@ interface Props {
   totalNumImages?: number
 }
 
-const SeeMoreLink = ({
-  href,
-  totalNumImages,
-}: {
-  href: string
-  totalNumImages: number
-}) => {
-  if (totalNumImages <= 6) {
-    return (
-      <Box
-        marginBottom={2}
-        marginTop={4}
-        style={{ borderTop: '1px solid rgb(221, 221, 221)' }}
-      >
-        &nbsp;
-      </Box>
-    )
-  } else {
-    return (
-      <>
-        <Flex
-          justifyContent="flex-end"
-          alignItems="items-center"
-          marginBottom="0"
-        >
-          <Link to={href}>
-            <Text
-              color="textDarkMuted"
-              fontFamily="smallcaps"
-              hoverColor="textDark"
-              fontSize={4}
-            >
-              See More →
-            </Text>
-          </Link>
-        </Flex>
-        <Box
-          marginBottom={4}
-          marginTop={2}
-          style={{ borderTop: '1px solid rgb(221, 221, 221)' }}
-        >
-          &nbsp;
-        </Box>
-      </>
-    )
-  }
-}
-
 const PhotographyGridSection = (props: Props) => {
   const { datetime, images, slug = '/#', totalNumImages = 0 } = props
   const [isLightboxOpen, setIsLightboxOpen] = useState(false)
   const [index, setLightboxIndex] = useState(0)
 
-  const sortedImages = useMemo(
-    () => _.sortBy(images, 'EXIF.DateTimeOriginal'),
-    [images],
-  )
-  // const sortedImages = _.sortBy(images, 'EXIF.DateTimeOriginal')
-  // const lightboxImages = _.map(sortedImages, 'childImageSharp.sizes.srcWebp')
-  const lightboxImages = useMemo(
-    () => _.map(sortedImages, 'childImageSharp.sizes.srcWebp'),
-    [sortedImages],
-  )
+  const sortedImages = _.sortBy(images, 'EXIF.DateTimeOriginal')
+  const lightboxImages = _.map(sortedImages, 'childImageSharp.sizes.srcWebp')
 
   const decrementLightboxIndex = () => setLightboxIndex(index - 1)
   const incrementLightboxIndex = () => setLightboxIndex(index + 1)
@@ -92,9 +35,9 @@ const PhotographyGridSection = (props: Props) => {
     setLightboxIndex(imageIndex)
     setIsLightboxOpen(true)
   }
-
   const getImageAtIndex = (imageIndex: number) =>
     _.get(lightboxImages, imageIndex % lightboxImages.length)
+
   const lightboxSrc = getImageAtIndex(index)
   const nextImage = getImageAtIndex(index + 1)
   const prevImage = getImageAtIndex(index - 1)
@@ -106,9 +49,11 @@ const PhotographyGridSection = (props: Props) => {
     1,
   )
   // Measure the width of the container element.
+  // @ts-ignore
   const [ref, { width }] = useDimensions()
 
-  // Form a grid of stacked items using width & columns we got from hooks 1 & 2
+  // Form a grid of stacked images, using the width & column calculations we got
+  // from the `useMedia` and `useDimensions` hooks above.
   const heights: number[] = new Array(columns).fill(0) // Each column gets a height starting with zero
   const gridItems = sortedImages.map((child, index) => {
     const { childImageSharp } = child
@@ -137,7 +82,7 @@ const PhotographyGridSection = (props: Props) => {
 
   const transitions = useTransition(gridItems, fp.get('id'), {
     from: ({ xy, width, height }) => ({ xy, width, height }),
-    enter: ({ xy, width, height }) => ({ xy, width, height }),
+    // enter: ({ xy, width, height }) => ({ xy, width, height }),
     update: ({ xy, width, height }) => ({ xy, width, height }),
     config: { mass: 5, tension: 500, friction: 100 },
     trail: 25,
@@ -148,7 +93,6 @@ const PhotographyGridSection = (props: Props) => {
       <PhotographySectionHeader datetime={datetime} href={slug} />
       <Box
         ref={ref}
-        // {...bind}
         className="mb4 w-100"
         // Define height in `style` to avoid creating a new className on each
         // resize / render.

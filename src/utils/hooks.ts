@@ -1,19 +1,42 @@
 import { graphql, useStaticQuery } from 'gatsby'
-import { useLayoutEffect, useRef, useState, useEffect } from 'react'
+import { useCallback, useEffect, useLayoutEffect, useState } from 'react'
 
 export const useDimensions = () => {
-  const ref = useRef(null)
   const [dimensions, setDimensions] = useState({ width: 0 })
-  useLayoutEffect(() => {
-    // @ts-ignore
-    setDimensions(ref.current.getBoundingClientRect().toJSON())
+  const [node, setNode] = useState(null)
+
+  const ref = useCallback(node => {
+    setNode(node)
   }, [])
-  return [ref, dimensions]
+
+  useLayoutEffect(() => {
+    if (node == null) {
+      return
+    }
+    const measure = () =>
+      window.requestAnimationFrame(() => {
+        // @ts-ignore
+        const rect = node.getBoundingClientRect()
+        setDimensions({ width: rect.width })
+      })
+    measure()
+
+    window.addEventListener('resize', measure)
+    window.addEventListener('scroll', measure)
+
+    return () => {
+      window.removeEventListener('resize', measure)
+      window.removeEventListener('scroll', measure)
+    }
+  }, [node])
+  return [ref, dimensions, node]
 }
 
 export const useMedia = (queries, values, defaultValue) => {
   // Array containing a media query list for each query
-  const mediaQueryLists = queries.map(q => window.matchMedia(q))
+  const mediaQueryLists =
+    typeof window !== 'undefined' ? queries.map(q => window.matchMedia(q)) : []
+
   // Function that gets value based on matching media query
   // eslint-disable-next-line
   const getValue = () => {
@@ -28,12 +51,13 @@ export const useMedia = (queries, values, defaultValue) => {
 
   useEffect(() => {
     // Event listener callback
-    // Note: By defining getValue outside of useEffect we ensure that it has ...
-    // ... current values of hook args (as this hook callback is created once on mount).
+    // NB: By defining getValue outside of useEffect we ensure that it has
+    // current values of hook args (as this hook callback is created once on
+    // mount).
     const handler = () => setValue(getValue)
     // Set a listener for each media query with above handler as callback.
     mediaQueryLists.forEach(mql => mql.addListener(handler))
-    // Remove listeners on cleanup
+    // Remove listeners on cleanup.
     return () => mediaQueryLists.forEach(mql => mql.removeListener(handler))
     // eslint-disable-next-line
   }, [])
