@@ -80,7 +80,7 @@
     "@types/bluebird": "3.5.28",
     "@types/classnames": "2.2.9",
     "@types/jest": "24.0.22",
-    "@types/lodash": "4.14.144",
+    "@types/lodash": "4.14.145",
     "@types/luxon": "1.15.2",
     "@types/md5": "2.1.33",
     "@types/node": "12.12.6",
