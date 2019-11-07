@@ -90,7 +90,7 @@
     "@types/react-helmet": "5.0.14",
     "@types/react-redux": "7.1.5",
     "@types/react-test-renderer": "16.9.1",
-    "@types/styled-components": "4.1.21",
+    "@types/styled-components": "4.1.22",
     "@types/voca": "1.4.0",
     "@typescript-eslint/eslint-plugin": "2.6.1",
     "@typescript-eslint/parser": "2.6.1",
