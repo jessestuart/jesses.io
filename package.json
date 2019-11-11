@@ -77,7 +77,7 @@
     "@semantic-release/git": "7.0.18",
     "@testing-library/jest-dom": "4.2.3",
     "@testing-library/react-hooks": "2.0.3",
-    "@types/bluebird": "3.5.28",
+    "@types/bluebird": "3.5.29",
     "@types/classnames": "2.2.9",
     "@types/jest": "24.0.22",
     "@types/lodash": "4.14.146",
