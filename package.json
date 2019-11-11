@@ -4,7 +4,7 @@
   "version": "1.12.60",
   "author": "Jesse Stuart <hi@jessestuart.com>",
   "dependencies": {
-    "@sentry/browser": "5.7.1",
+    "@sentry/browser": "5.8.0",
     "bluebird": "3.7.1",
     "classnames": "2.2.6",
     "dotenv": "8.2.0",
