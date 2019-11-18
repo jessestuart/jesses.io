@@ -8369,17 +8369,17 @@ gatsby-source-filesystem@2.1.37:
     valid-url "^1.0.9"
     xstate "^4.6.7"
 
-gatsby-source-s3-image@1.6.97:
-  version "1.6.97"
-  resolved "https://registry.yarnpkg.com/gatsby-source-s3-image/-/gatsby-source-s3-image-1.6.97.tgz#f2bedb1b53a1921fb8bc04bb36b63fbe474e36bc"
-  integrity sha512-2eBvkK1cBm2oQb/Q0FDIqpF72TWwFHI8spqSs+GdRr7dnxiacyzAxintjBSnW1gMBhjRHzR4VkkcyCDAHgOKpQ==
+gatsby-source-s3-image@1.6.98:
+  version "1.6.98"
+  resolved "https://registry.yarnpkg.com/gatsby-source-s3-image/-/gatsby-source-s3-image-1.6.98.tgz#2b1cf231fe2bb752234494122d914611f33205e3"
+  integrity sha512-fzn9hLvwSYPcRyrXKzhAicHENX0fPiA+RpWw9P8xcxkj0mpkoI+YHEJtqkmIfxpt18FRtE2FYZKyf/qXQcYJ9w==
   dependencies:
     aws-sdk "2.573.0"
     bluebird "3.7.1"
     fracty "1.0.9"
     invariant "2.2.4"
     lodash "4.17.15"
-    luxon "1.21.1"
+    luxon "1.21.2"
     mime-types "2.1.25"
     ts-exif-parser "0.1.4"
 
@@ -12201,11 +12201,6 @@ lru-cache@^5.1.1:
   integrity sha512-KpNARQA3Iwv+jTA0utUVVbrh+Jlrr1Fv0e56GGzAFOXN7dk/FviaDW8LHmK52DlcH4WP2n6gI8vN1aesBFgo9w==
   dependencies:
     yallist "^3.0.2"
-
-luxon@1.21.1:
-  version "1.21.1"
-  resolved "https://registry.yarnpkg.com/luxon/-/luxon-1.21.1.tgz#00c9c9e624e66cfef745a8476c4ead14a3966a61"
-  integrity sha512-3zxaKX7mj7eA80TU0sm4CfNEtiUZ2QXGjMc80rfG4d1dOnnOOWz63U9j4nYR7+1w716DYtWfdOeVhDXYlH+D4w==
 
 luxon@1.21.2:
   version "1.21.2"
