@@ -1,36 +1,38 @@
 import classNames from 'classnames'
-import React, { ReactNode } from 'react'
-import { Flex, Text } from 'rebass/styled-components'
+import React from 'react'
+import { Text } from 'rebass/styled-components'
 
-import ProfileStyledLink from './ProfileStyledLink'
+import ProfileStyledLink from 'components/Profile/ProfileStyledLink'
 
-const WHITMAN_URL = 'http://jstu.art/ojNe'
+const WHITMAN_URL = 'https://jstu.art/ojNe'
 
-const ProfileHeadingText = ({
-  className,
-  children,
-}: {
-  className?: string
-  children: ReactNode
-}) => (
+const ProfileHeadingText = ({ children, className, ...rest }: any) => (
   <Text
     as="span"
-    fontFamily="serif"
+    className={classNames('flex justify-end fw5 lh-title', className)}
     color="textLight"
-    className={classNames('justify-end fw5 f3 lh-title', className)}
+    flex="1"
+    fontFamily="serif"
+    fontSize={5}
+    {...rest}
   >
     {children}
   </Text>
 )
 
 const ProfileHeading = () => (
-  <Flex className="mv3" flexDirection="column">
-    <ProfileHeadingText className="pb3">Hi — I'm Jesse.</ProfileHeadingText>
-    <ProfileHeadingText className="flex-wrap">
-      I contradict myself. I contain{' '}
+  <>
+    <ProfileHeadingText as="div" className="flex flex-wrap">
+      Hi — I'm Jesse.
+    </ProfileHeadingText>
+    <ProfileHeadingText className="flex flex-wrap">
+      I contradict myself.
+    </ProfileHeadingText>
+    <ProfileHeadingText className="flex flex-wrap">
+      I contain
       <ProfileStyledLink href={WHITMAN_URL}>multitudes</ProfileStyledLink>.
     </ProfileHeadingText>
-  </Flex>
+  </>
 )
 
 export default ProfileHeading

@@ -1,5 +1,6 @@
 import classNames from 'classnames'
 import React, { Fragment } from 'react'
+import { Text } from 'rebass/styled-components'
 import styled from 'styled-components'
 
 import 'styles/base.css'
@@ -14,9 +15,14 @@ const ProfileDevIcons = () => {
   return (
     <>
       <div className="flex justify-center align-center">
-        <p
-          className="spectral fw3 lh-copy center pv3 tc w-75"
-          style={{ fontSize: '1.3rem' }}
+        <Text
+          fontFamily="serif"
+          fontWeight="body"
+          className="lh-copy center pv3 tc w-75"
+          mt={5}
+          mb={3}
+          fontSize={3}
+          // style={{ fontSize: '1.3rem' }}
         >
           Tackling novel problems —
           <span style={{ whiteSpace: 'nowrap' }}>
@@ -25,7 +31,7 @@ const ProfileDevIcons = () => {
           — <span style={{ whiteSpace: 'nowrap' }}>is my jam.</span>
           <br />
           Here are some of the technologies I've enjoyed hacking on lately:
-        </p>
+        </Text>
       </div>
       <DevIconsSection className="center code w-90">
         {DevIconSkills.map((devIcon, index) => (

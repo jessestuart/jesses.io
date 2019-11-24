@@ -1,9 +1,9 @@
-import { Flex, Text } from 'rebass'
 import React, { ReactNode } from 'react'
+import { Flex, Text } from 'rebass/styled-components'
 
+import Twemoji from 'components/Icons/Twemoji'
 import ProfileHeading from 'components/Profile/ProfileHeading'
 import ProfileStyledLink from 'components/Profile/ProfileStyledLink'
-import Twemoji from 'components/Icons/Twemoji'
 
 const BEIGBEDER_URL = 'http://jstu.art/ojVB'
 const COLING_URL = 'http://jstu.art/oijk'
@@ -14,6 +14,7 @@ const {
   CrescentMoon,
   France,
   Microscope,
+  Mountain,
   OpenBook,
   PersonalComputer,
   Rat,
@@ -29,7 +30,9 @@ interface Props {
 
 const SubBlurb = ({ Emoji1, Emoji2, children }: Props) => (
   <Flex className="pt4 justify-center justify-end-ns items-center">
-    <Text className="f4 fw3 dib tr lh-copy">{children}</Text>
+    <Text sx={{ fontFamily: 'body' }} className="f4 fw3 dib tr lh-copy">
+      {children}
+    </Text>
     <Flex className="f6 dib">
       <Emoji1 className="mh2" style={{ height: '1.5rem', width: '1.5rem' }} />
       <Emoji2 style={{ height: '1.5rem', width: '1.5rem' }} />
@@ -56,11 +59,11 @@ const ProfileBlurb = () => (
     </SubBlurb>
     <SubBlurb Emoji1={France} Emoji2={CrescentMoon}>
       <ProfileStyledLink href={BEIGBEDER_URL}>
-        French translator{' '}
-      </ProfileStyledLink>
+        French translator
+      </ProfileStyledLink>{' '}
       by night.
     </SubBlurb>
-    <SubBlurb Emoji1={Camera} Emoji2={CrescentMoon}>
+    <SubBlurb Emoji1={Camera} Emoji2={Mountain}>
       I also take a lot of photographs.
     </SubBlurb>
   </>

@@ -10,8 +10,7 @@ interface Props {
 const Avatar = ({ image }: Props) => (
   // @ts-ignore
   <StyledImg
-    boxShadow="large"
-    className="br-100"
+    className="br-100 shadow-3"
     padding={0}
     justifyContent="center"
     my={2}

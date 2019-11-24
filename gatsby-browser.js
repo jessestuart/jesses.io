@@ -4,35 +4,27 @@
  * See: https://www.gatsbyjs.org/docs/browser-apis/
  */
 
-require('js-tachyons')
-require('typeface-alegreya-sans')
-require('typeface-alegreya-sans-sc')
-require('typeface-fira-mono')
-require('typeface-lato')
-require('typeface-spectral')
+import 'js-tachyons'
+import 'typeface-alegreya-sans'
+import 'typeface-alegreya-sans-sc'
+import 'typeface-fira-mono'
+import 'typeface-lato'
+import 'typeface-spectral'
 
-const React = require('react')
+import { ThemeProvider } from 'theme-ui'
+import React from 'react'
 
-const { initSentry } = require('./src/services/sentry')
+import { initSentry } from './src/services/sentry'
+import Layout from './src/components/Layout'
+import Theme from './src/styles/Theme'
 
 const { GATSBY_ENV = 'Development' } = process.env
 
 initSentry({ environment: GATSBY_ENV })
 
-const Theme = require('./src/styles/Theme').default
-
-const Layout = require('./src/components/Layout').default
-
-const { Styled } = require('theme-ui')
-const { ThemeProvider } = require('styled-components')
-
-// eslint-disable-next-line
-exports.wrapPageElement = ({ element, props }) => {
-  return (
-    <Styled.root>
-      <ThemeProvider theme={Theme}>
-        <Layout {...props}>{element}</Layout>
-      </ThemeProvider>
-    </Styled.root>
-  )
-}
+// export const wrapPageElement = ({ element, props }) => (
+//   <ThemeProvider theme={Theme}>
+//     <element {...props} />
+//     <Layout {...props}>{element}</Layout>
+//   </ThemeProvider>
+// )

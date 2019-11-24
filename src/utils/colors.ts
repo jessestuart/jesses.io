@@ -55,13 +55,11 @@ const colors: Colors = Object.freeze({
 
   defaultHover: new Color(secondaryColors.light7)
     .setAlpha(0.8)
-    .toRgb()
-    .toString(),
+    .toPercentageRgbString(),
 
   defaultLink: new Color(primaryColors.main)
     .setAlpha(0.8)
-    .toRgb()
-    .toString(),
+    .toPercentageRgbString(),
 })
 
 export default colors

@@ -4,6 +4,8 @@ import _ from 'lodash'
 import { DateTime } from 'luxon'
 import React from 'react'
 import Helmet from 'react-helmet'
+import { Box } from 'rebass/styled-components'
+
 import GatsbyLocation from 'types/GatsbyLocation'
 
 import './blog-post.css'
@@ -19,7 +21,7 @@ interface Props {
       }
     }
     markdownRemark: {
-      id: any
+      id: string
       excerpt: string
       frontmatter: {
         title: string
@@ -61,9 +63,11 @@ const BlogPostTemplate = (props: Props) => {
   const comboTitle = `${title || 'Posts'} | ${siteTitle}`
 
   return (
-    <div
-      className="black-80 lh-copy pa4 w-100"
-      style={{ background: colors.secondary.light0 }}
+    <Box
+      className="black-80 lh-copy"
+      p={4}
+      width="100%"
+      backgroundColor={colors.secondary.light0}
     >
       <BlogPostHelmet
         comboTitle={comboTitle}
@@ -81,7 +85,7 @@ const BlogPostTemplate = (props: Props) => {
           id="remark-post"
         />
       </div>
-    </div>
+    </Box>
   )
 }
 

@@ -1,4 +1,5 @@
 import React from 'react'
+import { Box, Flex } from 'rebass/styled-components'
 import styled from 'styled-components'
 
 import Avatar from './Avatar'
@@ -6,14 +7,14 @@ import BlackMirror from './BlackMirror'
 import ProfileBlurb from './ProfileBlurb'
 import ProfileFooter from './ProfileFooter'
 
-const IntroWrapper = styled.div`
+const IntroWrapper = styled(Box)`
   display: grid;
   grid-template-columns: repeat(12, 1fr);
   min-height: calc(100vh - 56px);
 
   background: linear-gradient(
     180deg,
-    rgba(55, 59, 70, 1),
+    rgba(55, 59, 70, 1) 0%,
     rgba(103, 58, 183, 0.1) 50%,
     rgba(103, 58, 183, 0.5) 70%,
     rgba(103, 58, 183, 1) 80%,
@@ -25,7 +26,7 @@ const IntroWrapper = styled.div`
   }
 `
 
-const AvatarContainer = styled.div`
+const AvatarContainer = styled(Box)`
   grid-column: 1 / 13;
 
   @media (min-width: 45em) and (max-width: 60em) {
@@ -33,7 +34,7 @@ const AvatarContainer = styled.div`
     grid-row: 1 / 5;
   }
   @media (min-width: 60em) {
-    grid-column: 4 / 6;
+    grid-column: 3 / 5;
     grid-row: 1 / 5;
   }
 `
@@ -41,12 +42,12 @@ const AvatarContainer = styled.div`
 const BlurbContainer = styled.div`
   grid-column: 1 / 13;
 
-  @media (min-width: 45em) and (max-width: 60em) {
-    grid-column: 5 / 12;
+  @media (min-width: 45em) and (max-width: 75em) {
+    grid-column: 5 / 10;
     grid-row: 1 / 5;
   }
-  @media (min-width: 60em) {
-    grid-column: 5 / 10;
+  @media (min-width: 75em) {
+    grid-column: 6 / 9;
     grid-row: 1 / 5;
   }
 `

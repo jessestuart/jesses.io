@@ -10,11 +10,12 @@ import _ from 'lodash'
 import React, { ReactNode } from 'react'
 import Helmet from 'react-helmet'
 import { Box, Flex } from 'rebass/styled-components'
-
-import { SiteFooter, SiteHeader } from 'components'
+import { ThemeProvider } from 'styled-components'
 import GatsbyLocation from 'types/GatsbyLocation'
 
-import config from '../../../gatsby-config'
+import { SiteFooter, SiteHeader } from 'components'
+import Theme from 'styles/Theme'
+import config from '../../gatsby-config'
 
 const title: string = _.get(config, 'siteMetadata.title')
 const url: string = _.get(config, 'siteMetadata.url')
@@ -37,14 +38,14 @@ interface Props {
 }
 
 const Layout = ({ children, location }: Props) => (
-  <>
+  <ThemeProvider theme={Theme}>
     <Helmet title={title} meta={HELMET_META} />
     <SiteHeader location={location} />
-    <Flex as="main" sx={{ flex: '1 1 auto' }}>
+    <Flex as="main" flex="1 1 auto">
       {children}
     </Flex>
     <SiteFooter />
-  </>
+  </ThemeProvider>
 )
 
 export default Layout

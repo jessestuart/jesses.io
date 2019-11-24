@@ -2,17 +2,14 @@ const _ = require('lodash')
 
 const AWS = require('aws-sdk')
 
-require('dotenv').config()
-
 const getSourceS3ConfigForEnvironment = env => {
   switch (env) {
-    case GatsbyEnv.Development:
     // return {
     //   bucketName: 'js-photos-dev',
     //   domain: 'minio.jesses.io',
     //   protocol: 'https',
     // }
-    // }
+    case GatsbyEnv.Development:
     case GatsbyEnv.Staging: {
       return { bucketName: 'js-photos-dev' }
     }
@@ -27,7 +24,7 @@ const getSourceS3ConfigForEnvironment = env => {
 // high-resolution photos displayed in production. This is simply to
 // save on AWS costs :)
 const GatsbyEnv = {
-  Development: 'Deveopment',
+  Development: 'Development',
   Production: 'Production',
   Staging: 'Staging',
 }
@@ -110,6 +107,10 @@ const sourceS3 = {
   options: getSourceS3ConfigForEnvironment(GATSBY_ENV),
 }
 
+const layoutPlugin = {
+  resolve: 'gatsby-plugin-layout',
+}
+
 /* eslint-disable @typescript-eslint/camelcase */
 const manifestPlugin = {
   resolve: 'gatsby-plugin-manifest',
@@ -126,14 +127,22 @@ const manifestPlugin = {
 /* eslint-enable @typescript-eslint/camelcase */
 
 let plugins = _.compact([
-  'gatsby-plugin-typescript',
+  {
+    resolve: 'gatsby-plugin-typescript',
+    options: {
+      isTSX: true,
+      allExtensions: true,
+    },
+  },
   'gatsby-plugin-theme-ui',
+  'gatsby-plugin-root-import',
   // ====================================
   // Gotta load those sweet, sweet files.
   // ====================================
   sourceFilesystem,
   sourceFilesystemImages,
   sourceS3,
+  layoutPlugin,
   // =======================================================================
   // Add in React Helmet and React 16 support until Gatsby v2 is released.
   // =======================================================================
@@ -165,8 +174,8 @@ if (!IS_LOCAL) {
   // Production/Staging-only plugins.
   //=================================
   plugins = _.concat(plugins, [
-    'gatsby-plugin-offline',
-    manifestPlugin,
+    // 'gatsby-plugin-offline',
+    // manifestPlugin,
     'gatsby-plugin-netlify',
     'gatsby-plugin-netlify-cache',
   ])

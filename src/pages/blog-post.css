@@ -1,0 +1,63 @@
+@import '../styles/base.css';
+
+h3,
+h4,
+h5,
+h6 {
+  margin-top: 1rem;
+}
+
+/*
+ * Alternative `color`s:
+ * - #673AB7
+ * - #A23649
+ * - #C62D47
+ */
+p code,
+li code,
+p a code,
+li a code {
+  background: #e4e4e4;
+  border-radius: 3px;
+  color: var(--hot-pink);
+  font-size: 1rem;
+  font-weight: 400;
+  margin: 0 2px;
+  padding: 2px 1px;
+}
+
+pre {
+  font-size: 1rem;
+  margin-bottom: 1.45rem !important;
+}
+
+article a {
+  border-bottom: 2px solid var(--hot-pink);
+  position: relative;
+  text-decoration: none;
+}
+
+article a::before {
+  -webkit-transform: scaleX(0);
+  -webkit-transition: all 0.3s ease-in-out 0s;
+  transform: scaleX(0);
+  transition: all 0.3s ease-in-out 0s;
+  background-color: rgba(148, 117, 204, 0.8);
+  bottom: -2px;
+  content: '';
+  height: 2px;
+  left: 0;
+  position: absolute;
+  visibility: hidden;
+  width: 100%;
+}
+
+article a:hover::before {
+  -webkit-transform: scaleX(1);
+  transform: scaleX(1);
+  visibility: visible;
+}
+
+article p a {
+  font-weight: 700;
+}

@@ -1,13 +1,13 @@
+import 'js-tachyons'
 import 'styles/base.css'
 
+import classNames from 'classnames'
 import _ from 'lodash'
 import React from 'react'
 import Headroom from 'react-headroom'
-import classNames from 'classnames'
 import { Flex, Heading } from 'rebass/styled-components'
 
 import GatsbyLocation from 'types/GatsbyLocation'
-
 import HeaderLink from './HeaderLink'
 
 export enum HeaderTheme {
@@ -27,31 +27,28 @@ const Headers: Header[] = [
   { href: '/about', title: 'about' },
 ]
 
+interface Props {
+  location: GatsbyLocation
+}
+
 const SiteHeader = (props: { location: GatsbyLocation }) => {
   const pathname: string = _.get(props, 'location.pathname', '/')
   const isRoot: boolean = _.eq(pathname, '/')
 
-  const theme = _.startsWith(pathname, '/photography')
+  const theme: HeaderTheme = _.startsWith(pathname, '/photography')
     ? HeaderTheme.LIGHT
     : HeaderTheme.DARK
 
   return (
-    <Headroom
-      style={{
-        MozTransition: 'all 0.7s ease-in-out',
-        OTransition: 'all 0.7s ease-in-out',
-        WebkitTransition: 'all 0.7s ease-in-out',
-        transition: 'all 0.7s ease-in-out',
-      }}
-    >
+    <Headroom>
       <Heading
         as="header"
         id="site-header"
         alignItems="center"
-        width="100%"
-        className={classNames('bb center flex justify-center ', {
+        fontFamily="body"
+        className={classNames('bb flex justify-center', {
           'bg-gray-primary b--hot-pink': theme === HeaderTheme.DARK,
-          'bg-near-white b--black-10': theme === HeaderTheme.LIGHT,
+          'bg-near-white b--black-20': theme === HeaderTheme.LIGHT,
           bw1: !isRoot,
         })}
         style={{

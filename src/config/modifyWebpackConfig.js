@@ -1,6 +1,7 @@
 const path = require('path')
 
 module.exports = ({ actions, getConfig, stage }) => {
+  console.log({ stage })
   const config = getConfig()
   switch (stage) {
     case 'build-javascript':

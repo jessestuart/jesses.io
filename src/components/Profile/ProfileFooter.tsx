@@ -1,7 +1,7 @@
-import { Box, Flex, Text } from 'rebass'
-import { ChevronDown } from 'react-feather'
-import React, { useEffect, useState } from 'react'
 import classNames from 'classnames'
+import React, { useEffect, useState } from 'react'
+import { ChevronDown } from 'react-feather'
+import { Box, Flex, Text } from 'rebass'
 
 import colors from 'utils/colors'
 

@@ -9,7 +9,7 @@ const version = require('../../package.json').version
 // This is public anyway, so no sense hiding it in an env var. ¯\_(ツ)_/¯
 const SENTRY_DSN = 'https://5f7a25ceef2148bf946ffd3b8cd781c3@sentry.io/1340322'
 
-export const initSentry = _.once(({ environment }) => {
+export const initSentry = _.once(({ environment = 'Development' }) => {
   Sentry.init({
     dsn: SENTRY_DSN,
     environment,

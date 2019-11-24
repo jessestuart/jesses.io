@@ -1,6 +1,6 @@
 import { graphql, useStaticQuery } from 'gatsby'
-import React from 'react'
 import _ from 'lodash'
+import React from 'react'
 
 import BlogHeader from 'components/Blog/BlogHeader'
 import StyledPanel from 'components/StyledPanel/StyledPanel'
@@ -50,7 +50,7 @@ const BlogIndex = ({ location }: { location: GatsbyLocation }) => {
 
   return (
     <div className="bg-near-white lh-copy pa3-ns pv4 w-100">
-      {posts.map(({ node }: { node: MarkdownRemarkNode }) => {
+      {posts.map(({ node }) => {
         const { excerpt, frontmatter, fields } = node
         const { slug } = fields
         const date = _.get(frontmatter, 'date')

@@ -1,4 +1,3 @@
-import { graphql, useStaticQuery } from 'gatsby'
 import { useCallback, useEffect, useLayoutEffect, useState } from 'react'
 
 export const useDimensions = () => {
@@ -65,17 +64,32 @@ export const useMedia = (queries, values, defaultValue) => {
   return value
 }
 
-export const useSiteMetadata = () => {
-  const { site } = useStaticQuery(
-    graphql`
-      query {
-        site {
-          siteMetadata {
-            title
-          }
-        }
-      }
-    `,
-  )
-  return site.siteMetadata
-}
+// export const useSiteMetadata = () => {
+//   const { site } = useStaticQuery(
+//     graphql`
+//       query SiteMetaData {
+//         site {
+//           siteMetadata {
+//             title
+//             siteUrl
+//           }
+//         }
+//       }
+//     `,
+//   )
+//   return site.siteMetadata
+// }
+// export const useSiteMetadata = () => {
+//   const { site } = useStaticQuery(
+//     graphql`
+//       query {
+//         site {
+//           siteMetadata {
+//             title
+//           }
+//         }
+//       }
+//     `,
+//   )
+//   return site.siteMetadata
+// }

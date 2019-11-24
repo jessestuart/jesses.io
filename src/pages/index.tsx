@@ -1,9 +1,9 @@
 import { graphql } from 'gatsby'
+import GatsbyImage from 'gatsby-image'
 import _ from 'lodash'
 import React from 'react'
 
 import { Profile, ProfileDevIcons } from 'components'
-import GatsbyImage from 'types/GatsbyImage'
 
 interface Props {
   data: {
