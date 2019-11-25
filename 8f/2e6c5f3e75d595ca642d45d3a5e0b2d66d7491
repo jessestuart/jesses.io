@@ -1,0 +1,9 @@
+[ver:1,total:660]
+scripts/project-depcheck.ts:250,1574661600:250,m
+src/styles/base.css:130,1574661600:130,m
+src/pages/photography.tsx:120,1574661600:120,m
+scripts/depcheck.ts:60,1574661600:60,d
+src/pages/blog-post.css:45,1574661600:45,m
+node_modules/@types/node/path.d.ts:20,1574661600:20,r
+src/utils/colors.ts:20,1574661600:20,r
+src/templates/blog-post.css:15,1574661600:15,r
