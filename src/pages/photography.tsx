@@ -7,7 +7,6 @@ import React from 'react'
 import { Helmet } from 'react-helmet'
 
 import { PhotographyGridSection } from 'components'
-// import { useSiteMetadata } from 'utils/hooks'
 
 interface Props {
   allS3ImageAsset: {
@@ -36,8 +35,7 @@ const createSortedArrayOfGroupedImages = _.flow(
 )
 
 const PhotographyIndex = () => {
-  // const { title } = useSiteMetadata()
-  const data = useStaticQuery(graphql`
+  const data: Props = useStaticQuery(graphql`
     query {
       allS3ImageAsset {
         edges {
@@ -49,7 +47,7 @@ const PhotographyIndex = () => {
     }
   `)
 
-  const pageTitle = `Photography`
+  const pageTitle = 'Photography'
   const sortedArrayOfGroupedImages = createSortedArrayOfGroupedImages(data)
 
   return (

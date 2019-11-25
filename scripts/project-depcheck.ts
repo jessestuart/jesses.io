@@ -1,6 +1,8 @@
 #!/usr/bin/env ts-node
 
-import { depcheck } from 'depcheck'
+import path from 'path'
+
+import depcheck from 'depcheck'
 
 const options = {
   detectors: [
@@ -32,7 +34,7 @@ const options = {
   withoutDev: false, // [DEPRECATED] check against devDependencies
 }
 
-depcheck('/path/to/your/project', options, unused => {
+depcheck(path.resolve(__dirname, '../'), options, unused => {
   console.log(unused.dependencies) // an array containing the unused dependencies
   console.log(unused.devDependencies) // an array containing the unused devDependencies
   console.log(unused.missing) // a lookup containing the dependencies missing in `package.json` and where they are used

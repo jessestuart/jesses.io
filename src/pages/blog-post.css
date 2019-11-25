@@ -76,7 +76,7 @@ article p a {
   background: 'inherit !important';
 }
 
-blockquote > *not(:last-child) {
+blockquote > :not(:last-child) {
   padding-bottom: '0.5';
 }
 
