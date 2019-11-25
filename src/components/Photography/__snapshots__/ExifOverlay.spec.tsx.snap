@@ -1,0 +1,7 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ExifOverlay Render valid active ExifOverlay component. 1`] = `null`;
+
+exports[`ExifOverlay Render valid inactive ExifOverlay component. 1`] = `null`;
+
+exports[`ExifOverlay Rendering ExifOverlay w/out any text is empty div. 1`] = `null`;

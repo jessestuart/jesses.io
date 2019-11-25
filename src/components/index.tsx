@@ -1,10 +1,9 @@
-import { PortfolioItem } from './Portfolio'
 import BlogHeader from './Blog/BlogHeader'
-import HeaderLink from './SiteHeader/HeaderLink'
+import { PortfolioItem } from './Portfolio'
 import ProfileDevIcons from './ProfileDevIcons'
 import SiteFooter from './SiteFooter/SiteFooter'
+import HeaderLink from './SiteHeader/HeaderLink'
 import SiteHeader from './SiteHeader/SiteHeader'
-import StyledImg from './StyledImg'
 import StyledLink from './StyledLink/StyledLink'
 import StyledPanel from './StyledPanel/StyledPanel'
 
@@ -30,5 +29,4 @@ export {
   SiteHeader,
   StyledLink,
   StyledPanel,
-  StyledImg,
 }

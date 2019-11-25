@@ -16,7 +16,7 @@ exports[`Render SiteHeader component as not-root. 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  width: 100%;
+  font-family: Lato,system-ui,sans-serif;
 }
 
 .c1 {
@@ -32,31 +32,31 @@ exports[`Render SiteHeader component as not-root. 1`] = `
   display: flex;
 }
 
-<Headroom
-  style={
-    Object {
-      "MozTransition": "all 0.7s ease-in-out",
-      "OTransition": "all 0.7s ease-in-out",
-      "WebkitTransition": "all 0.7s ease-in-out",
-      "transition": "all 0.7s ease-in-out",
-    }
-  }
->
+.c2 {
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+}
+
+.c2:hover {
+  color: rgba(255,255,255,.9);
+}
+
+<Headroom>
   <header
-    className="c0 bb center flex justify-center  bg-gray-primary b--hot-pink"
+    className="c0 bb flex justify-center bg-gray-primary b--hot-pink"
+    fontFamily="body"
     id="site-header"
     style={
       Object {
         "transition": "all 0.5s ease-in-out",
       }
     }
-    width="100%"
   >
     <div
       className="c1 gray-primary fw3 w-35-ns"
     >
       <a
-        className="shadow-none lato f4 ph3 mv2 pv2 light-silver fw3 b--light-silver br b--moon-grey white-90 fw4"
+        className="c2 b--mid-gray f4 fw3 mv2 ph3 pv2 shadow-none white-90 fw4 br b--moon-grey"
         href="/true"
         onClick={[Function]}
         onMouseEnter={[Function]}
@@ -64,7 +64,7 @@ exports[`Render SiteHeader component as not-root. 1`] = `
         home
       </a>
       <a
-        className="shadow-none lato f4 ph3 mv2 pv2 light-silver fw3 b--light-silver br b--moon-grey light-silver fw3"
+        className="c2 b--mid-gray f4 fw3 mv2 ph3 pv2 shadow-none light-silver fw3 br b--moon-grey"
         href="/true/posts"
         onClick={[Function]}
         onMouseEnter={[Function]}
@@ -72,7 +72,7 @@ exports[`Render SiteHeader component as not-root. 1`] = `
         words
       </a>
       <a
-        className="shadow-none lato f4 ph3 mv2 pv2 light-silver fw3 b--light-silver br b--moon-grey light-silver fw3"
+        className="c2 b--mid-gray f4 fw3 mv2 ph3 pv2 shadow-none light-silver fw3 br b--moon-grey"
         href="/true/photography"
         onClick={[Function]}
         onMouseEnter={[Function]}
@@ -80,7 +80,7 @@ exports[`Render SiteHeader component as not-root. 1`] = `
         pictures
       </a>
       <a
-        className="shadow-none lato f4 ph3 mv2 pv2 light-silver fw3 b--light-silver light-silver fw3"
+        className="c2 b--mid-gray f4 fw3 mv2 ph3 pv2 shadow-none light-silver fw3"
         href="/true/about"
         onClick={[Function]}
         onMouseEnter={[Function]}
@@ -108,7 +108,7 @@ exports[`Render SiteHeader component. 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  width: 100%;
+  font-family: Lato,system-ui,sans-serif;
 }
 
 .c1 {
@@ -124,31 +124,31 @@ exports[`Render SiteHeader component. 1`] = `
   display: flex;
 }
 
-<Headroom
-  style={
-    Object {
-      "MozTransition": "all 0.7s ease-in-out",
-      "OTransition": "all 0.7s ease-in-out",
-      "WebkitTransition": "all 0.7s ease-in-out",
-      "transition": "all 0.7s ease-in-out",
-    }
-  }
->
+.c2 {
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+}
+
+.c2:hover {
+  color: rgba(255,255,255,.9);
+}
+
+<Headroom>
   <header
-    className="c0 bb center flex justify-center  bg-gray-primary b--hot-pink"
+    className="c0 bb flex justify-center bg-gray-primary b--hot-pink"
+    fontFamily="body"
     id="site-header"
     style={
       Object {
         "transition": "all 0.5s ease-in-out",
       }
     }
-    width="100%"
   >
     <div
       className="c1 gray-primary fw3 w-35-ns"
     >
       <a
-        className="shadow-none lato f4 ph3 mv2 pv2 light-silver fw3 b--light-silver br b--moon-grey white-90 fw4"
+        className="c2 b--mid-gray f4 fw3 mv2 ph3 pv2 shadow-none white-90 fw4 br b--moon-grey"
         href="/true"
         onClick={[Function]}
         onMouseEnter={[Function]}
@@ -156,7 +156,7 @@ exports[`Render SiteHeader component. 1`] = `
         home
       </a>
       <a
-        className="shadow-none lato f4 ph3 mv2 pv2 light-silver fw3 b--light-silver br b--moon-grey light-silver fw3"
+        className="c2 b--mid-gray f4 fw3 mv2 ph3 pv2 shadow-none light-silver fw3 br b--moon-grey"
         href="/true/posts"
         onClick={[Function]}
         onMouseEnter={[Function]}
@@ -164,7 +164,7 @@ exports[`Render SiteHeader component. 1`] = `
         words
       </a>
       <a
-        className="shadow-none lato f4 ph3 mv2 pv2 light-silver fw3 b--light-silver br b--moon-grey light-silver fw3"
+        className="c2 b--mid-gray f4 fw3 mv2 ph3 pv2 shadow-none light-silver fw3 br b--moon-grey"
         href="/true/photography"
         onClick={[Function]}
         onMouseEnter={[Function]}
@@ -172,7 +172,7 @@ exports[`Render SiteHeader component. 1`] = `
         pictures
       </a>
       <a
-        className="shadow-none lato f4 ph3 mv2 pv2 light-silver fw3 b--light-silver light-silver fw3"
+        className="c2 b--mid-gray f4 fw3 mv2 ph3 pv2 shadow-none light-silver fw3"
         href="/true/about"
         onClick={[Function]}
         onMouseEnter={[Function]}

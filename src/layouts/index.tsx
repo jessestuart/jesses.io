@@ -9,7 +9,7 @@ import 'styles/base.css'
 import _ from 'lodash'
 import React, { ReactNode } from 'react'
 import Helmet from 'react-helmet'
-import { Box, Flex } from 'rebass/styled-components'
+import { Flex } from 'rebass/styled-components'
 import { ThemeProvider } from 'styled-components'
 import GatsbyLocation from 'types/GatsbyLocation'
 

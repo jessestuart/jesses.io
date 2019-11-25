@@ -32,7 +32,7 @@ pre {
 }
 
 article a {
-  border-bottom: 2px solid var(--hot-pink);
+  /* border-bottom: 2px solid var(--hot-pink); */
   position: relative;
   text-decoration: none;
 }
@@ -60,4 +60,39 @@ article a:hover::before {
 
 article p a {
   font-weight: 700;
+}
+
+#___gatsby code {
+  font-family: 'Fira Code', monospace;
+  font-weight: 400;
+  text-shadow: 'none';
+}
+
+.gatsby-highlight > pre {
+  border-radius: 5px;
+}
+
+.token.operator {
+  background: 'inherit !important';
+}
+
+blockquote > *not(:last-child) {
+  padding-bottom: '0.5';
+}
+
+.pseudo-underline {
+  border-bottom: 2px solid var(--near-white);
+  position: relative;
+  text-decoration: none;
+
+  /* fontFamily: overrideStyleOptions.headerFontFamily.join(','); */
+}
+
+article a.anchor {
+  border-bottom: none;
+  box-shadow: none;
+  color: inherit;
+
+  /* fill: var() */
+  text-decoration: 'none';
 }

@@ -1,0 +1,16 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  annotations:
+    traefik.frontend.rule.type: PathPrefix
+  name: owntracks-ui
+  namespace: owntracks
+spec:
+  rules:
+    - host: loc.jesses.io
+      http:
+        paths:
+          - backend:
+              serviceName: owntracks-ui
+              servicePort: 80
+            path: /

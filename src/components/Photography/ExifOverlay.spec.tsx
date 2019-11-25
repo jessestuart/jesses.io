@@ -3,7 +3,7 @@ import renderer from 'react-test-renderer'
 
 import ExifOverlay from 'components/Photography/ExifOverlay'
 
-describe.skip('ExifOverlay', () => {
+describe('ExifOverlay', () => {
   test('Render valid inactive ExifOverlay component.', () => {
     const component = (
       // @ts-ignore

@@ -1,4 +1,3 @@
-import 'js-tachyons'
 import 'styles/base.css'
 
 import classNames from 'classnames'
@@ -11,8 +10,8 @@ import GatsbyLocation from 'types/GatsbyLocation'
 import HeaderLink from './HeaderLink'
 
 export enum HeaderTheme {
-  DARK,
-  LIGHT,
+  DARK = 'DARK',
+  LIGHT = 'LIGHT',
 }
 
 interface Header {
@@ -26,10 +25,6 @@ const Headers: Header[] = [
   { href: '/photography', title: 'pictures' },
   { href: '/about', title: 'about' },
 ]
-
-interface Props {
-  location: GatsbyLocation
-}
 
 const SiteHeader = (props: { location: GatsbyLocation }) => {
   const pathname: string = _.get(props, 'location.pathname', '/')

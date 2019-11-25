@@ -1,5 +1,5 @@
 import React from 'react'
-import { Box, Flex } from 'rebass/styled-components'
+import { Box } from 'rebass/styled-components'
 import styled from 'styled-components'
 
 import Avatar from './Avatar'

@@ -2,13 +2,11 @@ import classNames from 'classnames'
 import Link from 'gatsby-link'
 import _ from 'lodash'
 import React, { ReactNode } from 'react'
-import { Text } from 'rebass'
 import styled from 'styled-components'
-import { ThemeProvider } from 'theme-ui'
 
 import { HeaderTheme } from 'components/SiteHeader/SiteHeader'
-import StyledLink from 'components/StyledLink/StyledLink'
 import Theme from 'styles/Theme'
+// import StyledLink from 'components/StyledLink/StyledLink'
 
 const StyledHeaderLink = styled(Link)`
   transition: all 0.5s;
@@ -34,6 +32,9 @@ const getThemeForPathname = (pathname: string): HeaderTheme =>
 
 const HeaderLink = (props: Props) => {
   const { children, className, href, pathname } = props
+  if (!pathname) {
+    return null
+  }
   const isActive = getIsActive({ href, pathname })
   const theme = getThemeForPathname(pathname)
 

@@ -28,11 +28,11 @@ const primaryColors = {
 }
 
 const secondaryColors = {
+  dark5: '#331d5b',
   light0: '#fbfafc',
   light5: '#b39cdb',
   light7: '#9475cc',
   main: '#673ab7',
-  dark5: '#331d5b',
 }
 
 const colors: Colors = Object.freeze({
@@ -48,9 +48,9 @@ const colors: Colors = Object.freeze({
   },
 
   gray: {
-    dark: gray(8, 270),
-    copy: gray(20, 'slate'),
     calm: gray(80, 'cool'),
+    copy: gray(20, 'slate'),
+    dark: gray(8, 270),
   },
 
   defaultHover: new Color(secondaryColors.light7)

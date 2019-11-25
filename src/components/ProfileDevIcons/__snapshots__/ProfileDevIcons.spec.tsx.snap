@@ -2,16 +2,25 @@
 
 exports[`Render ProfileDevIcons component. 1`] = `
 Array [
-  <div
+  .c0 {
+  box-sizing: border-box;
+  margin: 0;
+  min-width: 0;
+  font-family: serif;
+  font-weight: body;
+  margin-top: 64px;
+  margin-bottom: 16px;
+  font-size: 20px;
+}
+
+<div
     className="flex justify-center align-center"
   >
-    <p
-      className="spectral fw3 lh-copy center pv3 tc w-75"
-      style={
-        Object {
-          "fontSize": "1.3rem",
-        }
-      }
+    <div
+      className="c0 lh-copy center pv3 tc w-75"
+      fontFamily="serif"
+      fontSize={3}
+      fontWeight="body"
     >
       Tackling novel problems —
       <span
@@ -35,7 +44,7 @@ Array [
       </span>
       <br />
       Here are some of the technologies I've enjoyed hacking on lately:
-    </p>
+    </div>
   </div>,
   .c2 {
   grid-row: auto;

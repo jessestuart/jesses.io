@@ -1,4 +1,6 @@
-import depcheck from 'depcheck'
+#!/usr/bin/env ts-node
+
+import { depcheck } from 'depcheck'
 
 const options = {
   detectors: [
