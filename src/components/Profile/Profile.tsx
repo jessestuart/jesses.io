@@ -43,7 +43,7 @@ const AvatarContainer = styled(Box)`
 const BlurbContainer = styled(Box)`
   grid-column: 1 / 13;
 
-  @media (min-width: 45em) and (max-width: 75em) {
+  @media (min-width: 45em) and (max-width: 60em) {
     grid-column: 5 / 12;
     grid-row: 1 / 5;
   }

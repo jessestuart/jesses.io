@@ -18,10 +18,13 @@ export const shadows = {
 
 export const fontSizes = [12, 14, 16, 20, 24, 28, 36, 44]
 
+export const breakpoints = ['45em', '60em', '75em']
+
 const Theme = _.merge(preset, {
+  breakpoints,
   colors: Colors,
-  fonts,
   fontSizes,
+  fonts,
   shadows,
 })
 
