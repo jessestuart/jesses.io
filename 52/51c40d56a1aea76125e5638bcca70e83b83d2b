@@ -1,0 +1,9 @@
+[ver:1,total:2580]
+.gtm/terminal.app:1410,1574856000:1260,1574859600:150,r
+src/components/Profile/Profile.tsx:706,1574856000:706,m
+src/gatsby-plugin-theme-ui/index.ts:250,1574856000:250,m
+src/components/Photography/PhotographyGridSection.tsx:90,1574859600:90,r
+src/components/Profile/Avatar.tsx:60,1574856000:60,r
+node_modules/@types/styled-components/ts3.7/index.d.ts:24,1574856000:24,r
+Dockerfile:20,1574856000:20,r
+src/components/Profile/__snapshots__/Profile.spec.tsx.snap:20,1574856000:20,r
