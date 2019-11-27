@@ -1,6 +1,6 @@
 import classNames from 'classnames'
 import React from 'react'
-import { Text } from 'rebass/styled-components'
+import { Flex, Text } from 'rebass/styled-components'
 
 import ProfileStyledLink from 'components/Profile/ProfileStyledLink'
 
@@ -9,7 +9,11 @@ const WHITMAN_URL = 'https://jstu.art/ojNe'
 const ProfileHeadingText = ({ children, className, ...rest }: any) => (
   <Text
     as="span"
-    className={classNames('flex justify-end fw5 lh-title', className)}
+    sx={{ display: 'inline-flex', flexWrap: 'wrap' }}
+    // sx={{ display: 'flex', justifyContent: 'flex-end' }}
+    justifyContent="flex-end"
+    fontWeight="body"
+    className={classNames('lh-title', className)}
     color="textLight"
     flex="1"
     fontFamily="serif"
@@ -21,18 +25,18 @@ const ProfileHeadingText = ({ children, className, ...rest }: any) => (
 )
 
 const ProfileHeading = () => (
-  <>
-    <ProfileHeadingText as="div" className="flex flex-wrap">
+  <Flex flexDirection="column" pt="4">
+    <ProfileHeadingText>
       Hi — I'm Jesse.
+      <br />
     </ProfileHeadingText>
-    <ProfileHeadingText className="flex flex-wrap">
-      I contradict myself.
-    </ProfileHeadingText>
-    <ProfileHeadingText className="flex flex-wrap">
+    <ProfileHeadingText>I contradict myself.</ProfileHeadingText>
+    <ProfileHeadingText>
       I contain
-      <ProfileStyledLink href={WHITMAN_URL}>multitudes</ProfileStyledLink>.
+      <ProfileStyledLink href={WHITMAN_URL}>&nbsp;multitudes</ProfileStyledLink>
+      .
     </ProfileHeadingText>
-  </>
+  </Flex>
 )
 
 export default ProfileHeading

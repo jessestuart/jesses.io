@@ -1,4 +1,4 @@
-import { graphql } from 'gatsby'
+import { graphql, useStaticQuery } from 'gatsby'
 import GatsbyImage from 'gatsby-image'
 import _ from 'lodash'
 import React from 'react'
@@ -13,7 +13,18 @@ interface Props {
   }
 }
 
-const Home = ({ data }: Props) => {
+const Home = () => {
+  const data: Props = useStaticQuery(graphql`
+    {
+      file(relativePath: { regex: "/avatar-square.jpg/" }) {
+        childImageSharp {
+          fluid {
+            ...GatsbyImageSharpFluid_withWebp
+          }
+        }
+      }
+    }
+  `)
   const avatar = _.get(data, 'file.childImageSharp.fluid')
   return (
     <div className="moon-gray bg-gray-primary w-100">
@@ -23,16 +34,16 @@ const Home = ({ data }: Props) => {
   )
 }
 
-export const query = graphql`
-  {
-    file(relativePath: { regex: "/avatar-square.jpg/" }) {
-      childImageSharp {
-        fluid {
-          ...GatsbyImageSharpFluid_withWebp_tracedSVG
-        }
-      }
-    }
-  }
-`
+// export const query = graphql`
+//   {
+//     file(relativePath: { regex: "/avatar-square.jpg/" }) {
+//       childImageSharp {
+//         fluid {
+//           ...GatsbyImageSharpFluid_withWebp_tracedSVG
+//         }
+//       }
+//     }
+//   }
+// `
 
 export default Home

@@ -4,17 +4,18 @@ import 'typeface-alegreya-sans'
 import 'typeface-lato'
 import 'typeface-spectral'
 
-import 'styles/base.css'
-
 import _ from 'lodash'
 import React, { ReactNode } from 'react'
 import Helmet from 'react-helmet'
 import { Flex } from 'rebass/styled-components'
 import { ThemeProvider } from 'styled-components'
+import { useThemeUI } from 'theme-ui'
+
+import 'styles/base.css'
+
 import GatsbyLocation from 'types/GatsbyLocation'
 
 import { SiteFooter, SiteHeader } from 'components'
-import Theme from 'styles/Theme'
 import config from '../../gatsby-config'
 
 const title: string = _.get(config, 'siteMetadata.title')
@@ -37,15 +38,19 @@ interface Props {
   location: GatsbyLocation
 }
 
-const Layout = ({ children, location }: Props) => (
-  <ThemeProvider theme={Theme}>
-    <Helmet title={title} meta={HELMET_META} />
-    <SiteHeader location={location} />
-    <Flex as="main" flex="1 1 auto">
-      {children}
-    </Flex>
-    <SiteFooter />
-  </ThemeProvider>
-)
+const Layout = ({ children, location }: Props) => {
+  const context = useThemeUI()
+  const { theme } = context
+  return (
+    <ThemeProvider theme={theme}>
+      <Helmet title={title} meta={HELMET_META} />
+      <SiteHeader location={location} />
+      <Flex as="main" flex="1 1 auto">
+        {children}
+      </Flex>
+      <SiteFooter />
+    </ThemeProvider>
+  )
+}
 
 export default Layout

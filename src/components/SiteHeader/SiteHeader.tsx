@@ -6,8 +6,8 @@ import React from 'react'
 import Headroom from 'react-headroom'
 import { Flex, Heading } from 'rebass/styled-components'
 
+import HeaderLink from 'components/SiteHeader/HeaderLink'
 import GatsbyLocation from 'types/GatsbyLocation'
-import HeaderLink from './HeaderLink'
 
 export enum HeaderTheme {
   DARK = 'DARK',
@@ -43,7 +43,7 @@ const SiteHeader = (props: { location: GatsbyLocation }) => {
         fontFamily="body"
         className={classNames('bb flex justify-center', {
           'bg-gray-primary b--hot-pink': theme === HeaderTheme.DARK,
-          'bg-near-white b--black-20': theme === HeaderTheme.LIGHT,
+          'bg-near-white b--black-10': theme === HeaderTheme.LIGHT,
           bw1: !isRoot,
         })}
         style={{
@@ -54,7 +54,7 @@ const SiteHeader = (props: { location: GatsbyLocation }) => {
           {Headers.map((header: Header, index: number) => (
             <HeaderLink
               key={header.href}
-              className={index === Headers.length - 1 ? '' : 'br b--moon-grey'}
+              className={index === Headers.length - 1 ? '' : 'br b--mid-gray'}
               href={header.href || `/${header.title}`}
               pathname={pathname}
             >

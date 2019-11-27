@@ -12,7 +12,7 @@ interface GrayColorMap extends ColorMap {
   calm: string
 }
 
-interface Colors {
+export interface ColorsTheme {
   bgDark: string
   defaultHover: string
   defaultLink: string
@@ -35,7 +35,7 @@ const secondaryColors = {
   main: '#673ab7',
 }
 
-const colors: Colors = Object.freeze({
+const colors: ColorsTheme = Object.freeze({
   primary: primaryColors,
   secondary: secondaryColors,
 
@@ -49,7 +49,6 @@ const colors: Colors = Object.freeze({
 
   gray: {
     calm: gray(80, 'cool'),
-    copy: gray(20, 'slate'),
     dark: gray(8, 270),
   },
 

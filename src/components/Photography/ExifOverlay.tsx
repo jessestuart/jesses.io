@@ -1,10 +1,10 @@
-import { Flex } from 'rebass/styled-components'
-import React from 'react'
 import _ from 'lodash'
+import React from 'react'
+import { Flex } from 'rebass/styled-components'
 import styled from 'styled-components'
 
-import { mapLensModelExif } from 'utils/exif'
 import S3ImageAsset from 'types/S3ImageAsset'
+import { mapLensModelExif } from 'utils/exif'
 
 const StyledExifOverlay = styled(Flex)`
   background: linear-gradient(
@@ -15,8 +15,8 @@ const StyledExifOverlay = styled(Flex)`
   bottom: 0;
   color: white;
   display: flex;
-  font-family: system-ui, sans-serif;
-  font-size: 1.1rem;
+  font-family: Lato, system-ui, sans-serif;
+  font-size: 0.9rem;
   font-variant: small-caps;
   justify-content: flex-end;
   opacity: ${({ isActive }) => (isActive ? 1 : 0)};

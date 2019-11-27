@@ -1,11 +1,10 @@
+import { Box } from 'rebass/styled-components'
 import styled from 'styled-components'
 
-const StyledImageZoomGridElement = styled.div`
+const StyledImageZoomGridElement = styled(Box)`
   border-radius: 2px;
   cursor: pointer;
   display: inline-block;
-  // display: flex;
-  // flex-direction: column;
   grid-column-start: auto;
   overflow: hidden;
   position: relative;

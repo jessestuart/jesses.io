@@ -11,12 +11,9 @@ import 'typeface-fira-mono'
 import 'typeface-lato'
 import 'typeface-spectral'
 
-import { ThemeProvider } from 'theme-ui'
-import React from 'react'
-
 import { initSentry } from './src/services/sentry'
-import Layout from './src/components/Layout'
-import Theme from './src/styles/Theme'
+
+// import Theme from './src/styles/Theme'
 
 const { GATSBY_ENV = 'Development' } = process.env
 

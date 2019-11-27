@@ -1,7 +1,7 @@
-import { DateTime } from 'luxon'
-import { Text } from 'rebass/styled-components'
 import Link from 'gatsby-link'
+import { DateTime } from 'luxon'
 import React from 'react'
+import { Text } from 'rebass/styled-components'
 
 import Colors from 'utils/colors'
 

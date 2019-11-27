@@ -8,7 +8,9 @@ jest.mock('react-headroom', () => 'Headroom')
 
 test('Render HeaderLink component w/ default values.', () => {
   const component = renderer.create(
-    <HeaderLink href="/">Header Link</HeaderLink>,
+    <HeaderLink href="/" pathname="/">
+      Header Link
+    </HeaderLink>,
   )
   const tree = component.toJSON()
   expect(tree).toMatchSnapshot()

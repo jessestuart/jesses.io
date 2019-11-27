@@ -27,8 +27,9 @@ const IntroWrapper = styled(Box)`
 `
 
 const AvatarContainer = styled(Box)`
-  grid-column: 1 / 13;
-
+  @media (max-width: 45em) {
+    grid-column: 1 / 13;
+  }
   @media (min-width: 45em) and (max-width: 60em) {
     grid-column: 2 / 5;
     grid-row: 1 / 5;
@@ -39,7 +40,7 @@ const AvatarContainer = styled(Box)`
   }
 `
 
-const BlurbContainer = styled.div`
+const BlurbContainer = styled(Box)`
   grid-column: 1 / 13;
 
   @media (min-width: 45em) and (max-width: 75em) {
@@ -57,19 +58,21 @@ const FooterContainer = styled.div`
   grid-row: 5 / 7;
 `
 
-const Profile = ({ avatar }: any) => (
-  <IntroWrapper className="items-center justify-center">
-    <AvatarContainer className="center w-100-ns w-50">
-      <Avatar image={avatar} />
-      <BlackMirror />
-    </AvatarContainer>
-    <BlurbContainer className="tc tr-ns ph2">
-      <ProfileBlurb />
-    </BlurbContainer>
-    <FooterContainer className="bt b--light-silver">
-      <ProfileFooter />
-    </FooterContainer>
-  </IntroWrapper>
-)
+const Profile = ({ avatar }: any) => {
+  return (
+    <IntroWrapper justifyContent="center" alignItems="center">
+      <AvatarContainer className="center w-100-ns w-50">
+        <Avatar image={avatar} />
+        <BlackMirror />
+      </AvatarContainer>
+      <BlurbContainer className="tc tr-ns ph2" pb="4">
+        <ProfileBlurb />
+      </BlurbContainer>
+      <FooterContainer className="bt b--light-silver">
+        <ProfileFooter />
+      </FooterContainer>
+    </IntroWrapper>
+  )
+}
 
 export default Profile
