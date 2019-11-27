@@ -43,7 +43,7 @@ workflows:
 defaults: &defaults
   working_directory: ~/jesses.io
   docker:
-    - image: node:12
+    - image: node:13
 
 # ====================
 # SHARED JOBS POINTERS
