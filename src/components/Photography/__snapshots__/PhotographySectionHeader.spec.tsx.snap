@@ -11,6 +11,10 @@ exports[`Render PhotographySectionHeader. 1`] = `
   -ms-flex: 1;
   flex: 1;
   font-size: 36px;
+  -webkit-box-pack: end;
+  -webkit-justify-content: flex-end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
   margin-bottom: 8px;
   width: 100%;
 }
