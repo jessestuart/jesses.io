@@ -1,0 +1,5 @@
+[ver:1,total:720]
+.gtm/terminal.app:320,1574856000:320,r
+src/components/SiteHeader/HeaderLink.tsx:250,1574856000:250,r
+src/components/Photography/PhotographySectionHeader.tsx:100,1574856000:100,m
+src/utils/use-hover.ts:50,1574856000:50,r
