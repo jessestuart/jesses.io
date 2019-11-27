@@ -33,12 +33,8 @@ exports[`Render SiteHeader component as not-root. 1`] = `
 }
 
 .c2 {
-  -webkit-transition: all 0.5s;
-  transition: all 0.5s;
-}
-
-.c2:hover {
-  color: rgba(255,255,255,.9);
+  -webkit-transition: color 0.3s;
+  transition: color 0.3s;
 }
 
 <Headroom>
@@ -56,34 +52,38 @@ exports[`Render SiteHeader component as not-root. 1`] = `
       className="c1 gray-primary fw3 w-35-ns"
     >
       <a
-        className="c2 b--mid-gray f4 fw3 mv2 ph3 pv2 shadow-none white-90 fw4 br b--moon-grey"
+        className="c2 f4 fw3 mv2 ph3 pv2 shadow-none white-90 fw4 b--mid-gray br b--mid-gray"
         href="/true"
         onClick={[Function]}
         onMouseEnter={[Function]}
+        onMouseLeave={[Function]}
       >
         home
       </a>
       <a
-        className="c2 b--mid-gray f4 fw3 mv2 ph3 pv2 shadow-none light-silver fw3 br b--moon-grey"
+        className="c2 f4 fw3 mv2 ph3 pv2 shadow-none light-silver b--mid-gray br b--mid-gray"
         href="/true/posts"
         onClick={[Function]}
         onMouseEnter={[Function]}
+        onMouseLeave={[Function]}
       >
         words
       </a>
       <a
-        className="c2 b--mid-gray f4 fw3 mv2 ph3 pv2 shadow-none light-silver fw3 br b--moon-grey"
+        className="c2 f4 fw3 mv2 ph3 pv2 shadow-none light-silver b--mid-gray br b--mid-gray"
         href="/true/photography"
         onClick={[Function]}
         onMouseEnter={[Function]}
+        onMouseLeave={[Function]}
       >
         pictures
       </a>
       <a
-        className="c2 b--mid-gray f4 fw3 mv2 ph3 pv2 shadow-none light-silver fw3"
+        className="c2 f4 fw3 mv2 ph3 pv2 shadow-none light-silver b--mid-gray"
         href="/true/about"
         onClick={[Function]}
         onMouseEnter={[Function]}
+        onMouseLeave={[Function]}
       >
         about
       </a>
@@ -125,12 +125,8 @@ exports[`Render SiteHeader component. 1`] = `
 }
 
 .c2 {
-  -webkit-transition: all 0.5s;
-  transition: all 0.5s;
-}
-
-.c2:hover {
-  color: rgba(255,255,255,.9);
+  -webkit-transition: color 0.3s;
+  transition: color 0.3s;
 }
 
 <Headroom>
@@ -148,34 +144,38 @@ exports[`Render SiteHeader component. 1`] = `
       className="c1 gray-primary fw3 w-35-ns"
     >
       <a
-        className="c2 b--mid-gray f4 fw3 mv2 ph3 pv2 shadow-none white-90 fw4 br b--moon-grey"
+        className="c2 f4 fw3 mv2 ph3 pv2 shadow-none white-90 fw4 b--mid-gray br b--mid-gray"
         href="/true"
         onClick={[Function]}
         onMouseEnter={[Function]}
+        onMouseLeave={[Function]}
       >
         home
       </a>
       <a
-        className="c2 b--mid-gray f4 fw3 mv2 ph3 pv2 shadow-none light-silver fw3 br b--moon-grey"
+        className="c2 f4 fw3 mv2 ph3 pv2 shadow-none light-silver b--mid-gray br b--mid-gray"
         href="/true/posts"
         onClick={[Function]}
         onMouseEnter={[Function]}
+        onMouseLeave={[Function]}
       >
         words
       </a>
       <a
-        className="c2 b--mid-gray f4 fw3 mv2 ph3 pv2 shadow-none light-silver fw3 br b--moon-grey"
+        className="c2 f4 fw3 mv2 ph3 pv2 shadow-none light-silver b--mid-gray br b--mid-gray"
         href="/true/photography"
         onClick={[Function]}
         onMouseEnter={[Function]}
+        onMouseLeave={[Function]}
       >
         pictures
       </a>
       <a
-        className="c2 b--mid-gray f4 fw3 mv2 ph3 pv2 shadow-none light-silver fw3"
+        className="c2 f4 fw3 mv2 ph3 pv2 shadow-none light-silver b--mid-gray"
         href="/true/about"
         onClick={[Function]}
         onMouseEnter={[Function]}
+        onMouseLeave={[Function]}
       >
         about
       </a>

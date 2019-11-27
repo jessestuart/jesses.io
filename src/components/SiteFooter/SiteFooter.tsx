@@ -41,7 +41,7 @@ const SiteFooter = ({ theme = FooterTheme.Light }: Props) => (
       Pixels, bits and bytes hand-crafted with
       <Heart
         className="hot-pink mh1 hvr-grow"
-        fill={colors.primary.main}
+        fill={colors.primary}
         height="15"
         width="15"
       />

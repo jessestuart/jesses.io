@@ -85,70 +85,44 @@ exports[`Render ProfileFooter component after 10s. 1`] = `
 `;
 
 exports[`Render ProfileFooter component. 1`] = `
-Array [
-  <style
-    dangerouslySetInnerHTML={
-      Object {
-        "__html": ".css-vurnku{box-sizing:border-box;margin:0;min-width:0;}",
-      }
+<div
+  className="b--hot-pink bb bg-purple bw2 mb1 pb3 pt4 css-vurnku"
+  style={
+    Object {
+      "gridColumn": "1 / 13",
     }
-    data-emotion-css="vurnku"
-  />,
+  }
+>
   <div
-    className="b--hot-pink bb bg-purple bw2 mb1 pb3 pt4 css-vurnku"
-    style={
-      Object {
-        "gridColumn": "1 / 13",
-      }
-    }
+    className="fw4 lh-title tc white-80 css-seakmb"
   >
-    <style
-      dangerouslySetInnerHTML={
-        Object {
-          "__html": ".css-seakmb{box-sizing:border-box;margin:0;min-width:0;font-size:20px;font-family:monospace;}",
-        }
-      }
-      data-emotion-css="seakmb"
-    />
-    <div
-      className="fw4 lh-title tc white-80 css-seakmb"
+    I build software
+    <br />
+    on the pull requests
+    <br />
+    of giants.
+  </div>
+  <div
+    className="justify-center mt2 css-4cffwv"
+  >
+    <svg
+      className="mw-5"
+      fill="none"
+      height="30px"
+      stroke="#ff3a5c"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      strokeWidth="2"
+      viewBox="0 0 24 24"
+      width="30px"
+      xmlns="http://www.w3.org/2000/svg"
     >
-      I build software
-      <br />
-      on the pull requests
-      <br />
-      of giants.
-    </div>
-    <style
-      dangerouslySetInnerHTML={
-        Object {
-          "__html": ".css-4cffwv{box-sizing:border-box;margin:0;min-width:0;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;}",
-        }
-      }
-      data-emotion-css="4cffwv"
-    />
-    <div
-      className="justify-center mt2 css-4cffwv"
-    >
-      <svg
-        className="mw-5"
-        fill="none"
-        height="30px"
-        stroke="#ff3a5c"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        strokeWidth="2"
-        viewBox="0 0 24 24"
-        width="30px"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <polyline
-          points="6 9 12 15 18 9"
-        />
-      </svg>
-    </div>
-  </div>,
-]
+      <polyline
+        points="6 9 12 15 18 9"
+      />
+    </svg>
+  </div>
+</div>
 `;
 
 exports[`Render ProfileFooter component. 2`] = `null`;

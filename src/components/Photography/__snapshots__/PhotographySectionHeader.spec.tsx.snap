@@ -1,34 +1,31 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Render PhotographySectionHeader. 1`] = `
-Array [
-  .c0 {
+.c0 {
   box-sizing: border-box;
   margin: 0;
   min-width: 0;
-  margin-bottom: 8px;
   color: rgba(0,0,0,0.7);
+  font-family: Alegreya Sans SC;
   -webkit-flex: 1;
   -ms-flex: 1;
   flex: 1;
-  font-family: Alegreya Sans SC;
-  font-size: 48px;
+  font-size: 36px;
+  margin-bottom: 8px;
+  width: 100%;
 }
 
 <h2
-    className="c0 flex fw5 justify-end w-100"
-    color="textMediumMuted"
-    fontFamily="smallcaps"
-    fontSize="6"
+  className="c0 flex fw5"
+  fontSize="6"
+  width="100%"
+>
+  <a
+    href="/true/photography"
+    onClick={[Function]}
+    onMouseEnter={[Function]}
   >
-    <a
-      href="/true/photography"
-      onClick={[Function]}
-      onMouseEnter={[Function]}
-    >
-      01 May 2019
-    </a>
-  </h2>,
-  ",",
-]
+    01 May 2019
+  </a>
+</h2>
 `;

@@ -61,7 +61,7 @@ const FooterContainer = styled.div`
 const Profile = ({ avatar }: any) => {
   return (
     <IntroWrapper justifyContent="center" alignItems="center">
-      <AvatarContainer className="center w-100-ns w-50">
+      <AvatarContainer className="flex justify-center center w-100-ns w-50">
         <Avatar image={avatar} />
         <BlackMirror />
       </AvatarContainer>

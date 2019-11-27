@@ -11,7 +11,7 @@ const WigglyChevron = ({ isAnimating }: { isAnimating: boolean }) => (
       'hvr-wobble-vertical hvr-wobble-vertical-animating': isAnimating,
     })}
   >
-    <ChevronDown className="mw-5" color={colors.primary.main} size="30px" />
+    <ChevronDown className="mw-5" color={colors.primary} size="30px" />
   </Flex>
 )
 

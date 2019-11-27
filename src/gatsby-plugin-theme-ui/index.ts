@@ -1,19 +1,7 @@
 import _ from 'lodash'
 
 import preset from '@rebass/preset'
-import Colors, { ColorsTheme } from 'utils/colors'
-
-export const colors: ColorsTheme = {
-  ...Colors,
-  bgDark: Colors.bgDark,
-  neutral: 'rgba( 0, 0, 0, 0.1)',
-  textDark: 'rgba(0, 0, 0, 0.8)',
-  textDarkMuted: 'rgba(0, 0, 0, 0.6)',
-  textLight: 'hsla(0,0%,100%,.8)',
-  // textLight: 'rgba(255, 255, 255, .8)',
-  textLightMuted: 'rgba(220, 220, 220, .9)',
-  textMediumMuted: 'rgba(0, 0, 0, 0.7)',
-}
+import Colors from 'utils/colors'
 
 export const fonts = {
   body: 'Lato, system-ui, sans-serif',
@@ -31,7 +19,7 @@ export const shadows = {
 export const fontSizes = [12, 14, 16, 20, 24, 28, 36, 44]
 
 const Theme = _.merge(preset, {
-  colors,
+  colors: Colors,
   fonts,
   fontSizes,
   shadows,

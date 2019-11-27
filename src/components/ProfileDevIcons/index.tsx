@@ -63,7 +63,7 @@ const DevIconLabel = styled.div`
   grid-column: span 9;
   grid-row: span 2;
   @media (max-width: 45em) {
-    border-bottom: 1px solid ${colors.primary.main};
+    border-bottom: 1px solid ${colors.primary};
   }
   @media (min-width: 45em) {
     border-bottom: 1px solid rgba(255, 255, 255, 0.5);

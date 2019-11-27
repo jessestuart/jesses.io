@@ -1,5 +1,12 @@
 {
-  "include": ["./src/**/*.tsx", "./src/**/*.ts", "./src/**/*.js", "scripts/*"],
+  "include": [
+    "./scripts/*",
+    "./src/**/*.js",
+    "./src/**/*.ts",
+    "./src/**/*.tsx",
+    "./test/**/*.ts",
+    "./test/**/*.tsx"
+  ],
   "exclude": ["node_modules/**/*", "public/*", "cypress/*", ".cache/*"],
   "compilerOptions": {
     "allowSyntheticDefaultImports": true,
@@ -18,7 +25,7 @@
     "noImplicitReturns": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
-    "paths": { "*": ["src/*", "static/*", "scripts/*"] },
+    "paths": { "*": ["src/*", "static/*", "scripts/*", "test/*"] },
     "plugins": [{ "name": "typescript-styled-plugin" }],
     "resolveJsonModule": true,
     "skipLibCheck": true,

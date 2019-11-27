@@ -1,3 +1,18 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Render HeaderLink component w/ default values. 1`] = `null`;
+exports[`Render HeaderLink component w/ default values. 1`] = `
+.c0 {
+  -webkit-transition: color 0.3s;
+  transition: color 0.3s;
+}
+
+<a
+  className="c0 f4 fw3 mv2 ph3 pv2 shadow-none white-90 fw4 b--mid-gray"
+  href="/true"
+  onClick={[Function]}
+  onMouseEnter={[Function]}
+  onMouseLeave={[Function]}
+>
+  Header Link
+</a>
+`;

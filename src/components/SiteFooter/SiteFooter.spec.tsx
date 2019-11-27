@@ -1,29 +1,15 @@
 import React from 'react'
-import renderer from 'react-test-renderer'
-import { ThemeProvider } from 'styled-components'
 
-import theme from 'styles/Theme'
+import { renderWithTheme } from '../../../test/utils/helpers'
 
 import SiteFooter, { FooterTheme } from './SiteFooter'
 
 test('Render SiteFooter component.', () => {
-  const tree = renderer
-    .create(
-      <ThemeProvider theme={theme}>
-        <SiteFooter />
-      </ThemeProvider>,
-    )
-    .toJSON()
+  const tree = renderWithTheme(<SiteFooter />).toJSON()
   expect(tree).toMatchSnapshot()
 })
 
 test('Render SiteFooter component with dark theme.', () => {
-  const tree = renderer
-    .create(
-      <ThemeProvider theme={theme}>
-        <SiteFooter theme={FooterTheme.Dark} />
-      </ThemeProvider>,
-    )
-    .toJSON()
+  const tree = renderWithTheme(<SiteFooter theme={FooterTheme.Dark} />).toJSON()
   expect(tree).toMatchSnapshot()
 })

@@ -6,20 +6,20 @@ Array [
   box-sizing: border-box;
   margin: 0;
   min-width: 0;
-  margin-bottom: 8px;
-  color: rgba(0,0,0,0.7);
+  color: textMediumMuted;
+  font-family: smallcaps;
   -webkit-flex: 1;
   -ms-flex: 1;
   flex: 1;
-  font-family: Alegreya Sans SC;
   font-size: 48px;
+  margin-bottom: 8px;
+  width: 100%;
 }
 
 <h2
-    className="c0 flex fw5 justify-end w-100"
-    color="textMediumMuted"
-    fontFamily="smallcaps"
+    className="c0 flex fw5"
     fontSize="6"
+    width="100%"
   >
     <a
       href="/true/#"
@@ -91,20 +91,20 @@ Array [
   box-sizing: border-box;
   margin: 0;
   min-width: 0;
-  margin-bottom: 8px;
-  color: rgba(0,0,0,0.7);
+  color: textMediumMuted;
+  font-family: smallcaps;
   -webkit-flex: 1;
   -ms-flex: 1;
   flex: 1;
-  font-family: Alegreya Sans SC;
   font-size: 48px;
+  margin-bottom: 8px;
+  width: 100%;
 }
 
 <h2
-    className="c0 flex fw5 justify-end w-100"
-    color="textMediumMuted"
-    fontFamily="smallcaps"
+    className="c0 flex fw5"
     fontSize="6"
+    width="100%"
   >
     <a
       href="/true/#"
