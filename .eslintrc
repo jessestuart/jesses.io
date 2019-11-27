@@ -20,6 +20,7 @@
   },
   "env": { "browser": true, "jest": true, "node": true },
   "rules": {
+    "indent": "off",
     "comma-dangle": ["error", "always-multiline"],
     "semi": ["error", "never"],
     "key-spacing": "error",
@@ -43,7 +44,7 @@
       { "argsIgnorePattern": "^_" }
     ],
     "@typescript-eslint/no-use-before-define": "off",
-    "@typescript-eslint/no-var-requires": "off"
+    "@typescript-eslint/no-var-requires": "off",
   },
   "settings": { "react": { "version": "detect" } },
   "globals": { "__DEV__": true, "process": true }
