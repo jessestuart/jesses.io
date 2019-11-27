@@ -1,2 +1,7 @@
 [ver:1,total:90]
 .gtm/terminal.app:90,1574852400:90,r
+
+[ver:1,total:360]
+netlify.toml:210,1574852400:210,m
+.gtm/terminal.app:130,1574852400:130,r
+.nvmrc:20,1574852400:20,m
