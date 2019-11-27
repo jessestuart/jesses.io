@@ -1,7 +1,16 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Render Profile component. Render Profile component. 1`] = `
-.c5 {
+.c3 {
+  box-sizing: border-box;
+  margin: 0;
+  min-width: 0;
+  color: #ff3a5c;
+  color: rgba(220,220,220,.9);
+  margin: 8px;
+}
+
+.c6 {
   box-sizing: border-box;
   margin: 0;
   min-width: 0;
@@ -9,36 +18,36 @@ exports[`Render Profile component. Render Profile component. 1`] = `
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
   display: inline-flex;
-  -webkit-flex-wrap: wrap;
-  -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
-  -webkit-box-pack: end;
-  -webkit-justify-content: flex-end;
-  -ms-flex-pack: end;
-  justify-content: flex-end;
-  font-weight: 400;
   color: hsla(0,0%,100%,.8);
   -webkit-flex: 1;
   -ms-flex: 1;
   flex: 1;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
   font-family: Spectral,serif;
   font-size: 28px;
-}
-
-.c8 {
-  box-sizing: border-box;
-  margin: 0;
-  min-width: 0;
-  font-family: Lato,system-ui,sans-serif;
+  font-weight: 400;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
 }
 
 .c9 {
   box-sizing: border-box;
   margin: 0;
   min-width: 0;
+  font-family: Lato,system-ui,sans-serif;
 }
 
-.c4 {
+.c10 {
+  box-sizing: border-box;
+  margin: 0;
+  min-width: 0;
+}
+
+.c5 {
   box-sizing: border-box;
   margin: 0;
   min-width: 0;
@@ -52,7 +61,7 @@ exports[`Render Profile component. Render Profile component. 1`] = `
   display: flex;
 }
 
-.c7 {
+.c8 {
   box-sizing: border-box;
   margin: 0;
   min-width: 0;
@@ -66,23 +75,30 @@ exports[`Render Profile component. Render Profile component. 1`] = `
   box-sizing: border-box;
   margin: 0;
   min-width: 0;
+  margin-top: 32px;
+  margin-bottom: 32px;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  -webkit-flex: justify-around;
-  -ms-flex: justify-around;
-  flex: justify-around;
+  -webkit-box-pack: justify-around;
+  -webkit-justify-content: justify-around;
+  -ms-flex-pack: justify-around;
+  justify-content: justify-around;
 }
 
-.c6 {
+.c7 {
   border-bottom: 2px solid rgba(58%,46%,80%,0.8);
   position: relative;
   -webkit-text-decoration: none;
   text-decoration: none;
 }
 
-.c6::before {
+.c7::before {
   background-color: rgba(100%,23%,36%,0.8);
   bottom: -2px;
   content: '';
@@ -98,7 +114,7 @@ exports[`Render Profile component. Render Profile component. 1`] = `
   width: 100%;
 }
 
-.c6:hover:before {
+.c7:hover:before {
   -webkit-transform: scaleX(1);
   -ms-transform: scaleX(1);
   transform: scaleX(1);
@@ -117,19 +133,21 @@ exports[`Render Profile component. Render Profile component. 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
+  margin-top: 32px;
   display: grid;
   grid-template-columns: repeat(12,1fr);
   min-height: calc(100vh - 56px);
-  background: linear-gradient( 180deg, rgba(55,59,70,1) 0%, rgba(103,58,183,0.1) 50%, rgba(103,58,183,0.5) 70%, rgba(103,58,183,1) 80%, rgba(103,58,183,1) 100% );
 }
 
 .c1 {
   box-sizing: border-box;
   margin: 0;
   min-width: 0;
+  margin-left: 25%;
+  width: 50%;
 }
 
-.c3 {
+.c4 {
   box-sizing: border-box;
   margin: 0;
   min-width: 0;
@@ -137,9 +155,21 @@ exports[`Render Profile component. Render Profile component. 1`] = `
   grid-column: 1 / 13;
 }
 
-.c10 {
+.c11 {
+  box-sizing: border-box;
+  margin: 0;
+  min-width: 0;
   grid-column: 1 / 13;
   grid-row: 5 / 7;
+}
+
+@media screen and (min-width:40em) {
+  .c6 {
+    -webkit-box-pack: end;
+    -webkit-justify-content: flex-end;
+    -ms-flex-pack: end;
+    justify-content: flex-end;
+  }
 }
 
 @media (max-width:45em) {
@@ -151,6 +181,13 @@ exports[`Render Profile component. Render Profile component. 1`] = `
 @media (min-width:45em) {
   .c0 {
     grid-template-rows: repeat(2,1fr);
+  }
+}
+
+@media screen and (min-width:40em) {
+  .c1 {
+    margin-left: 0;
+    width: 100%;
   }
 }
 
@@ -169,21 +206,21 @@ exports[`Render Profile component. Render Profile component. 1`] = `
 
 @media (min-width:60em) {
   .c1 {
-    grid-column: 3 / 5;
+    grid-column: 3 / 6;
     grid-row: 1 / 5;
   }
 }
 
 @media (min-width:45em) and (max-width:75em) {
-  .c3 {
-    grid-column: 5 / 10;
+  .c4 {
+    grid-column: 5 / 12;
     grid-row: 1 / 5;
   }
 }
 
-@media (min-width:75em) {
-  .c3 {
-    grid-column: 6 / 9;
+@media (min-width:60em) {
+  .c4 {
+    grid-column: 5 / 10;
     grid-row: 1 / 5;
   }
 }
@@ -192,13 +229,20 @@ exports[`Render Profile component. Render Profile component. 1`] = `
   className="c0"
 >
   <div
-    className="c1 flex justify-center center w-100-ns w-50"
+    className="c1 center"
+    width={
+      Array [
+        "50%",
+        "100%",
+      ]
+    }
   >
     <div
       className="c2"
     >
       <a
-        className="ma1"
+        className="c3"
+        color="textLightMuted"
         href="https://github.com/jessestuart/"
       >
         <svg
@@ -219,7 +263,8 @@ exports[`Render Profile component. Render Profile component. 1`] = `
         </svg>
       </a>
       <a
-        className="ma1"
+        className="c3"
+        color="textLightMuted"
         href="https://www.linkedin.com/in/jessedstuart/"
       >
         <svg
@@ -251,7 +296,8 @@ exports[`Render Profile component. Render Profile component. 1`] = `
         </svg>
       </a>
       <a
-        className="ma1"
+        className="c3"
+        color="textLightMuted"
         href="https://instagram.com/jaystu/"
       >
         <svg
@@ -286,7 +332,8 @@ exports[`Render Profile component. Render Profile component. 1`] = `
         </svg>
       </a>
       <a
-        className="ma1"
+        className="c3"
+        color="textLightMuted"
         href="https://twitter.com/jesse_stuart/"
       >
         <svg
@@ -309,13 +356,13 @@ exports[`Render Profile component. Render Profile component. 1`] = `
     </div>
   </div>
   <div
-    className="c3 tc tr-ns ph2"
+    className="c4 tc tr-ns ph2"
   >
     <div
-      className="c4"
+      className="c5"
     >
       <span
-        className="c5 lh-title"
+        className="c6 lh-title"
         color="textLight"
         fontFamily="serif"
         fontSize={5}
@@ -325,7 +372,7 @@ exports[`Render Profile component. Render Profile component. 1`] = `
         <br />
       </span>
       <span
-        className="c5 lh-title"
+        className="c6 lh-title"
         color="textLight"
         fontFamily="serif"
         fontSize={5}
@@ -334,7 +381,7 @@ exports[`Render Profile component. Render Profile component. 1`] = `
         I contradict myself.
       </span>
       <span
-        className="c5 lh-title"
+        className="c6 lh-title"
         color="textLight"
         fontFamily="serif"
         fontSize={5}
@@ -342,7 +389,7 @@ exports[`Render Profile component. Render Profile component. 1`] = `
       >
         I contain
         <a
-          className="c6"
+          className="c7"
           href="https://jstu.art/ojNe"
         >
            multitudes
@@ -351,15 +398,15 @@ exports[`Render Profile component. Render Profile component. 1`] = `
       </span>
     </div>
     <div
-      className="c7 pt4 justify-center justify-end-ns items-center"
+      className="c8 pt4 justify-center justify-end-ns items-center"
     >
       <div
-        className="c8 f4 fw3 dib tr lh-copy"
+        className="c9 f4 fw3 dib tr lh-copy"
       >
         NYC-based software engineer.
       </div>
       <div
-        className="c7 f6 dib"
+        className="c8 f6 dib"
       >
         <svg
           className="mh2"
@@ -473,34 +520,34 @@ exports[`Render Profile component. Render Profile component. 1`] = `
       </div>
     </div>
     <div
-      className="c7 pt4 justify-center justify-end-ns items-center"
+      className="c8 pt4 justify-center justify-end-ns items-center"
     >
       <div
-        className="c8 f4 fw3 dib tr lh-copy"
+        className="c9 f4 fw3 dib tr lh-copy"
       >
         <div
-          className="c9 db"
+          className="c10 db"
         >
           Published
            
           <a
-            className="c6"
-            href="http://jstu.art/oijk"
+            className="c7"
+            href="https://jstu.art/oijk"
           >
             NLP researcher
           </a>
           , and
         </div>
         <a
-          className="c6"
-          href="http://jstu.art/oj1g"
+          className="c7"
+          href="https://jstu.art/oj1g"
         >
           USPO Patent holder
         </a>
         .
       </div>
       <div
-        className="c7 f6 dib"
+        className="c8 f6 dib"
       >
         <svg
           className="mh2"
@@ -594,15 +641,15 @@ exports[`Render Profile component. Render Profile component. 1`] = `
       </div>
     </div>
     <div
-      className="c7 pt4 justify-center justify-end-ns items-center"
+      className="c8 pt4 justify-center justify-end-ns items-center"
     >
       <div
-        className="c8 f4 fw3 dib tr lh-copy"
+        className="c9 f4 fw3 dib tr lh-copy"
       >
         Neuroscientist by degree.
       </div>
       <div
-        className="c7 f6 dib"
+        className="c8 f6 dib"
       >
         <svg
           className="mh2"
@@ -704,14 +751,14 @@ exports[`Render Profile component. Render Profile component. 1`] = `
       </div>
     </div>
     <div
-      className="c7 pt4 justify-center justify-end-ns items-center"
+      className="c8 pt4 justify-center justify-end-ns items-center"
     >
       <div
-        className="c8 f4 fw3 dib tr lh-copy"
+        className="c9 f4 fw3 dib tr lh-copy"
       >
         <a
-          className="c6"
-          href="http://jstu.art/ojVB"
+          className="c7"
+          href="https://jstu.art/ojVB"
         >
           French translator
         </a>
@@ -719,7 +766,7 @@ exports[`Render Profile component. Render Profile component. 1`] = `
         by night.
       </div>
       <div
-        className="c7 f6 dib"
+        className="c8 f6 dib"
       >
         <svg
           className="mh2"
@@ -793,15 +840,25 @@ exports[`Render Profile component. Render Profile component. 1`] = `
       </div>
     </div>
     <div
-      className="c7 pt4 justify-center justify-end-ns items-center"
+      className="c8 pt4 justify-center justify-end-ns items-center"
     >
       <div
-        className="c8 f4 fw3 dib tr lh-copy"
+        className="c9 f4 fw3 dib tr lh-copy"
       >
-        I also take a lot of photographs.
+        I take a
+         
+        <a
+          className="c7"
+          href="/true/photography"
+          onClick={[Function]}
+          onMouseEnter={[Function]}
+        >
+          lot of photographs
+        </a>
+        .
       </div>
       <div
-        className="c7 f6 dib"
+        className="c8 f6 dib"
       >
         <svg
           className="mh2"
@@ -916,7 +973,7 @@ exports[`Render Profile component. Render Profile component. 1`] = `
     </div>
   </div>
   <div
-    className="c10 bt b--light-silver"
+    className="c11 bt b--light-silver"
   >
     <div
       className="b--hot-pink bb bg-purple bw2 mb1 pb3 pt4 css-vurnku"

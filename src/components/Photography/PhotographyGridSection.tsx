@@ -1,12 +1,12 @@
 import 'react-image-lightbox/style.css'
 
-import { Box } from 'rebass/styled-components'
-import { DateTime } from 'luxon'
-import { animated, useTransition } from 'react-spring'
-import Lightbox from 'react-image-lightbox'
-import React, { useState } from 'react'
 import _ from 'lodash'
 import fp from 'lodash/fp'
+import { DateTime } from 'luxon'
+import React, { useState } from 'react'
+import Lightbox from 'react-image-lightbox'
+import { animated, useTransition } from 'react-spring'
+import { Box } from 'rebass/styled-components'
 
 import { useDimensions, useMedia } from 'utils/hooks'
 
@@ -72,11 +72,11 @@ const PhotographyGridSection = (props: Props) => {
     ]
     return {
       ...child,
-      index,
-      xy,
       columns,
-      width: width / columns,
       height: height / 2,
+      index,
+      width: width / columns,
+      xy,
     }
   })
 

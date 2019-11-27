@@ -33,9 +33,7 @@ exports[`StyledLink component. Render StyledLink component with custom colors. 1
 
 <a
   className="c0"
-  hoverColor="#555555"
   href="/true"
-  linkColor="#333333"
   onClick={[Function]}
   onMouseEnter={[Function]}
 >

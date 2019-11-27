@@ -22,7 +22,6 @@ const ProfileDevIcons = () => {
           mt={5}
           mb={3}
           fontSize={3}
-          // style={{ fontSize: '1.3rem' }}
         >
           Tackling novel problems —
           <span style={{ whiteSpace: 'nowrap' }}>

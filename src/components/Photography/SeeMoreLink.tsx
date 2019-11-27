@@ -1,6 +1,6 @@
-import { Box, Flex, Text } from 'rebass/styled-components'
 import Link from 'gatsby-link'
 import React from 'react'
+import { Box, Flex, Text } from 'rebass/styled-components'
 
 const SeeMoreLink = ({
   href,

@@ -1,5 +1,4 @@
 const _ = require('lodash')
-
 const AWS = require('aws-sdk')
 
 const getSourceS3ConfigForEnvironment = env => {
@@ -75,13 +74,6 @@ const transformerRemark = {
     ],
   },
 }
-
-// const typographyPlugin = {
-//   resolve: 'gatsby-plugin-typography',
-//   options: {
-//     pathToConfigModule: 'src/utils/typography',
-//   },
-// }
 
 const googleAnalyticsPlugin = {
   resolve: 'gatsby-plugin-google-analytics',
@@ -174,8 +166,8 @@ if (!IS_LOCAL) {
   // Production/Staging-only plugins.
   //=================================
   plugins = _.concat(plugins, [
-    // 'gatsby-plugin-offline',
-    // manifestPlugin,
+    'gatsby-plugin-offline',
+    manifestPlugin,
     'gatsby-plugin-netlify',
     'gatsby-plugin-netlify-cache',
   ])

@@ -9,15 +9,15 @@ const WHITMAN_URL = 'https://jstu.art/ojNe'
 const ProfileHeadingText = ({ children, className, ...rest }: any) => (
   <Text
     as="span"
-    sx={{ display: 'inline-flex', flexWrap: 'wrap' }}
-    // sx={{ display: 'flex', justifyContent: 'flex-end' }}
-    justifyContent="flex-end"
-    fontWeight="body"
     className={classNames('lh-title', className)}
     color="textLight"
     flex="1"
+    flexWrap="wrap"
     fontFamily="serif"
     fontSize={5}
+    fontWeight="body"
+    justifyContent={['center', 'flex-end']}
+    sx={{ display: 'inline-flex' }}
     {...rest}
   >
     {children}

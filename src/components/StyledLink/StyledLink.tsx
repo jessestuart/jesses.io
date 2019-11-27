@@ -61,7 +61,7 @@ const StyledLink = (props: Props) => {
 
   // Case #1: link is internal.
   return (
-    <Link to={href} {...rest}>
+    <Link to={href} className={rest?.className}>
       {children}
     </Link>
   )

@@ -5,9 +5,9 @@ import Twemoji from 'components/Icons/Twemoji'
 import ProfileHeading from 'components/Profile/ProfileHeading'
 import ProfileStyledLink from 'components/Profile/ProfileStyledLink'
 
-const BEIGBEDER_URL = 'http://jstu.art/ojVB'
-const COLING_URL = 'http://jstu.art/oijk'
-const USPO_URL = 'http://jstu.art/oj1g'
+const BEIGBEDER_URL = 'https://jstu.art/ojVB'
+const COLING_URL = 'https://jstu.art/oijk'
+const USPO_URL = 'https://jstu.art/oj1g'
 
 const {
   Camera,
@@ -64,7 +64,11 @@ const ProfileBlurb = () => (
       by night.
     </SubBlurb>
     <SubBlurb Emoji1={Camera} Emoji2={Mountain}>
-      I also take a lot of photographs.
+      I take a{' '}
+      <ProfileStyledLink href="/photography">
+        lot of photographs
+      </ProfileStyledLink>
+      .
     </SubBlurb>
   </>
 )
