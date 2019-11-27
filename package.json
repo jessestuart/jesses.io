@@ -105,7 +105,7 @@
     "codacy-coverage": "3.4.0",
     "codecov": "3.6.1",
     "concurrently": "4.1.2",
-    "core-js": "3.4.3",
+    "core-js": "3.4.4",
     "cosmiconfig": "5.2.1",
     "cypress": "3.6.1",
     "cypress-image-snapshot": "3.1.1",
