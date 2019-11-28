@@ -1,9 +1,11 @@
 {
   "include": [
+    "./gatsby-*.js",
     "./scripts/*",
     "./src/**/*.js",
     "./src/**/*.ts",
     "./src/**/*.tsx",
+    "./test/**/*.js",
     "./test/**/*.ts",
     "./test/**/*.tsx"
   ],

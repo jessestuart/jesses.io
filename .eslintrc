@@ -32,6 +32,7 @@
     "react/no-unescaped-entities": "off",
     "react-hooks/rules-of-hooks": "error",
     "react-hooks/exhaustive-deps": "warn",
+    "@typescript-eslint/indent": ["error", 2],
     "@typescript-eslint/array-type": "warn",
     "@typescript-eslint/ban-ts-ignore": ["off"],
     "@typescript-eslint/ban-types": "warn",
@@ -44,7 +45,7 @@
       { "argsIgnorePattern": "^_" }
     ],
     "@typescript-eslint/no-use-before-define": "off",
-    "@typescript-eslint/no-var-requires": "off",
+    "@typescript-eslint/no-var-requires": "off"
   },
   "settings": { "react": { "version": "detect" } },
   "globals": { "__DEV__": true, "process": true }
