@@ -5,7 +5,7 @@
   "author": "Jesse Stuart <hi@jessestuart.com>",
   "dependencies": {
     "@sentry/browser": "5.9.1",
-    "bluebird": "3.7.1",
+    "bluebird": "3.7.2",
     "classnames": "2.2.6",
     "dotenv": "8.2.0",
     "gatsby": "2.18.5",
