@@ -101,7 +101,7 @@
     "babel-plugin-module-resolver": "3.2.0",
     "babel-plugin-styled-components": "1.10.6",
     "babel-preset-gatsby": "0.2.23",
-    "chalk": "2.4.2",
+    "chalk": "3.0.0",
     "codacy-coverage": "3.4.0",
     "codecov": "3.6.1",
     "concurrently": "4.1.2",
