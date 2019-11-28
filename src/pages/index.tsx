@@ -34,16 +34,4 @@ const Home = () => {
   )
 }
 
-// export const query = graphql`
-//   {
-//     file(relativePath: { regex: "/avatar-square.jpg/" }) {
-//       childImageSharp {
-//         fluid {
-//           ...GatsbyImageSharpFluid_withWebp_tracedSVG
-//         }
-//       }
-//     }
-//   }
-// `
-
 export default Home

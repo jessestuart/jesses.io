@@ -15,7 +15,7 @@ const StyledImageZoomGridElement = styled(Box)`
   transition: filter 0.5s;
 
   // Throw in some drop shadow to make it pretty (extra on hover) — and just a
-  //a smidge of border radius, too:
+  // smidge of border radius, too:
   filter: drop-shadow(0 0 2px rgba(0, 0, 0, 0.5));
   &:hover {
     filter: drop-shadow(0 0 6px rgba(0, 0, 0, 0.9));
@@ -31,7 +31,7 @@ interface Props {
 const ImageZoomGridElement = (props: Props) => {
   const { image } = props
   const [isActive, setIsActive] = useHover()
-  const thumbnailImage = _.get(image, 'childImageSharp.thumbnailSizes')
+  const thumbnailImage = _.get(image, 'childImageSharp.sizes')
 
   if (_.isEmpty(thumbnailImage)) {
     return null
