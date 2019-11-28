@@ -1,7 +1,7 @@
 {
   "name": "jessestuart",
   "description": "This is where my words and pictures live.",
-  "version": "1.12.89",
+  "version": "1.12.92",
   "author": "Jesse Stuart <hi@jessestuart.com>",
   "dependencies": {
     "@ctrl/tinycolor": "2.5.4",
@@ -154,7 +154,6 @@
     "stylelint-config-standard": "19.0.0",
     "ts-jest": "24.2.0",
     "ts-node": "8.5.4",
-    "tsconfig-paths": "3.9.0",
     "tslint": "5.20.1",
     "tslint-config-prettier": "1.18.0",
     "tslint-config-standard": "9.0.0",
@@ -165,7 +164,12 @@
     "typescript-styled-plugin": "0.15.0"
   },
   "homepage": ".",
-  "keywords": ["blog", "gatsby", "photography", "react"],
+  "keywords": [
+    "blog",
+    "gatsby",
+    "photography",
+    "react"
+  ],
   "license": "MIT",
   "main": "src/pages/index.tsx",
   "private": true,
