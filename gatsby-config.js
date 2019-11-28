@@ -1,8 +1,20 @@
 const _ = require('lodash')
+
 const AWS = require('aws-sdk')
 
+// If we detect if we're running in a CI environment, only a few sample
+// photos will be downloaded from a test bucket, rather the the full
+// high-resolution photos displayed in production. This is simply to
+// save on AWS costs :)
+const GatsbyEnv = {
+  Development: 'Development',
+  Production: 'Production',
+  Staging: 'Staging',
+}
+
 const getSourceS3ConfigForEnvironment = env => {
-  switch (env) {
+  switch (_.startCase(env)) {
+    // TODO: Re-add this after minio.jesses.io is set back up.
     // return {
     //   bucketName: 'js-photos-dev',
     //   domain: 'minio.jesses.io',
@@ -18,17 +30,7 @@ const getSourceS3ConfigForEnvironment = env => {
   }
 }
 
-// If we detect if we're running in a CI environment, only a few sample
-// photos will be downloaded from a test bucket, rather the the full
-// high-resolution photos displayed in production. This is simply to
-// save on AWS costs :)
-const GatsbyEnv = {
-  Development: 'Development',
-  Production: 'Production',
-  Staging: 'Staging',
-}
-
-const GATSBY_ENV = GatsbyEnv[process.env.GATSBY_ENV]
+const GATSBY_ENV = _.startCase(GatsbyEnv[process.env.GATSBY_ENV])
 const AUTHOR_NAME = 'Jesse Stuart'
 const SITE_NAME = 'jesses.io'
 
