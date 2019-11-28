@@ -1,0 +1,6 @@
+[ver:1,total:420]
+.gtm/terminal.app:180,1574971200:40,1574974800:140,r
+src/components/Photography/ImageZoomGridElement.tsx:152,1574971200:132,1574974800:20,m
+src/fragments/S3ImageAssetData.ts:56,1574971200:36,1574974800:20,r
+src/pages/index.tsx:20,1574971200:20,m
+src/types/S3ImageAsset.ts:12,1574971200:12,r
