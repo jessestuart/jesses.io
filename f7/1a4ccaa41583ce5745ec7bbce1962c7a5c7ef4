@@ -2,3 +2,8 @@
 .gtm/terminal.app:1010,1574974800:180,1574978400:830,r
 src/fragments/S3ImageAssetData.ts:50,1574978400:50,m
 src/types/S3ImageAsset.ts:20,1574978400:20,m
+
+[ver:1,total:420]
+.gtm/terminal.app:275,1574974800:275,r
+gatsby-config.js:130,1574974800:130,m
+.git/COMMIT_EDITMSG:15,1574974800:15,r
