@@ -4,12 +4,12 @@ export const useDimensions = () => {
   const [dimensions, setDimensions] = useState({ width: 0 })
   const [node, setNode] = useState(null)
 
-  const ref = useCallback(node => {
-    setNode(node)
+  const ref = useCallback(callbackNode => {
+    setNode(callbackNode)
   }, [])
 
   useLayoutEffect(() => {
-    if (node == null) {
+    if (!node) {
       return
     }
     const measure = () =>
@@ -31,10 +31,17 @@ export const useDimensions = () => {
   return [ref, dimensions, node]
 }
 
-export const useMedia = (queries, values, defaultValue) => {
+export const useMedia = (
+  queries: string[],
+  // eslint-disable-next-line
+  values: Array<string | number | any>,
+  defaultValue: string | number | any,
+) => {
   // Array containing a media query list for each query
   const mediaQueryLists =
-    typeof window !== 'undefined' ? queries.map(q => window.matchMedia(q)) : []
+    typeof window !== 'undefined'
+      ? queries.map((q: any) => window.matchMedia(q))
+      : []
 
   // Function that gets value based on matching media query
   // eslint-disable-next-line
@@ -72,20 +79,6 @@ export const useMedia = (queries, values, defaultValue) => {
 //           siteMetadata {
 //             title
 //             siteUrl
-//           }
-//         }
-//       }
-//     `,
-//   )
-//   return site.siteMetadata
-// }
-// export const useSiteMetadata = () => {
-//   const { site } = useStaticQuery(
-//     graphql`
-//       query {
-//         site {
-//           siteMetadata {
-//             title
 //           }
 //         }
 //       }

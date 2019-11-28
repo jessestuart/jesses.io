@@ -1,3 +1,4 @@
+/* tslint:disable no-shadowed-variable */
 import 'react-image-lightbox/style.css'
 
 import _ from 'lodash'
@@ -81,11 +82,10 @@ const PhotographyGridSection = (props: Props) => {
   })
 
   const transitions = useTransition(gridItems, fp.get('id'), {
-    from: ({ xy, width, height }) => ({ xy, width, height }),
-    // enter: ({ xy, width, height }) => ({ xy, width, height }),
-    update: ({ xy, width, height }) => ({ xy, width, height }),
     config: { mass: 5, tension: 500, friction: 100 },
+    from: ({ xy, width, height }) => ({ xy, width, height }),
     trail: 25,
+    update: ({ xy, width, height }) => ({ xy, width, height }),
   })
 
   return (
@@ -106,13 +106,13 @@ const PhotographyGridSection = (props: Props) => {
                 <animated.div
                   key={key}
                   style={{
-                    position: 'absolute',
-                    width,
+                    ...rest,
                     height,
+                    position: 'absolute',
                     transform: xy.interpolate(
                       (x: number, y: number) => `translate3d(${x}px,${y}px,0)`,
                     ),
-                    ...rest,
+                    width,
                   }}
                 >
                   <ImageZoomGridElement
