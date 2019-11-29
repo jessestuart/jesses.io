@@ -8064,13 +8064,13 @@ gatsby-source-filesystem@2.1.39:
     valid-url "^1.0.9"
     xstate "^4.6.7"
 
-gatsby-source-s3-image@1.6.106:
-  version "1.6.106"
-  resolved "https://registry.yarnpkg.com/gatsby-source-s3-image/-/gatsby-source-s3-image-1.6.106.tgz#74082b49b0f26c3c8c959ffe273d558d10aa70e2"
-  integrity sha512-Ie5YoFLM+UUSIz+piCNWEFoYWnBle5OIid3tyw6YtwEQjjvOjUx2/xZhunmm1FHKYv8m1qG8VOooRj/JhoBTIQ==
+gatsby-source-s3-image@1.6.107:
+  version "1.6.107"
+  resolved "https://registry.yarnpkg.com/gatsby-source-s3-image/-/gatsby-source-s3-image-1.6.107.tgz#cf0de2b39efa25e54a4f7e8fab0cead99c83263e"
+  integrity sha512-m7IlsIjCjSCFEIbIXyiC+amM38NK31nCsW4XJAqBKpeCp/mpeGcq0abEoh6S03AtKWrwmy3d+bXCAhgeEIzaBQ==
   dependencies:
     aws-sdk "2.580.0"
-    bluebird "3.7.1"
+    bluebird "3.7.2"
     fracty "1.0.9"
     invariant "2.2.4"
     lodash "4.17.15"
