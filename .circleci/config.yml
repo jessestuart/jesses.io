@@ -148,22 +148,14 @@ jobs:
       - *restore_cache
       - run:
           name: Run Jest tests & collect coverage.
-          command: |
-            yarn jest --coverage --runInBand --ci
-          environment:
-            JEST_JUNIT_OUTPUT: 'reports/junit/js-test-results.xml'
+          command: yarn test:ci
       - store_test_results:
           path: reports/junit
       - store_artifacts:
           path: reports/junit
       - run:
-          name: Upload results to Codacy.
-          command: |
-            cat ./test/coverage/lcov.info | yarn codacy-coverage
-      - run:
           name: Upload results to Codecov.
-          command: |
-            yarn codecov
+          command: yarn codecov
 
   build:
     <<: *defaults
