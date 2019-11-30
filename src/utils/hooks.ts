@@ -4,8 +4,8 @@ export const useDimensions = () => {
   const [dimensions, setDimensions] = useState({ width: 0 })
   const [node, setNode] = useState(null)
 
-  const ref = useCallback(callbackNode => {
-    setNode(callbackNode)
+  const ref = useCallback(node => {
+    setNode(node)
   }, [])
 
   useLayoutEffect(() => {

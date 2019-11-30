@@ -27,7 +27,13 @@ const PhotographyGridSection = (props: Props) => {
   const [index, setLightboxIndex] = useState(0)
 
   const sortedImages = _.sortBy(images, 'EXIF.DateTimeOriginal')
-  const lightboxImages = _.map(sortedImages, 'childImageSharp.sizes.srcWebp')
+  const lightboxImages = _.map(sortedImages, 'childImageSharp.sizes.src')
+
+  // const lightboxImages = _.flow(
+  //   // -        fp.get('images'),
+  //   // -        fp.sortBy('EXIF.DateTimeOriginal'),
+  //   fp.map('childImageSharp.sizes.src'),
+  // )(sortedImages)
 
   const decrementLightboxIndex = () => setLightboxIndex(index - 1)
   const incrementLightboxIndex = () => setLightboxIndex(index + 1)
@@ -65,7 +71,7 @@ const PhotographyGridSection = (props: Props) => {
       : imageWidth * (2 / aspectRatio)
     // Masonry-grid placing — positions each tile sequentially into the
     // smallest column available.
-    const column = heights.indexOf(Math.min(...heights))
+    const column = heights.indexOf(Math.min(...heights)) || 0
 
     const xy = [
       (width / columns) * column,

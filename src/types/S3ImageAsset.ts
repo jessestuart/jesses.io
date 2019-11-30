@@ -10,6 +10,5 @@ export default interface S3ImageAsset {
       width: number
     }
     sizes: FluidObject[]
-    thumbnailSizes?: FluidObject[]
   }
 }

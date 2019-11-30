@@ -15,12 +15,12 @@ const GatsbyEnv = {
 const getSourceS3ConfigForEnvironment = env => {
   switch (_.startCase(env)) {
     // TODO: Re-add this after minio.jesses.io is set back up.
-    // return {
-    //   bucketName: 'js-photos-dev',
-    //   domain: 'minio.jesses.io',
-    //   protocol: 'https',
-    // }
     case GatsbyEnv.Development:
+      return {
+        bucketName: 'js-photos-dev',
+        domain: 'minio.jesses.io',
+        protocol: 'http',
+      }
     case GatsbyEnv.Staging: {
       return { bucketName: 'js-photos-dev' }
     }
@@ -84,14 +84,12 @@ const googleAnalyticsPlugin = {
   },
 }
 
-// const ACCESS_KEY_ID = IS_LOCAL
-//   ? process.env.MINIO_ACCESS_KEY
-//   : process.env.AWS_ACCESS_KEY
-// const SECRET_KEY_ID = IS_LOCAL
-//   ? process.env.MINIO_SECRET_KEY
-//   : process.env.AWS_SECRET_KEY
-const ACCESS_KEY_ID = process.env.AWS_ACCESS_KEY
-const SECRET_KEY_ID = process.env.AWS_SECRET_KEY
+const ACCESS_KEY_ID = IS_LOCAL
+  ? process.env.MINIO_ACCESS_KEY
+  : process.env.AWS_ACCESS_KEY
+const SECRET_KEY_ID = IS_LOCAL
+  ? process.env.MINIO_SECRET_KEY
+  : process.env.AWS_SECRET_KEY
 AWS.config.update({
   accessKeyId: ACCESS_KEY_ID,
   secretAccessKey: SECRET_KEY_ID,
