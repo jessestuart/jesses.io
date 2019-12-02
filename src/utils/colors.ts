@@ -39,6 +39,7 @@ const colors: ColorsTheme = Object.freeze({
   secondary: secondaryColors,
 
   bgDark: 'rgb(55, 59, 70)',
+  bgLight: '#f4f4f4',
 
   gray: {
     calm: gray(80, 'cool'),

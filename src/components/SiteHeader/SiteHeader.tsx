@@ -5,9 +5,16 @@ import _ from 'lodash'
 import React from 'react'
 import Headroom from 'react-headroom'
 import { Flex, Heading } from 'rebass/styled-components'
+import styled from 'styled-components'
+
+import Theme from '../../gatsby-plugin-theme-ui'
 
 import HeaderLink from 'components/SiteHeader/HeaderLink'
 import GatsbyLocation from 'types/GatsbyLocation'
+
+const HeadroomWithTransition = styled(Headroom)`
+  transition: all 0.5s ease-in-out;
+`
 
 export enum HeaderTheme {
   DARK = 'DARK',
@@ -35,20 +42,23 @@ const SiteHeader = (props: { location: GatsbyLocation }) => {
     : HeaderTheme.DARK
 
   return (
-    <Headroom>
+    <HeadroomWithTransition>
       <Heading
         as="header"
         id="site-header"
         alignItems="center"
+        justifyContent="center"
         fontFamily="body"
-        className={classNames('bb flex justify-center', {
-          'bg-gray-primary b--hot-pink': theme === HeaderTheme.DARK,
-          'bg-near-white b--black-10': theme === HeaderTheme.LIGHT,
+        bg={
+          theme === HeaderTheme.DARK
+            ? Theme.colors.bgDark
+            : Theme.colors.bgLight
+        }
+        className={classNames('bb flex', {
+          'b--hot-pink': theme === HeaderTheme.DARK,
+          'b--black-10': theme === HeaderTheme.LIGHT,
           bw1: !isRoot,
         })}
-        style={{
-          transition: 'all 0.5s ease-in-out',
-        }}
       >
         <Flex flexDirection="row" className="gray-primary fw3 w-35-ns">
           {Headers.map((header: Header, index: number) => (
@@ -63,7 +73,7 @@ const SiteHeader = (props: { location: GatsbyLocation }) => {
           ))}
         </Flex>
       </Heading>
-    </Headroom>
+    </HeadroomWithTransition>
   )
 }
 

@@ -12,13 +12,6 @@ const StyledHeaderLink = styled(Text)`
   transition: color 0.3s;
 `
 
-const getIsActivePath = ({ href, pathname }): boolean =>
-  (href === '/' && pathname === '/') ||
-  (href !== '/' && _.startsWith(pathname, href))
-
-const getThemeForPathname = (pathname: string): HeaderTheme =>
-  _.startsWith(pathname, '/photography') ? HeaderTheme.LIGHT : HeaderTheme.DARK
-
 interface Props {
   children: ReactNode
   className?: string
@@ -32,6 +25,15 @@ const HeaderLink = (props: Props) => {
   if (!pathname) {
     return null
   }
+
+  const getIsActivePath = ({ href, pathname }): boolean =>
+    (href === '/' && pathname === '/') ||
+    (href !== '/' && _.startsWith(pathname, href))
+
+  const getThemeForPathname = (pathname: string): HeaderTheme =>
+    _.startsWith(pathname, '/photography')
+      ? HeaderTheme.LIGHT
+      : HeaderTheme.DARK
 
   const isActive = getIsActivePath({ href, pathname })
   const headerTheme = getThemeForPathname(pathname)
