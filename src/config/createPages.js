@@ -1,7 +1,6 @@
 const path = require('path')
 
 const { DateTime } = require('luxon')
-const Promise = require('bluebird')
 const _ = require('lodash')
 const fp = require('lodash/fp')
 const winston = require('winston')
