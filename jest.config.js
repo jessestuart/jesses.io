@@ -1,9 +1,8 @@
 module.exports = {
   preset: 'ts-jest',
-  testEnvironment: 'node',
   coverageDirectory: './test/coverage',
   moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx'],
-  moduleDirectories: ['src', 'static', 'node_modules'],
+  moduleDirectories: ['src', 'static', 'test', 'node_modules'],
   setupFilesAfterEnv: ['<rootDir>/test/setupTests.ts'],
   reporters: ['default', 'jest-junit'],
   transform: {

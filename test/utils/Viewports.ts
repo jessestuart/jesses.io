@@ -8,28 +8,28 @@ interface Viewport {
 }
 
 export const iPhone: Viewport = {
-  height: 1334,
-  width: 750,
   deviceScaleFactor: 1,
-  isMobile: true,
   hasTouch: true,
+  height: 1334,
   isLandscape: false,
+  isMobile: true,
+  width: 750,
 }
 
 export const iPhonePlus: Viewport = {
-  height: 1920,
-  width: 1080,
   deviceScaleFactor: 1,
-  isMobile: true,
   hasTouch: true,
+  height: 1920,
   isLandscape: false,
+  isMobile: true,
+  width: 1080,
 }
 
 export const iPadMini: Viewport = {
-  height: 2048,
-  width: 1536,
   deviceScaleFactor: 1,
-  isMobile: true,
   hasTouch: false,
+  height: 2048,
   isLandscape: false,
+  isMobile: true,
+  width: 1536,
 }

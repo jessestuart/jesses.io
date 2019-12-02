@@ -3,10 +3,13 @@ import { useState } from 'react'
 /**
  * A simple React Hook that responds to `hover` events.
  */
-const useHover = () => {
-  const [hovered, setHovered] = useState<boolean>(false)
+const useHover = (): [
+  boolean,
+  { onMouseEnter: () => any; onMouseLeave: () => any },
+] => {
+  const [isActive, setHovered] = useState<boolean>(false)
   return [
-    hovered,
+    isActive,
     {
       onMouseEnter: () => setHovered(true),
       onMouseLeave: () => setHovered(false),

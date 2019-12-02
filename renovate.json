@@ -5,13 +5,16 @@
     "group:definitelyTyped",
     "group:linters",
     "group:jsTest",
-    "group:babelMonorepo",
+    "group:monorepos",
+    "group:recommended",
     ":automergeBranchPush",
     ":semanticCommits",
     ":rebaseStalePrs"
   ],
+  "docker": {
+    "enabled": true
+  },
   "gitAuthor": "jesse-b0t",
   "labels": ["renovate"],
-  "major": { "automerge": false },
-  "prHourlyLimit": 0
+  "major": { "automerge": false }
 }

@@ -1,16 +1,19 @@
 import BlogHeader from 'components/Blog/BlogHeader'
-import Layout from 'components/Layout'
 import { graphql } from 'gatsby'
 import _ from 'lodash'
 import { DateTime } from 'luxon'
-import React, { ReactNode } from 'react'
+import React from 'react'
 import Helmet from 'react-helmet'
+import { Box } from 'rebass/styled-components'
+
 import GatsbyLocation from 'types/GatsbyLocation'
-import colors from 'utils/colors'
+
 import './blog-post.css'
 
+import colors from 'utils/colors'
+
 interface Props {
-  children: ReactNode
+  location: GatsbyLocation
   data: {
     site: {
       siteMetadata: {
@@ -18,7 +21,7 @@ interface Props {
       }
     }
     markdownRemark: {
-      id: any
+      id: string
       excerpt: string
       frontmatter: {
         title: string
@@ -27,7 +30,6 @@ interface Props {
       html: any
     }
   }
-  location: GatsbyLocation
 }
 
 // eslint-disable-next-line
@@ -61,29 +63,29 @@ const BlogPostTemplate = (props: Props) => {
   const comboTitle = `${title || 'Posts'} | ${siteTitle}`
 
   return (
-    <Layout location={location}>
+    <Box
+      className="black-80 lh-copy"
+      p={4}
+      width="100%"
+      backgroundColor={colors.secondary.light0}
+    >
       <BlogPostHelmet
         comboTitle={comboTitle}
         date={new Date(date)}
         pageURL={pageURL}
         excerpt={excerpt}
       />
-      <div
-        className="black-80 lh-copy pa4 w-100"
-        style={{ background: colors.secondary.light0 }}
-      >
-        <div className="center mw7-ns">
-          <BlogHeader date={date} link={pathname} location={location}>
-            {title}
-          </BlogHeader>
-          <article
-            className="center f4 fw5 justify mw-100"
-            dangerouslySetInnerHTML={{ __html: post.html }}
-            id="remark-post"
-          />
-        </div>
+      <div className="center mw7-ns">
+        <BlogHeader date={date} link={pathname} location={location}>
+          {title}
+        </BlogHeader>
+        <article
+          className="center f4 fw5 justify mw-100"
+          dangerouslySetInnerHTML={{ __html: post.html }}
+          id="remark-post"
+        />
       </div>
-    </Layout>
+    </Box>
   )
 }
 

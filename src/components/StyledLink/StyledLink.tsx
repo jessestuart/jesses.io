@@ -43,7 +43,7 @@ interface Props {
  */
 const StyledLink = (props: Props) => {
   const { href, children, ...rest } = props
-  // Case #3: no link provided.
+  // Case #1: no link provided.
   // Just render as a fancypants `<span>`.
   if (!href) {
     return <span {...rest}>{children}</span>
@@ -61,7 +61,7 @@ const StyledLink = (props: Props) => {
 
   // Case #1: link is internal.
   return (
-    <Link to={href} {...rest}>
+    <Link to={href} className={rest?.className}>
       {children}
     </Link>
   )

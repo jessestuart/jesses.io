@@ -1,15 +1,105 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Render Profile component. Render Profile component. 1`] = `
-.c4 {
-  border-bottom: 2px solid rgba(148,117,204,0.8);
+.c3 {
+  box-sizing: border-box;
+  margin: 0;
+  min-width: 0;
+  color: #ff3a5c;
+  color: rgba(220,220,220,.9);
+  margin: 8px;
+}
+
+.c6 {
+  box-sizing: border-box;
+  margin: 0;
+  min-width: 0;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  color: hsla(0,0%,100%,.8);
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  font-family: Spectral,serif;
+  font-size: 28px;
+  font-weight: 400;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+.c9 {
+  box-sizing: border-box;
+  margin: 0;
+  min-width: 0;
+  font-family: Lato,system-ui,sans-serif;
+}
+
+.c10 {
+  box-sizing: border-box;
+  margin: 0;
+  min-width: 0;
+}
+
+.c5 {
+  box-sizing: border-box;
+  margin: 0;
+  min-width: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  padding-top: 32px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.c8 {
+  box-sizing: border-box;
+  margin: 0;
+  min-width: 0;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.c2 {
+  box-sizing: border-box;
+  margin: 0;
+  min-width: 0;
+  margin-top: 32px;
+  margin-bottom: 32px;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify-around;
+  -webkit-justify-content: justify-around;
+  -ms-flex-pack: justify-around;
+  justify-content: justify-around;
+}
+
+.c7 {
+  border-bottom: 2px solid rgba(58%,46%,80%,0.8);
   position: relative;
   -webkit-text-decoration: none;
   text-decoration: none;
 }
 
-.c4::before {
-  background-color: rgba(255,58,92,0.8);
+.c7::before {
+  background-color: rgba(100%,23%,36%,0.8);
   bottom: -2px;
   content: '';
   height: 2px;
@@ -24,7 +114,7 @@ exports[`Render Profile component. Render Profile component. 1`] = `
   width: 100%;
 }
 
-.c4:hover:before {
+.c7:hover:before {
   -webkit-transform: scaleX(1);
   -ms-transform: scaleX(1);
   transform: scaleX(1);
@@ -32,22 +122,54 @@ exports[`Render Profile component. Render Profile component. 1`] = `
 }
 
 .c0 {
+  box-sizing: border-box;
+  margin: 0;
+  min-width: 0;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  margin-top: 32px;
   display: grid;
   grid-template-columns: repeat(12,1fr);
-  min-height: calc(100vh - 23px);
+  min-height: calc(100vh - 56px);
 }
 
 .c1 {
+  box-sizing: border-box;
+  margin: 0;
+  min-width: 0;
+  margin-left: 25%;
+  width: 50%;
+}
+
+.c4 {
+  box-sizing: border-box;
+  margin: 0;
+  min-width: 0;
+  padding-bottom: 32px;
   grid-column: 1 / 13;
 }
 
-.c3 {
-  grid-column: 1 / 13;
-}
-
-.c5 {
+.c11 {
+  box-sizing: border-box;
+  margin: 0;
+  min-width: 0;
   grid-column: 1 / 13;
   grid-row: 5 / 7;
+}
+
+@media screen and (min-width:45em) {
+  .c6 {
+    -webkit-box-pack: end;
+    -webkit-justify-content: flex-end;
+    -ms-flex-pack: end;
+    justify-content: flex-end;
+  }
 }
 
 @media (max-width:45em) {
@@ -62,6 +184,19 @@ exports[`Render Profile component. Render Profile component. 1`] = `
   }
 }
 
+@media screen and (min-width:45em) {
+  .c1 {
+    margin-left: 0;
+    width: 100%;
+  }
+}
+
+@media (max-width:45em) {
+  .c1 {
+    grid-column: 1 / 13;
+  }
+}
+
 @media (min-width:45em) and (max-width:60em) {
   .c1 {
     grid-column: 2 / 5;
@@ -71,36 +206,43 @@ exports[`Render Profile component. Render Profile component. 1`] = `
 
 @media (min-width:60em) {
   .c1 {
-    grid-column: 3 / 5;
+    grid-column: 3 / 6;
     grid-row: 1 / 5;
   }
 }
 
 @media (min-width:45em) and (max-width:60em) {
-  .c3 {
+  .c4 {
     grid-column: 5 / 12;
     grid-row: 1 / 5;
   }
 }
 
 @media (min-width:60em) {
-  .c3 {
+  .c4 {
     grid-column: 5 / 10;
     grid-row: 1 / 5;
   }
 }
 
 <div
-  className="c0 items-center justify-center pv4"
+  className="c0"
 >
   <div
-    className="c1 center w-100-ns w-50"
+    className="c1 center"
+    width={
+      Array [
+        "50%",
+        "100%",
+      ]
+    }
   >
     <div
-      className="c2 flex justify-around mv4"
+      className="c2"
     >
       <a
-        className="ma1"
+        className="c3"
+        color="textLightMuted"
         href="https://github.com/jessestuart/"
       >
         <svg
@@ -121,7 +263,8 @@ exports[`Render Profile component. Render Profile component. 1`] = `
         </svg>
       </a>
       <a
-        className="ma1"
+        className="c3"
+        color="textLightMuted"
         href="https://www.linkedin.com/in/jessedstuart/"
       >
         <svg
@@ -153,7 +296,8 @@ exports[`Render Profile component. Render Profile component. 1`] = `
         </svg>
       </a>
       <a
-        className="ma1"
+        className="c3"
+        color="textLightMuted"
         href="https://instagram.com/jaystu/"
       >
         <svg
@@ -188,7 +332,8 @@ exports[`Render Profile component. Render Profile component. 1`] = `
         </svg>
       </a>
       <a
-        className="ma1"
+        className="c3"
+        color="textLightMuted"
         href="https://twitter.com/jesse_stuart/"
       >
         <svg
@@ -211,51 +356,64 @@ exports[`Render Profile component. Render Profile component. 1`] = `
     </div>
   </div>
   <div
-    className="c3 tc tr-ns ph2"
+    className="c4 tc tr-ns ph2"
   >
-    <h2
-      className="f3 fw5 lh-title white-80 spectral"
-    >
-      Hi — I'm Jesse.
-    </h2>
-    <h2
-      className="f3 fw5 lh-title white-80 mv3 spectral"
+    <div
+      className="c5"
     >
       <span
-        className="dib nowrap"
+        className="c6 lh-title"
+        color="textLight"
+        fontFamily="serif"
+        fontSize={5}
+        fontWeight="body"
+      >
+        Hi — I'm Jesse.
+        <br />
+      </span>
+      <span
+        className="c6 lh-title"
+        color="textLight"
+        fontFamily="serif"
+        fontSize={5}
+        fontWeight="body"
       >
         I contradict myself.
       </span>
       <span
-        className="dib nowrap ml2"
+        className="c6 lh-title"
+        color="textLight"
+        fontFamily="serif"
+        fontSize={5}
+        fontWeight="body"
       >
-        I contain 
+        I contain
         <a
-          className="c4 dib"
-          href="http://jstu.art/ojNe"
+          className="c7"
+          href="https://jstu.art/ojNe"
         >
-          multitudes
+           multitudes
         </a>
         .
       </span>
-    </h2>
-    <p
-      className="flex justify-center justify-end-ns items-center"
+    </div>
+    <div
+      className="c8 pt4 justify-center justify-end-ns items-center"
     >
-      <span
-        className="f4 fw3 dib tr lh-copy"
+      <div
+        className="c9 f4 fw3 dib tr lh-copy"
       >
         NYC-based software engineer.
-      </span>
-      <span
-        className="f6 dib"
+      </div>
+      <div
+        className="c8 f6 dib"
       >
         <svg
           className="mh2"
           style={
             Object {
-              "height": "1.25rem",
-              "width": "1.25rem",
+              "height": "1.5rem",
+              "width": "1.5rem",
             }
           }
           viewBox="0 0 45 45"
@@ -322,8 +480,8 @@ exports[`Render Profile component. Render Profile component. 1`] = `
         <svg
           style={
             Object {
-              "height": "1.25rem",
-              "width": "1.25rem",
+              "height": "1.5rem",
+              "width": "1.5rem",
             }
           }
           viewBox="0 0 45 45"
@@ -359,44 +517,44 @@ exports[`Render Profile component. Render Profile component. 1`] = `
             />
           </g>
         </svg>
-      </span>
-    </p>
-    <p
-      className="flex justify-center justify-end-ns items-center"
+      </div>
+    </div>
+    <div
+      className="c8 pt4 justify-center justify-end-ns items-center"
     >
-      <span
-        className="f4 fw3 dib tr lh-copy"
+      <div
+        className="c9 f4 fw3 dib tr lh-copy"
       >
-        <span
-          className="db"
+        <div
+          className="c10 db"
         >
           Published
            
           <a
-            className="c4"
-            href="http://jstu.art/oijk"
+            className="c7"
+            href="https://jstu.art/oijk"
           >
             NLP researcher
           </a>
           , and
-        </span>
+        </div>
         <a
-          className="c4"
-          href="http://jstu.art/oj1g"
+          className="c7"
+          href="https://jstu.art/oj1g"
         >
           USPO Patent holder
         </a>
         .
-      </span>
-      <span
-        className="f6 dib"
+      </div>
+      <div
+        className="c8 f6 dib"
       >
         <svg
           className="mh2"
           style={
             Object {
-              "height": "1.25rem",
-              "width": "1.25rem",
+              "height": "1.5rem",
+              "width": "1.5rem",
             }
           }
           viewBox="0 0 45 45"
@@ -443,8 +601,8 @@ exports[`Render Profile component. Render Profile component. 1`] = `
         <svg
           style={
             Object {
-              "height": "1.25rem",
-              "width": "1.25rem",
+              "height": "1.5rem",
+              "width": "1.5rem",
             }
           }
           viewBox="0 0 45 45"
@@ -480,25 +638,25 @@ exports[`Render Profile component. Render Profile component. 1`] = `
             />
           </g>
         </svg>
-      </span>
-    </p>
-    <p
-      className="flex justify-center justify-end-ns items-center"
+      </div>
+    </div>
+    <div
+      className="c8 pt4 justify-center justify-end-ns items-center"
     >
-      <span
-        className="f4 fw3 dib tr lh-copy"
+      <div
+        className="c9 f4 fw3 dib tr lh-copy"
       >
         Neuroscientist by degree.
-      </span>
-      <span
-        className="f6 dib"
+      </div>
+      <div
+        className="c8 f6 dib"
       >
         <svg
           className="mh2"
           style={
             Object {
-              "height": "1.25rem",
-              "width": "1.25rem",
+              "height": "1.5rem",
+              "width": "1.5rem",
             }
           }
           viewBox="0 0 45 45"
@@ -541,8 +699,8 @@ exports[`Render Profile component. Render Profile component. 1`] = `
         <svg
           style={
             Object {
-              "height": "1.25rem",
-              "width": "1.25rem",
+              "height": "1.5rem",
+              "width": "1.5rem",
             }
           }
           viewBox="0 0 45 45"
@@ -590,32 +748,32 @@ exports[`Render Profile component. Render Profile component. 1`] = `
             />
           </g>
         </svg>
-      </span>
-    </p>
-    <p
-      className="flex justify-center justify-end-ns items-center"
+      </div>
+    </div>
+    <div
+      className="c8 pt4 justify-center justify-end-ns items-center"
     >
-      <span
-        className="f4 fw3 dib tr lh-copy"
+      <div
+        className="c9 f4 fw3 dib tr lh-copy"
       >
         <a
-          className="c4"
-          href="http://jstu.art/ojVB"
+          className="c7"
+          href="https://jstu.art/ojVB"
         >
           French translator
         </a>
          
         by night.
-      </span>
-      <span
-        className="f6 dib"
+      </div>
+      <div
+        className="c8 f6 dib"
       >
         <svg
           className="mh2"
           style={
             Object {
-              "height": "1.25rem",
-              "width": "1.25rem",
+              "height": "1.5rem",
+              "width": "1.5rem",
             }
           }
           viewBox="0 0 45 45"
@@ -650,8 +808,8 @@ exports[`Render Profile component. Render Profile component. 1`] = `
         <svg
           style={
             Object {
-              "height": "1.25rem",
-              "width": "1.25rem",
+              "height": "1.5rem",
+              "width": "1.5rem",
             }
           }
           viewBox="0 0 45 45"
@@ -679,52 +837,180 @@ exports[`Render Profile component. Render Profile component. 1`] = `
             />
           </g>
         </svg>
-      </span>
-    </p>
+      </div>
+    </div>
+    <div
+      className="c8 pt4 justify-center justify-end-ns items-center"
+    >
+      <div
+        className="c9 f4 fw3 dib tr lh-copy"
+      >
+        I take a
+         
+        <a
+          className="c7"
+          href="/true/photography"
+          onClick={[Function]}
+          onMouseEnter={[Function]}
+        >
+          lot of photographs
+        </a>
+        .
+      </div>
+      <div
+        className="c8 f6 dib"
+      >
+        <svg
+          className="mh2"
+          style={
+            Object {
+              "height": "1.5rem",
+              "width": "1.5rem",
+            }
+          }
+          viewBox="0 0 47.5 47.5"
+        >
+          <defs>
+            <clipPath
+              id="Twemoji_1f4f7_svg__a"
+            >
+              <path
+                d="M0 38h38V0H0v38z"
+              />
+            </clipPath>
+          </defs>
+          <g
+            clipPath="url(#Twemoji_1f4f7_svg__a)"
+            transform="matrix(1.25 0 0 -1.25 0 47.5)"
+          >
+            <path
+              d="M1 27s0 4 4 4h28s4 0 4-4V9s0-4-4-4H5S1 5 1 9v18z"
+              fill="#292f33"
+            />
+            <path
+              d="M12 18c0-5.523 4.477-10 10-10s10 4.477 10 10-4.477 10-10 10-10-4.477-10-10"
+              fill="#ccd6dd"
+            />
+            <path
+              d="M30 18a8 8 0 00-8-8 8 8 0 100 16 8 8 0 008-8"
+              fill="#292f33"
+            />
+            <path
+              d="M27 18a5 5 0 00-5-5 5 5 0 00-5 5 5 5 0 005 5 5 5 0 005-5"
+              fill="#3b88c3"
+            />
+            <path
+              d="M35 27.5a1.5 1.5 0 10-3 0 1.5 1.5 0 003 0"
+              fill="#fff"
+            />
+            <path
+              d="M13 27.5a1.5 1.5 0 00-1.5-1.5h-5a1.5 1.5 0 100 3h5a1.5 1.5 0 001.5-1.5"
+              fill="#f5f8fa"
+            />
+            <path
+              d="M5 32s0 1 1 1h6s1 0 1-1v-1H5v1z"
+              fill="#66757f"
+            />
+          </g>
+        </svg>
+        <svg
+          height={45}
+          style={
+            Object {
+              "height": "1.5rem",
+              "width": "1.5rem",
+            }
+          }
+          viewBox="0 0 45 45"
+          width={45}
+        >
+          <g
+            fill="none"
+          >
+            <path
+              d="M24 44.346L15.406 14s-1.786.995-3.275 2.14c-.393.303-2.486 3.649-2.907 3.976-2.216 1.719-4.468 3.714-4.77 4.14C3.878 25.074 0 45 0 45l24-.654z"
+              fill="#292F33"
+            />
+            <path
+              d="M40 44l-6.9-25.937L22.433 4l-6.741 5.507-1.219 1.539c-.51 1.025-2.078 7.017-2.078 7.017L10.828 24.3 3.93 37.504 1 43.726 40 44z"
+              fill="#4B545D"
+            />
+            <path
+              d="M4 37s9.973-14.568 10-15.385c.026-.816-1.452-4.615-1.452-4.615l-1.583 6.417L4 37z"
+              fill="#FFF"
+            />
+            <path
+              d="M14.963 42h2.481l2.482-20.784 1.53-2.37 4.44-6.908.116-1.938-4.078 5.877-3.25 4.682-2.962 9.715-.76 2.489-2.221 4.135L10 42h4.963zm14.961-23.246l-2.438 7.782-1.357 4.907 3.464 10.062L34 41.423s-5.39-9.155-5.39-9.98c0-.158.776-3.545.776-3.545l1.357-5.98.349-2.021-1.168-1.143z"
+              fill="#292F33"
+            />
+            <path
+              d="M30.447 19l-2.2-.901-1.896 1.185-1.643-1.44L22 19.094 26.428 12l4.019 7zM34 29l-2.118-1.881-1.972 1.271 1.354-6.142 1.778 3.093L34 29z"
+              fill="#F1F1F1"
+            />
+            <path
+              d="M28 26.648l-1.38 4.902-.316-3.186L28 26.648zm-12.74 6.22L13 37l.446-3.205s.86-.762 1.183-1.2c.322-.44 1.404-2.213 1.404-2.213l-.773 2.487zm4.05-14.5L22.351 16l-3.305 4.677.262-2.31z"
+              fill="#FFF"
+            />
+            <path
+              d="M45 45s-.49-5.134-1.091-9.457c-.472-3.395-3.523-8.415-5.238-9.499l-1.577-4.72-2.585-6.813-2.885-3.056-2.356-2.17-.645-.83L22 3l2.925 6.685.67 2.23 4.147 6.895.843 3.2 1.838 3.046.989 3.606 1.366 4.99-2.556 8.678L45 45z"
+              fill="#292F33"
+            />
+            <path
+              d="M42.135 40.5c-1.681 0-6.197.71-6.822.71-2.5 0-5.313-2.21-6.563-2.21s-4.492 2.21-6.992 2.21c-2.11 0-3.008-1.025-5.9-1.025-.934 0-5.12 1.1-6.014.986-2.279-.288-3.45-1.224-4.024-1.224C2.5 39.947 0 45 0 45h45s-1.094-4.5-2.865-4.5z"
+              fill="#5C903F"
+            />
+            <path
+              d="M16 9.267l2.771-.618.856 2.351L22.4 9.884l3.6.421L23.013 1z"
+              fill="#F1F1F1"
+            />
+            <path
+              d="M29.348 8.371l-1.767-.319-1.777 1.528L23 0l6.348 8.371zm5.842 5.738l2.277 6.912-2.118-3.712-1.976-2.133-1.15-3.856 2.967 2.79zM44 35s-.179-5.099-1.557-6.782c-1.378-1.682-3.52-2.597-3.52-2.597l1.76 4.293 1.786 1.86L44 35z"
+              fill="#A8B6C0"
+            />
+          </g>
+        </svg>
+      </div>
+    </div>
   </div>
   <div
-    className="c5 bt b--light-silver"
+    className="c11 bt b--light-silver"
   >
     <div
-      className="b--hot-pink bb bg-purple bw2 mb1 pb3 pt4"
+      className="b--hot-pink bb bg-purple bw2 mb1 pb3 pt4 css-vurnku"
       style={
         Object {
           "gridColumn": "1 / 13",
         }
       }
     >
-      <h4
-        className="f4 fira-mono fw4 lh-title tc white-80"
+      <div
+        className="fw4 lh-title tc white-80 css-seakmb"
       >
         I build software
         <br />
         on the pull requests
         <br />
         of giants.
-      </h4>
+      </div>
       <div
-        className="flex justify-center mt2 w-100"
+        className="justify-center mt2 css-4cffwv"
       >
-        <div
-          className=""
+        <svg
+          className="mw-5"
+          fill="none"
+          height="30px"
+          stroke="#ff3a5c"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          strokeWidth="2"
+          viewBox="0 0 24 24"
+          width="30px"
+          xmlns="http://www.w3.org/2000/svg"
         >
-          <svg
-            className="mw-5"
-            fill="none"
-            height="30px"
-            stroke="#ff3a5c"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth="2"
-            viewBox="0 0 24 24"
-            width="30px"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <polyline
-              points="6 9 12 15 18 9"
-            />
-          </svg>
-        </div>
+          <polyline
+            points="6 9 12 15 18 9"
+          />
+        </svg>
       </div>
     </div>
   </div>

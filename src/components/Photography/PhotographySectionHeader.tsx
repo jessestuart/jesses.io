@@ -1,6 +1,9 @@
-import StyledLink from 'components/StyledLink'
+import Link from 'gatsby-link'
 import { DateTime } from 'luxon'
 import React from 'react'
+import { Text } from 'rebass/styled-components'
+
+import Colors from 'utils/colors'
 
 interface Props {
   datetime: DateTime
@@ -11,12 +14,22 @@ const PhotographySectionHeader = ({
   datetime,
   href = '/photography',
 }: Props) => (
-  <StyledLink
-    className="alegreya-sans db f2 fw5 header-primary mb3 tr w-100"
-    href={href}
+  <Text
+    as="h2"
+    borderBottom={`1px solid ${Colors.gray.calm}`}
+    className="flex fw5"
+    flex="1"
+    fontSize="6"
+    justifyContent="flex-end"
+    marginBottom="2"
+    width="100%"
+    sx={{
+      color: 'textMediumMuted',
+      fontFamily: 'smallcaps',
+    }}
   >
-    {datetime.toFormat('dd LLLL yyyy')}
-  </StyledLink>
+    <Link to={href}>{datetime.toFormat('dd LLLL yyyy')}</Link>
+  </Text>
 )
 
 export default PhotographySectionHeader

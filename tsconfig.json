@@ -1,6 +1,15 @@
 {
-  "include": ["./src/**/*.tsx", "**/*.spec.tsx", "./src/**/*.ts", "**/*.js"],
-  "exclude": ["node_modules/*", "public/*"],
+  "include": [
+    "./gatsby-*.js",
+    "./scripts/*",
+    "./src/**/*.js",
+    "./src/**/*.ts",
+    "./src/**/*.tsx",
+    "./test/**/*.js",
+    "./test/**/*.ts",
+    "./test/**/*.tsx"
+  ],
+  "exclude": ["node_modules/**/*", "public/*", "cypress/*", ".cache/*"],
   "compilerOptions": {
     "allowSyntheticDefaultImports": true,
     "baseUrl": ".",
@@ -18,7 +27,8 @@
     "noImplicitReturns": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
-    "paths": { "*": ["src/*", "static/*"] },
+    "paths": { "*": ["src/*", "static/*", "scripts/*", "test/*"] },
+    "plugins": [{ "name": "typescript-styled-plugin" }],
     "resolveJsonModule": true,
     "skipLibCheck": true,
     "sourceMap": true,

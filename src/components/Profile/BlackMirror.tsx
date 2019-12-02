@@ -1,6 +1,7 @@
 import React from 'react'
 
 import { GitHub, Instagram, Linkedin, Twitter } from 'react-feather'
+import { Flex, Link } from 'rebass/styled-components'
 import styled from 'styled-components'
 
 const GITHUB_COLOR = '#333333'
@@ -44,25 +45,24 @@ const Icons: Icon[] = [
   },
 ]
 
-const BlackMirrorDiv = styled.div.attrs({
-  className: 'flex justify-around mv4',
-})`
+const BlackMirrorDiv = styled(Flex)`
+  justify-content: justify-around;
   @media (max-width: 45em) {
     display: none !important;
   }
 `
 
 const BlackMirror = () => (
-  <BlackMirrorDiv>
+  <BlackMirrorDiv my={4} justifyContent="center">
     {Icons.map(({ color, Image, url }) => (
-      <a key={url} href={url} className="ma1">
+      <Link color="textLightMuted" key={url} href={url} m={2}>
         <Image
           fill={color}
           strokeWidth="1px"
           className="b--light-gray hvr-grow"
           size="35px"
         />
-      </a>
+      </Link>
     ))}
   </BlackMirrorDiv>
 )

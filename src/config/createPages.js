@@ -90,13 +90,14 @@ const imagePostQuery = `
 }`
 
 const createPhotographyPagePromises = ({ imagesGroupedByDate, createPage }) =>
-  _.flatMap(imagesGroupedByDate, (_images, date) =>
+  _.flatMap(imagesGroupedByDate, (images, date) =>
     createPage({
       path: `/photography/${date}`,
       component: PhotographyTemplate,
       context: {
-        name: date,
         datetime: DateTime.fromISO(date),
+        images,
+        name: date,
         type: PageType.Photography,
       },
     }),

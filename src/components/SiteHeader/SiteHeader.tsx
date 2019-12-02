@@ -1,15 +1,17 @@
 import 'styles/base.css'
 
+import classNames from 'classnames'
 import _ from 'lodash'
 import React from 'react'
 import Headroom from 'react-headroom'
+import { Flex, Heading } from 'rebass/styled-components'
 
+import HeaderLink from 'components/SiteHeader/HeaderLink'
 import GatsbyLocation from 'types/GatsbyLocation'
 
-import HeaderLink from './HeaderLink'
-
-interface Props {
-  location: GatsbyLocation
+export enum HeaderTheme {
+  DARK = 'DARK',
+  LIGHT = 'LIGHT',
 }
 
 interface Header {
@@ -24,39 +26,43 @@ const Headers: Header[] = [
   { href: '/about', title: 'about' },
 ]
 
-const SiteHeader = (props: Props) => {
+const SiteHeader = (props: { location: GatsbyLocation }) => {
   const pathname: string = _.get(props, 'location.pathname', '/')
   const isRoot: boolean = _.eq(pathname, '/')
+
+  const theme: HeaderTheme = _.startsWith(pathname, '/photography')
+    ? HeaderTheme.LIGHT
+    : HeaderTheme.DARK
+
   return (
-    <Headroom
-      className="bg-gray-primary"
-      style={{
-        MozTransition: 'all 0.7s ease-in-out',
-        OTransition: 'all 0.7s ease-in-out',
-        WebkitTransition: 'all 0.7s ease-in-out',
-        transition: 'all 0.7s ease-in-out',
-      }}
-    >
-      <header
+    <Headroom>
+      <Heading
+        as="header"
         id="site-header"
-        className={`b--hot-pink bb bg-gray-primary center flex pb1 site-header w-100 ${
-          !isRoot ? 'bw1' : ''
-        }`}
+        alignItems="center"
+        fontFamily="body"
+        className={classNames('bb flex justify-center', {
+          'bg-gray-primary b--hot-pink': theme === HeaderTheme.DARK,
+          'bg-near-white b--black-10': theme === HeaderTheme.LIGHT,
+          bw1: !isRoot,
+        })}
+        style={{
+          transition: 'all 0.5s ease-in-out',
+        }}
       >
-        <ol className="center flex flex-row fw3 mb1 source-sans w-35-ns">
+        <Flex flexDirection="row" className="gray-primary fw3 w-35-ns">
           {Headers.map((header: Header, index: number) => (
-            <li key={header.title}>
-              <HeaderLink
-                className={index === Headers.length - 1 ? '' : 'br b--mid-gray'}
-                href={header.href || `/${header.title}`}
-                pathname={pathname}
-              >
-                {header.title}
-              </HeaderLink>
-            </li>
+            <HeaderLink
+              key={header.href}
+              className={index === Headers.length - 1 ? '' : 'br b--mid-gray'}
+              href={header.href || `/${header.title}`}
+              pathname={pathname}
+            >
+              {header.title}
+            </HeaderLink>
           ))}
-        </ol>
-      </header>
+        </Flex>
+      </Heading>
     </Headroom>
   )
 }

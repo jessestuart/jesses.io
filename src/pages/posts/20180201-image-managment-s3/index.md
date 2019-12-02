@@ -4,24 +4,23 @@ date: 2018-02-01
 draft: false
 ---
 
-I like to keep things organized. Let's take my photography catalogue, for example --
-I take my gear pretty much wherever I go, and that's resulted in a library of
-(as I write this) 54,848 RAW photographs and counting; back-of-napkin math, that
-comes out to roughly ~35 shots per day over the past ~4 years.
+I like to keep things organized. Let's take my photography catalogue, for
+example -- I take my gear pretty much wherever I go, and that's resulted in a
+library of (as I write this) 54,848 RAW photographs and counting; back-of-napkin
+math, that comes out to roughly ~35 shots per day over the past ~4 years.
 
 I also expect my tooling to accomplish what I want, without having to [make me
 think][make-me-think] any more than necessary. When uploading photos to this
-site, any time spent uploading, resizing / optimizing, rebuilding the site,
-etc. is time I could have spent out shooting, or in post-processing, or
-whatever.
+site, any time spent uploading, resizing / optimizing, rebuilding the site, etc.
+is time I could have spent out shooting, or in post-processing, or whatever.
 
 So naturally, as an engineer, I decided to scratch my own itch — and thus
 [serverless-image-organizer][gh-link] was born. This was an afternoon project
 that executes a very simple chain of events: it listens for uploads to a source
 S3 bucket, then sorts all incoming photos into a destination bucket, grouped
 into "folders" by date (in ISO 8601 date format, e.g., `2018-02-01/foobar.jpg`),
-and finally pings [Netlify][netlify] to trigger a rebuild of the site
-with the new images included.
+and finally pings [Netlify][netlify] to trigger a rebuild of the site with the
+new images included.
 
 In order for that simple task to be executed "serverlessly", however, requires
 the integration of a non-trivial network of components. There are, of course,

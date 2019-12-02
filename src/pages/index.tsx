@@ -1,11 +1,9 @@
-import { graphql } from 'gatsby'
+import { graphql, useStaticQuery } from 'gatsby'
+import GatsbyImage from 'gatsby-image'
 import _ from 'lodash'
 import React from 'react'
 
 import { Profile, ProfileDevIcons } from 'components'
-import Layout from 'components/Layout'
-import GatsbyImage from 'types/GatsbyImage'
-import GatsbyLocation from 'types/GatsbyLocation'
 
 interface Props {
   data: {
@@ -13,31 +11,39 @@ interface Props {
       childImageSharp: GatsbyImage
     }
   }
-  location: GatsbyLocation
 }
 
-const Home = ({ data, location }: Props) => {
-  const avatar = _.get(data, 'file.childImageSharp.fluid')
-  return (
-    <Layout location={location}>
-      <div className="moon-gray bg-gray-primary w-100">
-        <Profile avatar={avatar} />
-        <ProfileDevIcons />
-      </div>
-    </Layout>
-  )
-}
-
-export const query = graphql`
-  {
-    file(relativePath: { regex: "/avatar-square.jpg/" }) {
-      childImageSharp {
-        fluid {
-          ...GatsbyImageSharpFluid_tracedSVG
+const Home = () => {
+  const data: Props = useStaticQuery(graphql`
+    {
+      file(relativePath: { regex: "/avatar-square.jpg/" }) {
+        childImageSharp {
+          fluid {
+            ...GatsbyImageSharpFluid_withWebp
+          }
         }
       }
     }
-  }
-`
+  `)
+  const avatar = _.get(data, 'file.childImageSharp.fluid')
+  return (
+    <div className="moon-gray bg-gray-primary w-100">
+      <Profile avatar={avatar} />
+      <ProfileDevIcons />
+    </div>
+  )
+}
+
+// export const query = graphql`
+//   {
+//     file(relativePath: { regex: "/avatar-square.jpg/" }) {
+//       childImageSharp {
+//         fluid {
+//           ...GatsbyImageSharpFluid_withWebp_tracedSVG
+//         }
+//       }
+//     }
+//   }
+// `
 
 export default Home

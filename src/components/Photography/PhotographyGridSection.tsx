@@ -1,150 +1,149 @@
+/* tslint:disable no-shadowed-variable */
 import 'react-image-lightbox/style.css'
 
 import _ from 'lodash'
 import fp from 'lodash/fp'
 import { DateTime } from 'luxon'
-import React, { Component } from 'react'
+import React, { useState } from 'react'
 import Lightbox from 'react-image-lightbox'
+import { animated, useTransition } from 'react-spring'
+import { Box } from 'rebass/styled-components'
 
-import { StyledPanel } from 'components'
-import {
-  ImageZoomGrid,
-  ImageZoomGridElement,
-  PhotographySectionHeader,
-} from 'components/Photography'
+import { useDimensions, useMedia } from 'utils/hooks'
+
+import { ImageZoomGridElement, PhotographySectionHeader, SeeMoreLink } from '.'
 
 interface Props {
   datetime: DateTime
   // The images to be *currently* displayed for this section.
   images: any[]
-  // The *total* number of images available for this section, even those that
-  // are currently hidden.
-  // imageCount: number
-  // True if on `/photography` page; false if on one of the photo details pages.
-  isPreview?: boolean
   slug?: string
+  totalNumImages?: number
 }
 
-interface State {
-  index: number
-  isLightboxOpen: boolean
-  lightboxImages: string[]
-  lightboxSrc?: string
-  nextImageSrc?: string
-  prevImageSrc?: string
-}
+const PhotographyGridSection = (props: Props) => {
+  const { datetime, images, slug = '/#', totalNumImages = 0 } = props
+  const [isLightboxOpen, setIsLightboxOpen] = useState(false)
+  const [index, setLightboxIndex] = useState(0)
 
-interface ToggleLightboxOptions {
-  index: number
-  isLightboxOpen: boolean
-  lightboxImages?: string[]
-}
+  const sortedImages = _.sortBy(images, 'EXIF.DateTimeOriginal')
+  const lightboxImages = _.map(sortedImages, 'childImageSharp.sizes.src')
 
-class PhotographyGridSection extends Component<Props, State> {
-  public readonly state: State = {
-    index: 0,
-    isLightboxOpen: false,
-    lightboxImages: [],
+  // const lightboxImages = _.flow(
+  //   // -        fp.get('images'),
+  //   // -        fp.sortBy('EXIF.DateTimeOriginal'),
+  //   fp.map('childImageSharp.sizes.src'),
+  // )(sortedImages)
+
+  const decrementLightboxIndex = () => setLightboxIndex(index - 1)
+  const incrementLightboxIndex = () => setLightboxIndex(index + 1)
+  const closeLightbox = () => setIsLightboxOpen(false)
+  const openLightbox = (imageIndex: number) => {
+    setLightboxIndex(imageIndex)
+    setIsLightboxOpen(true)
   }
+  const getImageAtIndex = (imageIndex: number) =>
+    _.get(lightboxImages, imageIndex % lightboxImages.length)
 
-  /**
-   * Lightbox images are just the scaled up version of the thumbnails.
-   * Here we extract the absolute source path for all Lightbox images
-   * for the current gallery.
-   */
-  private getLightboxImagesFromProps: (props: Props) => string[] = _.memoize(
-    _.flow(
-      fp.get('images'),
-      fp.sortBy('EXIF.DateTimeOriginal'),
-      fp.map('childImageSharp.sizes.src'),
-    ),
+  const lightboxSrc = getImageAtIndex(index)
+  const nextImage = getImageAtIndex(index + 1)
+  const prevImage = getImageAtIndex(index - 1)
+
+  // Tie media queries to the number of columns.
+  const columns = useMedia(
+    ['(min-width: 1536px)', '(min-width: 1024px)', '(min-width: 512px)'],
+    [4, 3, 2],
+    1,
   )
+  // Measure the width of the container element.
+  // @ts-ignore
+  const [ref, { width }] = useDimensions()
 
-  public UNSAFE_componentWillMount() {
-    this.setState({
-      lightboxImages: this.getLightboxImagesFromProps(this.props),
-    })
-  }
+  // Form a grid of stacked images, using the width & column calculations we got
+  // from the `useMedia` and `useDimensions` hooks above.
+  const heights: number[] = new Array(columns).fill(0) // Each column gets a height starting with zero
+  const gridItems = sortedImages.map((child, index) => {
+    const { childImageSharp } = child
+    const imageWidth = child.width || width / columns
+    const aspectRatio = _.get(childImageSharp, 'sizes.aspectRatio')
+    const height = _.isFinite(child.height)
+      ? child.height
+      : imageWidth * (2 / aspectRatio)
+    // Masonry-grid placing — positions each tile sequentially into the
+    // smallest column available.
+    const column = heights.indexOf(Math.min(...heights)) || 0
 
-  public render() {
-    const { datetime, images, slug = '/#' } = this.props
-    const {
-      isLightboxOpen,
-      lightboxSrc,
-      nextImageSrc,
-      prevImageSrc,
-    } = this.state
-    const sortedImages = _.sortBy(images, 'EXIF.DateTimeOriginal')
-    const lightboxImages = _.map(sortedImages, 'childImageSharp.sizes.src')
-
-    if (_.isEmpty(images) || _.isEmpty(lightboxImages)) {
-      return null
-    }
-
-    return (
-      <StyledPanel>
-        <PhotographySectionHeader datetime={datetime} href={slug} />
-        <ImageZoomGrid>
-          {sortedImages.map((image: any, imageIndex: number) => {
-            return (
-              <ImageZoomGridElement
-                key={image.id}
-                image={image}
-                onClick={() => this.clickImageElement(imageIndex)}
-              />
-            )
-          })}
-        </ImageZoomGrid>
-        {isLightboxOpen && lightboxSrc && (
-          <Lightbox
-            enableZoom={false}
-            mainSrc={lightboxSrc}
-            nextSrc={nextImageSrc}
-            prevSrc={prevImageSrc}
-            onCloseRequest={this.closeLightbox}
-            onMovePrevRequest={this.decrementLightboxIndex}
-            onMoveNextRequest={this.incrementLightboxIndex}
-          />
-        )}
-      </StyledPanel>
-    )
-  }
-
-  private decrementLightboxIndex = () => {
-    this.toggleLightbox({ index: this.state.index - 1, isLightboxOpen: true })
-  }
-
-  private incrementLightboxIndex = () => {
-    this.toggleLightbox({ index: this.state.index + 1, isLightboxOpen: true })
-  }
-
-  private closeLightbox = () => {
-    this.toggleLightbox({ ...this.state, isLightboxOpen: false })
-  }
-
-  private clickImageElement = (imageIndex: number) => {
-    this.toggleLightbox({
-      index: imageIndex,
-      isLightboxOpen: !this.state.isLightboxOpen,
-      lightboxImages: this.state.lightboxImages,
-    })
-  }
-
-  private toggleLightbox = ({
-    index = this.state.index,
-    isLightboxOpen = this.state.isLightboxOpen,
-    lightboxImages = this.state.lightboxImages,
-  }: ToggleLightboxOptions) => {
-    // prettier-ignore
-    this.setState({ // lgtm [js/react/inconsistent-state-update]
+    const xy = [
+      (width / columns) * column,
+      (heights[column] += height / 2) - height / 2,
+    ]
+    return {
+      ...child,
+      columns,
+      height: height / 2,
       index,
-      isLightboxOpen,
-      lightboxImages,
-      lightboxSrc: lightboxImages[index],
-      nextImageSrc: lightboxImages[(index + 1) % lightboxImages.length],
-      prevImageSrc: lightboxImages[(index - 1) % lightboxImages.length],
-    })
-  }
+      width: width / columns,
+      xy,
+    }
+  })
+
+  const transitions = useTransition(gridItems, fp.get('id'), {
+    config: { mass: 5, tension: 500, friction: 100 },
+    from: ({ xy, width, height }) => ({ xy, width, height }),
+    trail: 25,
+    update: ({ xy, width, height }) => ({ xy, width, height }),
+  })
+
+  return (
+    <>
+      <PhotographySectionHeader datetime={datetime} href={slug} />
+      <Box
+        ref={ref}
+        className="mb4 w-100"
+        // Define height in `style` to avoid creating a new className on each
+        // resize / render.
+        style={{ height: Math.max(...heights) }}
+      >
+        {width != null &&
+          transitions.map(
+            // @ts-ignore
+            ({ item, props: { xy, width, height, ...rest }, key }) => {
+              return (
+                <animated.div
+                  key={key}
+                  style={{
+                    ...rest,
+                    height,
+                    position: 'absolute',
+                    transform: xy.interpolate(
+                      (x: number, y: number) => `translate3d(${x}px,${y}px,0)`,
+                    ),
+                    width,
+                  }}
+                >
+                  <ImageZoomGridElement
+                    image={item}
+                    onClick={() => openLightbox(item.index)}
+                  />
+                </animated.div>
+              )
+            },
+          )}
+      </Box>
+      <SeeMoreLink totalNumImages={totalNumImages} href={slug} />
+      {isLightboxOpen && (
+        <Lightbox
+          enableZoom={false}
+          mainSrc={lightboxSrc}
+          nextSrc={nextImage}
+          onCloseRequest={closeLightbox}
+          onMoveNextRequest={incrementLightboxIndex}
+          onMovePrevRequest={decrementLightboxIndex}
+          prevSrc={prevImage}
+        />
+      )}
+    </>
+  )
 }
 
 export default PhotographyGridSection

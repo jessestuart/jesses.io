@@ -1,9 +1,10 @@
-import '../../styles/base.css'
-import '../../styles/hvr-animations.css'
-
 import classNames from 'classnames'
 import React, { Fragment } from 'react'
+import { Text } from 'rebass/styled-components'
 import styled from 'styled-components'
+
+import 'styles/base.css'
+import 'styles/hvr-animations.css'
 
 import colors from 'utils/colors'
 
@@ -14,11 +15,13 @@ const ProfileDevIcons = () => {
   return (
     <>
       <div className="flex justify-center align-center">
-        <p
-          className="spectral fw3 lh-copy center pv3 tc w-75"
-          style={{
-            fontSize: '1.3rem',
-          }}
+        <Text
+          fontFamily="serif"
+          fontWeight="body"
+          className="lh-copy center pv3 tc w-75"
+          mt={5}
+          mb={3}
+          fontSize={3}
         >
           Tackling novel problems —
           <span style={{ whiteSpace: 'nowrap' }}>
@@ -27,7 +30,7 @@ const ProfileDevIcons = () => {
           — <span style={{ whiteSpace: 'nowrap' }}>is my jam.</span>
           <br />
           Here are some of the technologies I've enjoyed hacking on lately:
-        </p>
+        </Text>
       </div>
       <DevIconsSection className="center code w-90">
         {DevIconSkills.map((devIcon, index) => (
@@ -59,7 +62,7 @@ const DevIconLabel = styled.div`
   grid-column: span 9;
   grid-row: span 2;
   @media (max-width: 45em) {
-    border-bottom: 1px solid ${colors.primary.main};
+    border-bottom: 1px solid ${colors.primary};
   }
   @media (min-width: 45em) {
     border-bottom: 1px solid rgba(255, 255, 255, 0.5);

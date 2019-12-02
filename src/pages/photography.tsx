@@ -7,9 +7,6 @@ import React from 'react'
 import { Helmet } from 'react-helmet'
 
 import { PhotographyGridSection } from 'components'
-import Layout from 'components/Layout'
-import GatsbyLocation from 'types/GatsbyLocation'
-import { useSiteMetadata } from 'utils/hooks'
 
 interface Props {
   allS3ImageAsset: {
@@ -21,10 +18,14 @@ interface Props {
 
 export const PHOTOGRAPHY_INDEX_NUM_PREVIEWS = 6
 
-const createSortedArrayOfGroupedImages = _.flow(
+const getS3ImageAssetNodes = _.flow(
   // Collect all of the image nodes for each S3ImageAsset into a single array...
   fp.get('allS3ImageAsset.edges'),
   fp.map('node'),
+)
+
+const createSortedArrayOfGroupedImages = _.flow(
+  getS3ImageAssetNodes,
   // Group by *date* created... (string value)
   fp.groupBy('EXIF.DateCreatedISO'),
   // Then sort by *datetime* created... (numeric value)
@@ -33,8 +34,7 @@ const createSortedArrayOfGroupedImages = _.flow(
   fp.reverse,
 )
 
-const PhotographyIndex = ({ location }: { location: GatsbyLocation }) => {
-  const { title } = useSiteMetadata()
+const PhotographyIndex = () => {
   const data: Props = useStaticQuery(graphql`
     query {
       allS3ImageAsset {
@@ -47,11 +47,11 @@ const PhotographyIndex = ({ location }: { location: GatsbyLocation }) => {
     }
   `)
 
-  const pageTitle = `Photography | ${title}`
+  const pageTitle = 'Photography'
   const sortedArrayOfGroupedImages = createSortedArrayOfGroupedImages(data)
 
   return (
-    <Layout location={location}>
+    <>
       <Helmet title={pageTitle} />
       <div
         className="bg-near-white black-80 pv4 pa3-ns"
@@ -81,8 +81,8 @@ const PhotographyIndex = ({ location }: { location: GatsbyLocation }) => {
                 <PhotographyGridSection
                   datetime={datetime}
                   images={linkImages || []}
-                  isPreview={true}
                   key={sectionTitle}
+                  totalNumImages={_.size(imageNodeList)}
                   slug={linkSlug}
                 />
               )
@@ -90,7 +90,7 @@ const PhotographyIndex = ({ location }: { location: GatsbyLocation }) => {
           ),
         )}
       </div>
-    </Layout>
+    </>
   )
 }
 

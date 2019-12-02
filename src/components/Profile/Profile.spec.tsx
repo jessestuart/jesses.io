@@ -1,6 +1,6 @@
 import React from 'react'
-import renderer from 'react-test-renderer'
 
+import { renderWithTheme } from '../../../test/utils/helpers'
 import Profile from './Profile'
 
 describe('Render Profile component.', () => {
@@ -9,8 +9,7 @@ describe('Render Profile component.', () => {
   })
 
   test('Render Profile component.', () => {
-    const component = renderer.create(<Profile href="/" />)
-    const tree = component.toJSON()
+    const tree = renderWithTheme(<Profile />).toJSON()
     expect(tree).toMatchSnapshot()
   })
 })

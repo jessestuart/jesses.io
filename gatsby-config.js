@@ -2,17 +2,25 @@ const _ = require('lodash')
 
 const AWS = require('aws-sdk')
 
-require('dotenv').config()
+// If we detect if we're running in a CI environment, only a few sample
+// photos will be downloaded from a test bucket, rather the the full
+// high-resolution photos displayed in production. This is simply to
+// save on AWS costs :)
+const GatsbyEnv = {
+  Development: 'Development',
+  Production: 'Production',
+  Staging: 'Staging',
+}
 
 const getSourceS3ConfigForEnvironment = env => {
-  switch (env) {
-    case GatsbyEnv.Development: {
+  switch (_.startCase(env)) {
+    // TODO: Re-add this after minio.jesses.io is set back up.
+    case GatsbyEnv.Development:
       return {
         bucketName: 'js-photos-dev',
         domain: 'minio.jesses.io',
-        protocol: 'https',
+        protocol: 'http',
       }
-    }
     case GatsbyEnv.Staging: {
       return { bucketName: 'js-photos-dev' }
     }
@@ -22,17 +30,7 @@ const getSourceS3ConfigForEnvironment = env => {
   }
 }
 
-// If we detect if we're running in a CI environment, only a few sample
-// photos will be downloaded from a test bucket, rather the the full
-// high-resolution photos displayed in production. This is simply to
-// save on AWS costs :)
-const GatsbyEnv = {
-  Development: 'Deveopment',
-  Production: 'Production',
-  Staging: 'Staging',
-}
-
-const GATSBY_ENV = GatsbyEnv[process.env.GATSBY_ENV]
+const GATSBY_ENV = _.startCase(GatsbyEnv[process.env.GATSBY_ENV])
 const AUTHOR_NAME = 'Jesse Stuart'
 const SITE_NAME = 'jesses.io'
 
@@ -79,13 +77,6 @@ const transformerRemark = {
   },
 }
 
-const typographyPlugin = {
-  resolve: 'gatsby-plugin-typography',
-  options: {
-    pathToConfigModule: 'src/utils/typography',
-  },
-}
-
 const googleAnalyticsPlugin = {
   resolve: 'gatsby-plugin-google-analytics',
   options: {
@@ -108,6 +99,10 @@ const sourceS3 = {
   options: getSourceS3ConfigForEnvironment(GATSBY_ENV),
 }
 
+const layoutPlugin = {
+  resolve: 'gatsby-plugin-layout',
+}
+
 /* eslint-disable @typescript-eslint/camelcase */
 const manifestPlugin = {
   resolve: 'gatsby-plugin-manifest',
@@ -124,13 +119,22 @@ const manifestPlugin = {
 /* eslint-enable @typescript-eslint/camelcase */
 
 let plugins = _.compact([
-  'gatsby-plugin-typescript',
+  {
+    resolve: 'gatsby-plugin-typescript',
+    options: {
+      isTSX: true,
+      allExtensions: true,
+    },
+  },
+  'gatsby-plugin-theme-ui',
+  'gatsby-plugin-root-import',
   // ====================================
   // Gotta load those sweet, sweet files.
   // ====================================
   sourceFilesystem,
   sourceFilesystemImages,
   sourceS3,
+  layoutPlugin,
   // =======================================================================
   // Add in React Helmet and React 16 support until Gatsby v2 is released.
   // =======================================================================
@@ -139,7 +143,7 @@ let plugins = _.compact([
   // Styling-related plugins.
   // ========================
   'gatsby-plugin-styled-components',
-  typographyPlugin,
+  // typographyPlugin,
   // ==========================================
   // Transformers for Markdown and image files.
   // ==========================================

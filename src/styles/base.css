@@ -18,7 +18,9 @@
 
 html,
 body {
-  background: var(--gray-primary);
+  background-color: var(--near-white);
+  font-family: Lato, system-ui, sans-serif;
+  line-height: 1.3;
 }
 
 .spectral {
@@ -30,11 +32,15 @@ body {
 }
 
 .source-sans {
-  font-family: 'Source Sans Serif Pro', sans-serif;
+  font-family: 'Lato', sans-serif;
 }
 
 .alegreya-sans {
   font-family: 'Alegreya Sans', sans-serif;
+}
+
+.alegreya-sans-sc {
+  font-family: 'Alegreya Sans SC', sans-serif;
 }
 
 .grid {
@@ -73,6 +79,10 @@ blockquote {
 
 button {
   outline: none;
+}
+
+.lh-copy {
+  line-height: 1.5;
 }
 
 .bg-gray-primary {

@@ -2,6 +2,7 @@ import classNames from 'classnames'
 import { DateTime } from 'luxon'
 import React from 'react'
 import { Heart } from 'react-feather'
+import { Text } from 'rebass/styled-components'
 
 import colors from 'utils/colors'
 
@@ -30,19 +31,22 @@ const SiteFooter = ({ theme = FooterTheme.Light }: Props) => (
           : `3px solid ${colors.secondary.light5}`,
     }}
   >
-    <div className="flex justify-center items-center">
+    <Text className="flex justify-center items-center">
       © 2013–{DateTime.local().year} Jesse Stuart
-    </div>
-    <div className="dib center tc flex-ns justify-center items-center">
+    </Text>
+    <Text
+      fontFamily="body"
+      className="dib center tc flex-ns justify-center items-center"
+    >
       Pixels, bits and bytes hand-crafted with
       <Heart
         className="hot-pink mh1 hvr-grow"
-        fill={colors.primary.main}
+        fill={colors.primary}
         height="15"
         width="15"
       />
       in NYC.
-    </div>
+    </Text>
   </footer>
 )
 
