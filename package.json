@@ -6,7 +6,7 @@
   "dependencies": {
     "@ctrl/tinycolor": "2.5.4",
     "@mdx-js/react": "1.5.1",
-    "@sentry/browser": "5.10.0",
+    "@sentry/browser": "5.10.1",
     "bluebird": "3.7.2",
     "classnames": "2.2.6",
     "dotenv": "8.2.0",
