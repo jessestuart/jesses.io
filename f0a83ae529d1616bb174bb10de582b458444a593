@@ -1,0 +1,13 @@
+[ver:1,total:4860]
+src/components/ProfileDevIcons/index.tsx:2795,1575874800:1595,1575878400:1200,m
+src/components/Profile/Profile.tsx:870,1575874800:540,1575878400:330,m
+.circleci/config.yml:360,1575871200:120,1575874800:240,m
+src/gatsby-plugin-theme-ui/index.ts:310,1575874800:190,1575878400:120,m
+gatsby-browser.js:160,1575874800:160,m
+src/components/Profile/Profile.spec.tsx:120,1575874800:120,r
+src/layouts/index.tsx:80,1575874800:80,m
+src/components/Profile/ProfileFooter.tsx:75,1575878400:75,r
+gatsby-ssr.js:30,1575874800:30,d
+src/utils/hooks.ts:30,1575874800:30,r
+src/components/Photography/PhotographyGridSection.tsx:15,1575874800:15,r
+src/components/Profile/index.tsx:15,1575878400:15,r
