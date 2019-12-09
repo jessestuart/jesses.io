@@ -1,0 +1,9 @@
+[build]
+  command = "yarn build"
+  publish = "public/"
+[build.environment]
+  NODE_VERSION = "13"
+  YARN_VERSION = "~1.21.0"
+  YARN_FLAGS = "--pure-lockfile"
+[Settings]
+  ID = "7ef4ccf6-bf97-4780-8c2b-014fa44d879c"

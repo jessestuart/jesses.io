@@ -51,22 +51,15 @@ typings/
 # Output of 'npm pack'
 *.tgz
 
-# dotenv environment variables file
+# `dotenv` environment variables file
 .env
 
-# gatsby files
+# Gatsby files
 .cache/
-public
+public/
 
 # Mac files
 .DS_Store
-
-# Yarn
-yarn-error.log
-.pnp/
-.pnp.js
-# Yarn Integrity file
-.yarn-integrity
 
 # Yalc
 .yalc
@@ -79,5 +72,5 @@ junit.xml
 cypress/screenshots/
 cypress/videos/
 
-# Local Netlify folder
+# Local Netlify folder, which does... what?
 .netlify

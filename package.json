@@ -1,5 +1,5 @@
 {
-  "name": "@jesses/jesses.io",
+  "name": "jesses.io",
   "description": "This is where my words and pictures live.",
   "version": "1.13.6",
   "author": "Jesse Stuart <hi@jessestuart.com>",
@@ -113,6 +113,7 @@
     "gatsby-plugin-netlify": "2.1.27",
     "gatsby-plugin-netlify-cache": "1.2.0",
     "gatsby-plugin-offline": "3.0.27",
+    "gatsby-plugin-preload-fonts": "1.0.18",
     "gatsby-plugin-react-helmet": "3.1.16",
     "gatsby-plugin-remove-trailing-slashes": "2.1.15",
     "gatsby-plugin-root-import": "2.0.5",

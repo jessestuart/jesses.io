@@ -120,7 +120,6 @@ const manifestPlugin = {
 
 let plugins = _.compact([
   'gatsby-plugin-typescript',
-  'gatsby-plugin-theme-ui',
   'gatsby-plugin-root-import',
   // ====================================
   // Gotta load those sweet, sweet files.
@@ -137,7 +136,8 @@ let plugins = _.compact([
   // Styling-related plugins.
   // ========================
   'gatsby-plugin-styled-components',
-  // typographyPlugin,
+  'gatsby-plugin-theme-ui',
+  'gatsby-plugin-preload-fonts',
   // ==========================================
   // Transformers for Markdown and image files.
   // ==========================================
@@ -155,11 +155,12 @@ let plugins = _.compact([
   'gatsby-plugin-lodash',
 ])
 
+// Some plugins are only applied when not building for local/dev environments.
 if (!IS_LOCAL) {
-  //=================================
-  // Production/Staging-only plugins.
-  //=================================
   plugins = _.concat(plugins, [
+    // Temporarily removing this as it seems to be causing problems around
+    // over-agressive caching resulting in unpredicatable rendering bugs (?),
+    // it's not like it's a huge win for this site in the first place.
     // 'gatsby-plugin-offline',
     manifestPlugin,
     'gatsby-plugin-netlify',
