@@ -1,3 +1,13 @@
 [ver:1,total:120]
 .gitignore:60,1575921600:60,m
 .git/COMMIT_EDITMSG:60,1575921600:60,r
+
+[ver:1,total:1860]
+src/fragments/S3ImageAssetData.ts:480,1575885600:360,1575921600:120,m
+jesse.pics:440,1575885600:300,1575921600:140,d
+gatsby-config.js:390,1575921600:390,m
+netlify.toml:180,1575921600:180,m
+package.json:180,1575885600:180,m
+.gitignore:130,1575921600:130,m
+src/config/onCreateNode.ts:30,1575921600:30,r
+gatsby-node.js:30,1575921600:30,r
