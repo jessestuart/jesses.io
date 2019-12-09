@@ -98,9 +98,12 @@ sentry_release: &sentry_release
   <<: *defaults
   steps:
     - checkout
-    - *restore_cache
-    - run: curl -sL https://sentry.io/get-cli/ | bash
-    - run: sh ./scripts/update-sentry-release.sh
+    - run:
+        name: Install Sentry CLI.
+        command: curl -sL https://sentry.io/get-cli/ | bash
+    - run:
+        name: Update Sentry release.
+        command: ./scripts/update-sentry-release.sh
 
 cypress_job: &cypress_job
   working_directory: ~/jesses.io
