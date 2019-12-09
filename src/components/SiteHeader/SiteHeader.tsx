@@ -2,7 +2,7 @@ import 'styles/base.css'
 
 import classNames from 'classnames'
 import _ from 'lodash'
-import React from 'react'
+import React, { Fragment } from 'react'
 import Headroom from 'react-headroom'
 import { Flex, Heading } from 'rebass/styled-components'
 
@@ -34,8 +34,10 @@ const SiteHeader = (props: { location: GatsbyLocation }) => {
     ? HeaderTheme.LIGHT
     : HeaderTheme.DARK
 
+  const Wrapper = theme === HeaderTheme.DARK ? Headroom : Fragment
+
   return (
-    <Headroom>
+    <Wrapper>
       <Heading
         as="header"
         id="site-header"
@@ -63,7 +65,7 @@ const SiteHeader = (props: { location: GatsbyLocation }) => {
           ))}
         </Flex>
       </Heading>
-    </Headroom>
+    </Wrapper>
   )
 }
 
