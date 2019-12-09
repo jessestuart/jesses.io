@@ -73,7 +73,7 @@
     "@types/react-redux": "7.1.5",
     "@types/react-test-renderer": "16.9.1",
     "@types/rebass": "4.0.3",
-    "@types/styled-components": "4.4.0",
+    "@types/styled-components": "4.4.1",
     "@types/theme-ui": "0.2.5",
     "@types/voca": "1.4.0",
     "@typescript-eslint/eslint-plugin": "2.11.0",
