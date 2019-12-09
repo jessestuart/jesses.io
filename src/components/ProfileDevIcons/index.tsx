@@ -1,10 +1,11 @@
-import classNames from 'classnames'
-import React, { Fragment } from 'react'
-import { Text } from 'rebass/styled-components'
-import styled from 'styled-components'
-
 import 'styles/base.css'
 import 'styles/hvr-animations.css'
+
+import { Flex, Text } from 'rebass/styled-components'
+import React, { Fragment } from 'react'
+import classNames from 'classnames'
+import styled from 'styled-components'
+import _ from 'lodash'
 
 import colors from 'utils/colors'
 
@@ -14,7 +15,7 @@ import DevIconSkills from './DevIconSkills'
 const ProfileDevIcons = () => {
   return (
     <>
-      <div className="flex justify-center align-center">
+      <Flex justfiyContent="center" alignItems="center">
         <Text
           fontFamily="serif"
           fontWeight="body"
@@ -31,11 +32,15 @@ const ProfileDevIcons = () => {
           <br />
           Here are some of the technologies I've enjoyed hacking on lately:
         </Text>
-      </div>
+      </Flex>
       <DevIconsSection className="center code w-90">
         {DevIconSkills.map((devIcon, index) => (
           <Fragment key={devIcon.label}>
-            <DevIconLabel className="fira-mono moon-gray flex items-center justify-start">
+            <DevIconLabel
+              fontFamily="monospace"
+              fontSize={4}
+              className="moon-gray flex items-center justify-start"
+            >
               {devIcon.label}
             </DevIconLabel>
             {devIcon.icons.map((DevIcon, innerIndex) => (
@@ -57,12 +62,11 @@ const ProfileDevIcons = () => {
   )
 }
 
-const DevIconLabel = styled.div`
-  font-size: 1.5rem;
-  grid-column: span 9;
-  grid-row: span 2;
+const DevIconLabel = styled(Text)`
   @media (max-width: 45em) {
     border-bottom: 1px solid ${colors.primary};
+    grid-column: span 9;
+    grid-row: span 2;
   }
   @media (min-width: 45em) {
     border-bottom: 1px solid rgba(255, 255, 255, 0.5);
@@ -71,7 +75,7 @@ const DevIconLabel = styled.div`
   }
 `
 
-const DevIconsSection = styled.div`
+const DevIconsSection = styled(Text)`
   display: grid;
   @media (max-width: 45em) {
     grid-template-columns: repeat(9, 1fr);

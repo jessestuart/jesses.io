@@ -2,7 +2,7 @@
 
 exports[`Render ProfileDevIcons component. 1`] = `
 Array [
-  .c0 {
+  .c1 {
   box-sizing: border-box;
   margin: 0;
   min-width: 0;
@@ -13,11 +13,25 @@ Array [
   font-size: 20px;
 }
 
+.c0 {
+  box-sizing: border-box;
+  margin: 0;
+  min-width: 0;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
 <div
-    className="flex justify-center align-center"
+    className="c0"
   >
     <div
-      className="c0 lh-copy center pv3 tc w-75"
+      className="c1 lh-copy center pv3 tc w-75"
       fontFamily="serif"
       fontSize={3}
       fontWeight="body"
@@ -46,52 +60,62 @@ Array [
       Here are some of the technologies I've enjoyed hacking on lately:
     </div>
   </div>,
-  .c2 {
+  .c0 {
+  box-sizing: border-box;
+  margin: 0;
+  min-width: 0;
+}
+
+.c2 {
+  box-sizing: border-box;
+  margin: 0;
+  min-width: 0;
+  font-family: monospace;
+  font-size: 24px;
+}
+
+.c4 {
   grid-row: auto;
 }
 
-.c2 svg {
+.c4 svg {
   max-width: 100px;
   -webkit-filter: drop-shadow(0 0 3px rgba(0,0,0,0.75));
   filter: drop-shadow(0 0 3px rgba(0,0,0,0.75));
 }
 
-.c2 svg:hover {
+.c4 svg:hover {
   -webkit-filter: drop-shadow(0 0 4px rgba(0,0,0,0.85));
   filter: drop-shadow(0 0 4px rgba(0,0,0,0.85));
 }
 
 .c1 {
-  font-size: 1.5rem;
-  grid-column: span 9;
-  grid-row: span 2;
-}
-
-.c0 {
   display: grid;
 }
 
 @media (min-width:45em) {
-  .c2 {
+  .c4 {
     grid-column: span 2;
   }
 }
 
 @media (max-width:45em) {
-  .c2 {
+  .c4 {
     grid-column: span 3;
     border-bottom: none !important;
   }
 }
 
 @media (max-width:45em) {
-  .c1 {
+  .c3 {
     border-bottom: 1px solid #ff3a5c;
+    grid-column: span 9;
+    grid-row: span 2;
   }
 }
 
 @media (min-width:45em) {
-  .c1 {
+  .c3 {
     border-bottom: 1px solid rgba(255,255,255,0.5);
     grid-row: span 1;
     grid-column: span 2;
@@ -99,29 +123,31 @@ Array [
 }
 
 @media (max-width:45em) {
-  .c0 {
+  .c1 {
     grid-template-columns: repeat(9,1fr);
     grid-auto-rows: max-content;
   }
 }
 
 @media (min-width:45em) {
-  .c0 {
+  .c1 {
     grid-template-columns: repeat(14,1fr);
     grid-template-rows: repeat(3,1fr);
   }
 }
 
 <div
-    className="c0 center code w-90"
+    className="c0 c1 center code w-90"
   >
     <div
-      className="c1 fira-mono moon-gray flex items-center justify-start"
+      className="c2 c3 moon-gray flex items-center justify-start"
+      fontFamily="monospace"
+      fontSize={4}
     >
       frontend
     </div>
     <div
-      className="c2 flex items-center justify-center pa3 pa4-l bb-ns b--white-50"
+      className="c4 flex items-center justify-center pa3 pa4-l bb-ns b--white-50"
     >
       <a
         href="https://react.org"
@@ -148,7 +174,7 @@ Array [
       </a>
     </div>
     <div
-      className="c2 flex items-center justify-center pa3 pa4-l bb-ns b--white-50"
+      className="c4 flex items-center justify-center pa3 pa4-l bb-ns b--white-50"
     >
       <a
         href="https://redux.js.org"
@@ -167,7 +193,7 @@ Array [
       </a>
     </div>
     <div
-      className="c2 flex items-center justify-center pa3 pa4-l bb-ns b--white-50"
+      className="c4 flex items-center justify-center pa3 pa4-l bb-ns b--white-50"
     >
       <a
         href="https://gatsbyjs.org"
@@ -190,7 +216,7 @@ Array [
       </a>
     </div>
     <div
-      className="c2 flex items-center justify-center pa3 pa4-l bb b--white-50 bb-ns b--white-50"
+      className="c4 flex items-center justify-center pa3 pa4-l bb b--white-50 bb-ns b--white-50"
     >
       <a
         href="https://graphql.org"
@@ -209,7 +235,7 @@ Array [
       </a>
     </div>
     <div
-      className="c2 flex items-center justify-center pa3 pa4-l bb b--white-50 bb-ns b--white-50"
+      className="c4 flex items-center justify-center pa3 pa4-l bb b--white-50 bb-ns b--white-50"
     >
       <a
         href="https://facebook.github.io/jest/"
@@ -232,7 +258,7 @@ Array [
       </a>
     </div>
     <div
-      className="c2 flex items-center justify-center pa3 pa4-l bb b--white-50"
+      className="c4 flex items-center justify-center pa3 pa4-l bb b--white-50"
     >
       <a
         href="https://angular.io"
@@ -259,12 +285,14 @@ Array [
       </a>
     </div>
     <div
-      className="c1 fira-mono moon-gray flex items-center justify-start"
+      className="c2 c3 moon-gray flex items-center justify-start"
+      fontFamily="monospace"
+      fontSize={4}
     >
       infra
     </div>
     <div
-      className="c2 flex items-center justify-center pa3 pa4-l bb-ns b--white-50"
+      className="c4 flex items-center justify-center pa3 pa4-l bb-ns b--white-50"
     >
       <a
         href="https://kubernetes.io"
@@ -287,7 +315,7 @@ Array [
       </a>
     </div>
     <div
-      className="c2 flex items-center justify-center pa3 pa4-l bb-ns b--white-50"
+      className="c4 flex items-center justify-center pa3 pa4-l bb-ns b--white-50"
     >
       <a
         href="https://docker.com"
@@ -306,7 +334,7 @@ Array [
       </a>
     </div>
     <div
-      className="c2 flex items-center justify-center pa3 pa4-l bb-ns b--white-50"
+      className="c4 flex items-center justify-center pa3 pa4-l bb-ns b--white-50"
     >
       <a
         href="https://prometheus.io"
@@ -334,7 +362,7 @@ Array [
       </a>
     </div>
     <div
-      className="c2 flex items-center justify-center pa3 pa4-l bb b--white-50 bb-ns b--white-50"
+      className="c4 flex items-center justify-center pa3 pa4-l bb b--white-50 bb-ns b--white-50"
     >
       <a
         href="https://elastic.co"
@@ -445,7 +473,7 @@ Array [
       </a>
     </div>
     <div
-      className="c2 flex items-center justify-center pa3 pa4-l bb b--white-50 bb-ns b--white-50"
+      className="c4 flex items-center justify-center pa3 pa4-l bb b--white-50 bb-ns b--white-50"
     >
       <a
         href="https://terraform.io"
@@ -484,7 +512,7 @@ Array [
       </a>
     </div>
     <div
-      className="c2 flex items-center justify-center pa3 pa4-l bb b--white-50"
+      className="c4 flex items-center justify-center pa3 pa4-l bb b--white-50"
     >
       <a
         href="https://ansible.com"
@@ -517,12 +545,14 @@ Array [
       </a>
     </div>
     <div
-      className="c1 fira-mono moon-gray flex items-center justify-start"
+      className="c2 c3 moon-gray flex items-center justify-start"
+      fontFamily="monospace"
+      fontSize={4}
     >
       backend
     </div>
     <div
-      className="c2 flex items-center justify-center pa3 pa4-l bb-ns b--white-50"
+      className="c4 flex items-center justify-center pa3 pa4-l bb-ns b--white-50"
     >
       <a
         href="https://nodejs.org"
@@ -541,7 +571,7 @@ Array [
       </a>
     </div>
     <div
-      className="c2 flex items-center justify-center pa3 pa4-l bb-ns b--white-50"
+      className="c4 flex items-center justify-center pa3 pa4-l bb-ns b--white-50"
     >
       <a
         href="https://golang.org"
@@ -599,7 +629,7 @@ Array [
       </a>
     </div>
     <div
-      className="c2 flex items-center justify-center pa3 pa4-l bb-ns b--white-50"
+      className="c4 flex items-center justify-center pa3 pa4-l bb-ns b--white-50"
     >
       <a
         href="http://openjdk.java.net"
@@ -634,7 +664,7 @@ Array [
       </a>
     </div>
     <div
-      className="c2 flex items-center justify-center pa3 pa4-l bb b--white-50 bb-ns b--white-50"
+      className="c4 flex items-center justify-center pa3 pa4-l bb b--white-50 bb-ns b--white-50"
     >
       <a
         href="https://grails.org"
@@ -653,7 +683,7 @@ Array [
       </a>
     </div>
     <div
-      className="c2 flex items-center justify-center pa3 pa4-l bb b--white-50 bb-ns b--white-50"
+      className="c4 flex items-center justify-center pa3 pa4-l bb b--white-50 bb-ns b--white-50"
     >
       <a
         href="https://python.org"
@@ -680,7 +710,7 @@ Array [
       </a>
     </div>
     <div
-      className="c2 flex items-center justify-center pa3 pa4-l bb b--white-50"
+      className="c4 flex items-center justify-center pa3 pa4-l bb b--white-50"
     >
       <a
         href="https://clojure.org"

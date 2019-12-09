@@ -133,7 +133,7 @@ exports[`Render Profile component. Render Profile component. 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  margin-top: 32px;
+  padding-top: 32px;
   display: grid;
   grid-template-columns: repeat(12,1fr);
   min-height: calc(100vh - 56px);
@@ -973,7 +973,7 @@ exports[`Render Profile component. Render Profile component. 1`] = `
     </div>
   </div>
   <div
-    className="c11 bt b--light-silver"
+    className="c11 bt"
   >
     <div
       className="b--hot-pink bb bg-purple bw2 mb1 pb3 pt4 css-vurnku"

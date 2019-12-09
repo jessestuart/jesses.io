@@ -1,12 +1,12 @@
 import _ from 'lodash'
-
 import preset from '@rebass/preset'
-import Colors from 'utils/colors'
+
+import colors from 'utils/colors'
 
 export const fonts = {
   body: 'Lato, system-ui, sans-serif',
   heading: 'Alegreya Sans',
-  monospace: 'Fira Mono',
+  monospace: 'Fira Mono, Menlo, Consolas, monospace',
   serif: 'Spectral, serif',
   smallcaps: 'Alegreya Sans SC',
 }
@@ -22,7 +22,7 @@ export const breakpoints = ['45em', '60em', '75em']
 
 const Theme = _.merge(preset, {
   breakpoints,
-  colors: Colors,
+  colors,
   fontSizes,
   fonts,
   shadows,

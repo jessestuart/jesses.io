@@ -1,9 +1,3 @@
-import 'js-tachyons'
-import 'typeface-alegreya'
-import 'typeface-alegreya-sans'
-import 'typeface-lato'
-import 'typeface-spectral'
-
 import _ from 'lodash'
 import React, { ReactNode } from 'react'
 import Helmet from 'react-helmet'
