@@ -57,7 +57,6 @@ restore_cache: &restore_cache
 restore_public_dir_cache: &restore_public_dir_cache
   restore_cache:
     keys:
-      - v2-public-dir-{{ .Branch }}-{{ .Revision }}
       - v2-public-dir-{{ .Branch }}
       - v2-public-dir-
 
@@ -71,7 +70,8 @@ save_public_dir_cache: &save_public_dir_cache
   save_cache:
     paths:
       - public/
-    key: v2-public-dir-{{ .Branch }}-{{ .Revision }}
+      - .cache
+    key: v2-public-dir-{{ .Branch }}
 
 install_dependencies: &install_dependencies
   run:
@@ -98,9 +98,12 @@ sentry_release: &sentry_release
   <<: *defaults
   steps:
     - checkout
-    - *restore_cache
-    - run: curl -sL https://sentry.io/get-cli/ | bash
-    - run: sh ./scripts/update-sentry-release.sh
+    - run:
+        name: Install Sentry CLI.
+        command: curl -sL https://sentry.io/get-cli/ | bash
+    - run:
+        name: Update Sentry release.
+        command: ./scripts/update-sentry-release.sh
 
 cypress_job: &cypress_job
   working_directory: ~/jesses.io

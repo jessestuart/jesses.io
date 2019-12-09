@@ -119,13 +119,7 @@ const manifestPlugin = {
 /* eslint-enable @typescript-eslint/camelcase */
 
 let plugins = _.compact([
-  {
-    resolve: 'gatsby-plugin-typescript',
-    options: {
-      isTSX: true,
-      allExtensions: true,
-    },
-  },
+  'gatsby-plugin-typescript',
   'gatsby-plugin-theme-ui',
   'gatsby-plugin-root-import',
   // ====================================
@@ -166,7 +160,7 @@ if (!IS_LOCAL) {
   // Production/Staging-only plugins.
   //=================================
   plugins = _.concat(plugins, [
-    'gatsby-plugin-offline',
+    // 'gatsby-plugin-offline',
     manifestPlugin,
     'gatsby-plugin-netlify',
     'gatsby-plugin-netlify-cache',
