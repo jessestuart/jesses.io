@@ -1,0 +1,13 @@
+[ver:1,total:2640]
+package.json:540,1575306000:180,1575730800:180,1575745200:180,r
+src/components/Photography/PhotographyGridSection.tsx:420,1575734400:120,1575752400:300,r
+gatsby-config.js:360,1575871200:360,m
+src/fragments/S3ImageAssetData.ts:300,1575302400:120,1575734400:180,r
+src/layouts/index.tsx:290,1575392400:240,1575871200:50,r
+src/components/SiteHeader/SiteHeader.tsx:190,1575871200:190,m
+.nvmrc:180,1575306000:180,r
+.git/rebase-merge/git-rebase-todo:180,1575867600:180,d
+src/types/S3ImageAsset.ts:60,1575734400:60,r
+src/components/Photography/ImageZoomGridElement.tsx:60,1575734400:60,r
+src/templates/photography-post.tsx:30,1575734400:30,r
+src/pages/photography.tsx:30,1575734400:30,r
