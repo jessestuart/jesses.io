@@ -91,7 +91,7 @@
     "concurrently": "5.0.1",
     "core-js": "3.5.0",
     "cosmiconfig": "6.0.0",
-    "cypress": "3.7.0",
+    "cypress": "3.8.0",
     "cypress-image-snapshot": "3.1.1",
     "depcheck": "0.9.1",
     "eslint": "6.7.2",
