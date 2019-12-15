@@ -1,6 +1,7 @@
 import _ from 'lodash'
 import React from 'react'
-import { Flex } from 'rebass/styled-components'
+import { Box, Flex } from 'rebass/styled-components'
+import { MapPin } from 'react-feather'
 import styled from 'styled-components'
 
 import S3ImageAsset from 'types/S3ImageAsset'
@@ -26,6 +27,7 @@ const StyledExifOverlay = styled(Flex)`
   text-shadow: 0 0 4px #000;
   transition: all 0.5s;
   width: 100%;
+  user-select: none;
 `
 
 interface Props {
@@ -42,6 +44,9 @@ const ExifOverlay = ({ image, isActive }: Props) => {
   const { FNumber, FocalLength, ISO, ShutterSpeedFraction } = EXIF
   return (
     <StyledExifOverlay isActive={isActive}>
+      <Box sx={{ position: 'absolute', left: 0, bottom: 0, pl: 3 }}>
+        <MapPin />
+      </Box>
       {FocalLength ? `${FocalLength}mm, ` : null}
       {ShutterSpeedFraction ? `${ShutterSpeedFraction}s, ` : null}
       {FNumber ? `ƒ${FNumber}, ` : null}
