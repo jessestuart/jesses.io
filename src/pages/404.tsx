@@ -1,21 +1,16 @@
 import React from 'react'
 import Helmet from 'react-helmet'
-import { StyledPanel } from '../components'
+import { Heading } from 'rebass/styled-components'
 
-/**
- * TODO: Replace this.
- */
-class FourOhFour extends React.Component {
-  public render() {
-    return (
-      <div className="bg-near-white flex-body-expand lh-copy pa3-ns pv4">
-        <Helmet title={`404 | jesses.io`} />
-        <StyledPanel>
-          <h2>:(</h2>
-        </StyledPanel>
-      </div>
-    )
-  }
-}
+import { StyledPanel } from 'components'
 
-export default FourOhFour
+const NotFound = () => (
+  <div className="bg-near-white flex-body-expand lh-copy pa3-ns pv4">
+    <Helmet title="404 | jesses.io" />
+    <StyledPanel>
+      <Heading>:(</Heading>
+    </StyledPanel>
+  </div>
+)
+
+export default NotFound

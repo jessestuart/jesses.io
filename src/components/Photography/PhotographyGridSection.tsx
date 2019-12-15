@@ -45,7 +45,10 @@ const PhotographyGridSection = (props: Props) => {
   const getImageAtIndex = (imageIndex: number) =>
     _.get(lightboxImages, imageIndex % lightboxImages.length)
 
-  const lightboxSrc = getImageAtIndex(index)
+  const lightboxSrc = _.flow(
+    fp.get(index),
+    fp.get('childImageSharp.original.src'),
+  )(sortedImages)
   const nextImage = getImageAtIndex(index + 1)
   const prevImage = getImageAtIndex(index - 1)
 
@@ -66,9 +69,11 @@ const PhotographyGridSection = (props: Props) => {
     const { childImageSharp } = child
     const imageWidth = child.width || width / columns
     const aspectRatio = _.get(childImageSharp, 'sizes.aspectRatio')
-    const height = _.isFinite(child.height)
-      ? child.height
-      : imageWidth * (2 / aspectRatio)
+    console.log(`aspectRatio: `, { aspectRatio })
+    const height =
+      _.isFinite(child.height) && aspectRatio < 2
+        ? child.height
+        : imageWidth * (2 / aspectRatio)
     // Masonry-grid placing — positions each tile sequentially into the
     // smallest column available.
     const column = heights.indexOf(Math.min(...heights)) || 0
@@ -82,7 +87,7 @@ const PhotographyGridSection = (props: Props) => {
       columns,
       height: height / 2,
       index,
-      width: width / columns,
+      width: aspectRatio > 2 ? '100%' : width / columns,
       xy,
     }
   })

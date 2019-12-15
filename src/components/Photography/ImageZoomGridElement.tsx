@@ -10,7 +10,7 @@ import useHover from 'utils/use-hover'
 
 const StyledImageZoomGridElement = styled(Box)`
   border-radius: 2px;
-  cursor: pointer;
+  // cursor: pointer;
   overflow: hidden;
   transition: filter 0.5s;
 

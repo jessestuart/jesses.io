@@ -19,7 +19,7 @@
     "experimentalDecorators": true,
     "inlineSources": true,
     "jsx": "react",
-    "lib": ["dom", "esnext", "es5"],
+    "lib": ["dom", "esnext", "es5", "es2015"],
     "module": "commonjs",
     "moduleResolution": "node",
     "noEmit": true,
