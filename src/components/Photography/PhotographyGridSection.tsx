@@ -35,8 +35,10 @@ const PhotographyGridSection = (props: Props) => {
   //   fp.map('childImageSharp.sizes.src'),
   // )(sortedImages)
 
-  const decrementLightboxIndex = () => setLightboxIndex(index - 1)
-  const incrementLightboxIndex = () => setLightboxIndex(index + 1)
+  const decrementLightboxIndex = () =>
+    setLightboxIndex((index - 1) % sortedImages.length)
+  const incrementLightboxIndex = () =>
+    setLightboxIndex((index + 1) % sortedImages.length)
   const closeLightbox = () => setIsLightboxOpen(false)
   const openLightbox = (imageIndex: number) => {
     setLightboxIndex(imageIndex)
@@ -45,12 +47,11 @@ const PhotographyGridSection = (props: Props) => {
   const getImageAtIndex = (imageIndex: number) =>
     _.get(lightboxImages, imageIndex % lightboxImages.length)
 
-  const lightboxSrc = _.flow(
-    fp.get(index),
-    fp.get('childImageSharp.original.src'),
-  )(sortedImages)
+  const lightboxSrc = getImageAtIndex(index)
   const nextImage = getImageAtIndex(index + 1)
   const prevImage = getImageAtIndex(index - 1)
+
+  console.log({ nextImage, prevImage, index })
 
   // Tie media queries to the number of columns.
   const columns = useMedia(
@@ -69,11 +70,9 @@ const PhotographyGridSection = (props: Props) => {
     const { childImageSharp } = child
     const imageWidth = child.width || width / columns
     const aspectRatio = _.get(childImageSharp, 'sizes.aspectRatio')
-    console.log(`aspectRatio: `, { aspectRatio })
-    const height =
-      _.isFinite(child.height) && aspectRatio < 2
-        ? child.height
-        : imageWidth * (2 / aspectRatio)
+    const height = _.isFinite(child.height)
+      ? child.height
+      : imageWidth * (2 / aspectRatio)
     // Masonry-grid placing — positions each tile sequentially into the
     // smallest column available.
     const column = heights.indexOf(Math.min(...heights)) || 0
@@ -87,7 +86,7 @@ const PhotographyGridSection = (props: Props) => {
       columns,
       height: height / 2,
       index,
-      width: aspectRatio > 2 ? '100%' : width / columns,
+      width: width / columns,
       xy,
     }
   })
@@ -140,11 +139,11 @@ const PhotographyGridSection = (props: Props) => {
         <Lightbox
           enableZoom={false}
           mainSrc={lightboxSrc}
+          prevSrc={prevImage}
           nextSrc={nextImage}
           onCloseRequest={closeLightbox}
           onMoveNextRequest={incrementLightboxIndex}
           onMovePrevRequest={decrementLightboxIndex}
-          prevSrc={prevImage}
         />
       )}
     </>
