@@ -18186,10 +18186,10 @@ typescript-template-language-service-decorator@^2.2.0:
   resolved "https://registry.yarnpkg.com/typescript-template-language-service-decorator/-/typescript-template-language-service-decorator-2.2.0.tgz#4ee6d580f307fb9239978e69626f2775b8a59b2a"
   integrity sha512-xiolqt1i7e22rpqMaprPgSFVgU64u3b9n6EJlAaUYE61jumipKAdI1+O5khPlWslpTUj80YzjUKjJ2jxT0D74w==
 
-typescript@3.8.0-dev.20191219:
-  version "3.8.0-dev.20191219"
-  resolved "https://registry.yarnpkg.com/typescript/-/typescript-3.8.0-dev.20191219.tgz#e25b46e4dafc36c34bee46712f0a6a7ffbbff7ee"
-  integrity sha512-S2+B4QG4Aes5XCBWgi9Tl4izJIQ9ivTSCqVxsZnNZNmUr4W/QMIHWPwX3iAeMlP9eQNlplCi2F9azs4OHa+Nhw==
+typescript@3.8.0-dev.20191220:
+  version "3.8.0-dev.20191220"
+  resolved "https://registry.yarnpkg.com/typescript/-/typescript-3.8.0-dev.20191220.tgz#3718281fc1b9871b2071fafd81dd81925168e9fd"
+  integrity sha512-fYmeNG2WcZLe4JV+JqLaeiR3f63wb0RrVo3reMhG/P2SOfGdyvz+B/wfmNCekmLIGaFvGCrvSYuduh+QusDdOA==
 
 ua-parser-js@^0.7.18:
   version "0.7.20"
