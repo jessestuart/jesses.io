@@ -6,6 +6,7 @@ export const s3ImageAssetFragment = graphql`
     EXIF {
       DateCreatedISO
       DateTimeOriginal
+      ExposureTime
       FNumber
       FocalLength
       ISO

@@ -15,7 +15,6 @@
 [![Netlify Status][netlify]][netlify 2]
 
 [![codecov][codecov-badge]][codecov-url]
-[![Codacy Badge][codacy]][codacy 2]
 [![Codeclimate Rating][codeclimate]][codeclimate 2]
 [![LGTM: Typescript][lgtm]][lgtm 2]
 
@@ -23,8 +22,6 @@
 
 [circleci-badge]: https://circleci.com/gh/jessestuart/jesses.io.svg?style=shield&circle-token=95a9c23b2b0ed15a71639a318c98eea3b09a03b7
 [circleci-url]: https://circleci.com/gh/jessestuart/jessestuart.com
-[codacy 2]: https://www.codacy.com/app/jdstuart/jesses.io?utm_source=github.com&utm_medium=referral&utm_content=jessestuart/jesses.io&utm_campaign=Badge_Grade
-[codacy]: https://api.codacy.com/project/badge/Grade/bbe5df00e1bb479aa35619bea5dda582
 [codeclimate 2]: https://codeclimate.com/github/jessestuart/jesses.io/maintainability
 [codeclimate]: https://api.codeclimate.com/v1/badges/4488634e45e84d3cbdbe/maintainability
 [codecov-badge]: https://codecov.io/gh/jessestuart/jesses.io/branch/master/graph/badge.svg
