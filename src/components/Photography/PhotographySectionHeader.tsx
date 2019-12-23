@@ -22,6 +22,7 @@ const PhotographySectionHeader = ({
     fontSize="6"
     justifyContent="flex-end"
     marginBottom="2"
+    px="2"
     width="100%"
     sx={{
       color: 'textMediumMuted',

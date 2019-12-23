@@ -16,6 +16,8 @@ exports[`Render PhotographySectionHeader. 1`] = `
   -ms-flex-pack: end;
   justify-content: flex-end;
   margin-bottom: 8px;
+  padding-left: 8px;
+  padding-right: 8px;
   width: 100%;
 }
 
