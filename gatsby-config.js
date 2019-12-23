@@ -107,13 +107,13 @@ const layoutPlugin = {
 const manifestPlugin = {
   resolve: 'gatsby-plugin-manifest',
   options: {
+    background_color: '#373b46',
+    display: 'standalone',
+    icon: './src/components/Icons/logo_dark.svg',
     name: 'Jesse Stuart',
     short_name: 'jesses.io',
     start_url: '/',
-    background_color: '#373b46',
     theme_color: '#673ab7',
-    display: 'standalone',
-    icon: './src/components/Icons/logo_dark.svg',
   },
 }
 /* eslint-enable @typescript-eslint/camelcase */
@@ -137,7 +137,6 @@ let plugins = _.compact([
   // Styling-related plugins.
   // ========================
   'gatsby-plugin-styled-components',
-  // typographyPlugin,
   // ==========================================
   // Transformers for Markdown and image files.
   // ==========================================

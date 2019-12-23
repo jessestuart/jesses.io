@@ -1,8 +1,10 @@
 import _ from 'lodash'
 import React from 'react'
 import { Box, Flex } from 'rebass/styled-components'
-import { MapPin } from 'react-feather'
 import styled from 'styled-components'
+import { Aperture } from 'react-feather'
+import Fraction from 'fraction.js'
+// import { MapPin } from 'react-feather'
 
 import S3ImageAsset from 'types/S3ImageAsset'
 import { mapLensModelExif } from 'utils/exif'
@@ -16,17 +18,17 @@ const StyledExifOverlay = styled(Flex)`
   bottom: 0;
   color: white;
   display: flex;
-  font-family: Lato, system-ui, sans-serif;
-  font-size: 0.9rem;
+  // font-family: Lato, system-ui, sans-serif;
+  // font-size: 0.9rem;
   font-variant: small-caps;
   justify-content: flex-end;
-  opacity: ${({ isActive }) => (isActive ? 1 : 0)};
-  padding: 10px;
+  // opacity: ${({ isActive }) => (isActive ? 1 : 0)};
+  // padding: 10px;
   position: absolute;
   text-align: right;
   text-shadow: 0 0 4px #000;
-  transition: all 0.5s;
-  width: 100%;
+  transition: opacity 0.5s;
+  // width: 100%;
   user-select: none;
 `
 
@@ -40,18 +42,41 @@ const ExifOverlay = ({ image, isActive }: Props) => {
   if (!EXIF) {
     return null
   }
+
   const lensModel: string | undefined = mapLensModelExif(EXIF.LensModel || '')
-  const { FNumber, FocalLength, ISO, ShutterSpeedFraction } = EXIF
+  const { ExposureTime, FNumber, FocalLength, ISO, ShutterSpeedFraction } = EXIF
+  let shutterSpeed: any
+  if (ExposureTime > 0.5) {
+    shutterSpeed = `${ExposureTime}"` //  new Fraction(ExposureTime).toFraction(false)
+  } else {
+    shutterSpeed = ShutterSpeedFraction
+  }
+
+  // TODO: Add this back in.
+  // <Box sx={{ position: 'absolute', left: 0, bottom: 0, pl: 3 }}>
+  //   <MapPin />
+  // </Box>
   return (
-    <StyledExifOverlay isActive={isActive}>
-      <Box sx={{ position: 'absolute', left: 0, bottom: 0, pl: 3 }}>
-        <MapPin />
+    <StyledExifOverlay
+      isActive={isActive}
+      fontFamily="body"
+      opacity="1"
+      // opacity={isActive ? 1 : 0}
+      width="100%"
+      p={2}
+      fontSize={[1]}
+      flexDirection="column"
+    >
+      <Box textAlign="right">
+        <Box as="span" pr={1}>
+          <Aperture size={16} />
+        </Box>
+        {FocalLength ? `${FocalLength}mm, ` : null}
+        {shutterSpeed ? `${shutterSpeed}, ` : null}
+        {FNumber ? `ƒ${FNumber}, ` : null}
+        {ISO ? `ISO ${ISO}` : null}
       </Box>
-      {FocalLength ? `${FocalLength}mm, ` : null}
-      {ShutterSpeedFraction ? `${ShutterSpeedFraction}s, ` : null}
-      {FNumber ? `ƒ${FNumber}, ` : null}
-      {ISO ? `ISO ${ISO}` : null}
-      <br />
+      <Box></Box>
       {lensModel}
     </StyledExifOverlay>
   )

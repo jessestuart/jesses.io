@@ -5,9 +5,11 @@ import _ from 'lodash'
 import fp from 'lodash/fp'
 import { DateTime } from 'luxon'
 import React, { useState } from 'react'
-import Lightbox from 'react-image-lightbox'
 import { animated, useTransition } from 'react-spring'
 import { Box } from 'rebass/styled-components'
+// @ts-ignore
+import Carousel, { Image, Modal, ModalGateway } from 'react-images'
+/* import Lightbox from 'react-image-lightbox' */
 
 import { useDimensions, useMedia } from 'utils/hooks'
 
@@ -27,31 +29,27 @@ const PhotographyGridSection = (props: Props) => {
   const [index, setLightboxIndex] = useState(0)
 
   const sortedImages = _.sortBy(images, 'EXIF.DateTimeOriginal')
-  const lightboxImages = _.map(sortedImages, 'childImageSharp.sizes.src')
+  const lightboxImages: Image[] = _.map(
+    sortedImages,
+    'childImageSharp.original',
+  )
 
-  // const lightboxImages = _.flow(
-  //   // -        fp.get('images'),
-  //   // -        fp.sortBy('EXIF.DateTimeOriginal'),
-  //   fp.map('childImageSharp.sizes.src'),
-  // )(sortedImages)
-
-  const decrementLightboxIndex = () =>
-    setLightboxIndex((index - 1) % sortedImages.length)
-  const incrementLightboxIndex = () =>
-    setLightboxIndex((index + 1) % sortedImages.length)
-  const closeLightbox = () => setIsLightboxOpen(false)
+  // const decrementLightboxIndex = () =>
+  // setLightboxIndex((index - 1) % sortedImages.length)
+  // const incrementLightboxIndex = () =>
+  // setLightboxIndex((index + 1) % sortedImages.length)
+  const closeLightbox = () => {
+    console.log('close lightbox')
+    setIsLightboxOpen(false)
+  }
   const openLightbox = (imageIndex: number) => {
     setLightboxIndex(imageIndex)
     setIsLightboxOpen(true)
   }
-  const getImageAtIndex = (imageIndex: number) =>
-    _.get(lightboxImages, imageIndex % lightboxImages.length)
-
-  const lightboxSrc = getImageAtIndex(index)
-  const nextImage = getImageAtIndex(index + 1)
-  const prevImage = getImageAtIndex(index - 1)
-
-  console.log({ nextImage, prevImage, index })
+  const toggleModal = (index: number) => {
+    setLightboxIndex(index)
+    setIsLightboxOpen(!isLightboxOpen)
+  }
 
   // Tie media queries to the number of columns.
   const columns = useMedia(
@@ -66,7 +64,7 @@ const PhotographyGridSection = (props: Props) => {
   // Form a grid of stacked images, using the width & column calculations we got
   // from the `useMedia` and `useDimensions` hooks above.
   const heights: number[] = new Array(columns).fill(0) // Each column gets a height starting with zero
-  const gridItems = sortedImages.map((child, index) => {
+  const gridItems = sortedImages.map((child: any) => {
     const { childImageSharp } = child
     const imageWidth = child.width || width / columns
     const aspectRatio = _.get(childImageSharp, 'sizes.aspectRatio')
@@ -135,19 +133,27 @@ const PhotographyGridSection = (props: Props) => {
           )}
       </Box>
       <SeeMoreLink totalNumImages={totalNumImages} href={slug} />
-      {isLightboxOpen && (
-        <Lightbox
-          enableZoom={false}
-          mainSrc={lightboxSrc}
-          prevSrc={prevImage}
-          nextSrc={nextImage}
-          onCloseRequest={closeLightbox}
-          onMoveNextRequest={incrementLightboxIndex}
-          onMovePrevRequest={decrementLightboxIndex}
-        />
-      )}
+      <ModalGateway>
+        {isLightboxOpen && _.size(lightboxImages) > 0 ? (
+          <Modal onClose={closeLightbox}>
+            <Carousel onClickThumbnail={toggleModal} views={lightboxImages} />
+          </Modal>
+        ) : null}
+      </ModalGateway>
     </>
   )
 }
+
+// {isLightboxOpen && (
+//   <Lightbox
+//     enableZoom={false}
+//     mainSrc={lightboxSrc}
+//     prevSrc={prevImage}
+//     nextSrc={nextImage}
+//     onCloseRequest={closeLightbox}
+//     onMoveNextRequest={incrementLightboxIndex}
+//     onMovePrevRequest={decrementLightboxIndex}
+//   />
+// )}
 
 export default PhotographyGridSection
