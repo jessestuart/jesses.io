@@ -8183,10 +8183,10 @@ gatsby-source-filesystem@2.1.43:
     valid-url "^1.0.9"
     xstate "^4.7.2"
 
-gatsby-source-s3-image@1.6.124:
-  version "1.6.124"
-  resolved "https://registry.yarnpkg.com/gatsby-source-s3-image/-/gatsby-source-s3-image-1.6.124.tgz#63ba8fa73893aea1fcd5196234fc263f85dcc03c"
-  integrity sha512-a+gklOfDve62nF98eJN/KXuktlrYUz4DfVNhiVRmDIjOLb2imwfhwxsC1DVG8jghkuVZ6bQl8yHqcrAUs0oYyg==
+gatsby-source-s3-image@1.6.125:
+  version "1.6.125"
+  resolved "https://registry.yarnpkg.com/gatsby-source-s3-image/-/gatsby-source-s3-image-1.6.125.tgz#4cca8f8ca3659828017368a885b969199293a6a7"
+  integrity sha512-uO6jiIWpSsRu2uzhL8ceW+UBRW8kO4bqs+Qcnk73wyVyPzS1QPlg4bLHh29ZoVhe7U4IoA75OKyybIf9RQeodA==
   dependencies:
     aws-sdk "2.596.0"
     fracty "1.0.9"
@@ -8194,7 +8194,7 @@ gatsby-source-s3-image@1.6.124:
     lodash "4.17.15"
     luxon "1.21.3"
     mime-types "2.1.25"
-    ts-exif-parser "0.1.4"
+    ts-exif-parser "0.1.5"
 
 gatsby-telemetry@^1.1.46:
   version "1.1.46"
@@ -16234,7 +16234,7 @@ sax@1.2.1:
   resolved "https://registry.yarnpkg.com/sax/-/sax-1.2.1.tgz#7b8e656190b228e81a66aea748480d828cd2d37a"
   integrity sha1-e45lYZCyKOgaZq6nSEgNgozS03o=
 
-sax@>=0.6.0, sax@^1.2.4, sax@~1.2.4:
+sax@1.2.4, sax@>=0.6.0, sax@^1.2.4, sax@~1.2.4:
   version "1.2.4"
   resolved "https://registry.yarnpkg.com/sax/-/sax-1.2.4.tgz#2816234e2378bddc4e5354fab5caa895df7100d9"
   integrity sha512-NqVDv9TpANUjFm0N8uM5GxL36UgKi9/atZw+x7YFnQ8ckwFGKrl4xX4yWtrey3UJm5nP1kUbnYgLopqWNSRhWw==
@@ -18061,10 +18061,12 @@ trough@^1.0.0:
   resolved "https://registry.yarnpkg.com/true-case-path/-/true-case-path-2.2.1.tgz#c5bf04a5bbec3fd118be4084461b3a27c4d796bf"
   integrity sha512-0z3j8R7MCjy10kc/g+qg7Ln3alJTodw9aDuVWZa3uiWqfuBMKeAeP2ocWcxoyM3D73yz3Jt/Pu4qPr4wHSdB/Q==
 
-ts-exif-parser@0.1.4:
-  version "0.1.4"
-  resolved "https://registry.yarnpkg.com/ts-exif-parser/-/ts-exif-parser-0.1.4.tgz#1c2cff1bb3a4d7fbc4c318bfc2463a946d752fbe"
-  integrity sha512-wLZowFj+25+WM5YQcdUN4YWO8FfIWMgRnDFCjDa94zUyqT3VyeISleCetDGOUWDOq1jho9XLfG8k/Lc9syMqlA==
+ts-exif-parser@0.1.5:
+  version "0.1.5"
+  resolved "https://registry.yarnpkg.com/ts-exif-parser/-/ts-exif-parser-0.1.5.tgz#461d909e194ad7548dd29a853471a6d6d729df32"
+  integrity sha512-3TU0R4K58EUzv+MuCNR/dKpTB6Fu8FWpDoy18OKLikVsqJ2Vaz/vThQ9Ahd1MXvyXcMPjyVpvBslaDMF+Dx+cQ==
+  dependencies:
+    sax "1.2.4"
 
 ts-jest@24.2.0:
   version "24.2.0"
