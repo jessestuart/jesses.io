@@ -5,7 +5,6 @@ import { Flex, Text } from 'rebass/styled-components'
 import React, { Fragment } from 'react'
 import classNames from 'classnames'
 import styled from 'styled-components'
-import _ from 'lodash'
 
 import colors from 'utils/colors'
 
