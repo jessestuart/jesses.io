@@ -112,7 +112,7 @@
     "gatsby-plugin-manifest": "2.2.37",
     "gatsby-plugin-netlify": "2.1.31",
     "gatsby-plugin-netlify-cache": "1.2.0",
-    "gatsby-plugin-offline": "3.0.31",
+    "gatsby-plugin-offline": "3.0.32",
     "gatsby-plugin-react-helmet": "3.1.21",
     "gatsby-plugin-remove-trailing-slashes": "2.1.20",
     "gatsby-plugin-root-import": "2.0.5",
