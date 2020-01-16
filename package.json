@@ -1,7 +1,7 @@
 {
   "name": "@jesses/jesses.io",
   "description": "This is where my words and pictures live.",
-  "version": "1.13.27",
+  "version": "1.13.28",
   "author": "Jesse Stuart <hi@jessestuart.com>",
   "dependencies": {
     "@ctrl/tinycolor": "2.6.0",
