@@ -131,7 +131,7 @@
     "gatsby-transformer-sharp": "2.3.13",
     "gray-percentage": "2.0.0",
     "http-server": "0.12.1",
-    "husky": "4.0.10",
+    "husky": "4.1.0",
     "identity-obj-proxy": "3.0.0",
     "jest": "24.9.0",
     "jest-junit": "10.0.0",
