@@ -149,7 +149,7 @@
     "ts-jest": "24.3.0",
     "ts-node": "8.6.2",
     "typescript": "3.8.0-dev.20200119",
-    "typescript-plugin-styled-components": "1.4.3",
+    "typescript-plugin-styled-components": "1.4.4",
     "typescript-styled-plugin": "0.15.0"
   },
   "homepage": ".",
