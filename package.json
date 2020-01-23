@@ -176,6 +176,7 @@
   "scripts": {
     "build": "GATSBY_ENV=Production gatsby build",
     "build:ci": "GATSBY_ENV=Staging gatsby build",
+    "build:dev": "GATSBY_ENV=Development gatsby build",
     "check-types": "tsc -p tsconfig.json",
     "clean": "rm -rf node_modules/ .cache/ && yarn -s",
     "cloc": "cloc --vcs=git --by-file-by-lang --not-match-f=yarn.lock .",
