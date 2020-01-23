@@ -19,7 +19,6 @@ const getSourceS3ConfigForEnvironment = env => {
       return {
         bucketName: 'js-photos-dev',
         domain: 'minio.jesses.io',
-        protocol: 'http',
       }
     case GatsbyEnv.Staging: {
       return { bucketName: 'js-photos-dev' }

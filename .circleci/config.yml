@@ -8,7 +8,7 @@ workflows:
   main:
     jobs:
       - install_dependencies
-      - build:
+      - build_initial:
           requires:
             - install_dependencies
       - lint:
@@ -17,12 +17,18 @@ workflows:
       - test:
           requires:
             - install_dependencies
-      # - cypress_job:
-      #     requires:
-      #       - build
+      - full_build_and_deploy:
+          requires:
+            - build_initial
+            - lint
+            - test
+          filters:
+            branches:
+              only:
+                - master
       - semantic_release:
           requires:
-            - build
+            - full_build
             - lint
             - test
           filters:
@@ -36,6 +42,10 @@ workflows:
             branches:
               only:
                 - master
+
+# - cypress_job:
+#     requires:
+#       - build
 
 # ===================
 # Shared definitions.
