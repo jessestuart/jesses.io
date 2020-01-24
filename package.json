@@ -1,7 +1,7 @@
 {
   "name": "@jesses/jesses.io",
   "description": "This is where my words and pictures live.",
-  "version": "1.13.36",
+  "version": "1.13.37",
   "author": "Jesse Stuart <hi@jessestuart.com>",
   "dependencies": {
     "@ctrl/tinycolor": "2.6.0",
@@ -153,7 +153,12 @@
     "typescript-styled-plugin": "0.15.0"
   },
   "homepage": ".",
-  "keywords": ["blog", "gatsby", "photography", "react"],
+  "keywords": [
+    "blog",
+    "gatsby",
+    "photography",
+    "react"
+  ],
   "license": "MIT",
   "main": "src/pages/index.tsx",
   "optionalDependencies": {
