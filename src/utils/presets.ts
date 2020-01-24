@@ -1,3 +1,5 @@
+/* TODO: Remove this? */
+
 const animation = {
   curveDefault: 'cubic-bezier(0.4, 0, 0.2, 1)',
   speedDefault: '300ms',

@@ -8,7 +8,7 @@ workflows:
   main:
     jobs:
       - install_dependencies
-      - build:
+      - build_initial:
           requires:
             - install_dependencies
       - lint:
@@ -17,14 +17,18 @@ workflows:
       - test:
           requires:
             - install_dependencies
-      # - cypress_job:
-      #     requires:
-      #       - build
-      - semantic_release:
+      - full_build_and_deploy:
           requires:
-            - build
+            - build_initial
             - lint
             - test
+          filters:
+            branches:
+              only:
+                - master
+      - semantic_release:
+          requires:
+            - full_build_and_deploy
           filters:
             branches:
               only:
@@ -36,6 +40,10 @@ workflows:
             branches:
               only:
                 - master
+
+# - cypress_job:
+#     requires:
+#       - build
 
 # ===================
 # Shared definitions.
@@ -160,7 +168,7 @@ jobs:
           name: Upload results to Codecov.
           command: yarn codecov
 
-  build:
+  build_initial:
     <<: *defaults
     steps:
       - checkout
@@ -174,34 +182,50 @@ jobs:
       - *save_cache
       - *save_public_dir_cache
 
-  # ---------------------------------------------------------------------------
-
-  push_image:
-    docker:
-      - image: docker:18-git
-    environment:
-      IMAGE_ID: 'jessestuart/jesses.io'
+  full_build_and_deploy:
+    <<: *defaults
     steps:
       - checkout
-      - setup_remote_docker
+      - *restore_cache
+      - *restore_public_dir_cache
+      - *install_dependencies
+      - *load_aws_credentials
       - run:
-          name: Authenticate with Docker Hub.
-          command: |
-            # Login to Docker Hub.
-            echo $DOCKERHUB_PASS | docker login -u $DOCKERHUB_USER --password-stdin
-      - run:
-          name: Build Docker image for static site.
-          command: |
-            docker build -t "${IMAGE_ID}" .
-      - run:
-          name: Push image to ECR.
-          command: |
-            DATETIME_TAG="$(date -u +'%Y%m%d')-$(date -u +'%H%M%S')"
-            docker tag    "${IMAGE_ID}" "${IMAGE_ID}:${DATETIME_TAG}"
-            docker push                 "${IMAGE_ID}:${DATETIME_TAG}"
-            if [ "${CIRCLE_BRANCH}" = 'master' ]; then
-              docker push "${IMAGE_ID}"
-            fi
+          name: Build static site. (with limited assets)
+          command: yarn build
+      - *save_cache
+      - *save_public_dir_cache
+      - run: yarn add global netlify-cli
+      - run: netlify deploy --dir=public
+
+  # ---------------------------------------------------------------------------
+
+  # push_image:
+  #   docker:
+  #     - image: docker:18-git
+  #   environment:
+  #     IMAGE_ID: 'jessestuart/jesses.io'
+  #   steps:
+  #     - checkout
+  #     - setup_remote_docker
+  #     - run:
+  #         name: Authenticate with Docker Hub.
+  #         command: |
+  #           # Login to Docker Hub.
+  #           echo $DOCKERHUB_PASS | docker login -u $DOCKERHUB_USER --password-stdin
+  #     - run:
+  #         name: Build Docker image for static site.
+  #         command: |
+  #           docker build -t "${IMAGE_ID}" .
+  #     - run:
+  #         name: Push image to ECR.
+  #         command: |
+  #           DATETIME_TAG="$(date -u +'%Y%m%d')-$(date -u +'%H%M%S')"
+  #           docker tag    "${IMAGE_ID}" "${IMAGE_ID}:${DATETIME_TAG}"
+  #           docker push                 "${IMAGE_ID}:${DATETIME_TAG}"
+  #           if [ "${CIRCLE_BRANCH}" = 'master' ]; then
+  #             docker push "${IMAGE_ID}"
+  #           fi
 
   semantic_release: *semantic_release
 
