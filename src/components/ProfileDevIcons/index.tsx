@@ -1,28 +1,30 @@
-import 'styles/base.css'
 import 'styles/hvr-animations.css'
 
-import { Flex, Text } from 'rebass/styled-components'
+import { Box, Flex, Text, TextProps } from 'rebass/styled-components'
 import React, { Fragment } from 'react'
 import classNames from 'classnames'
 import styled from 'styled-components'
-import _ from 'lodash'
 
 import colors from 'utils/colors'
 
 import DevIconColumn from './DevIconColumn'
 import DevIconSkills from './DevIconSkills'
 
+const WhatImUpToText = styled(Text)<TextProps & { fontWeight: any }>``
+
 const ProfileDevIcons = () => {
   return (
     <>
-      <Flex justfiyContent="center" alignItems="center">
-        <Text
+      <Flex justifyContent="center" alignItems="center">
+        <WhatImUpToText
           fontFamily="serif"
-          fontWeight="body"
-          className="lh-copy center pv3 tc w-75"
-          mt={5}
-          mb={3}
           fontSize={3}
+          fontWeight="body"
+          mb={3}
+          mt={5}
+          py={3}
+          textAlign="center"
+          width="75%"
         >
           Tackling novel problems —
           <span style={{ whiteSpace: 'nowrap' }}>
@@ -31,15 +33,21 @@ const ProfileDevIcons = () => {
           — <span style={{ whiteSpace: 'nowrap' }}>is my jam.</span>
           <br />
           Here are some of the technologies I've enjoyed hacking on lately:
-        </Text>
+        </WhatImUpToText>
       </Flex>
-      <DevIconsSection className="center code w-90">
+      <DevIconsSection
+        style={{
+          marginLeft: 'auto',
+          marginRight: 'auto',
+        }}
+        width="90%"
+      >
         {DevIconSkills.map((devIcon, index) => (
           <Fragment key={devIcon.label}>
             <DevIconLabel
+              className="moon-gray flex items-center justify-start"
               fontFamily="monospace"
               fontSize={4}
-              className="moon-gray flex items-center justify-start"
             >
               {devIcon.label}
             </DevIconLabel>
@@ -75,7 +83,7 @@ const DevIconLabel = styled(Text)`
   }
 `
 
-const DevIconsSection = styled(Text)`
+const DevIconsSection = styled(Box)`
   display: grid;
   @media (max-width: 45em) {
     grid-template-columns: repeat(9, 1fr);

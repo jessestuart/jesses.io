@@ -41,9 +41,8 @@ const SiteHeader = (props: { location: GatsbyLocation }) => {
       <Heading
         as="header"
         id="site-header"
-        alignItems="center"
         fontFamily="body"
-        className={classNames('bb flex justify-center', {
+        className={classNames('bb flex justify-center items-center', {
           'bg-gray-primary b--hot-pink': theme === HeaderTheme.DARK,
           'bg-near-white b--black-10': theme === HeaderTheme.LIGHT,
           bw1: !isRoot,

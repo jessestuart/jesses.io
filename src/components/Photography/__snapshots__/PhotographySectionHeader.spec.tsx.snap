@@ -5,19 +5,20 @@ exports[`Render PhotographySectionHeader. 1`] = `
   box-sizing: border-box;
   margin: 0;
   min-width: 0;
+  border-bottom: 1px solid hsla(237,1.8338775999999992%,0%,0.2);
   color: rgba(0,0,0,0.7);
   font-family: Alegreya Sans SC;
-  -webkit-flex: 1;
-  -ms-flex: 1;
-  flex: 1;
-  font-size: 36px;
   -webkit-box-pack: end;
   -webkit-justify-content: flex-end;
   -ms-flex-pack: end;
   justify-content: flex-end;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  font-size: 36px;
   margin-bottom: 8px;
-  padding-left: 8px;
-  padding-right: 8px;
+  margin-left: 8px;
+  margin-right: 8px;
   width: 100%;
 }
 

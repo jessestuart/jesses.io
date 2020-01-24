@@ -6,19 +6,20 @@ Array [
   box-sizing: border-box;
   margin: 0;
   min-width: 0;
+  border-bottom: 1px solid hsla(237,1.8338775999999992%,0%,0.2);
   color: textMediumMuted;
   font-family: smallcaps;
-  -webkit-flex: 1;
-  -ms-flex: 1;
-  flex: 1;
-  font-size: 48px;
   -webkit-box-pack: end;
   -webkit-justify-content: flex-end;
   -ms-flex-pack: end;
   justify-content: flex-end;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  font-size: 48px;
   margin-bottom: 8px;
-  padding-left: 8px;
-  padding-right: 8px;
+  margin-left: 8px;
+  margin-right: 8px;
   width: 100%;
 }
 
@@ -39,20 +40,17 @@ Array [
   box-sizing: border-box;
   margin: 0;
   min-width: 0;
+  height: NaNpx;
 }
 
 <div
     className="c0 mb4 w-100"
-    style={
-      Object {
-        "height": NaN,
-      }
-    }
   >
     <div
       style={
         Object {
           "height": NaN,
+          "opacity": 0,
           "position": "absolute",
           "transform": "translate3d(0px,NaNpx,0)",
           "width": 0,
@@ -63,30 +61,13 @@ Array [
       style={
         Object {
           "height": NaN,
+          "opacity": 0,
           "position": "absolute",
           "transform": "translate3d(0px,NaNpx,0)",
           "width": 0,
         }
       }
     />
-  </div>,
-  .c0 {
-  box-sizing: border-box;
-  margin: 0;
-  min-width: 0;
-  margin-bottom: 8px;
-  margin-top: 32px;
-}
-
-<div
-    className="c0"
-    style={
-      Object {
-        "borderTop": "1px solid rgb(221, 221, 221)",
-      }
-    }
-  >
-     
   </div>,
 ]
 `;
@@ -97,19 +78,20 @@ Array [
   box-sizing: border-box;
   margin: 0;
   min-width: 0;
+  border-bottom: 1px solid hsla(237,1.8338775999999992%,0%,0.2);
   color: textMediumMuted;
   font-family: smallcaps;
-  -webkit-flex: 1;
-  -ms-flex: 1;
-  flex: 1;
-  font-size: 48px;
   -webkit-box-pack: end;
   -webkit-justify-content: flex-end;
   -ms-flex-pack: end;
   justify-content: flex-end;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  font-size: 48px;
   margin-bottom: 8px;
-  padding-left: 8px;
-  padding-right: 8px;
+  margin-left: 8px;
+  margin-right: 8px;
   width: 100%;
 }
 
@@ -130,33 +112,11 @@ Array [
   box-sizing: border-box;
   margin: 0;
   min-width: 0;
+  height: 0;
 }
 
 <div
     className="c0 mb4 w-100"
-    style={
-      Object {
-        "height": 0,
-      }
-    }
   />,
-  .c0 {
-  box-sizing: border-box;
-  margin: 0;
-  min-width: 0;
-  margin-bottom: 8px;
-  margin-top: 32px;
-}
-
-<div
-    className="c0"
-    style={
-      Object {
-        "borderTop": "1px solid rgb(221, 221, 221)",
-      }
-    }
-  >
-     
-  </div>,
 ]
 `;

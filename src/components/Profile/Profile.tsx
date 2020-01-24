@@ -1,5 +1,5 @@
 import React from 'react'
-import { Box } from 'rebass/styled-components'
+import { Box, FlexProps } from 'rebass/styled-components'
 import styled from 'styled-components'
 
 import Avatar from './Avatar'
@@ -15,7 +15,7 @@ import ProfileFooter from './ProfileFooter'
 //   rgba(103, 58, 183, 1) 80%,
 //   rgba(103, 58, 183, 1) 100%
 // );
-const IntroWrapper = styled(Box)`
+const IntroWrapper = styled(Box)<FlexProps>`
   display: grid;
   grid-template-columns: repeat(12, 1fr);
   min-height: calc(100vh - 56px);
@@ -52,14 +52,14 @@ const BlurbContainer = styled(Box)`
   }
 `
 
-const FooterContainer = styled(Box)`
+const FooterContainer = styled(Box)<{ borderColor: string }>`
   grid-column: 1 / 13;
   grid-row: 5 / 7;
 `
 
 const Profile = ({ avatar }: any) => {
   return (
-    <IntroWrapper justifyContent="center" alignItems="center" pt={4}>
+    <IntroWrapper justifyContent="center" alignItems="center" paddingTop={4}>
       <AvatarContainer
         ml={['25%', '0']}
         width={['50%', '100%']}
