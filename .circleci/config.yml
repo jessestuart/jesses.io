@@ -191,8 +191,8 @@ jobs:
       - *install_dependencies
       - *load_aws_credentials
       - run:
-          name: Build static site. (with limited assets)
-          command: yarn build
+          name: Build static site. (with all image assets)
+          command: yarn build:prod
       - *save_cache
       - *save_public_dir_cache
       - run: yarn add global netlify-cli
