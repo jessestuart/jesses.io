@@ -153,12 +153,7 @@
     "typescript-styled-plugin": "0.15.0"
   },
   "homepage": ".",
-  "keywords": [
-    "blog",
-    "gatsby",
-    "photography",
-    "react"
-  ],
+  "keywords": ["blog", "gatsby", "photography", "react"],
   "license": "MIT",
   "main": "src/pages/index.tsx",
   "optionalDependencies": {
@@ -177,6 +172,7 @@
     "build": "GATSBY_ENV=Production gatsby build",
     "build:ci": "GATSBY_ENV=Staging gatsby build",
     "build:dev": "GATSBY_ENV=Development gatsby build",
+    "build:prod": "GATSBY_ENV=Production GATSBY_CPU_COUNT=2 NODE_OPTIONS=--max_old_space_size=4096 gatsby build",
     "check-types": "tsc -p tsconfig.json",
     "clean": "rm -rf node_modules/ .cache/ && yarn -s",
     "cloc": "cloc --vcs=git --by-file-by-lang --not-match-f=yarn.lock .",

@@ -187,16 +187,21 @@ jobs:
     steps:
       - checkout
       - *restore_cache
-      - *restore_public_dir_cache
       - *install_dependencies
       - *load_aws_credentials
       - run:
-          name: Build static site. (with limited assets)
-          command: yarn build
+          name: Build static site. (with all image assets)
+          command: yarn build:prod
       - *save_cache
-      - *save_public_dir_cache
-      - run: yarn add global netlify-cli
-      - run: netlify deploy --dir=public
+      - run:
+          name: Install `netlify-cli`.
+          command: yarn global add netlify-cli
+      - run:
+          command: |
+            netlify deploy \
+              --dir=public \
+              --auth="$NETLIFY_AUTH_TOKEN" \
+              --prod
 
   # ---------------------------------------------------------------------------
 
