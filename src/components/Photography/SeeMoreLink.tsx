@@ -5,23 +5,26 @@ import { Box, Flex, Text } from 'rebass/styled-components'
 const SeeMoreLink = ({
   href,
   totalNumImages,
+  ...rest
 }: {
   href: string
   totalNumImages: number
+  [otherProp: string]: any
 }) => {
   if (totalNumImages <= 6) {
-    return (
-      <Box
-        marginBottom={2}
-        marginTop={4}
-        style={{ borderTop: '1px solid rgb(221, 221, 221)' }}
-      >
-        &nbsp;
-      </Box>
-    )
+    return null
+    /* return ( */
+    /*   <Box */
+    /*     marginBottom={2} */
+    /*     marginTop={4} */
+    /*     style={{ borderTop: '1px solid rgb(221, 221, 221)' }} */
+    /*   > */
+    /*     &nbsp; */
+    /*   </Box> */
+    /* ) */
   } else {
     return (
-      <>
+      <Box mx={2} {...rest}>
         <Flex
           justifyContent="flex-end"
           alignItems="items-center"
@@ -29,10 +32,15 @@ const SeeMoreLink = ({
         >
           <Link to={href}>
             <Text
-              color="textDarkMuted"
+              color="textMediumMuted"
+              // color="textDarkMuted"
               fontFamily="smallcaps"
-              hoverColor="textDark"
               fontSize={4}
+              sx={{
+                ':hover': {
+                  color: 'textDark',
+                },
+              }}
             >
               See More →
             </Text>
@@ -41,11 +49,11 @@ const SeeMoreLink = ({
         <Box
           marginBottom={4}
           marginTop={2}
-          style={{ borderTop: '1px solid rgb(221, 221, 221)' }}
+          sx={{ borderTop: '1px solid rgb(221, 221, 221)' }}
         >
           &nbsp;
         </Box>
-      </>
+      </Box>
     )
   }
 }

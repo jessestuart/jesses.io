@@ -16,17 +16,17 @@ const PhotographySectionHeader = ({
 }: Props) => (
   <Text
     as="h2"
-    borderBottom={`1px solid ${Colors.gray.calm}`}
     className="flex fw5"
     flex="1"
     fontSize="6"
-    justifyContent="flex-end"
     marginBottom="2"
-    px="2"
+    mx="2"
     width="100%"
     sx={{
+      borderBottom: `1px solid ${Colors.gray.calm}`,
       color: 'textMediumMuted',
       fontFamily: 'smallcaps',
+      justifyContent: 'flex-end',
     }}
   >
     <Link to={href}>{datetime.toFormat('dd LLLL yyyy')}</Link>

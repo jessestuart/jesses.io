@@ -88,21 +88,22 @@ const PhotographyGridSection = (props: Props) => {
   })
 
   const transitions = useTransition(gridItems, fp.get('id'), {
-    config: { mass: 5, tension: 500, friction: 100 },
-    from: ({ xy, width, height }) => ({ xy, width, height }),
-    trail: 25,
+    from: ({ xy, width, height }) => ({ xy, width, height, opacity: 0 }),
+    enter: ({ xy, width, height }) => ({ xy, width, height, opacity: 1 }),
     update: ({ xy, width, height }) => ({ xy, width, height }),
+    /* config: { mass: 1, tension: 10000, friction: 1000 }, */
+    /* trail: 0, */
   })
 
   return (
     <>
       <PhotographySectionHeader datetime={datetime} href={slug} />
       <Box
-        ref={ref}
+        ref={ref as any}
         className="mb4 w-100"
         // Define height in `style` to avoid creating a new className on each
         // resize / render.
-        style={{ height: Math.max(...heights) }}
+        sx={{ height: Math.max(...heights) }}
       >
         {width != null &&
           transitions.map(

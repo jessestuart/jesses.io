@@ -12,10 +12,6 @@ exports[`Render SiteHeader component as not-root. 1`] = `
   font-family: Alegreya Sans;
   line-height: 1.25;
   font-weight: 700;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
   font-family: Lato,system-ui,sans-serif;
 }
 
@@ -39,7 +35,7 @@ exports[`Render SiteHeader component as not-root. 1`] = `
 
 <Headroom>
   <header
-    className="c0 bb flex justify-center bg-gray-primary b--hot-pink"
+    className="c0 bb flex justify-center items-center bg-gray-primary b--hot-pink"
     fontFamily="body"
     id="site-header"
     style={
@@ -104,10 +100,6 @@ exports[`Render SiteHeader component. 1`] = `
   font-family: Alegreya Sans;
   line-height: 1.25;
   font-weight: 700;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
   font-family: Lato,system-ui,sans-serif;
 }
 
@@ -131,7 +123,7 @@ exports[`Render SiteHeader component. 1`] = `
 
 <Headroom>
   <header
-    className="c0 bb flex justify-center bg-gray-primary b--hot-pink"
+    className="c0 bb flex justify-center items-center bg-gray-primary b--hot-pink"
     fontFamily="body"
     id="site-header"
     style={
