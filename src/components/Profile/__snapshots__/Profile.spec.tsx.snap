@@ -10,30 +10,6 @@ exports[`Render Profile component. Render Profile component. 1`] = `
   margin: 8px;
 }
 
-.c6 {
-  box-sizing: border-box;
-  margin: 0;
-  min-width: 0;
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  color: hsla(0,0%,100%,.8);
-  -webkit-flex: 1;
-  -ms-flex: 1;
-  flex: 1;
-  -webkit-flex-wrap: wrap;
-  -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
-  font-family: Spectral,serif;
-  font-size: 28px;
-  font-weight: 400;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-}
-
 .c9 {
   box-sizing: border-box;
   margin: 0;
@@ -55,6 +31,34 @@ exports[`Render Profile component. Render Profile component. 1`] = `
   -ms-flex-direction: column;
   flex-direction: column;
   padding-top: 32px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.c6 {
+  box-sizing: border-box;
+  margin: 0;
+  min-width: 0;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  class-name: lh-title;
+  color: hsla(0,0%,100%,.8);
+  font-family: Spectral,serif;
+  font-size: 28px;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -363,34 +367,22 @@ exports[`Render Profile component. Render Profile component. 1`] = `
     >
       <span
         className="c6 lh-title"
-        color="textLight"
-        fontFamily="serif"
-        fontSize={5}
-        fontWeight="body"
       >
         Hi — I'm Jesse.
         <br />
       </span>
       <span
         className="c6 lh-title"
-        color="textLight"
-        fontFamily="serif"
-        fontSize={5}
-        fontWeight="body"
       >
         I contradict myself.
       </span>
       <span
         className="c6 lh-title"
-        color="textLight"
-        fontFamily="serif"
-        fontSize={5}
-        fontWeight="body"
       >
         I contain
         <a
           className="c7"
-          href="https://jstu.art/ojNe"
+          href="https://genius.com/2057261"
         >
            multitudes
         </a>
@@ -532,7 +524,7 @@ exports[`Render Profile component. Render Profile component. 1`] = `
            
           <a
             className="c7"
-            href="https://jstu.art/oijk"
+            href="publications/genre-variation.pdf"
           >
             NLP researcher
           </a>
@@ -540,7 +532,7 @@ exports[`Render Profile component. Render Profile component. 1`] = `
         </div>
         <a
           className="c7"
-          href="https://jstu.art/oj1g"
+          href="https://patents.google.com/patent/US20150026079A1/"
         >
           USPO Patent holder
         </a>
@@ -758,7 +750,7 @@ exports[`Render Profile component. Render Profile component. 1`] = `
       >
         <a
           className="c7"
-          href="https://jstu.art/ojVB"
+          href="https://www.scribd.com/doc/184481594/Love-Lasts-Three-Years"
         >
           French translator
         </a>
