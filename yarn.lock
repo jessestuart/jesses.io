@@ -8983,13 +8983,6 @@ gatsby-plugin-google-analytics@2.1.34:
   dependencies:
     "@babel/runtime" "^7.7.6"
 
-gatsby-plugin-layout@1.1.21:
-  version "1.1.21"
-  resolved "https://registry.yarnpkg.com/gatsby-plugin-layout/-/gatsby-plugin-layout-1.1.21.tgz#a14758602a23306d7d4a639891803f7226928dab"
-  integrity sha512-UJB6wHPIRILXzFurek3wNjTuctN/m3Y+OnttoOUUqOrvy38v/y0JDEE4Osiiw0CaaHvngYU93gBs++iHZfwxtw==
-  dependencies:
-    "@babel/runtime" "^7.7.6"
-
 gatsby-plugin-lodash@3.1.19:
   version "3.1.19"
   resolved "https://registry.yarnpkg.com/gatsby-plugin-lodash/-/gatsby-plugin-lodash-3.1.19.tgz#43b9aabbbcbc8ed98d23d7d3b961f8e198fea595"

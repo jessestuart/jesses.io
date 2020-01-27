@@ -57,25 +57,23 @@ const FooterContainer = styled(Box)<{ borderColor: string }>`
   grid-row: 5 / 7;
 `
 
-const Profile = ({ avatar }: any) => {
-  return (
-    <IntroWrapper justifyContent="center" alignItems="center" paddingTop={4}>
-      <AvatarContainer
-        ml={['25%', '0']}
-        width={['50%', '100%']}
-        className="center"
-      >
-        <Avatar image={avatar} />
-        <BlackMirror />
-      </AvatarContainer>
-      <BlurbContainer className="tc tr-ns ph2" pb="4">
-        <ProfileBlurb />
-      </BlurbContainer>
-      <FooterContainer borderColor="lightSilver" className="bt">
-        <ProfileFooter />
-      </FooterContainer>
-    </IntroWrapper>
-  )
-}
+const Profile = () => (
+  <IntroWrapper justifyContent="center" alignItems="center" paddingTop={4}>
+    <AvatarContainer
+      ml={['25%', '0']}
+      width={['50%', '100%']}
+      className="center"
+    >
+      <Avatar />
+      <BlackMirror />
+    </AvatarContainer>
+    <BlurbContainer className="tc tr-ns ph2" pb="4">
+      <ProfileBlurb />
+    </BlurbContainer>
+    <FooterContainer borderColor="lightSilver" className="bt">
+      <ProfileFooter />
+    </FooterContainer>
+  </IntroWrapper>
+)
 
 export default Profile

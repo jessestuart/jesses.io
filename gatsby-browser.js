@@ -11,8 +11,13 @@ import 'typeface-fira-mono'
 import 'typeface-lato'
 import 'typeface-spectral'
 
-import { initSentry } from './src/services/sentry'
+import 'styles/base.css'
 
-const { GATSBY_ENV = 'Development' } = process.env
+import React from 'react'
 
-initSentry({ environment: GATSBY_ENV })
+import Layout from './src/layouts'
+
+// eslint-disable-next-line
+export const wrapPageElement = ({ element, props }) => {
+  return <Layout {...props}>{element}</Layout>
+}

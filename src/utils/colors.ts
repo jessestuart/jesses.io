@@ -1,4 +1,5 @@
 import { TinyColor as Color } from '@ctrl/tinycolor'
+
 import gray from 'gray-percentage'
 
 interface ColorMap {
@@ -26,7 +27,7 @@ export interface ColorsTheme {
 // Primary accent color.
 const primary = '#ff3a5c'
 
-const secondaryColors = {
+const secondaryColors: ColorMap = {
   dark5: '#331d5b',
   light0: '#fbfafc',
   light5: '#b39cdb',
@@ -41,7 +42,7 @@ const colors: ColorsTheme = Object.freeze({
   bgDark: 'rgb(55, 59, 70)',
 
   gray: {
-    calm: gray(80, 'cool'),
+    calm: gray(90, 'cool'),
   },
 
   defaultHover: new Color(secondaryColors.light7)

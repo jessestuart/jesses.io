@@ -98,10 +98,6 @@ const sourceS3 = {
   options: getSourceS3ConfigForEnvironment(GATSBY_ENV),
 }
 
-const layoutPlugin = {
-  resolve: 'gatsby-plugin-layout',
-}
-
 /* eslint-disable @typescript-eslint/camelcase */
 const manifestPlugin = {
   resolve: 'gatsby-plugin-manifest',
@@ -127,7 +123,6 @@ let plugins = _.compact([
   sourceFilesystem,
   sourceFilesystemImages,
   sourceS3,
-  layoutPlugin,
   // =======================================================================
   // Add in React Helmet and React 16 support until Gatsby v2 is released.
   // =======================================================================
