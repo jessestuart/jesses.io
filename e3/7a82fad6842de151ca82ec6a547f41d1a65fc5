@@ -1,0 +1,13 @@
+[ver:1,total:3780]
+.gtm/terminal.app:1530,1580115600:850,1580119200:680,r
+src/pages/index.tsx:570,1580115600:470,1580119200:100,m
+src/components/Photography/ExifOverlay.tsx:460,1580119200:460,r
+src/components/Profile/Profile.tsx:290,1580115600:20,1580119200:270,m
+gatsby-browser.js:250,1580119200:250,m
+src/components/Profile/Avatar.tsx:220,1580115600:20,1580119200:200,m
+src/components/Photography/PhotographySectionHeader.tsx:200,1580119200:200,r
+src/utils/colors.ts:145,1580119200:145,m
+gatsby-config.js:60,1580119200:60,m
+src/layouts/index.tsx:20,1580119200:20,r
+src/components/Profile/index.tsx:20,1580115600:20,r
+package.json:15,1580119200:15,m
