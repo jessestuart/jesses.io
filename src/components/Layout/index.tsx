@@ -5,12 +5,19 @@ import { Flex } from 'rebass/styled-components'
 import { ThemeProvider } from 'styled-components'
 import { useThemeUI } from 'theme-ui'
 
+import 'js-tachyons'
+import 'typeface-alegreya-sans'
+import 'typeface-alegreya-sans-sc'
+import 'typeface-fira-mono'
+import 'typeface-lato'
+import 'typeface-spectral'
+
 import 'styles/base.css'
 
 import GatsbyLocation from 'types/GatsbyLocation'
 
 import { SiteFooter, SiteHeader } from 'components'
-import config from '../../gatsby-config'
+import config from '../../../gatsby-config'
 
 const title: string = _.get(config, 'siteMetadata.title')
 const url: string = _.get(config, 'siteMetadata.url')
