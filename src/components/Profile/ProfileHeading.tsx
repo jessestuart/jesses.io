@@ -1,27 +1,28 @@
-import classNames from 'classnames'
 import React from 'react'
-import { Flex, Text } from 'rebass/styled-components'
+import { Flex } from 'rebass/styled-components'
 
 import ProfileStyledLink from 'components/Profile/ProfileStyledLink'
 
-const WHITMAN_URL = 'https://jstu.art/ojNe'
+const WHITMAN_URL = 'https://genius.com/2057261'
 
-const ProfileHeadingText = ({ children, className, ...rest }: any) => (
-  <Text
+const ProfileHeadingText = ({ children, href }: any) => (
+  <Flex
     as="span"
-    className={classNames('lh-title', className)}
-    color="textLight"
     flex="1"
     flexWrap="wrap"
-    fontFamily="serif"
-    fontSize={5}
-    fontWeight="body"
     justifyContent={['center', 'flex-end']}
-    sx={{ display: 'inline-flex' }}
-    {...rest}
+    className="lh-title"
+    href={href}
+    sx={{
+      display: 'inline-flex',
+      className: 'lh-title',
+      color: 'textLight',
+      fontFamily: 'serif',
+      fontSize: 5,
+    }}
   >
     {children}
-  </Text>
+  </Flex>
 )
 
 const ProfileHeading = () => (

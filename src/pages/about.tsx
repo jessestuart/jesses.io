@@ -31,7 +31,7 @@ const PortfolioItemsList = () => (
     />
     <PortfolioItem
       title="Systems and methods for determining packages of licensable assets"
-      link="https://jstu.art/ooQi"
+      link="https://patents.google.com/patent/US20150026079A1/"
     />
   </ul>
 )

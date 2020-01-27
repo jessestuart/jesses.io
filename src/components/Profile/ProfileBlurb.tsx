@@ -5,9 +5,10 @@ import Twemoji from 'components/Icons/Twemoji'
 import ProfileHeading from 'components/Profile/ProfileHeading'
 import ProfileStyledLink from 'components/Profile/ProfileStyledLink'
 
-const BEIGBEDER_URL = 'https://jstu.art/ojVB'
-const COLING_URL = 'https://jstu.art/oijk'
-const USPO_URL = 'https://jstu.art/oj1g'
+const BEIGBEDER_URL =
+  'https://www.scribd.com/doc/184481594/Love-Lasts-Three-Years'
+const COLING_URL = 'publications/genre-variation.pdf'
+const USPO_URL = 'https://patents.google.com/patent/US20150026079A1/'
 
 const {
   Camera,
