@@ -3209,10 +3209,10 @@
   resolved "https://registry.yarnpkg.com/@types/node/-/node-12.12.14.tgz#1c1d6e3c75dba466e0326948d56e8bd72a1903d2"
   integrity sha512-u/SJDyXwuihpwjXy7hOOghagLEV1KdAST6syfnOk6QZAMzZuWZqXy5aYYZbh8Jdpd4escVFP0MvftHNDb9pruA==
 
-"@types/node@13.5.2":
-  version "13.5.2"
-  resolved "https://registry.yarnpkg.com/@types/node/-/node-13.5.2.tgz#3de53b55fd39efc428a901a0f6db31f761cfa131"
-  integrity sha512-Fr6a47c84PRLfd7M7u3/hEknyUdQrrBA6VoPmkze0tcflhU5UnpWEX2kn12ktA/lb+MNHSqFlSiPHIHsaErTPA==
+"@types/node@13.5.3":
+  version "13.5.3"
+  resolved "https://registry.yarnpkg.com/@types/node/-/node-13.5.3.tgz#37f1f539b7535b9fb4ef77d59db1847a837b7f17"
+  integrity sha512-ZPnWX9PW992w6DUsz3JIXHaSb5v7qmKCVzC3km6SxcDGxk7zmLfYaCJTbktIa5NeywJkkZDhGldKqDIvC5DRrA==
 
 "@types/node@^7.0.11":
   version "7.10.9"
@@ -3389,16 +3389,28 @@
     "@types/react" "*"
     "@types/react-test-renderer" "*"
 
-"@types/theme-ui@0.2.7":
-  version "0.2.7"
-  resolved "https://registry.yarnpkg.com/@types/theme-ui/-/theme-ui-0.2.7.tgz#803f5538b6800305bb643f5021a2bc6f23ac355e"
-  integrity sha512-9/WZahs/mpkGCChHQUth911w3blLe5DTxKwOLTa8ff/SLcq7Rr/Wsg8sKwMM7N+u1mYXpKbjr0yEVNDtoJHn7A==
+"@types/theme-ui@*", "@types/theme-ui@0.3.0":
+  version "0.3.0"
+  resolved "https://registry.yarnpkg.com/@types/theme-ui/-/theme-ui-0.3.0.tgz#5a8972b1e6060a4699885ea6c91f9d17a957661a"
+  integrity sha512-3PJw/As8C1HeLJXZytGf5Gfz7HBKskbtyOabPsHSNRTr+jLZvIWpFKF9hgDWYp7io35UcLDS5TLcFwiCGGxAzg==
   dependencies:
     "@emotion/serialize" "^0.11.15"
     "@types/react" "*"
     "@types/styled-system" "*"
     "@types/styled-system__css" "*"
+    "@types/theme-ui__components" "*"
     csstype "^2.6.6"
+
+"@types/theme-ui__components@*":
+  version "0.2.1"
+  resolved "https://registry.yarnpkg.com/@types/theme-ui__components/-/theme-ui__components-0.2.1.tgz#58b8c7dac4fc09a174a39657fefcaf8537e7b75a"
+  integrity sha512-xqFn8h3iAs/vXbpDJ2zUx8TimdDqX5H1mHkaDeintiLYMRVzX1Rt5YsbJsEPMJCbSyv23wAnS7uy6FMfbYixWw==
+  dependencies:
+    "@emotion/core" "^10.0.0"
+    "@emotion/styled" "^10.0.0"
+    "@types/react" "*"
+    "@types/styled-system" "*"
+    "@types/theme-ui" "*"
 
 "@types/tmp@^0.0.32":
   version "0.0.32"
