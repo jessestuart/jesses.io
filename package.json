@@ -137,7 +137,7 @@
     "jest": "25.1.0",
     "jest-junit": "10.0.0",
     "jest-styled-components": "7.0.0",
-    "lint-staged": "10.0.6",
+    "lint-staged": "10.0.7",
     "prettier": "1.19.1",
     "react-perf-devtool": "3.1.8",
     "react-test-renderer": "16.12.0",
