@@ -81,3 +81,5 @@ cypress/videos/
 
 # Local Netlify folder
 .netlify
+.now
+.env.build

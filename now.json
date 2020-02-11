@@ -1,4 +1,9 @@
 {
-  "name": "jesses.io",
-  "version": 2
+  "version": 2,
+  "build": {
+    "env": {
+      "AWS_ACCESS_KEY": "@aws_access_key_id",
+      "AWS_SECRET_KEY": "@aws_secret_access_key"
+    }
+  }
 }
