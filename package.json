@@ -62,7 +62,7 @@
     "@types/classnames": "2.2.9",
     "@types/color": "3.0.1",
     "@types/gray-percentage": "2.0.0",
-    "@types/jest": "24.9.1",
+    "@types/jest": "25.1.2",
     "@types/lodash": "4.14.149",
     "@types/luxon": "1.21.0",
     "@types/md5": "2.1.33",
