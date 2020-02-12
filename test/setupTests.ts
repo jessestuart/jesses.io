@@ -21,7 +21,6 @@ window.matchMedia = jest.fn().mockImplementation(query => {
 // creating console errors.
 // @ts-ignore
 global.___loader = {
-  // tslint:disable
   enqueue: () => {},
   hovering: () => {},
 }
