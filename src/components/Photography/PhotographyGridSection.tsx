@@ -1,4 +1,3 @@
-/* tslint:disable no-shadowed-variable */
 import 'react-image-lightbox/style.css'
 
 import _ from 'lodash'

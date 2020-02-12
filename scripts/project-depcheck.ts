@@ -29,7 +29,6 @@ const options = {
     // the target special parsers
     depcheck.special.eslint,
     depcheck.special.babel,
-    depcheck.special.tslint,
   ],
   withoutDev: false, // [DEPRECATED] check against devDependencies
 }

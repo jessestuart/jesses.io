@@ -1,4 +1,3 @@
-// tslint:disable
 const spawn = require('child_process').spawn
 const httpServer = require('http-server')
 // eslint-disable-next-line

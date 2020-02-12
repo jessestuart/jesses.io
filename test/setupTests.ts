@@ -1,3 +1,4 @@
+import _ from 'lodash'
 import 'styled-components'
 
 import '@testing-library/jest-dom/extend-expect'
@@ -21,7 +22,6 @@ window.matchMedia = jest.fn().mockImplementation(query => {
 // creating console errors.
 // @ts-ignore
 global.___loader = {
-  // tslint:disable
-  enqueue: () => {},
-  hovering: () => {},
+  enqueue: _.noop,
+  hovering: _.noop,
 }
