@@ -21,7 +21,6 @@ const PhotographySectionHeader = ({
     fontSize="6"
     marginBottom="2"
     mx="2"
-    width="100%"
     sx={{
       borderBottom: `1px solid ${Colors.gray.calm}`,
       color: 'textMediumMuted',
