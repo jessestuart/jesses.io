@@ -27,7 +27,7 @@
     "react-spring": "8.0.27",
     "rebass": "4.0.7",
     "resize-observer-polyfill": "1.5.1",
-    "sharp": "0.24.0",
+    "sharp": "0.24.1",
     "styled-components": "5.0.1",
     "theme-ui": "0.3.1",
     "typeface-alegreya": "0.0.69",
