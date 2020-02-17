@@ -1,0 +1,8 @@
+[ver:1,total:960]
+.gtm/terminal.app:559,1581912000:559,r
+package.json:282,1581912000:282,m
+yarn.lock:35,1581912000:35,m
+.git/COMMIT_EDITMSG:30,1581912000:30,r
+.git/PULLREQ_EDITMSG:30,1581912000:30,r
+.git/hooks/pre-commit:12,1581912000:12,d
+.git/hooks/husky.sh:12,1581912000:12,d
