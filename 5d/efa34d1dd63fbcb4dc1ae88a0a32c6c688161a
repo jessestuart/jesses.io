@@ -1,1 +1,12 @@
 [ver:1,total:0]
+
+[ver:1,total:2460]
+.gtm/terminal.app:2220,1581926400:200,1581930000:340,1581944400:1680,r
+yarn.lock:200,1581926400:200,m
+package.json:20,1581926400:20,r
+src/config/createPages.js:20,1581930000:20,r
+
+[ver:1,total:1020]
+.gtm/terminal.app:910,1581922800:510,1581926400:400,r
+gatsby-config.js:90,1581922800:90,r
+package.json:20,1581926400:20,r
