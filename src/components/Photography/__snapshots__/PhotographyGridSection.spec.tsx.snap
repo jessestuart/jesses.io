@@ -20,13 +20,11 @@ Array [
   margin-bottom: 8px;
   margin-left: 8px;
   margin-right: 8px;
-  width: 100%;
 }
 
 <h2
     className="c0 flex fw5"
     fontSize="6"
-    width="100%"
   >
     <a
       href="/true/#"
@@ -41,18 +39,23 @@ Array [
   margin: 0;
   min-width: 0;
   height: NaNpx;
+  position: relative;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
 }
 
 <div
-    className="c0 mb4 w-100"
+    className="c0 mt2 mb4"
   >
     <div
       style={
         Object {
           "height": NaN,
-          "opacity": 0,
+          "left": 0,
           "position": "absolute",
-          "transform": "translate3d(0px,NaNpx,0)",
+          "top": NaN,
           "width": 0,
         }
       }
@@ -61,9 +64,9 @@ Array [
       style={
         Object {
           "height": NaN,
-          "opacity": 0,
+          "left": -0,
           "position": "absolute",
-          "transform": "translate3d(0px,NaNpx,0)",
+          "top": NaN,
           "width": 0,
         }
       }
@@ -92,13 +95,11 @@ Array [
   margin-bottom: 8px;
   margin-left: 8px;
   margin-right: 8px;
-  width: 100%;
 }
 
 <h2
     className="c0 flex fw5"
     fontSize="6"
-    width="100%"
   >
     <a
       href="/true/#"
@@ -113,10 +114,15 @@ Array [
   margin: 0;
   min-width: 0;
   height: 0;
+  position: relative;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
 }
 
 <div
-    className="c0 mb4 w-100"
+    className="c0 mt2 mb4"
   />,
 ]
 `;
