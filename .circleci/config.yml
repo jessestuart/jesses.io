@@ -22,10 +22,10 @@ workflows:
             - build_initial
             - lint
             - test
-          filters:
-            branches:
-              only:
-                - master
+          # filters:
+          #   branches:
+          #     only:
+          #       - master
       - semantic_release:
           requires:
             - full_build_and_deploy
@@ -80,6 +80,18 @@ save_public_dir_cache: &save_public_dir_cache
       - public/
       - .cache
     key: v2-public-dir-{{ .Branch }}
+
+save_gatsby_prod_cache: &save_gatsby_prod_cache
+  save_cache:
+    paths:
+      - public/
+      - .cache
+    key: prod-v1-gatsby-{{ .Branch }}
+
+restore_gatsby_prod_cache: &restore_gatsby_prod_cache
+  restore_cache:
+    keys:
+      - prod-v1-gatsby-{{ .Branch }}
 
 install_dependencies: &install_dependencies
   run:
@@ -176,9 +188,7 @@ jobs:
       - *restore_public_dir_cache
       - *install_dependencies
       - *load_aws_credentials
-      - run:
-          name: Build static site. (with limited assets)
-          command: yarn build:ci
+      - run: yarn build:ci
       - *save_cache
       - *save_public_dir_cache
 
@@ -187,12 +197,14 @@ jobs:
     steps:
       - checkout
       - *restore_cache
+      - *restore_gatsby_prod_cache
       - *install_dependencies
       - *load_aws_credentials
       - run:
           name: Build static site. (with all image assets)
           command: yarn build:prod
       - *save_cache
+      - *save_gatsby_prod_cache
       - run:
           name: Install `netlify-cli`.
           command: yarn global add netlify-cli
@@ -204,33 +216,6 @@ jobs:
               --prod
 
   # ---------------------------------------------------------------------------
-
-  # push_image:
-  #   docker:
-  #     - image: docker:18-git
-  #   environment:
-  #     IMAGE_ID: 'jessestuart/jesses.io'
-  #   steps:
-  #     - checkout
-  #     - setup_remote_docker
-  #     - run:
-  #         name: Authenticate with Docker Hub.
-  #         command: |
-  #           # Login to Docker Hub.
-  #           echo $DOCKERHUB_PASS | docker login -u $DOCKERHUB_USER --password-stdin
-  #     - run:
-  #         name: Build Docker image for static site.
-  #         command: |
-  #           docker build -t "${IMAGE_ID}" .
-  #     - run:
-  #         name: Push image to ECR.
-  #         command: |
-  #           DATETIME_TAG="$(date -u +'%Y%m%d')-$(date -u +'%H%M%S')"
-  #           docker tag    "${IMAGE_ID}" "${IMAGE_ID}:${DATETIME_TAG}"
-  #           docker push                 "${IMAGE_ID}:${DATETIME_TAG}"
-  #           if [ "${CIRCLE_BRANCH}" = 'master' ]; then
-  #             docker push "${IMAGE_ID}"
-  #           fi
 
   semantic_release: *semantic_release
 
