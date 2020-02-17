@@ -24,7 +24,6 @@
     "react-helmet": "5.2.1",
     "react-image-lightbox": "5.1.1",
     "rebass": "4.0.7",
-    "sharp": "0.24.1",
     "styled-components": "5.0.1",
     "theme-ui": "0.3.1",
     "typeface-alegreya": "0.0.69",
@@ -126,10 +125,7 @@
     "prettier": "1.19.1",
     "react-perf-devtool": "3.1.8",
     "react-test-renderer": "16.12.0",
-    "rimraf": "3.0.2",
     "semantic-release": "17.0.3",
-    "serialize-javascript": "2.1.2",
-    "start-server-and-test": "1.10.8",
     "stylelint": "13.2.0",
     "stylelint-config-standard": "20.0.0",
     "ts-jest": "25.2.0",
@@ -139,12 +135,7 @@
     "typescript-styled-plugin": "0.15.0"
   },
   "homepage": ".",
-  "keywords": [
-    "blog",
-    "gatsby",
-    "photography",
-    "react"
-  ],
+  "keywords": ["blog", "gatsby", "photography", "react"],
   "license": "MIT",
   "main": "src/pages/index.tsx",
   "optionalDependencies": {
