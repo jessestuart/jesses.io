@@ -1,0 +1,13 @@
+[ver:1,total:5280]
+.gtm/terminal.app:3149,1581912000:1445,1581915600:1344,1581919200:360,r
+src/components/Photography/PhotographyGridSection.tsx:1597,1581912000:865,1581915600:732,m
+src/config/onCreateNode.ts:195,1581915600:195,r
+src/fragments/S3ImageAssetData.ts:72,1581915600:72,r
+src/pages/photography.tsx:60,1581912000:30,1581915600:30,r
+package.json:50,1581912000:50,m
+src/templates/photography-post.tsx:40,1581912000:40,r
+src/components/Photography/ImageZoomGridElement.tsx:32,1581915600:32,r
+.git/PULLREQ_EDITMSG:30,1581912000:30,d
+gatsby-node.js:20,1581915600:20,r
+gatsby-config.js:20,1581915600:20,r
+src/types/S3ImageAsset.ts:15,1581915600:15,r
