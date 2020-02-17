@@ -1,8 +1,17 @@
-<p align="center">
-  <a href="https://jesses.io">
-    <img alt="jesses.io" src="./src/components/Icons/logo_dark.svg" width="120" />
-  </a>
-</p>
+<div align="center">
+
+```
+   _                           _
+  (_) ___  ___ ___  ___  ___  (_) ___
+  | |/ _ \/ __/ __|/ _ \/ __| | |/ _ \
+  | |  __/\__ \__ \  __/\__ \_| | (_) |
+ _/ |\___||___/___/\___||___(_)_|\___/
+|__/
+
+_hello
+```
+
+</div>
 <h1 align=center>
   <a href="https://jesses.io">
     jesses.io

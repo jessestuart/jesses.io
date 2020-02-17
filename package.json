@@ -23,6 +23,7 @@
     "react-headroom": "3.0.0",
     "react-helmet": "5.2.1",
     "react-image-lightbox": "5.1.1",
+    "react-images": "1.1.0-beta.3",
     "rebass": "4.0.7",
     "sharp": "0.25.1",
     "styled-components": "5.0.1",

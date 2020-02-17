@@ -3,8 +3,10 @@ import 'react-image-lightbox/style.css'
 import _ from 'lodash'
 import { DateTime } from 'luxon'
 import React, { useState } from 'react'
-import Lightbox from 'react-image-lightbox'
 import { Flex } from 'rebass/styled-components'
+// import Lightbox from 'react-image-lightbox'
+
+import Carousel, { Image, Modal, ModalGateway } from 'react-images'
 
 import { useDimensions, useMedia } from 'utils/hooks'
 import {
@@ -24,30 +26,29 @@ interface Props {
 const PhotographyGridSection = (props: Props) => {
   const { datetime, images, slug = '/#', totalNumImages = 0 } = props
   const [isLightboxOpen, setIsLightboxOpen] = useState(false)
-  const [index, setLightboxIndex] = useState(0)
+  /* const [index, setLightboxIndex] = useState(0) */
 
   const sortedImages = _.sortBy(images, 'EXIF.DateTimeOriginal')
-  const lightboxImages = _.map(sortedImages, 'childImageSharp.sizes.src')
+  /* const lightboxImages = _.map(sortedImages, 'childImageSharp.sizes.src') */
+  const reactImages: Image[] = _.map(sortedImages, 'childImageSharp.sizes')
 
-  // const lightboxImages = _.flow(
-  //   // -        fp.get('images'),
-  //   // -        fp.sortBy('EXIF.DateTimeOriginal'),
-  //   fp.map('childImageSharp.sizes.src'),
-  // )(sortedImages)
-
-  const decrementLightboxIndex = () => setLightboxIndex(index - 1)
-  const incrementLightboxIndex = () => setLightboxIndex(index + 1)
-  const closeLightbox = () => setIsLightboxOpen(false)
-  const openLightbox = (imageIndex: number) => {
-    setLightboxIndex(imageIndex)
+  /* const decrementLightboxIndex = () => setLightboxIndex(index - 1) */
+  /* const incrementLightboxIndex = () => setLightboxIndex(index + 1) */
+  /* const closeLightbox = () => setIsLightboxOpen(false) */
+  /* const openLightbox = (imageIndex: number) => { */
+  const openLightbox = () => {
+    /* setLightboxIndex(imageIndex) */
     setIsLightboxOpen(true)
   }
-  const getImageAtIndex = (imageIndex: number) =>
-    _.get(lightboxImages, imageIndex % lightboxImages.length)
+  const toggleModal = () => {
+    setIsLightboxOpen(!isLightboxOpen)
+  }
+  /* const getImageAtIndex = (imageIndex: number) => */
+  /*   _.get(lightboxImages, imageIndex % lightboxImages.length) */
 
-  const lightboxSrc = getImageAtIndex(index)
-  const nextImage = getImageAtIndex(index + 1)
-  const prevImage = getImageAtIndex(index - 1)
+  /* const lightboxSrc = getImageAtIndex(index) */
+  /* const nextImage = getImageAtIndex(index + 1) */
+  /* const prevImage = getImageAtIndex(index - 1) */
 
   // Tie media queries to the number of columns.
   const columns = useMedia(
@@ -112,27 +113,24 @@ const PhotographyGridSection = (props: Props) => {
                     left: x,
                   }}
                 >
-                  <ImageZoomGridElement
-                    image={item}
-                    onClick={() => openLightbox(item.index)}
-                  />
+                  <ImageZoomGridElement image={item} onClick={openLightbox} />
                 </div>
               )
             },
           )}
       </Flex>
       <SeeMoreLink totalNumImages={totalNumImages} href={slug} />
-      {isLightboxOpen && (
-        <Lightbox
-          enableZoom={false}
-          mainSrc={lightboxSrc}
-          nextSrc={nextImage}
-          onCloseRequest={closeLightbox}
-          onMoveNextRequest={incrementLightboxIndex}
-          onMovePrevRequest={decrementLightboxIndex}
-          prevSrc={prevImage}
-        />
-      )}
+      <ModalGateway>
+        {isLightboxOpen && _.size(reactImages) > 0 ? (
+          <Modal allowFullscreen={false} onClose={toggleModal}>
+            <Carousel
+              onClickThumbnail={toggleModal}
+              onClose={_.noop}
+              views={reactImages}
+            />
+          </Modal>
+        ) : null}
+      </ModalGateway>
     </>
   )
 }
