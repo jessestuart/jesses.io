@@ -1,3 +1,10 @@
 [ver:1,total:60]
 .gtm/terminal.app:40,1581919200:40,r
 .git/PULLREQ_EDITMSG:20,1581919200:20,d
+
+[ver:1,total:780]
+.gtm/terminal.app:604,1581919200:604,r
+package.json:106,1581919200:106,m
+.circleci/config.yml:30,1581919200:30,r
+.git/rebase-merge/git-rebase-todo:20,1581919200:20,d
+.git/COMMIT_EDITMSG:20,1581919200:20,r
