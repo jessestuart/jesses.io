@@ -93,7 +93,7 @@
     "eslint-plugin-prettier": "3.1.2",
     "eslint-plugin-promise": "4.2.1",
     "eslint-plugin-react": "7.18.3",
-    "eslint-plugin-react-hooks": "2.3.0",
+    "eslint-plugin-react-hooks": "2.4.0",
     "gatsby-plugin-config": "1.0.7",
     "gatsby-plugin-feed": "2.3.27",
     "gatsby-plugin-google-analytics": "2.1.35",
