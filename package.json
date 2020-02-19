@@ -132,7 +132,7 @@
     "start-server-and-test": "1.10.8",
     "stylelint": "13.2.0",
     "stylelint-config-standard": "20.0.0",
-    "ts-jest": "25.2.0",
+    "ts-jest": "25.2.1",
     "ts-node": "8.6.2",
     "typescript": "3.7.5",
     "typescript-plugin-styled-components": "1.4.4",
