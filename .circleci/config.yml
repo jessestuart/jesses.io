@@ -191,7 +191,9 @@ jobs:
       - *load_aws_credentials
       - run:
           name: Build static site. (with all image assets)
-          command: yarn build:prod
+          command: |
+            export GATSBY_CPU_COUNT=2
+            yarn build:prod
       - *save_cache
       - run:
           name: Install `netlify-cli`.
