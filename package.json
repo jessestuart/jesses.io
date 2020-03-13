@@ -129,7 +129,7 @@
     "rimraf": "3.0.2",
     "semantic-release": "17.0.4",
     "serialize-javascript": "2.1.2",
-    "start-server-and-test": "1.10.9",
+    "start-server-and-test": "1.10.10",
     "stylelint": "13.2.1",
     "stylelint-config-standard": "20.0.0",
     "ts-jest": "25.2.1",
