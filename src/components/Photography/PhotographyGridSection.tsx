@@ -2,11 +2,10 @@ import 'react-image-lightbox/style.css'
 
 import _ from 'lodash'
 import { DateTime } from 'luxon'
-import React, { useState } from 'react'
+import React, { Children, SyntheticEvent, useState } from 'react'
 import { Flex } from 'rebass/styled-components'
-// import Lightbox from 'react-image-lightbox'
 
-import Carousel, { Image, Modal, ModalGateway } from 'react-images'
+import Carousel, { Modal, ModalGateway } from '@jesses/react-images'
 
 import { useDimensions, useMedia } from 'utils/hooks'
 import {
@@ -26,29 +25,22 @@ interface Props {
 const PhotographyGridSection = (props: Props) => {
   const { datetime, images, slug = '/#', totalNumImages = 0 } = props
   const [isLightboxOpen, setIsLightboxOpen] = useState(false)
-  /* const [index, setLightboxIndex] = useState(0) */
+  const [index, setLightboxIndex] = useState(0)
 
   const sortedImages = _.sortBy(images, 'EXIF.DateTimeOriginal')
-  /* const lightboxImages = _.map(sortedImages, 'childImageSharp.sizes.src') */
-  const reactImages: Image[] = _.map(sortedImages, 'childImageSharp.sizes')
+  const reactImages: any[] = _.map(sortedImages, 'childImageSharp.sizes')
 
-  /* const decrementLightboxIndex = () => setLightboxIndex(index - 1) */
-  /* const incrementLightboxIndex = () => setLightboxIndex(index + 1) */
-  /* const closeLightbox = () => setIsLightboxOpen(false) */
-  /* const openLightbox = (imageIndex: number) => { */
-  const openLightbox = () => {
-    /* setLightboxIndex(imageIndex) */
-    setIsLightboxOpen(true)
+  const indexIsNumber = (
+    selectedIndex: number | SyntheticEvent | undefined,
+  ): selectedIndex is number => {
+    return selectedIndex != null && typeof selectedIndex == 'number'
   }
-  const toggleModal = () => {
+  const toggleModal = (selectedIndex?: number | SyntheticEvent | undefined) => {
+    if (indexIsNumber(selectedIndex)) {
+      setLightboxIndex(selectedIndex)
+    }
     setIsLightboxOpen(!isLightboxOpen)
   }
-  /* const getImageAtIndex = (imageIndex: number) => */
-  /*   _.get(lightboxImages, imageIndex % lightboxImages.length) */
-
-  /* const lightboxSrc = getImageAtIndex(index) */
-  /* const nextImage = getImageAtIndex(index + 1) */
-  /* const prevImage = getImageAtIndex(index - 1) */
 
   // Tie media queries to the number of columns.
   const columns = useMedia(
@@ -98,34 +90,43 @@ const PhotographyGridSection = (props: Props) => {
         sx={{ height: Math.max(...heights), position: 'relative' }}
       >
         {width != null &&
-          gridItems.map(
-            // @ts-ignore
-            (item, key) => {
-              const { height, width, x, y } = item
-              return (
-                <div
-                  key={key}
-                  style={{
-                    position: 'absolute',
-                    height,
-                    width,
-                    top: y,
-                    left: x,
-                  }}
-                >
-                  <ImageZoomGridElement image={item} onClick={openLightbox} />
-                </div>
-              )
-            },
-          )}
+          gridItems.map((item, key) => {
+            const { height, width, x, y } = item
+            return (
+              <div
+                key={key}
+                style={{
+                  height,
+                  left: x,
+                  position: 'absolute',
+                  top: y,
+                  width,
+                }}
+              >
+                <ImageZoomGridElement
+                  image={item}
+                  onClick={() => toggleModal(key)}
+                />
+              </div>
+            )
+          })}
       </Flex>
       <SeeMoreLink totalNumImages={totalNumImages} href={slug} />
       <ModalGateway>
         {isLightboxOpen && _.size(reactImages) > 0 ? (
-          <Modal allowFullscreen={false} onClose={toggleModal}>
+          <Modal
+            allowFullscreen={false}
+            onClose={toggleModal}
+            closeOnBackdropClick={true}
+          >
             <Carousel
-              onClickThumbnail={toggleModal}
-              onClose={_.noop}
+              currentIndex={index}
+              styles={{
+                header: base => ({
+                  ...base,
+                  zIndex: -999,
+                }),
+              }}
               views={reactImages}
             />
           </Modal>

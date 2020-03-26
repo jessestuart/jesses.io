@@ -5,6 +5,7 @@
   "author": "Jesse Stuart <hi@jessestuart.com>",
   "dependencies": {
     "@ctrl/tinycolor": "2.6.1",
+    "@jesses/react-images": "1.1.0-beta.3",
     "@mdx-js/react": "1.5.7",
     "@sentry/browser": "5.13.2",
     "@theme-ui/components": "0.3.1",
