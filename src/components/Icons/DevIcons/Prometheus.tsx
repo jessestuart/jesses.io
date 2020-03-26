@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Prometheus = props => (
+const Prometheus = (props) => (
   <svg width={256} height={257} viewBox="0 0 256 257" {...props}>
     <g fillRule="nonzero" fill="none">
       <path

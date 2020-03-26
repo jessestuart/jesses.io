@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Sentry = props => (
+const Sentry = (props) => (
   <svg width="1em" height="1em" viewBox="0 0 143 128" {...props}>
     <path
       fill="#fb2d26"

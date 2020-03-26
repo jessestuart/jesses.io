@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Terraform = props => (
+const Terraform = (props) => (
   <svg width="1em" height="1em" viewBox="0 0 179 202" {...props}>
     <g fill="none" fillRule="evenodd">
       <g fillRule="nonzero">

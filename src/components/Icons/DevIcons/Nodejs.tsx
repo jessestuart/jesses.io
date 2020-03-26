@@ -1,6 +1,6 @@
 import React from 'react'
 
-const NodeJS = props => (
+const NodeJS = (props) => (
   <svg viewBox="0 0 128 128" {...props}>
     <path
       fill="#83CD29"

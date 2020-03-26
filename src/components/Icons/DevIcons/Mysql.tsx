@@ -1,6 +1,6 @@
 import React from 'react'
 
-const MysqlPlain = props => (
+const MysqlPlain = (props) => (
   <svg viewBox="0 0 128 128" {...props}>
     <path
       fill="#00618A"

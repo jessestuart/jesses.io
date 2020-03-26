@@ -1,6 +1,6 @@
 import React from 'react'
 
-const UbuntuPlain = props => (
+const UbuntuPlain = (props) => (
   <svg viewBox="0 0 128 128" {...props}>
     <path
       fill="#DD4814"

@@ -1,6 +1,6 @@
 import React from 'react'
 
-const DebianPlain = props => (
+const DebianPlain = (props) => (
   <svg viewBox="0 0 128 128" {...props}>
     <path
       fill="#A80030"

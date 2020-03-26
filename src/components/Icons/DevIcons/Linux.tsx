@@ -1,6 +1,6 @@
 import React from 'react'
 
-const LinuxPlain = props => (
+const LinuxPlain = (props) => (
   <svg viewBox="0 0 128 128" {...props}>
     <path
       fillRule="evenodd"

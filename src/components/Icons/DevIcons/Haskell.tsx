@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Haskell128Opt = props => (
+const Haskell128Opt = (props) => (
   <svg
     xmlnsXlink="http://www.w3.org/1999/xlink"
     width="1em"

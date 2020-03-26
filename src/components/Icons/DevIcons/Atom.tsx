@@ -1,6 +1,6 @@
 import React from 'react'
 
-const AtomOriginal = props => (
+const AtomOriginal = (props) => (
   <svg viewBox="0 0 128 128" {...props}>
     <path
       fillRule="evenodd"

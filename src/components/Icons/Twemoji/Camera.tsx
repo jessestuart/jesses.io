@@ -1,6 +1,6 @@
 import React from 'react'
 
-const SvgTwemoji1F4F7 = props => (
+const SvgTwemoji1F4F7 = (props) => (
   <svg viewBox="0 0 47.5 47.5" {...props}>
     <defs>
       <clipPath id="Twemoji_1f4f7_svg__a">

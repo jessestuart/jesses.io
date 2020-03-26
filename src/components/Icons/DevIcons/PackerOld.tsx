@@ -1,6 +1,6 @@
 import React from 'react'
 
-const PackerPlain = props => (
+const PackerPlain = (props) => (
   <svg id="Layer_1" viewBox="0 0 333.4 500" width="80%" height="80%" {...props}>
     <path d="M0 454.3L170.6 500l.2-377.8L.2 76.5z" fill="#2CB0FC" />
     <path

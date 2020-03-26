@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Java = props => (
+const Java = (props) => (
   <svg viewBox="0 0 128 128" {...props}>
     <path
       fill="#0074BD"
