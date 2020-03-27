@@ -1,6 +1,6 @@
 import React from 'react'
 
-const D3JsPlain = props => (
+const D3JsPlain = (props) => (
   <svg viewBox="0 0 128 128" {...props}>
     <linearGradient
       id="a"

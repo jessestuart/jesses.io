@@ -1,6 +1,6 @@
 import React from 'react'
 
-const WebpackOriginal = props => (
+const WebpackOriginal = (props) => (
   <svg viewBox="0 0 128 128" {...props}>
     <path
       d="M117.29 98.1L66.24 127v-22.51L98 87l19.29 11.1zm3.5-3.16V34.55l-18.68 10.8v38.81l18.67 10.77zM10.71 98.1l51 28.88v-22.49L29.94 87zm-3.5-3.16V34.55l18.68 10.8v38.81zm2.19-64.3L61.76 1v21.76L28.21 41.21l-.27.15zm109.18 0L66.24 1v21.76L99.79 41.2l.27.15 18.54-10.71z"

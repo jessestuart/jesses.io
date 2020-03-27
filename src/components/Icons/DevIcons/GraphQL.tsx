@@ -1,6 +1,6 @@
 import React from 'react'
 
-const GraphQL = props => (
+const GraphQL = (props) => (
   <svg width="1em" height="1em" viewBox="0 0 114 128" {...props}>
     <path
       fill="#e535ab"

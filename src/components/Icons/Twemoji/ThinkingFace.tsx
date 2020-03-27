@@ -1,6 +1,6 @@
 import React from 'react'
 
-const ThinkingFace = props => (
+const ThinkingFace = (props) => (
   <svg viewBox="0 0 45 45" {...props}>
     <defs>
       <clipPath id="a">

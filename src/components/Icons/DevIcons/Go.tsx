@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Golang = props => (
+const Golang = (props) => (
   <svg width="1em" height="1em" viewBox="0 0 98 128" {...props}>
     <path
       fill="#8cc5e7"

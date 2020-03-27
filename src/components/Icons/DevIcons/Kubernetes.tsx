@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Kubernetes = props => (
+const Kubernetes = (props) => (
   <svg width="1em" height="1em" viewBox="0 0 132 128" {...props}>
     <path
       fill="#326ce5"

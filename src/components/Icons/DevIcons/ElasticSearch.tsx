@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Elasticsearch = props => (
+const Elasticsearch = (props) => (
   <svg viewBox="0 0 80 80" width={2500} height={2500} {...props}>
     <defs>
       <circle

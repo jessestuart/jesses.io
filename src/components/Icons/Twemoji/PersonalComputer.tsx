@@ -1,6 +1,6 @@
 import React from 'react'
 
-const PersonalComputer = props => (
+const PersonalComputer = (props) => (
   <svg viewBox="0 0 45 45" {...props}>
     <defs>
       <clipPath id="a">

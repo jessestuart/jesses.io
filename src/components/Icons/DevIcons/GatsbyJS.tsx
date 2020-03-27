@@ -1,6 +1,6 @@
 import React from 'react'
 
-const GatsbyJS = props => (
+const GatsbyJS = (props) => (
   <svg width="1em" height="1em" viewBox="0 0 1024 1024" {...props}>
     <path
       fill="#744c9e"

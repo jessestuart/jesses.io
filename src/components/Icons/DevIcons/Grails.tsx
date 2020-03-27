@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Grails = props => (
+const Grails = (props) => (
   <svg width="1em" height="1em" viewBox="0 0 183 128" {...props}>
     <path
       fill="#7ab852"

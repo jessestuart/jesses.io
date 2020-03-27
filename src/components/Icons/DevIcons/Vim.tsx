@@ -1,6 +1,6 @@
 import React from 'react'
 
-const VimPlain = props => (
+const VimPlain = (props) => (
   <svg viewBox="0 0 128 128" {...props}>
     <path
       fill="#179A33"

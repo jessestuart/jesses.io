@@ -1,6 +1,6 @@
 import React from 'react'
 
-const CoreOS = props => (
+const CoreOS = (props) => (
   <svg width="1em" height="1em" viewBox="0 0 128 128" {...props}>
     <path
       fill="#53a3da"

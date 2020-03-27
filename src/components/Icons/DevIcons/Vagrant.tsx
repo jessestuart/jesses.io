@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Vagrant = props => (
+const Vagrant = (props) => (
   <svg width="1em" height="1em" viewBox="0 0 128 128" {...props}>
     <path
       fill="#1159cc"

@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Redux = props => (
+const Redux = (props) => (
   <svg width="1em" height="1em" viewBox="0 0 134 128" {...props}>
     <path
       fill="#764abc"

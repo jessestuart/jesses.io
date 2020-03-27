@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Jest = props => (
+const Jest = (props) => (
   <svg width="1em" height="1em" viewBox="0 0 116 128" {...props}>
     <path
       fill="#c63d14"

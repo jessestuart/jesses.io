@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Angular = props => (
+const Angular = (props) => (
   <svg width="1em" height="1em" viewBox="0 0 964 1024" {...props}>
     <path
       fill="#e23237"

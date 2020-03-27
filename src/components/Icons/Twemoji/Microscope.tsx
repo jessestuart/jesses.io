@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Microscope = props => (
+const Microscope = (props) => (
   <svg viewBox="0 0 45 45" {...props}>
     <defs>
       <clipPath id="a">

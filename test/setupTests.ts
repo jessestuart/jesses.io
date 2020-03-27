@@ -4,7 +4,7 @@ import 'styled-components'
 import '@testing-library/jest-dom/extend-expect'
 import 'jest-styled-components'
 
-window.matchMedia = jest.fn().mockImplementation(query => {
+window.matchMedia = jest.fn().mockImplementation((query) => {
   return {
     addEventListener: jest.fn(),
     addListener: jest.fn(), // deprecated

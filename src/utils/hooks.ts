@@ -4,7 +4,7 @@ export const useDimensions = () => {
   const [dimensions, setDimensions] = useState({ width: 0 })
   const [node, setNode] = useState(null)
 
-  const ref = useCallback(node => {
+  const ref = useCallback((node) => {
     setNode(node)
   }, [])
 
@@ -47,7 +47,7 @@ export const useMedia = (
   // eslint-disable-next-line
   const getValue = () => {
     // Get index of first media query that matches
-    const index = mediaQueryLists.findIndex(mql => mql.matches)
+    const index = mediaQueryLists.findIndex((mql) => mql.matches)
     // Return related value or defaultValue if none
     return typeof values[index] !== 'undefined' ? values[index] : defaultValue
   }
@@ -62,9 +62,9 @@ export const useMedia = (
     // mount).
     const handler = () => setValue(getValue)
     // Set a listener for each media query with above handler as callback.
-    mediaQueryLists.forEach(mql => mql.addListener(handler))
+    mediaQueryLists.forEach((mql) => mql.addListener(handler))
     // Remove listeners on cleanup.
-    return () => mediaQueryLists.forEach(mql => mql.removeListener(handler))
+    return () => mediaQueryLists.forEach((mql) => mql.removeListener(handler))
     // eslint-disable-next-line
   }, [])
 

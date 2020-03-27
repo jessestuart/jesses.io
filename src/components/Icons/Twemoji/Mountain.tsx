@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Mountain = props => (
+const Mountain = (props) => (
   <svg viewBox="0 0 45 45" width={45} height={45} {...props}>
     <g fill="none">
       <path
