@@ -121,7 +121,7 @@
     "gray-percentage": "2.0.0",
     "jest": "25.2.7",
     "jest-junit": "10.0.0",
-    "jest-styled-components": "7.0.0",
+    "jest-styled-components": "7.0.1",
     "prettier": "2.0.4",
     "react-perf-devtool": "3.1.8",
     "react-test-renderer": "16.13.1",
