@@ -50,7 +50,7 @@
     "@babel/preset-react": "7.9.4",
     "@babel/preset-typescript": "7.9.0",
     "@hot-loader/react-dom": "16.13.0",
-    "@now/build-utils": "2.2.0",
+    "@now/build-utils": "2.2.1",
     "@now/static-build": "0.15.1",
     "@rebass/preset": "4.0.5",
     "@semantic-release/git": "9.0.0",
