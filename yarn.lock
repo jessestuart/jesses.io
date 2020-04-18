@@ -8535,10 +8535,10 @@ gatsby-source-filesystem@2.2.4:
     valid-url "^1.0.9"
     xstate "^4.8.0"
 
-gatsby-source-s3-image@1.6.191:
-  version "1.6.191"
-  resolved "https://registry.yarnpkg.com/gatsby-source-s3-image/-/gatsby-source-s3-image-1.6.191.tgz#7403b1849ae3899528b82cce227b46601e4d4606"
-  integrity sha512-eIm2ULL0f5H2TQ/0xyEUPkwuqjyvWglzJpLOQdvmOJlpDRAK2JYsq5cBv/P2fW3W6ZLhaXJzn9vAOdYVMF4PoA==
+gatsby-source-s3-image@1.6.192:
+  version "1.6.192"
+  resolved "https://registry.yarnpkg.com/gatsby-source-s3-image/-/gatsby-source-s3-image-1.6.192.tgz#bb2225023ae841dcf3d34da489442025f51ccc70"
+  integrity sha512-QXAnfWgpedF3NiQ7Tcg6eFghCB5G4Ut4h7eYNotPDSb+3g+Rx0OS/8WVLB+mdXqpJGJHHmvrwRcjY7T+yDQM6A==
   dependencies:
     aws-sdk "2.658.0"
     fracty "1.0.9"
@@ -8546,7 +8546,7 @@ gatsby-source-s3-image@1.6.191:
     lodash "4.17.15"
     luxon "1.23.0"
     mime-types "2.1.26"
-    ts-exif-parser "0.1.5"
+    ts-exif-parser "0.1.6"
 
 gatsby-telemetry@^1.2.5:
   version "1.2.5"
@@ -18562,10 +18562,10 @@ trough@^1.0.0:
   resolved "https://registry.yarnpkg.com/true-case-path/-/true-case-path-2.2.1.tgz#c5bf04a5bbec3fd118be4084461b3a27c4d796bf"
   integrity sha512-0z3j8R7MCjy10kc/g+qg7Ln3alJTodw9aDuVWZa3uiWqfuBMKeAeP2ocWcxoyM3D73yz3Jt/Pu4qPr4wHSdB/Q==
 
-ts-exif-parser@0.1.5:
-  version "0.1.5"
-  resolved "https://registry.yarnpkg.com/ts-exif-parser/-/ts-exif-parser-0.1.5.tgz#461d909e194ad7548dd29a853471a6d6d729df32"
-  integrity sha512-3TU0R4K58EUzv+MuCNR/dKpTB6Fu8FWpDoy18OKLikVsqJ2Vaz/vThQ9Ahd1MXvyXcMPjyVpvBslaDMF+Dx+cQ==
+ts-exif-parser@0.1.6:
+  version "0.1.6"
+  resolved "https://registry.yarnpkg.com/ts-exif-parser/-/ts-exif-parser-0.1.6.tgz#22725c7354c3d79cf15a0fdb90f2c270d9c17cd4"
+  integrity sha512-2Xg6LHubJP9+yKPF7SQeVLeUlzsnYj7EUIO6+PdSfROiwc9AprXvM4ZaQt0t89XskIlkOWwxfseymihSU8rsLg==
   dependencies:
     sax "1.2.4"
 
