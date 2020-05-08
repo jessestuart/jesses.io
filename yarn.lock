@@ -3645,10 +3645,10 @@ autoprefixer@^9.7.6:
     postcss "^7.0.27"
     postcss-value-parser "^4.0.3"
 
-aws-sdk@2.672.0:
-  version "2.672.0"
-  resolved "https://registry.yarnpkg.com/aws-sdk/-/aws-sdk-2.672.0.tgz#1aa321f40be878efec225f83184a15be6ab753a4"
-  integrity sha512-ANxBUPTx5KvNX4OJhIkGT6IoNhBPuh63YvAGuf6tV55MsXNNpZXWuPtvIHxst+M5GrQFA2qDpfcuENzC3OzumQ==
+aws-sdk@2.673.0:
+  version "2.673.0"
+  resolved "https://registry.yarnpkg.com/aws-sdk/-/aws-sdk-2.673.0.tgz#5848900c90cfd8939602019df16fdc38d2a1cdbf"
+  integrity sha512-OoEPqTLmA5+4uSFf/k4ZLb8cEdx+CwlzovqGf6/gKvb8VrUxe5B5/d2RGlGM777Ke9TmuFhJtTIDugpgc2jo/Q==
   dependencies:
     buffer "4.9.1"
     events "1.1.1"
@@ -8483,12 +8483,12 @@ gatsby-source-filesystem@2.3.1:
     valid-url "^1.0.9"
     xstate "^4.9.1"
 
-gatsby-source-s3-image@1.6.209:
-  version "1.6.209"
-  resolved "https://registry.yarnpkg.com/gatsby-source-s3-image/-/gatsby-source-s3-image-1.6.209.tgz#018e9a43e531956e812cc895bf8fce19128fd6d6"
-  integrity sha512-dqQHfMqFQMc/yNVz2xvzfm1uSyFxyFfoOS3VogB2eeAaqtfI8BrQwEHB0jxo61T5uLfMWuFnYxOw1PZALRbpAA==
+gatsby-source-s3-image@1.6.210:
+  version "1.6.210"
+  resolved "https://registry.yarnpkg.com/gatsby-source-s3-image/-/gatsby-source-s3-image-1.6.210.tgz#4494f6db17dc58a376f7247853fe4b97eb200651"
+  integrity sha512-X9J0Yrv5M9DnmHthor6cx7eKhE0sXNYGGfOtkJB+ziKNKNrwVdKqicnOajfn7AQ+qWORWTvg2fZFenGS1Ov9Yw==
   dependencies:
-    aws-sdk "2.672.0"
+    aws-sdk "2.673.0"
     fracty "1.0.9"
     invariant "2.2.4"
     lodash "4.17.15"

@@ -115,7 +115,7 @@
     "gatsby-remark-prismjs": "3.5.1",
     "gatsby-remark-smartypants": "2.3.1",
     "gatsby-source-filesystem": "2.3.1",
-    "gatsby-source-s3-image": "1.6.209",
+    "gatsby-source-s3-image": "1.6.210",
     "gatsby-transformer-remark": "2.8.7",
     "gatsby-transformer-sharp": "2.5.2",
     "gray-percentage": "2.0.0",
