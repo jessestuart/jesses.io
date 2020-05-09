@@ -1885,10 +1885,10 @@
   resolved "https://registry.yarnpkg.com/@now/build-utils/-/build-utils-2.3.0.tgz#6ae0aa0ea787a4f4e937229bea078874935b0084"
   integrity sha512-xPP9Nbh04/LpdqpkVYflG6OWfFnv0h9khwXQwl2L0wRKgCWt5e/dpRkMlmdfG0Nq32SZsxRz5nfjbnJkBTeFGw==
 
-"@now/static-build@0.16.0":
-  version "0.16.0"
-  resolved "https://registry.yarnpkg.com/@now/static-build/-/static-build-0.16.0.tgz#a031c0fdebac993d00f9152a22c441f69c85028b"
-  integrity sha512-2xcKUXjx3kLU6je/I6M050n3JS6XGvc+ItRDwiVdZ0gEbwiTJi9f3jZgyOVKtXWnacOSievqwnrHj64ULeju0w==
+"@now/static-build@0.17.0":
+  version "0.17.0"
+  resolved "https://registry.yarnpkg.com/@now/static-build/-/static-build-0.17.0.tgz#f7873eecc750928f1e9910b7d9f1732a914a1403"
+  integrity sha512-b+wvssbCvGqgklp+6GGjFRh0pgtiDU6xI5D73npYkUQaMLAd8C/sfXhbmzllcAXbLjsRNCVMF9kbKbt6xQqcqA==
 
 "@octokit/auth-token@^2.4.0":
   version "2.4.0"
