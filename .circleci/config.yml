@@ -117,7 +117,7 @@ cypress_job: &cypress_job
   working_directory: ~/jesses.io
   docker:
     # Docker image with Cypress dependencies:
-    - image: cypress/base:12.16.1
+    - image: cypress/base:12.16.2
       environment:
         # (This enables colors in the output)
         TERM: xterm
