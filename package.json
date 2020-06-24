@@ -35,7 +35,7 @@
     "typeface-lato": "0.0.75",
     "typeface-spectral": "0.0.72",
     "voca": "1.4.0",
-    "winston": "3.3.2"
+    "winston": "3.3.3"
   },
   "devDependencies": {
     "@babel/core": "7.10.3",
