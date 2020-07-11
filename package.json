@@ -127,7 +127,7 @@
     "react-test-renderer": "16.13.1",
     "rimraf": "3.0.2",
     "semantic-release": "17.1.1",
-    "start-server-and-test": "1.11.1",
+    "start-server-and-test": "1.11.2",
     "stylelint": "13.6.1",
     "stylelint-config-standard": "20.0.0",
     "ts-jest": "25.5.1",
