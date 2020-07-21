@@ -4362,10 +4362,10 @@
   resolved "https://registry.yarnpkg.com/@types/lodash/-/lodash-4.14.149.tgz#1342d63d948c6062838fbf961012f74d4e638440"
   integrity sha512-ijGqzZt/b7BfzcK9vTrS6MFljQRPn5BFWOx8oE0GYxribu6uV+aA9zZuXI1zc/etK9E8nrgdoF2+LgUw7+9tJQ==
 
-"@types/luxon@1.24.1":
-  version "1.24.1"
-  resolved "https://registry.yarnpkg.com/@types/luxon/-/luxon-1.24.1.tgz#60f57209b9afd8e046161ecb8322e2875fc182ee"
-  integrity sha512-t93qL4l3PRxy4qQkXwiPS6qjIt7S6o90XMuCfvYDgIAQJvgSBni5qVPxkhGYPnZZPS9ASHOTeCZXRNmdiHHHcg==
+"@types/luxon@1.24.2":
+  version "1.24.2"
+  resolved "https://registry.yarnpkg.com/@types/luxon/-/luxon-1.24.2.tgz#6484fc3bba33a01a0f32d3ae2065acf96fbe878a"
+  integrity sha512-FvWo7lgOM/uv59enGfh9YeaeuLfUCE1FVRUEbloJjVsKPSoWolUGsbeJn+DvtDyxzq3Ej04p1cKJgZ5Z5IyDlA==
 
 "@types/md5@2.2.0":
   version "2.2.0"
