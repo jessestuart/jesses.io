@@ -60,7 +60,7 @@
     "@types/gray-percentage": "2.0.0",
     "@types/jest": "25.2.3",
     "@types/lodash": "4.14.161",
-    "@types/luxon": "1.24.4",
+    "@types/luxon": "1.25.0",
     "@types/md5": "2.2.0",
     "@types/node": "13.13.21",
     "@types/react": "16.9.49",
