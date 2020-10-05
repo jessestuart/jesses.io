@@ -6,7 +6,7 @@
   "dependencies": {
     "@ctrl/tinycolor": "2.6.1",
     "@mdx-js/react": "1.6.18",
-    "@sentry/browser": "5.24.2",
+    "@sentry/browser": "5.25.0",
     "@theme-ui/components": "0.3.1",
     "classnames": "2.2.6",
     "dotenv": "8.2.0",
