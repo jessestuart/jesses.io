@@ -62,7 +62,7 @@
     "@types/lodash": "4.14.161",
     "@types/luxon": "1.25.0",
     "@types/md5": "2.2.0",
-    "@types/node": "13.13.22",
+    "@types/node": "13.13.23",
     "@types/react": "16.9.51",
     "@types/react-dom": "16.9.8",
     "@types/react-headroom": "2.2.1",
