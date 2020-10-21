@@ -49,7 +49,7 @@
     "@babel/preset-env": "7.12.1",
     "@babel/preset-react": "7.12.1",
     "@babel/preset-typescript": "7.12.1",
-    "@hot-loader/react-dom": "16.13.0",
+    "@hot-loader/react-dom": "16.14.0",
     "@now/build-utils": "2.5.4",
     "@now/static-build": "0.17.9",
     "@rebass/preset": "4.0.5",
