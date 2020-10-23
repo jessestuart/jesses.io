@@ -4382,10 +4382,10 @@
   resolved "https://registry.yarnpkg.com/@types/luxon/-/luxon-1.25.0.tgz#3d6fe591fac874f48dd225cb5660b2b785a21a05"
   integrity sha512-iIJp2CP6C32gVqI08HIYnzqj55tlLnodIBMCcMf28q9ckqMfMzocCmIzd9JWI/ALLPMUiTkCu1JGv3FFtu6t3g==
 
-"@types/md5@2.2.0":
-  version "2.2.0"
-  resolved "https://registry.yarnpkg.com/@types/md5/-/md5-2.2.0.tgz#cd82e16b95973f94bb03dee40c5b6be4a7fb7fb4"
-  integrity sha512-JN8OVL/wiDlCWTPzplsgMPu0uE9Q6blwp68rYsfk2G8aokRUQ8XD9MEhZwihfAiQvoyE+m31m6i3GFXwYWomKQ==
+"@types/md5@2.2.1":
+  version "2.2.1"
+  resolved "https://registry.yarnpkg.com/@types/md5/-/md5-2.2.1.tgz#0e2d65d8f6cc91aafbc9be5a4c08fee9250406ce"
+  integrity sha512-bZB0jqBL7JETFqvRKyuDETFceFaVcLm2MBPP5LFEEL/SZuqLnyvzF37tXmMERDncC3oeEj/fOUw88ftJeMpZaw==
   dependencies:
     "@types/node" "*"
 
