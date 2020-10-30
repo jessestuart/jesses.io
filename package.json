@@ -59,7 +59,7 @@
     "@types/classnames": "2.2.11",
     "@types/gray-percentage": "2.0.0",
     "@types/jest": "25.2.3",
-    "@types/lodash": "4.14.163",
+    "@types/lodash": "4.14.164",
     "@types/luxon": "1.25.0",
     "@types/md5": "2.2.1",
     "@types/node": "13.13.30",
