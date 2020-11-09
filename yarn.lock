@@ -4141,17 +4141,17 @@
     "@theme-ui/css" "^0.4.0-highlight.0"
     deepmerge "^4.2.2"
 
-"@theme-ui/components@0.3.1":
-  version "0.3.1"
-  resolved "https://registry.yarnpkg.com/@theme-ui/components/-/components-0.3.1.tgz#fe023e156c1e1c076d5f2258466426e94adc2765"
-  integrity sha512-uG4dUM61s4tWv6N34uxs5VIh24bJyA/7TrYJ75WDiI+s72zbcNG7aGRpvX/hSZnAhxjdXpuskdEM3eEgOabdEg==
+"@theme-ui/components@0.3.3", "@theme-ui/components@^0.3.3":
+  version "0.3.3"
+  resolved "https://registry.yarnpkg.com/@theme-ui/components/-/components-0.3.3.tgz#cc83f4cfadce1d97b64ae4e8cd1624a623b01dd0"
+  integrity sha512-TX5bk2sh9QXmAteNevhGMce3M//BN6sXFVLI3jGTPJjmQxQW1R9iDta6nVR4DgBjrb+HQdtwoeyP11GjaRyBug==
   dependencies:
     "@emotion/core" "^10.0.0"
     "@emotion/styled" "^10.0.0"
     "@styled-system/color" "^5.1.2"
     "@styled-system/should-forward-prop" "^5.1.2"
     "@styled-system/space" "^5.1.2"
-    "@theme-ui/css" "^0.3.1"
+    "@theme-ui/css" "^0.3.3"
 
 "@theme-ui/components@>= 0.4.0-alpha.0", "@theme-ui/components@^0.4.0-highlight.0":
   version "0.4.0-highlight.0"
@@ -4164,18 +4164,6 @@
     "@styled-system/should-forward-prop" "^5.1.2"
     "@styled-system/space" "^5.1.2"
     "@theme-ui/css" "^0.4.0-highlight.0"
-
-"@theme-ui/components@^0.3.3":
-  version "0.3.3"
-  resolved "https://registry.yarnpkg.com/@theme-ui/components/-/components-0.3.3.tgz#cc83f4cfadce1d97b64ae4e8cd1624a623b01dd0"
-  integrity sha512-TX5bk2sh9QXmAteNevhGMce3M//BN6sXFVLI3jGTPJjmQxQW1R9iDta6nVR4DgBjrb+HQdtwoeyP11GjaRyBug==
-  dependencies:
-    "@emotion/core" "^10.0.0"
-    "@emotion/styled" "^10.0.0"
-    "@styled-system/color" "^5.1.2"
-    "@styled-system/should-forward-prop" "^5.1.2"
-    "@styled-system/space" "^5.1.2"
-    "@theme-ui/css" "^0.3.3"
 
 "@theme-ui/core@^0.3.3":
   version "0.3.3"
@@ -4201,11 +4189,6 @@
   integrity sha512-0O9ERm3l4arXip9EmaVl83I84l0ZhEj1ZUrKHrNbjiW2/rhIdEWUQOdYcWdBCb8/nr5NwRMOJQ4rdqiUj7S5IQ==
   dependencies:
     csstype "^2.5.7"
-
-"@theme-ui/css@^0.3.1":
-  version "0.3.1"
-  resolved "https://registry.yarnpkg.com/@theme-ui/css/-/css-0.3.1.tgz#b85c7e8fae948dc0de65aa30b853368993e25cb3"
-  integrity sha512-QB2/fZBpo4inaLHL3OrB8NOBgNfwnj8GtHzXWHb9iQSRjmtNX8zPXBe32jLT7qQP0+y8JxPT4YChZIkm5ZyIdg==
 
 "@theme-ui/css@^0.3.3":
   version "0.3.3"
