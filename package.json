@@ -51,7 +51,7 @@
     "@babel/preset-typescript": "7.12.1",
     "@hot-loader/react-dom": "16.14.0",
     "@now/build-utils": "2.5.4",
-    "@now/static-build": "0.17.12",
+    "@now/static-build": "0.17.13",
     "@rebass/preset": "4.0.5",
     "@semantic-release/git": "9.0.0",
     "@testing-library/jest-dom": "5.11.5",
