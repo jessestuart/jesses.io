@@ -21,7 +21,7 @@
     "react-dom": "16.14.0",
     "react-feather": "2.0.3",
     "react-headroom": "3.0.0",
-    "react-helmet": "5.2.1",
+    "react-helmet": "6.1.0",
     "react-image-lightbox": "5.1.1",
     "rebass": "4.0.7",
     "sharp": "0.26.3",
