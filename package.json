@@ -131,7 +131,7 @@
     "stylelint": "13.8.0",
     "stylelint-config-standard": "20.0.0",
     "ts-jest": "25.5.1",
-    "ts-node": "8.10.2",
+    "ts-node": "9.1.1",
     "typescript": "3.9.7",
     "typescript-plugin-styled-components": "1.4.4",
     "typescript-styled-plugin": "0.15.0"
